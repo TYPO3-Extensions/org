@@ -1,0 +1,430 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      301: Repertoire
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        repertoire {
+          name      = Org: Repertoire
+          file      = EXT:org/res/html/repertoire/301/default.tmpl
+          csvViews  = 301
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      301 = Repertoire
+      301 {
+        name    = Repertoire
+        showUid = repertoireUid
+        select (
+          tx_org_repertoire.title,
+          tx_org_repertoire.subtitle,
+          tx_org_repertoire.short,
+          tx_org_repertoire.image,
+          tx_org_repertoire.imageseo
+        )
+        csvLinkToSingleView = tx_org_repertoire.title
+        filter {
+          tx_org_cal {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            //datetime < plugin.tx_browser_pi1.displayList.master_templates.checkbox
+            //datetime < plugin.tx_browser_pi1.displayList.master_templates.radiobuttons
+            datetime {
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.schedule
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  display_without_any_hit = 0
+                  display_hits            = 0
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                    strftime = %a, %m.%d.%y %H:%M
+                  }
+                }
+              }
+              order.field = uid
+            }
+          }
+        }
+      }
+    }
+    single {
+      301 = Repertoire
+      301 {
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Repertoire &raquo;
+            lang.de = Alle St&uuml;cke &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.repertoire}
+              title {
+                value = All Repertoire
+                lang.de = Alle Repertoire und St&uuml;cke der HfS
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Repertoire
+            lang.de = Repertoire
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_repertoire.title,
+          tx_org_repertoire.calendar,
+          tx_org_repertoire.deleted,
+          tx_org_repertoire.producer,
+
+          tx_org_repertoire.actor,
+          tx_org_repertoire.puppeteer,
+          tx_org_repertoire.dancer,
+          tx_org_repertoire.vocals,
+          tx_org_repertoire.musician,
+          tx_org_repertoire.video,
+          tx_org_repertoire.narrator,
+          tx_org_repertoire.director,
+          tx_org_repertoire.advisor,
+          tx_org_repertoire.assistant,
+          tx_org_repertoire.stage_design,
+          tx_org_repertoire.tailoring,
+          tx_org_repertoire.requisite,
+          tx_org_repertoire.garment,
+          tx_org_repertoire.makeup,
+          tx_org_repertoire.stage_manager,
+          tx_org_repertoire.technical_manager,
+          tx_org_repertoire.technique,
+          tx_org_repertoire.light,
+          tx_org_repertoire.sound,
+          tx_org_repertoire.otherslabel,
+          tx_org_repertoire.others,
+
+          tx_org_repertoire.length,
+          tx_org_repertoire.short,
+          tx_org_repertoire.bodytext,
+          tx_org_repertoire.image,
+          tx_org_repertoire.imagecaption,
+          tx_org_repertoire.imageseo,
+          tx_org_repertoire.embeddedcode,
+          tx_org_repertoire.print,
+          tx_org_repertoire.printcaption,
+          tx_org_repertoire.printseo,
+          tx_org_repertoire.documents,
+          tx_org_repertoire.keywords,
+          tx_org_repertoire.description,
+          tx_org_cal.uid,
+          tx_org_cal.datetime
+        )
+        orderBy = tx_org_cal.datetime
+        tx_org_cal {
+          datetime = COA
+          datetime {
+            comment (
+              Konfigurations-Trick: Der Kasten "Kalender" erhaelt ein div-wrap und eine Ueberschrift.
+              Siehe unten tx_org_repertoire.calendar und tx_org_repertoire.keywords
+            )
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_CAL.DATETIME###
+              }
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %a, %d. %b %Y, %H:%M Uhr
+              wrap      = <li>|</li>
+              typolink {
+                parameter = {$plugin.org.pages.calendar}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+            11 = TEXT
+            11 {
+              if {
+                isFalse = ###TX_ORG_CAL.DATETIME###
+              }
+              value   = No dates
+              lang.de = Keine Vorstellungen
+              wrap      = <li>|</li>
+            }
+          }
+        }
+        tx_org_repertoire {
+          deleted = COA
+          deleted {
+            comment (
+              Konfigurations-Trick: Die Tabelle mit den Beteiligten soll nur angezeigt werden, wenn Datensaetze
+              mit Beteilgten vorhanden sind. Siehe deleted und otherslabel
+            )
+            if {
+              isTrue = ###TX_ORG_REPERTOIRE.ACTOR######TX_ORG_REPERTOIRE.PUPPETEER######TX_ORG_REPERTOIRE.DANCER######TX_ORG_REPERTOIRE.MUSICIAN######TX_ORG_REPERTOIRE.NARRATOR######TX_ORG_REPERTOIRE.DIRECTOR######TX_ORG_REPERTOIRE.ADVISOR### ###TX_ORG_REPERTOIRE.STAGE_DESIGN######TX_ORG_REPERTOIRE.TAILORING### ###TX_ORG_REPERTOIRE.REQUISITE### ###TX_ORG_REPERTOIRE.GARMENT### ###TX_ORG_REPERTOIRE.MAKEUP######TX_ORG_REPERTOIRE.STAGE_MANAGER### ###TX_ORG_REPERTOIRE.TECHNICAL_MANAGER### ###TX_ORG_REPERTOIRE.TECHNIQUE### ###TX_ORG_REPERTOIRE.LIGHT### ###TX_ORG_REPERTOIRE.SOUND### ###TX_ORG_REPERTOIRE.OTHERSLABEL### ###TX_ORG_REPERTOIRE.OTHERS###
+            }
+            10 = TEXT
+            10 {
+              value = <table>
+            }
+          }
+          otherslabel < .deleted
+          otherslabel {
+            10.value = </table>
+          }
+          actor = COA
+          actor {
+            if {
+              isTrue = ###TX_ORG_REPERTOIRE.ACTOR###
+            }
+            10 = TEXT
+            10 {
+              data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.actor
+              wrap = <tr><td>|</td>
+            }
+            11 = COA
+            11 {
+              wrap = <td>|</td></tr>
+              10 = TEXT
+              10 {
+                browser {
+                  handleRelation  = 1
+                  orderBy         = fe_users.last_name
+                  devider = TEXT
+                  devider {
+                    value       = ,
+                    noTrimWrap  = || |
+                  }
+                }
+                value = ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+                typolink {
+                  parameter = {$plugin.org.pages.staff}
+                  parameter {
+                    insertData = 1
+                  }
+                  additionalParams = &tx_browser_pi1[staffUid]=###FE_USERS.UID###&###CHASH###
+                }
+              }
+            }
+          }
+          puppeteer < .actor
+          puppeteer {
+            if.isTrue = ###TX_ORG_REPERTOIRE.PUPPETEER###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.puppeteer
+          }
+          dancer < .actor
+          dancer {
+            if.isTrue = ###TX_ORG_REPERTOIRE.DANCER###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.dancer
+          }
+          vocals < .actor
+          vocals {
+            if.isTrue = ###TX_ORG_REPERTOIRE.VOCALS###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.vocals
+          }
+          musician < .actor
+          musician {
+            if.isTrue = ###TX_ORG_REPERTOIRE.MUSICIAN###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.musician
+          }
+          video < .actor
+          video {
+            if.isTrue = ###TX_ORG_REPERTOIRE.VIDEO###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.video
+          }
+          narrator < .actor
+          narrator {
+            if.isTrue = ###TX_ORG_REPERTOIRE.NARRATOR###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.narrator
+          }
+          director < .actor
+          director {
+            if.isTrue = ###TX_ORG_REPERTOIRE.DIRECTOR###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.director
+          }
+          advisor < .actor
+          advisor {
+            if.isTrue = ###TX_ORG_REPERTOIRE.ADVISOR###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.advisor
+          }
+          assistant < .actor
+          assistant {
+            if.isTrue = ###TX_ORG_REPERTOIRE.ASSISTANT###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.assistant
+          }
+          stage_design < .actor
+          stage_design {
+            if.isTrue = ###TX_ORG_REPERTOIRE.STAGE_DESIGN###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.stage_design
+          }
+          tailoring < .actor
+          tailoring {
+            if.isTrue = ###TX_ORG_REPERTOIRE.TAILORING###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.tailoring
+          }
+          requisite < .actor
+          requisite {
+            if.isTrue = ###TX_ORG_REPERTOIRE.REQUISITE###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.requisite
+          }
+          garment < .actor
+          garment {
+            if.isTrue = ###TX_ORG_REPERTOIRE.GARMENT###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.garment
+          }
+          makeup < .actor
+          makeup {
+            if.isTrue = ###TX_ORG_REPERTOIRE.MAKEUP###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.makeup
+          }
+          stage_manager < .actor
+          stage_manager {
+            if.isTrue = ###TX_ORG_REPERTOIRE.STAGE_MANAGER###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.stage_manager
+          }
+          technical_manager < .actor
+          technical_manager {
+            if.isTrue = ###TX_ORG_REPERTOIRE.TECHNICAL_MANAGER###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.technical_manager
+          }
+          technique < .actor
+          technique {
+            if.isTrue = ###TX_ORG_REPERTOIRE.TECHNIQUE###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.technique
+          }
+          light < .actor
+          light {
+            if.isTrue = ###TX_ORG_REPERTOIRE.LIGHT###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.light
+          }
+          sound < .actor
+          sound {
+            if.isTrue = ###TX_ORG_REPERTOIRE.SOUND###
+            10.data = LLL:EXT:org/locallang_db.xml:tx_org_repertoire.sound
+          }
+          others < .actor
+          others {
+            if.isTrue = ###TX_ORG_REPERTOIRE.OTHERS###
+            10 {
+              data >
+              value = ###TX_ORG_REPERTOIRE.OTHERSLABEL###
+            }
+          }
+          bodytext = COA
+          bodytext {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_REPERTOIRE.SHORT###
+              }
+              value = ###TX_ORG_REPERTOIRE.SHORT###
+              wrap  = <p><strong>|</strong></p>
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_REPERTOIRE.BODYTEXT###
+              wrap  = <p>|</p>
+            }
+          }
+          calendar = COA
+          calendar {
+            comment (
+              Konfigurations-Trick: Der Kasten "Kalender" soll nur angezeigt werden, wenn Datensaetze im Kalender vorhanden
+              sind. Siehe auch unten keywords und oben tx_org_cal.datetime
+            )
+            if {
+              isTrue_XX = ###TX_ORG_CAL.DATETIME###
+            }
+            10 = TEXT
+            10 {
+              value = Calendar
+              lang.de = Kalender
+              wrap (
+                <div style="float:left;padding-right:1em;">
+                  <div style="background:#EEE;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">
+                    |
+                    <ul>
+              )
+            }
+          }
+          keywords = COA
+          keywords {
+            comment (
+              Konfigurations-Trick: Der Kasten "Kalender" soll nur angezeigt werden, wenn Datensaetze im Kalender vorhanden
+              sind. Siehe auch oben calendar und tx_org_cal.datetime
+            )
+            if {
+              isTrue_XX = ###TX_ORG_CAL.DATETIME###
+            }
+            10 = TEXT
+            10 {
+              value (
+                    </ul>
+                  </div>
+                </div>
+              )
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      label_sword_default       = Search Word
+      pi_list_searchBox_search  = Search!
+      list_mode_301_titleTag      = HfS-Berlin: Repertoire
+      list_mode_301_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Repertoire
+      list_mode_301_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Repertoire
+      single_mode_301_titleTag    = HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      single_mode_301_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
+      single_mode_301_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
+    }
+    de {
+      label_sword_default       = Suchbegriff
+      pi_list_searchBox_search  = Suchen!
+      list_mode_301_titleTag      = HfS-Berlin: Repertoire und St&uuml;cke
+      list_mode_301_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Repertoire, St&uuml;cke
+      list_mode_301_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Repertoire und St&uuml;cke
+      single_mode_301_titleTag    = HfS-Berlin: ###TX_ORG_REPERTOIRE.TITLE###
+      single_mode_301_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
+      single_mode_301_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

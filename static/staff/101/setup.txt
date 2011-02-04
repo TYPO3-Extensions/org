@@ -1,0 +1,346 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      101: Staff
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        staff {
+          name      = Org: Personen
+          file      = EXT:org/res/html/staff/101/default.tmpl
+          csvViews  = 101
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      101 = Staff
+      101 {
+        name    = Personen
+        showUid = staffUid
+        select (
+          fe_users.last_name,
+          fe_users.first_name,
+          fe_users.image,
+          fe_groups.title,
+          tx_org_department.title
+        )
+        orderBy = fe_users.last_name, fe_users.first_name
+        csvLinkToSingleView = fe_users.last_name
+        filter {
+          fe_groups {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data >
+                  value   = All Groups
+                  lang.de = Alle Gruppen
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+          tx_org_department {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data >
+                  value   = All Departments
+                  lang.de = Alle Bereiche
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      101 = Staff
+      101 {
+        displaySingle < plugin.tx_browser_pi1.displaySingle
+        displaySingle {
+          image {
+            file = {$base_batBerlin.path.alternate_image}
+            file >
+          }
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Staff &raquo;
+            lang.de = Personen-Datenbanken &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.staff}
+              title {
+                value = All Staff
+                lang.de = Personen-Datenbanken der HfS
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Staff
+            lang.de = Person
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          fe_users.last_name,
+          fe_users.first_name,
+          fe_users.title,
+          fe_users.image,
+          fe_users.tx_org_imagecaption,
+          fe_users.tx_org_imageseo,
+          fe_users.telephone,
+          fe_users.fax,
+          fe_users.email,
+          fe_users.tx_org_vita,
+          fe_users.www,
+          tx_org_department.title,
+          tx_org_department.uid
+        )
+        fe_users {
+          image < tt_content.image.20
+          image {
+            imgList.field >
+            imgList = ###FE_USERS.IMAGE###
+            //imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = 160c;
+                height  = 110c;
+              }
+              altText.field   >
+              altText         = ###FE_USERS.TX_ORG_IMAGESEO###
+              titleText.field >
+              titleText       = ###FE_USERS.TX_ORG_IMAGESEO###
+              imageLinkWrap {
+                enable.field >
+                enable = 1
+                width   = 1000;
+                height  = 800m;
+                //JSwindow = 0
+              }
+            }
+            layout {
+              key.field >
+                // above-left
+              key = 2
+            }
+            cols.field >
+            cols = 3
+            caption.1 {
+              field >
+              value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+            }
+            stdWrap {
+              prefixComment >
+              wrap          = <div class="image">|</div>
+            }
+          }
+          last_name = COA
+          last_name {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###FE_USERS.TITLE###
+              }
+              value       = ###FE_USERS.TITLE###
+              noTrimWrap  = || |
+            }
+            11 = TEXT
+            11 {
+              if {
+                isTrue = ###FE_USERS.FIRST_NAME###
+              }
+              value       = ###FE_USERS.FIRST_NAME###
+              noTrimWrap  = || |
+            }
+            12 = TEXT
+            12 {
+              if {
+                isTrue = ###FE_USERS.LAST_NAME###
+              }
+              value       = ###FE_USERS.LAST_NAME###
+              noTrimWrap  = || |
+            }
+          }
+          telephone = COA
+          telephone {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###FE_USERS.TELEPHONE######FE_USERS.FAX######FE_USERS.EMAIL###
+              }
+              value   = Contact Details
+              lang.de = Kontakt
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###FE_USERS.TELEPHONE######FE_USERS.FAX######FE_USERS.EMAIL###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###FE_USERS.TELEPHONE###
+                }
+                value = phone
+                lang.de = Tel.:
+                noTrimWrap = || ###FE_USERS.TELEPHONE###<br />|
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###FE_USERS.FAX###
+                }
+                value = fax
+                lang.de = Fax:
+                noTrimWrap = || ###FE_USERS.FAX###<br />|
+              }
+              20 = TEXT
+              20 {
+                if {
+                  isTrue = ###FE_USERS.EMAIL###
+                }
+                value = e-mail
+                lang.de = E-Mail:
+                noTrimWrap = || |
+              }
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###FE_USERS.EMAIL###
+                }
+                typolink {
+                  parameter = ###FE_USERS.EMAIL###
+                }
+                wrap = |<br />
+              }
+            }
+          }
+          tx_org_vita = TEXT
+          tx_org_vita {
+            value = ###FE_USERS.TX_ORG_VITA###
+            stdWrap.parseFunc < lib.parseFunc_RTE
+          }
+          www = COA
+          www {
+            if {
+              isTrue = ###FE_USERS.WWW###
+            }
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              value = Website
+              lang.de = Website
+              noTrimWrap = ||: |
+            }
+            11 = TEXT
+            11 {
+              typolink {
+                parameter = ###FE_USERS.WWW###
+              }
+            }
+          }
+        }
+        tx_org_department {
+          title = COA
+          title {
+            if {
+              isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+            }
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              value = Department
+              lang.de = Bereich
+              noTrimWrap = ||: |
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_DEPARTMENT.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.department}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###&###CHASH###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_101               = Staff
+      list_mode_101_titleTag      = HfS-Berlin: Staff
+      list_mode_101_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Staff
+      list_mode_101_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Staff
+      single_mode_101_titleTag    = HfS-Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_keywords    = Hochschule für Schauspiel, Ernst Busch, Berlin, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_summary     = Hochschule für Schauspiel "Ernst Busch" Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+    }
+    de {
+      list_mode_101               = Personen
+      list_mode_101_titleTag      = HfS-Berlin: Personen
+      list_mode_101_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Personen
+      list_mode_101_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Personen
+      single_mode_101_titleTag    = HfS-Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_keywords    = Hochschule für Schauspiel, Ernst Busch, Berlin, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_summary     = Hochschule für Schauspiel "Ernst Busch" Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+    }
+  }
+}
+
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

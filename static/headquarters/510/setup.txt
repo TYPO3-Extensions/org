@@ -1,0 +1,140 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      510: Headquarters - Right Column
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        headquarters_margin {
+          name      = Org: Standorte - Rand
+          file      = EXT:org/res/html/headquarters/510/default.tmpl
+          csvViews  = 510
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      510 = Headquarters (margin)
+      510 {
+        name    = Standorte - Rand
+        showUid = headquartersUid
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap    = <h3><span>|</span></h3>
+            value   = Headquarters
+            lang.de = Standorte
+            typolink {
+              parameter = {$plugin.org.pages.headquarter}
+              title {
+                value = All Headquarters
+                lang.de = Alle Standorte der HfS
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Headquarters &raquo;
+            lang.de = Alle Standorte &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.headquarter}
+              title {
+                value = All Headquarters
+                lang.de = Alle Standorte der HfS
+              }
+            }
+          }
+        }
+        select (
+          tx_org_headquarters.title,
+          tx_org_headquarters.mail_address,
+          tx_org_headquarters.mail_postcode,
+          tx_org_headquarters.mail_city,
+          tx_org_headquarters.uid
+        )
+        orderBy (
+          tx_org_headquarters.sorting
+        )
+        tx_org_headquarters {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_HEADQUARTERS.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.headquarter}
+                parameter {
+                  insertData = 1
+                }
+                title {
+                  value = ###TX_ORG_HEADQUARTERS.TITLE###
+                }
+                additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###&###CHASH###
+              }
+            }
+            20 = TEXT
+            20 {
+              if {
+                //isTrue = ###TX_ORG_HEADQUARTERS.TELEPHONE######TX_ORG_HEADQUARTERS.EMAIL###
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS######TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY###
+              }
+              value = <br />
+            }
+            21 = TEXT
+            21 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+              noTrimWrap = || |
+            }
+            22 = TEXT
+            22 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+              noTrimWrap = ||, |
+            }
+            23 = TEXT
+            23 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+            }
+          }
+        }
+      }
+    }
+    single {
+      510 = Headquarters (margin)
+      510 {
+        comment = Dieses Plugin soll nicht in der Single-Ansicht aufgerufen werden
+        template < plugin.tx_browser_pi1.template
+        template {
+          file = EXT:org/res/html/department/510/default.tmpl
+        }
+        select = tx_org_headquarters.title
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1

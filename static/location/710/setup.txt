@@ -1,0 +1,145 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      710: Location - Right Column
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        locations_margin {
+          name      = Org: Veranstaltungsorte - Rand
+          file      = EXT:org/res/html/location/710/default.tmpl
+          csvViews  = 710
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      710 = Locations (margin)
+      710 {
+        name    = Veranstaltungsorte - Rand
+        showUid = locationUid
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap = <h3><span>|</span></h3>
+            value = Locations
+            lang.de = Veranstaltungsorte
+            typolink {
+              parameter = {$plugin.org.pages.location}
+              title {
+                value = All Locations
+                lang.de = Alle Veranstaltungsorte
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Locations &raquo;
+            lang.de = Alle Veranstaltungsorte &raquo;
+            wrap = <p>|</p>
+            typolink {
+              parameter = {$plugin.org.pages.location}
+              title {
+                value = All Locations
+                lang.de = Alle Veranstaltungsorte
+              }
+            }
+          }
+        }
+        select (
+          tx_org_location.title,
+          tx_org_location.telephone,
+          tx_org_location.ticket_telephone,
+          tx_org_location.uid
+        )
+        andWhere (
+             (tx_org_location.pages LIKE {$plugin.org.pages.calendar}
+          OR  tx_org_location.pages LIKE '{$plugin.org.pages.calendar},%'
+          OR  tx_org_location.pages LIKE '%,{$plugin.org.pages.calendar},%'
+          OR  tx_org_location.pages LIKE '%,{$plugin.org.pages.calendar}')
+        )
+        orderBy (
+          tx_org_location.sorting
+        )
+        csvLinkToSingleView = tx_org_location.title
+        tx_org_location {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_LOCATION.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.location}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+                title {
+                  value = ###TX_ORG_LOCATION.TITLE###
+                }
+              }
+            }
+            20 = TEXT
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.TELEPHONE######TX_ORG_LOCATION.TICKET_TELEPHONE###
+              }
+              value = <br />
+            }
+            21 = COA
+            21 {
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.TICKET_TELEPHONE###
+                }
+                value = ###TX_ORG_LOCATION.TICKET_TELEPHONE###
+                noTrimWrap = |Karten-Telefon: | |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isFalse = ###TX_ORG_LOCATION.TICKET_TELEPHONE###
+                  isTrue  = ###TX_ORG_LOCATION.TELEPHONE###
+                }
+                value = ###TX_ORG_LOCATION.TELEPHONE###
+                noTrimWrap = |Tel: | |
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      710 = Locations (margin)
+      710 {
+        comment = Dieses Plugin soll nicht in der Single-Ansicht aufgerufen werden
+        template < plugin.tx_browser_pi1.template
+        template {
+          file = EXT:org/res/html/location/710/default.tmpl
+        }
+        select (
+          tx_org_location.title
+        )
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1

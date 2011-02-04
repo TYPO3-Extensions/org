@@ -1,0 +1,331 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    marker
+  //    views
+  //      601: Department
+  //    _LOCAL_LANG
+
+
+
+  ////////////////////////////////////////
+  //
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      org {
+        department {
+          name      = Org: Abteilung
+          file      = EXT:org/res/html/department/601/default.tmpl
+          csvViews  = 601
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      601 = Department
+      601 {
+        name    = Department
+        showUid = departmentUid
+        autoconfig < plugin.tx_browser_pi1.autoconfig
+        autoconfig {
+          relations.csvDontUseFields = tx_org_department.fe_users
+        }
+        select (
+          tx_org_department.title,
+          tx_org_department.telephone,
+          tx_org_department.fax,
+          tx_org_department.email,
+          fe_users.first_name,
+          fe_users.last_name,
+          tx_org_headquarters.mail_postcode,
+          tx_org_headquarters.mail_city,
+          tx_org_headquarters.mail_address 
+        )
+        groupBy (
+          tx_org_departmentcat.title
+        )
+        orderBy (
+          tx_org_departmentcat.sorting, tx_org_department.sorting
+        )
+        filter {
+          tx_org_departmentcat {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  //data = LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.title
+                  data >
+                  value   = All Groups
+                  lang.de = Alle Gruppen
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+          tx_org_headquarters {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  //data = LLL:EXT:org/locallang_db.xml:tx_org_newscat.title
+                  data >
+                  value   = All Buildings
+                  lang.de = Alle Gebäude
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      601 = Department
+      601 {
+        autoconfig < plugin.tx_browser_pi1.autoconfig
+        autoconfig {
+          relations.csvDontUseFields = tx_org_department.fe_users
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Departments &raquo;
+            lang.de = Alle Bereiche &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.department}
+              title {
+                value = All Departments
+                lang.de = Alle Bereiche der HfS
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Department
+            lang.de = Abteilung
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_department.title,
+          tx_org_department.telephone,
+          tx_org_department.fax,
+          tx_org_department.email,
+          tx_org_department.url,
+          tx_org_department.keywords,
+          tx_org_department.description,
+          fe_users.title,
+          fe_users.first_name,
+          fe_users.last_name,
+          tx_org_headquarters.mail_postcode,
+          tx_org_headquarters.mail_city,
+          tx_org_headquarters.mail_address 
+        )
+        fe_users {
+          first_name = COA
+          first_name {
+            if {
+              isTrue = ###FE_USERS.TITLE######FE_USERS.FIRST_NAME######FE_USERS.LAST_NAME###
+            }
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###FE_USERS.TITLE######FE_USERS.FIRST_NAME######FE_USERS.LAST_NAME###
+              }
+              value = Manager
+              lang.de = Leitung
+              noTrimWrap = ||: |
+            }
+            20 = TEXT
+            20 {
+              if {
+                isTrue = ###FE_USERS.TITLE###
+              }
+              value = ###FE_USERS.TITLE###
+              noTrimWrap = || |
+            }
+            21 = TEXT
+            21 {
+              if {
+                isTrue = ###FE_USERS.FIRST_NAME###
+              }
+              value = ###FE_USERS.FIRST_NAME###
+              noTrimWrap = || |
+            }
+            22 = TEXT
+            22 {
+              if {
+                isTrue = ###FE_USERS.LAST_NAME###
+              }
+              value = ###FE_USERS.LAST_NAME###
+              noTrimWrap = || |
+            }
+            30 = TEXT
+            30 {
+              value = more
+              lang.de = Details
+              typolink {
+                parameter = {$plugin.org.pages.staff}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[staffUid]=###FE_USERS.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        tx_org_headquarters {
+          mail_address = COA
+          mail_address {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+              noTrimWrap = || |
+            }
+            11 = TEXT
+            11 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+              noTrimWrap = ||, |
+            }
+            12 = TEXT
+            12 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+              }
+              value = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+              noTrimWrap = || |
+            }
+            20 = TEXT
+            20 {
+              value = more
+              lang.de = Details
+              typolink {
+                parameter = {$plugin.org.pages.headquarter}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        tx_org_department {
+          telephone = COA
+          telephone {
+            if {
+              isTrue = ###TX_ORG_DEPARTMENT.TELEPHONE######TX_ORG_DEPARTMENT.FAX######TX_ORG_DEPARTMENT.EMAIL######TX_ORG_DEPARTMENT.URL###
+            }
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.TELEPHONE###
+              }
+              value = phone
+              lang.de = Tel.:
+              noTrimWrap = || ###TX_ORG_DEPARTMENT.TELEPHONE###<br />|
+            }
+            11 = TEXT
+            11 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.FAX###
+              }
+              value = fax
+              lang.de = Fax:
+              noTrimWrap = || ###TX_ORG_DEPARTMENT.FAX###<br />|
+            }
+            20 = TEXT
+            20 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.EMAIL###
+              }
+              value = e-mail
+              lang.de = E-Mail:
+              noTrimWrap = || |
+            }
+            21 = TEXT
+            21 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.EMAIL###
+              }
+              typolink {
+                parameter = ###TX_ORG_DEPARTMENT.EMAIL###
+              }
+              wrap = |<br />
+            }
+            30 = TEXT
+            30 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.URL###
+              }
+              value = Website
+              lang.de = Website
+              noTrimWrap = ||: |
+            }
+            31 = TEXT
+            31 {
+              if {
+                isTrue = ###TX_ORG_DEPARTMENT.URL###
+              }
+              typolink {
+                parameter = ###TX_ORG_DEPARTMENT.URL###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_601               = Departments
+      list_mode_601_titleTag      = Department
+      list_mode_601_keywords      = TYPO3, Organiser, Departments
+      list_mode_601_summary       = Departments presented by TYPO3-Organiser
+      single_mode_601_titleTag    = Department: ###TX_ORG_DEPARTMENT.TITLE###
+      single_mode_601_keywords    = ###TX_ORG_DEPARTMENT.KEYWORDS###
+      single_mode_601_summary     = ###TX_ORG_DEPARTMENT.DESCRIPTION###
+    }
+    de {
+      list_mode_601               = Abteilungen
+      list_mode_601_titleTag      = Abteilung
+      list_mode_601_keywords      = Abteilung, TYPO3, Organiser
+      list_mode_601_summary       = Abteilungen, präsentiert vom TYPO3 Organiser
+      single_mode_601_titleTag    = Abteilung: ###TX_ORG_DEPARTMENT.TITLE###
+      single_mode_601_keywords    = ###TX_ORG_DEPARTMENT.KEYWORDS###
+      single_mode_601_summary     = ###TX_ORG_DEPARTMENT.DESCRIPTION###
+    }
+  }
+}

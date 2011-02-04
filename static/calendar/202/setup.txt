@@ -1,0 +1,579 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      202: Calendar bat
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        calendar_bat {
+          name      = Org: Kalender (bat)
+          file      = EXT:org/res/html/calendar/202/default.tmpl
+          csvViews  = 202
+        }
+      }
+    }
+  }
+
+  general_stdWrap >
+  
+  views {
+    list {
+      202 = Calendar bat
+      202 {
+        name    = Calendar bat
+        showUid = calendarUid
+        general_stdWrap22 < plugin.tx_browser_pi1.general_stdWrap
+        general_stdWrap22 {
+          parseFunc {
+            nonTypoTagStdWrap {
+              encapsLines {
+                addAttributes {
+                    // Get rid of class=bodytext
+                  P >
+                }
+                  // Get rid of default <p>-tag
+                nonWrappedTag >
+              }
+            }
+          }
+        }
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          selectBox_orderBy.display = 0
+          display.searchform.respect_filters.but.tx_org_cal.datetime = 0
+          image {
+            file = {$base_batBerlin.path.alternate_image}
+          }
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_datesheet = COA
+          my_datesheet {
+              // name of weekday
+            10 = TEXT
+            10 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %a
+              wrap      = <div class="weekday">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+              // day of month as number
+            20 = TEXT
+            20 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %d
+              wrap      = <div class="day_of_month">|</div>
+              typolink {      
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+              // month
+            30 = TEXT
+            30 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %b
+              wrap      = <div class="month">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        select (
+          tx_org_cal.title,
+          tx_org_cal.datetime,
+          tx_org_caltype.title,
+          tx_org_repertoire.subtitle,
+          tx_org_repertoire.producer,
+          tx_org_repertoire.short,
+          tx_org_repertoire.bodytext
+        )
+        orderBy   = tx_org_cal.datetime
+        andWhere  = tx_org_cal.datetime > UNIX_TIMESTAMP()
+        csvLinkToSingleView = tx_org_cal.title
+        tx_org_cal {
+          datetime = TEXT
+          datetime {
+            value = ###TX_ORG_CAL.DATETIME### h
+            lang {
+              de = ###TX_ORG_CAL.DATETIME### Uhr
+            }
+            strftime = %A, %d. %B, %H:%M Uhr
+          }
+        }
+        tx_org_caltype {
+          title = TEXT
+          title {
+            if.isTrue   = ###TX_ORG_CALTYPE.TITLE###
+            value       = ###TX_ORG_CALTYPE.TITLE###
+            noTrimWrap  = | (|)|
+          }
+        }
+        tx_org_repertoire {
+          producer = TEXT
+          producer {
+            if.isTrue   = ###TX_ORG_REPERTOIRE.PRODUCER###
+            value       = by ###TX_ORG_REPERTOIRE.PRODUCER###
+            lang.de     = von ###TX_ORG_REPERTOIRE.PRODUCER###
+            noTrimWrap  = | <span class="orange_bold">|</span>|
+          }
+          short = COA
+          short {
+            10 = TEXT
+            10 {
+              if.isTrue   = ###TX_ORG_REPERTOIRE.SHORT###
+              value       = ###TX_ORG_REPERTOIRE.SHORT###
+              stripHtml   = 1
+              crop        = 200 | ... | 1
+            }
+            11 = TEXT
+            11 {
+              if.isFalse  = ###TX_ORG_REPERTOIRE.SHORT###
+              value       = ###TX_ORG_REPERTOIRE.BODYTEXT###
+              stripHtml   = 1
+              crop        = 200 | ... | 1
+            }
+          }
+        }
+        filter {
+          tx_org_cal {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.category_menu
+            datetime {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period_all_months
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.schedule
+                }
+              }
+              wrap = <span class="category_menu">|</span>
+              wrap {
+                item {
+                  //display_without_any_hit = 1
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                  }
+                }
+              }
+              order.field = uid
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = month
+                  month {
+                    times_stdWrap {
+                      value = 3
+                    }
+                    value_stdWrap {
+                      // %B: full name of the month
+                      strftime = %B
+                    }
+                  }
+                }
+              }
+            }
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.cal.title
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+          tx_org_caltype {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      202 = Calendar bat
+      202 {
+        displaySingle < plugin.tx_browser_pi1.displaySingle
+        displaySingle {
+          image.file >
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Events &raquo;
+            lang.de = Spielplan &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.calendar}
+              title {
+                value = All Events
+                lang.de = Spielplan des bat-Studiotheaters der HfS
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Event
+            lang.de = Veranstaltung
+            wrap    = <div class="header01">|</div>
+          }
+          my_txorgcal_datetime = TEXT
+          my_txorgcal_datetime {
+            value = ###TX_ORG_CAL.DATETIME###
+            strftime = %a %d %b %H:%M Uhr
+          }
+          my_txorgcal_uid = TEXT
+          my_txorgcal_uid {
+            value = ###TX_ORG_CAL.UID### XXX
+          }
+          my_datesheet = COA
+          my_datesheet {
+              // name of weekday
+            10 = TEXT
+            10 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %a
+              wrap      = <div class="weekday">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+              // day of month as number
+            20 = TEXT
+            20 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %d
+              wrap      = <div class="day_of_month">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+              // month
+            30 = TEXT
+            30 {
+              value     = ###TX_ORG_CAL.DATETIME###
+              strftime  = %b
+              wrap      = <div class="month">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+          }
+          my_cart_legend = TEXT
+          my_cart_legend {
+            value = Order a ticket
+            lang {
+              de = Tickets bestellen
+            }
+          }
+          my_cart_button = TEXT
+          my_cart_button {
+            value = Into the cart
+            lang {
+              de = In den Warenkorb
+            }
+          }
+          my_cart_quantity = TEXT
+          my_cart_quantity {
+            value = ###SESSION###
+              // 110125, dwildt, session has a bug
+            value = 1
+            session {
+              // [String] Name of the session array (i.e. ses)
+              key  = ses
+              // [String] Key of the session data array (i.e. wt_cart_cart)
+              name = wt_cart_cart
+              // [String] Key of the element in the session array (i.e. amount)
+              getFrom  = amount
+              // [String] Key of the element in the data array, we want the value for (i.e. amount).
+              whereElement {
+                // [String] Key of the element in the data array for a where clause (i.e. uid). This is no SQL!
+                key = puid
+                // [String] Value of the element in the data array for a where clause (i.e. ###SHOWUID###). This is no SQL!
+                value = ###SHOWUID###
+              }
+              getDefault = 1
+              // [String] Default value, if there isn't any session data
+            }
+          }
+          my_cart_page_url = TEXT
+          my_cart_page_url {
+            typolink {
+              parameter = {$plugin.org.pages.shopping_cart}
+              returnLast = url
+            }
+          }
+        }
+        select (
+          tx_org_cal.title,
+          tx_org_cal.datetime,
+          tx_org_cal.uid,
+          tx_org_caltype.title,
+          tx_org_calentrance.title,
+          tx_org_calentrance.value,
+          tx_org_calentrance.uid,
+          tx_org_repertoire.uid,
+          tx_org_repertoire.title,
+          tx_org_repertoire.subtitle,
+          tx_org_repertoire.bodytext,
+          tx_org_repertoire.producer,
+          tx_org_repertoire.image,
+          tx_org_repertoire.imagecaption,
+          tx_org_repertoire.imageseo,
+          tx_org_repertoire.description,
+          tx_org_repertoire.keywords,
+          tx_org_location.uid,
+          tx_org_location.title
+        )
+        orderBy   = tx_org_cal_mm_calentrance.sorting, tx_org_calentrance.title
+        andWhere  = tx_org_cal.datetime > UNIX_TIMESTAMP()
+        tx_org_cal {
+          datetime = TEXT
+          datetime {
+            value = ###TX_ORG_CAL.DATETIME### h
+            lang {
+              de = ###TX_ORG_CAL.DATETIME### Uhr
+            }
+            strftime = %A, %d. %B, %H:%M Uhr
+          }
+          location = COA
+          location {
+            wrap = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
+            10 = TEXT
+            10 {
+              value = Location
+              lang.de = Ort
+              wrap = <strong>|</strong><br />
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_LOCATION.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.location}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        tx_org_calentrance {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_CALENTRANCE.UID###
+              wrap  = <option value="|">
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_CALENTRANCE.TITLE###
+              wrap  = |
+            }
+            12 = TEXT
+            12 {
+              value = (###TX_ORG_CALENTRANCE.VALUE### EUR)
+              noTrimWrap  = | |</option>|
+            }
+          }
+        }
+        tx_org_location {
+          title2 = COA
+          title2 {
+            20 = TEXT
+            20 {
+              value = ###TX_ORG_LOCATION.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.location}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        tx_org_repertoire {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_REPERTOIRE.TITLE###
+              wrap  = <h1>|</h1>
+            }
+            20 = TEXT
+            20 {
+              if.isTrue = ###TX_ORG_REPERTOIRE.PRODUCER###
+              value     = by ###TX_ORG_REPERTOIRE.PRODUCER###
+              lang.de   = von ###TX_ORG_REPERTOIRE.PRODUCER###
+              wrap      = <p><span class="orange_bold">|</span></p>
+            }
+          }
+          bodytext = COA
+          bodytext {
+            stdWrap.parseFunc < lib.parseFunc_RTE
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_CALTYPE.TITLE###
+              }
+              value = ###TX_ORG_CALTYPE.TITLE###
+              noTrimWrap = |<strong>|</strong> &ndash; |
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_REPERTOIRE.BODYTEXT###
+            }
+            12 = TEXT
+            12 {
+              value       = More &raquo;
+              lang.de     = Mehr &raquo;
+              noTrimWrap  = | <span class="float_right">|</span>|
+              typolink {
+                parameter = {$plugin.org.pages.repertoire}
+                additionalParams = &tx_browser_pi1[repertoireUid]=###TX_ORG_REPERTOIRE.UID###&###CHASH###
+              }
+            }
+          }
+          image < tt_content.image.20
+          image {
+            imgList.field >
+            imgList = ###TX_ORG_REPERTOIRE.IMAGE###
+            imgPath = uploads/tx_org/
+            imgMax  = 1
+            1 {
+              file {
+                width.field >
+                width   = 140c;
+                height  = 110c;
+              }
+              altText.field   >
+              altText         = ###TX_ORG_REPERTOIRE.IMAGESEO###
+              titleText.field >
+              titleText       = ###TX_ORG_REPERTOIRE.IMAGESEO###
+              imageLinkWrap {
+                enable.field >
+                enable = 1
+                width   = 600;
+                height  = 400m;
+                //JSwindow = 0
+              }
+            }
+            layout {
+              key.field >
+                // intext-right
+              key = 17
+            }
+            cols.field >
+            cols = 1
+            caption.1 {
+              field >
+              value = ###TX_ORG_REPERTOIRE.IMAGECAPTION###
+            }
+            stdWrap {
+              prefixComment >
+              wrap          = <div class="image">|</div>
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      label_sword_default       = Search Word
+      pi_list_searchBox_search  = Search!
+      list_mode_202_titleTag      = HfS-Berlin: Events
+      list_mode_202_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Events
+      list_mode_202_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Events
+      single_mode_202_titleTag    = HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      single_mode_202_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
+      single_mode_202_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
+    }
+    de {
+      label_sword_default       = Suchbegriff
+      pi_list_searchBox_search  = Suchen!
+      list_mode_202_titleTag      = bat-Studiotheater der HfS-Berlin: Spielplan
+      list_mode_202_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, bat, Studiotheater, Spielplan
+      list_mode_202_summary       = bat-Studiotheater der Hochschule für Schauspiel "Ernst Busch" Berlin: Spielplan
+      single_mode_202_titleTag    = bat-Studiotheater der HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      single_mode_202_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
+      single_mode_202_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

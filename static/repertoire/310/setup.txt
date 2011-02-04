@@ -1,0 +1,95 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      310: Repertoire - Right Column
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        repertoire_margin {
+          name      = Org: Repertoire - Rand
+          file      = EXT:org/res/html/repertoire/310/default.tmpl
+          csvViews  = 310
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      310 = Repertoire (margin)
+      310 {
+        name    = Repertoire - Rand
+        showUid = repertoireUid
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          image {
+            file {
+              maxW = 40
+              maxH = 40
+            }
+          }
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap = <h3><span>|</span></h3>
+            value   = Repertoire
+            lang.de = Repertoire
+            typolink {
+              parameter = {$plugin.org.pages.repertoire}
+              title {
+                value   = Repertoire
+                lang.de = Repertoire
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = Repertoire &raquo;
+            lang.de = Repertoire &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.repertoire}
+              title {
+                value = Repertoire
+                lang.de = Repertoire
+              }
+            }
+          }
+        }
+        select (
+          tx_org_repertoire.title,
+          tx_org_repertoire.image,
+          tx_org_repertoire.imageseo
+        )
+        random = 1
+      }
+    }
+    single {
+      310 = Repertoire (margin)
+      310 {
+        comment = Dieses Plugin soll nicht in der Single-Ansicht aufgerufen werden
+        template {
+          file = EXT:org/res/html/news/410/default.tmpl
+        }
+        select = tx_org_cal.title
+      }
+    }
+  }
+  
+}
+  // plugin.tx_browser_pi1

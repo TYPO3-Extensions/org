@@ -1,0 +1,387 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      701: Locations
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        locations {
+          name      = Org: Veranstaltungsorte
+          file      = EXT:org/res/html/location/701/default.tmpl
+          csvViews  = 701
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      701 = Locations
+      701 {
+        name    = Veranstaltungsorte
+        showUid = locationUid
+        select (
+          tx_org_location.title,
+          tx_org_location.mail_postcode,
+          tx_org_location.mail_city,
+          tx_org_location.mail_address,
+          tx_org_location.mail_url,
+          tx_org_location.image,
+          tx_org_location.imageseo
+        )
+        csvLinkToSingleView = tx_org_location.title
+        tx_org_location {
+          mail_url = TEXT
+          mail_url {
+            if {
+              isTrue  = ###TX_ORG_LOCATION.MAIL_URL###
+            }
+            value = City map
+            lang.de = Stadtplan-Link
+            wrap = <br /><small>|</small>
+            typolink {
+              parameter = ###TX_ORG_LOCATION.MAIL_URL###
+            }
+          }
+        }
+      }
+    }
+    single {
+      701 = Locations
+      701 {
+        advanced < plugin.tx_browser_pi1.advanced
+        advanced.sql.devider.childrenRecords >
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Locations &raquo;
+            lang.de = Alle Veranstaltungsorte &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.location}
+              title {
+                value = All Locations
+                lang.de = Alle Veranstaltungsorte
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Location
+            lang.de = Veranstaltungsort
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_location.title,
+          tx_org_location.mail_postcode,
+          tx_org_location.mail_city,
+          tx_org_location.mail_address,
+          tx_org_location.mail_url,
+          tx_org_location.mail_embeddedcode,
+          tx_org_location.telephone,
+          tx_org_location.fax,
+          tx_org_location.email,
+          tx_org_location.pubtrans_stop,
+          tx_org_location.pubtrans_url,
+          tx_org_location.pubtrans_embeddedcode,
+          tx_org_location.image,
+          tx_org_location.imagecaption,
+          tx_org_location.imageseo,
+          tx_org_location.embeddedcode,
+          tx_org_location.keywords,
+          tx_org_location.description,
+          tx_org_cal.uid,
+          tx_org_cal.title,
+          tx_org_cal.datetime
+        )
+        tx_org_cal {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_CAL.DATETIME###
+              noTrimWrap = || Uhr|
+              strftime = %a, %d. %b, %H:%M
+              typolink {
+                parameter = {$plugin.org.pages.calendar}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
+            }
+            11 = TEXT
+            11 {
+              value = &ndash; 
+              noTrimWrap = | | |
+            }
+            12 = TEXT
+            12 {
+              value = ###TX_ORG_CAL.TITLE###
+              wrap = |<br />
+            }
+          }
+        }
+        tx_org_location {
+          mail_embeddedcode = COA
+          mail_embeddedcode {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE######TX_ORG_LOCATION.MAIL_URL###
+              }
+              value   = <div class="cleaner">&nbsp;</div>
+            }
+            11 = TEXT
+            11 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE######TX_ORG_LOCATION.MAIL_URL###
+              }
+              value   = City Map
+              lang.de = Stadtplan
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue  = ###TX_ORG_LOCATION.MAIL_URL###
+                isFalse = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              10 = TEXT
+              10 {
+                value = City map
+                lang.de = Stadtplan-Link
+                wrap = <p>|</p>
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.MAIL_URL###
+                }
+              }
+              20 = TEXT
+              20 {
+                value = <p>&nbsp;</p>
+              }
+            }
+            21 = COA
+            21 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              20 = TEXT
+              20 {
+                value = <p>&nbsp;</p>
+              }
+            }
+          }
+          postbox_postbox = COA
+          postbox_postbox {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE######TX_ORG_LOCATION.POSTBOX_CITY######TX_ORG_LOCATION.POSTBOX_POSTBOX###
+              }
+              value   = Postbox
+              lang.de = Postfach
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE######TX_ORG_LOCATION.POSTBOX_CITY######TX_ORG_LOCATION.POSTBOX_POSTBOX###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_POSTCODE###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_CITY###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_CITY###
+                noTrimWrap = ||, |
+              }
+              12 = TEXT
+              12 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTBOX###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_POSTBOX###
+                noTrimWrap = || |
+              }
+            }
+          }
+          pubtrans_stop = COA
+          pubtrans_stop {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP######TX_ORG_LOCATION.PUBTRANS_URL###
+              }
+              value   = Public Transport
+              lang.de = &Ouml;ffentlicher Nahverkehr (&Ouml;PNV)
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP######TX_ORG_LOCATION.PUBTRANS_URL###
+              }
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP###
+                }
+                value = ###TX_ORG_LOCATION.PUBTRANS_STOP###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.PUBTRANS_URL###
+                }
+                value = Public Transport Stop
+                lang.de = Haltestelle
+                wrap = <p>|</p>
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.PUBTRANS_URL###
+                }
+              }
+            }
+          }
+          telephone = COA
+          telephone {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.TELEPHONE######TX_ORG_LOCATION.FAX######TX_ORG_LOCATION.EMAIL###
+              }
+              value   = Contact Details
+              lang.de = Kontakt
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.TELEPHONE######TX_ORG_LOCATION.FAX######TX_ORG_LOCATION.EMAIL###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.TELEPHONE###
+                }
+                value = phone
+                lang.de = Tel.:
+                noTrimWrap = || ###TX_ORG_LOCATION.TELEPHONE###<br />|
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.FAX###
+                }
+                value = fax
+                lang.de = Fax:
+                noTrimWrap = || ###TX_ORG_LOCATION.FAX###<br />|
+              }
+              20 = TEXT
+              20 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.EMAIL###
+                }
+                value = e-mail
+                lang.de = E-Mail:
+                noTrimWrap = || |
+              }
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.EMAIL###
+                }
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.EMAIL###
+                }
+                wrap = |<br />
+              }
+            }
+          }
+        }
+        tx_org_department {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              wrap = <li>|</li>
+              value = ###TX_ORG_DEPARTMENT.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.department}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###&###CHASH###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      label_sword_default       = Search Word
+      pi_list_searchBox_search  = Search!
+      list_mode_701_titleTag      = HfS-Berlin: Locations
+      list_mode_701_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Locations
+      list_mode_701_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Locations
+      single_mode_701_titleTag    = HfS-Berlin: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
+    }
+    de {
+      label_sword_default       = Suchbegriff
+      pi_list_searchBox_search  = Suchen!
+      list_mode_701_titleTag      = HfS-Berlin: Veranstaltungsorte
+      list_mode_701_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Veranstaltungsorte
+      list_mode_701_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Veranstaltungsorte
+      single_mode_701_titleTag    = HfS-Berlin: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment
