@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      211: Calendar (bat) - Right Column
+  //      211: calendar - right column
 
 
 
@@ -20,8 +20,8 @@ plugin.tx_browser_pi1 {
     extensions {
       tt_news >
       org {
-        calendar_bat_margin {
-          name      = Org: Kalender (bat) - Rand
+        calendar_margin {
+          name      = Org: calendar - margin
           file      = EXT:org/res/html/calendar/211/default.tmpl
           csvViews  = 211
         }
@@ -29,20 +29,22 @@ plugin.tx_browser_pi1 {
     }
   }
 
+//  general_stdWrap >
+
   views {
     list {
-      211 = Calendar bat (margin)
+      211 = calendar (margin)
       211 {
-        name    = Kalender - Rand
+        name    = calendar - margin
         showUid = calendarUid
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap = <h3>|</h3>
+            wrap = <h3><span>|</span></h3>
             value = Playing schedule
             lang.de = Spielplan
             typolink {
-              parameter = {$plugin.org.pages.calendar}
+              parameter = {$base_hfsBerlin.url.bat}
               title {
                 value = All Events
                 lang.de = Alle Veranstaltungen
@@ -52,13 +54,13 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All items &raquo;
-            lang.de = Alle Eintr&auml;ge &raquo;
-            wrap = <p class="my_listview_page">|</p>
+            lang.de = Alle Veranstaltungen &raquo;
+            wrap = <p>|</p>
             typolink {
-              parameter = {$plugin.org.pages.calendar}
+              parameter = {$base_hfsBerlin.url.bat}
               title {
                 value = All items
-                lang.de = Alle Eintr&auml;ge
+                lang.de = Alle Veranstaltungen
               }
             }
           }
@@ -76,47 +78,42 @@ plugin.tx_browser_pi1 {
           datetime = COA
           datetime {
             wrap = <p>|</p>
-            10 = TEXT
+            10 = COA
             10 {
-              value     = ###TX_ORG_CAL.DATETIME###
-              strftime  = %d. %b. %H:%M Uhr
-              wrap      = |<br />
-            }
-            20 = COA
-            20 {
               10 = TEXT
               10 {
-                if.isTrue = ###TX_ORG_CAL.SHORTCUT###
-                value     = ###TX_ORG_CAL.SHORTCUT###
-                typolink {
-                  parameter = {$plugin.org.pages.calendar}
-                  parameter {
-                    insertData = 1
-                  }
-                  additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
-                }
+                value = ###TX_ORG_CAL.DATETIME###
+                strftime = %d. %b. %H:%M Uhr
               }
-              20 = TEXT
-              20 {
-                if.isFalse  = ###TX_ORG_CAL.SHORTCUT###
-                value       = ###TX_ORG_CAL.TITLE###
-                typolink {
-                  parameter = {$plugin.org.pages.calendar}
-                  parameter {
-                    insertData = 1
-                  }
-                  additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
-                }
-              }
+            }
+          }
+          shortcut = COA
+          shortcut {
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_CAL.SHORTCUT###
+              value     = ###TX_ORG_CAL.SHORTCUT###
+              wrap      (
+                <a href="{$base_hfsBerlin.url.bat}?tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###">|</a>
+              )
+            }
+            20 = TEXT
+            20 {
+              if.isFalse = ###TX_ORG_CAL.SHORTCUT###
+              value     = ###TX_ORG_CAL.TITLE###
+              wrap      (
+                <a href="{$base_hfsBerlin.url.bat}?tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###">|</a>
+              )
             }
           }
         }
       }
     }
     single {
-      211 = Calendar (margin)
+      211 = calendar (margin)
       211 {
-        comment = Dieses Plugin soll nicht in der Single-Ansicht aufgerufen werden
+        comment = This plugin should not used in the single view!
         template {
           file = EXT:org/res/html/calendar/211/default.tmpl
         }

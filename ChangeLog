@@ -1,96 +1,106 @@
+0.4.0
+  11-02-20
+  Improvement
+  * client specific configuration is cleaned up in
+    * in all HTML templates
+    * in all static templates 
+  * Simplifying backend: field sorting is removed in tables
+    * tx_org_calentrance
+    * tx_org_caltype
+
 0.3.3
   11-02-01
   Improvement
-  - Static Template (base) without _CSS_DEFAULT_STYLE >
+  * Static Template (base) without _CSS_DEFAULT_STYLE >
 
 0.3.1
   11-01-22
   Improvement
-  - Management is renamed as Department
+  * Management is renamed as Department
 
 0.3.0
   11-01-22
   Development
-  - TCA controlling by the extension manager
+  * TCA controlling by the extension manager
 
 0.2.0
   11-01-21
   Improvements
-  - Controlling elements for the extension manager
-  - Clean up database design, remove doc table
+  * Controlling elements for the extension manager
+  * Clean up database design, remove doc table
 
 0.1.0
   11-01-20
   Improvement
-  - Integration of TypoScript constants into the Constant Editor
-  - Each record group got its own directory
+  * Integration of TypoScript constants into the Constant Editor
+  * Each record group got its own directory
 
 0.0.13
   11-01-18
   Improvement
-  - new directory res/html
-  - production becomes repertoire
+  * new directory res/html
+  * production becomes repertoire
 
 0.0.12
   11-01-18
   Development
-  - Extending org with a shopping cart
+  * Extending org with a shopping cart
 
 0.0.11
   11-01-15
   Development
-  - Extending org with tx_org_tax
+  * Extending org with tx_org_tax
 
 0.0.10
   11-01-04
   Development
-  - Extending tx_org_production with fields video and assistant
+  * Extending tx_org_production with fields video and assistant
 
 0.0.9
   10-09-24
   Development
-  - Backend Integration doc - document management
-  - Backend Integration news - news management
+  * Backend Integration doc - document management
+  * Backend Integration news - news management
 
 0.0.8
   10-09-23
   Improvement
-  - extKey is moved from organiser to org
-  - organisation is renamed as management
-  - estate is renamed as headquarters
+  * extKey is moved from organiser to org
+  * organisation is renamed as management
+  * estate is renamed as headquarters
 
 0.0.7
   10-09-21
   Development
-  - Integration fe_users
+  * Integration fe_users
 
 0.0.6
   10-09-15
   Development
-  - Creating TypoScript for calendar, locations
-  - Creating HTML for calendar, locations
+  * Creating TypoScript for calendar, locations
+  * Creating HTML for calendar, locations
 
 0.0.5
   10-09-13
   Development
-  - Creating TypoScript for fe_users, calendar, locations
-  - Creating HTML for fe_users, calendar, locations
+  * Creating TypoScript for fe_users, calendar, locations
+  * Creating HTML for fe_users, calendar, locations
 
 0.0.4
   10-09-13
   Development
-  - Creating TypoScript for organisation and estate
-  - Creating HTML for organisation and estate
+  * Creating TypoScript for organisation and estate
+  * Creating HTML for organisation and estate
 
 0.0.3
   10-09-07
   Development
-  - Extending database with locations, calendar and productions
+  * Extending database with locations, calendar and productions
   
 0.0.2
   10-09-05
   Development
-  - Extending database with estate and organisation
+  * Extending database with estate and organisation
   
 0.0.1
   10-09-02

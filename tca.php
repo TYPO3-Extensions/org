@@ -469,7 +469,7 @@ $TCA['tx_org_cal'] = array (
         ),
         'MM'                  => 'tx_org_cal_mm_caltype',
         'foreign_table'       => 'tx_org_caltype',
-        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' ORDER BY tx_org_caltype.sorting',
+        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' ORDER BY tx_org_caltype.title',
         'wizards' => array(
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -567,7 +567,7 @@ $TCA['tx_org_cal'] = array (
         'maxitems' => 999,
         'MM'                  => 'tx_org_cal_mm_calentrance',
         'foreign_table'       => 'tx_org_calentrance',
-        'foreign_table_where' => 'AND tx_org_calentrance.' . $str_store_record_conf . ' ORDER BY tx_org_calentrance.sorting',
+        'foreign_table_where' => 'AND tx_org_calentrance.' . $str_store_record_conf . ' ORDER BY tx_org_calentrance.title',
         'wizards' => array(
           '_PADDING'  => 2,
           '_VERTICAL' => 0,

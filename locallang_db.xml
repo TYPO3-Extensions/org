@@ -271,12 +271,13 @@
       <label index="tca_phrase.print"><![CDATA[Bilder (in Druckqualität)]]></label>
       <label index="fe_users">Personal</label>
       <label index="fe_users.div_tx_org_headquarters">Hauptverwaltung</label>
-      <label index="fe_users.div_tx_org_department">Oganisation</label>
+      <label index="fe_users.div_tx_org_department">Abteilung</label>
       <label index="fe_users.div_tx_org_news">Nachrichten</label>
+      <label index="fe_users.tx_org_department">Abteilung</label>
       <label index="fe_users.tx_org_headquarters">Hauptverwaltung</label>
       <label index="fe_users.tx_org_vita">Vita</label>
       <label index="fe_groups">Personal: Gruppen</label>
-      <label index="tx_org_cal">Kalendar</label>
+      <label index="tx_org_cal">Kalender</label>
       <label index="tx_org_cal.div_calendar">Veranstaltung</label>
       <label index="tx_org_cal.div_event">Ort, Eintritt</label>
       <label index="tx_org_cal.div_department">Abteilungen</label>

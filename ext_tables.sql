@@ -2,6 +2,7 @@
 # -----
 # fe_users
 # fe_users_mm_tx_org_news
+# fe_groups
 # tx_org_cal
 # tx_org_calentrance
 # tx_org_calspecial
@@ -11,7 +12,6 @@
 # tx_org_cal_mm_location
 # tx_org_cal_mm_repertoire
 # tx_org_headquarters
-# tx_org_headquarters_mm_fe_users
 # tx_org_headquarters_mm_org
 # tx_org_location
 # tx_org_news
@@ -20,8 +20,8 @@
 # tx_org_department
 # tx_org_department_mm_cal
 # tx_org_department_mm_departmentcat
-# tx_org_department_mm_fe_users
 # tx_org_department_mm_news
+# tx_org_department_mm_fe_users
 # tx_org_departmentcat
 # tx_org_repertoire
 # tx_org_repertoire_mm_news
@@ -34,7 +34,6 @@
 #
 CREATE TABLE fe_users (
   tx_org_news tinytext,
-  tx_org_headquarters tinytext,
   tx_org_department tinytext,
   tx_org_vita mediumtext NOT NULL,
   tx_org_imagecaption text,
@@ -97,7 +96,6 @@ CREATE TABLE tx_org_calentrance (
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
   crdate int(11) unsigned DEFAULT '0' NOT NULL,
   cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   title tinytext,
   value tinytext,
@@ -122,7 +120,6 @@ CREATE TABLE tx_org_caltype (
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
   crdate int(11) unsigned DEFAULT '0' NOT NULL,
   cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   title tinytext,
   calendar tinytext,
@@ -234,21 +231,6 @@ CREATE TABLE tx_org_headquarters (
   
   PRIMARY KEY (uid),
   KEY parent (pid)
-);
-
-
-
-#
-# Table structure for table 'tx_org_headquarters_mm_fe_users'
-#
-CREATE TABLE tx_org_headquarters_mm_fe_users (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
 );
 
 

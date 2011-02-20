@@ -53,9 +53,7 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
   // Simplify backend forms
 
   // Store record configuration
-$bool_wizards_wo_add_and_list       = false;
-$bool_full_wizardSupport_allTables  = true;
-$str_marker_pid                     = '###CURRENT_PID###';
+$bool_wizards_wo_add_and_list = false;
 switch($confArr['store_records']) 
 {
   case('Multi grouped: record groups in different directories'):
@@ -92,51 +90,44 @@ switch(true) {
       // German
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',              'Org: Basis (immer einbinden!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',    '+Org: Abteilung');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/610/',    '+Org: Abteilung - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Abteilung (bat) - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',      '+Org: Kalender');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/210/',      '+Org: Kalender - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/202/',      '+Org: Kalender (bat)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Kalender - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Kalender (bat) - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',           '+Org: Nachrichten');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/410',           '+Org: Nachrichten - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',           '+Org: Nachrichten - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Personal');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/110/',         '+Org: Personal - Rand (nicht cachen!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',         '+Org: Personal - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/301',     '+Org: Repertoire');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/310',     '+Org: Repertoire - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/311',     '+Org: Repertoire - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',   '+Org: Standorte');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/502',   '+Org: Standorte (bat)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/510',   '+Org: Standorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',   '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',       '+Org: Veranstaltungsorte');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/710',       '+Org: Veranstaltorte. - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',       '+Org: Veranstaltorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/', '+Org: Warenkorb');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/810/', '+Org: Warenkorb - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/', '+Org: Warenkorb - Rand');
     break;
   default:
       // English
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',              'Org: Basis (obligate!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',      '+Org: Calendar');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/210/',      '+Org: Calendar - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/202/',      '+Org: Calendar (bat)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Calendar (bat) - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',    '+Org: Department');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/610/',    '+Org: Department - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Department (bat) - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Department - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',   '+Org: Headquarters');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/502',   '+Org: Headquarters (bat)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/510',   '+Org: Headquarters - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',   '+Org: Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',       '+Org: Locations');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/710',       '+Org: Locations - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',       '+Org: Locations - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',           '+Org: News');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/410',           '+Org: News - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',           '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/301',     '+Org: Repertoires');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/310',     '+Org: Repertoires - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/311',     '+Org: Repertoires - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/', '+Org: Shopping cart');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/810/', '+Org: Shopping cart - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/', '+Org: Shopping cart - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Staff');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/110/',         '+Org: Staff - margin (don\'t cache!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',         '+Org: Staff - margin (don\'t cache!)');
 }
   // Case $llStatic
   // Enables the Include Static Templates
@@ -239,11 +230,11 @@ $TCA['fe_users']['columns']['TSconfig']['exclude']      = 1;
 $TCA['fe_users']['columns']['lockToDomain']['exclude']  = 1;
   // Don't exclude any field by default'
 
-  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
+  // Add fields tx_org_news, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita';
+$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
-  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
+  // Add fields tx_org_news, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
 
 $TCA['fe_users']['columns']['www']['config'] = array (
   'type'      => 'input',
@@ -263,7 +254,7 @@ $TCA['fe_users']['columns']['www']['config'] = array (
   ),
   'softref' => 'typolink',
 );
-  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_vita, tx_org_imagecaption, tx_org_imageseo
+  // Add fields tx_org_news, tx_org_department, tx_org_vita, tx_org_imagecaption, tx_org_imageseo
 $TCA['fe_users']['columns']['tx_org_news'] = array (
   'exclude' => 0,
   'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
@@ -302,54 +293,6 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
       'edit' => array(
         'type'                      => 'popup',
         'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.news.edit',
-        'script'                    => 'wizard_edit.php',
-        'popup_onlyOpenIfSelected'  => 1,
-        'icon'                      => 'edit2.gif',
-        'JSopenParams'              => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-      ),
-    ),
-  ),
-);
-$TCA['fe_users']['columns']['tx_org_headquarters'] = array (
-  'exclude' => 0,
-  'label' => 'LLL:EXT:org/locallang_db.xml:fe_users.tx_org_headquarters',
-  'config' => array (
-    'type' => 'select', 
-    'size' => 20, 
-    'minitems' => 0,
-    'maxitems' => 999,
-    'MM'                  => 'tx_org_headquarters_mm_fe_users',
-    'MM_opposite_field'   => 'fe_users',
-    'foreign_table'       => 'tx_org_headquarters',
-    'foreign_table_where' =>  'AND tx_org_headquarters.' . $str_store_record_conf . ' '.
-                              'ORDER BY tx_org_headquarters.sorting',
-    'wizards' => array(
-      '_PADDING'  => 2,
-      '_VERTICAL' => 0,
-      'add' => array(
-        'type'   => 'script',
-        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.org.add',
-        'icon'   => 'add.gif',
-        'params' => array(
-          'table'    => 'tx_org_headquarters',
-          'pid'      => '###CURRENT_PID###',
-          'setValue' => 'prepend'
-        ),
-        'script' => 'wizard_add.php',
-      ),
-      'list' => array(
-        'type'   => 'script',
-        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.org.list',
-        'icon'   => 'list.gif',
-        'params' => array(
-          'table' => 'tx_org_headquarters',
-          'pid'   => '###CURRENT_PID###',
-        ),
-        'script' => 'wizard_list.php',
-      ),
-      'edit' => array(
-        'type'                      => 'popup',
-        'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.org.edit',
         'script'                    => 'wizard_edit.php',
         'popup_onlyOpenIfSelected'  => 1,
         'icon'                      => 'edit2.gif',
@@ -466,13 +409,13 @@ foreach($arr_showitem as $key => $value)
       $arr_new_showitem[$key] = $value;
       break;
     case($key == $int_div_position):
-      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_headquarters, tx_org_headquarters,';
-      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_department, tx_org_department,';
-      $arr_new_showitem[$key + 2] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_news, tx_org_news,';
-      $arr_new_showitem[$key + 3] = $value;
+//      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_org, tx_org_department,';
+      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_department, tx_org_department,';
+      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_news, tx_org_news,';
+      $arr_new_showitem[$key + 2] = $value;
       break;
     case($key > $int_div_position):
-      $arr_new_showitem[$key + 3] = $value;
+      $arr_new_showitem[$key + 2] = $value;
       break;
   }
 }
@@ -483,11 +426,9 @@ if($bool_wizards_wo_add_and_list)
 {
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['list']);
-  unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['add']);
-  unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['list']);
-}
+}  
   // fe_users
 
   // fe_groups
@@ -603,9 +544,9 @@ $TCA['tx_org_calentrance'] = array (
     'tstamp'            => 'tstamp',
     'crdate'            => 'crdate',
     'cruser_id'         => 'cruser_id',
-    'sortby'            => 'sorting',
+    'default_sortby'    => 'ORDER BY title',
     'delete'            => 'deleted',
-    'enablecolumns' => array (
+    'enablecolumns'     => array (
       'disabled'  => 'hidden',
       'fe_group'  => 'fe_group',
       'starttime' => 'starttime',
@@ -623,14 +564,14 @@ $TCA['tx_org_calentrance'] = array (
   // caltype ///////////////////////////////////////////////////////////////////
 $TCA['tx_org_caltype'] = array (
   'ctrl' => array (
-    'title'     => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype',
-    'label'     => 'title',
-    'tstamp'    => 'tstamp',
-    'crdate'    => 'crdate',
-    'cruser_id' => 'cruser_id',
-    'sortby'    => 'sorting',
-    'delete'    => 'deleted',
-    'enablecolumns' => array (
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype',
+    'label'             => 'title',
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'default_sortby'    => 'ORDER BY title',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
       'disabled'  => 'hidden',
     ),
     'dividers2tabs'     => true,

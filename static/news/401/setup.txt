@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         news {
-          name      = Org: Nachrichten
+          name      = Org: News
           file      = EXT:org/res/html/news/401/default.tmpl
           csvViews  = 401
         }
@@ -97,7 +97,7 @@ plugin.tx_browser_pi1 {
             10 {
               value       = ###TX_ORG_NEWS.DATETIME###
               strftime    = %d. %b
-              noTrimWrap  = |<span class="datetime">|</span> |
+              noTrimWrap  = |<span class="datetime">| &ndash;</span> |
             }
             11 = TEXT
             11 {
@@ -270,22 +270,22 @@ plugin.tx_browser_pi1 {
     default {
       label_sword_default       = Search Word
       pi_list_searchBox_search  = Search!
-      list_mode_401_titleTag      = News
-      list_mode_401_keywords      = News
-      list_mode_401_summary       = News
-      single_mode_401_titleTag    = ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords    = ###TX_ORG_NEWS.KEYWORDS###
-      single_mode_401_summary     = ###TX_ORG_NEWS.DESCRIPTION###
+      list_mode_401_titleTag      = TYPO3 Organiser - News
+      list_mode_401_keywords      = TYPO3, Organiser, News
+      list_mode_401_summary       = TYPO3 Organiser: News
+      single_mode_401_titleTag    = TYPO3 Organiser - ###TX_ORG_NEWS.TITLE###
+      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_summary     = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
     }
     de {
       label_sword_default         = Suchbegriff
       pi_list_searchBox_search    = Suchen!
-      list_mode_401_titleTag      = HfS Berlin - Nachrichten
-      list_mode_401_keywords      = Hochschule, Schauspielkunst, Schauspiel, Berlin, Ernst Busch,  Nachrichten
-      list_mode_401_summary       = Hochschule für Schauspielkunst Ernst Busch Berlin - Nachrichten
-      single_mode_401_titleTag    = HfS Berlin: ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords    = HfS, Berlin, ###TX_ORG_NEWS.KEYWORDS###
-      single_mode_401_summary     = HfS Berlin - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
+      list_mode_401_titleTag      = TYPO3 Organiser - Nachrichten
+      list_mode_401_keywords      = TYPO3, Organiser,  Nachrichten
+      list_mode_401_summary       = TYPO3 Organiser: Nachrichten
+      single_mode_401_titleTag    = TYPO3 Organiser: ###TX_ORG_NEWS.TITLE###
+      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
     }
   }
 }
