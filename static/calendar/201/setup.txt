@@ -320,22 +320,18 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      label_sword_default       = Search Word
-      pi_list_searchBox_search  = Search!
-      list_mode_201_titleTag      = HfS-Berlin: Events
-      list_mode_201_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Events
-      list_mode_201_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Events
-      single_mode_201_titleTag    = HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      list_mode_201_titleTag      = TYPO3 Organiser: Events
+      list_mode_201_keywords      = TYPO3, Organiser, Events
+      list_mode_201_summary       = TYPO3 Organiser: Events
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
       single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
     }
     de {
-      label_sword_default       = Suchbegriff
-      pi_list_searchBox_search  = Suchen!
-      list_mode_201_titleTag      = HfS-Berlin: Veranstaltungen
-      list_mode_201_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Veranstaltungen
-      list_mode_201_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Veranstaltungen
-      single_mode_201_titleTag    = HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      list_mode_201_titleTag      = TYPO3 Organiser: Veranstaltungen
+      list_mode_201_keywords      = TYPO3, Organiser, Veranstaltungen
+      list_mode_201_summary       = TYPO3 Organiser: Veranstaltungen
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
       single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
     }

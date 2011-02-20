@@ -268,8 +268,6 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      label_sword_default       = Search Word
-      pi_list_searchBox_search  = Search!
       list_mode_401_titleTag      = TYPO3 Organiser - News
       list_mode_401_keywords      = TYPO3, Organiser, News
       list_mode_401_summary       = TYPO3 Organiser: News
@@ -278,8 +276,6 @@ plugin.tx_browser_pi1 {
       single_mode_401_summary     = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
     }
     de {
-      label_sword_default         = Suchbegriff
-      pi_list_searchBox_search    = Suchen!
       list_mode_401_titleTag      = TYPO3 Organiser - Nachrichten
       list_mode_401_keywords      = TYPO3, Organiser,  Nachrichten
       list_mode_401_summary       = TYPO3 Organiser: Nachrichten

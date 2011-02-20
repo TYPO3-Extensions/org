@@ -400,22 +400,18 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      label_sword_default       = Search Word
-      pi_list_searchBox_search  = Search!
-      list_mode_501_titleTag      = HfS-Berlin: Headquarters
-      list_mode_501_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Headquarters
-      list_mode_501_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Headquarters
-      single_mode_501_titleTag    = HfS-Berlin: ###TX_ORG_HEADQUARTERS.TITLE###
+      list_mode_501_titleTag      = TYPO3 Organiser: Headquarters
+      list_mode_501_keywords      = TYPO3, Organiser, Headquarters
+      list_mode_501_summary       = TYPO3 Organiser: Headquarters
+      single_mode_501_titleTag    = TYPO3 Organiser: ###TX_ORG_HEADQUARTERS.TITLE###
       single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
       single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }
     de {
-      label_sword_default       = Suchbegriff
-      pi_list_searchBox_search  = Suchen!
-      list_mode_501_titleTag      = HfS-Berlin: Standorte und Verwaltungsgebäude
-      list_mode_501_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Standorte, Verwaltungsgebäude
-      list_mode_501_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Standorte und Verwaltungsgebäude
-      single_mode_501_titleTag    = HfS-Berlin: ###TX_ORG_HEADQUARTERS.TITLE###
+      list_mode_501_titleTag      = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      list_mode_501_keywords      = TYPO3, Organiser, Standorte, Hauptverwaltung, Verwaltungsgebäude
+      list_mode_501_summary       = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      single_mode_501_titleTag    = TYPO3 Organiser: ###TX_ORG_HEADQUARTERS.TITLE###
       single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
       single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }

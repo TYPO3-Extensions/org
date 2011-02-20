@@ -353,22 +353,18 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      label_sword_default       = Search Word
-      pi_list_searchBox_search  = Search!
-      list_mode_701_titleTag      = HfS-Berlin: Locations
-      list_mode_701_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Locations
-      list_mode_701_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Locations
-      single_mode_701_titleTag    = HfS-Berlin: ###TX_ORG_LOCATION.TITLE###
+      list_mode_701_titleTag      = TYPO3 Organiser: Locations
+      list_mode_701_keywords      = TYPO3, Organiser, Locations
+      list_mode_701_summary       = TYPO3 Organiser: Locations
+      single_mode_701_titleTag    = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
       single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
       single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
     }
     de {
-      label_sword_default       = Suchbegriff
-      pi_list_searchBox_search  = Suchen!
-      list_mode_701_titleTag      = HfS-Berlin: Veranstaltungsorte
-      list_mode_701_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Veranstaltungsorte
-      list_mode_701_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Veranstaltungsorte
-      single_mode_701_titleTag    = HfS-Berlin: ###TX_ORG_LOCATION.TITLE###
+      list_mode_701_titleTag      = TYPO3 Organiser: Veranstaltungsorte
+      list_mode_701_keywords      = TYPO3, Organiser, Veranstaltungsorte
+      list_mode_701_summary       = TYPO3 Organiser: Veranstaltungsorte
+      single_mode_701_titleTag    = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
       single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
       single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
     }

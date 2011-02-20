@@ -396,22 +396,18 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      label_sword_default       = Search Word
-      pi_list_searchBox_search  = Search!
-      list_mode_301_titleTag      = HfS-Berlin: Repertoire
-      list_mode_301_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Repertoire
-      list_mode_301_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Repertoire
-      single_mode_301_titleTag    = HfS-Berlin: ###TX_ORG_CAL.TITLE###
+      list_mode_301_titleTag      = TYPO3 Organiser: Repertoire
+      list_mode_301_keywords      = TYPO3, Organiser, Repertoire
+      list_mode_301_summary       = TYPO3 Organiser: Repertoire
+      single_mode_301_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_301_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
       single_mode_301_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
     }
     de {
-      label_sword_default       = Suchbegriff
-      pi_list_searchBox_search  = Suchen!
-      list_mode_301_titleTag      = HfS-Berlin: Repertoire und St&uuml;cke
-      list_mode_301_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Repertoire, St&uuml;cke
-      list_mode_301_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Repertoire und St&uuml;cke
-      single_mode_301_titleTag    = HfS-Berlin: ###TX_ORG_REPERTOIRE.TITLE###
+      list_mode_301_titleTag      = TYPO3 Organiser: Repertoire und St&uuml;cke
+      list_mode_301_keywords      = TYPO3, Organiser, Repertoire, St&uuml;cke
+      list_mode_301_summary       = TYPO3 Organiser: Repertoire und St&uuml;cke
+      single_mode_301_titleTag    = TYPO3 Organiser: ###TX_ORG_REPERTOIRE.TITLE###
       single_mode_301_keywords    = ###TX_ORG_REPERTOIRE.KEYWORDS###
       single_mode_301_summary     = ###TX_ORG_REPERTOIRE.DESCRIPTION###
     }

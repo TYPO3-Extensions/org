@@ -315,21 +315,21 @@ plugin.tx_browser_pi1 {
   _LOCAL_LANG {
     default {
       list_mode_101               = Staff
-      list_mode_101_titleTag      = HfS-Berlin: Staff
-      list_mode_101_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Staff
-      list_mode_101_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Staff
-      single_mode_101_titleTag    = HfS-Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
-      single_mode_101_keywords    = Hochschule für Schauspiel, Ernst Busch, Berlin, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
-      single_mode_101_summary     = Hochschule für Schauspiel "Ernst Busch" Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      list_mode_101_titleTag      = TYPO3 Organiser: Staff
+      list_mode_101_keywords      = TYPO3, Organiser, Staff
+      list_mode_101_summary       = TYPO3 Organiser: Staff
+      single_mode_101_titleTag    = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_keywords    = TYPO3, Organiser, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_summary     = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
     }
     de {
       list_mode_101               = Personen
-      list_mode_101_titleTag      = HfS-Berlin: Personen
-      list_mode_101_keywords      = Hochschule für Schauspiel, Ernst Busch, Berlin, Personen
-      list_mode_101_summary       = Hochschule für Schauspiel "Ernst Busch" Berlin: Personen
-      single_mode_101_titleTag    = HfS-Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
-      single_mode_101_keywords    = Hochschule für Schauspiel, Ernst Busch, Berlin, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
-      single_mode_101_summary     = Hochschule für Schauspiel "Ernst Busch" Berlin: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      list_mode_101_titleTag      = TYPO3 Organiser: Personen, Personal und Mitarbeiter
+      list_mode_101_keywords      = TYPO3, Organiser, Personen, Personal, Mitarbeiter
+      list_mode_101_summary       = TYPO3 Organiser: Personen, Personal und Mitarbeiter
+      single_mode_101_titleTag    = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_keywords    = TYPO3, Organiser, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
+      single_mode_101_summary     = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
     }
   }
 }
