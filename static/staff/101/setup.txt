@@ -94,7 +94,6 @@ plugin.tx_browser_pi1 {
         displaySingle < plugin.tx_browser_pi1.displaySingle
         displaySingle {
           image {
-            file = {$base_batBerlin.path.alternate_image}
             file >
           }
         }
