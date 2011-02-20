@@ -49,7 +49,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.department}
               title {
                 value = All Departments
-                lang.de = Alle Bereiche der HfS
+                lang.de = Alle Abteilungen
               }
             }
           }
@@ -62,7 +62,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.department}
               title {
                 value = All Departments
-                lang.de = Alle Bereiche der HfS
+                lang.de = Alle Abteilungen
               }
             }
           }
