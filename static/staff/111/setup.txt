@@ -1,0 +1,101 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      111: staff - margin / random (no cache)
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      tt_news >
+      org {
+        staff_margin {
+          name      = Org: staff - margin
+          file      = EXT:org/res/html/staff/111/default.tmpl
+          csvViews  = 111
+        }
+      }
+    }
+  }
+
+  general_stdWrap >
+  
+  views {
+    list {
+      111 = Staff (margin)
+      111 {
+        name    = staff - margin (don't cache!)
+        showUid = staffUid
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          image {
+            file {
+              maxW = 40
+              maxH = 40
+            }
+          }
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap = <h3><span>|</span></h3>
+            value = Staff
+            lang.de = Personen
+            typolink {
+              parameter = {$plugin.org.pages.staff}
+              title {
+                value = Staff
+                lang.de = Personen-Datenbank
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = Staff database &raquo;
+            lang.de = Personen-Datenbank &raquo;
+            wrap = <p>|</p>
+            typolink {
+              parameter = {$plugin.org.pages.staff}
+              title {
+                value = staff database
+                lang.de = Personen-Datenbank
+              }
+            }
+          }
+        }
+        select (
+          fe_users.last_name,
+          fe_users.first_name,
+          fe_users.image,
+          fe_groups.title,
+          tx_org_department.title
+        )
+        random = 1
+        csvLinkToSingleView = fe_users.last_name, fe_users.first_name
+      }
+    }
+    single {
+      111 = Staff (margin)
+      111 {
+        comment = This plugin should not used in the single view!
+        template < plugin.tx_browser_pi1.template
+        template {
+          file = EXT:org/res/html/staff/111/default.tmpl
+        }
+        select = fe_users.last_name
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1
