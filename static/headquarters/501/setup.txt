@@ -82,7 +82,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.headquarter}
               title {
                 value = All Headquarters
-                lang.de = Alle Standorte der HfS
+                lang.de = Alle Standorte
               }
             }
           }

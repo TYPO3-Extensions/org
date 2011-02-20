@@ -96,7 +96,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.calendar}
               title {
                 value = All Events
-                lang.de = Alle Veranstaltungen der HfS
+                lang.de = Alle Veranstaltungen
               }
             }
           }

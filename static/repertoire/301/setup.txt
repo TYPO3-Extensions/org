@@ -86,7 +86,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.repertoire}
               title {
                 value = All Repertoire
-                lang.de = Alle Repertoire und St&uuml;cke der HfS
+                lang.de = Repertoire und alle St&uuml;cke
               }
             }
           }

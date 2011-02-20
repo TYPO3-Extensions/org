@@ -108,7 +108,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.staff}
               title {
                 value = All Staff
-                lang.de = Personen-Datenbanken der HfS
+                lang.de = Personen-Datenbank
               }
             }
           }

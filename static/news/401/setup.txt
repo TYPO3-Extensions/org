@@ -184,7 +184,7 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.news}
               title {
                 value = All News
-                lang.de = Alle Nachrichten der HfS
+                lang.de = Alle Nachrichten
               }
             }
           }

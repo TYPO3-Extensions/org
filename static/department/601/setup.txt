@@ -114,12 +114,12 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All Departments &raquo;
-            lang.de = Alle Bereiche &raquo; 
+            lang.de = Alle Abteilungen &raquo; 
             typolink {
               parameter = {$plugin.org.pages.department}
               title {
                 value = All Departments
-                lang.de = Alle Bereiche der HfS
+                lang.de = Alle Abteilungen
               }
             }
           }

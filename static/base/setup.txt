@@ -40,7 +40,7 @@
         data = register:browser_htmlTitleTag
         ifEmpty {
           field = title
-          noTrimWrap  = |HfS-Berlin: ||
+          noTrimWrap  = |TYPO3 Organiser: ||
         }
         wrap = <title>|</title>
       }
