@@ -33,6 +33,10 @@ plugin.tx_browser_pi1 {
     list {
       101 = Staff
       101 {
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          selectBox_orderBy.display = 0
+        }
         name    = Personen
         showUid = staffUid
         select (

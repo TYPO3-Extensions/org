@@ -92,9 +92,6 @@ plugin.tx_browser_pi1 {
               value = ###TX_ORG_NEWS.TEASER_TITLE###
               typolink {
                 parameter = {$plugin.org.pages.news}
-                parameter {
-                  insertData = 1
-                }
                 title {
                   value = ###TX_ORG_NEWS.TITLE###
                 }

@@ -202,8 +202,6 @@ plugin.tx_browser_pi1 {
     }
   }
   
-  //_CSS_DEFAULT_STYLE >
-
   _LOCAL_LANG {
     default {
       label_sword_default       = Search Word
