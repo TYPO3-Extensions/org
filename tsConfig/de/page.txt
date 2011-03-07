@@ -13,43 +13,49 @@
 
 mod.tx_linkhandler {
     // extension tt_news isn't installed
-  org_news {
+  tt_news >
+  tx_org_cal {
+    label       = Org: Kalender
+    listTables  = tx_org_cal
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
+    // onlyPids    = 1
+  }
+  tx_org_news {
     label       = Org: Nachrichten
     listTables  = tx_org_news
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
   fe_users {
     label       = Org: Personal
     listTables  = fe_users
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  org_repertoire {
+  tx_org_repertoire {
     label       = Org: Repertoire
     listTables  = tx_org_repertoire
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  org_headquarters {
+  tx_org_headquarters {
     label       = Org: Standorte, Abteilungen
     listTables  = tx_org_headquarters, tx_org_department
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  org_cal {
-    label       = Org: Veranstaltungen
-    listTables  = tx_org_cal
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+  tx_org_event {
+    label       = Org: Veranstaltung
+    listTables  = tx_org_event
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  org_location {
+  tx_org_location {
     label       = Org: Veranstaltungsorte
     listTables  = tx_org_location
-      // Please set the onlyPids in page TSconfig of your pagea and sysfolder
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  tt_news >
 }
   // mod.tx_linkhandler
 
@@ -59,14 +65,14 @@ mod.tx_linkhandler {
   //
   // RTE.default.tx_linkhandler
 
-RTE.default.tx_linkhandler.org_news         < mod.tx_linkhandler.org_news
-RTE.default.tx_linkhandler.fe_users         < mod.tx_linkhandler.fe_users
-RTE.default.tx_linkhandler.org_repertoire   < mod.tx_linkhandler.org_repertoire
-RTE.default.tx_linkhandler.org_headquarters < mod.tx_linkhandler.org_headquarters
-RTE.default.tx_linkhandler.org_cal          < mod.tx_linkhandler.org_cal
-RTE.default.tx_linkhandler.org_location     < mod.tx_linkhandler.org_location
+RTE.default.tx_linkhandler.fe_users             < mod.tx_linkhandler.fe_users
+RTE.default.tx_linkhandler.tx_org_cal           < mod.tx_linkhandler.tx_org_cal
+RTE.default.tx_linkhandler.tx_org_event         < mod.tx_linkhandler.tx_org_event
+RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
+RTE.default.tx_linkhandler.tx_org_location      < mod.tx_linkhandler.tx_org_location
+RTE.default.tx_linkhandler.tx_org_news          < mod.tx_linkhandler.tx_org_news
+RTE.default.tx_linkhandler.tx_org_repertoire    < mod.tx_linkhandler.tx_org_repertoire
 RTE.default.tx_linkhandler.tt_news >
   // RTE.default.tx_linkhandler
 
   // LINKHANDLER
-

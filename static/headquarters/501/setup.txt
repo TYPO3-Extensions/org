@@ -43,14 +43,10 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.image,
           tx_org_headquarters.imageseo
         )
+          // 110221, dwildt: tx_org_department.sorting hat nicht erwarteten Effekt
+        //orderBy = tx_org_headquarters.sorting, tx_org_department.sorting
+        orderBy = tx_org_headquarters.sorting
         csvLinkToSingleView = tx_org_headquarters.title
-        tx_org_department22 {
-          title = TEXT
-          title {
-            value = ###TX_ORG_DEPARTMENT.TITLE###
-            noTrimWrap = ||. |
-          }
-        }
       }
     }
     single {

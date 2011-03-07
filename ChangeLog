@@ -1,3 +1,19 @@
+0.4.2
+  11-03-07
+  New Feature
+  * Extending Organiser with tx_org_event: affected
+    * database
+    * basic setup
+    * tca
+  * News got types news, internal url and external url
+  Consolidation
+  * Moving names of all relation fields to tx_org_*
+
+0.4.1
+  11-01-04
+  New Feature
+  * 13597: TypoScript snippet for adding parameters
+
 0.4.0
   11-02-20
   Improvement

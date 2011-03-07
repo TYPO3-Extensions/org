@@ -93,16 +93,17 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',      '+Org: Kalender');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Kalender - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Kalender (bat) - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',           '+Org: Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',           '+Org: Nachrichten - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Personal');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',         '+Org: Personal - Rand (nicht cachen!)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/301',     '+Org: Repertoire');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/311',     '+Org: Repertoire - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/302',     '+Org: Repertoire');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/312',     '+Org: Repertoire - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',   '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',   '+Org: Standorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/301',          '+Org: Veranstaltungen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/311',          '+Org: Veranstaltungen - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',       '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',       '+Org: Veranstaltorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/', '+Org: Warenkorb');
@@ -115,6 +116,8 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',      '+Org: Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',    '+Org: Department');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',    '+Org: Department - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/301',          '+Org: Events');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/311',          '+Org: Events - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',   '+Org: Headquarters');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',   '+Org: Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',       '+Org: Locations');
@@ -122,8 +125,8 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',           '+Org: News');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',           '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: News (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/301',     '+Org: Repertoires');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/311',     '+Org: Repertoires - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/302',     '+Org: Repertoires');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/312',     '+Org: Repertoires - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/', '+Org: Shopping cart');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/', '+Org: Shopping cart - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Staff');
@@ -151,11 +154,13 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Personal', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Repertoire', 'org_repertoire', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
+       array('Org: Repertoire', 'org_reptr', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Standorte', 'org_headquarters', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
+       array('Org: Standorte', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Veranstaltungsorte', 'org_location', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
+       array('Org: Veranstaltungen', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
+    $TCA['pages']['columns']['module']['config']['items'][] = 
+       array('Org: Veranstaltungsorte', 'org_locat', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
     break;
   default:
       // English
@@ -164,25 +169,28 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Calendar', 'org_cal', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Headquarters', 'org_headquarters', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
+       array('Org: Event', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Location', 'org_location', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
+       array('Org: Headquarters', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
+    $TCA['pages']['columns']['module']['config']['items'][] = 
+       array('Org: Location', 'org_locat', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: News', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Repertoire', 'org_repertoire', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
+       array('Org: Repertoire', 'org_reptr', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Staff', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 }
   // Case $llStatic
 
-$ICON_TYPES['org']              = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
-$ICON_TYPES['org_cal']          = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
-$ICON_TYPES['org_headquarters'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
-$ICON_TYPES['org_location']     = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
-$ICON_TYPES['org_news']         = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-$ICON_TYPES['org_repertoire']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
-$ICON_TYPES['org_staff']        = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
+$ICON_TYPES['org']       = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
+$ICON_TYPES['org_cal']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
+$ICON_TYPES['org_event'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
+$ICON_TYPES['org_headq'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
+$ICON_TYPES['org_locat'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
+$ICON_TYPES['org_news']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
+$ICON_TYPES['org_reptr'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
+$ICON_TYPES['org_staff'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 
   // Add pagetree icons
 
@@ -208,9 +216,10 @@ t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKE
 t3lib_div::loadTCA('fe_users');
 $TCA['fe_users']['ctrl']['title']           = 'LLL:EXT:org/locallang_db.xml:fe_users';
 $TCA['fe_users']['ctrl']['label']           = 'last_name';
-$TCA['fe_users']['ctrl']['label_alt']       = 'first_name';
+$TCA['fe_users']['ctrl']['label_alt']       = 'first_name, username';
 $TCA['fe_users']['ctrl']['label_alt_force'] = true;
 $TCA['fe_users']['ctrl']['default_sortby']  = 'ORDER BY last_name';
+$TCA['fe_users']['ctrl']['thumbnail']       = 'image';
 
 
   // Don't exclude any field by default'
@@ -450,6 +459,7 @@ $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
   // cal
   // calentrance
   // caltype
+  // event
   // repertoire
   // location
   // headquarters
@@ -482,6 +492,13 @@ $TCA['tx_org_news'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      '0' => '../typo3conf/ext/org/ext_icon/news.gif',
+      '1' => '../typo3conf/ext/org/ext_icon/newspage.gif',
+      '2' => '../typo3conf/ext/org/ext_icon/newsurl.gif',
+    ),
   ),
 );
   // news ////////////////////////////////////////////////////////////////////
@@ -530,6 +547,14 @@ $TCA['tx_org_cal'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      '0' => '../typo3conf/ext/org/ext_icon/event.gif',
+      '1' => '../typo3conf/ext/org/ext_icon/cal.gif',
+      '2' => '../typo3conf/ext/org/ext_icon/event.gif',
+      '3' => '../typo3conf/ext/org/ext_icon/repertoire.gif',
+    ),
   ),
 );
   // cal /////////////////////////////////////////////////////////////////////
@@ -583,6 +608,29 @@ $TCA['tx_org_caltype'] = array (
 );
   // caltype ///////////////////////////////////////////////////////////////////
 
+  // event ///////////////////////////////////////////////////////////////////
+$TCA['tx_org_event'] = array (
+  'ctrl' => array (
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_event',
+    'label'             => 'title',
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'default_sortby'    => 'ORDER BY title',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
+      'disabled'  => 'hidden',
+      'fe_group'  => 'fe_group',
+    ),
+    'dividers2tabs'     => true,
+    'hideAtCopy'        => false,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif',
+  ),
+);
+  // event ///////////////////////////////////////////////////////////////////
+
   // repertoire ///////////////////////////////////////////////////////////////////
 $TCA['tx_org_repertoire'] = array (
   'ctrl' => array (
@@ -609,14 +657,16 @@ $TCA['tx_org_repertoire'] = array (
   // location ////////////////////////////////////////////////////////////////
 $TCA['tx_org_location'] = array (
   'ctrl' => array (
-    'title'     => 'LLL:EXT:org/locallang_db.xml:tx_org_location',
-    'label'     => 'title',
-    'tstamp'    => 'tstamp',
-    'crdate'    => 'crdate',
-    'cruser_id' => 'cruser_id',
-    'sortby'    => 'sorting',
-    'delete'    => 'deleted',
-    'enablecolumns' => array (
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_location',
+    'label'             => 'title',
+    'label_alt'         => 'mail_city',
+    'label_alt_force'   => true,
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'sortby'            => 'sorting',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
       'disabled'  => 'hidden',
       'fe_group'  => 'fe_group',
     ),

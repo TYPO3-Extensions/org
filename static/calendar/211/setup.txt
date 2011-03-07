@@ -40,7 +40,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap = <h3><span>|</span></h3>
+            wrap = <h3>|</h3>
             value = Playing schedule
             lang.de = Spielplan
             typolink {
