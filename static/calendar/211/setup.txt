@@ -67,7 +67,7 @@ plugin.tx_browser_pi1 {
         }
         select (
           tx_org_cal.title,
-          tx_org_cal.shortcut,
+          tx_org_cal.short,
           tx_org_cal.datetime,
           tx_org_cal.uid
         )
@@ -87,13 +87,13 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-          shortcut = COA
-          shortcut {
+          short = COA
+          short {
             wrap = <p>|</p>
             10 = TEXT
             10 {
-              if.isTrue = ###TX_ORG_CAL.SHORTCUT###
-              value     = ###TX_ORG_CAL.SHORTCUT###
+              if.isTrue = ###TX_ORG_CAL.SHORT###
+              value     = ###TX_ORG_CAL.SHORT###
               typolink {
                 parameter = {$plugin.org.pages.calendar}
                 title {
@@ -104,7 +104,7 @@ plugin.tx_browser_pi1 {
             }
             20 = TEXT
             20 {
-              if.isFalse = ###TX_ORG_CAL.SHORTCUT###
+              if.isFalse = ###TX_ORG_CAL.SHORT###
               value      = ###TX_ORG_CAL.TITLE###
               typolink {
                 parameter = {$plugin.org.pages.calendar}

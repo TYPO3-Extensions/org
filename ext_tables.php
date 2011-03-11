@@ -495,9 +495,9 @@ $TCA['tx_org_news'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
-      '0' => '../typo3conf/ext/org/ext_icon/news.gif',
-      '1' => '../typo3conf/ext/org/ext_icon/newspage.gif',
-      '2' => '../typo3conf/ext/org/ext_icon/newsurl.gif',
+      'news'      => '../typo3conf/ext/org/ext_icon/news.gif',
+      'newspage'  => '../typo3conf/ext/org/ext_icon/newspage.gif',
+      'newsurl'   => '../typo3conf/ext/org/ext_icon/newsurl.gif',
     ),
   ),
 );

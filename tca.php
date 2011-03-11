@@ -379,7 +379,7 @@ switch($confArr['store_records'])
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,tx_org_repertoire,title,shortcut,datetime,tx_org_caltype,bodytext,'.
+    'showRecordFieldList' =>  'type,tx_org_event,title,shortcut,datetime,tx_org_caltype,bodytext,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_department'.
@@ -396,22 +396,22 @@ $TCA['tx_org_cal'] = array (
       'config'    => array (
         'type'    => 'select', 
         'items'   => array(
-          '0' => array(
+          'default' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.default',
             '1' => '0',
             '2' => 'EXT:org/ext_icon/event.gif',
           ),
-          '1' => array(
+          'direct' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.direct',
             '1' => '1',
             '2' => 'EXT:org/ext_icon/cal.gif',
           ),
-          '2' => array(
+          'tx_org_event' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
             '1' => '2',
             '2' => 'EXT:org/ext_icon/event.gif',
           ),
-          '3' => array(
+          'tx_org_repertoire' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_repertoire',
             '1' => '3',
             '2' => 'EXT:org/ext_icon/repertoire.gif',
@@ -465,59 +465,6 @@ $TCA['tx_org_cal'] = array (
           'edit' => array(
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
-      ),
-    ),
-    'tx_org_repertoire' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_repertoire',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_repertoire,
-        'minitems'            => 0,
-        'maxitems'            => 1,
-        'MM'                  => 'tx_org_repertoire_mm_cal',
-        'MM_opposite_field'   => 'tx_org_cal',
-        'foreign_table'       => 'tx_org_repertoire',
-        'foreign_table_where' => 'AND tx_org_repertoire.' . $str_store_record_conf . ' ORDER BY tx_org_repertoire.title',
-        'items' => array(
-          '0' => array(
-            '0' => '',
-            '1' => '',
-          ),
-        ),
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_repertoire',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_repertoire',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.edit',
             'script'                    => 'wizard_edit.php',
             'popup_onlyOpenIfSelected'  => 1,
             'icon'                      => 'edit2.gif',
@@ -818,32 +765,36 @@ $TCA['tx_org_cal'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_repertoire,title,shortcut,datetime,tx_org_caltype,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
-                                ''),
-    '1' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
-                                ''),
-    '2' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_event,datetime,tx_org_caltype,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
-                                ''),
-    '3' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_repertoire,datetime,tx_org_caltype,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
-                                ''),
+    'default' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
+      ''),
+    'direct' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
+      ''),
+    'tx_org_event' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_event,datetime,tx_org_caltype,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
+      ''),
+    'tx_org_repertoire' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_repertoire,datetime,tx_org_caltype,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
+      ''),
   ),
   'palettes' => array (
     '1' => array('showitem' => 'starttime,endtime,'),
@@ -2047,23 +1998,23 @@ $TCA['tx_org_news'] = array (
       'config'    => array (
         'type'    => 'select', 
         'items'   => array(
-          '0' => array(
+          'news' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.news',
-            '1' => '0',
+            '1' => 'news',
             '2' => 'EXT:org/ext_icon/news.gif',
           ),
-          '1' => array(
+          'newspage' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newspage',
-            '1' => '1',
+            '1' => 'newspage',
             '2' => 'EXT:org/ext_icon/newspage.gif',
           ),
-          '2' => array(
+          'newsurl' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newsurl',
-            '1' => '2',
+            '1' => 'newsurl',
             '2' => 'EXT:org/ext_icon/newsurl.gif',
           ),
         ),
-        'default' => '0',
+        'default' => 'news',
       ),
     ),
     'title' => array (
@@ -2362,27 +2313,30 @@ $TCA['tx_org_news'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_feuser,     fe_user,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_repertoire, tx_org_repertoire,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
-                                ''),
-    '1' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newspage,   newspage,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
-                                ''),
-    '2' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newsurl,    newsurl,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
-                                ''),
+    'news' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_feuser,     fe_user,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_repertoire, tx_org_repertoire,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
+      ''),
+    'newspage' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newspage,   newspage,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      ''),
+    'newsurl' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newsurl,    newsurl,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      ''),
   ),
   'palettes' => array (
     '2' => array('showitem' => 'imageseo'),

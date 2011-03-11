@@ -46,6 +46,9 @@ plugin.tx_browser_pi1 {
           tx_org_news.teaser_title,
           tx_org_news.teaser_subtitle,
           tx_org_news.teaser_short,
+          tx_org_news.type,
+          tx_org_news.newspage,
+          tx_org_news.newsurl,
           tx_org_news.bodytext,
           tx_org_news.image,
           tx_org_news.imageseo,
@@ -59,22 +62,69 @@ plugin.tx_browser_pi1 {
         tx_org_news {
           title = COA
           title {
-            10 = TEXT
+              // news, newspage, newsurl
+            10 = CASE
             10 {
-              if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
-              value     = ###TX_ORG_NEWS.TEASER_TITLE###
-              typolink {
-                parameter         = {$plugin.org.pages.news}
-                additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+              key = ###TX_ORG_NEWS.TYPE###
+                // news
+              default = COA
+              default {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.news}
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.news}
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+                  }
+                }
               }
-            }
-            11 = TEXT
-            11 {
-              if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
-              value       = ###TX_ORG_NEWS.TITLE###
-              typolink {
-                parameter         = {$plugin.org.pages.news}
-                additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+              newspage = COA
+              newspage {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+              }
+              newsurl = COA
+              newsurl {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
               }
             }
           }
@@ -112,17 +162,41 @@ plugin.tx_browser_pi1 {
               crop        = 200 | ... | 1
               stripHtml = 1
             }
-            13 = TEXT
+              // news, newspage, newsurl
+            13 = CASE
             13 {
-              value = more &raquo;
-              lang.de = mehr &raquo;
-              noTrimWrap = | <span class="more">|</span>|
-              typolink {
-                parameter = {$plugin.org.pages.news}
-                parameter {
-                  insertData = 1
+              key = ###TX_ORG_NEWS.TYPE###
+                // news
+              default = TEXT
+              default {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = {$plugin.org.pages.news}
+                  parameter {
+                    insertData = 1
+                  }
+                  additionalParams = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
                 }
-                additionalParams = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+              }
+              newspage = TEXT
+              newspage {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                }
+              }
+              newsurl = TEXT
+              newsurl {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = ###TX_ORG_NEWS.NEWSURL###
+                }
               }
             }
           }
