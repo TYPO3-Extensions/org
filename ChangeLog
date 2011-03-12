@@ -1,5 +1,5 @@
 0.4.2
-  11-03-11
+  11-03-12
   New Feature
   * Extending Organiser with tx_org_event: affected
     * database
@@ -8,6 +8,7 @@
   * News got types news, internal url and external url
   Consolidation
   * Moving names of all relation fields to tx_org_*
+  * Moving names of all relation tables to ...mm_tx_org_*
   Bugfix
   * tx_org_news.type in tca.php
 

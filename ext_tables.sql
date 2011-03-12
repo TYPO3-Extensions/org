@@ -7,27 +7,27 @@
 # tx_org_calentrance
 # tx_org_calspecial
 # tx_org_caltype
-# tx_org_cal_mm_caltype
-# tx_org_cal_mm_calentrance
-# tx_org_cal_mm_location
+# tx_org_cal_mm_tx_org_caltype
+# tx_org_cal_mm_tx_org_calentrance
+# tx_org_cal_mm_tx_org_location
 # tx_org_department
-# tx_org_department_mm_cal
-# tx_org_department_mm_departmentcat
-# tx_org_department_mm_news
+# tx_org_department_mm_tx_org_cal
+# tx_org_department_mm_tx_org_departmentcat
+# tx_org_department_mm_tx_org_news
 # tx_org_department_mm_fe_users
 # tx_org_departmentcat
 # tx_org_event
-# tx_org_event_mm_cal
-# tx_org_event_mm_news
+# tx_org_event_mm_tx_org_cal
+# tx_org_event_mm_tx_org_news
 # tx_org_headquarters
-# tx_org_headquarters_mm_org
+# tx_org_headquarters_mm_tx_org_department
 # tx_org_location
 # tx_org_news
-# tx_org_news_mm_newscat
+# tx_org_news_mm_tx_org_newscat
 # tx_org_newscat
 # tx_org_repertoire
-# tx_org_repertoire_mm_cal
-# tx_org_repertoire_mm_news
+# tx_org_repertoire_mm_tx_org_cal
+# tx_org_repertoire_mm_tx_org_news
 # tx_org_tax
 
 
@@ -151,9 +151,9 @@ CREATE TABLE tx_org_caltype (
 
 
 #
-# Table structure for table 'tx_org_cal_mm_calentrance'
+# Table structure for table 'tx_org_cal_mm_tx_org_calentrance'
 #
-CREATE TABLE tx_org_cal_mm_calentrance (
+CREATE TABLE tx_org_cal_mm_tx_org_calentrance (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -166,9 +166,9 @@ CREATE TABLE tx_org_cal_mm_calentrance (
 
 
 #
-# Table structure for table 'tx_org_cal_mm_caltype'
+# Table structure for table 'tx_org_cal_mm_tx_org_caltype'
 #
-CREATE TABLE tx_org_cal_mm_caltype (
+CREATE TABLE tx_org_cal_mm_tx_org_caltype (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -181,9 +181,9 @@ CREATE TABLE tx_org_cal_mm_caltype (
 
 
 #
-# Table structure for table 'tx_org_cal_mm_location'
+# Table structure for table 'tx_org_cal_mm_tx_org_location'
 #
-CREATE TABLE tx_org_cal_mm_location (
+CREATE TABLE tx_org_cal_mm_tx_org_location (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -236,9 +236,9 @@ CREATE TABLE tx_org_department (
 
 
 #
-# Table structure for table 'tx_org_department_mm_cal'
+# Table structure for table 'tx_org_department_mm_tx_org_cal'
 #
-CREATE TABLE tx_org_department_mm_cal (
+CREATE TABLE tx_org_department_mm_tx_org_cal (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -251,9 +251,9 @@ CREATE TABLE tx_org_department_mm_cal (
 
 
 #
-# Table structure for table 'tx_org_department_mm_departmentcat'
+# Table structure for table 'tx_org_department_mm_tx_org_departmentcat'
 #
-CREATE TABLE tx_org_department_mm_departmentcat (
+CREATE TABLE tx_org_department_mm_tx_org_departmentcat (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -265,9 +265,9 @@ CREATE TABLE tx_org_department_mm_departmentcat (
 
 
 #
-# Table structure for table 'tx_org_department_mm_news'
+# Table structure for table 'tx_org_department_mm_tx_org_news'
 #
-CREATE TABLE tx_org_department_mm_news (
+CREATE TABLE tx_org_department_mm_tx_org_news (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -356,9 +356,9 @@ CREATE TABLE tx_org_event (
 
 
 #
-# Table structure for table 'tx_org_event_mm_cal'
+# Table structure for table 'tx_org_event_mm_tx_org_cal'
 #
-CREATE TABLE tx_org_event_mm_cal (
+CREATE TABLE tx_org_event_mm_tx_org_cal (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -371,9 +371,9 @@ CREATE TABLE tx_org_event_mm_cal (
 
 
 #
-# Table structure for table 'tx_org_event_mm_news'
+# Table structure for table 'tx_org_event_mm_tx_org_news'
 #
-CREATE TABLE tx_org_event_mm_news (
+CREATE TABLE tx_org_event_mm_tx_org_news (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -430,9 +430,9 @@ CREATE TABLE tx_org_headquarters (
 
 
 #
-# Table structure for table 'tx_org_headquarters_mm_org'
+# Table structure for table 'tx_org_headquarters_mm_tx_org_department'
 #
-CREATE TABLE tx_org_headquarters_mm_org (
+CREATE TABLE tx_org_headquarters_mm_tx_org_department (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -539,9 +539,9 @@ CREATE TABLE tx_org_news (
 
 
 #
-# Table structure for table 'tx_org_news_mm_newscat'
+# Table structure for table 'tx_org_news_mm_tx_org_newscat'
 #
-CREATE TABLE tx_org_news_mm_newscat (
+CREATE TABLE tx_org_news_mm_tx_org_newscat (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -640,9 +640,9 @@ CREATE TABLE tx_org_repertoire (
 
 
 #
-# Table structure for table 'tx_org_repertoire_mm_cal'
+# Table structure for table 'tx_org_repertoire_mm_tx_org_cal'
 #
-CREATE TABLE tx_org_repertoire_mm_cal (
+CREATE TABLE tx_org_repertoire_mm_tx_org_cal (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -655,9 +655,9 @@ CREATE TABLE tx_org_repertoire_mm_cal (
 
 
 #
-# Table structure for table 'tx_org_repertoire_mm_news'
+# Table structure for table 'tx_org_repertoire_mm_tx_org_news'
 #
-CREATE TABLE tx_org_repertoire_mm_news (
+CREATE TABLE tx_org_repertoire_mm_tx_org_news (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
