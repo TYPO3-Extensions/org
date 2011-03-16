@@ -113,12 +113,12 @@ plugin.tx_browser_pi1 {
           tx_org_cal.datetime,
           tx_org_caltype.title,
           tx_org_cal.documents,
-          tx_org_repertoire.uid,
-          tx_org_repertoire.title,
-          tx_org_repertoire.bodytext,
-          tx_org_repertoire.image,
-          tx_org_repertoire.imagecaption,
-          tx_org_repertoire.imageseo,
+          tx_org_event.uid,
+          tx_org_event.title,
+          tx_org_event.bodytext,
+          tx_org_event.image,
+          tx_org_event.imagecaption,
+          tx_org_event.imageseo,
           tx_org_location.uid,
           tx_org_location.title,
           tx_org_calentrance.title,
@@ -265,7 +265,7 @@ plugin.tx_browser_pi1 {
             }
           }
         }
-        tx_org_repertoire {
+        tx_org_event {
           bodytext = COA
           bodytext {
             wrap = <p>|</p>
@@ -279,7 +279,7 @@ plugin.tx_browser_pi1 {
             }
             11 = TEXT
             11 {
-              value = ###TX_ORG_REPERTOIRE.BODYTEXT###
+              value = ###TX_ORG_EVENT.BODYTEXT###
             }
             20 = TEXT
             20 {
@@ -289,13 +289,13 @@ plugin.tx_browser_pi1 {
             }
             21 = TEXT
             21 {
-              value = ###TX_ORG_REPERTOIRE.TITLE###
+              value = ###TX_ORG_EVENT.TITLE###
               typolink {
-                parameter = {$plugin.org.pages.repertoire}
+                parameter = {$plugin.org.pages.event}
                 parameter {
                   insertData = 1
                 }
-                additionalParams = &tx_browser_pi1[repertoireUid]=###TX_ORG_REPERTOIRE.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[eventUid]=###TX_ORG_EVENT.UID###&###CHASH###
               }
             }
             20 >
@@ -305,11 +305,11 @@ plugin.tx_browser_pi1 {
               value       = Mehr &raquo;
               noTrimWrap  = | ||
               typolink {
-                parameter = {$plugin.org.pages.repertoire}
+                parameter = {$plugin.org.pages.event}
                 parameter {
                   insertData = 1
                 }
-                additionalParams = &tx_browser_pi1[repertoireUid]=###TX_ORG_REPERTOIRE.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[eventUid]=###TX_ORG_EVENT.UID###&###CHASH###
               }
             }
           }

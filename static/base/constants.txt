@@ -12,8 +12,6 @@ plugin.org {
   pages.location =
   # cat=Organiser Pages/page/105; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser Pages/page/106; type=+int; label= repertoire:Uid of your repertoire page
-  pages.repertoire =
   # cat=Organiser Pages/page/107; type=+int; label= staff:Uid of your staff page
   pages.staff =
   # cat=Organiser Pages/page/108; type=+int; label= shopping cart:Uid of your shopping cart page
@@ -33,8 +31,6 @@ plugin.org {
   sysfolder.location =
   # cat=Organiser Sysfolders/page/105; type=+int; label= news:Uid of the sysfolder with the news data
   sysfolder.news =
-  # cat=Organiser Sysfolders/page/106; type=+int; label= repertoire:Uid of the sysfolder with the repertoire data
-  sysfolder.repertoire =
   # cat=Organiser Sysfolders/page/107; type=+int; label= staff:Uid of the sysfolder with the staff data
   sysfolder.staff =
 

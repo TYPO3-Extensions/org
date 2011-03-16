@@ -27,7 +27,6 @@ if (!defined ('TYPO3_MODE'))
   //   tx_org_departmentcat
   //   tx_org_news
   //   tx_org_newscat
-  //   tx_org_repertoire
   //   tx_org_tax
 
 
@@ -131,8 +130,6 @@ switch($confArr['store_records'])
   $size_department  = 10;
   // Rows of news select box
   $size_news        = 30;
-  // Rows of repertoire select box
-  $size_repertoire  = 1;
 
   // General Configuration
 
@@ -410,11 +407,6 @@ $TCA['tx_org_cal'] = array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
             '1' => '2',
             '2' => 'EXT:org/ext_icon/event.gif',
-          ),
-          'tx_org_repertoire' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_repertoire',
-            '1' => '3',
-            '2' => 'EXT:org/ext_icon/repertoire.gif',
           ),
         ),
         'default' => '0',
@@ -789,12 +781,6 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
       ''),
-    'tx_org_repertoire' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_repertoire,datetime,tx_org_caltype,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
-      ''),
   ),
   'palettes' => array (
     '1' => array('showitem' => 'starttime,endtime,'),
@@ -816,8 +802,6 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_cal']['columns']['tx_org_event']['config']['wizards']['list'] );
   unset($TCA['tx_org_cal']['columns']['tx_org_location']['config']['wizards']['add']);
   unset($TCA['tx_org_cal']['columns']['tx_org_location']['config']['wizards']['list'] );
-  unset($TCA['tx_org_cal']['columns']['tx_org_repertoire']['config']['wizards']['add']);
-  unset($TCA['tx_org_cal']['columns']['tx_org_repertoire']['config']['wizards']['list'] );
 }
   // tx_org_cal - without any localisation support
 
@@ -1984,7 +1968,6 @@ $TCA['tx_org_news'] = array (
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_department,'.
-                              'tx_org_repertoire,'.
                               'image,imagecaption,imageseo,embeddedcode,'.
                               'hidden,topnews,pages,starttime,endtime,fe_group,'.
                               'keywords,description,'.
@@ -2194,53 +2177,6 @@ $TCA['tx_org_news'] = array (
         ),
       ),
     ),
-    'tx_org_repertoire' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_news.tx_org_repertoire',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_news,
-        'minitems'            => 0,
-        'maxitems'            => 999,
-        'MM'                  => 'tx_org_repertoire_mm_tx_org_news',
-        'MM_opposite_field'   => 'tx_org_news',
-        'foreign_table'       => 'tx_org_repertoire',
-        'foreign_table_where' => 'AND tx_org_repertoire.' . $str_store_record_conf . ' ORDER BY tx_org_repertoire.title',
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_repertoire',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_repertoire',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_repertoire.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
-      ),
-    ),
     'hidden'    => $conf_hidden,
     'topnews' => array (
       'exclude' => $bool_exclude_none,
@@ -2319,7 +2255,6 @@ $TCA['tx_org_news'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_media,      image;;;;4-4-4, imagecaption;;2;;, embeddedcode, documents;;;;5-5-5,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_feuser,     fe_user,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_repertoire, tx_org_repertoire,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
       ''),
@@ -2352,8 +2287,6 @@ if(!$bool_full_wizardSupport_allTables)
 {
   unset($TCA['tx_org_news']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['tx_org_news']['columns']['tx_org_department']['config']['wizards']['list'] );
-  unset($TCA['tx_org_news']['columns']['tx_org_repertoire']['config']['wizards']['add']);
-  unset($TCA['tx_org_news']['columns']['tx_org_repertoire']['config']['wizards']['list'] );
 }
   // Non localized
 
@@ -2501,365 +2434,6 @@ if(!$bool_LL)
 }
   // Localization support
   // tx_org_newscat
-
-
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //
-  // tx_org_repertoire - without any localisation support
-
-  // Don't display relations to feuser by default 
-$bool_exclude_feuser = true;
-
-$TCA['tx_org_repertoire'] = array (
-  'ctrl' => $TCA['tx_org_repertoire']['ctrl'],
-  'interface' => array (
-    'showRecordFieldList' =>  'title,subtitle,producer,length,short,bodytext,'.
-                              'teaser_title,teaser_subtitle,teaser_short,'.
-                              'actor,puppeteer,dancer,vocals,musician,video,narrator,'.
-                              'director,advisor,assistant,'.
-                              'stage_design,tailoring,requisite,garment,makeup,'.
-                              'stage_manager,technical_manager,technique,light,sound,'.
-                              'otherslabel,others,'.
-                              'documents,tx_org_news,'.
-                              'image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
-                              'tx_org_cal,'.
-                              'hidden,pages,fe_group,'.
-                              'keywords,description'
-  ),
-  'feInterface' => $TCA['tx_org_repertoire']['feInterface'],
-  'columns' => array (
-    'title' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.title',
-      'config'  => $conf_input_30_trimRequired,
-    ),
-    'subtitle' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.subtitle',
-      'config'  => $conf_input_30_trim,
-    ),
-    'producer' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.producer',
-      'config'  => $conf_input_30_trim,
-    ),
-    'length' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.length',
-      'config'  => $conf_input_30_trim,
-    ),
-    'short' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.short',
-      'config'    => $conf_text_50_10,
-    ),
-    'bodytext' => array (
-      'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.bodytext',
-      'l10n_mode' => 'prefixLangTitle',
-      'config'    => $conf_text_rte,
-    ),
-    'teaser_title' => array (
-      'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.teaser_title',
-      'config'  => $conf_input_30_trimRequired,
-    ),
-    'teaser_subtitle' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.teaser_subtitle',
-      'config'  => $conf_input_30_trim,
-    ),
-    'teaser_short' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.teaser_short',
-      'config'    => $conf_text_50_10,
-    ),
-    'actor' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.actor',
-      'config'  => $arr_config_feuser,
-    ),
-    'puppeteer' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.puppeteer',
-      'config'  => $arr_config_feuser,
-    ),
-    'dancer' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.dancer',
-      'config'  => $arr_config_feuser,
-    ),
-    'vocals' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.vocals',
-      'config'  => $arr_config_feuser,
-    ),
-    'musician' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.musician',
-      'config'  => $arr_config_feuser,
-    ),
-    'video' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.video',
-      'config'  => $arr_config_feuser,
-    ),
-    'narrator' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.narrator',
-      'config'  => $arr_config_feuser,
-    ),
-    'director' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.director',
-      'config'  => $arr_config_feuser,
-    ),
-    'advisor' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.advisor',
-      'config'  => $arr_config_feuser,
-    ),
-    'assistant' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.assistant',
-      'config'  => $arr_config_feuser,
-    ),
-    'stage_design' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.stage_design',
-      'config'  => $arr_config_feuser,
-    ),
-    'tailoring' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.tailoring',
-      'config'  => $arr_config_feuser,
-    ),
-    'requisite' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.requisite',
-      'config'  => $arr_config_feuser,
-    ),
-    'garment' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.garment',
-      'config'  => $arr_config_feuser,
-    ),
-    'makeup' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.makeup',
-      'config'  => $arr_config_feuser,
-    ),
-    'stage_manager' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.stage_manager',
-      'config'  => $arr_config_feuser,
-    ),
-    'technical_manager' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.technical_manager',
-      'config'  => $arr_config_feuser,
-    ),
-    'technique' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.technique',
-      'config'  => $arr_config_feuser,
-    ),
-    'light' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.light',
-      'config'  => $arr_config_feuser,
-    ),
-    'sound' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.sound',
-      'config'  => $arr_config_feuser,
-    ),
-    'otherslabel' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.otherslabel',
-      'config'  => $conf_input_30_trim,
-    ),
-    'others' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.others',
-      'config'  => $arr_config_feuser,
-    ),
-    'documents' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
-      'config'  => $conf_file_document,
-    ),
-    'tx_org_news' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_news,
-        'minitems'            => 0,
-        'maxitems'            => 999,
-        'MM'                  => 'tx_org_repertoire_mm_tx_org_news',
-        'foreign_table'       => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, title',
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_news',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_news',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
-      ),
-    ),
-    'image' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
-      'config'  => $conf_file_image,
-    ),
-    'imagecaption' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
-      'config'  => $conf_text_30_05,
-    ),
-    'imageseo' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
-      'config'  => $conf_text_30_05,
-    ),
-    'embeddedcode' => array (
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'exclude' => $bool_exclude_none,
-      'config'  => $conf_text_50_10,
-    ),
-    'print' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.print',
-      'config'  => $conf_file_image,
-    ),
-    'printcaption' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
-      'config'  => $conf_text_30_05,
-    ),
-    'printseo' => array (
-      'exclude' => $bool_exclude_none,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
-      'config'  => $conf_text_30_05,
-    ),
-    'tx_org_cal' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire.tx_org_cal',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_calendar,
-        'minitems'            => 0,
-        'maxitems'            => 999,
-        'MM'                  => 'tx_org_repertoire_mm_tx_org_cal',
-        'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_cal',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_cal',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
-      ),
-    ),
-    'hidden'    => $conf_hidden,
-    'pages'     => $conf_pages,
-    'fe_group'  => $conf_fegroup,
-    'keywords'  => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_input_80_trim,
-    ),
-    'description' => array (
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
-      'l10n_mode' => 'prefixLangTitle',
-      'exclude'   => $bool_exclude_default,
-      'config'    => $conf_text_50_10,
-    ),
-  ),
-  'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_repertoire,   title;;;;1-1-1,subtitle,producer,length,short,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_teaser,       teaser_title,teaser_subtitle,teaser_short,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_actors,       actor,puppeteer,dancer,vocals,musician,video,narrator,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_direction,    director,advisor,assistant,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_requirements, stage_design,tailoring,requisite,garment,makeup,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_technique,    stage_manager,technical_manager,technique,light,sound,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_others,       otherslabel,others,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_doc,          documents,tx_org_news,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_media,        image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_calendar,     tx_org_cal,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_control,      hidden,pages,fe_group,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_repertoire.div_seo,          keywords,description'.
-                                ''),
-  ),
-  'palettes' => array (
-    '1' => array('showitem' => 'starttime,endtime,'),
-  )
-);
-if(!$bool_full_wizardSupport_allTables)
-{
-  unset($TCA['tx_org_repertoire']['columns']['tx_org_cal']['config']['wizards']['add']);
-  unset($TCA['tx_org_repertoire']['columns']['tx_org_cal']['config']['wizards']['list'] );
-  unset($TCA['tx_org_repertoire']['columns']['tx_org_news']['config']['wizards']['add']);
-  unset($TCA['tx_org_repertoire']['columns']['tx_org_news']['config']['wizards']['list'] );
-}
-  // tx_org_repertoire - without any localisation support
 
 
 

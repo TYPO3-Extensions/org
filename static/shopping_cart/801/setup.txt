@@ -35,13 +35,13 @@ plugin.tx_wtcart_pi1 {
              tx_org_calentrance.value as price, 
              tx_org_tax.value as tax
       FROM `tx_org_cal`
-      LEFT JOIN tx_org_cal_mm_repertoire 
+      LEFT JOIN tx_org_cal_mm_event 
       ON (
-        tx_org_cal.uid = tx_org_cal_mm_repertoire.uid_local)
-      LEFT JOIN tx_org_repertoire 
+        tx_org_cal.uid = tx_org_cal_mm_event.uid_local)
+      LEFT JOIN tx_org_event 
       ON (
-        tx_org_cal_mm_repertoire.uid_foreign = tx_org_repertoire.uid
-        ###ENABLE_FIELDS:TX_ORG_REPERTOIRE###)
+        tx_org_cal_mm_event.uid_foreign = tx_org_event.uid
+        ###ENABLE_FIELDS:TX_ORG_EVENT###)
       LEFT JOIN tx_org_cal_mm_calentrance 
       ON (
         tx_org_cal.uid = tx_org_cal_mm_calentrance.uid_local)

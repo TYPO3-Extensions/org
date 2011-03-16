@@ -98,8 +98,6 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Personal');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',         '+Org: Personal - Rand (nicht cachen!)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/302',     '+Org: Repertoire');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/312',     '+Org: Repertoire - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',   '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',   '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/301',          '+Org: Veranstaltungen');
@@ -125,8 +123,6 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',           '+Org: News');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',           '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',           '+Org: News (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/302',     '+Org: Repertoires');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/repertoire/312',     '+Org: Repertoires - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/', '+Org: Shopping cart');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/', '+Org: Shopping cart - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',         '+Org: Staff');
@@ -154,8 +150,6 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Personal', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Repertoire', 'org_reptr', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Standorte', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Veranstaltungen', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
@@ -177,8 +171,6 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: News', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
-       array('Org: Repertoire', 'org_reptr', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Staff', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 }
   // Case $llStatic
@@ -189,7 +181,6 @@ $ICON_TYPES['org_event'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'e
 $ICON_TYPES['org_headq'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
 $ICON_TYPES['org_locat'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
 $ICON_TYPES['org_news']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-$ICON_TYPES['org_reptr'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif');
 $ICON_TYPES['org_staff'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 
   // Add pagetree icons
@@ -460,7 +451,6 @@ $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
   // calentrance
   // caltype
   // event
-  // repertoire
   // location
   // headquarters
   // department
@@ -550,10 +540,9 @@ $TCA['tx_org_cal'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
-      '0' => '../typo3conf/ext/org/ext_icon/event.gif',
-      '1' => '../typo3conf/ext/org/ext_icon/cal.gif',
-      '2' => '../typo3conf/ext/org/ext_icon/event.gif',
-      '3' => '../typo3conf/ext/org/ext_icon/repertoire.gif',
+      'event' => '../typo3conf/ext/org/ext_icon/event.gif',
+      'cal'   => '../typo3conf/ext/org/ext_icon/cal.gif',
+      'event' => '../typo3conf/ext/org/ext_icon/event.gif',
     ),
   ),
 );
@@ -630,29 +619,6 @@ $TCA['tx_org_event'] = array (
   ),
 );
   // event ///////////////////////////////////////////////////////////////////
-
-  // repertoire ///////////////////////////////////////////////////////////////////
-$TCA['tx_org_repertoire'] = array (
-  'ctrl' => array (
-    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_repertoire',
-    'label'             => 'title',
-    'tstamp'            => 'tstamp',
-    'crdate'            => 'crdate',
-    'cruser_id'         => 'cruser_id',
-    'default_sortby'    => 'ORDER BY title',
-    'delete'            => 'deleted',
-    'enablecolumns'     => array (
-      'disabled'  => 'hidden',
-      'fe_group'  => 'fe_group',
-    ),
-    'dividers2tabs'     => true,
-    'hideAtCopy'        => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-    'thumbnail'         => 'image',
-    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/repertoire.gif',
-  ),
-);
-  // repertoire ///////////////////////////////////////////////////////////////////
 
   // location ////////////////////////////////////////////////////////////////
 $TCA['tx_org_location'] = array (

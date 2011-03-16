@@ -26,11 +26,10 @@
   //    headquarterUid
   //    locationUid
   //    newsUid
-  //    repertoireUid
   //    staffUid
 
   // page
-[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0]|| [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|repertoireUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0]|| [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
   page {
     config {
       noPageTitle = 2
@@ -201,12 +200,6 @@ plugin.tx_browser_pi1 {
             dataWrap        = &tx_browser_pi1[newsUid]={GPvar:tx_browser_pi1|newsUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|newsUid
           }
-            // repertoireUid
-          70 = TEXT
-          70 {
-            dataWrap        = &tx_browser_pi1[repertoireUid]={GPvar:tx_browser_pi1|repertoireUid}&###CHASH###
-            if.isTrue.data  = GPvar:tx_browser_pi1|repertoireUid
-          }
             // staffUid
           80 = TEXT
           80 {
@@ -319,11 +312,6 @@ plugin.tx_linkhandler {
   tx_org_news {
     parameter        = {$plugin.org.pages.news}
     additionalParams = &tx_browser_pi1[newsUid]={field:uid}
-  }
-  tx_org_repertoire < .fe_users
-  tx_org_repertoire {
-    parameter        = {$plugin.org.pages.repertoire}
-    additionalParams = &tx_browser_pi1[repertoireUid]={field:uid}
   }
 }
 

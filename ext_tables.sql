@@ -25,9 +25,6 @@
 # tx_org_news
 # tx_org_news_mm_tx_org_newscat
 # tx_org_newscat
-# tx_org_repertoire
-# tx_org_repertoire_mm_tx_org_cal
-# tx_org_repertoire_mm_tx_org_news
 # tx_org_tax
 
 
@@ -72,7 +69,6 @@ CREATE TABLE tx_org_cal (
   deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
   type tinytext,
   tx_org_event tinytext,
-  tx_org_repertoire tinytext,
   title tinytext,
   subtitle tinytext,
   short mediumtext,
@@ -516,7 +512,6 @@ CREATE TABLE tx_org_news (
   fe_user tinytext NOT NULL,
   tx_org_department tinytext NOT NULL,
   tx_org_event tinytext NOT NULL,
-  tx_org_repertoire tinytext NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   tx_org_newscat tinytext,
   topnews tinyint(4) DEFAULT '0' NOT NULL,
@@ -572,99 +567,6 @@ CREATE TABLE tx_org_newscat (
   PRIMARY KEY (uid),
   KEY parent (pid)
 
-);
-
-
-
-#
-# Table structure for table 'tx_org_repertoire'
-#
-CREATE TABLE tx_org_repertoire (
-  uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  title tinytext,
-  subtitle tinytext,
-  producer tinytext,
-  length tinytext,
-  short mediumtext,
-  teaser_title tinytext,
-  teaser_subtitle tinytext,
-  teaser_short mediumtext,
-  bodytext mediumtext NOT NULL,
-  actor tinytext,
-  puppeteer tinytext,
-  dancer tinytext,
-  vocals tinytext,
-  musician tinytext,
-  video tinytext,
-  narrator tinytext,
-  director tinytext,
-  advisor tinytext,
-  assistant tinytext,
-  stage_design tinytext,
-  tailoring tinytext,
-  requisite tinytext,
-  garment tinytext,
-  makeup tinytext,
-  stage_manager tinytext,
-  technical_manager tinytext,
-  technique tinytext,
-  light tinytext,
-  sound tinytext,
-  otherslabel tinytext,
-  others tinytext,
-  documents text,
-  tx_org_news text,
-  image text,
-  imagecaption text,
-  imageseo text,
-  embeddedcode text,
-  print text,
-  printcaption text,
-  printseo text,
-  tx_org_cal tinytext,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  pages tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
-  keywords text,
-  description text,
-  
-  PRIMARY KEY (uid),
-  KEY parent (pid)
-);
-
-
-
-#
-# Table structure for table 'tx_org_repertoire_mm_tx_org_cal'
-#
-CREATE TABLE tx_org_repertoire_mm_tx_org_cal (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-
-
-#
-# Table structure for table 'tx_org_repertoire_mm_tx_org_news'
-#
-CREATE TABLE tx_org_repertoire_mm_tx_org_news (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
 );
 
 

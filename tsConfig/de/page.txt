@@ -32,12 +32,6 @@ mod.tx_linkhandler {
       // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
-  tx_org_repertoire {
-    label       = Org: Repertoire
-    listTables  = tx_org_repertoire
-      // Please set the onlyPids in page TSconfig of your page and sysfolder
-    // onlyPids    = 1
-  }
   tx_org_headquarters {
     label       = Org: Standorte, Abteilungen
     listTables  = tx_org_headquarters, tx_org_department
@@ -71,7 +65,6 @@ RTE.default.tx_linkhandler.tx_org_event         < mod.tx_linkhandler.tx_org_even
 RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
 RTE.default.tx_linkhandler.tx_org_location      < mod.tx_linkhandler.tx_org_location
 RTE.default.tx_linkhandler.tx_org_news          < mod.tx_linkhandler.tx_org_news
-RTE.default.tx_linkhandler.tx_org_repertoire    < mod.tx_linkhandler.tx_org_repertoire
 RTE.default.tx_linkhandler.tt_news >
   // RTE.default.tx_linkhandler
 

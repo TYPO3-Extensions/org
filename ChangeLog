@@ -1,3 +1,20 @@
+0.4.3
+  11-03-16
+  Consolidating
+  * Remove repertoire to a new extension Org +Repertoire
+    Affected files
+    * ext_tables.php
+    * ext_tables.sql
+    * tca.php
+    * tsConfig/*
+    * static/base/*
+    * res/html/calendar/201/default.tmpl
+    * static/calendar/201/setup.txt
+    Removed directories and files
+    * res/html/repertoire/
+    * static/repertoire/
+    * ext_icon/repertoire.gif
+
 0.4.2
   11-03-12
   New Feature
