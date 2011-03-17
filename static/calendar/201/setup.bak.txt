@@ -1,0 +1,350 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      201: Calendar
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      org {
+        calendar {
+          name      = Org: Kalender
+          file      = EXT:org/res/html/calendar/201/default.tmpl
+          csvViews  = 201
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      201 = Calendar
+      201 {
+        name    = Calendar
+        showUid = calendarUid
+        displayList < plugin.tx_browser_pi1.displayList
+        select (
+          tx_org_cal.title,
+          tx_org_cal.datetime
+        )
+        csvLinkToSingleView = tx_org_cal.title
+        filter {
+          tx_org_cal {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            datetime {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                    strftime = %a, %m.%d.%y %H:%M
+                  }
+                }
+              }
+            }
+          }
+          tx_org_department {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      201 = Calendar
+      201 {
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Events &raquo;
+            lang.de = Alle Veranstaltungen &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.calendar}
+              title {
+                value = All Events
+                lang.de = Alle Veranstaltungen
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Event
+            lang.de = Veranstaltung
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_cal.title,
+          tx_org_cal.deleted,
+          tx_org_cal.datetime,
+          tx_org_caltype.title,
+          tx_org_cal.documents,
+          tx_org_event.uid,
+          tx_org_event.title,
+          tx_org_event.bodytext,
+          tx_org_event.image,
+          tx_org_event.imagecaption,
+          tx_org_event.imageseo,
+          tx_org_location.uid,
+          tx_org_location.title,
+          tx_org_calentrance.title,
+          tx_org_calentrance.value,
+          tx_org_calspecial.title
+        )
+        orderBy = tx_org_cal_mm_calentrance.sorting, tx_org_calentrance.title
+        tx_org_cal {
+          datetime = COA
+          datetime {
+            10 = COA
+            10 {
+              wrap = <div style="background:#EEE;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_CAL.DATETIME###
+                strftime = %A
+                wrap = <span style="font-size:1em;">|</span><br />
+              }
+              11 = TEXT
+              11 {
+                value = ###TX_ORG_CAL.DATETIME###
+                strftime = %d
+                wrap = <span style="font-size:6em;font-weight:bold;line-height:1em;">|</span><br />
+              }
+              12 = TEXT
+              12 {
+                value = ###TX_ORG_CAL.DATETIME###
+                strftime = %B
+                wrap = <span style="font-size:1em;">|</span><br />
+              }
+              13 = TEXT
+              13 {
+                value = ###TX_ORG_CAL.DATETIME###
+                strftime = %H:%M
+                noTrimWrap = |<span style="font-size:1em;line-height:1.8em;">| Uhr</span>|
+              }
+            }
+            20 = TEXT
+            20 {
+              value = <div style="font-size:.6em;padding:.6em 0;width:100px;">&nbsp;</div>
+            }
+            21 = COA
+            21 {
+              wrap = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
+              10 = TEXT
+              10 {
+                value = Location
+                lang.de = Ort
+                wrap = <strong>|</strong><br />
+              }
+              11 = TEXT
+              11 {
+                value = ###TX_ORG_LOCATION.TITLE###
+                typolink {
+                  parameter = {$plugin.org.pages.location}
+                  parameter {
+                    insertData = 1
+                  }
+                  additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+                }
+              }
+            }
+            30 = TEXT
+            30 {
+              value = <div style="font-size:.6em;padding:.6em 0;width:100px;">&nbsp;</div>
+              if {
+                isTrue = ###TX_ORG_CALENTRANCE.TITLE###
+              }
+            }
+            31 = COA
+            31 {
+              comment (
+                Konfigurations-Trick: Wir brauchen den Titel "Eintritt" nur einmal und nicht für jeden Datensatz Eintritt
+                Siehe auch unten deleted
+              )
+              if {
+                isTrue = ###TX_ORG_CALENTRANCE.TITLE###
+              }
+              10 = TEXT
+              10 {
+                value = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;width:100px;">
+              }
+              11 = TEXT
+              11 {
+                value = Entrance Fee
+                lang.de = Eintritt
+                wrap  = <strong>|</strong>
+              }
+              12 = TEXT
+              12 {
+                value = <ul>
+              }
+            }
+          }
+          deleted = COA
+          deleted {
+            comment (
+              Konfigurations-Trick: Der gesamte Kasten "Eintritt" soll nur angezeigt werden, wenn Eintritt-Datensaetze vorhanden
+              sind. Siehe auch oben tx_org_cal.datetime.30 und 31
+            )
+            if {
+              isTrue = ###TX_ORG_CALENTRANCE.TITLE###
+            }
+            10 = TEXT
+            10 {
+              value = </ul></div>
+            }
+          }
+        }
+        tx_org_calentrance {
+          title = COA
+          title {
+            comment (
+              Konfigurations-Trick: Der Kasten "Eintritt" hat ein div und eine Überschrift. Die sollen nur einmal angezeigt werden,
+              und nicht bei jedem Datensatz Eintritt. Deshalb siehe auch oben tx_org_cal.datetime.30 und 31 und deleted
+            )
+            10 = COA
+            10 {
+              if {
+                isTrue = ###TX_ORG_CALENTRANCE.TITLE###
+              }
+              wrap = <li>|</li>
+              11 = TEXT
+              11 {
+                value = ###TX_ORG_CALENTRANCE.TITLE###
+              }
+            }
+          }
+        }
+        tx_org_location {
+          title2 = COA
+          title2 {
+            20 = TEXT
+            20 {
+              value = ###TX_ORG_LOCATION.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.location}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+              }
+            }
+          }
+        }
+        tx_org_event {
+          bodytext = COA
+          bodytext {
+            wrap = <p>|</p>
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_CALTYPE.TITLE###
+              }
+              value = ###TX_ORG_CALTYPE.TITLE###
+              noTrimWrap = |<strong>|</strong> &ndash; |
+            }
+            11 = TEXT
+            11 {
+              value = ###TX_ORG_EVENT.BODYTEXT###
+            }
+            20 = TEXT
+            20 {
+              value = Details about
+              lang.de = Ausf&uuml;hrliche Informationen zu
+              noTrimWrap = |<br /><br />| |
+            }
+            21 = TEXT
+            21 {
+              value = ###TX_ORG_EVENT.TITLE###
+              typolink {
+                parameter = {$plugin.org.pages.event}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[eventUid]=###TX_ORG_EVENT.UID###&###CHASH###
+              }
+            }
+            20 >
+            21 >
+            22 = TEXT
+            22 {
+              value       = Mehr &raquo;
+              noTrimWrap  = | ||
+              typolink {
+                parameter = {$plugin.org.pages.event}
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[eventUid]=###TX_ORG_EVENT.UID###&###CHASH###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_201_titleTag      = TYPO3 Organiser: Events
+      list_mode_201_keywords      = TYPO3, Organiser, Events
+      list_mode_201_summary       = TYPO3 Organiser: Events
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
+      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
+      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
+    }
+    de {
+      list_mode_201_titleTag      = TYPO3 Organiser: Veranstaltungen
+      list_mode_201_keywords      = TYPO3, Organiser, Veranstaltungen
+      list_mode_201_summary       = TYPO3 Organiser: Veranstaltungen
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
+      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
+      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment
