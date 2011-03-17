@@ -43,9 +43,18 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.image,
           tx_org_headquarters.imageseo
         )
-          // 110221, dwildt: tx_org_department.sorting hat nicht erwarteten Effekt
-        orderBy = tx_org_headquarters.sorting, tx_org_department.sorting
-        //orderBy = tx_org_headquarters.sorting
+        orderBy = tx_org_headquarters.sorting
+        orderBy {
+          tx_org_department (
+            SELECT    tx_org_department.uid   AS 'uid', 
+                      tx_org_department.title AS 'title'
+            FROM      tx_org_department,
+                      tx_org_headquarters_mm_tx_org_department
+            WHERE     tx_org_headquarters_mm_tx_org_department.uid_local    = ###UID_LOCAL###
+            AND       tx_org_headquarters_mm_tx_org_department.uid_foreign  = tx_org_department.uid
+            ORDER BY  tx_org_headquarters_mm_tx_org_department.sorting
+)
+        }
         csvLinkToSingleView = tx_org_headquarters.title
       }
     }
@@ -121,6 +130,17 @@ plugin.tx_browser_pi1 {
           tx_org_department.uid,
           tx_org_department.title
         )
+        orderBy {
+          tx_org_department (
+            SELECT    tx_org_department.uid   AS 'uid', 
+                      tx_org_department.title AS 'title'
+            FROM      tx_org_department,
+                      tx_org_headquarters_mm_tx_org_department
+            WHERE     tx_org_headquarters_mm_tx_org_department.uid_local    = ###UID_LOCAL###
+            AND       tx_org_headquarters_mm_tx_org_department.uid_foreign  = tx_org_department.uid
+            ORDER BY  tx_org_headquarters_mm_tx_org_department.sorting
+)
+        }
         tx_org_headquarters {
           title = TEXT
           title {

@@ -393,19 +393,14 @@ $TCA['tx_org_cal'] = array (
       'config'    => array (
         'type'    => 'select', 
         'items'   => array(
-          'default' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.default',
-            '1' => '0',
-            '2' => 'EXT:org/ext_icon/event.gif',
-          ),
-          'direct' => array(
+          '0' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.direct',
-            '1' => '1',
+            '1' => '0',
             '2' => 'EXT:org/ext_icon/cal.gif',
           ),
           'tx_org_event' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
-            '1' => '2',
+            '1' => 'tx_org_event',
             '2' => 'EXT:org/ext_icon/event.gif',
           ),
         ),
@@ -757,16 +752,7 @@ $TCA['tx_org_cal'] = array (
     ),
   ),
   'types' => array (
-    'default' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,embeddedcode,print,printcaption,printseo,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
-      ''),
-    'direct' => array('showitem' =>
+    '0' => array('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
