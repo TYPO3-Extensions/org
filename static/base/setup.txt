@@ -10,7 +10,7 @@
   // jq_fancybox for plugin.tx_browser_pi1
   // plugin.tx_browser_pi1
   // plugin.tx_linkhandler
-  // Header Comment
+  // page
 
 
 
@@ -317,11 +317,14 @@ plugin.tx_linkhandler {
 
 
 
-  ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////
   //
-  // Header Comment
+  // page
 
-page.config.headerComment (
-        TYPO3-Programmierung: die-netzmacher.de
-)
-  // Header Comment
+page {
+  includeCSS.organiser = EXT:org/res/html/org.css
+  config.headerComment (
+          TYPO3-Programmierung: die-netzmacher.de
+  )
+}
+  // page

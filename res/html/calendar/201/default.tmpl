@@ -14,12 +14,16 @@
           <form action="###ACTION###" method="post" >
             <fieldset>
               <legend>###MY_SEARCH_LEGEND###</legend>
+              <div style="float:right; text-align:right;">
+                <input class="reset" type="button" onclick="location='###MY_URL###'" value="###MY_RESET###" />
+                <input class="button" type="submit" value="###BUTTON###" />
+              </div>
               <input type="hidden" name="no_cache" value="1" />
               <div class="filter">
                 <div class="period_menu">
                   ###TX_ORG_CAL.DATETIME###
                 </div>
-                ###TX_ORG_CAL.TITLE### ###TX_ORG_CALTYPE.TITLE###
+                ###TX_ORG_CALTYPE.TITLE### ###TX_ORG_DEPARTMENT.TITLE### 
               </div>
             </fieldset>
           </form>
@@ -68,15 +72,11 @@
               <div class="cal_datetime">
                 ###TX_ORG_CAL.DATETIME###
               </div>
-              <div class="cal_subtitle">
-                ###TX_ORG_REPERTOIRE.SUBTITLE###
-              </div>
+              ###TX_ORG_CAL.SUBTITLE###
               <div class="cal_title">
-                ###TX_ORG_CAL.TITLE### ###TX_ORG_REPERTOIRE.PRODUCER### ###TX_ORG_CALTYPE.TITLE###
+                ###TX_ORG_CAL.TITLE### ###TX_ORG_CALTYPE.TITLE###
               </div>
-              <div class="cal_short">
-                ###TX_ORG_CAL.SHORT###
-              </div>
+              ###TX_ORG_CAL.SHORT###
             </div>
             <div class="cleaner">&nbsp:</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
 <!-- ###GROUPBYBODY### end -->
@@ -107,7 +107,9 @@
           <div class="cal_datetime">
             ###TX_ORG_CAL.DATETIME###
           </div>
+          ###TX_ORG_CAL.SUBTITLE###
           ###TX_ORG_CAL.TITLE###
+          ###TX_ORG_CAL.SHORT###
           ###TX_ORG_CAL.BODYTEXT###
           <div class="cleaner">&nbsp;</div>
 <!-- ###AREA_FOR_AJAX_LIST_01### end -->

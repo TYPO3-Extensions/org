@@ -119,7 +119,7 @@ switch($confArr['store_records'])
   // Rows of calendar select box
   $size_calendar    = 10;
   // Rows of event select box
-  $size_event  = 1;
+  $size_event       = 10;
   // Rows of fe_group select box
   $size_fegroup     = 10;
   // Rows of fe_user select box
@@ -376,7 +376,7 @@ switch($confArr['store_records'])
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,tx_org_event,title,shortcut,datetime,tx_org_caltype,bodytext,'.
+    'showRecordFieldList' =>  'type,tx_org_event,title,subtitle,short,datetime,tx_org_caltype,bodytext,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_department'.
@@ -753,7 +753,7 @@ $TCA['tx_org_cal'] = array (
   ),
   'types' => array (
     '0' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,shortcut,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
