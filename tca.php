@@ -539,9 +539,9 @@ $TCA['tx_org_cal'] = array (
       'config'    => $conf_text_rte,
     ),
     'teaser_title' => array (
-      'exclude' => 0,
+      'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.teaser_title',
-      'config'  => $conf_input_30_trimRequired,
+      'config'  => $conf_input_30_trim,
     ),
     'teaser_subtitle' => array (
       'exclude' => $bool_exclude_default,
@@ -981,9 +981,9 @@ $TCA['tx_org_event'] = array (
       'config'    => $conf_text_rte,
     ),
     'teaser_title' => array (
-      'exclude' => 0,
+      'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_event.teaser_title',
-      'config'  => $conf_input_30_trimRequired,
+      'config'  => $conf_input_30_trim,
     ),
     'teaser_subtitle' => array (
       'exclude' => $bool_exclude_default,

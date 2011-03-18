@@ -432,11 +432,10 @@ plugin.tx_browser_pi1 {
                 imgList.field >
                 imgList = ###TX_ORG_CAL.IMAGE###
                 imgPath = uploads/tx_org/
-                imgMax  = 1
                 1 {
                   file {
                     width.field >
-                    width   = 140c;
+                    width   = 160c;
                     height  = 110c;
                   }
                   altText.field   >
@@ -446,18 +445,18 @@ plugin.tx_browser_pi1 {
                   imageLinkWrap {
                     enable.field >
                     enable = 1
-                    width   = 600;
-                    height  = 400m;
+                    width   = 1000;
+                    height  = 800m;
                     //JSwindow = 0
                   }
                 }
                 layout {
                   key.field >
-                    // intext-right
-                  key = 17
+                    // above-left
+                  key = 2
                 }
                 cols.field >
-                cols = 1
+                cols = 3
                 caption.1 {
                   field >
                   value = ###TX_ORG_CAL.IMAGECAPTION###
@@ -469,10 +468,10 @@ plugin.tx_browser_pi1 {
               }
               tx_org_event < .default
               tx_org_event {
-                imgList         = ###TX_ORG_CAL.IMAGE###
-                1.altText       = ###TX_ORG_CAL.IMAGESEO###
-                1.titleText     = ###TX_ORG_CAL.IMAGESEO###
-                caption.1.value = ###TX_ORG_CAL.IMAGECAPTION###
+                imgList         = ###TX_ORG_EVENT.IMAGE###
+                1.altText       = ###TX_ORG_EVENT.IMAGESEO###
+                1.titleText     = ###TX_ORG_EVENT.IMAGESEO###
+                caption.1.value = ###TX_ORG_EVENT.IMAGECAPTION###
               }
             }
           }
