@@ -8,10 +8,12 @@
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
       <label index="filter_phrase.all">All</label>
-      <label index="filter_phrase.caltype.title">All categories</label>
       <label index="filter_phrase.cal.title">All events</label>
+      <label index="filter_phrase.calendar">Calendar</label>
+      <label index="filter_phrase.caltype.title">All categories</label>
       <label index="filter_phrase.department">Department</label>
       <label index="filter_phrase.newscat">Category</label>
+      <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
       <label index="filter_phrase.period">Period</label>
       <label index="filter_phrase.period_all_months">All months</label>
@@ -176,7 +178,7 @@
       <label index="tx_org_news.div_media">Media</label>
       <label index="tx_org_news.div_seo">Search Engines</label>
       <label index="tx_org_news.type">Type</label>
-      <label index="tx_org_news.type.news">Type</label>
+      <label index="tx_org_news.type.news">News</label>
       <label index="tx_org_news.type.newspage">Link to an internal page</label>
       <label index="tx_org_news.type.newsurl">Link to an external page (URL)</label>
       <label index="tx_org_news.title">Header</label>
@@ -237,10 +239,12 @@
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
       <label index="filter_phrase.all">Alle</label>
-      <label index="filter_phrase.caltype.title">Alle Kategorien</label>
       <label index="filter_phrase.cal.title">Alle Veranstaltungen</label>
+      <label index="filter_phrase.calendar">Kalender</label>
+      <label index="filter_phrase.caltype.title">Alle Kategorien</label>
       <label index="filter_phrase.department">Hochschul-Bereich</label>
       <label index="filter_phrase.newscat">Kategorie</label>
+      <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
       <label index="filter_phrase.period">Zeitraum</label>
       <label index="filter_phrase.period_all_months">Alle Monate</label>

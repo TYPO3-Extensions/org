@@ -129,7 +129,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_CAL.SHORT###
                   stripHtml   = 1
                   crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short">|</div>
+                  wrap        = <div class="cal_short cal_short_default">|</div>
                 }
                 11 = TEXT
                 11 {
@@ -138,7 +138,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_CAL.BODYTEXT###
                   stripHtml   = 1
                   crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short">|</div>
+                  wrap        = <div class="cal_short cal_short_default">|</div>
                 }
               }
               tx_org_event = COA
@@ -150,7 +150,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_EVENT.SHORT###
                   stripHtml   = 1
                   crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short">|</div>
+                  wrap        = <div class="cal_short cal_short_event">|</div>
                 }
                 11 = TEXT
                 11 {
@@ -159,7 +159,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_EVENT.BODYTEXT###
                   stripHtml   = 1
                   crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short">|</div>
+                  wrap        = <div class="cal_short cal_short_event">|</div>
                 }
               }
             }
@@ -175,13 +175,13 @@ plugin.tx_browser_pi1 {
               default {
                 required  = 1
                 value     = ###TX_ORG_CAL.SUBTITLE###
-                wrap      = <div class="cal_subtitle">|</div>
+                wrap      = <div class="cal_subtitle cal_subtitle_default">|</div>
               }
               tx_org_event = TEXT
               tx_org_event {
                 required  = 1
                 value     = ###TX_ORG_EVENT.SUBTITLE###
-                wrap      = <div class="cal_subtitle">|</div>
+                wrap      = <div class="cal_subtitle cal_subtitle_event">|</div>
               }
             }
           }
@@ -196,7 +196,7 @@ plugin.tx_browser_pi1 {
               default {
                 value = ###TX_ORG_CAL.TITLE###
                 typolink {
-                  parameter         = {$plugin.org.pages.calendar}
+                  parameter         = {$plugin.org.pages.calendar} - linktosingle
                   additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
                 }
               }
@@ -204,7 +204,7 @@ plugin.tx_browser_pi1 {
               tx_org_event {
                 value = ###TX_ORG_EVENT.TITLE###
                 typolink {
-                  parameter         = {$plugin.org.pages.calendar}
+                  parameter         = {$plugin.org.pages.calendar} - linktosingle
                   additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
                 }
               }
@@ -225,8 +225,7 @@ plugin.tx_browser_pi1 {
             datetime {
               first_item {
                 stdWrap {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period_all_months
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.schedule
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
                 }
               }
               wrap = <span class="category_menu">|</span>
@@ -408,7 +407,7 @@ plugin.tx_browser_pi1 {
                 if.isTrue   = ###TX_ORG_CAL.BODYTEXT###
                 value       = ###TX_ORG_CAL.BODYTEXT###
                 stripHtml   = 1
-                wrap        = <div class="cal_bodytext">|</div>
+                wrap        = <div class="cal_bodytext cal_bodytext_default">|</div>
               }
               tx_org_event = TEXT
               tx_org_event {
@@ -416,7 +415,7 @@ plugin.tx_browser_pi1 {
                 if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
                 value       = ###TX_ORG_EVENT.BODYTEXT###
                 stripHtml   = 1
-                wrap        = <div class="cal_bodytext">|</div>
+                wrap        = <div class="cal_bodytext cal_bodytext_event">|</div>
               }
             }
           }
@@ -463,7 +462,7 @@ plugin.tx_browser_pi1 {
                 }
                 stdWrap {
                   prefixComment >
-                  wrap          = <div class="image">|</div>
+                  wrap          = <div class="image image_default">|</div>
                 }
               }
               tx_org_event < .default
@@ -472,6 +471,7 @@ plugin.tx_browser_pi1 {
                 1.altText       = ###TX_ORG_EVENT.IMAGESEO###
                 1.titleText     = ###TX_ORG_EVENT.IMAGESEO###
                 caption.1.value = ###TX_ORG_EVENT.IMAGECAPTION###
+                stdWrap.wrap    = <div class="image image_event">|</div>
               }
             }
           }
@@ -509,7 +509,7 @@ plugin.tx_browser_pi1 {
                 if.isTrue   = ###TX_ORG_CAL.SHORT###
                 value       = ###TX_ORG_CAL.SHORT###
                 stripHtml   = 1
-                wrap        = <div class="cal_short">|</div>
+                wrap        = <div class="cal_short cal_short_default">|</div>
               }
               tx_org_event = TEXT
               tx_org_event {
@@ -517,7 +517,7 @@ plugin.tx_browser_pi1 {
                 if.isTrue   = ###TX_ORG_EVENT.SHORT###
                 value       = ###TX_ORG_EVENT.SHORT###
                 stripHtml   = 1
-                wrap        = <div class="cal_short">|</div>
+                wrap        = <div class="cal_short cal_short_event">|</div>
               }
             }
           }
@@ -532,13 +532,13 @@ plugin.tx_browser_pi1 {
               default {
                 required  = 1
                 value     = ###TX_ORG_CAL.SUBTITLE###
-                wrap      = <h2 class="subtitle">|</h2>
+                wrap      = <h2 class="cal_subtitle cal_subtitle_default">|</h2>
               }
               tx_org_event = TEXT
               tx_org_event {
                 required  = 1
                 value     = ###TX_ORG_EVENT.SUBTITLE###
-                wrap      = <h2 class="subtitle">|</h2>
+                wrap      = <h2 class="cal_subtitle cal_subtitle_event">|</h2>
               }
             }
           }
@@ -552,12 +552,12 @@ plugin.tx_browser_pi1 {
               default = TEXT
               default {
                 value = ###TX_ORG_CAL.TITLE###
-                wrap  = <h1>|</h1>
+                wrap  = <h1 class="default">|</h1>
               }
               tx_org_event = TEXT
               tx_org_event {
                 value = ###TX_ORG_EVENT.TITLE###
-                wrap  = <h1>|</h1>
+                wrap  = <h1 class="event">|</h1>
               }
             }
           }
@@ -591,17 +591,17 @@ plugin.tx_browser_pi1 {
       list_mode_201_titleTag      = TYPO3 Organiser: Events
       list_mode_201_keywords      = TYPO3, Organiser, Events
       list_mode_201_summary       = TYPO3 Organiser: Events
-      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
-      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
-      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE######TX_ORG_EVENT.TITLE###
+      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
+      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
     }
     de {
       list_mode_201_titleTag      = TYPO3 Organiser: Veranstaltungen
       list_mode_201_keywords      = TYPO3, Organiser, Veranstaltungen
       list_mode_201_summary       = TYPO3 Organiser: Veranstaltungen
-      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
-      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS###
-      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION###
+      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE######TX_ORG_EVENT.TITLE###
+      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
+      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
     }
   }
 }
