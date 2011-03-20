@@ -541,6 +541,8 @@ $TCA['tx_org_cal'] = array (
     'typeicon_column'   => 'type',
     'typeicons'         => array(
       '0'             => '../typo3conf/ext/org/ext_icon/cal.gif',
+      'calpage'       => '../typo3conf/ext/org/ext_icon/calpage.gif',
+      'calurl'        => '../typo3conf/ext/org/ext_icon/calurl.gif',
       'tx_org_event'  => '../typo3conf/ext/org/ext_icon/event.gif',
     ),
   ),

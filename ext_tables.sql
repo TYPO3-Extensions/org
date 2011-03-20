@@ -78,6 +78,8 @@ CREATE TABLE tx_org_cal (
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short mediumtext,
+  calpage tinytext,
+  calurl tinytext,
   tx_org_location tinytext,
   tx_org_calentrance tinytext,
   tx_org_department tinytext NOT NULL,

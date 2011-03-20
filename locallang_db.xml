@@ -38,6 +38,8 @@
       <label index="fe_groups">Staff: Groups</label>
       <label index="tx_org_cal">Calendar</label>
       <label index="tx_org_cal.div_calendar">Event</label>
+      <label index="tx_org_cal.div_calpage">Internal Link</label>
+      <label index="tx_org_cal.div_calurl">External Link</label>
       <label index="tx_org_cal.div_teaser">Teaser</label>
       <label index="tx_org_cal.div_event">Location, admission</label>
       <label index="tx_org_cal.div_department">Department</label>
@@ -47,6 +49,8 @@
       <label index="tx_org_cal.type">Event data</label>
       <label index="tx_org_cal.type.default">Default</label>
       <label index="tx_org_cal.type.direct">Enter it directly</label>
+      <label index="tx_org_cal.type.calpage">Link to an internal page</label>
+      <label index="tx_org_cal.type.calurl">Link to an external page (URL)</label>
       <label index="tx_org_cal.type.tx_org_event">Take it from the event table</label>
       <label index="tx_org_cal.tx_org_event">Event</label>
       <label index="tx_org_cal.title">Title of the event</label>
@@ -269,6 +273,8 @@
       <label index="fe_groups">Personal: Gruppen</label>
       <label index="tx_org_cal">Kalender</label>
       <label index="tx_org_cal.div_calendar">Veranstaltung</label>
+      <label index="tx_org_cal.div_calpage">Interner Link</label>
+      <label index="tx_org_cal.div_calurl">Externer Link</label>
       <label index="tx_org_cal.div_teaser">Kurztitel</label>
       <label index="tx_org_cal.div_event">Ort, Eintritt</label>
       <label index="tx_org_cal.div_department">Abteilungen</label>
@@ -278,6 +284,8 @@
       <label index="tx_org_cal.type">Veranstaltungsdaten</label>
       <label index="tx_org_cal.type.default">Standard</label>
       <label index="tx_org_cal.type.direct">Direkt eingeben</label>
+      <label index="tx_org_cal.type.calpage">Link zu interner Seite</label>
+      <label index="tx_org_cal.type.calurl">Link zu externer Seite (URL)</label>
       <label index="tx_org_cal.type.tx_org_event">Aus den Veranstaltungen</label>
       <label index="tx_org_cal.tx_org_event">Veranstaltung</label>
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>

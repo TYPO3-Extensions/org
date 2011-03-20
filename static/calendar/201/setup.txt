@@ -51,13 +51,6 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %a
               wrap      = <div class="weekday">|</div>
-              typolink {
-                parameter = {page:uid} - "linktosingle invert"
-                parameter {
-                  insertData = 1
-                }
-                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
-              }
             }
               // day of month as number
             20 = TEXT
@@ -65,13 +58,6 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %d
               wrap      = <div class="day_of_month">|</div>
-              typolink {      
-                parameter = {page:uid} - "linktosingle invert"
-                parameter {
-                  insertData = 1
-                }
-                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
-              }
             }
               // month
             30 = TEXT
@@ -79,13 +65,6 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %b
               wrap      = <div class="month">|</div>
-              typolink {
-                parameter = {page:uid} - "linktosingle invert"
-                parameter {
-                  insertData = 1
-                }
-                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
-              }
             }
           }
         }
@@ -96,14 +75,17 @@ plugin.tx_browser_pi1 {
           tx_org_cal.bodytext,
           tx_org_cal.datetime,
           tx_org_cal.type,
+          tx_org_cal.calpage,
+          tx_org_cal.calurl,
           tx_org_caltype.title,
           tx_org_event.title,
           tx_org_event.subtitle,
           tx_org_event.short,
           tx_org_event.bodytext
         )
-        orderBy   = tx_org_cal.datetime
-        andWhere  = tx_org_cal.datetime > UNIX_TIMESTAMP()
+        orderBy             = tx_org_cal.datetime
+        andWhere            = tx_org_cal.datetime > UNIX_TIMESTAMP()
+        csvLinkToSingleView = tx_org_cal.title
         tx_org_cal {
           datetime = TEXT
           datetime {
@@ -139,6 +121,48 @@ plugin.tx_browser_pi1 {
                   stripHtml   = 1
                   crop        = 200 | ... | 1
                   wrap        = <div class="cal_short cal_short_default">|</div>
+                }
+              }
+              calpage = COA
+              calpage {
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.SHORT###
+                  value       = ###TX_ORG_CAL.SHORT###
+                  stripHtml   = 1
+                  crop        = 200 | ... | 1
+                  wrap        = <div class="cal_short cal_short_page">|</div>
+                }
+                11 = TEXT
+                11 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.SHORT###
+                  value       = ###TX_ORG_CAL.BODYTEXT###
+                  stripHtml   = 1
+                  crop        = 200 | ... | 1
+                  wrap        = <div class="cal_short cal_short_page">|</div>
+                }
+              }
+              calurl = COA
+              calurl {
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.SHORT###
+                  value       = ###TX_ORG_CAL.SHORT###
+                  stripHtml   = 1
+                  crop        = 200 | ... | 1
+                  wrap        = <div class="cal_short cal_short_url">|</div>
+                }
+                11 = TEXT
+                11 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.SHORT###
+                  value       = ###TX_ORG_CAL.BODYTEXT###
+                  stripHtml   = 1
+                  crop        = 200 | ... | 1
+                  wrap        = <div class="cal_short cal_short_url">|</div>
                 }
               }
               tx_org_event = COA
@@ -177,6 +201,18 @@ plugin.tx_browser_pi1 {
                 value     = ###TX_ORG_CAL.SUBTITLE###
                 wrap      = <div class="cal_subtitle cal_subtitle_default">|</div>
               }
+              calpage = TEXT
+              calpage {
+                required  = 1
+                value     = ###TX_ORG_CAL.SUBTITLE###
+                wrap      = <div class="cal_subtitle cal_subtitle_page">|</div>
+              }
+              calurl = TEXT
+              calurl {
+                required  = 1
+                value     = ###TX_ORG_CAL.SUBTITLE###
+                wrap      = <div class="cal_subtitle cal_subtitle_url">|</div>
+              }
               tx_org_event = TEXT
               tx_org_event {
                 required  = 1
@@ -198,6 +234,20 @@ plugin.tx_browser_pi1 {
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - linktosingle
                   additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                }
+              }
+              calpage = TEXT
+              calpage {
+                value = ###TX_ORG_CAL.TITLE###
+                typolink {
+                  parameter = ###TX_ORG_CAL.CALPAGE###
+                }
+              }
+              calurl = TEXT
+              calurl {
+                value = ###TX_ORG_CAL.TITLE###
+                typolink {
+                  parameter = ###TX_ORG_CAL.CALURL###
                 }
               }
               tx_org_event = TEXT

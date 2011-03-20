@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Org is a powerfull database for organisations, companies and organisers: You can publish all data in real terms. You can design an organisation with headquarters, locations, staff, events,  news and documents. Org displays data in list, single and calendar views.Org hasn\'t any PHP code. It is  based on the TYPO3-Fronend-Engine Browser. You can control and develop org by plugins and TypoScript.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '0.4.3',
+	'version' => '0.4.4',
 	'dependencies' => 'browser,css_styled_content,linkhandler',
 	'conflicts' => '',
 	'priority' => '',
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'browser' => '3.6.1-',
+			'browser' => '3.6.4-',
 			'css_styled_content' => '1.0.0-',
 			'linkhandler' => '0.3.1-',
 		),

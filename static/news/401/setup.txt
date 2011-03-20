@@ -95,7 +95,7 @@ plugin.tx_browser_pi1 {
                   if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
                   value     = ###TX_ORG_NEWS.TEASER_TITLE###
                   typolink {
-                    parameter = ###TX_ORG_NEWS.NEWSPAGE### - linktosingle
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
                   }
                 }
                 11 = TEXT
@@ -103,7 +103,7 @@ plugin.tx_browser_pi1 {
                   if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
                   value       = ###TX_ORG_NEWS.TITLE###
                   typolink {
-                    parameter = ###TX_ORG_NEWS.NEWSPAGE### - linktosingle
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
                   }
                 }
               }

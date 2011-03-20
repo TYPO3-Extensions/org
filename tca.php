@@ -119,7 +119,7 @@ switch($confArr['store_records'])
   // Rows of calendar select box
   $size_calendar    = 10;
   // Rows of event select box
-  $size_event       = 10;
+  $size_event       = 30;
   // Rows of fe_group select box
   $size_fegroup     = 10;
   // Rows of fe_user select box
@@ -376,7 +376,7 @@ switch($confArr['store_records'])
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,tx_org_event,title,subtitle,short,datetime,tx_org_caltype,bodytext,'.
+    'showRecordFieldList' =>  'type,title,subtitle,short,datetime,tx_org_caltype,bodytext,tx_org_event,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_department'.
@@ -398,6 +398,16 @@ $TCA['tx_org_cal'] = array (
             '1' => '0',
             '2' => 'EXT:org/ext_icon/cal.gif',
           ),
+          'calpage' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calpage',
+            '1' => 'calpage',
+            '2' => 'EXT:org/ext_icon/calpage.gif',
+          ),
+          'calurl' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calurl',
+            '1' => 'calurl',
+            '2' => 'EXT:org/ext_icon/calurl.gif',
+          ),
           'tx_org_event' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
             '1' => 'tx_org_event',
@@ -407,57 +417,41 @@ $TCA['tx_org_cal'] = array (
         'default' => '0',
       ),
     ),
-    'tx_org_event' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_event',
-      'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_event,
-        'minitems'            => 0,
-        'maxitems'            => 1,
-        'MM'                  => 'tx_org_event_mm_tx_org_cal',
-        'MM_opposite_field'   => 'tx_org_cal',
-        'foreign_table'       => 'tx_org_event',
-        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' ORDER BY tx_org_event.title',
-        'items' => array(
-          '0' => array(
-            '0' => '',
-            '1' => '',
+    'calpage' => array (
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.calpage',
+      'l10n_mode' => 'exclude',
+      'exclude'   => $bool_exclude_default,
+      'config'    => array (
+        'type'          => 'group',
+        'internal_type' => 'db',
+        'allowed'       => 'pages',
+        'size'          => '1',
+        'maxitems'      => '1',
+        'minitems'      => '1',
+        'show_thumbs'   => '1'
+      ),
+    ),
+    'calurl' => array (
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.calurl',
+      'l10n_mode' => 'exclude',
+      'exclude'   => $bool_exclude_default,
+      'config'    => array (
+        'type'      => 'input',
+        'size'      => '80',
+        'max'       => '256',
+        'checkbox'  => '',
+        'eval'      => 'trim,required',
+        'wizards'   => array (
+          '_PADDING'  => '2',
+          'link'      => array (
+            'type'         => 'popup',
+            'title'        => 'Link',
+            'icon'         => 'link_popup.gif',
+            'script'       => 'browse_links.php?mode=wizard',
+            'JSopenParams' => $JSopenParams,
           ),
         ),
-        'wizards' => array(
-          '_PADDING'  => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.add',
-            'icon'   => 'add.gif',
-            'params' => array(
-              'table'    => 'tx_org_event',
-              'pid'      => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.list',
-            'icon'   => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_event',
-              'pid'   => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.edit',
-            'script'                    => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected'  => 1,
-            'icon'                      => 'edit2.gif',
-            'JSopenParams'              => $JSopenParams,
-          ),
-        ),
+        'softref' => 'typolink',
       ),
     ),
     'title' => array (
@@ -537,6 +531,59 @@ $TCA['tx_org_cal'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.bodytext',
       'l10n_mode' => 'prefixLangTitle',
       'config'    => $conf_text_rte,
+    ),
+    'tx_org_event' => array (
+      'exclude' => $bool_exclude_default,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_event',
+      'config'  => array (
+        'type'                => 'select', 
+        'size'                => $size_event,
+        'minitems'            => 0,
+        'maxitems'            => 1,
+        'MM'                  => 'tx_org_event_mm_tx_org_cal',
+        'MM_opposite_field'   => 'tx_org_cal',
+        'foreign_table'       => 'tx_org_event',
+        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' ORDER BY tx_org_event.title',
+        'items' => array(
+          '0' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+        'wizards' => array(
+          '_PADDING'  => 2,
+          '_VERTICAL' => 0,
+          'add' => array(
+            'type'   => 'script',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.add',
+            'icon'   => 'add.gif',
+            'params' => array(
+              'table'    => 'tx_org_event',
+              'pid'      => $str_marker_pid,
+              'setValue' => 'prepend'
+            ),
+            'script' => 'wizard_add.php',
+          ),
+          'list' => array(
+            'type'   => 'script',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.list',
+            'icon'   => 'list.gif',
+            'params' => array(
+              'table' => 'tx_org_event',
+              'pid'   => $str_marker_pid,
+            ),
+            'script' => 'wizard_list.php',
+          ),
+          'edit' => array(
+            'type'                      => 'popup',
+            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.edit',
+            'script'                    => 'wizard_edit.php',
+            'popup_onlyOpenIfSelected'  => 1,
+            'icon'                      => 'edit2.gif',
+            'JSopenParams'              => $JSopenParams,
+          ),
+        ),
+      ),
     ),
     'teaser_title' => array (
       'exclude' => $bool_exclude_default,
@@ -761,8 +808,22 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
       ''),
+    'calpage' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calpage,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
+      ''),
+    'calurl' => array('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calurl,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_media,       image,imagecaption,imageseo,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
+      ''),
     'tx_org_event' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,tx_org_event,datetime,tx_org_caltype,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,datetime,tx_org_caltype,tx_org_event,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group'.
@@ -2060,7 +2121,7 @@ $TCA['tx_org_news'] = array (
     'newspage' => array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.newspage',
       'l10n_mode' => 'exclude',
-      'exclude'   => $bool_exclude_none,
+      'exclude'   => $bool_exclude_default,
       'config'    => array (
         'type'          => 'group',
         'internal_type' => 'db',
