@@ -104,86 +104,148 @@ plugin.tx_browser_pi1 {
                 // 0 (direct)
               default = COA
               default {
+                required    = 1
+                wrap        = <div class="cal_short cal_short_default">|</div>
                 10 = TEXT
                 10 {
+                  required    = 1
+                  value       = ###TX_ORG_CALTYPE.TITLE###
+                  noTrimWrap  = |<strong>|</strong> |
+                }
+                20 = TEXT
+                20 {
                   required    = 1
                   if.isTrue   = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.SHORT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_default">|</div>
+                  crop        = 200 | &nbsp;... | 1
                 }
-                11 = TEXT
-                11 {
+                21 = TEXT
+                21 {
                   required    = 1
                   if.isFalse  = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.BODYTEXT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_default">|</div>
+                  crop        = 200 | &nbsp;... | 1
+                }
+                30 = TEXT
+                30 {
+                  value   = more &raquo;
+                  lang.de = mehr &raquo;
+                  typolink {
+                    parameter         = {$plugin.org.pages.calendar} - linktosingle
+                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                  }
+                  noTrimWrap = | ||
                 }
               }
               calpage = COA
               calpage {
+                required    = 1
+                wrap        = <div class="cal_short cal_short_page">|</div>
                 10 = TEXT
                 10 {
+                  required    = ###TX_ORG_CALTYPE.TITLE###
+                  value       = ###TX_ORG_CALTYPE.TITLE###
+                  noTrimWrap  = |<strong>|</strong> |
+                }
+                20 = TEXT
+                20 {
                   required    = 1
                   if.isTrue   = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.SHORT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_page">|</div>
+                  crop        = 200 | &nbsp;... | 1
                 }
-                11 = TEXT
-                11 {
+                21 = TEXT
+                21 {
                   required    = 1
                   if.isFalse  = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.BODYTEXT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_page">|</div>
+                  crop        = 200 | &nbsp;... | 1
+                }
+                30 = TEXT
+                30 {
+                  value   = more &raquo;
+                  lang.de = mehr &raquo;
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALPAGE###
+                  }
+                  noTrimWrap = | ||
                 }
               }
               calurl = COA
               calurl {
+                required    = 1
+                wrap        = <div class="cal_short cal_short_url">|</div>
                 10 = TEXT
                 10 {
+                  required    = ###TX_ORG_CALTYPE.TITLE###
+                  value       = ###TX_ORG_CALTYPE.TITLE###
+                  noTrimWrap  = |<strong>|</strong> |
+                }
+                20 = TEXT
+                20 {
                   required    = 1
                   if.isTrue   = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.SHORT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_url">|</div>
+                  crop        = 200 | &nbsp;... | 1
                 }
-                11 = TEXT
-                11 {
+                21 = TEXT
+                21 {
                   required    = 1
                   if.isFalse  = ###TX_ORG_CAL.SHORT###
                   value       = ###TX_ORG_CAL.BODYTEXT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_url">|</div>
+                  crop        = 200 | &nbsp;... | 1
+                }
+                30 = TEXT
+                30 {
+                  value   = more &raquo;
+                  lang.de = mehr &raquo;
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALURL###
+                  }
+                  noTrimWrap = | ||
                 }
               }
               tx_org_event = COA
               tx_org_event {
+                required    = 1
+                wrap        = <div class="cal_short cal_short_event">|</div>
                 10 = TEXT
                 10 {
+                  required    = ###TX_ORG_CALTYPE.TITLE###
+                  value       = ###TX_ORG_CALTYPE.TITLE###
+                  noTrimWrap  = |<strong>|</strong> |
+                }
+                20 = TEXT
+                20 {
                   required    = 1
                   if.isTrue   = ###TX_ORG_EVENT.SHORT###
                   value       = ###TX_ORG_EVENT.SHORT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_event">|</div>
+                  crop        = 200 | &nbsp;... | 1
                 }
-                11 = TEXT
-                11 {
+                21 = TEXT
+                21 {
                   required    = 1
                   if.isFalse  = ###TX_ORG_EVENT.SHORT###
                   value       = ###TX_ORG_EVENT.BODYTEXT###
                   stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_short cal_short_event">|</div>
+                  crop        = 200 | &nbsp;... | 1
+                }
+                30 = TEXT
+                30 {
+                  value   = more &raquo;
+                  lang.de = mehr &raquo;
+                  typolink {
+                    parameter         = {$plugin.org.pages.calendar} - linktosingle
+                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                  }
+                  noTrimWrap = | ||
                 }
               }
             }
@@ -259,14 +321,6 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-          }
-        }
-        tx_org_caltype {
-          title = TEXT
-          title {
-            required    = ###TX_ORG_CALTYPE.TITLE###
-            value       = ###TX_ORG_CALTYPE.TITLE###
-            noTrimWrap  = | (|)|
           }
         }
         filter {

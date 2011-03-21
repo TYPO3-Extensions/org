@@ -11,7 +11,7 @@
         You have to take care of two items:
         <br />
         <br />
-        <ol>
+        <ol style="list-style:outside;">
           <li>
             Linking from a record of one Organiser table to a record of another Organiser table is possible only, if the records are store in the same directory.
           </li>
@@ -36,7 +36,7 @@
               height="80" 
               alt="Die Netzmacher - Internet ist Handwerk" /></a>
         </div>
-        <ul>
+        <ul style="list-style:outside;">
           <li>
             Organiser website<br />
             <a href="http://typo3-organiser.de/" 
@@ -107,7 +107,7 @@
         Managers. Du musst nur zwei Dinge beachten:
         <br />
         <br />
-        <ol>
+        <ol style="list-style:outside;">
           <li>
             Du kannst im Backend nur zwischen Datens&auml;tzen von Organiser Tabellen verlinken, die im selben Verzeichnis liegen.
           </li>
@@ -132,7 +132,7 @@
               height="80" 
               alt="Die Netzmacher - Internet ist Handwerk" /></a>
         </div>
-        <ul>
+        <ul style="list-style:outside;">
           <li>
             Organiser Homepage<br />
             <a href="http://typo3-organiser.de/" 
