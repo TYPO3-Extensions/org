@@ -1,3 +1,9 @@
+0.4.5
+  11-03-21
+  New Feature
+  * Extending calendar: expired dates only
+    * TypoScript affected
+
 0.4.4
   11-03-20
   New Feature

@@ -1,0 +1,132 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      201: calendar +expired (display expired date only)
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  views {
+    list {
+      201 = calendar +expired
+      201 {
+        name    = calendar +expired
+        marker {
+          my_datesheet {
+            30 {
+                // %b %y example: Jan 09
+              strftime = %b %y
+            }
+          }
+        }
+          // display expired dates only
+        andWhere  = tx_org_cal.datetime <= UNIX_TIMESTAMP() AND tx_org_cal.type LIKE 'tx_org_repertoire'
+        filter {
+          tx_org_cal.datetime {
+            area {
+              interval {
+                case = year
+                year {
+                  start_period {
+                    stdWrap.value = -3 year
+                  }
+                }
+              }
+            }
+          }
+        }
+        tx_org_cal {
+          datetime {
+              // %A, %d. %B %Y, %H:%M Uhr: Freitag, 07. Januar 2011, 20:00 Uhr 
+            strftime = %A, %d. %B %Y, %H:%M Uhr
+          }
+          short {
+            10 {
+              default {
+                30 {
+                  typolink {
+                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
+                  }
+                }
+              }
+              tx_org_event {
+                30 {
+                  typolink {
+                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
+                  }
+                }
+              }
+            }
+          }
+          title {
+            10 {
+              default {
+                30 {
+                  typolink {
+                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
+                  }
+                }
+              }
+              tx_org_event {
+                30 {
+                  typolink {
+                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      201 = calendar +expired
+      201 {
+        marker {
+          my_datesheet {
+            30 {
+                // %b %y example: Jan 09
+              strftime = %b %y
+            }
+          }
+          my_listview_page {
+            typolink {
+              parameter = {$plugin.org.pages.calendar_expired}
+            }
+          }
+        }
+        andWhere  = tx_org_cal.datetime <= UNIX_TIMESTAMP() AND tx_org_cal.type LIKE 'tx_org_repertoire'
+        tx_org_cal {
+          datetime {
+              // %A, %d. %B %Y, %H:%M Uhr: Freitag, 07. Januar 2011, 20:00 Uhr 
+            strftime = %A, %d. %B %Y, %H:%M Uhr
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_201_titleTag      = TYPO3 Organiser: expired events
+      list_mode_201_keywords      = TYPO3, Organiser, expired, events
+      list_mode_201_summary       = TYPO3 Organiser: expired events
+    }
+    de {
+      list_mode_201_titleTag      = TYPO3 Organiser: Veranstaltungen - Archiv
+      list_mode_201_keywords      = TYPO3, Organiser, Veranstaltungen, Archiv
+      list_mode_201_summary       = TYPO3 Organiser: Veranstaltungen - Archiv
+    }
+  }
+}
+  // plugin.tx_browser_pi1
