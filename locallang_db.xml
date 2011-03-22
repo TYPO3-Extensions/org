@@ -20,6 +20,11 @@
       <label index="filter_phrase.schedule">Playing schedule</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
+      <label index="tca_phrase.documentscaption">Captions (devide it with a line break)</label>
+      <label index="tca_phrase.documentslayout">Type of link</label>
+      <label index="tca_phrase.documentslayout.0">text only</label>
+      <label index="tca_phrase.documentslayout.1">with an application label</label>
+      <label index="tca_phrase.documentslayout.2">with a preview</label>
       <label index="tca_phrase.embeddedcode">Embedded Code</label>
       <label index="tca_phrase.image">Images</label>
       <label index="tca_phrase.imagecaption">Captions (devide it with a line break)</label>
@@ -255,6 +260,11 @@
       <label index="filter_phrase.schedule">Spielplan</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
       <label index="tca_phrase.documents">Dokumente</label>
+      <label index="tca_phrase.documentscaption">Beschriftung (mit Zeilenumbruch trennen)</label>
+      <label index="tca_phrase.documentslayout">Typ des Links</label>
+      <label index="tca_phrase.documentslayout.0">nur Text</label>
+      <label index="tca_phrase.documentslayout.1">mit Icon des Dateityps</label>
+      <label index="tca_phrase.documentslayout.2">mit Voransicht des Dokuments</label>
       <label index="tca_phrase.embeddedcode">Eingebetteter Code</label>
       <label index="tca_phrase.image">Bilder</label>
       <label index="tca_phrase.imagecaption">Unterschriften (mit Zeilenumbruch trennen)</label>
