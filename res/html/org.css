@@ -28,7 +28,7 @@
 }
 .tx-browser-pi1 .my_datesheet_box {
   float:left;
-  margin-right:1em;
+  width:90px;
 }
 .tx-browser-pi1 .my_datesheet {
   float:left;
@@ -37,10 +37,17 @@
   padding:.4em;
   text-align:center;
 }
+.tx-browser-pi1 .my_datesheet_expired {
+  background-color:#CCC;
+}
 .tx-browser-pi1 .my_datesheet .day_of_month,
 .tx-browser-pi1 .my_datesheet .month {
   font-size:2.8em;
   line-height:1em;
+}
+.tx-browser-pi1 .my_datesheet .month {
+  font-size:2.4em;
+  line-height:1.4em;
 }
 
 .tx-browser-pi1 .cal_datetime {
