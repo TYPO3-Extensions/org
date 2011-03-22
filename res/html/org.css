@@ -41,11 +41,10 @@
   background-color:#CCC;
 }
 .tx-browser-pi1 .my_datesheet .day_of_month,
-.tx-browser-pi1 .my_datesheet .month {
   font-size:2.8em;
   line-height:1em;
 }
-.tx-browser-pi1 .my_datesheet .month {
+.tx-browser-pi1 .my_datesheet_repertoire .month {
   font-size:2.4em;
   line-height:1.4em;
 }
