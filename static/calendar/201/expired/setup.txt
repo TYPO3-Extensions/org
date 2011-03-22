@@ -38,7 +38,12 @@ plugin.tx_browser_pi1 {
                 case = year
                 year {
                   start_period {
-                    stdWrap.value = -3 year
+                    stdWrap {
+                      value = -3 years
+                    }
+                  }
+                  times_stdWrap {
+                    value = 4
                   }
                 }
               }
@@ -71,17 +76,13 @@ plugin.tx_browser_pi1 {
           title {
             10 {
               default {
-                30 {
-                  typolink {
-                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
-                  }
+                typolink {
+                  parameter = {$plugin.org.pages.calendar_expired} - linktosingle
                 }
               }
               tx_org_event {
-                30 {
-                  typolink {
-                    parameter = {$plugin.org.pages.calendar_expired} - linktosingle
-                  }
+                typolink {
+                  parameter = {$plugin.org.pages.calendar_expired} - linktosingle
                 }
               }
             }

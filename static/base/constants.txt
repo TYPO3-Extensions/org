@@ -2,7 +2,7 @@ plugin.org {
 
   # cat=Organiser Pages/page/100; type=+int; label= calendar:Uid of your calendar page
   pages.calendar =
-  # cat=Organiser Pages/page/101; type=+int; label= calendar:Uid of your calendar page with expired dates
+  # cat=Organiser Pages/page/101; type=+int; label= calendar with expired dates (archive):Uid of your calendar page with expired dates. It is the calendar archive.
   pages.calendar_expired =
   # cat=Organiser Pages/page/102; type=+int; label= department:Uid of your department page
   pages.department =
