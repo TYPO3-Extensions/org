@@ -26,6 +26,10 @@
   float:right;
   font-size: 1em;
 }
+.tx-browser-pi1 .my_datesheet_box {
+  float:left;
+  margin-right:1em;
+}
 .tx-browser-pi1 .my_datesheet {
   float:left;
   font-weight:bold;
@@ -33,7 +37,8 @@
   padding:.4em;
   text-align:center;
 }
-.tx-browser-pi1 .my_datesheet .day_of_month {
+.tx-browser-pi1 .my_datesheet .day_of_month,
+.tx-browser-pi1 .my_datesheet .month {
   font-size:2.8em;
   line-height:1em;
 }
