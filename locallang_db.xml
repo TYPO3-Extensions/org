@@ -22,6 +22,7 @@
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
+      <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Captions (one per line)</label>
       <label index="tca_phrase.documentslayout">Type of link</label>
       <label index="tca_phrase.documentslayout.0">text only</label>
@@ -264,6 +265,7 @@
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
       <label index="tca_phrase.documents">Dokumente</label>
+      <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Beschriftung (eine pro Zeile)</label>
       <label index="tca_phrase.documentslayout">Typ des Links</label>
       <label index="tca_phrase.documentslayout.0">nur Text</label>
