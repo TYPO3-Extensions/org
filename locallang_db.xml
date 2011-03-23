@@ -48,12 +48,13 @@
       <label index="tx_org_cal.div_calendar">Event</label>
       <label index="tx_org_cal.div_calpage">Internal Link</label>
       <label index="tx_org_cal.div_calurl">External Link</label>
-      <label index="tx_org_cal.div_teaser">Teaser</label>
-      <label index="tx_org_cal.div_event">Location, admission</label>
-      <label index="tx_org_cal.div_department">Department</label>
-      <label index="tx_org_cal.div_media">Media</label>
       <label index="tx_org_cal.div_control">Controlling</label>
+      <label index="tx_org_cal.div_department">Department</label>
+      <label index="tx_org_cal.div_embeddedcode">Embedded Code</label>
+      <label index="tx_org_cal.div_event">Location, admission</label>
+      <label index="tx_org_cal.div_media">Media</label>
       <label index="tx_org_cal.div_seo">Search Engines</label>
+      <label index="tx_org_cal.div_teaser">Teaser</label>
       <label index="tx_org_cal.type">Event data</label>
       <label index="tx_org_cal.type.default">Default</label>
       <label index="tx_org_cal.type.direct">Enter it directly</label>
@@ -88,6 +89,7 @@
       <label index="tx_org_caltype.note">Note (internal)</label>
       <label index="tx_org_caltype.tx_org_cal">Calendar</label>
       <label index="tx_org_department">Departments</label>
+      <label index="tx_org_department.div_embeddedcode">Embedded Code</label>
       <label index="tx_org_department.div_department">Department</label>
       <label index="tx_org_department.div_contact">Contact Details</label>
       <label index="tx_org_department.div_staff">Staff</label>
@@ -117,6 +119,7 @@
       <label index="tx_org_event.div_teaser">Teaser</label>
       <label index="tx_org_event.div_doc"><![CDATA[Documents & News]]></label>
       <label index="tx_org_event.div_media">Media</label>
+      <label index="tx_org_event.div_embeddedcode">Embedded Code</label>
       <label index="tx_org_event.div_calendar">Calendar</label>
       <label index="tx_org_event.div_control">Controlling</label>
       <label index="tx_org_event.div_seo">Search Engines</label>
@@ -136,6 +139,7 @@
       <label index="tx_org_headquarters.div_contact">Contact Details</label>
       <label index="tx_org_headquarters.div_department">Departments</label>
       <label index="tx_org_headquarters.div_pubtrans">Public Transport</label>
+      <label index="tx_org_headquarters.div_embeddedcode">Embedded Code</label>
       <label index="tx_org_headquarters.div_media">Media</label>
       <label index="tx_org_headquarters.div_control">Controlling</label>
       <label index="tx_org_headquarters.div_seo">Search Engines</label>
@@ -161,6 +165,7 @@
       <label index="tx_org_location.div_calendar">Calendar</label>
       <label index="tx_org_location.div_pubtrans">Public Transport</label>
       <label index="tx_org_location.div_media">Media</label>
+      <label index="tx_org_location.div_embeddedcode">Embedded Code</label>
       <label index="tx_org_location.div_control">Controlling</label>
       <label index="tx_org_location.div_seo">Search Engines</label>
       <label index="tx_org_location.title">Label of the Location</label>
@@ -186,6 +191,7 @@
       <label index="tx_org_news.div_newsurl">External link</label>
       <label index="tx_org_news.div_feuser">Author</label>
       <label index="tx_org_news.div_department">Departments</label>
+      <label index="tx_org_news.div_embeddedcode">Embedded Code</label>
       <label index="tx_org_news.div_control">Controlling</label>
       <label index="tx_org_news.div_media">Media</label>
       <label index="tx_org_news.div_seo">Search Engines</label>
@@ -291,6 +297,7 @@
       <label index="tx_org_cal.div_calendar">Veranstaltung</label>
       <label index="tx_org_cal.div_calpage">Interner Link</label>
       <label index="tx_org_cal.div_calurl">Externer Link</label>
+      <label index="tx_org_cal.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_cal.div_teaser">Kurztitel</label>
       <label index="tx_org_cal.div_event">Ort, Eintritt</label>
       <label index="tx_org_cal.div_department">Abteilungen</label>
@@ -336,6 +343,7 @@
       <label index="tx_org_department.div_staff">Personal</label>
       <label index="tx_org_department.div_calendar">Veranstaltungen</label>
       <label index="tx_org_department.div_media">Medien</label>
+      <label index="tx_org_department.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_department.div_control">Steuerung</label>
       <label index="tx_org_department.div_seo">Suchmaschinen</label>
       <label index="tx_org_department.title">Bezeichnung der Abteilung</label>
@@ -361,6 +369,7 @@
       <label index="tx_org_event.div_media">Medien</label>
       <label index="tx_org_event.div_doc"><![CDATA[Dokumente & News]]></label>
       <label index="tx_org_event.div_calendar">Spieltermine</label>
+      <label index="tx_org_event.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_event.div_control">Steuerung</label>
       <label index="tx_org_event.div_seo">Suchmaschinen</label>
       <label index="tx_org_event.title">Name der Veranstaltung</label>
@@ -379,6 +388,7 @@
       <label index="tx_org_headquarters.div_department">Abteilungen</label>
       <label index="tx_org_headquarters.div_pubtrans"><![CDATA[ÖPNV]]></label>
       <label index="tx_org_headquarters.div_media">Medien</label>
+      <label index="tx_org_headquarters.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_headquarters.div_control">Steuerung</label>
       <label index="tx_org_headquarters.div_seo">Suchmaschinen</label>
       <label index="tx_org_headquarters.title">Bezeichnung des Standorts</label>
@@ -406,6 +416,7 @@
       <label index="tx_org_location.div_department">Abteilungen</label>
       <label index="tx_org_location.div_pubtrans"><![CDATA[ÖPNV]]></label>
       <label index="tx_org_location.div_media">Medien</label>
+      <label index="tx_org_location.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_location.div_control">Steuerung</label>
       <label index="tx_org_location.div_seo">Suchmaschinen</label>
       <label index="tx_org_location.title">Bezeichnung des Veranstaltungsorts</label>
@@ -435,6 +446,7 @@
       <label index="tx_org_news.div_newsurl">Externer Link</label>
       <label index="tx_org_news.div_feuser">Autor</label>
       <label index="tx_org_news.div_department">Abteilung</label>
+      <label index="tx_org_news.div_embeddedcode">Eingebundener Code</label>
       <label index="tx_org_news.div_control">Steuerung</label>
       <label index="tx_org_news.div_media">Medien</label>
       <label index="tx_org_news.div_seo">Suchmaschinen</label>
