@@ -29,7 +29,7 @@
       <label index="tca_phrase.embeddedcode">Embedded Code</label>
       <label index="tca_phrase.image">Images</label>
       <label index="tca_phrase.imagecaption">Captions (one per line)</label>
-      <label index="tca_phrase.imageseo">Caption for Search Engines (one per line)</label>
+      <label index="tca_phrase.imageseo">Captions (one per line)</label>
       <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.news">News</label>
       <label index="tca_phrase.pages">Display on pages with configured plugins:</label>
@@ -270,7 +270,7 @@
       <label index="tca_phrase.embeddedcode">Eingebetteter Code</label>
       <label index="tca_phrase.image">Bilder</label>
       <label index="tca_phrase.imagecaption">Unterschriften (eine pro Zeile)</label>
-      <label index="tca_phrase.imageseo"><![CDATA[Bezeichnungen für Suchmaschinen (eine pro Zeile)]]></label>
+      <label index="tca_phrase.imageseo"><![CDATA[Bezeichnung (eine pro Zeile)]]></label>
       <label index="tca_phrase.keywords"><![CDATA[Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)]]></label>
       <label index="tca_phrase.news">Nachrichten</label>
       <label index="tca_phrase.pages"><![CDATA[Für entsprechende Plugins: zeige auf Seiten]]></label>
