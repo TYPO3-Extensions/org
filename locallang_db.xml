@@ -18,7 +18,8 @@
       <label index="filter_phrase.period">Period</label>
       <label index="filter_phrase.period_all_months">All months</label>
       <label index="filter_phrase.schedule">Playing schedule</label>
-      <label index="palette.image_accessibility">Search engines / accessibility</label>
+      <label index="palette.appearance">Appearance</label>
+      <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documentscaption">Captions (one per line)</label>
@@ -259,6 +260,7 @@
       <label index="filter_phrase.period">Zeitraum</label>
       <label index="filter_phrase.period_all_months">Alle Monate</label>
       <label index="filter_phrase.schedule">Spielplan</label>
+      <label index="palette.appearance">Design</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
       <label index="tca_phrase.documents">Dokumente</label>
