@@ -948,8 +948,8 @@ $TCA['tx_org_cal'] = array (
       )
     ),
     'embeddedcode' => array (
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'exclude' => $bool_exclude_none,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'config'  => $conf_text_50_10,
     ),
     'print' => array (
@@ -1734,8 +1734,8 @@ $TCA['tx_org_department'] = array (
       )
     ),
     'embeddedcode' => array (
+      'exclude' => $bool_exclude_none,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'exclude' => $bool_exclude_default,
       'config'  => $conf_text_50_10,
     ),
     'hidden'    => $conf_hidden,
@@ -2264,8 +2264,8 @@ $TCA['tx_org_event'] = array (
       )
     ),
     'embeddedcode' => array (
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'exclude' => $bool_exclude_none,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'config'  => $conf_text_50_10,
     ),
     'print' => array (
@@ -2708,8 +2708,8 @@ $TCA['tx_org_headquarters'] = array (
       )
     ),
     'embeddedcode' => array (
+      'exclude' => $bool_exclude_none,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'exclude' => $bool_exclude_default,
       'config'  => $conf_text_50_10,
     ),
     'documents_from_path' => array(
@@ -3190,8 +3190,8 @@ $TCA['tx_org_location'] = array (
       )
     ),
     'embeddedcode' => array (
+      'exclude' => $bool_exclude_none,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'exclude' => $bool_exclude_default,
       'config'  => $conf_text_50_10,
     ),
     'documents_from_path' => array(
@@ -3755,9 +3755,8 @@ $TCA['tx_org_news'] = array (
       )
     ),
     'embeddedcode' => array (
+      'exclude' => $bool_exclude_none,
       'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'l10n_mode' => 'exclude',
-      'exclude'   => $bool_exclude_default,
       'config'    => $conf_text_50_10,
     ),
     'documents_from_path' => array(
