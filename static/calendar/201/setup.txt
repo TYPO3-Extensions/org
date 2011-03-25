@@ -456,6 +456,7 @@ plugin.tx_browser_pi1 {
           tx_org_cal.short,
           tx_org_cal.bodytext,
           tx_org_cal.datetime,
+          tx_org_cal.type,
 
           tx_org_cal.image,
           tx_org_cal.imagecaption,
@@ -475,6 +476,7 @@ plugin.tx_browser_pi1 {
           tx_org_cal.description,
           tx_org_cal.keywords,
           tx_org_cal.uid,
+
           tx_org_caltype.title,
 
           tx_org_calentrance.title,
