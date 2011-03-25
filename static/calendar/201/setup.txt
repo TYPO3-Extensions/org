@@ -456,30 +456,58 @@ plugin.tx_browser_pi1 {
           tx_org_cal.short,
           tx_org_cal.bodytext,
           tx_org_cal.datetime,
+
           tx_org_cal.image,
           tx_org_cal.imagecaption,
           tx_org_cal.imageseo,
+          tx_org_cal.imagewidth,
+          tx_org_cal.imageheight,
+          tx_org_cal.imageorient,
+          tx_org_cal.imagecols,
+          tx_org_cal.imageborder,
+          tx_org_cal.image_frames,
+          tx_org_cal.image_link,
+          tx_org_cal.image_zoom,
+          tx_org_cal.image_noRows,
+          tx_org_cal.image_effects,
+          tx_org_cal.image_compression,
+
           tx_org_cal.description,
           tx_org_cal.keywords,
           tx_org_cal.uid,
           tx_org_caltype.title,
+
           tx_org_calentrance.title,
           tx_org_calentrance.value,
           tx_org_calentrance.uid,
+
           tx_org_event.title,
           tx_org_event.subtitle,
           tx_org_event.short,
           tx_org_event.bodytext,
+
           tx_org_event.image,
           tx_org_event.imagecaption,
           tx_org_event.imageseo,
+          tx_org_event.imagewidth,
+          tx_org_event.imageheight,
+          tx_org_event.imageorient,
+          tx_org_event.imagecols,
+          tx_org_event.imageborder,
+          tx_org_event.image_frames,
+          tx_org_event.image_link,
+          tx_org_event.image_zoom,
+          tx_org_event.image_noRows,
+          tx_org_event.image_effects,
+          tx_org_event.image_compression,
+
           tx_org_event.description,
           tx_org_event.keywords,
           tx_org_event.uid,
+
           tx_org_location.uid,
           tx_org_location.title
         )
-        //orderBy   = tx_org_cal_mm_calentrance.sorting, tx_org_calentrance.title
         andWhere  = tx_org_cal.datetime > UNIX_TIMESTAMP()
         tx_org_cal {
           datetime = TEXT
@@ -490,8 +518,128 @@ plugin.tx_browser_pi1 {
             }
             strftime = %A, %d. %B, %H:%M Uhr
           }
-          bodytext = COA
+            // 0 (direct), tx_org_event
+          bodytext = CASE
           bodytext {
+            key = ###TX_ORG_CAL.TYPE###
+              // 0 (direct)
+            default < tt_content.image.20
+            default {
+              imgList.field >
+              imgList = ###TX_ORG_CAL.IMAGE###
+              imgPath = uploads/tx_org/
+              1 {
+                file {
+                  width.field >
+                  width   = ###TX_ORG_CAL.IMAGEWIDTH###
+                  height  = ###TX_ORG_CAL.IMAGEHEIGHT###
+                }
+                altText.field                 >
+                altText                       = ###TX_ORG_CAL.IMAGESEO###
+                titleText.field               >
+                titleText                     = ###TX_ORG_CAL.IMAGESEO###
+                imageLinkWrap {
+                  ifEmpty {
+                    typolink.parameter.field  >
+                    typolink.parameter        = ###TX_ORG_CAL.IMAGE_LINK###
+                  }
+                  typolink.parameter.field    >
+                  typolink.parameter          = ###TX_ORG_CAL.IMAGE_LINK###
+                  enable.field                >
+                  enable                      = ###TX_ORG_CAL.IMAGE_ZOOM###
+                  width                       = 1000;
+                  height                      = 800m;
+                  //JSwindow = 0
+                }
+              }
+              textPos.field           >
+              textPos                 = ###TX_ORG_CAL.IMAGEORIENT###
+              equalH                  >
+              image_compression.field >
+              image_compression       = ###TX_ORG_CAL.IMAGE_COMPRESSION###
+              image_effects.field     >
+              image_effects           = ###TX_ORG_CAL.IMAGE_EFFECTS###
+              noRows.field            >
+              noRows                  = ###TX_ORG_CAL.IMAGE_NOROWS###
+              cols.field              >
+              cols                    = ###TX_ORG_CAL.IMAGECOLS###
+              border.field            >
+              border                  = ###TX_ORG_CAL.IMAGEBORDER###
+              caption.1.field         >
+              caption.1.value         = ###TX_ORG_CAL.IMAGECAPTION###
+              captionAlign.field      >
+              captionAlign            = ###TX_ORG_CAL.IMAGECAPTION_POSITION###
+              layout {
+                key.field        >
+                key              = ###TX_ORG_CAL.IMAGEORIENT###
+                default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+              }
+              stdWrap {
+                prefixComment >
+              }
+                // caltype, bodytext
+              text {
+                required  = 1
+                stdWrap.parseFunc < lib.parseFunc_RTE
+                  // caltype
+                10 = TEXT
+                10 {
+                  if.isTrue   = ###TX_ORG_CALTYPE.TITLE###
+                  value       = ###TX_ORG_CALTYPE.TITLE###
+                  noTrimWrap  = |<strong>|</strong> &ndash; |
+                }
+                  // bodytext
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.BODYTEXT###
+                  value       = ###TX_ORG_CAL.BODYTEXT###
+                  stripHtml   = 1
+                  wrap        = <div class="cal_bodytext cal_bodytext_default">|</div>
+                }
+              }
+            }
+            tx_org_event < .default
+            tx_org_event {
+              imgList                   = ###TX_ORG_EVENT.IMAGE###
+              1 {
+                file {
+                  width                 = ###TX_ORG_EVENT.IMAGEWIDTH###
+                  height                = ###TX_ORG_EVENT.IMAGEHEIGHT###
+                }
+                altText                 = ###TX_ORG_EVENT.IMAGESEO###
+                titleText               = ###TX_ORG_EVENT.IMAGESEO###
+                imageLinkWrap {
+                  ifEmpty {
+                    typolink.parameter  = ###TX_ORG_EVENT.IMAGE_LINK###
+                  }
+                  typolink.parameter    = ###TX_ORG_EVENT.IMAGE_LINK###
+                  enable                = ###TX_ORG_EVENT.IMAGE_ZOOM###
+                }
+              }
+              textPos                   = ###TX_ORG_EVENT.IMAGEORIENT###
+              image_compression         = ###TX_ORG_EVENT.IMAGE_COMPRESSION###
+              image_effects             = ###TX_ORG_EVENT.IMAGE_EFFECTS###
+              noRows                    = ###TX_ORG_EVENT.IMAGE_NOROWS###
+              cols                      = ###TX_ORG_EVENT.IMAGECOLS###
+              border                    = ###TX_ORG_EVENT.IMAGEBORDER###
+              caption.1.value           = ###TX_ORG_EVENT.IMAGECAPTION###
+              captionAlign              = ###TX_ORG_EVENT.IMAGECAPTION_POSITION###
+              layout {
+                key                     = ###TX_ORG_EVENT.IMAGEORIENT###
+              }
+              text {
+                required  = 1
+                20 {
+                  if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
+                  value       = ###TX_ORG_EVENT.BODYTEXT###
+                  wrap        = <div class="cal_bodytext cal_bodytext_event">|</div>
+                }
+              }
+            }
+          }
+          bodytextXX = COA
+          bodytextXX {
             stdWrap.parseFunc < lib.parseFunc_RTE
               // caltype
             10 = TEXT
@@ -520,62 +668,6 @@ plugin.tx_browser_pi1 {
                 value       = ###TX_ORG_EVENT.BODYTEXT###
                 stripHtml   = 1
                 wrap        = <div class="cal_bodytext cal_bodytext_event">|</div>
-              }
-            }
-          }
-          image = COA
-          image {
-              // 0 (direct), tx_org_event
-            10 = CASE
-            10 {
-              key = ###TX_ORG_CAL.TYPE###
-                // 0 (direct)
-              default < tt_content.image.20
-              default {
-                imgList.field >
-                imgList = ###TX_ORG_CAL.IMAGE###
-                imgPath = uploads/tx_org/
-                1 {
-                  file {
-                    width.field >
-                    width   = 160c;
-                    height  = 110c;
-                  }
-                  altText.field   >
-                  altText         = ###TX_ORG_CAL.IMAGESEO###
-                  titleText.field >
-                  titleText       = ###TX_ORG_CAL.IMAGESEO###
-                  imageLinkWrap {
-                    enable.field >
-                    enable = 1
-                    width   = 1000;
-                    height  = 800m;
-                    //JSwindow = 0
-                  }
-                }
-                layout {
-                  key.field >
-                    // above-left
-                  key = 2
-                }
-                cols.field >
-                cols = 3
-                caption.1 {
-                  field >
-                  value = ###TX_ORG_CAL.IMAGECAPTION###
-                }
-                stdWrap {
-                  prefixComment >
-                  wrap          = <div class="image image_default">|</div>
-                }
-              }
-              tx_org_event < .default
-              tx_org_event {
-                imgList         = ###TX_ORG_EVENT.IMAGE###
-                1.altText       = ###TX_ORG_EVENT.IMAGESEO###
-                1.titleText     = ###TX_ORG_EVENT.IMAGESEO###
-                caption.1.value = ###TX_ORG_EVENT.IMAGECAPTION###
-                stdWrap.wrap    = <div class="image image_event">|</div>
               }
             }
           }
