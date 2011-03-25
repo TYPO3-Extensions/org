@@ -141,6 +141,8 @@ plugin.tx_browser_pi1 {
             value     = </ul>
           }
         }
+        advanced < plugin.tx_browser_pi1.advanced
+        advanced.sql.devider.childrenRecords >
         select (
           fe_users.last_name,
           fe_users.first_name,
