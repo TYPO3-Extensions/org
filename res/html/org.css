@@ -62,6 +62,9 @@
   padding-right:.4em;
 }
 
+.tx-browser-pi1 .csc-textpic-imagecolumn ul {
+  overflow:hidden;
+}
 .tx-browser-pi1 .csc-textpic-imagecolumn li.csc-textpic-image {
   padding: 0 .2em .2em 0;
 }
