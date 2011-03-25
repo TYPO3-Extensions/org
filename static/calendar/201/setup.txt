@@ -649,58 +649,6 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-          documents = CASE
-          documents {
-            key = ###TX_ORG_CAL.TYPE###
-              // 0 (direct)
-            default = TEXT
-            default {
-                // tx_org_cal hasn't any document
-              value = 
-            }
-              // event
-            tx_org_event = COA
-            tx_org_event {
-                // header
-              10 = TEXT
-              10 {
-                if.isTrue = ###TX_ORG_EVENT.DOCUMENTS######TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
-                value     = Documents
-                lang.de   = Dokumente
-                wrap      = <h2 class="repertoire_documents">|</h2>
-              }
-                // documents
-              20 < tt_content.uploads.20
-              20 {
-                userFunc = tx_browser_cssstyledcontent->render_uploads
-                filePath >
-                itemRendering {
-                  10 {
-                    if {
-                      isPositive.field >
-                      isPositive = ###TX_ORG_EVENT.DOCUMENTSLAYOUT###
-                    }
-                  }
-                  30 {
-                    if {
-                      isTrue.field >
-                      isTrue = ###TX_ORG_EVENT.DOCUMENTSSIZE###
-                    }
-                  }
-                }
-                tableField = tx_org_repertoire.documents
-                fields {
-                  from_path = ###TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
-                  files     = ###TX_ORG_EVENT.DOCUMENTS###
-                  caption   = ###TX_ORG_EVENT.DOCUMENTSCAPTION###
-                  layout    = ###TX_ORG_EVENT.DOCUMENTSLAYOUT###
-                }
-                stdWrap {
-                  if.isTrue = ###TX_ORG_EVENT.DOCUMENTS######TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
-                }
-              }
-            }
-          }
           location = COA
           location {
             wrap = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
@@ -805,6 +753,60 @@ plugin.tx_browser_pi1 {
             12 {
               value = (###TX_ORG_CALENTRANCE.VALUE### EUR)
               noTrimWrap  = | |</option>|
+            }
+          }
+        }
+        tx_org_event {
+          documents = CASE
+          documents {
+            key = ###TX_ORG_CAL.TYPE###
+              // 0 (direct)
+            default = TEXT
+            default {
+                // tx_org_cal hasn't any document
+              value = 
+            }
+              // event
+            tx_org_event = COA
+            tx_org_event {
+                // header
+              10 = TEXT
+              10 {
+                if.isTrue = ###TX_ORG_EVENT.DOCUMENTS######TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
+                value     = Documents
+                lang.de   = Dokumente
+                wrap      = <h2 class="repertoire_documents">|</h2>
+              }
+                // documents
+              20 < tt_content.uploads.20
+              20 {
+                userFunc = tx_browser_cssstyledcontent->render_uploads
+                filePath >
+                itemRendering {
+                  10 {
+                    if {
+                      isPositive.field >
+                      isPositive = ###TX_ORG_EVENT.DOCUMENTSLAYOUT###
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue.field >
+                      isTrue = ###TX_ORG_EVENT.DOCUMENTSSIZE###
+                    }
+                  }
+                }
+                tableField = tx_org_repertoire.documents
+                fields {
+                  from_path = ###TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
+                  files     = ###TX_ORG_EVENT.DOCUMENTS###
+                  caption   = ###TX_ORG_EVENT.DOCUMENTSCAPTION###
+                  layout    = ###TX_ORG_EVENT.DOCUMENTSLAYOUT###
+                }
+                stdWrap {
+                  if.isTrue = ###TX_ORG_EVENT.DOCUMENTS######TX_ORG_EVENT.DOCUMENTS_FROM_PATH###
+                }
+              }
             }
           }
         }
