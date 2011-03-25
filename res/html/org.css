@@ -68,3 +68,6 @@
 .tx-browser-pi1 .csc-textpic-imagecolumn li.csc-textpic-image {
   padding: 0 .2em .2em 0;
 }
+.tx-browser-pi1 table.csc-uploads {
+  font-size:.85em;
+}
