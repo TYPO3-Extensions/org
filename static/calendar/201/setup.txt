@@ -640,11 +640,10 @@ plugin.tx_browser_pi1 {
                 key                     = ###TX_ORG_EVENT.IMAGEORIENT###
               }
               text {
-                required  = 1
+                wrap      = <div class="cal_bodytext cal_bodytext_event">|</div>
                 20 {
                   if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
                   value       = ###TX_ORG_EVENT.BODYTEXT###
-                  wrap        = <div class="cal_bodytext cal_bodytext_event">|</div>
                 }
               }
             }
