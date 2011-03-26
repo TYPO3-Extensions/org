@@ -10,6 +10,7 @@
       <label index="filter_phrase.all">All</label>
       <label index="filter_phrase.cal.title">All events</label>
       <label index="filter_phrase.calendar">Calendar</label>
+      <label index="filter_phrase.calendar.expired">Calendar (expired)</label>
       <label index="filter_phrase.caltype.title">All categories</label>
       <label index="filter_phrase.department">Department</label>
       <label index="filter_phrase.newscat">Category</label>
@@ -18,6 +19,7 @@
       <label index="filter_phrase.period">Period</label>
       <label index="filter_phrase.period_all_months">All months</label>
       <label index="filter_phrase.schedule">Playing schedule</label>
+      <label index="filter_phrase.schedule.expired">Playing schedule (expired)</label>
       <label index="palette.appearance">Appearance</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
@@ -260,6 +262,7 @@
       <label index="filter_phrase.all">Alle</label>
       <label index="filter_phrase.cal.title">Alle Veranstaltungen</label>
       <label index="filter_phrase.calendar">Kalender</label>
+      <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
       <label index="filter_phrase.caltype.title">Alle Kategorien</label>
       <label index="filter_phrase.department">Hochschul-Bereich</label>
       <label index="filter_phrase.newscat">Kategorie</label>
@@ -268,6 +271,7 @@
       <label index="filter_phrase.period">Zeitraum</label>
       <label index="filter_phrase.period_all_months">Alle Monate</label>
       <label index="filter_phrase.schedule">Spielplan</label>
+      <label index="filter_phrase.schedule.expired">Spielplan (Archiv)</label>
       <label index="palette.appearance">Design</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
