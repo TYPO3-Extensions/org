@@ -454,8 +454,9 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
   // news
   // newscat
   // cal
-  // calentrance
   // caltype
+  // calentrance
+  // tax
   // event
   // location
   // headquarters
@@ -555,6 +556,29 @@ $TCA['tx_org_cal'] = array (
 );
   // cal /////////////////////////////////////////////////////////////////////
 
+  // caltype ///////////////////////////////////////////////////////////////////
+$TCA['tx_org_caltype'] = array (
+  'ctrl' => array (
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype',
+    'label'             => 'title',
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'default_sortby'    => 'ORDER BY title',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
+      'disabled'  => 'hidden',
+    ),
+    'dividers2tabs'     => true,
+    'hideAtCopy'        => false,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/caltype.gif',
+  ),
+);
+  // caltype ///////////////////////////////////////////////////////////////////
+
+
   // calentrance //////////////////////////////////////////////////////////////////
 $TCA['tx_org_calentrance'] = array (
   'ctrl' => array (
@@ -582,27 +606,31 @@ $TCA['tx_org_calentrance'] = array (
 );
   // calentrance //////////////////////////////////////////////////////////////////
 
-  // caltype ///////////////////////////////////////////////////////////////////
-$TCA['tx_org_caltype'] = array (
+  // tax /////////////////////////////////////////////////////////////////////
+$TCA['tx_org_tax'] = array (
   'ctrl' => array (
-    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype',
-    'label'             => 'title',
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_tax',
+    'label'             => 'value',
+    'label_alt'         => 'title',
+    'label_alt_force'   => true,
     'tstamp'            => 'tstamp',
     'crdate'            => 'crdate',
     'cruser_id'         => 'cruser_id',
-    'default_sortby'    => 'ORDER BY title',
+    'default_sortby'    => 'ORDER BY value ASC',
     'delete'            => 'deleted',
     'enablecolumns'     => array (
       'disabled'  => 'hidden',
+      'starttime' => 'starttime',
+      'endtime'   => 'endtime',
     ),
     'dividers2tabs'     => true,
-    'hideAtCopy'        => false,
+    'hideAtCopy'        => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
-    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/caltype.gif',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/tax.gif',
   ),
 );
-  // caltype ///////////////////////////////////////////////////////////////////
+  // tax /////////////////////////////////////////////////////////////////////
 
   // event ///////////////////////////////////////////////////////////////////
 $TCA['tx_org_event'] = array (
@@ -718,32 +746,6 @@ $TCA['tx_org_departmentcat'] = array (
   )
 );
   // departmentcat ////////////////////////////////////////////////////////////////////
-
-  // tax /////////////////////////////////////////////////////////////////////
-$TCA['tx_org_tax'] = array (
-  'ctrl' => array (
-    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_tax',
-    'label'             => 'value',
-    'label_alt'         => 'title',
-    'label_alt_force'   => true,
-    'tstamp'            => 'tstamp',
-    'crdate'            => 'crdate',
-    'cruser_id'         => 'cruser_id',
-    'default_sortby'    => 'ORDER BY value ASC',
-    'delete'            => 'deleted',
-    'enablecolumns'     => array (
-      'disabled'  => 'hidden',
-      'starttime' => 'starttime',
-      'endtime'   => 'endtime',
-    ),
-    'dividers2tabs'     => true,
-    'hideAtCopy'        => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-    'thumbnail'         => 'image',
-    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/tax.gif',
-  ),
-);
-  // tax /////////////////////////////////////////////////////////////////////
 
   // TCA tables //////////////////////////////////////////////////////////////
 
