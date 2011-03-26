@@ -7,7 +7,7 @@
   // plugin.tx_browser_pi1
   //    marker
   //    views
-  //      601: Department
+  //      601: +Org: Department
   //    _LOCAL_LANG
 
 
@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         department {
-          name      = Org: Abteilung
+          name      = +Org: Department
           file      = EXT:org/res/html/department/601/default.tmpl
           csvViews  = 601
         }
@@ -32,9 +32,9 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      601 = Department
+      601 = +Org: Department
       601 {
-        name    = Department
+        name    = +Org: Department
         showUid = departmentUid
         autoconfig < plugin.tx_browser_pi1.autoconfig
         autoconfig {
@@ -104,7 +104,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      601 = Department
+      601 = +Org: Department
       601 {
         autoconfig < plugin.tx_browser_pi1.autoconfig
         autoconfig {
@@ -137,11 +137,35 @@ plugin.tx_browser_pi1 {
           tx_org_department.fax,
           tx_org_department.email,
           tx_org_department.url,
+
+          tx_org_department.documents_from_path,
+          tx_org_department.documents,
+          tx_org_department.documentslayout,
+          tx_org_department.documentscaption,
+          tx_org_department.documentssize, 
+
+          tx_org_department.image,
+          tx_org_department.imagecaption,
+          tx_org_department.imageseo,
+          tx_org_department.imagewidth,
+          tx_org_department.imageheight,
+          tx_org_department.imageorient,
+          tx_org_department.imagecols,
+          tx_org_department.imageborder,
+          tx_org_department.image_frames,
+          tx_org_department.image_link,
+          tx_org_department.image_zoom,
+          tx_org_department.image_noRows,
+          tx_org_department.image_effects,
+          tx_org_department.image_compression,
+
           tx_org_department.keywords,
           tx_org_department.description,
+          
           fe_users.title,
           fe_users.first_name,
           fe_users.last_name,
+          
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
           tx_org_headquarters.mail_address 
@@ -242,6 +266,47 @@ plugin.tx_browser_pi1 {
           }
         }
         tx_org_department {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_DEPARTMENT.DOCUMENTS######TX_ORG_DEPARTMENT.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="department_documents">|</h2>
+            }
+              // documents
+            20 < tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_DEPARTMENT.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_DEPARTMENT.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_department.documents
+              fields {
+                from_path = ###TX_ORG_DEPARTMENT.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_DEPARTMENT.DOCUMENTS###
+                caption   = ###TX_ORG_DEPARTMENT.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_DEPARTMENT.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_DEPARTMENT.DOCUMENTS######TX_ORG_DEPARTMENT.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
           telephone = COA
           telephone {
             if {
@@ -301,6 +366,79 @@ plugin.tx_browser_pi1 {
               }
               typolink {
                 parameter = ###TX_ORG_DEPARTMENT.URL###
+              }
+            }
+          }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_DEPARTMENT.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_DEPARTMENT.IMAGEWIDTH###
+                height  = ###TX_ORG_DEPARTMENT.IMAGEHEIGHT###
+              }
+              altText.field                 >
+              altText                       = ###TX_ORG_DEPARTMENT.IMAGESEO###
+              titleText.field               >
+              titleText                     = ###TX_ORG_DEPARTMENT.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_DEPARTMENT.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_DEPARTMENT.IMAGE_LINK###
+                enable.field                >
+                enable                      = ###TX_ORG_DEPARTMENT.IMAGE_ZOOM###
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_DEPARTMENT.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_DEPARTMENT.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_DEPARTMENT.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_DEPARTMENT.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_DEPARTMENT.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_DEPARTMENT.IMAGEBORDER###
+            caption.1.field         >
+            caption.1.value         = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_DEPARTMENT.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_DEPARTMENT.IMAGEORIENT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // title, address
+            text {
+              required  = 1
+                // bodytext
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_DEPARTMENT.TITLE###
+                wrap      = <h1 class="department_title">|</h1>
+              }
+              20 = TEXT
+              20 {
+                if.isTrue = ###TX_ORG_DEPARTMENT.MAIL_POSTCODE######TX_ORG_DEPARTMENT.MAIL_CITY######TX_ORG_DEPARTMENT.MAIL_ADDRESS###
+                value     = ###TX_ORG_DEPARTMENT.MAIL_POSTCODE### ###TX_ORG_DEPARTMENT.MAIL_CITY###, ###TX_ORG_DEPARTMENT.MAIL_ADDRESS###
+                wrap      = <p class="department_address">|</p>
               }
             }
           }
