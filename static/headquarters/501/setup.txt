@@ -120,9 +120,28 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.pubtrans_stop,
           tx_org_headquarters.pubtrans_url,
           tx_org_headquarters.pubtrans_embeddedcode,
+
+          tx_org_headquarters.documents_from_path,
+          tx_org_headquarters.documents,
+          tx_org_headquarters.documentslayout,
+          tx_org_headquarters.documentscaption,
+          tx_org_headquarters.documentssize, 
+
           tx_org_headquarters.image,
           tx_org_headquarters.imagecaption,
           tx_org_headquarters.imageseo,
+          tx_org_headquarters.imagewidth,
+          tx_org_headquarters.imageheight,
+          tx_org_headquarters.imageorient,
+          tx_org_headquarters.imagecols,
+          tx_org_headquarters.imageborder,
+          tx_org_headquarters.image_frames,
+          tx_org_headquarters.image_link,
+          tx_org_headquarters.image_zoom,
+          tx_org_headquarters.image_noRows,
+          tx_org_headquarters.image_effects,
+          tx_org_headquarters.image_compression,
+
           tx_org_headquarters.embeddedcode,
           tx_org_headquarters.documents,
           tx_org_headquarters.keywords,
@@ -142,51 +161,6 @@ plugin.tx_browser_pi1 {
 )
         }
         tx_org_headquarters {
-          title = TEXT
-          title {
-            value = ###TX_ORG_HEADQUARTERS.TITLE###
-            wrap  = <h1>|</h1>
-          }
-          image < tt_content.image.20
-          image {
-            imgList.field >
-            imgList = ###TX_ORG_HEADQUARTERS.IMAGE###
-            imgPath = uploads/tx_org/
-            //imgMax  = 1
-            1 {
-              file {
-                width.field >
-                width   = 140c;
-                height  = 110c;
-              }
-              altText.field   >
-              altText         = ###TX_ORG_HEADQUARTERS.IMAGESEO###
-              titleText.field >
-              titleText       = ###TX_ORG_HEADQUARTERS.IMAGESEO###
-              imageLinkWrap {
-                enable.field >
-                enable  = 1
-                width   = 600;
-                height  = 400m;
-                //JSwindow = 0
-              }
-            }
-            layout {
-              key.field >
-                // intext-right
-              key = 17
-            }
-            cols.field >
-            cols = 1
-            caption.1 {
-              field >
-              value = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
-            }
-            stdWrap {
-              prefixComment >
-              wrap          = <div class="image">|</div>
-            }
-          }
           mail_embeddedcode = COA
           mail_embeddedcode {
             10 = TEXT
@@ -392,6 +366,79 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_HEADQUARTERS.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_HEADQUARTERS.IMAGEWIDTH###
+                height  = ###TX_ORG_HEADQUARTERS.IMAGEHEIGHT###
+              }
+              altText.field                 >
+              altText                       = ###TX_ORG_HEADQUARTERS.IMAGESEO###
+              titleText.field               >
+              titleText                     = ###TX_ORG_HEADQUARTERS.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_HEADQUARTERS.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_HEADQUARTERS.IMAGE_LINK###
+                enable.field                >
+                enable                      = ###TX_ORG_HEADQUARTERS.IMAGE_ZOOM###
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_HEADQUARTERS.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_HEADQUARTERS.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_HEADQUARTERS.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_HEADQUARTERS.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_HEADQUARTERS.IMAGEBORDER###
+            caption.1.field         >
+            caption.1.value         = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_HEADQUARTERS.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // title, address
+            text {
+              required  = 1
+                // bodytext
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_HEADQUARTERS.TITLE###
+                wrap      = <h1 class="location_title">|</h1>
+              }
+              20 = TEXT
+              20 {
+                if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                value     = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                wrap      = <p class="location_address">|</p>
+              }
+            }
+          }
         }
         tx_org_department {
           title = COA
@@ -419,7 +466,7 @@ plugin.tx_browser_pi1 {
       list_mode_501_titleTag      = TYPO3 Organiser: Headquarters
       list_mode_501_keywords      = TYPO3, Organiser, Headquarters
       list_mode_501_summary       = TYPO3 Organiser: Headquarters
-      single_mode_501_titleTag    = TYPO3 Organiser: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_titleTag    = TYPO3 Organiser - Headquarter: ###TX_ORG_HEADQUARTERS.TITLE###
       single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
       single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }
@@ -427,7 +474,7 @@ plugin.tx_browser_pi1 {
       list_mode_501_titleTag      = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
       list_mode_501_keywords      = TYPO3, Organiser, Standorte, Hauptverwaltung, Verwaltungsgebäude
       list_mode_501_summary       = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
-      single_mode_501_titleTag    = TYPO3 Organiser: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_titleTag    = TYPO3 Organiser - Standort: ###TX_ORG_HEADQUARTERS.TITLE###
       single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
       single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }

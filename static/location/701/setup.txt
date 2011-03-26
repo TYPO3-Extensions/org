@@ -123,8 +123,6 @@ plugin.tx_browser_pi1 {
           tx_org_location.image_effects,
           tx_org_location.image_compression,
 
-
-
           tx_org_location.embeddedcode,
           tx_org_location.keywords,
           tx_org_location.description,
@@ -392,7 +390,7 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-            // title and image
+            // title, address and image
           title < tt_content.image.20
           title {
             imgList.field >
