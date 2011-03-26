@@ -92,7 +92,7 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',      '+Org: Abteilung');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',      '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',        '+Org: Kalender');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired', '+Org: +Kalender Archiv');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired', '+Org: Kalender +Archiv');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',        '+Org: Kalender - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',             '+Org: Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',             '+Org: Nachrichten - Rand');
@@ -112,7 +112,7 @@ switch(true) {
       // English
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (obligate!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Calendar');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired/',  '+Org: + Calendar expired');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired/',  '+Org: Calendar +expired');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',          '+Org: Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Department');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');

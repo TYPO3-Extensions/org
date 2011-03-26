@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      201: calendar +expired (display expired date only)
+  //      201: +Org: calendar +expired (display expired date only)
 
 
 
@@ -18,9 +18,9 @@ plugin.tx_browser_pi1 {
   
   views {
     list {
-      201 = calendar +expired
+      201 = +Org: calendar +expired
       201 {
-        name    = calendar +expired
+        name    = +Org: calendar +expired
         marker {
           my_datesheet {
             30 {
@@ -91,7 +91,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      201 = calendar +expired
+      201 = +Org: calendar +expired
       201 {
         marker {
           my_datesheet {
