@@ -161,6 +161,47 @@ plugin.tx_browser_pi1 {
 )
         }
         tx_org_headquarters {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTS######TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="headquarters_documents">|</h2>
+            }
+              // documents
+            20 < tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_HEADQUARTERS.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_repertoire.documents
+              fields {
+                from_path = ###TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_HEADQUARTERS.DOCUMENTS###
+                caption   = ###TX_ORG_HEADQUARTERS.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_HEADQUARTERS.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTS######TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
           mail_embeddedcode = COA
           mail_embeddedcode {
             10 = TEXT
