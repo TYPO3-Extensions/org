@@ -794,9 +794,8 @@ plugin.tx_browser_pi1 {
             wrap = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
             10 = TEXT
             10 {
-              value = Location
-              lang.de = Ort
-              wrap = <strong>|</strong><br />
+              data = LLL:EXT:org/locallang_db.xml:tca_phrase.location
+              noTrimWrap = ||: |
             }
             11 = TEXT
             11 {
