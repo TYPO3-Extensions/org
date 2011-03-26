@@ -605,7 +605,6 @@ plugin.tx_browser_pi1 {
                   required    = 1
                   if.isTrue   = ###TX_ORG_CAL.BODYTEXT###
                   value       = ###TX_ORG_CAL.BODYTEXT###
-                  stripHtml   = 1
                 }
               }
             }
@@ -640,9 +639,7 @@ plugin.tx_browser_pi1 {
                 key                     = ###TX_ORG_EVENT.IMAGEORIENT###
               }
               text {
-                required  = 1
                 wrap      = <div class="cal_bodytext cal_bodytext_event">|</div>
-                stdWrap.parseFunc < lib.parseFunc_RTE
                 20 {
                   if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
                   value       = ###TX_ORG_EVENT.BODYTEXT###
