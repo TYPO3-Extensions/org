@@ -204,6 +204,7 @@ t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKE
 
   // fe_users
   // fe_groups
+  // sys_template
 
   // fe_users
 t3lib_div::loadTCA('fe_users');
@@ -438,6 +439,12 @@ t3lib_div::loadTCA('fe_groups');
 $TCA['fe_groups']['ctrl']['title']          = 'LLL:EXT:org/locallang_db.xml:fe_groups';
 $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
   // fe_groups
+
+  // sys_template
+t3lib_div::loadTCA('sys_template');
+$TCA['sys_template']['columns']['include_static_file']['config']['selectedListStyle'] = 'width:360px;';
+$TCA['sys_template']['columns']['include_static_file']['config']['itemListStyle']     = 'width:360px;';
+  // sys_template
 
   // Configure third party tables
 
