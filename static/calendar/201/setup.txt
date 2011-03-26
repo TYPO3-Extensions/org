@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      201: +Org: calendar
+  //      201: +Org: Calendar
 
 
 
@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         calendar {
-          name      = +Org: calendar
+          name      = +Org: Calendar
           file      = EXT:org/res/html/calendar/201/default.tmpl
           csvViews  = 201
         }
@@ -32,9 +32,9 @@ plugin.tx_browser_pi1 {
   
   views {
     list {
-      201 = +Org: calendar
+      201 = +Org: Calendar
       201 {
-        name    = +Org: calendar
+        name    = +Org: Calendar
         showUid = calendarUid
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
@@ -400,7 +400,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      201 = +Org: calendar
+      201 = +Org: Calendar
       201 {
         displaySingle < plugin.tx_browser_pi1.displaySingle
         displaySingle {
@@ -640,7 +640,9 @@ plugin.tx_browser_pi1 {
                 key                     = ###TX_ORG_EVENT.IMAGEORIENT###
               }
               text {
+                required  = 1
                 wrap      = <div class="cal_bodytext cal_bodytext_event">|</div>
+                stdWrap.parseFunc < lib.parseFunc_RTE
                 20 {
                   if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
                   value       = ###TX_ORG_EVENT.BODYTEXT###
