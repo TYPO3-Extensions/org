@@ -101,8 +101,6 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',           '+Org: Personal - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',     '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',     '+Org: Standorte - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/301',            '+Org: Veranstaltungen');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/311',            '+Org: Veranstaltungen - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',         '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',         '+Org: Veranstaltorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',   '+Org: Warenkorb');
@@ -116,8 +114,6 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',          '+Org: Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Department');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/301',              '+Org: Events');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/event/311',              '+Org: Events - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',       '+Org: Headquarters');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',       '+Org: Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',           '+Org: Locations');
