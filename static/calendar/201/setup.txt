@@ -791,7 +791,7 @@ plugin.tx_browser_pi1 {
         tx_org_location {
           title = COA
           title {
-            wrap = <div style="background:#EEE;font-size:.8em;line-height:1em;overflow:hidden;padding:.6em;text-align:center;width:100px;">|</div>
+            wrap = <div class="cal_location">|</div>
             10 = TEXT
             10 {
               data = LLL:EXT:org/locallang_db.xml:tca_phrase.location
@@ -802,9 +802,6 @@ plugin.tx_browser_pi1 {
               value = ###TX_ORG_LOCATION.TITLE###
               typolink {
                 parameter = {$plugin.org.pages.location}
-                parameter {
-                  insertData = 1
-                }
                 additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
               }
             }
