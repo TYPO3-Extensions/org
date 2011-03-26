@@ -69,7 +69,6 @@
       <label index="tx_org_cal.calurl">Link to an external page (URL)</label>
       <label index="tx_org_cal.title">Title of the event</label>
       <label index="tx_org_cal.subtitle">Subheader</label>
-      <label index="tx_org_cal.short">Short</label>
       <label index="tx_org_cal.datetime">Datetime</label>
       <label index="tx_org_cal.tx_org_caltype">Type of Event</label>
       <label index="tx_org_cal.teaser_title">Title of the event</label>
@@ -133,7 +132,6 @@
       <label index="tx_org_event.subtitle">Subheader</label>
       <label index="tx_org_event.producer">Producer</label>
       <label index="tx_org_event.length">Length of Time</label>
-      <label index="tx_org_event.short">Short</label>
       <label index="tx_org_event.bodytext">Bodytext</label>
       <label index="tx_org_event.teaser_title">Title of the event</label>
       <label index="tx_org_event.teaser_subtitle">Subheader</label>
@@ -324,7 +322,6 @@
       <label index="tx_org_cal.calurl">Link zu externer Seite</label>
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
-      <label index="tx_org_cal.short">Kurztitel (optional)</label>
       <label index="tx_org_cal.datetime">Beginn der Veranstaltung</label>
       <label index="tx_org_cal.tx_org_caltype">Kategorie der Veranstaltung</label>
       <label index="tx_org_cal.teaser_title">Bezeichnung im Kalender</label>
@@ -387,7 +384,6 @@
       <label index="tx_org_event.title">Name der Veranstaltung</label>
       <label index="tx_org_event.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_event.length">Dauer</label>
-      <label index="tx_org_event.short">Kurztext</label>
       <label index="tx_org_event.bodytext">Text</label>
       <label index="tx_org_event.teaser_title">Bezeichnung der Produktion</label>
       <label index="tx_org_event.teaser_subtitle">Untertitel / Dachzeile</label>

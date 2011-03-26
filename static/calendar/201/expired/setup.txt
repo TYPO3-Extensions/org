@@ -60,7 +60,7 @@ plugin.tx_browser_pi1 {
               // %A, %d. %B %Y, %H:%M Uhr: Freitag, 07. Januar 2011, 20:00 Uhr 
             strftime = %A, %d. %B %Y, %H:%M Uhr
           }
-          short {
+          teaser_short {
             10 {
               default {
                 30 {
