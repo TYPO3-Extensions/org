@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      501: Headquarters
+  //      501: +Org: Headquarters
 
 
 
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         headquarters {
-          name      = Org: Standorte
+          name      = +Org: Headquarters
           file      = EXT:org/res/html/headquarters/501/default.tmpl
           csvViews  = 501
         }
@@ -30,9 +30,9 @@ plugin.tx_browser_pi1 {
   }
   views {
     list {
-      501 = Headquarters
+      501 = +Org: Headquarters
       501 {
-        name    = Standorte
+        name    = +Org: Headquarters
         showUid = headquartersUid
         select (
           tx_org_headquarters.title,
@@ -59,7 +59,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      501 = Headquarters
+      501 = +Org: Headquarters
       501 {
         general_stdWrap {
           parseFunc {

@@ -779,26 +779,26 @@ $TCA['tx_org_cal'] = array (
     ),
     'imagewidth' => array (
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:cms/locallang_ttc.xml:imagewidth',
-      'config' => array (
-        'type' => 'input',
-        'size' => '10',
-        'max' => '10',
-        'eval' => 'trim',
-        'checkbox' => '0',
-        'default' => '160c'
+      'label'   => 'LLL:EXT:cms/locallang_ttc.xml:imagewidth',
+      'config'  => array (
+        'type'      => 'input',
+        'size'      => '10',
+        'max'       => '10',
+        'eval'      => 'trim',
+        'checkbox'  => '0',
+        'default'   => ''
       )
     ),
     'imageheight' => array (
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:cms/locallang_ttc.xml:imageheight',
-      'config' => array (
-        'type' => 'input',
-        'size' => '10',
-        'max' => '10',
-        'eval' => 'trim',
-        'checkbox' => '0',
-        'default' => '120c'
+      'label'   => 'LLL:EXT:cms/locallang_ttc.xml:imageheight',
+      'config'  => array (
+        'type'      => 'input',
+        'size'      => '10',
+        'max'       => '10',
+        'eval'      => 'trim',
+        'checkbox'  => '0',
+        'default'   => ''
       )
     ),
     'imageorient' => array (
@@ -819,8 +819,8 @@ $TCA['tx_org_cal'] = array (
           array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
           array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
-        'selicon_cols' => 6,
-        'default' => '0',
+        'selicon_cols'      => 6,
+        'default'           => '0',
         'iconsInOptionTags' => 1,
       )
     ),
