@@ -440,6 +440,48 @@ plugin.tx_browser_pi1 {
                 value     = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
                 wrap      = <p class="department_address">|</p>
               }
+              20 >
+              20 = COA
+              20 {
+                if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                wrap      = <p class="department_address">|</p>
+                10 = TEXT
+                10 {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+                  }
+                  value = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+                  noTrimWrap = || |
+                }
+                11 = TEXT
+                11 {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+                  }
+                  value = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+                  noTrimWrap = ||, |
+                }
+                12 = TEXT
+                12 {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                  }
+                  value = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                  noTrimWrap = || |
+                }
+                20 = TEXT
+                20 {
+                  value = more
+                  lang.de = Details
+                  typolink {
+                    parameter = {$plugin.org.pages.headquarter}
+                    parameter {
+                      insertData = 1
+                    }
+                    additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###&###CHASH###
+                  }
+                }
+              }
             }
           }
         }
