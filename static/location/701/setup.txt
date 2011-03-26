@@ -188,7 +188,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              tableField = tx_org_repertoire.documents
+              tableField = tx_org_location.documents
               fields {
                 from_path = ###TX_ORG_LOCATION.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_LOCATION.DOCUMENTS###
