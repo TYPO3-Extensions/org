@@ -397,6 +397,16 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+        tx_org_location {
+          title = COA
+          title {
+            value = ###TX_ORG_LOCATION.TITLE###
+            typolink {
+              parameter         = {$plugin.org.pages.location}
+              additionalParams  = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+            }
+          }
+        }
       }
     }
     single {
