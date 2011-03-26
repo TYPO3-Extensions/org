@@ -393,13 +393,6 @@ plugin.tx_browser_pi1 {
                 value     = ###TX_ORG_DEPARTMENT.TITLE###
                 wrap      = <h1 class="department_title">|</h1>
               }
-              20 = TEXT
-              20 {
-                if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
-                value     = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
-                wrap      = <p class="department_address">|</p>
-              }
-              20 >
               20 = COA
               20 {
                 if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
