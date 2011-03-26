@@ -447,7 +447,7 @@ plugin.tx_browser_pi1 {
             stdWrap {
               prefixComment >
             }
-              // title
+              // title, address
             text {
               required  = 1
                 // bodytext
@@ -456,6 +456,12 @@ plugin.tx_browser_pi1 {
                 required  = 1
                 value     = ###TX_ORG_LOCATION.TITLE###
                 wrap      = <h1 class="location_title">|</h1>
+              }
+              20 = TEXT
+              20 {
+                if.isTrue = ###TX_ORG_LOCATION.MAIL_POSTCODE######TX_ORG_LOCATION.MAIL_CITY######TX_ORG_LOCATION.MAIL_ADDRESS###
+                value     = ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
+                wrap      = <p class="location_address">|</p>
               }
             }
           }
