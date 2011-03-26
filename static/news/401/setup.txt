@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      401: News
+  //      401: +Org: News
 
 
 
@@ -18,10 +18,9 @@ plugin.tx_browser_pi1 {
   
   template {
     extensions {
-      tt_news >
       org {
         news {
-          name      = Org: News
+          name      = +Org: News
           file      = EXT:org/res/html/news/401/default.tmpl
           csvViews  = 401
         }
@@ -31,9 +30,9 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      401 = News
+      401 = +Org: News
       401 {
-        name    = News
+        name    = +Org: News
         showUid = newsUid
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
@@ -239,7 +238,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      401 = News
+      401 = +Org: News
       401 {
         displaySingle < plugin.tx_browser_pi1.displaySingle
         displaySingle {
