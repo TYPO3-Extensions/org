@@ -377,7 +377,7 @@ switch($confArr['store_records'])
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,title,subtitle,short,datetime,tx_org_caltype,bodytext,tx_org_event,'.
+    'showRecordFieldList' =>  'type,title,subtitle,datetime,tx_org_caltype,bodytext,tx_org_event,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_department'.
@@ -463,11 +463,6 @@ $TCA['tx_org_cal'] = array (
     'subtitle' => array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.subtitle',
-      'config'  => $conf_input_30_trim,
-    ),
-    'short' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.short',
       'config'  => $conf_input_30_trim,
     ),
     'datetime' => array (
@@ -989,7 +984,7 @@ $TCA['tx_org_cal'] = array (
   ),
   'types' => array (
     '0' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
@@ -1007,7 +1002,7 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
       ''),
     'calpage' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calpage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
@@ -1019,7 +1014,7 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
       ''),
     'calurl' => array('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,short,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
@@ -1873,7 +1868,7 @@ $bool_exclude_feuser = true;
 $TCA['tx_org_event'] = array (
   'ctrl' => $TCA['tx_org_event']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,subtitle,producer,length,short,bodytext,'.
+    'showRecordFieldList' =>  'title,subtitle,producer,length,bodytext,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_cal,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -1899,11 +1894,6 @@ $TCA['tx_org_event'] = array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_event.length',
       'config'  => $conf_input_30_trim,
-    ),
-    'short' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_event.short',
-      'config'    => $conf_text_50_10,
     ),
     'bodytext' => array (
       'exclude'   => $bool_exclude_default,
@@ -2303,7 +2293,7 @@ $TCA['tx_org_event'] = array (
   ),
   'types' => array (
     '0' => array('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_event,     title;;;;1-1-1,subtitle,producer,length,short,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_event,     title;;;;1-1-1,subtitle,producer,length,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_teaser,    teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_calendar,  tx_org_cal,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .

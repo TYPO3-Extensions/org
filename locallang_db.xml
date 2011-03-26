@@ -65,6 +65,8 @@
       <label index="tx_org_cal.type.calurl">Link to an external page (URL)</label>
       <label index="tx_org_cal.type.tx_org_event">Take it from the event table</label>
       <label index="tx_org_cal.tx_org_event">Event</label>
+      <label index="tx_org_cal.calpage">Link to an internal page</label>
+      <label index="tx_org_cal.calurl">Link to an external page (URL)</label>
       <label index="tx_org_cal.title">Title of the event</label>
       <label index="tx_org_cal.subtitle">Subheader</label>
       <label index="tx_org_cal.short">Short</label>
@@ -318,6 +320,8 @@
       <label index="tx_org_cal.type.calurl">Link zu externer Seite (URL)</label>
       <label index="tx_org_cal.type.tx_org_event">Aus den Veranstaltungen</label>
       <label index="tx_org_cal.tx_org_event">Veranstaltung</label>
+      <label index="tx_org_cal.calpage">Link zu interner Seite</label>
+      <label index="tx_org_cal.calurl">Link zu externer Seite</label>
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.short">Kurztitel (optional)</label>
@@ -469,8 +473,8 @@
       <label index="tx_org_news.teaser_title"><![CDATA[Überschrift]]></label>
       <label index="tx_org_news.teaser_subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_news.teaser_short">Text</label>
-      <label index="tx_org_news.newspage">Link to an internal page</label>
-      <label index="tx_org_news.newsurl">Link to an external page (URL)</label>
+      <label index="tx_org_news.newspage">Link zu interner Seite</label>
+      <label index="tx_org_news.newsurl">Link zu externer Seite</label>
       <label index="tx_org_news.fe_user">Autor</label>
       <label index="tx_org_news.tx_org_department">Abteilung</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
