@@ -1810,8 +1810,8 @@ $TCA['tx_org_department'] = array (
     ),
   )
 );
-$TCA['tx_org_department']['columns']['manager']['config']['size']      = 1;
-$TCA['tx_org_department']['columns']['manager']['config']['maxitems']  = 1;
+$TCA['tx_org_department']['columns']['manager']['config']['size']      = 10;
+$TCA['tx_org_department']['columns']['manager']['config']['maxitems']  = 99;
 
 if(!$bool_full_wizardSupport_catTables)
 {
