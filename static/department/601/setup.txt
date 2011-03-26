@@ -436,8 +436,8 @@ plugin.tx_browser_pi1 {
               }
               20 = TEXT
               20 {
-                if.isTrue = ###TX_ORG_DEPARTMENT.MAIL_POSTCODE######TX_ORG_DEPARTMENT.MAIL_CITY######TX_ORG_DEPARTMENT.MAIL_ADDRESS###
-                value     = ###TX_ORG_DEPARTMENT.MAIL_POSTCODE### ###TX_ORG_DEPARTMENT.MAIL_CITY###, ###TX_ORG_DEPARTMENT.MAIL_ADDRESS###
+                if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                value     = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
                 wrap      = <p class="department_address">|</p>
               }
             }
@@ -449,8 +449,8 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_601               = Departments
-      list_mode_601_titleTag      = Department
+      list_mode_601               = TYPO3-Organiser: Departments
+      list_mode_601_titleTag      = TYPO3-Organiser: Department
       list_mode_601_keywords      = TYPO3, Organiser, Departments
       list_mode_601_summary       = Departments presented by TYPO3-Organiser
       single_mode_601_titleTag    = Department: ###TX_ORG_DEPARTMENT.TITLE###
@@ -458,8 +458,8 @@ plugin.tx_browser_pi1 {
       single_mode_601_summary     = ###TX_ORG_DEPARTMENT.DESCRIPTION###
     }
     de {
-      list_mode_601               = Abteilungen
-      list_mode_601_titleTag      = Abteilung
+      list_mode_601               = TYPO3-Organiser: Abteilungen
+      list_mode_601_titleTag      = TYPO3-Organiser: Abteilung
       list_mode_601_keywords      = Abteilung, TYPO3, Organiser
       list_mode_601_summary       = Abteilungen, präsentiert vom TYPO3 Organiser
       single_mode_601_titleTag    = Abteilung: ###TX_ORG_DEPARTMENT.TITLE###
