@@ -444,7 +444,7 @@ $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
 t3lib_div::loadTCA('sys_template');
 $TCA['sys_template']['columns']['include_static_file']['config']['selectedListStyle'] = 'width:360px;';
 $TCA['sys_template']['columns']['include_static_file']['config']['itemListStyle']     = 'width:360px;';
-$TCA['sys_template']['columns']['include_static_file']['config']['size']              = '30';
+$TCA['sys_template']['columns']['include_static_file']['config']['size']              = '40';
   // sys_template
 
   // Configure third party tables
