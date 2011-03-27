@@ -524,7 +524,7 @@ plugin.tx_browser_pi1 {
             lang {
               de = ###TX_ORG_CAL.DATETIME### Uhr
             }
-            strftime = %A, %d. %B, %H:%M Uhr
+            strftime = %A, %d. %B %Y, %H:%M Uhr
           }
             // 0 (direct), tx_org_event
           bodytext = CASE
