@@ -506,48 +506,49 @@ plugin.tx_browser_pi1 {
               wrap = <div class="my_datesheet my_datesheet_expired">|</div>
             }
           }
-          my_form = COA
-          my_form {
-              // form action
-            10 = COA
+          my_form_begin = COA
+          my_form_begin {
+              // form tag begin
+            10 = TEXT
             10 {
-                // in front of action
-              10 = TEXT
-              10 {
-                value (
-          <div class="cleaner">&nbsp;</div>
-)
-              }
-                // action
-              20 = TEXT
-              20 {
-                wrap = <form name="form_add_to_cart" id="form-order" action="|"value  = " method="post">
-                typolink {
-                  parameter = {$plugin.org.pages.shopping_cart}
-                  returnLast = url
-                }
-              }
-                // behind action
-              30 = TEXT
-              30 {
-                valueXXX  = " method="post">
+              wrap = <form name="form_add_to_cart" id="form-order" action="|"value  = " method="post">
+              typolink {
+                parameter = {$plugin.org.pages.shopping_cart}
+                returnLast = url
               }
             }
-            valueXXX (
-          <div class="cleaner">&nbsp;</div>
-          <form name="form_add_to_cart" id="form-order" action="###MY_CART_PAGE_URL###" method="post">
+              // fieldset begin (legend)
+            20 = TEXT
+            20 {
+              value = Order a ticket
+              lang {
+                de = Ticket bestellen
+              }
+            
+              wrap = (
             <fieldset id="add-to-cart">
-              <legend>###MY_CART_LEGEND###</legend>
-              <input type="hidden"  name="tx_org_cal[uid]"         value="###MY_TXORGCAL_UID###" />
-              <input type="hidden"  name="tx_org_cal[datetime]"    value="###MY_TXORGCAL_DATETIME###" />
+              <legend>|</legend>
+              <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_CAL.UID###" />
+              <input type="hidden"  name="tx_org_cal[datetime]"    value="###TX_ORG_CAL.DATETIME###" />
               <select               name="tx_org_calentrance[uid]" id="tx_browser_pi1_tx_org_calentrance_uid" size="1">
-                ###TX_ORG_CALENTRANCE.TITLE###
+)
+            }
+              // fieldset and form end
+            30 = TEXT
+            30 {
+              value = Into the cart
+              lang {
+                de = Karte reservieren
+              }
+            
+              wrap = (
               </select>
-              <input type="text"   name="quantity" class="quantity" value="###MY_CART_QUANTITY###" />
-              <input type="submit" name="submit"                    value="###MY_CART_BUTTON###" />
+              <input type="text"   name="quantity" class="quantity" value="1" />
+              <input type="submit" name="submit"                    value="|" />
             </fieldset>
           </form>
 )
+            }
           }
         }
         select (
