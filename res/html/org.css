@@ -38,6 +38,12 @@
   padding-left:0;
 }
 
+.tx-browser-pi1 .listview .image01 {
+  float:left;
+  padding:0 1em 0 0;
+  width:80px;
+}
+
 .tx-browser-pi1 .socialbookmarks {
   float:right;
   font-size: 1em;
