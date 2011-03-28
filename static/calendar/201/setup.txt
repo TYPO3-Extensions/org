@@ -123,7 +123,6 @@ plugin.tx_browser_pi1 {
           tx_org_event.bodytext
         )
         orderBy             = tx_org_cal.datetime
-        andWhere            = tx_org_cal.datetime > UNIX_TIMESTAMP()
         csvLinkToSingleView = tx_org_cal.title
         filter {
           tx_org_cal {
@@ -627,7 +626,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.uid,
           tx_org_location.title
         )
-        andWhere  = tx_org_cal.datetime > UNIX_TIMESTAMP()
+        orderBy = tx_org_cal.datetime DESC
         tx_org_cal {
           datetime = TEXT
           datetime {
@@ -811,12 +810,12 @@ plugin.tx_browser_pi1 {
               default = TEXT
               default {
                 value = ###TX_ORG_CAL.TITLE###
-                wrap  = <h1 class="default">|</h1>
+                wrap  = <h1 class="default csc-firstHeader">|</h1>
               }
               tx_org_event = TEXT
               tx_org_event {
                 value = ###TX_ORG_EVENT.TITLE###
-                wrap  = <h1 class="event">|</h1>
+                wrap  = <h1 class="event csc-firstHeader">|</h1>
               }
             }
           }
