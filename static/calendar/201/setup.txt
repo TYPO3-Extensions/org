@@ -202,11 +202,8 @@ plugin.tx_browser_pi1 {
         tx_org_cal {
           datetime = TEXT
           datetime {
-            value = ###TX_ORG_CAL.DATETIME### h
-            lang {
-              de = ###TX_ORG_CAL.DATETIME### Uhr
-            }
-            strftime = %A, %d. %B %Y  , %H:%M Uhr
+            value = ###TX_ORG_CAL.DATETIME###
+            strftime = %A, %d. %B %Y, %H:%M Uhr
           }
           teaser_short = COA
           teaser_short {
@@ -459,11 +456,6 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-          my_txorgcal_datetime = TEXT
-          my_txorgcal_datetime {
-            value = ###TX_ORG_CAL.DATETIME###
-            strftime = %a %d %b %H:%M Uhr
-          }
           my_datesheet = COA
           my_datesheet {
             if.isTrue = ###TX_ORG_CAL.DATETIME###
@@ -523,7 +515,7 @@ plugin.tx_browser_pi1 {
                 returnLast = url
               }
             }
-              // fieldset > select
+              // fieldset > input
             20 = TEXT
             20 {
               value = Order a ticket
@@ -535,7 +527,15 @@ plugin.tx_browser_pi1 {
             <fieldset id="add-to-cart">
               <legend>|</legend>
               <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_CAL.UID###" />
-              <input type="hidden"  name="tx_org_cal[datetime]"    value="###TX_ORG_CAL.DATETIME###" />
+)
+            }
+              // input > select
+            30 = TEXT
+            30 {
+              value = ###TX_ORG_CAL.DATETIME###
+              strftime = %A, %d. %B %Y, %H:%M Uhr
+              wrap (
+              <input type="hidden"  name="tx_org_cal[datetime]"    value="|" />
               <select               name="tx_org_calentrance[uid]" id="tx_browser_pi1_tx_org_calentrance_uid" size="1">
 )
             }
@@ -631,10 +631,7 @@ plugin.tx_browser_pi1 {
         tx_org_cal {
           datetime = TEXT
           datetime {
-            value = ###TX_ORG_CAL.DATETIME### h
-            lang {
-              de = ###TX_ORG_CAL.DATETIME### Uhr
-            }
+            value = ###TX_ORG_CAL.DATETIME###
             strftime = %A, %d. %B %Y, %H:%M Uhr
           }
             // 0 (direct), tx_org_event
