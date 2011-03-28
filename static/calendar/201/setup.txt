@@ -526,7 +526,7 @@ plugin.tx_browser_pi1 {
                 de = Ticket bestellen
               }
             
-              wrap = (
+              wrap (
             <fieldset id="add-to-cart">
               <legend>|</legend>
               <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_CAL.UID###" />
@@ -543,7 +543,7 @@ plugin.tx_browser_pi1 {
               de = Karte reservieren
             }
           
-            wrap = (
+            wrap (
             </select>
             <input type="text"   name="quantity" class="quantity" value="1" />
             <input type="submit" name="submit"                    value="|" />
