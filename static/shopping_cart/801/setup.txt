@@ -80,10 +80,10 @@ plugin.tx_wtcart_pi1 {
       wtcart_ll_price = Price
       wtcart_ll_empty (
           If you like to have a ticket reserved, please select an event
-          <a title="Have a seat reserved!" href="{$plugin.org.pages.calendar}">
+          <a title="Have a seat reserved!" href="{$plugin.org.url.default.calendar}">
             in the playing schedule</a>.<br />
           Informationen about having a ticket reserved are part of our 
-          <a title="Informationen about booking" href="{$plugin.org.pages.terms}">
+          <a title="Informationen about booking" href="{$plugin.org.url.default.terms}">
             terms and conditions</a>.
 )
     }
@@ -92,12 +92,12 @@ plugin.tx_wtcart_pi1 {
       wtcart_ll_price = Preis
       wtcart_ll_empty (
           Wenn Sie eine Karte reservieren m&ouml;chten, wählen Sie ein St&uuml;ck
-          <a title="Platz reservieren!" href="{$plugin.org.pages.calendar}">
+          <a title="Platz reservieren!" href="{$plugin.org.url.de.calendar}">
             im Spielplan</a>
           aus. Dort können Sie Karten online reservieren.<br />
           <br />
           Allgemeine Informationen zum Reservieren finden Sie in unseren
-          <a title="Informationen zum Karten reservieren" href="{$plugin.org.pages.terms}">
+          <a title="Informationen zum Karten reservieren" href="{$plugin.org.url.de.terms}">
             AGB</a>.
 )
     }
