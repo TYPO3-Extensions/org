@@ -53,7 +53,7 @@ plugin.tx_browser_pi1 {
                 value.data = date : U
                 isGreaterThan = ###TX_ORG_CAL.DATETIME###
               }
-              wrap = <div class="my_datesheet my_datesheet">|</div>
+              wrap = <div class="my_datesheet">|</div>
                 // name of weekday
               10 = TEXT
               10 {
@@ -378,7 +378,7 @@ plugin.tx_browser_pi1 {
               }
               calpage = TEXT
               calpage {
-                required  = 1
+                required  = 1 my_datesheet
                 value     = ###TX_ORG_CAL.SUBTITLE###
                 wrap      = <div class="cal_subtitle cal_subtitle_page">|</div>
               }
@@ -474,7 +474,7 @@ plugin.tx_browser_pi1 {
                 value.data = date : U
                 isGreaterThan = ###TX_ORG_CAL.DATETIME###
               }
-              wrap = <div class="my_datesheet my_datesheet">|</div>
+              wrap = <div class="my_datesheet">|</div>
                 // name of weekday
               10 = TEXT
               10 {
