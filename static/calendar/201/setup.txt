@@ -521,7 +521,7 @@ plugin.tx_browser_pi1 {
                 // action
               20 = TEXT
               20 {
-                wrap = <form name="form_add_to_cart" id="form-order" action="|value  = " method="post">
+                wrap = <form name="form_add_to_cart" id="form-order" action="|"value  = " method="post">
                 typolink {
                   parameter = {$plugin.org.pages.shopping_cart}
                   returnLast = url
