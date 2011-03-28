@@ -145,7 +145,7 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               value       = ###TX_ORG_NEWS.DATETIME###
-              strftime    = %d. %b
+              strftime    = %d. %b %Y
               noTrimWrap  = |<span class="datetime">| &ndash;</span> |
             }
             11 = TEXT
