@@ -198,8 +198,11 @@ plugin.tx_browser_pi1 {
               wrap          = <div class="image">|</div>
             }
           }
+            // title, first_name, last_name
           last_name = COA
           last_name {
+            wrap  = <h1 class="fe_user csc-firstHeader">|</h1>
+              // title
             10 = TEXT
             10 {
               if {
@@ -208,6 +211,7 @@ plugin.tx_browser_pi1 {
               value       = ###FE_USERS.TITLE###
               noTrimWrap  = || |
             }
+              // first_name
             11 = TEXT
             11 {
               if {
@@ -216,6 +220,7 @@ plugin.tx_browser_pi1 {
               value       = ###FE_USERS.FIRST_NAME###
               noTrimWrap  = || |
             }
+              // last_name
             12 = TEXT
             12 {
               if {
@@ -279,14 +284,6 @@ plugin.tx_browser_pi1 {
                 }
                 wrap = |<br />
               }
-            }
-          }
-          title = COA
-          title {
-            10 = TEXT
-            10 {
-              value = ###FE_USER.TITLE###
-              wrap  = <h1 class="fe_user csc-firstHeader">|</h1>
             }
           }
           tx_org_vita = TEXT
