@@ -38,12 +38,6 @@
   padding-left:0;
 }
 
-.tx-browser-pi1 .listview .image01 {
-  float:left;
-  padding:0 1em 0 0;
-  width:80px;
-}
-
 .tx-browser-pi1 .socialbookmarks {
   float:right;
   font-size: 1em;
@@ -77,6 +71,15 @@
 }
 .tx-browser-pi1 .cal_location {
 /*  padding:1em 0; */
+}
+
+.tx-browser-pi1 .listview .image01 {
+  float:left;
+  padding:0 1em 0 0;
+  width:80px;
+}
+.tx-browser-pi1 .listview p {
+  margin-left:90px;
 }
 
 .tx-browser-pi1 .singleview li.csc-textpic-image {
