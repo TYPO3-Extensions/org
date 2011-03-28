@@ -8,12 +8,16 @@
   margin:0 0 1em 0;
 }
 
+.tx-browser-pi1 .browsebox {
+  padding-bottom:1em;
+}
 .tx-browser-pi1 .backbutton {
   text-align:right;
 }
 
 .tx-browser-pi1 .returntolist {
-  padding:1em 0;
+  display:block;
+  padding-bottom:1em;
 }
 
 .tx-browser-pi1 span.category_menu ul {
