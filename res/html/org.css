@@ -12,6 +12,10 @@
   text-align:right;
 }
 
+.tx-browser-pi1 .returntolist {
+  padding:1em 0;
+}
+
 .tx-browser-pi1 span.category_menu ul {
   display:inline;
   list-style:none;
