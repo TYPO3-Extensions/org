@@ -74,6 +74,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.newsurl,
           tx_org_news.uid
         )
+        orderBy = tx_org_news.datetime DESC 
         csvLinkToSingleView = tx_org_news.title
         tx_org_news {
           title = COA
