@@ -509,6 +509,11 @@ plugin.tx_browser_pi1 {
             // form > fieldset > select
           my_form_begin = COA
           my_form_begin {
+              // 10: date isn't expired 
+            if {
+              value.data = date : U
+              isGreaterThan = ###TX_ORG_CAL.DATETIME###
+            }
               // form
             10 = TEXT
             10 {
@@ -538,11 +543,15 @@ plugin.tx_browser_pi1 {
             // /select > /fieldset > /form
           my_form_end = TEXT
           my_form_end {
+              // 10: date isn't expired 
+            if {
+              value.data = date : U
+              isGreaterThan = ###TX_ORG_CAL.DATETIME###
+            }
             value = Into the cart
             lang {
               de = Karte reservieren
             }
-          
             wrap (
             </select>
             <input type="text"   name="quantity" class="quantity" value="1" />
