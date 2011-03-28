@@ -406,7 +406,7 @@ plugin.tx_browser_pi1 {
               20 {
                 required  = 1
                 value     = ###TX_ORG_NEWS.TITLE###
-                wrap      = <h1 class="news_title">|</h1>
+                wrap      = <h1 class="news_title csc-firstHeader">|</h1>
               }
               30 = COA
               30 {
