@@ -38,16 +38,16 @@ plugin.org {
 
   # cat=Organiser static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)
   url.default.calendar = schedule/
-  # cat=Organiser static url/page/107; type=+int; label= [default] calendar:URL of your shopping cart (default language)
+  # cat=Organiser static url/page/107; type=+int; label= [default] shopping cart:URL of your shopping cart (default language)
   url.default.shopping_cart = tickets/
   # cat=Organiser static url/page/108; type=+int; label= [default] terms & conditions:URL of your the terms and conditions (default language)
   url.default.terms = tickets/terms/
 
-  # cat=Organiser static url/page/200; type=+int; label= [de] calendar:URL of your calendar (only if German is configured!)
+  # cat=Organiser static url/page/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
   url.de.calendar = spielplan/
-  # cat=Organiser static url/page/207; type=+int; label= [de] calendar:URL of your shopping cart (only if German is configured!)
+  # cat=Organiser static url/page/207; type=+int; label= [de] Warenkorb:URL of your shopping cart (only if German is configured!)
   url.de.shopping_cart = karten/
-  # cat=Organiser static url/page/208; type=+int; label= [de] terms & conditions:URL of your the terms and conditions (only if German is configured!)
+  # cat=Organiser static url/page/208; type=+int; label= [de] AGB:URL of your the terms and conditions (only if German is configured!)
   url.de.terms = karten/agb/
 
   # cat=Organiser Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
