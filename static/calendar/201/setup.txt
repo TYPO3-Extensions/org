@@ -516,12 +516,12 @@ plugin.tx_browser_pi1 {
               10 {
                 value (
           <div class="cleaner">&nbsp;</div>
-          <form name="form_add_to_cart" id="form-order" action="
 )
               }
                 // action
               20 = TEXT
               20 {
+                wrap = <form name="form_add_to_cart" id="form-order" action="|value  = " method="post">
                 typolink {
                   parameter = {$plugin.org.pages.shopping_cart}
                   returnLast = url
@@ -530,7 +530,7 @@ plugin.tx_browser_pi1 {
                 // behind action
               30 = TEXT
               30 {
-                value  = " method="post">
+                valueXXX  = " method="post">
               }
             }
             valueXXX (
