@@ -122,7 +122,7 @@ plugin.tx_browser_pi1 {
           tx_org_event.teaser_short,
           tx_org_event.bodytext
         )
-        orderBy             = tx_org_cal.datetime
+        orderBy             = tx_org_cal.datetime DESC
         csvLinkToSingleView = tx_org_cal.title
         filter {
           tx_org_cal {
@@ -626,7 +626,6 @@ plugin.tx_browser_pi1 {
           tx_org_location.uid,
           tx_org_location.title
         )
-        orderBy = tx_org_cal.datetime DESC
         tx_org_cal {
           datetime = TEXT
           datetime {
