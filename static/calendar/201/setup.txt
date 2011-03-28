@@ -506,9 +506,10 @@ plugin.tx_browser_pi1 {
               wrap = <div class="my_datesheet my_datesheet_expired">|</div>
             }
           }
+            // form > fieldset > select
           my_form_begin = COA
           my_form_begin {
-              // form tag begin
+              // form
             10 = TEXT
             10 {
               wrap = <form name="form_add_to_cart" id="form-order" action="|"value  = " method="post">
@@ -517,7 +518,7 @@ plugin.tx_browser_pi1 {
                 returnLast = url
               }
             }
-              // fieldset begin (legend)
+              // fieldset > select
             20 = TEXT
             20 {
               value = Order a ticket
@@ -533,22 +534,22 @@ plugin.tx_browser_pi1 {
               <select               name="tx_org_calentrance[uid]" id="tx_browser_pi1_tx_org_calentrance_uid" size="1">
 )
             }
-              // fieldset and form end
-            30 = TEXT
-            30 {
-              value = Into the cart
-              lang {
-                de = Karte reservieren
-              }
-            
-              wrap = (
-              </select>
-              <input type="text"   name="quantity" class="quantity" value="1" />
-              <input type="submit" name="submit"                    value="|" />
-            </fieldset>
-          </form>
-)
+          }
+            // /select > /fieldset > /form
+          my_form_end = TEXT
+          my_form_end {
+            value = Into the cart
+            lang {
+              de = Karte reservieren
             }
+          
+            wrap = (
+            </select>
+            <input type="text"   name="quantity" class="quantity" value="1" />
+            <input type="submit" name="submit"                    value="|" />
+          </fieldset>
+        </form>
+)
           }
         }
         select (
