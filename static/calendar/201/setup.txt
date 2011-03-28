@@ -827,6 +827,11 @@ plugin.tx_browser_pi1 {
         tx_org_calentrance {
           title = COA
           title {
+              // 10: date isn't expired 
+            if {
+              value.data = date : U
+              isGreaterThan = ###TX_ORG_CAL.DATETIME###
+            }
             10 = TEXT
             10 {
               value = ###TX_ORG_CALENTRANCE.UID###
