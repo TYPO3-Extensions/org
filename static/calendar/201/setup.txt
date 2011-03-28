@@ -51,6 +51,13 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %a
               wrap      = <div class="weekday">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
             }
               // day of month as number
             20 = TEXT
@@ -58,6 +65,13 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %d
               wrap      = <div class="day_of_month">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
             }
               // month
             30 = TEXT
@@ -65,6 +79,13 @@ plugin.tx_browser_pi1 {
               value     = ###TX_ORG_CAL.DATETIME###
               strftime  = %b
               wrap      = <div class="month">|</div>
+              typolink {
+                parameter = {page:uid} - "linktosingle invert"
+                parameter {
+                  insertData = 1
+                }
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+              }
             }
           }
         }
@@ -167,7 +188,7 @@ plugin.tx_browser_pi1 {
             lang {
               de = ###TX_ORG_CAL.DATETIME### Uhr
             }
-            strftime = %A, %d. %B %Y, %H:%M Uhr
+            strftime = %A, %d. %B %Y  , %H:%M Uhr
           }
           teaser_short = COA
           teaser_short {
