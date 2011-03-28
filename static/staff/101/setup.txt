@@ -281,6 +281,14 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              value = ###FE_USER.TITLE###
+              wrap  = <h1 class="fe_user csc-firstHeader">|</h1>
+            }
+          }
           tx_org_vita = TEXT
           tx_org_vita {
             value = ###FE_USERS.TX_ORG_VITA###
