@@ -198,30 +198,48 @@ plugin.tx_browser_pi1 {
           }
         }
         filter {
+          tx_org_news {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.category_menu
+            datetime {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
+                }
+              }
+              wrap = <span class="category_menu">|</span>
+              wrap {
+                item {
+                  //display_without_any_hit = 1
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                  }
+                }
+              }
+              order.field = uid
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = years
+                  monthXYZ {
+                    times_stdWrap {
+                      value = 3
+                    }
+                    value_stdWrap {
+                      // %Y: full year like 2009
+                      strftime = %Y
+                    }
+                  }
+                }
+              }
+            }
+          }
           tx_org_newscat {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
                 stdWrap {
                   data = LLL:EXT:org/locallang_db.xml:filter_phrase.newscat
-                }
-              }
-              wrap = <span class="selectbox">|</span>
-              wrap {
-                item {
-                  stdWrap {
-                    crop = 30 | ... | 1
-                  }
-                }
-              }
-            }
-          }
-          tx_org_department {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title {
-              first_item {
-                stdWrap {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
                 }
               }
               wrap = <span class="selectbox">|</span>
