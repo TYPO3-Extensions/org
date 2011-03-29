@@ -199,7 +199,7 @@ plugin.tx_browser_pi1 {
         }
         filter {
           tx_org_news {
-            datetime < plugin.tx_browser_pi1.displayList.master_templates.category_menu
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             datetime {
               first_item {
                 stdWrap {
@@ -220,7 +220,7 @@ plugin.tx_browser_pi1 {
               area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
               area {
                 interval {
-                  case = years
+                  case = year
                   monthXYZ {
                     times_stdWrap {
                       value = 3
