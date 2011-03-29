@@ -130,6 +130,16 @@ plugin.tx_browser_pi1 {
           tx_org_cal.title,
           tx_org_cal.datetime
         )
+        orderBy {
+          tx_org_location (
+            SELECT    tx_org_location.uid   AS 'uid', 
+                      tx_org_location.title AS 'title'
+            FROM      tx_org_location,
+                      tx_org_cal_mm_tx_org_location
+            WHERE     tx_org_cal_mm_tx_org_location.uid_local    = ###UID_LOCAL###
+            AND       tx_org_cal_mm_tx_org_location.uid_foreign  = tx_org_location.uid
+            ORDER BY  tx_org_cal_mm_tx_org_location.sorting
+)
         tx_org_cal {
           title = COA
           title {
