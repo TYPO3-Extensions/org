@@ -137,8 +137,8 @@ plugin.tx_browser_pi1 {
                       tx_org_cal.title AS 'title'
             FROM      tx_org_cal,
                       tx_org_cal_mm_tx_org_location
-            WHERE     tx_org_cal_mm_tx_org_location.uid_local    = ###UID_LOCAL###
-            AND       tx_org_cal_mm_tx_org_location.uid_foreign  = tx_org_location.uid
+            WHERE     tx_org_cal_mm_tx_org_location.uid_local    = tx_org_cal.uid
+            AND       tx_org_cal_mm_tx_org_location.uid_foreign  = ###UID_LOCAL###
             ORDER BY  tx_org_cal.datetime DESC
 )
         }
