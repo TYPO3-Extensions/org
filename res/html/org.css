@@ -107,3 +107,9 @@
 .tx-browser-pi1 form.tx_org_cal-ticket input[type=submit] {
   float:right;
 }
+
+
+
+.tx-browser-pi1 tx_powermail_pi1_formconfirmation_submit {
+  text-align:right;
+}
