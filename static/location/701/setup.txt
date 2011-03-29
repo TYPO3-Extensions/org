@@ -140,6 +140,7 @@ plugin.tx_browser_pi1 {
             AND       tx_org_cal_mm_tx_org_location.uid_foreign  = tx_org_location.uid
             ORDER BY  tx_org_cal_mm_tx_org_location.sorting
 )
+        }
         tx_org_cal {
           title = COA
           title {
