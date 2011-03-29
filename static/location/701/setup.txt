@@ -76,7 +76,7 @@ plugin.tx_browser_pi1 {
             10 {
               value   = Events
               lang.de = Veranstaltungen
-              wrap    = <h2 class="location location_cal">|</h2>
+              wrap    = <h3 class="location location_cal">|</h2>
             }
             20 = TEXT
             20 {
@@ -482,7 +482,7 @@ plugin.tx_browser_pi1 {
               10 {
                 required  = 1
                 value     = ###TX_ORG_LOCATION.TITLE###
-                wrap      = <h1 class="location_title">|</h1>
+                wrap      = <h1 class="location_title csc-firstHeader">|</h1>
               }
               20 = TEXT
               20 {
