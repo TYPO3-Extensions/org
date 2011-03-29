@@ -169,8 +169,8 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               value = ###TX_ORG_CAL.DATETIME###
-              noTrimWrap = || Uhr|
-              strftime = %a, %d. %b %Y, %H:%M
+              noTrimWrap = || |
+              strftime = %a, %d. %b %Y, %H:%M Uhr
               typolink {
                 parameter = {$plugin.org.pages.calendar}
                 additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
