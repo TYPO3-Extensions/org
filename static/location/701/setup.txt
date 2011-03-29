@@ -69,6 +69,25 @@ plugin.tx_browser_pi1 {
         advanced.sql.devider.childrenRecords >
         marker < plugin.tx_browser_pi1.marker
         marker {
+          my_cal_div_begin = COA
+          my_cal_div_begin {
+            if.isTrue = ###TX_ORG_CAL.TITLE###
+            10 = TEXT
+            10 {
+              value   = Events
+              lang.de = Veranstaltungen
+              wrap    = <h2 class="location location_cal">|</h2>
+            }
+            20 = TEXT
+            20 {
+              value     = <ul class="location location_cal">
+            }
+          }
+          my_cal_div_end = TEXT
+          my_cal_div_end {
+            if.isTrue = ###TX_ORG_CAL.TITLE###
+            value     = </ul>
+          }
           my_listview_page = TEXT
           my_listview_page {
             value = All Locations &raquo;
@@ -132,9 +151,9 @@ plugin.tx_browser_pi1 {
         )
         orderBy {
           tx_org_cal (
-            SELECT    tx_org_cal.uid   AS 'uid', 
+            SELECT    tx_org_cal.uid      AS 'uid', 
                       tx_org_cal.datetime AS 'datetime',
-                      tx_org_cal.title AS 'title'
+                      tx_org_cal.title    AS 'title'
             FROM      tx_org_cal,
                       tx_org_cal_mm_tx_org_location
             WHERE     tx_org_cal_mm_tx_org_location.uid_local    = tx_org_cal.uid
@@ -145,16 +164,15 @@ plugin.tx_browser_pi1 {
         tx_org_cal {
           title = COA
           title {
+            if.isTrue = ###TX_ORG_CAL.DATETIME###
+            wrap      = <li>|</li>
             10 = TEXT
             10 {
               value = ###TX_ORG_CAL.DATETIME###
               noTrimWrap = || Uhr|
-              strftime = %a, %d. %b, %H:%M
+              strftime = %a, %d. %b %Y, %H:%M
               typolink {
                 parameter = {$plugin.org.pages.calendar}
-                parameter {
-                  insertData = 1
-                }
                 additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
               }
             }
@@ -166,7 +184,6 @@ plugin.tx_browser_pi1 {
             12 = TEXT
             12 {
               value = ###TX_ORG_CAL.TITLE###
-              wrap = |<br />
             }
           }
         }
