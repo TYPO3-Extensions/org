@@ -499,7 +499,8 @@ plugin.tx_browser_pi1 {
               // form
             10 = TEXT
             10 {
-              wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
+              //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
+              wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="get">
               typolink {
                 parameter = {$plugin.org.pages.shopping_cart}
                 returnLast = url
@@ -517,7 +518,7 @@ plugin.tx_browser_pi1 {
             <fieldset id="add-to-cart">
               <legend>|</legend>
               <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_CAL.UID###" />
-              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart}" />
+              <input type="hidden"  name="idXXX"                      value="{$plugin.org.pages.shopping_cart}" />
 )
             }
               // input > select
