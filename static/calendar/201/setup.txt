@@ -61,11 +61,8 @@ plugin.tx_browser_pi1 {
                 strftime  = %a
                 wrap      = <div class="weekday">|</div>
                 typolink {
-                  parameter = {page:uid} - "linktosingle invert"
-                  parameter {
-                    insertData = 1
-                  }
-                  additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                  parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
+                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
                 }
               }
                 // day of month as number
@@ -75,11 +72,8 @@ plugin.tx_browser_pi1 {
                 strftime  = %d
                 wrap      = <div class="day_of_month">|</div>
                 typolink {
-                  parameter = {page:uid} - "linktosingle invert"
-                  parameter {
-                    insertData = 1
-                  }
-                  additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                  parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
+                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
                 }
               }
                 // month
@@ -89,11 +83,8 @@ plugin.tx_browser_pi1 {
                 strftime  = %b
                 wrap      = <div class="month">|</div>
                 typolink {
-                  parameter = {page:uid} - "linktosingle invert"
-                  parameter {
-                    insertData = 1
-                  }
-                  additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                  parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
+                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
                 }
               }
             }
@@ -508,7 +499,7 @@ plugin.tx_browser_pi1 {
               // form
             10 = TEXT
             10 {
-              wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|"value  = " method="post">
+              wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
               typolink {
                 parameter = {$plugin.org.pages.shopping_cart}
                 returnLast = url
@@ -526,6 +517,7 @@ plugin.tx_browser_pi1 {
             <fieldset id="add-to-cart">
               <legend>|</legend>
               <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_CAL.UID###" />
+              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart}" />
 )
             }
               // input > select

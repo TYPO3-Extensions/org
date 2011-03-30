@@ -1015,7 +1015,7 @@ $TCA['tx_org_cal'] = array (
       ''),
     'calurl' => array('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calurl,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calurl,     calurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
