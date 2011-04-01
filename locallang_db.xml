@@ -265,7 +265,7 @@
       <label index="filter_phrase.calendar">Kalender</label>
       <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
       <label index="filter_phrase.caltype.title">Alle Kategorien</label>
-      <label index="filter_phrase.department">Hochschul-Bereich</label>
+      <label index="filter_phrase.department">Abteilung</label>
       <label index="filter_phrase.newscat">Kategorie</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
