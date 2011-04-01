@@ -69,7 +69,7 @@ plugin.tx_wtcart_pi1 {
         }
       }
     }
-    variation {
+    variant {
       10 = tx_org_calentrance.uid
     }
   }

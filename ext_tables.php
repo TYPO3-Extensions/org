@@ -56,6 +56,7 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
 $bool_wizards_wo_add_and_list = false;
 switch($confArr['store_records']) 
 {
+    // IN CASE OF CHANGINGS: BE AWARE OF THE ORGANISER INSTALLER!
   case('Multi grouped: record groups in different directories'):
     //var_dump('MULTI');
     $str_store_record_conf        = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
