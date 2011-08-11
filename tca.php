@@ -1135,7 +1135,7 @@ $TCA['tx_org_calentrance'] = array (
     'title_lang_ol' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_calentrance.title_lang_ol',
-      'config'  => 'trim',
+      'config'  => $conf_input_30_trim,
     ),
     'value' => array (
       'exclude' => 0,
@@ -1200,7 +1200,7 @@ $TCA['tx_org_caltype'] = array (
     'title_lang_ol' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype.title_lang_ol',
-      'config'  => 'trim',
+      'config'  => $conf_input_30_trim,
     ),
     'tx_org_cal' => array (
       'exclude' => $bool_exclude_default,
@@ -1918,7 +1918,7 @@ $TCA['tx_org_departmentcat'] = array (
     'title_lang_ol' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.title_lang_ol',
-      'config'  => 'trim',
+      'config'  => $conf_input_30_trim,
     ),
     'hidden'    => $conf_hidden,
   ),
@@ -4150,7 +4150,7 @@ $TCA['tx_org_newscat'] = array (
     'title_lang_ol' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title_lang_ol',
-      'config'  => 'trim',
+      'config'  => $conf_input_30_trim,
     ),
     'image' => array (
       'l10n_mode' => 'exclude',
@@ -4204,7 +4204,7 @@ $TCA['tx_org_tax'] = array (
     'title_lang_ol' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_tax.title_lang_ol',
-      'config'  => 'trim',
+      'config'  => $conf_input_30_trim,
     ),
     'value' => array (
       'exclude' => 0,
