@@ -12,7 +12,6 @@ if (!defined ('TYPO3_MODE'))
   // INDEX
   // -----
   // Configuration by the extension manager
-  //    Localization support
   //    Store record configuration
   // General Configuration
   // Wizard fe_users
@@ -36,15 +35,7 @@ if (!defined ('TYPO3_MODE'))
   // 
   // Configuration by the extension manager
 
-$bool_LL = false;
 $confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
-
-  // Localization support
-if (strtolower(substr($confArr['LLsupport'], 0, strlen('yes'))) == 'yes')
-{
-  $bool_LL = true;
-}
-  // Localization support
 
   // Simplify the Organiser
 $bool_exclude_none    = true;
@@ -141,38 +132,38 @@ switch($confArr['store_records'])
   // Wizard fe_users
 
   // Wizard for fe_users
-  $arr_config_feuser = array(
+  $arr_config_feuser = array (
     'type'                => 'select', 
     'size'                => $size_feuser, 
     'minitems'            => 0,
     'maxitems'            => 999,
     'foreign_table'       => 'fe_users',
     'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
-    'wizards' => array(
+    'wizards' => array (
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
-      'add' => array(
+      'add' => array (
         'type'   => 'script',
         'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.add',
         'icon'   => 'add.gif',
-        'params' => array(
+        'params' => array (
           'table'    => 'fe_users',
           'pid'      => $str_marker_pid,
           'setValue' => 'prepend'
         ),
         'script' => 'wizard_add.php',
       ),
-      'list' => array(
+      'list' => array (
         'type'   => 'script',
         'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.list',
         'icon'   => 'list.gif',
-        'params' => array(
+        'params' => array (
           'table' => 'fe_users',
           'pid'   => $str_marker_pid,
         ),
         'script' => 'wizard_list.php',
       ),
-      'edit' => array(
+      'edit' => array (
         'type'                      => 'popup',
         'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.edit',
         'script'                    => 'wizard_edit.php',
@@ -254,6 +245,11 @@ switch($confArr['store_records'])
     'eval' => 'trim'
   );
 
+  $conf_input_30 = array (
+    'type' => 'input',
+    'size' => '30',
+  );
+
   $conf_input_30_trimRequired = array (
     'type' => 'input',
     'size' => '30',
@@ -287,9 +283,9 @@ switch($confArr['store_records'])
     'type' => 'text',
     'cols' => '30',
     'rows' => '5',
-    'wizards' => array(
+    'wizards' => array (
       '_PADDING' => 2,
-      'RTE' => array(
+      'RTE' => array (
         'notNewRecords' => 1,
         'RTEonly'       => 1,
         'type'          => 'script',
@@ -345,9 +341,9 @@ switch($confArr['store_records'])
       'size'      => $size_fegroup,
       'maxitems'  => 20,
       'items' => array (
-        array('LLL:EXT:lang/locallang_general.php:LGL.hide_at_login', -1),
-        array('LLL:EXT:lang/locallang_general.php:LGL.any_login', -2),
-        array('LLL:EXT:lang/locallang_general.php:LGL.usergroups', '--div--')
+        array ('LLL:EXT:lang/locallang_general.php:LGL.hide_at_login', -1),
+        array ('LLL:EXT:lang/locallang_general.php:LGL.any_login', -2),
+        array ('LLL:EXT:lang/locallang_general.php:LGL.usergroups', '--div--')
       ),
       'exclusiveKeys' => '-1,-2',
       'foreign_table' => 'fe_groups'
@@ -372,12 +368,12 @@ switch($confArr['store_records'])
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_cal - without any localisation support
+  // tx_org_cal
 
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,title,subtitle,datetime,tx_org_caltype,bodytext,tx_org_event,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_caltype,bodytext,tx_org_event,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_department'.
@@ -388,28 +384,59 @@ $TCA['tx_org_cal'] = array (
   ),
   'feInterface' => $TCA['tx_org_cal']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config' => array (
+        'type' => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.uid=###REC_FIELD_l10n_parent### AND tx_org_cal.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config' => array (
+        'type' => 'passthrough'
+      )
+    ),
     'type' => array (
       'exclude'   => $bool_exclude_default,
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type',
       'config'    => array (
         'type'    => 'select', 
-        'items'   => array(
-          '0' => array(
+        'items'   => array (
+          '0' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.direct',
             '1' => '0',
             '2' => 'EXT:org/ext_icon/cal.gif',
           ),
-          'calpage' => array(
+          'calpage' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calpage',
             '1' => 'calpage',
             '2' => 'EXT:org/ext_icon/calpage.gif',
           ),
-          'calurl' => array(
+          'calurl' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calurl',
             '1' => 'calurl',
             '2' => 'EXT:org/ext_icon/calurl.gif',
           ),
-          'tx_org_event' => array(
+          'tx_org_event' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
             '1' => 'tx_org_event',
             '2' => 'EXT:org/ext_icon/event.gif',
@@ -478,8 +505,8 @@ $TCA['tx_org_cal'] = array (
         'size' => 1, 
         'minitems' => 0,
         'maxitems' => 1,
-        'items' => array(
-          '0' => array(
+        'items' => array (
+          '0' => array (
             '0' => '',
             '1' => '',
           ),
@@ -487,31 +514,31 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
         'foreign_table'       => 'tx_org_caltype',
         'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' ORDER BY tx_org_caltype.title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_caltype',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_caltype',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.edit',
             'script'                    => 'wizard_edit.php',
@@ -540,37 +567,37 @@ $TCA['tx_org_cal'] = array (
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_event',
         'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' ORDER BY tx_org_event.title',
-        'items' => array(
-          '0' => array(
+        'items' => array (
+          '0' => array (
             '0' => '',
             '1' => '',
           ),
         ),
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_event',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_event',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_event.edit',
             'script'                    => 'wizard_edit.php',
@@ -607,37 +634,37 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_location',
         'foreign_table'       => 'tx_org_location',
         'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' ORDER BY tx_org_location.title',
-        'items' => array(
-          '0' => array(
+        'items' => array (
+          '0' => array (
             '0' => '',
             '1' => '',
           ),
         ),
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_location.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_location',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_location.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_location',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_location.edit',
             'script'                    => 'wizard_edit.php',
@@ -659,31 +686,31 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_calentrance',
         'foreign_table'       => 'tx_org_calentrance',
         'foreign_table_where' => 'AND tx_org_calentrance.' . $str_store_record_conf . ' ORDER BY tx_org_calentrance.title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_calentrance.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_calentrance',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_calentrance.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_calentrance',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_calentrance.edit',
             'script'                    => 'wizard_edit.php',
@@ -708,31 +735,31 @@ $TCA['tx_org_cal'] = array (
         'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.title',
         'selectedListStyle'   => 'width:360px;',
         'itemListStyle'       => 'width:360px;',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_department',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_department',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.edit',
             'script'                    => 'wizard_edit.php',
@@ -759,10 +786,10 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -802,17 +829,17 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols'      => 6,
         'default'           => '0',
@@ -840,9 +867,9 @@ $TCA['tx_org_cal'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -866,16 +893,16 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -885,15 +912,15 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -903,26 +930,26 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -932,14 +959,14 @@ $TCA['tx_org_cal'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -983,7 +1010,7 @@ $TCA['tx_org_cal'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>
+    '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
@@ -1001,7 +1028,7 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
       ''),
-    'calpage' => array('showitem' =>
+    'calpage' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calpage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
@@ -1013,7 +1040,7 @@ $TCA['tx_org_cal'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
       ''),
-    'calurl' => array('showitem' =>
+    'calurl' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calurl,     calurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
@@ -1025,7 +1052,7 @@ $TCA['tx_org_cal'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
       ''),
-    'tx_org_event' => array('showitem' =>
+    'tx_org_event' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,datetime,tx_org_caltype,tx_org_event,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
@@ -1033,34 +1060,34 @@ $TCA['tx_org_cal'] = array (
       ''),
   ),
   'palettes' => array (
-    '1' => array('showitem' => 'starttime,endtime,'),
-    'documents_appearance' => array(
+    '1' => array ('showitem' => 'starttime,endtime,'),
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -1084,18 +1111,18 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_cal']['columns']['tx_org_location']['config']['wizards']['add']);
   unset($TCA['tx_org_cal']['columns']['tx_org_location']['config']['wizards']['list'] );
 }
-  // tx_org_cal - without any localisation support
+  // tx_org_cal
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_calentrance - without any localisation support
+  // tx_org_calentrance
 
 $TCA['tx_org_calentrance'] = array (
   'ctrl' => $TCA['tx_org_calentrance']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,value,tx_org_tax,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,value,tx_org_tax,'.
                               'hidden,starttime,endtime,fe_group'
   ),
   'feInterface' => $TCA['tx_org_calentrance']['feInterface'],
@@ -1104,6 +1131,11 @@ $TCA['tx_org_calentrance'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_calentrance.title',
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_calentrance.title_lang_ol',
+      'config'  => 'trim',
     ),
     'value' => array (
       'exclude' => 0,
@@ -1134,26 +1166,27 @@ $TCA['tx_org_calentrance'] = array (
   ),
 
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_calentrance.div_calentrance, title,value,tx_org_tax,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_calentrance.div_control,     hidden;;1;;,fe_group'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_calentrance.div_calentrance, title;;1;;,value,tx_org_tax,'.
+                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_calentrance.div_control,     hidden;;2;;,fe_group'.
                                 ''),
   ),
   'palettes' => array (
-    '1' => array('showitem' => 'starttime,endtime,'),
+    '1' => array ('showitem' => 'title_lang_ol,'),
+    '2' => array ('showitem' => 'starttime,endtime,'),
   )
 );
-  // tx_org_calentrance - without any localisation support
+  // tx_org_calentrance
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_caltype - without any localisation support
+  // tx_org_caltype
 
 $TCA['tx_org_caltype'] = array (
   'ctrl' => $TCA['tx_org_caltype']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,'.
                               'tx_org_cal,'.
                               'hidden'
   ),
@@ -1163,6 +1196,11 @@ $TCA['tx_org_caltype'] = array (
       'exclude' => 0,
       'label' => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype.title',
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype.title_lang_ol',
+      'config'  => 'trim',
     ),
     'tx_org_cal' => array (
       'exclude' => $bool_exclude_default,
@@ -1176,31 +1214,31 @@ $TCA['tx_org_caltype'] = array (
         'MM_opposite_field'   => 'tx_org_caltype',
         'foreign_table'       => 'tx_org_cal',
         'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_cal',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_cal',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_caltype.edit',
             'script'                    => 'wizard_edit.php',
@@ -1214,29 +1252,32 @@ $TCA['tx_org_caltype'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_caltype.div_caltype,    title,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_caltype.div_caltype,    title;;1;;,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_caltype.div_calendar,    tx_org_cal,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_caltype.div_control,     hidden'.
                                 ''),
   ),
+  'palettes' => array (
+    '1' => array ('showitem' => 'title_lang_ol,'),
+  )
 );
 if(!$bool_full_wizardSupport_catTables)
 {
   unset($TCA['tx_org_caltype']['columns']['tx_org_cal']['config']['wizards']['add']);
   unset($TCA['tx_org_caltype']['columns']['tx_org_cal']['config']['wizards']['list'] );
 }
-  // tx_org_caltype - without any localisation support
+  // tx_org_caltype
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_department - without any localisation support
+  // tx_org_department
 
 $TCA['tx_org_department'] = array (
   'ctrl' => $TCA['tx_org_department']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,shortcut,tx_org_departmentcat,tx_org_headquarters,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,shortcut,tx_org_departmentcat,tx_org_headquarters,'.
                               'manager,telephone,fax,email,url,'.
                               'fe_users,'.
                               'tx_org_cal,'.
@@ -1249,6 +1290,37 @@ $TCA['tx_org_department'] = array (
   ),
   'feInterface' => $TCA['tx_org_department']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude'     => 1,
+      'label'       => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config'      => array (
+        'type'  => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table'       => 'tx_org_department',
+        'foreign_table_where' => 'AND tx_org_department.uid=###REC_FIELD_l10n_parent### AND tx_org_department.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config'  => array (
+        'type'  =>'passthrough'
+      )
+    ),
     'title' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_department.title',
@@ -1270,31 +1342,31 @@ $TCA['tx_org_department'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_departmentcat',
         'foreign_table'       => 'tx_org_departmentcat',
         'foreign_table_where' => 'AND tx_org_departmentcat.' . $str_store_record_conf . ' ORDER BY tx_org_departmentcat.sorting',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_departmentcat.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_departmentcat',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_departmentcat.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_departmentcat',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_departmentcat.edit',
             'script'                    => 'wizard_edit.php',
@@ -1317,31 +1389,31 @@ $TCA['tx_org_department'] = array (
         'MM_opposite_field'   => 'tx_org_department',
         'foreign_table'       => 'tx_org_headquarters',
         'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' ORDER BY tx_org_headquarters.sorting',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarters.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_headquarters',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarters.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_headquarters',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarters.edit',
             'script'                    => 'wizard_edit.php',
@@ -1382,31 +1454,31 @@ $TCA['tx_org_department'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
         'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_cal',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_cal',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.edit',
             'script'                    => 'wizard_edit.php',
@@ -1437,10 +1509,10 @@ $TCA['tx_org_department'] = array (
       'exclude' => $bool_exclude_default,
       'config'  => $arr_wizard_url,
     ),
-    'documents_from_path' => array(
+    'documents_from_path' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array(
+      'config' => array (
         'type' => 'input',
         'size' => '50',
         'max' =>  '80',
@@ -1465,19 +1537,19 @@ $TCA['tx_org_department'] = array (
         'size'      => 1,
         'maxitems'  => 1,
         'items' => array (
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
         ),
       )
     ),
-    'documentssize' => array(
+    'documentssize' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array(
+      'config' => array (
         'type' => 'check',
         'items' => array (
-          '1'     => array(
+          '1'     => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -1494,31 +1566,31 @@ $TCA['tx_org_department'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
         'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_news',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_news',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.edit',
             'script'                    => 'wizard_edit.php',
@@ -1545,10 +1617,10 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -1588,17 +1660,17 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -1626,9 +1698,9 @@ $TCA['tx_org_department'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -1652,16 +1724,16 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -1671,15 +1743,15 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -1689,26 +1761,26 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -1718,14 +1790,14 @@ $TCA['tx_org_department'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -1750,7 +1822,7 @@ $TCA['tx_org_department'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  
+    '0' => array ('showitem' =>  
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_department, title;;1;;1-1-1,tx_org_departmentcat,tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_contact,    manager,telephone,fax,email,url,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_staff,      fe_users;;;;3-3-3,'.
@@ -1771,34 +1843,34 @@ $TCA['tx_org_department'] = array (
       ''),
   ),
   'palettes' => array (
-    '1' => array('showitem' => 'shortcut'),
-    'documents_appearance' => array(
+    '1' => array ('showitem' => 'shortcut'),
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -1822,7 +1894,7 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_department']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['tx_org_department']['columns']['tx_org_news']['config']['wizards']['list'] );
 }
-  // tx_org_department - without any localisation support
+  // tx_org_department
 
 
 
@@ -1830,11 +1902,10 @@ if(!$bool_full_wizardSupport_allTables)
   // 
   // tx_org_departmentcat
   
-  // Non localized
 $TCA['tx_org_departmentcat'] = array (
   'ctrl' => $TCA['tx_org_departmentcat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -1844,23 +1915,28 @@ $TCA['tx_org_departmentcat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.title',
       'config'  => $conf_input_30_trimRequired,
     ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.title_lang_ol',
+      'config'  => 'trim',
+    ),
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.div_cat,     title;;;;1-1-1,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.div_cat,     title;;1;;1-1-1,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_departmentcat.div_control, hidden')
   ),
   'palettes' => array (
+    '1' => array ('showitem' => 'title_lang_ol,'),
   )
 );
-  // Non localized
   // tx_org_departmentcat
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_event - without any localisation support
+  // tx_org_event
 
   // Don't display relations to feuser by default 
 $bool_exclude_feuser = true;
@@ -1868,7 +1944,7 @@ $bool_exclude_feuser = true;
 $TCA['tx_org_event'] = array (
   'ctrl' => $TCA['tx_org_event']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,subtitle,producer,length,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,subtitle,producer,length,bodytext,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_cal,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -1880,6 +1956,37 @@ $TCA['tx_org_event'] = array (
   ),
   'feInterface' => $TCA['tx_org_event']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config' => array (
+        'type' => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table' => 'tx_org_event',
+        'foreign_table_where' => 'AND tx_org_event.uid=###REC_FIELD_l10n_parent### AND tx_org_event.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config' => array (
+        'type' => 'passthrough'
+      )
+    ),
     'title' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_event.title',
@@ -1927,31 +2034,31 @@ $TCA['tx_org_event'] = array (
         'MM'                  => 'tx_org_event_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
         'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_cal',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_cal',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.edit',
             'script'                    => 'wizard_edit.php',
@@ -1962,10 +2069,10 @@ $TCA['tx_org_event'] = array (
         ),
       ),
     ),
-    'documents_from_path' => array(
+    'documents_from_path' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array(
+      'config' => array (
         'type' => 'input',
         'size' => '50',
         'max' =>  '80',
@@ -1990,19 +2097,19 @@ $TCA['tx_org_event'] = array (
         'size'      => 1,
         'maxitems'  => 1,
         'items' => array (
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
         ),
       )
     ),
-    'documentssize' => array(
+    'documentssize' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array(
+      'config' => array (
         'type' => 'check',
         'items' => array (
-          '1'     => array(
+          '1'     => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -2019,31 +2126,31 @@ $TCA['tx_org_event'] = array (
         'MM'                  => 'tx_org_event_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
         'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_news',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_news',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.edit',
             'script'                    => 'wizard_edit.php',
@@ -2070,10 +2177,10 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -2113,17 +2220,17 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -2151,9 +2258,9 @@ $TCA['tx_org_event'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -2177,16 +2284,16 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -2196,15 +2303,15 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -2214,26 +2321,26 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -2243,14 +2350,14 @@ $TCA['tx_org_event'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -2292,7 +2399,7 @@ $TCA['tx_org_event'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  
+    '0' => array ('showitem' =>  
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_event,     title;;;;1-1-1,subtitle,producer,length,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_teaser,    teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_calendar,  tx_org_cal,'.
@@ -2311,34 +2418,34 @@ $TCA['tx_org_event'] = array (
       ''),
   ),
   'palettes' => array (
-    '1' => array('showitem' => 'starttime,endtime,'),
-    'documents_appearance' => array(
+    '1' => array ('showitem' => 'starttime,endtime,'),
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -2352,7 +2459,7 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_event']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['tx_org_event']['columns']['tx_org_news']['config']['wizards']['list'] );
 }
-  // tx_org_event - without any localisation support
+  // tx_org_event
 
 
 
@@ -2360,12 +2467,12 @@ if(!$bool_full_wizardSupport_allTables)
   // 
   // tx_org_headquarters
   
-  // tx_org_headquarters - without any localisation support
+  // tx_org_headquarters
 $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'title,mail_address,mail_postcode,mail_city,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -2377,6 +2484,37 @@ $TCA['tx_org_headquarters'] = array (
   ),
   'feInterface' => $TCA['tx_org_headquarters']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config' => array (
+        'type' => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table' => 'tx_org_headquarters',
+        'foreign_table_where' => 'AND tx_org_headquarters.uid=###REC_FIELD_l10n_parent### AND tx_org_headquarters.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config' => array (
+        'type' => 'passthrough'
+      )
+    ),
     'title' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.title',
@@ -2396,6 +2534,11 @@ $TCA['tx_org_headquarters'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_city',
       'exclude' => $bool_exclude_default,
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'mail_country' => array (
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_country',
+      'exclude' => $bool_exclude_default,
+      'config'  => $conf_input_30,
     ),
     'mail_url' => array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_url',
@@ -2463,31 +2606,31 @@ $TCA['tx_org_headquarters'] = array (
         'MM'                  => 'tx_org_headquarters_mm_tx_org_department',
         'foreign_table'       => 'tx_org_department',
         'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.sorting',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_department',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_department',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.edit',
             'script'                    => 'wizard_edit.php',
@@ -2514,10 +2657,10 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -2557,17 +2700,17 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -2595,9 +2738,9 @@ $TCA['tx_org_headquarters'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -2621,16 +2764,16 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -2640,15 +2783,15 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -2658,26 +2801,26 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -2687,14 +2830,14 @@ $TCA['tx_org_headquarters'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -2704,10 +2847,10 @@ $TCA['tx_org_headquarters'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'config'  => $conf_text_50_10,
     ),
-    'documents_from_path' => array(
+    'documents_from_path' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array(
+      'config' => array (
         'type' => 'input',
         'size' => '50',
         'max' =>  '80',
@@ -2732,19 +2875,19 @@ $TCA['tx_org_headquarters'] = array (
         'size'      => 1,
         'maxitems'  => 1,
         'items' => array (
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
         ),
       )
     ),
-    'documentssize' => array(
+    'documentssize' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array(
+      'config' => array (
         'type' => 'check',
         'items' => array (
-          '1'     => array(
+          '1'     => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -2765,8 +2908,8 @@ $TCA['tx_org_headquarters'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,mail_address,mail_postcode,mail_city,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
+    '0' => array ('showitem' =>  
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_contact,      telephone,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_department,   tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,'.
@@ -2785,33 +2928,33 @@ $TCA['tx_org_headquarters'] = array (
       ''),
   ),
   'palettes' => array (
-    'documents_appearance' => array(
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -2823,7 +2966,7 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_headquarters']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['tx_org_headquarters']['columns']['tx_org_department']['config']['wizards']['list'] );
 }
-  // tx_org_headquarters - without any localisation support
+  // tx_org_headquarters
 
 
 
@@ -2831,12 +2974,12 @@ if(!$bool_full_wizardSupport_allTables)
   // 
   // tx_org_location
   
-  // tx_org_location - without any localisation support
+  // tx_org_location
 $TCA['tx_org_location'] = array (
   'ctrl' => $TCA['tx_org_location']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'title,url,mail_address,mail_postcode,mail_city,mail_url,mail_embeddedcode,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
                               'telephone,ticket_telephone,ticket_url,fax,email,'.
                               'tx_org_cal,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,citymap_url,citymap_embeddedcode,'.
@@ -2848,6 +2991,37 @@ $TCA['tx_org_location'] = array (
   ),
   'feInterface' => $TCA['tx_org_location']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config' => array (
+        'type' => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table' => 'tx_org_location',
+        'foreign_table_where' => 'AND tx_org_location.uid=###REC_FIELD_l10n_parent### AND tx_org_location.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config' => array (
+        'type' => 'passthrough'
+      )
+    ),
     'title' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_location.title',
@@ -2872,6 +3046,11 @@ $TCA['tx_org_location'] = array (
       'label' => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_city',
       'exclude' => $bool_exclude_default,
       'config'  => $conf_input_30_trim,
+    ),
+    'mail_country' => array (
+      'label' => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_country',
+      'exclude' => $bool_exclude_default,
+      'config'  => $conf_input_30,
     ),
     'mail_url' => array (
       'label' => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_url',
@@ -2920,31 +3099,31 @@ $TCA['tx_org_location'] = array (
         'MM_opposite_field'   => 'tx_org_location',
         'foreign_table'       => 'tx_org_cal',
         'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_cal',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_cal',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.edit',
             'script'                    => 'wizard_edit.php',
@@ -2996,10 +3175,10 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -3039,17 +3218,17 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -3077,9 +3256,9 @@ $TCA['tx_org_location'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -3103,16 +3282,16 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -3122,15 +3301,15 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -3140,26 +3319,26 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -3169,14 +3348,14 @@ $TCA['tx_org_location'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -3186,10 +3365,10 @@ $TCA['tx_org_location'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'config'  => $conf_text_50_10,
     ),
-    'documents_from_path' => array(
+    'documents_from_path' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array(
+      'config' => array (
         'type' => 'input',
         'size' => '50',
         'max' =>  '80',
@@ -3214,19 +3393,19 @@ $TCA['tx_org_location'] = array (
         'size'      => 1,
         'maxitems'  => 1,
         'items' => array (
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
         ),
       )
     ),
-    'documentssize' => array(
+    'documentssize' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array(
+      'config' => array (
         'type' => 'check',
         'items' => array (
-          '1'     => array(
+          '1'     => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -3247,8 +3426,8 @@ $TCA['tx_org_location'] = array (
     ),
   ),
   'types' => array (
-    '0' => array('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_location,     title,url,mail_address;;;;2-2-2,mail_postcode,mail_city,mail_url,mail_embeddedcode,'.
+    '0' => array ('showitem' =>  
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_location,     title,url,mail_address;;;;2-2-2,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_contact,      telephone,ticket_telephone,ticket_url,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_calendar,     tx_org_cal,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,citymap_url;;;;5-5-5,citymap_embeddedcode,'.
@@ -3267,33 +3446,33 @@ $TCA['tx_org_location'] = array (
       ''),
   ),
   'palettes' => array (
-    'documents_appearance' => array(
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -3305,7 +3484,7 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_location']['columns']['tx_org_cal']['config']['wizards']['add']);
   unset($TCA['tx_org_location']['columns']['tx_org_cal']['config']['wizards']['list'] );
 }
-  // tx_org_location - without any localisation support
+  // tx_org_location
 
 
 
@@ -3313,11 +3492,10 @@ if(!$bool_full_wizardSupport_allTables)
   // 
   // tx_org_news
   
-  // Non localized
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,title,subtitle,datetime,tx_org_newscat,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,bodytext,'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_department,'.
@@ -3330,23 +3508,54 @@ $TCA['tx_org_news'] = array (
   ),
   'feInterface' => $TCA['tx_org_news']['feInterface'],
   'columns' => array (
+    'sys_language_uid' => array (
+      'exclude' => 1,
+      'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+      'config'  => array (
+        'type'                => 'select',
+        'foreign_table'       => 'sys_language',
+        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'items' => array (
+          array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+        )
+      )
+    ),
+    'l10n_parent' => array (
+      'displayCond' => 'FIELD:sys_language_uid:>:0',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'config' => array (
+        'type' => 'select',
+        'items' => array (
+          array ('', 0),
+        ),
+        'foreign_table' => 'tx_org_news',
+        'foreign_table_where' => 'AND tx_org_news.uid=###REC_FIELD_l10n_parent### AND tx_org_news.sys_language_uid IN (-1,0)',
+      )
+    ),
+    'l10n_diffsource' => array (
+      'config' => array (
+        'type' => 'passthrough'
+      )
+    ),
     'type' => array (
       'exclude'   => $bool_exclude_default,
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type',
       'config'    => array (
         'type'    => 'select', 
-        'items'   => array(
-          'news' => array(
+        'items'   => array (
+          'news' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.news',
             '1' => 'news',
             '2' => 'EXT:org/ext_icon/news.gif',
           ),
-          'newspage' => array(
+          'newspage' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newspage',
             '1' => 'newspage',
             '2' => 'EXT:org/ext_icon/newspage.gif',
           ),
-          'newsurl' => array(
+          'newsurl' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newsurl',
             '1' => 'newsurl',
             '2' => 'EXT:org/ext_icon/newsurl.gif',
@@ -3385,31 +3594,31 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'tx_org_news_mm_tx_org_newscat',
         'foreign_table'       => 'tx_org_newscat',
         'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' ORDER BY tx_org_newscat.title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_newscat.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_newscat',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_newscat.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_newscat',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_newscat.edit',
             'script'                    => 'wizard_edit.php',
@@ -3472,8 +3681,8 @@ $TCA['tx_org_news'] = array (
         'size'      => $size_news,
         'minitems'  => 0,
         'maxitems'  => 1,
-        'items' => array(
-          '0' => array(
+        'items' => array (
+          '0' => array (
             '0' => '',
             '1' => '',
           ),
@@ -3497,31 +3706,31 @@ $TCA['tx_org_news'] = array (
         'MM_opposite_field'   => 'tx_org_news',
         'foreign_table'       => 'tx_org_department',
         'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.title',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
-          'add' => array(
+          'add' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.add',
             'icon'   => 'add.gif',
-            'params' => array(
+            'params' => array (
               'table'    => 'tx_org_department',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
           ),
-          'list' => array(
+          'list' => array (
             'type'   => 'script',
             'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.list',
             'icon'   => 'list.gif',
-            'params' => array(
+            'params' => array (
               'table' => 'tx_org_department',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
-          'edit' => array(
+          'edit' => array (
             'type'                      => 'popup',
             'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_department.edit',
             'script'                    => 'wizard_edit.php',
@@ -3561,10 +3770,10 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
+          array ('', ''),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left')
         ),
         'default' => ''
       )
@@ -3604,17 +3813,17 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
+          array ('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif')
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -3642,9 +3851,9 @@ $TCA['tx_org_news'] = array (
         'type' => 'text',
         'cols' => '30',
         'rows' => '3',
-        'wizards' => array(
+        'wizards' => array (
           '_PADDING' => 2,
-          'link' => array(
+          'link' => array (
             'type' => 'popup',
             'title' => 'Link',
             'icon' => 'link_popup.gif',
@@ -3668,16 +3877,16 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26)
         )
       )
     ),
@@ -3687,15 +3896,15 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8)
         )
       )
     ),
@@ -3705,26 +3914,26 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
+          array ('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
+          array ('GIF/256', 10),
+          array ('GIF/128', 11),
+          array ('GIF/64', 12),
+          array ('GIF/32', 13),
+          array ('GIF/16', 14),
+          array ('GIF/8', 15),
+          array ('PNG', 39),
+          array ('PNG/256', 30),
+          array ('PNG/128', 31),
+          array ('PNG/64', 32),
+          array ('PNG/32', 33),
+          array ('PNG/16', 34),
+          array ('PNG/8', 35),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
+          array ('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28)
         )
       )
     ),
@@ -3734,14 +3943,14 @@ $TCA['tx_org_news'] = array (
       'config' => array (
         'type' => 'select',
         'items' => array (
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8)
+          array ('1', 1),
+          array ('2', 2),
+          array ('3', 3),
+          array ('4', 4),
+          array ('5', 5),
+          array ('6', 6),
+          array ('7', 7),
+          array ('8', 8)
         ),
         'default' => 1
       )
@@ -3751,10 +3960,10 @@ $TCA['tx_org_news'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
       'config'    => $conf_text_50_10,
     ),
-    'documents_from_path' => array(
+    'documents_from_path' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array(
+      'config' => array (
         'type' => 'input',
         'size' => '50',
         'max' =>  '80',
@@ -3779,19 +3988,19 @@ $TCA['tx_org_news'] = array (
         'size'      => 1,
         'maxitems'  => 1,
         'items' => array (
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
+          array ('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
         ),
       )
     ),
-    'documentssize' => array(
+    'documentssize' => array (
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array(
+      'config' => array (
         'type' => 'check',
         'items' => array (
-          '1'     => array(
+          '1'     => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -3829,7 +4038,7 @@ $TCA['tx_org_news'] = array (
     ),
   ),
   'types' => array (
-    'news' => array('showitem' =>
+    'news' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
@@ -3847,7 +4056,7 @@ $TCA['tx_org_news'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
       ''),
-    'newspage' => array('showitem' =>
+    'newspage' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newspage,   newspage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
@@ -3859,7 +4068,7 @@ $TCA['tx_org_news'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       ''),
-    'newsurl' => array('showitem' =>
+    'newsurl' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newsurl,    newsurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
@@ -3873,34 +4082,34 @@ $TCA['tx_org_news'] = array (
       ''),
   ),
   'palettes' => array (
-    '3' => array('showitem' => 'starttime, endtime'),
-    'documents_appearance' => array(
+    '3' => array ('showitem' => 'starttime, endtime'),
+    'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
-    'documents_upload' => array(
+    'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'image_accessibility' => array(
+    'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
-    'imageblock' => array(
+    'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
       'canNotCollapse' => 1,
     ),
-    'imagefiles' => array(
+    'imagefiles' => array (
       'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imagecaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption_formlabel,',
       'canNotCollapse' => 1,
     ),
-    'imagelinks' => array(
+    'imagelinks' => array (
       'showitem' => 'image_zoom;LLL:EXT:cms/locallang_ttc.xml:image_zoom_formlabel, image_link;LLL:EXT:cms/locallang_ttc.xml:image_link_formlabel',
       'canNotCollapse' => 1,
     ),
-    'image_settings' => array(
+    'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
@@ -3917,56 +4126,6 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_news']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['tx_org_news']['columns']['tx_org_department']['config']['wizards']['list'] );
 }
-  // Non localized
-
-  // Localization support
-if($bool_LL)
-{
-  // Add language overlay fields to showRecordFieldList
-  $showRecordFieldList = $TCA['tx_org_news']['interface']['showRecordFieldList'];
-  $TCA['tx_org_sectorgroup']['interface']['tx_org_news'] = $showRecordFieldList.',sys_language_uid,l10n_parent,l10n_diffsource';
-  // Add language overlay fields to showRecordFieldList
-
-  // Add localization fields to columns array
-  $TCA['tx_org_news']['columns']['sys_language_uid'] = array
-  (
-    'l10n_mode' => 'exclude',
-    'exclude' => 0,
-    'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
-    'config' => array (
-      'type'                => 'select',
-      'foreign_table'       => 'sys_language',
-      'foreign_table_where' => 'ORDER BY sys_language.title',
-      'items' => array(
-        array('LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1),
-        array('LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0)
-      )
-    )
-  );
-  $TCA['tx_org_news']['columns']['l10n_parent'] = array
-  (
-    'l10n_mode' => 'exclude',
-    'displayCond' => 'FIELD:sys_language_uid:>:0',
-    'exclude'     => 0,
-    'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
-    'config'      => array (
-      'type'  => 'select',
-      'items' => array (
-        array('', 0),
-      ),
-      'foreign_table'       => 'tx_org_news',
-      'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.sys_language_uid IN (-1,0)',
-    )
-  );
-  $TCA['tx_org_news']['columns']['l10n_diffsource'] = array
-  (
-    'config' => array (
-      'type' => 'passthrough'
-    )
-  );
-  // Add localization fields to columns array
-}
-  // Localization support
   // tx_org_news
 
 
@@ -3975,11 +4134,10 @@ if($bool_LL)
   // 
   // tx_org_newscat
   
-  // Non localized
 $TCA['tx_org_newscat'] = array (
   'ctrl' => $TCA['tx_org_newscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -3988,6 +4146,11 @@ $TCA['tx_org_newscat'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title',
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title_lang_ol',
+      'config'  => 'trim',
     ),
     'image' => array (
       'l10n_mode' => 'exclude',
@@ -4008,72 +4171,27 @@ $TCA['tx_org_newscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;%1%;;1-1-1,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;1;;1-1-1,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_control, hidden,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_media,   image, imagecaption;;3;;')
   ),
   'palettes' => array (
-    '1' => array('showitem' => '%title_lang_ol%'),
-    '3' => array('showitem' => 'imageseo'),
+    '1' => array ('showitem' => 'title_lang_ol'),
+    '3' => array ('showitem' => 'imageseo'),
   )
 );
-  // Non localized
-
-  // Localization support
-if($bool_LL)
-{
-  // Add language overlay fields to showRecordFieldList
-  $showRecordFieldList = $TCA['tx_org_newscat']['interface']['showRecordFieldList'];
-  $TCA['tx_org_newscat']['interface']['showRecordFieldList'] = $showRecordFieldList.',title_lang_ol';
-  // Add language overlay fields to showRecordFieldList
-  // Add language overlay fields to type
-  $showitem = $TCA['tx_org_newscat']['types']['0']['showitem'];
-  $showitem = str_replace('%1%', '1', $showitem);
-  $TCA['tx_org_newscat']['types']['0']['showitem'] = $showitem;
-  // Add language overlay fields to type
-  // Add language overlay fields to palettes
-  $showitem = $TCA['tx_org_newscat']['palettes']['1']['showitem'];
-  $TCA['tx_org_newscat']['palettes']['1']['showitem'] = str_replace('%title_lang_ol%', 'title_lang_ol', $showitem);
-  // Add language overlay fields to palettes
-  // Add language overlay fields to columns array
-  $TCA['tx_org_newscat']['columns']['title_lang_ol'] = array
-  (
-    'exclude' => 0,
-    'label' => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title_lang_ol',
-    'config' => array (
-      'type' => 'input',
-      'size' => '30',
-    )
-  );
-  // Add language overlay fields to columns array
-}
-
-
-if(!$bool_LL)
-{
-  // Remove language overlay fields from type
-  $showitem = $TCA['tx_org_newscat']['types']['0']['showitem'];
-  $showitem = str_replace('%1%', '', $showitem);
-  $TCA['tx_org_newscat']['types']['0']['showitem'] = $showitem;
-  // Remove language overlay fields from type
-  // Remove language overlay fields from palettes
-  $showitem = $TCA['tx_org_newscat']['palettes']['1']['showitem'];
-  $TCA['tx_org_newscat']['palettes']['1']['showitem'] = str_replace('%title_lang_ol%', '', $showitem);
-  // Remove language overlay fields from palettes
-}
-  // Localization support
   // tx_org_newscat
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_tax - without any localisation support
+  // tx_org_tax
 
 $TCA['tx_org_tax'] = array (
   'ctrl' => $TCA['tx_org_tax']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,value,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,value,'.
                               'hidden,starttime,endtime'
   ),
   'feInterface' => $TCA['tx_org_tax']['feInterface'],
@@ -4082,6 +4200,11 @@ $TCA['tx_org_tax'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_tax.title',
       'config'  => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_tax.title_lang_ol',
+      'config'  => 'trim',
     ),
     'value' => array (
       'exclude' => 0,
@@ -4099,14 +4222,15 @@ $TCA['tx_org_tax'] = array (
   ),
 
   'types' => array (
-    '0' => array('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_tax.div_tax,     title,value,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_tax.div_control, hidden;;1;;'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_tax.div_tax,     title;;1;;,value,'.
+                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_tax.div_control, hidden;;2;;'.
                                 ''),
   ),
   'palettes' => array (
-    '1' => array('showitem' => 'starttime,endtime,'),
+    '1' => array ('showitem' => 'title_lang_ol,'),
+    '2' => array ('showitem' => 'starttime,endtime,'),
   )
 );
-  // tx_org_tax - without any localisation support
+  // tx_org_tax
 
 ?>

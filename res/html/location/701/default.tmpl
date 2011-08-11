@@ -1,6 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+VERSION 3.7.0
+  - #27041: Single view got the record browser. See marker ###RECORD_BROWSER### below.
+            Single view got an id.
+            
+            
   <body>
 
 <!-- ###TEMPLATE_LIST### begin -->
@@ -77,7 +82,8 @@
             <li###CLASS###>###TABS###</li><!-- ###MODESELECTORTABS### end -->
           </ul>
         </div><!-- ###MODESELECTOR### end --><!-- ###SINGLEVIEW### begin -->
-        <div class="###VIEW###view ###VIEW###view-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+        <div id="c###TT_CONTENT.UID###-###VIEW###view-###MODE###" class="###VIEW###view ###VIEW###view-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+          ###RECORD_BROWSER###
           <div style="float:right;">
             ###SOCIALMEDIA_BOOKMARKS###
           </div>

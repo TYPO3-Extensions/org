@@ -1,3 +1,15 @@
+2.0.0
+  11-08-11
+  New Features
+  * #27041: Record browser for the single view / Prev-next Switcher in the single view
+            * single views got the marker ###RECORD_BROWSER### in the HTML templates
+            * single views got an ID
+  * #28939: Localization
+  
+1.0.0
+  11-04-02
+  Publishing
+
 0.5.0
   11-03-23
   Improvement

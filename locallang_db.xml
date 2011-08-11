@@ -82,6 +82,7 @@
       <label index="tx_org_calentrance.div_calentrance">Entrance Fee</label>
       <label index="tx_org_calentrance.div_control">Controlling</label>
       <label index="tx_org_calentrance.title">Entrance Phrase</label>
+      <label index="tx_org_calentrance.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_calentrance.value">Entrance (EUR)</label>
       <label index="tx_org_calentrance.tx_org_tax">Tax rate</label>
       <label index="tx_org_calentrance.note">Note (internal)</label>
@@ -90,6 +91,7 @@
       <label index="tx_org_caltype.div_calendar">Calendar</label>
       <label index="tx_org_caltype.div_control">Controlling</label>
       <label index="tx_org_caltype.title">Category label</label>
+      <label index="tx_org_caltype.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_caltype.note">Note (internal)</label>
       <label index="tx_org_caltype.tx_org_cal">Calendar</label>
       <label index="tx_org_department">Departments</label>
@@ -118,6 +120,7 @@
       <label index="tx_org_departmentcat.div_cat">Group</label>
       <label index="tx_org_departmentcat.div_control">Controlling</label>
       <label index="tx_org_departmentcat.title">Department: Group</label>
+      <label index="tx_org_departmentcat.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_departmentcat.note">Note (internal)</label>
       <label index="tx_org_event">Event</label>
       <label index="tx_org_event.div_event">Event</label>
@@ -151,6 +154,7 @@
       <label index="tx_org_headquarters.mail_address">Address: Address</label>
       <label index="tx_org_headquarters.mail_postcode">Address: Postcode</label>
       <label index="tx_org_headquarters.mail_city">Address: City</label>
+      <label index="tx_org_headquarters.mail_country">Address: Country</label>
       <label index="tx_org_headquarters.mail_url">City map: URL</label>
       <label index="tx_org_headquarters.mail_embeddedcode">City map: Embedded Code</label>
       <label index="tx_org_headquarters.postbox_postbox">Postbox: Postbox</label>
@@ -177,6 +181,7 @@
       <label index="tx_org_location.mail_address">Address: Address</label>
       <label index="tx_org_location.mail_postcode">Address: Postcode</label>
       <label index="tx_org_location.mail_city">Address: City</label>
+      <label index="tx_org_location.mail_country">Address: Country</label>
       <label index="tx_org_location.mail_url">City map: URL</label>
       <label index="tx_org_location.mail_embeddedcode">City map: Embedded Code</label>
       <label index="tx_org_location.telephone">Telephone</label>
@@ -228,6 +233,7 @@
       <label index="tx_org_tax.div_tax">Tax rates</label>
       <label index="tx_org_tax.div_control">Controlling</label>
       <label index="tx_org_tax.title">Label of the tax rate</label>
+      <label index="tx_org_tax.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_tax.value">Value of the tax rate</label>
       <label index="wizard.fe_user.add">Add a new staff</label>
       <label index="wizard.fe_user.edit"> Edit the current person</label>
@@ -335,6 +341,7 @@
       <label index="tx_org_calentrance.div_calentrance">Eintritt</label>
       <label index="tx_org_calentrance.div_control">Steuerung</label>
       <label index="tx_org_calentrance.title">Bezeichnung des Eintritts</label>
+      <label index="tx_org_calentrance.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_calentrance.value">Eintritt (EUR)</label>
       <label index="tx_org_calentrance.tx_org_tax">Mehrwertsteuer-Satz</label>
       <label index="tx_org_calentrance.note">Bemerkung (intern)</label>
@@ -343,6 +350,7 @@
       <label index="tx_org_caltype.div_calendar">Kalender</label>
       <label index="tx_org_caltype.div_control">Steuerung</label>
       <label index="tx_org_caltype.title">Bezeichnung der Kategorie</label>
+      <label index="tx_org_caltype.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_caltype.note">Bemerkung (intern)</label>
       <label index="tx_org_caltype.tx_org_cal">Kalender</label>
       <label index="tx_org_department">Abteilungen</label>
@@ -371,6 +379,7 @@
       <label index="tx_org_departmentcat.div_cat">Gruppe</label>
       <label index="tx_org_departmentcat.div_control">Steuerung</label>
       <label index="tx_org_departmentcat.title">Abteilung-Gruppe</label>
+      <label index="tx_org_departmentcat.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_departmentcat.note">Bemerkung (intern)</label>
       <label index="tx_org_event">Veranstaltung</label>
       <label index="tx_org_event.div_event">Veranstaltung</label>
@@ -403,6 +412,7 @@
       <label index="tx_org_headquarters.mail_address">Adresse: Adresse</label>
       <label index="tx_org_headquarters.mail_postcode">Adresse: Postleitzahl</label>
       <label index="tx_org_headquarters.mail_city">Adresse: Stadt</label>
+      <label index="tx_org_headquarters.mail_country">Adresse: Land</label>
       <label index="tx_org_headquarters.mail_url">Stadtplan: URL</label>
       <label index="tx_org_headquarters.mail_embeddedcode">Stadtplan: Eingebetter Code</label>
       <label index="tx_org_headquarters.postbox_postbox">Postfach: Postfach</label>
@@ -432,6 +442,7 @@
       <label index="tx_org_location.mail_address">Adresse: Adresse</label>
       <label index="tx_org_location.mail_postcode">Adresse: Postleitzahl</label>
       <label index="tx_org_location.mail_city">Adresse: Stadt</label>
+      <label index="tx_org_location.mail_country">Adresse: Land</label>
       <label index="tx_org_location.mail_url">Stadtplan: URL</label>
       <label index="tx_org_location.mail_embeddedcode">Stadtplan: Eingebetter Code</label>
       <label index="tx_org_location.telephone">Telefon</label>
@@ -486,6 +497,7 @@
       <label index="tx_org_tax.div_tax">Mehrwertsteuer</label>
       <label index="tx_org_tax.div_control">Steuerung</label>
       <label index="tx_org_tax.title">Bezeichnung</label>
+      <label index="tx_org_tax.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_tax.value">Mehrwertsteuersatz</label>
       <label index="wizard.fe_user.add">Neue Person erstellen</label>
       <label index="wizard.fe_user.edit"><![CDATA[Daten der ausgewählten Person bearbeiten]]></label>
