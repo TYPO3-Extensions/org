@@ -1,5 +1,5 @@
 2.0.0
-  11-08-11
+  11-08-13
   New Features
   * #27041: Record browser for the single view / Prev-next Switcher in the single view
             * single views got the marker ###RECORD_BROWSER### in the HTML templates

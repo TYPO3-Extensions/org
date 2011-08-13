@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'browser' => '3.6.4-',
+			'browser' => '3.7.0-',
 			'css_styled_content' => '1.0.0-',
 			'linkhandler' => '0.3.1-',
 		),
