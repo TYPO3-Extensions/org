@@ -211,11 +211,46 @@ $TCA['fe_users']['ctrl']['label_alt']       = 'first_name, username';
 $TCA['fe_users']['ctrl']['label_alt_force'] = true;
 $TCA['fe_users']['ctrl']['default_sortby']  = 'ORDER BY last_name';
 $TCA['fe_users']['ctrl']['thumbnail']       = 'image';
+
+  // Localize fe_users
 $TCA['fe_users']['ctrl']['languageField']             = 'sys_language_uid';
 $TCA['fe_users']['ctrl']['transOrigPointerField']     = 'l10n_parent';
 $TCA['fe_users']['ctrl']['transOrigDiffSourceField']  = 'l10n_diffsource';
-
-
+$TCA['fe_users']['columns'] = array
+(
+  'sys_language_uid' => array (
+    'exclude' => 1,
+    'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
+    'config'  => array (
+      'type'                => 'select',
+      'foreign_table'       => 'sys_language',
+      'foreign_table_where' => 'ORDER BY sys_language.title',
+      'items' => array (
+        array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
+        array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0)
+      )
+    )
+  ),
+  'l10n_parent' => array (
+    'displayCond' => 'FIELD:sys_language_uid:>:0',
+    'exclude' => 1,
+    'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+    'config' => array (
+      'type' => 'select',
+      'items' => array (
+        array ('', 0),
+      ),
+      'foreign_table' => 'fe_users',
+      'foreign_table_where' => 'AND fe_users.uid=###REC_FIELD_l10n_parent### AND fe_users.sys_language_uid IN (-1,0)',
+    )
+  ),
+  'l10n_diffsource' => array (
+    'config' => array (
+      'type' => 'passthrough'
+    )
+  ),
+);
+  // Localize fe_users
 
   // Don't exclude any field by default'
 if(!$bool_excludeFeuser)
