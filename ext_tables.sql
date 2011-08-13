@@ -33,9 +33,6 @@
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
-  l10n_diffsource mediumtext,
   tx_org_news tinytext,
   tx_org_department tinytext,
   tx_org_vita mediumtext NOT NULL,
