@@ -353,9 +353,9 @@ switch($confArr['store_records'])
     )
   );
   $conf_pages = array (
-    'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.pages',
-    'l10n_mode' => 'mergeIfNotBlank',
     'exclude'   => $bool_exclude_default,
+    'l10n_mode' => 'exclude',
+    'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.pages',
     'config'    => array (
       'type'          => 'group',
       'internal_type' => 'db',
