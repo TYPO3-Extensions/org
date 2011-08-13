@@ -211,6 +211,10 @@ $TCA['fe_users']['ctrl']['label_alt']       = 'first_name, username';
 $TCA['fe_users']['ctrl']['label_alt_force'] = true;
 $TCA['fe_users']['ctrl']['default_sortby']  = 'ORDER BY last_name';
 $TCA['fe_users']['ctrl']['thumbnail']       = 'image';
+$TCA['fe_users']['ctrl']['languageField']             = 'sys_language_uid';
+$TCA['fe_users']['ctrl']['transOrigPointerField']     = 'l10n_parent';
+$TCA['fe_users']['ctrl']['transOrigDiffSourceField']  = 'l10n_diffsource';
+
 
 
   // Don't exclude any field by default'
