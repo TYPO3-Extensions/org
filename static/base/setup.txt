@@ -211,21 +211,22 @@ plugin.tx_browser_pi1 {
     }
   }
 
-  a-z_Browser {
-    tabs {
-      2 {
-        valuesCSV = A,Ä,a,ä
-      }
-      16 {
-        valuesCSV = O,Ö,o,ö
-      }
-      21 {
-        valuesCSV = U,Ü,u,ü
+  navigation {
+    a-z_Browser {
+      tabs {
+        2 {
+          valuesCSV = A,Ä,a,ä
+        }
+        16 {
+          valuesCSV = O,Ö,o,ö
+        }
+        21 {
+          valuesCSV = U,Ü,u,ü
+        }
       }
     }
+    pageBrowser.showResultCount = 0
   }
-
-  pageBrowser.showResultCount = 0
 
   general_stdWrap {
     parseFunc {

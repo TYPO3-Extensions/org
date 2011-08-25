@@ -1,3 +1,16 @@
+2.0.2
+  11-08-25
+  Improvement
+  * #00000: TypoScript template is adapted to browser version 3.7
+            * a-z_Browser and pageBrowser are moved to navigation
+
+2.0.1
+  11-08-13
+  New Features
+  * #00000: Relations to fe_groups are configurable by the extension manager and page TSconfig
+  Improvements
+  * #28939: Localization: Relations between tables are localized
+  
 2.0.0
   11-08-13
   New Features

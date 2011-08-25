@@ -517,7 +517,7 @@ $TCA['tx_org_cal'] = array (
         'items' => array (
           '0' => array (
             '0' => '',
-            '1' => '',
+            '1' => ''
           ),
         ),
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
@@ -576,7 +576,7 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_event_mm_tx_org_cal',
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_event',
-        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' ORDER BY tx_org_event.title',
+        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' AND tx_org_event.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_event.title',
         'items' => array (
           '0' => array (
             '0' => '',
@@ -647,7 +647,7 @@ $TCA['tx_org_cal'] = array (
         'maxitems'            => 1,
         'MM'                  => 'tx_org_cal_mm_tx_org_location',
         'foreign_table'       => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' ORDER BY tx_org_location.title',
+        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.title',
         'items' => array (
           '0' => array (
             '0' => '',
@@ -748,7 +748,7 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_cal',
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.title',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
         'selectedListStyle'   => 'width:360px;',
         'itemListStyle'       => 'width:360px;',
         'wizards' => array (
@@ -1248,7 +1248,7 @@ $TCA['tx_org_caltype'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
         'MM_opposite_field'   => 'tx_org_caltype',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1425,7 +1425,7 @@ $TCA['tx_org_department'] = array (
         'MM'                  => 'tx_org_headquarters_mm_tx_org_department',
         'MM_opposite_field'   => 'tx_org_department',
         'foreign_table'       => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' ORDER BY tx_org_headquarters.sorting',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1493,7 +1493,7 @@ $TCA['tx_org_department'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_department_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1615,7 +1615,7 @@ $TCA['tx_org_department'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_department_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -2108,7 +2108,7 @@ $TCA['tx_org_event'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_event_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -2206,7 +2206,7 @@ $TCA['tx_org_event'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_event_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -2716,7 +2716,7 @@ $TCA['tx_org_headquarters'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_headquarters_mm_tx_org_department',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.sorting',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -3229,7 +3229,7 @@ $TCA['tx_org_location'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_location',
         'MM_opposite_field'   => 'tx_org_location',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -3866,7 +3866,7 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_news',
         'MM_opposite_field'   => 'tx_org_news',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ORDER BY tx_org_department.title',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,

@@ -56,7 +56,7 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
 $bool_wizards_wo_add_and_list = false;
 switch($confArr['store_records']) 
 {
-    // IN CASE OF CHANGINGS: BE AWARE OF THE ORGANISER INSTALLER!
+    // IN CASE OF CHANGES: BE AWARE OF THE ORGANISER INSTALLER!
   case('Multi grouped: record groups in different directories'):
     //var_dump('MULTI');
     $str_store_record_conf        = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
@@ -77,6 +77,32 @@ switch($confArr['store_records'])
     $str_store_record_conf        = 'pid=###CURRENT_PID###';
 }
   // Store record configuration
+
+  // Store fe_groups configuration
+//$bool_wizards_wo_add_and_list = false;
+$andWhere_feuser_fegroups   = false;
+$andWhere_fegroups_subgroup = false;
+switch($confArr['store_fe_groups']) 
+{
+    // IN CASE OF CHANGES: BE AWARE OF THE ORGANISER INSTALLER!
+  case('Managed by page TSconfig (list)'):
+    $andWhere_feuser_fegroups   = 'AND fe_groups.pid IN (###PAGE_TSCONFIG_IDLIST###) ';
+    $andWhere_fegroups_subgroup = 'AND fe_groups.pid IN (###PAGE_TSCONFIG_IDLIST###) ';
+    break;
+  case('Managed by page TSconfig (ID)'):
+    $andWhere_feuser_fegroups   = 'AND fe_groups.pid=###PAGE_TSCONFIG_ID### ';
+    $andWhere_fegroups_subgroup = 'AND fe_groups.pid=###PAGE_TSCONFIG_ID### ';
+    break;
+  case('Managed by general record storage page (not recommended)'):
+    $andWhere_feuser_fegroups   = 'AND fe_groups.pid=###STORAGE_PID### ';
+    $andWhere_fegroups_subgroup = 'AND fe_groups.pid=###STORAGE_PID### ';
+    break;
+  case('Store it everywhere (TYPO3 default)'):
+  default:
+    $andWhere_feuser_fegroups   = false;
+    $andWhere_fegroups_subgroup = false;
+}
+  // Store fe_groups configuration
   // Configuration of the extension manager
 
 
@@ -304,7 +330,7 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
     'maxitems' => 999,
     'MM'                  => 'fe_users_mm_tx_org_news',
     'foreign_table'       => 'tx_org_news',
-    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
+    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.hidden=0 ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
     'wizards' => array(
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
@@ -351,7 +377,7 @@ $TCA['fe_users']['columns']['tx_org_department'] = array (
     'MM'                  => 'tx_org_department_mm_fe_users',
     'MM_opposite_field'   => 'fe_users',
     'foreign_table'       => 'tx_org_department',
-    'foreign_table_where' =>  'AND tx_org_department.' . $str_store_record_conf . ' '.
+    'foreign_table_where' =>  'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.hidden=0 '.
                               'ORDER BY tx_org_department.sorting',
     'wizards' => array(
       '_PADDING'  => 2,
@@ -468,12 +494,31 @@ if($bool_wizards_wo_add_and_list)
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['list']);
 }  
+  // Relation to fe_groups
+if($andWhere_feuser_fegroups)
+{
+    // Default
+    // $TCA['fe_users']['columns']['usergroup']['config']['foreign_table_where'] = 'ORDER BY fe_groups.title';
+  $andWhere_default = $TCA['fe_users']['columns']['usergroup']['config']['foreign_table_where'];
+  $andWhere = $andWhere_feuser_fegroups . $andWhere_default;
+  $TCA['fe_users']['columns']['usergroup']['config']['foreign_table_where'] = $andWhere;
+}
+  // Relation to fe_groups
+//:TODO:
   // fe_users
 
   // fe_groups
 t3lib_div::loadTCA('fe_groups');
 $TCA['fe_groups']['ctrl']['title']          = 'LLL:EXT:org/locallang_db.xml:fe_groups';
 $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
+if( $andWhere_fegroups_subgroup )
+{
+ 
+  $andWhere_default = $TCA['fe_groups']['columns']['subgroup']['config']['foreign_table_where'];
+  $andWhere = $andWhere_fegroups_subgroup . $andWhere_default;
+  $TCA['fe_groups']['columns']['subgroup']['config']['foreign_table_where'] = $andWhere;
+
+}
   // fe_groups
 
   // sys_template
