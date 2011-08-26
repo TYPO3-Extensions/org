@@ -20,7 +20,10 @@
 # tx_org_event_mm_tx_org_cal
 # tx_org_event_mm_tx_org_news
 # tx_org_headquarters
+# tx_org_headquarters_mm_fe_users
+# tx_org_headquarters_mm_tx_org_cal
 # tx_org_headquarters_mm_tx_org_department
+# tx_org_headquarters_mm_tx_org_news
 # tx_org_location
 # tx_org_news
 # tx_org_news_mm_tx_org_newscat
@@ -34,6 +37,7 @@
 #
 CREATE TABLE fe_users (
   tx_org_news tinytext,
+  tx_org_headquarters tinytext,
   tx_org_department tinytext,
   tx_org_vita mediumtext NOT NULL,
   tx_org_imagecaption text,
@@ -84,6 +88,7 @@ CREATE TABLE tx_org_cal (
   calurl tinytext,
   tx_org_location tinytext,
   tx_org_calentrance tinytext,
+  tx_org_headquarters tinytext,
   tx_org_department tinytext NOT NULL,
   image text,
   imagecaption text,
@@ -464,6 +469,7 @@ CREATE TABLE tx_org_headquarters (
   postbox_postbox text NOT NULL,
   postbox_postcode tinytext NOT NULL,
   postbox_city tinytext NOT NULL,
+  fe_users tinytext,
   tx_org_department tinytext,
   telephone tinytext NOT NULL,
   fax tinytext NOT NULL,
@@ -506,9 +512,54 @@ CREATE TABLE tx_org_headquarters (
 
 
 #
+# Table structure for table 'tx_org_headquarters_mm_fe_users'
+#
+CREATE TABLE tx_org_headquarters_mm_fe_users (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
+# Table structure for table 'tx_org_headquarters_mm_tx_org_cal'
+#
+CREATE TABLE tx_org_headquarters_mm_tx_org_cal (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
 # Table structure for table 'tx_org_headquarters_mm_tx_org_department'
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_department (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
+# Table structure for table 'tx_org_headquarters_mm_tx_org_news'
+#
+CREATE TABLE tx_org_headquarters_mm_tx_org_news (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -611,6 +662,7 @@ CREATE TABLE tx_org_news (
   newspage tinytext,
   newsurl tinytext,
   fe_user tinytext NOT NULL,
+  tx_org_headquarters tinytext,
   tx_org_department tinytext NOT NULL,
   tx_org_event tinytext NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,

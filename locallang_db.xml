@@ -12,6 +12,7 @@
       <label index="filter_phrase.calendar">Calendar</label>
       <label index="filter_phrase.calendar.expired">Calendar (expired)</label>
       <label index="filter_phrase.caltype.title">All categories</label>
+      <label index="filter_phrase.company">Company</label>
       <label index="filter_phrase.department">Department</label>
       <label index="filter_phrase.newscat">Category</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
@@ -40,11 +41,11 @@
       <label index="tca_phrase.pages">Display on pages with configured plugins:</label>
       <label index="tca_phrase.print">Images (high quality)</label>
       <label index="fe_users">Staff</label>
+      <label index="fe_users.div_tx_org_company">Company</label>
       <label index="fe_users.div_tx_org_department">Department</label>
-      <label index="fe_users.div_tx_org_headquarters">Headquarters</label>
       <label index="fe_users.div_tx_org_news">News</label>
+      <label index="fe_users.tx_org_headquarters">Company</label>
       <label index="fe_users.tx_org_department">Department</label>
-      <label index="fe_users.tx_org_headquarters">Headquarters</label>
       <label index="fe_users.tx_org_vita">Vita</label>
       <label index="fe_groups">Staff: Groups</label>
       <label index="tx_org_cal">Calendar</label>
@@ -52,6 +53,7 @@
       <label index="tx_org_cal.div_calpage">Internal Link</label>
       <label index="tx_org_cal.div_calurl">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
+      <label index="tx_org_cal.div_company">Company</label>
       <label index="tx_org_cal.div_department">Department</label>
       <label index="tx_org_cal.div_embedded">Embedded Code</label>
       <label index="tx_org_cal.div_event">Location, admission</label>
@@ -76,6 +78,7 @@
       <label index="tx_org_cal.teaser_short">Short</label>
       <label index="tx_org_cal.tx_org_location">Location</label>
       <label index="tx_org_cal.tx_org_calentrance">Entrance Fee</label>
+      <label index="tx_org_cal.tx_org_headquarters">Company</label>
       <label index="tx_org_cal.tx_org_department">Departments</label>
       <label index="tx_org_cal.documents">Documents</label>
       <label index="tx_org_calentrance">Calendar: Entrance Fees</label>
@@ -94,6 +97,8 @@
       <label index="tx_org_caltype.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_caltype.note">Note (internal)</label>
       <label index="tx_org_caltype.tx_org_cal">Calendar</label>
+      <label index="tx_org_company">Company</label>
+      <label index="tx_org_company.title">Company label</label>
       <label index="tx_org_department">Departments</label>
       <label index="tx_org_department.div_embedded">Embedded Code</label>
       <label index="tx_org_department.div_department">Department</label>
@@ -143,6 +148,7 @@
       <label index="tx_org_event.tx_org_cal">Calendar</label>
       <label index="tx_org_headquarters">Headquarters</label>
       <label index="tx_org_headquarters.div_headquarters">Headquarter</label>
+      <label index="tx_org_headquarters.div_company">Company</label>
       <label index="tx_org_headquarters.div_contact">Contact Details</label>
       <label index="tx_org_headquarters.div_department">Departments</label>
       <label index="tx_org_headquarters.div_pubtrans">Public Transport</label>
@@ -160,6 +166,7 @@
       <label index="tx_org_headquarters.postbox_postbox">Postbox: Postbox</label>
       <label index="tx_org_headquarters.postbox_postcode">Postbox: Postcode</label>
       <label index="tx_org_headquarters.postbox_city">Postbox: City</label>
+      <label index="tx_org_headquarters.fe_users">Staff</label>
       <label index="tx_org_headquarters.tx_org_department">Department</label>
       <label index="tx_org_headquarters.telephone">Telephone</label>
       <label index="tx_org_headquarters.fax">Fax</label>
@@ -199,6 +206,7 @@
       <label index="tx_org_news.div_newspage">Internal link</label>
       <label index="tx_org_news.div_newsurl">External link</label>
       <label index="tx_org_news.div_feuser">Author</label>
+      <label index="tx_org_news.div_company">Company</label>
       <label index="tx_org_news.div_department">Departments</label>
       <label index="tx_org_news.div_embedded">Embedded Code</label>
       <label index="tx_org_news.div_control">Controlling</label>
@@ -218,6 +226,7 @@
       <label index="tx_org_news.newspage">Link to an internal page</label>
       <label index="tx_org_news.newsurl">Link to an external page (URL)</label>
       <label index="tx_org_news.fe_user">Author</label>
+      <label index="tx_org_news.tx_org_headquarters">Company</label>
       <label index="tx_org_news.tx_org_department">Department</label>
       <label index="tx_org_news.topnews">Top News</label>
       <label index="tx_org_news.tx_org_newscat">Category</label>
@@ -271,6 +280,7 @@
       <label index="filter_phrase.calendar">Kalender</label>
       <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
       <label index="filter_phrase.caltype.title">Alle Kategorien</label>
+      <label index="filter_phrase.company">Firma</label>
       <label index="filter_phrase.department">Abteilung</label>
       <label index="filter_phrase.newscat">Kategorie</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
@@ -299,11 +309,11 @@
       <label index="tca_phrase.pages"><![CDATA[Für entsprechende Plugins: zeige auf Seiten]]></label>
       <label index="tca_phrase.print"><![CDATA[Bilder (in Druckqualität)]]></label>
       <label index="fe_users">Personal</label>
-      <label index="fe_users.div_tx_org_headquarters">Hauptverwaltung</label>
+      <label index="fe_users.div_tx_org_company">Firma</label>
       <label index="fe_users.div_tx_org_department">Abteilung</label>
       <label index="fe_users.div_tx_org_news">Nachrichten</label>
+      <label index="fe_users.tx_org_headquarters">Firma</label>
       <label index="fe_users.tx_org_department">Abteilung</label>
-      <label index="fe_users.tx_org_headquarters">Hauptverwaltung</label>
       <label index="fe_users.tx_org_vita">Vita</label>
       <label index="fe_groups">Personal: Gruppen</label>
       <label index="tx_org_cal">Kalender</label>
@@ -313,6 +323,7 @@
       <label index="tx_org_cal.div_embedded">Eingebundener Code</label>
       <label index="tx_org_cal.div_teaser">Kurztitel</label>
       <label index="tx_org_cal.div_event">Ort, Eintritt</label>
+      <label index="tx_org_cal.div_company">Firma</label>
       <label index="tx_org_cal.div_department">Abteilungen</label>
       <label index="tx_org_cal.div_media">Medien</label>
       <label index="tx_org_cal.div_control">Steuerung</label>
@@ -335,6 +346,7 @@
       <label index="tx_org_cal.teaser_short">Kurztext</label>
       <label index="tx_org_cal.tx_org_location">Veranstaltungsort</label>
       <label index="tx_org_cal.tx_org_calentrance">Eintritt</label>
+      <label index="tx_org_cal.tx_org_headquarters">Company</label>
       <label index="tx_org_cal.tx_org_department">Abteilung</label>
       <label index="tx_org_cal.documents">Dokumente</label>
       <label index="tx_org_calentrance">Kalender: Eintritt</label>
@@ -353,6 +365,8 @@
       <label index="tx_org_caltype.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_caltype.note">Bemerkung (intern)</label>
       <label index="tx_org_caltype.tx_org_cal">Kalender</label>
+      <label index="tx_org_company">Firmen</label>
+      <label index="tx_org_company.title">Name der Firma</label>
       <label index="tx_org_department">Abteilungen</label>
       <label index="tx_org_department.div_department">Abteilung</label>
       <label index="tx_org_department.div_contact">Kontaktdaten</label>
@@ -401,6 +415,7 @@
       <label index="tx_org_event.documents">Dokumente</label>
       <label index="tx_org_headquarters">Standorte</label>
       <label index="tx_org_headquarters.div_headquarters">Standort</label>
+      <label index="tx_org_headquarters.div_company">Firma</label>
       <label index="tx_org_headquarters.div_contact">Kontaktdaten</label>
       <label index="tx_org_headquarters.div_department">Abteilungen</label>
       <label index="tx_org_headquarters.div_pubtrans"><![CDATA[ÖPNV]]></label>
@@ -464,6 +479,7 @@
       <label index="tx_org_news.div_newspage">Interner Link</label>
       <label index="tx_org_news.div_newsurl">Externer Link</label>
       <label index="tx_org_news.div_feuser">Autor</label>
+      <label index="tx_org_news.div_company">Firma</label>
       <label index="tx_org_news.div_department">Abteilung</label>
       <label index="tx_org_news.div_embedded">Eingebundener Code</label>
       <label index="tx_org_news.div_control">Steuerung</label>
@@ -483,6 +499,7 @@
       <label index="tx_org_news.newspage">Link zu interner Seite</label>
       <label index="tx_org_news.newsurl">Link zu externer Seite</label>
       <label index="tx_org_news.fe_user">Autor</label>
+      <label index="tx_org_news.tx_org_headquarters">Firma</label>
       <label index="tx_org_news.tx_org_department">Abteilung</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
       <label index="tx_org_news.tx_org_newscat">Kategorie</label>

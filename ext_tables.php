@@ -51,6 +51,31 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
   $bool_time_control = false;
 }
   // Simplify backend forms
+  
+  // Relation fe_users to company
+switch ($confArr['TCA_fe_user_company'])
+{
+  case('Big') :
+    $bool_exclude_fe_user_company             = true;
+    $bool_exclude_fe_user_tx_org_company      = true;
+    $bool_exclude_fe_user_tx_org_department   = false;
+    $bool_exclude_tx_org_company              = false;
+    $bool_exclude_tx_org_company_fe_users     = true;
+    $bool_exclude_tx_org_department           = false;
+    $bool_exclude_tx_org_department_fe_users  = false;
+    break;
+  case('Small (recommended)') :
+  default :
+    $bool_exclude_fe_user_company             = true;
+    $bool_exclude_fe_user_tx_org_company      = false;
+    $bool_exclude_fe_user_tx_org_department   = true;
+    $bool_exclude_tx_org_company              = false;
+    $bool_exclude_tx_org_company_fe_users     = false;
+    $bool_exclude_tx_org_department           = true;
+    $bool_exclude_tx_org_department_fe_users  = true;
+  default:
+}
+  // Relation fe_users to company
 
   // Store record configuration
 $bool_wizards_wo_add_and_list = false;
@@ -289,6 +314,9 @@ if(!$bool_excludeFeuser)
     }
   }
 }
+$TCA['fe_users']['columns']['first_name']['config']['eval'] = 'trim,required';
+$TCA['fe_users']['columns']['last_name']['config']['eval']  = 'trim,required';
+$TCA['fe_users']['columns']['company']['exclude']       = $bool_exclude_fe_user_company;
 $TCA['fe_users']['columns']['starttime']['exclude']     = $bool_time_control;
 $TCA['fe_users']['columns']['endtime']['exclude']       = $bool_time_control;
 $TCA['fe_users']['columns']['TSconfig']['exclude']      = 1;
@@ -297,9 +325,9 @@ $TCA['fe_users']['columns']['lockToDomain']['exclude']  = 1;
 
   // Add fields tx_org_news, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita';
+$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
-  // Add fields tx_org_news, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
+  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
 
 $TCA['fe_users']['columns']['www']['config'] = array (
   'type'      => 'input',
@@ -366,8 +394,58 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
     ),
   ),
 );
+
+$TCA['fe_users']['columns']['tx_org_headquarters'] = array (
+  'exclude' => $bool_exclude_fe_user_tx_org_company,
+  'label' => 'LLL:EXT:org/locallang_db.xml:fe_users.tx_org_headquarters',
+  'config' => array (
+    'type' => 'select', 
+    'size' => 20, 
+    'minitems' => 0,
+    'maxitems' => 999,
+    'MM'                  => 'tx_org_headquarters_mm_fe_users',
+    'MM_opposite_field'   => 'fe_users',
+    'foreign_table'       => 'tx_org_headquarters',
+    'foreign_table_where' =>  'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.hidden=0 '.
+                              'ORDER BY tx_org_headquarters.title',
+    'wizards' => array(
+      '_PADDING'  => 2,
+      '_VERTICAL' => 0,
+      'add' => array(
+        'type'   => 'script',
+        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.org.add',
+        'icon'   => 'add.gif',
+        'params' => array(
+          'table'    => 'tx_org_headquarters',
+          'pid'      => '###CURRENT_PID###',
+          'setValue' => 'prepend'
+        ),
+        'script' => 'wizard_add.php',
+      ),
+      'list' => array(
+        'type'   => 'script',
+        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.org.list',
+        'icon'   => 'list.gif',
+        'params' => array(
+          'table' => 'tx_org_headquarters',
+          'pid'   => '###CURRENT_PID###',
+        ),
+        'script' => 'wizard_list.php',
+      ),
+      'edit' => array(
+        'type'                      => 'popup',
+        'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.org.edit',
+        'script'                    => 'wizard_edit.php',
+        'popup_onlyOpenIfSelected'  => 1,
+        'icon'                      => 'edit2.gif',
+        'JSopenParams'              => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+      ),
+    ),
+  ),
+);
+
 $TCA['fe_users']['columns']['tx_org_department'] = array (
-  'exclude' => 0,
+  'exclude' => $bool_exclude_fe_user_tx_org_department,
   'label' => 'LLL:EXT:org/locallang_db.xml:fe_users.tx_org_department',
   'config' => array (
     'type' => 'select', 
@@ -474,13 +552,13 @@ foreach($arr_showitem as $key => $value)
       $arr_new_showitem[$key] = $value;
       break;
     case($key == $int_div_position):
-//      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_org, tx_org_department,';
-      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_department, tx_org_department,';
-      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_news, tx_org_news,';
-      $arr_new_showitem[$key + 2] = $value;
+      $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_company, tx_org_headquarters,';
+      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_department, tx_org_department,';
+      $arr_new_showitem[$key + 2] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_news, tx_org_news,';
+      $arr_new_showitem[$key + 3] = $value;
       break;
     case($key > $int_div_position):
-      $arr_new_showitem[$key + 2] = $value;
+      $arr_new_showitem[$key + 3] = $value;
       break;
   }
 }
@@ -489,6 +567,8 @@ $TCA['fe_users']['types']['0']['showitem'] = $str_showitem;
 
 if($bool_wizards_wo_add_and_list)
 {
+  unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['add']);
+  unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);
@@ -504,7 +584,19 @@ if($andWhere_feuser_fegroups)
   $TCA['fe_users']['columns']['usergroup']['config']['foreign_table_where'] = $andWhere;
 }
   // Relation to fe_groups
-//:TODO:
+
+$TCA['fe_users']['ctrl']['filter'] = 'filter_for_all_fields';
+$TCA['fe_users']['columns']['tx_org_headquarters']['config_filter'] =
+  $TCA['fe_users']['columns']['tx_org_headquarters']['config'];
+$TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['maxitems'] = 1;
+$TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['size']     = 1;
+$items = array ('-99' => array ( '0' => '', '1' => '' ));
+foreach($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue)
+{
+  $items[$key] = $arrValue;
+}
+$TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['items'] = $items;
+
   // fe_users
 
   // fe_groups
@@ -785,7 +877,8 @@ $TCA['tx_org_headquarters'] = array (
     'languageField'             => 'sys_language_uid',
     'transOrigPointerField'     => 'l10n_parent',
     'transOrigDiffSourceField'  => 'l10n_diffsource',
-    'sortby'    => 'sorting',
+    'default_sortby'    => 'ORDER BY title',
+//    'sortby'    => 'sorting',
     'delete'    => 'deleted',
     'enablecolumns' => array (
       'disabled'  => 'hidden',
@@ -798,6 +891,10 @@ $TCA['tx_org_headquarters'] = array (
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif',
   ),
 );
+if( ! $bool_exclude_tx_org_company )
+{
+  $TCA['tx_org_headquarters']['ctrl']['title'] = 'LLL:EXT:org/locallang_db.xml:tx_org_company';
+}
   // headquarters //////////////////////////////////////////////////////////////////
 
   // org /////////////////////////////////////////////////////////////////////
