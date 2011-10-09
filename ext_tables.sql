@@ -79,6 +79,7 @@ CREATE TABLE tx_org_cal (
   title tinytext,
   subtitle tinytext,
   datetime int(11) unsigned DEFAULT '0' NOT NULL,
+  datetimeend int(11) unsigned DEFAULT '0' NOT NULL,
   tx_org_caltype tinytext,
   bodytext mediumtext NOT NULL,
   teaser_title tinytext,

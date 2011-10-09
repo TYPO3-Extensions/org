@@ -1,3 +1,8 @@
+2.0.4
+  11-05-12
+  Improvement
+  * new database field 'datetime end' in calendar
+
 2.0.3
   11-08-26
   Improvement

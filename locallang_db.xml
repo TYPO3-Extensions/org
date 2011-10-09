@@ -23,6 +23,7 @@
       <label index="filter_phrase.schedule.expired">Playing schedule (expired)</label>
       <label index="palette.appearance">Appearance</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
+      <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
@@ -72,7 +73,9 @@
       <label index="tx_org_cal.title">Title of the event</label>
       <label index="tx_org_cal.subtitle">Subheader</label>
       <label index="tx_org_cal.datetime">Datetime</label>
+      <label index="tx_org_cal.datetimeend">Datetime end of event</label>
       <label index="tx_org_cal.tx_org_caltype">Type of Event</label>
+      <label index="tx_org_cal.bodytext">Bodytext</label>
       <label index="tx_org_cal.teaser_title">Title of the event</label>
       <label index="tx_org_cal.teaser_subtitle">Subheader</label>
       <label index="tx_org_cal.teaser_short">Short</label>
@@ -291,6 +294,7 @@
       <label index="filter_phrase.schedule.expired">Spielplan (Archiv)</label>
       <label index="palette.appearance">Design</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
+      <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
@@ -340,7 +344,9 @@
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.datetime">Beginn der Veranstaltung</label>
+      <label index="tx_org_cal.datetimeend">Ende der Veranstaltung</label>
       <label index="tx_org_cal.tx_org_caltype">Kategorie der Veranstaltung</label>
+      <label index="tx_org_cal.bodytext">Text</label>
       <label index="tx_org_cal.teaser_title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.teaser_subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.teaser_short">Kurztext</label>
