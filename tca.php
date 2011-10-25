@@ -2654,11 +2654,38 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_doccat'] = array (
   'ctrl' => $TCA['tx_org_doccat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,'.
-                              'hidden,'.
-                              'image,imagecaption,imageseo',
+    'showRecordFieldList' =>  'type,title,title_lang_ol,' .
+                              'color,' .
+                              'image,imagecaption,imageseo,' .
+                              'hidden' ,
   ),
   'columns' => array (
+    'type' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type',
+      'config'    => array (
+        'type'    => 'select',
+        'items'   => array (
+          'cat_text' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_text',
+            '1' => 'cat_text',
+            '2' => 'EXT:org/ext_icon/cat_text.gif',
+          ),
+          'cat_color' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_color',
+            '1' => 'cat_color',
+            '2' => 'EXT:org/ext_icon/cat_color.gif',
+          ),
+          'cat_image' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_image',
+            '1' => 'cat_image',
+            '2' => 'EXT:org/ext_icon/cat_image.gif',
+          ),
+        ),
+        'default' => 'cat_text',
+      ),
+    ),
     'title' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.title',
@@ -2669,16 +2696,32 @@ $TCA['tx_org_doccat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.title_lang_ol',
       'config'  => $conf_input_30_trim,
     ),
+    'color' => array (
+      'l10n_mode' => 'exclude',
+      'exclude'   => $bool_exclude_default,
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.color',
+      'config'  => array (
+        'type'    => 'input',
+        'size'    => 10,
+        'eval'    => 'trim',
+        'wizards' => array (
+          'colorChoice' => array (
+            'type'          => 'colorbox',
+            'title'         => 'LLL:EXT:examples/locallang_db.xml:tx_examples_haiku.colorPick',
+            'script'        => 'wizard_colorpicker.php',
+            'dim'           => '20x20',
+            'tableStyle'    => 'border: solid 1px black; margin-left: 20px;',
+            'JSopenParams'  => 'height=600,width=380,status=0,menubar=0,scrollbars=1',
+            'exampleImg'    => 'EXT:examples/res/images/japanese_garden.jpg',
+          )
+        )
+      )
+    ),
     'image' => array (
       'l10n_mode' => 'exclude',
       'exclude'   => $bool_exclude_default,
       'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
       'config'    => $conf_file_image,
-    ),
-    'imagecaption' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
-      'config'  => $conf_text_30_05,
     ),
     'imageseo' => array (
       'exclude' => $bool_exclude_default,
@@ -2688,9 +2731,14 @@ $TCA['tx_org_doccat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   image, imagecaption;;3;;'),
+    'cat_text'  => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden'),
+    'cat_color' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_color,   color,' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
+    'cat_image' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   image;;3;;' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
   ),
   'palettes' => array (
     '1' => array ('showitem' => 'title_lang_ol'),

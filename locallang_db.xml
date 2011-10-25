@@ -24,6 +24,7 @@
       <label index="palette.appearance">Appearance</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
+      <label index="tca_phrase.color">Colour</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
@@ -330,6 +331,7 @@
       <label index="palette.appearance">Design</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
+      <label index="tca_phrase.color">Farbe</label>
       <label index="tca_phrase.description"><![CDATA[Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)]]></label>
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>

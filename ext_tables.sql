@@ -322,8 +322,8 @@ CREATE TABLE tx_org_doccat (
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   title tinytext NOT NULL,
   title_lang_ol tinytext NOT NULL,
+  color tinytext NOT NULL,
   image text,
-  imagecaption text,
   imageseo text,
 
   PRIMARY KEY (uid),
