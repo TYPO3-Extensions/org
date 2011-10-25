@@ -156,6 +156,8 @@
       <label index="tx_org_doc.teaser_subtitle">Subheader (in list views)</label>
       <label index="tx_org_doc.teaser_short">Short (in list views)</label>
       <label index="tx_org_doc.fe_user">Author</label>
+      <label index="tx_org_doc.file">File</label>
+      <label index="tx_org_doc.image">Thumbnail</label>
       <label index="tx_org_doc.tx_org_doccat">Category</label>
       <label index="tx_org_doccat">Documentss: Categories</label>
       <label index="tx_org_doccat.div_cat">Category</label>
@@ -473,6 +475,8 @@
       <label index="tx_org_doc.teaser_subtitle">Untertitel / Dachzeile (in Listen-Ansichten)</label>
       <label index="tx_org_doc.teaser_short">Text (in Listen-Ansichten)</label>
       <label index="tx_org_doc.fe_user">Autor</label>
+      <label index="tx_org_doc.file">Datei</label>
+      <label index="tx_org_doc.image">Vorschau-Bild</label>
       <label index="tx_org_doc.tx_org_doccat">Kategorie</label>
       <label index="tx_org_doccat">Dokumente: Kategorien</label>
       <label index="tx_org_doccat.div_cat">Kategorie</label>

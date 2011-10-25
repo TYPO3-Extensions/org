@@ -259,7 +259,7 @@ switch($confArr['store_records'])
     'maxitems'      => 99,
   );
 
-  $conf_file_one_document = $conf_file_document;
+  $conf_file_one_document             = $conf_file_document;
   $conf_file_one_document['size']     =  1;
   $conf_file_one_document['maxitems'] = 99;
 
@@ -274,6 +274,10 @@ switch($confArr['store_records'])
     'minitems'      => 0,
     'maxitems'      => 20,
   );
+
+  $conf_file_one_image             = $conf_file_image;
+  $conf_file_one_image['size']     =  1;
+  $conf_file_one_image['maxitems'] = 99;
 
   $conf_file_icon = array (
     'type'          => 'group',
@@ -2304,8 +2308,8 @@ $TCA['tx_org_doc'] = array (
     'image' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
-      'config'    => $conf_file_image,
+      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.image',
+      'config'    => $conf_file_one_image,
     ),
     'imagecaption' => array (
       'exclude'   => $bool_exclude_default,
@@ -2529,7 +2533,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'documents' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.file',
       'config'  => $conf_file_one_document,
     ),
     'documentscaption' => array (
@@ -2600,10 +2604,10 @@ $TCA['tx_org_doc'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,       documents,image,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_design,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock_dirk,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
