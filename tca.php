@@ -2723,7 +2723,7 @@ $TCA['tx_org_doccat'] = array (
             'script'        => 'wizard_colorpicker.php',
             'dim'           => '20x20',
             'tableStyle'    => 'border: solid 1px black; margin-left: 20px;',
-            'JSopenParams'  => 'height=600,width=380,status=0,menubar=0,scrollbars=1',
+            'JSopenParams'  => 'height=300,width=380,status=0,menubar=0,scrollbars=0',
           )
         )
       )
