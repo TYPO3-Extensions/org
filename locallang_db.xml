@@ -40,6 +40,7 @@
       <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
+      <label index="tca_phrase.image_settings.cat">Settings</label>
       <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.location">Location</label>
       <label index="tca_phrase.news">News</label>
@@ -361,6 +362,7 @@
       <label index="tca_phrase.imageseo.oneline">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
+      <label index="tca_phrase.image_settings.cat">Einstellungen</label>
       <label index="tca_phrase.keywords">Stichworte f<![CDATA[ü]]>r Suchmaschinen (drei bis f<![CDATA[ü]]>nf, mit Komma trennen)</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>

@@ -2870,15 +2870,15 @@ $TCA['tx_org_doccat'] = array (
     'cat_image' => array ( 'showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   ' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
   ),
   'palettes' => array (
     '1'               => array ('showitem' => 'title_lang_ol'),
     '2'               => array ('showitem' => 'imageseo_lang_ol'),
     'imagefiles'      => array (
-      'showitem'        =>  'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel, imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline' ,
+      'showitem'        =>  'image;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat, imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline' ,
       'canNotCollapse'  =>  1,
     ),
     'image_settings'  => array (
