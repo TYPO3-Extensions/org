@@ -36,7 +36,8 @@
       <label index="tca_phrase.embeddedcode">Embedded Code</label>
       <label index="tca_phrase.image">Images</label>
       <label index="tca_phrase.imagecaption">Captions (one per line)</label>
-      <label index="tca_phrase.imageseo">Captions (one per line)</label>
+      <label index="tca_phrase.imageseo">Label for Search Engines (one per line)</label>
+      <label index="tca_phrase.image.cat">Icon</label>
       <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.location">Location</label>
       <label index="tca_phrase.news">News</label>
@@ -156,7 +157,7 @@
       <label index="tx_org_doccat.div_cat">Category</label>
       <label index="tx_org_doccat.div_color">Colour</label>
       <label index="tx_org_doccat.div_control">Controlling</label>
-      <label index="tx_org_doccat.div_media">Media</label>
+      <label index="tx_org_doccat.div_media">Icon</label>
       <label index="tx_org_doccat.type">Type</label>
       <label index="tx_org_doccat.type.cat_color">Colour</label>
       <label index="tx_org_doccat.type.cat_image">Icon</label>
@@ -347,7 +348,8 @@
       <label index="tca_phrase.embeddedcode">Eingebetteter Code</label>
       <label index="tca_phrase.image">Bilder</label>
       <label index="tca_phrase.imagecaption">Unterschriften (eine pro Zeile)</label>
-      <label index="tca_phrase.imageseo"><![CDATA[Bezeichnung (eine pro Zeile)]]></label>
+      <label index="tca_phrase.imageseo"><![CDATA[Bezeichnung für Suchmaschinen (eine pro Zeile)]]></label>
+      <label index="tca_phrase.image.cat">Symbol</label>
       <label index="tca_phrase.keywords"><![CDATA[Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)]]></label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>
@@ -467,7 +469,7 @@
       <label index="tx_org_doccat.div_cat">Kategorie</label>
       <label index="tx_org_doccat.div_color">Farbe</label>
       <label index="tx_org_doccat.div_control">Steuerung</label>
-      <label index="tx_org_doccat.div_media">Medien</label>
+      <label index="tx_org_doccat.div_media">Symbol</label>
       <label index="tx_org_doccat.type">Typ</label>
       <label index="tx_org_doccat.type.cat_color">Farbe</label>
       <label index="tx_org_doccat.type.cat_image">Symbol</label>

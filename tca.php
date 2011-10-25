@@ -262,15 +262,27 @@ switch($confArr['store_records'])
   $conf_file_image = array (
     'type'          => 'group',
     'internal_type' => 'file',
-    'allowed'       => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'], 
-    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'], 
+    'allowed'       => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
     'uploadfolder'  => 'uploads/tx_org',
     'show_thumbs'   => 1,
     'size'          => 3,
     'minitems'      => 0,
     'maxitems'      => 20,
   );
-  
+
+  $conf_file_icon = array (
+    'type'          => 'group',
+    'internal_type' => 'file',
+    'allowed'       => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+    'uploadfolder'  => 'uploads/tx_org',
+    'show_thumbs'   => 1,
+    'size'          => 1,
+    'minitems'      => 0,
+    'maxitems'      => 1,
+  );
+
   $conf_input_30_trim = array (
     'type' => 'input',
     'size' => '30',
@@ -2719,8 +2731,8 @@ $TCA['tx_org_doccat'] = array (
     'image' => array (
       'l10n_mode' => 'exclude',
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
-      'config'    => $conf_file_image,
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat',
+      'config'    => $conf_file_icon,
     ),
     'imageseo' => array (
       'exclude' => $bool_exclude_default,
