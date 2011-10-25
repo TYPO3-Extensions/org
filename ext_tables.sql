@@ -1,6 +1,7 @@
 # INDEX
 # -----
 # fe_users
+# fe_users_mm_tx_org_doc
 # fe_users_mm_tx_org_news
 # fe_groups
 # tx_org_cal
@@ -16,6 +17,9 @@
 # tx_org_department_mm_tx_org_news
 # tx_org_department_mm_fe_users
 # tx_org_departmentcat
+# tx_org_doc
+# tx_org_doc_mm_tx_org_doccat
+# tx_org_doccat
 # tx_org_event
 # tx_org_event_mm_tx_org_cal
 # tx_org_event_mm_tx_org_news
@@ -36,12 +40,28 @@
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
+  tx_org_doc tinytext,
   tx_org_news tinytext,
   tx_org_headquarters tinytext,
   tx_org_department tinytext,
   tx_org_vita mediumtext NOT NULL,
   tx_org_imagecaption text,
   tx_org_imageseo text
+);
+
+
+
+#
+# Table structure for table 'fe_users_mm_tx_org_doc'
+#
+CREATE TABLE fe_users_mm_tx_org_doc (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
 );
 
 
@@ -212,6 +232,103 @@ CREATE TABLE tx_org_cal_mm_tx_org_location (
   sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
+# Table structure for table 'tx_org_doc'
+#
+CREATE TABLE tx_org_doc (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) DEFAULT '0' NOT NULL,
+  tstamp int(11) DEFAULT '0' NOT NULL,
+  crdate int(11) DEFAULT '0' NOT NULL,
+  cruser_id int(11) DEFAULT '0' NOT NULL,
+  sys_language_uid int(11) DEFAULT '0' NOT NULL,
+  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  l10n_diffsource mediumtext,
+  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  type tinytext,
+  title tinytext,
+  subtitle tinytext,
+  datetime int(11) unsigned DEFAULT '0' NOT NULL,
+  bodytext mediumtext NOT NULL,
+  teaser_title tinytext,
+  teaser_subtitle tinytext,
+  teaser_short text,
+  newspage tinytext,
+  newsurl tinytext,
+  fe_user tinytext NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  tx_org_doccat tinytext,
+  starttime int(11) DEFAULT '0' NOT NULL,
+  endtime int(11) DEFAULT '0' NOT NULL,
+  fe_group varchar(100) DEFAULT '0' NOT NULL,
+  image text,
+  imagecaption text,
+  imageseo text,
+  imageheight tinytext,
+  imagewidth tinytext,
+  imageorient tinyint(4) unsigned NOT NULL default '0',
+  imagecaption text,
+  imagecols tinyint(4) unsigned NOT NULL default '0',
+  imageborder tinyint(4) unsigned NOT NULL default '0',
+  imagecaption_position varchar(12) default '',
+  image_link text,
+  image_zoom tinyint(3) unsigned NOT NULL default '0',
+  image_noRows tinyint(3) unsigned NOT NULL default '0',
+  image_effects tinyint(3) unsigned NOT NULL default '0',
+  image_compression tinyint(3) unsigned NOT NULL default '0',
+  image_frames tinyint(3) unsigned NOT NULL default '0',
+  documents_from_path tinytext,
+  documents text,
+  documentscaption tinytext,
+  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  keywords text,
+  description text,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_org_doc_mm_tx_org_doccat'
+#
+CREATE TABLE tx_org_doc_mm_tx_org_doccat (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
+# Table structure for table 'tx_org_doccat'
+#
+CREATE TABLE tx_org_doccat (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) DEFAULT '0' NOT NULL,
+  tstamp int(11) DEFAULT '0' NOT NULL,
+  crdate int(11) DEFAULT '0' NOT NULL,
+  cruser_id int(11) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  title tinytext NOT NULL,
+  title_lang_ol tinytext NOT NULL,
+  image text,
+  imagecaption text,
+  imageseo text,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+
 );
 
 

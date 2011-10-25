@@ -193,6 +193,8 @@ switch(true) {
       // German
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org', 'org', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
+    $TCA['pages']['columns']['module']['config']['items'][] =
+       array('Org: Dokumente', 'org_doc', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/doc.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Kalender', 'org_cal', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
@@ -212,6 +214,8 @@ switch(true) {
        array('Org', 'org', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Calendar', 'org_cal', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
+    $TCA['pages']['columns']['module']['config']['items'][] =
+       array('Org: Documents', 'org_doc', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/doc.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
        array('Org: Event', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
     $TCA['pages']['columns']['module']['config']['items'][] = 
@@ -227,6 +231,7 @@ switch(true) {
 
 $ICON_TYPES['org']       = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
 $ICON_TYPES['org_cal']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
+$ICON_TYPES['org_doc']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/doc.gif');
 $ICON_TYPES['org_event'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
 $ICON_TYPES['org_headq'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
 $ICON_TYPES['org_locat'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
@@ -323,11 +328,11 @@ $TCA['fe_users']['columns']['TSconfig']['exclude']      = 1;
 $TCA['fe_users']['columns']['lockToDomain']['exclude']  = 1;
   // Don't exclude any field by default'
 
-  // Add fields tx_org_news, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
+  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_doc
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita';
+$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_doc';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
-  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita
+  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_doc
 
 $TCA['fe_users']['columns']['www']['config'] = array (
   'type'      => 'input',
@@ -347,7 +352,7 @@ $TCA['fe_users']['columns']['www']['config'] = array (
   ),
   'softref' => 'typolink',
 );
-  // Add fields tx_org_news, tx_org_department, tx_org_vita, tx_org_imagecaption, tx_org_imageseo
+  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_doc
 $TCA['fe_users']['columns']['tx_org_news'] = array (
   'exclude' => 0,
   'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
@@ -535,9 +540,55 @@ $TCA['fe_users']['columns']['tx_org_vita'] = array (
     ),
   ),
 );
-  // Add fields tx_org_news, fe_users, tx_org_vita, tx_org_imagecaption, tx_org_imageseo
+$TCA['fe_users']['columns']['tx_org_doc'] = array (
+  'exclude' => 0,
+  'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
+  'config' => array (
+    'type' => 'select',
+    'size' => 10,
+    'minitems' => 0,
+    'maxitems' => 999,
+    'MM'                  => 'fe_users_mm_tx_org_doc',
+    'foreign_table'       => 'tx_org_doc',
+    'foreign_table_where' => 'AND tx_org_doc.' . $str_store_record_conf . ' AND tx_org_doc.hidden=0 ORDER BY tx_org_doc.datetime DESC, tx_org_doc.title',
+    'wizards' => array(
+      '_PADDING'  => 2,
+      '_VERTICAL' => 0,
+      'add' => array(
+        'type'   => 'script',
+        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.doc.add',
+        'icon'   => 'add.gif',
+        'params' => array(
+          'table'    => 'tx_org_doc',
+          'pid'      => '###CURRENT_PID###',
+          'setValue' => 'prepend'
+        ),
+        'script' => 'wizard_add.php',
+      ),
+      'list' => array(
+        'type'   => 'script',
+        'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.doc.list',
+        'icon'   => 'list.gif',
+        'params' => array(
+          'table' => 'tx_org_doc',
+          'pid'   => '###CURRENT_PID###',
+        ),
+        'script' => 'wizard_list.php',
+      ),
+      'edit' => array(
+        'type'                      => 'popup',
+        'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.doc.edit',
+        'script'                    => 'wizard_edit.php',
+        'popup_onlyOpenIfSelected'  => 1,
+        'icon'                      => 'edit2.gif',
+        'JSopenParams'              => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+      ),
+    ),
+  ),
+);
+  // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_doc
 
-// Insert div [org] at position $int_div_position
+  // Insert div [org] at position $int_div_position
 $str_showitem = $TCA['fe_users']['types']['0']['showitem'];
 $arr_showitem = explode('--div--;', $str_showitem);
 $int_div_position = 2;
@@ -555,10 +606,11 @@ foreach($arr_showitem as $key => $value)
       $arr_new_showitem[$key]     = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_company, tx_org_headquarters,';
       $arr_new_showitem[$key + 1] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_department, tx_org_department,';
       $arr_new_showitem[$key + 2] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_news, tx_org_news,';
-      $arr_new_showitem[$key + 3] = $value;
+      $arr_new_showitem[$key + 3] = 'LLL:EXT:org/locallang_db.xml:fe_users.div_tx_org_doc, tx_org_doc,';
+      $arr_new_showitem[$key + 4] = $value;
       break;
     case($key > $int_div_position):
-      $arr_new_showitem[$key + 3] = $value;
+      $arr_new_showitem[$key + 4] = $value;
       break;
   }
 }
@@ -571,6 +623,8 @@ if($bool_wizards_wo_add_and_list)
   unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['list']);
+  unset($TCA['fe_users']['columns']['tx_org_doc']['config']['wizards']['add']);
+  unset($TCA['fe_users']['columns']['tx_org_doc']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['list']);
 }  
@@ -639,6 +693,8 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
   // headquarters
   // department
   // departmentcat
+  // doc
+  // doccat
 
   // news ////////////////////////////////////////////////////////////////////
 $TCA['tx_org_news'] = array (
@@ -943,6 +999,64 @@ $TCA['tx_org_departmentcat'] = array (
   )
 );
   // departmentcat ////////////////////////////////////////////////////////////////////
+
+  // doc /////////////////////////////////////////////////////////////////////
+$TCA['tx_org_doc'] = array (
+  'ctrl' => array (
+    'title'             => 'LLL:EXT:org/locallang_db.xml:tx_org_doc',
+    'label'             => 'datetime',
+    'label_alt'         => 'title',
+    'label_alt_force'   => true,
+    'tstamp'            => 'tstamp',
+    'crdate'            => 'crdate',
+    'cruser_id'         => 'cruser_id',
+    'languageField'             => 'sys_language_uid',
+    'transOrigPointerField'     => 'l10n_parent',
+    'transOrigDiffSourceField'  => 'l10n_diffsource',
+    'default_sortby'    => 'ORDER BY datetime DESC, title',
+    'delete'            => 'deleted',
+    'enablecolumns'     => array (
+      'disabled'  => 'hidden',
+      'starttime' => 'starttime',
+      'endtime'   => 'endtime',
+      'fe_group'  => 'fe_group',
+    ),
+    'dividers2tabs'     => true,
+    'hideAtCopy'        => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/doc.gif',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'doc_default' => '../typo3conf/ext/org/ext_icon/doc_default.gif',
+      'doc_online'  => '../typo3conf/ext/org/ext_icon/doc_online.gif',
+      'doc_print'   => '../typo3conf/ext/org/ext_icon/doc_print.gif',
+    ),
+  ),
+);
+  // doc /////////////////////////////////////////////////////////////////////
+
+  // doccat /////////////////////////////////////////////////////////////////////
+$TCA['tx_org_doccat'] = array (
+  'ctrl' => array (
+    'title'           => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat',
+    'label'           => 'title',
+    'tstamp'          => 'tstamp',
+    'crdate'          => 'crdate',
+    'default_sortby'  => 'ORDER BY title',
+    'delete'          => 'deleted',
+    'enablecolumns'   => array (
+      'disabled'  => 'hidden',
+    ),
+    'hideAtCopy'        => false,
+    'dividers2tabs'     => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/doccat.gif',
+  )
+);
+  // doccat /////////////////////////////////////////////////////////////////////
 
   // TCA tables //////////////////////////////////////////////////////////////
 
