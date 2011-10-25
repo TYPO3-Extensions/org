@@ -2634,7 +2634,6 @@ $TCA['tx_org_doc'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_image,      image,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_design,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock_dirk,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
