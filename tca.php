@@ -2267,15 +2267,6 @@ $TCA['tx_org_doc'] = array (
       ),
     ),
     'hidden'    => $conf_hidden,
-    'topnews' => array (
-      'exclude' => $bool_exclude_none,
-//      'l10n_mode'   => 'exclude',
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.topnews',
-      'config'  => array (
-        'type'    => 'check',
-        'default' => '0'
-      ),
-    ),
     'starttime' => $conf_starttime,
     'endtime'   => $conf_endtime,
     'fe_group'  => $conf_fegroup,
@@ -2589,7 +2580,7 @@ $TCA['tx_org_doc'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,'.
       ''),
     'doc_download_shipping' => array ('showitem' =>
@@ -2604,7 +2595,7 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,'.
       ''),
     'doc_shipping' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,       type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,'.
@@ -2618,7 +2609,7 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,'.
       ''),
   ),
   'palettes' => array (
