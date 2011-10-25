@@ -2170,7 +2170,7 @@ $TCA['tx_org_doc'] = array (
             '2' => 'EXT:org/ext_icon/doc_print.gif',
           ),
         ),
-        'default' => 'doc_default',
+        'default' => 'doc_download',
       ),
     ),
     'title' => array (

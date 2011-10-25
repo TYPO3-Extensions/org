@@ -1029,9 +1029,9 @@ $TCA['tx_org_doc'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
-      'doc_default' => '../typo3conf/ext/org/ext_icon/doc_default.gif',
-      'doc_online'  => '../typo3conf/ext/org/ext_icon/doc_online.gif',
-      'doc_print'   => '../typo3conf/ext/org/ext_icon/doc_print.gif',
+      'doc_download'           => '../typo3conf/ext/org/ext_icon/doc_download.gif',
+      'doc_download_shipping'  => '../typo3conf/ext/org/ext_icon/doc_download_shipping.gif',
+      'doc_shipping'           => '../typo3conf/ext/org/ext_icon/doc_shipping.gif',
     ),
   ),
 );
