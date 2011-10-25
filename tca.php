@@ -263,7 +263,7 @@ switch($confArr['store_records'])
   $conf_file_one_document['size']     =  1;
   $conf_file_one_document['maxitems'] = 99;
 
-    $conf_file_image = array (
+  $conf_file_image = array (
     'type'          => 'group',
     'internal_type' => 'file',
     'allowed'       => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
@@ -2598,13 +2598,9 @@ $TCA['tx_org_doc'] = array (
     'doc_download' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;file_upload,' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;image_upload,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,       documents,image,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_design,' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
-        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,' .
+        '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock_dirk,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
@@ -2650,10 +2646,6 @@ $TCA['tx_org_doc'] = array (
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
-    'file_upload' => array (
-      'showitem' => 'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, --linebreak--,',
-      'canNotCollapse' => 1,
-    ),
     'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
@@ -2661,6 +2653,10 @@ $TCA['tx_org_doc'] = array (
     'imageblock' => array (
       'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel, imagecols;LLL:EXT:cms/locallang_ttc.xml:imagecols_formlabel, --linebreak--,' .
                     'image_noRows;LLL:EXT:cms/locallang_ttc.xml:image_noRows_formlabel, imagecaption_position;LLL:EXT:cms/locallang_ttc.xml:imagecaption_position_formlabel',
+      'canNotCollapse' => 1,
+    ),
+    'imageblock_dirk' => array (
+      'showitem' => 'imageorient;LLL:EXT:cms/locallang_ttc.xml:imageorient_formlabel' ,
       'canNotCollapse' => 1,
     ),
     'imagefiles' => array (
@@ -2674,10 +2670,6 @@ $TCA['tx_org_doc'] = array (
     'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
-      'canNotCollapse' => 1,
-    ),
-    'image_upload' => array (
-      'showitem' => 'image;LLL:EXT:cms/locallang_ttc.xml:image_formlabel,',
       'canNotCollapse' => 1,
     ),
   ),
