@@ -2712,7 +2712,6 @@ $TCA['tx_org_doccat'] = array (
             'dim'           => '20x20',
             'tableStyle'    => 'border: solid 1px black; margin-left: 20px;',
             'JSopenParams'  => 'height=600,width=380,status=0,menubar=0,scrollbars=1',
-            'exampleImg'    => 'EXT:examples/res/images/japanese_garden.jpg',
           )
         )
       )
