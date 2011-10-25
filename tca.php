@@ -2656,7 +2656,7 @@ $TCA['tx_org_doccat'] = array (
   'interface' => array (
     'showRecordFieldList' =>  'type,title,title_lang_ol,' .
                               'color,' .
-                              'image,imagecaption,imageseo,' .
+                              'image,imageseo,' .
                               'hidden' ,
   ),
   'columns' => array (
@@ -2737,7 +2737,7 @@ $TCA['tx_org_doccat'] = array (
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_color,   color,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
     'cat_image' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
-                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   image;;3;;' .
+                                        '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   image;;3;;,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
   ),
   'palettes' => array (
