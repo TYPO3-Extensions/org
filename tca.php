@@ -2736,7 +2736,7 @@ $TCA['tx_org_doccat'] = array (
     ),
     'imageseo' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline',
       'config'  => $conf_input_30,
     ),
     'hidden'    => $conf_hidden,
