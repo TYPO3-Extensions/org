@@ -325,6 +325,8 @@ CREATE TABLE tx_org_doccat (
   type tinytext NOT NULL,
   title tinytext NOT NULL,
   title_lang_ol tinytext NOT NULL,
+  text tinytext NOT NULL,
+  text_lang_ol tinytext NOT NULL,
   color tinytext NOT NULL,
   image text,
   imageseo text,

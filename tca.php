@@ -2703,9 +2703,9 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_doccat'] = array (
   'ctrl' => $TCA['tx_org_doccat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'type,title,title_lang_ol,' .
+    'showRecordFieldList' =>  'type,title,title_lang_ol,text,text_lang_ol,' .
                               'color,' .
-                              'image,imageseo,' .
+                              'image,imageseo,imageseo_lang_ol,image_width,image_height,image_compression,image_effects,' .
                               'hidden' ,
   ),
   'columns' => array (
@@ -2744,6 +2744,16 @@ $TCA['tx_org_doccat'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.title_lang_ol',
       'config'  => $conf_input_30_trim,
+    ),
+    'text' => array (
+      'exclude' => $bool_exclude_default,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.text',
+      'config'  => $conf_text_30_05,
+    ),
+    'text_lang_ol' => array (
+      'exclude' => $bool_exclude_default,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.text_lang_ol',
+      'config'  => $conf_text_30_05,
     ),
     'color' => array (
       'l10n_mode' => 'exclude',
@@ -2861,14 +2871,14 @@ $TCA['tx_org_doccat'] = array (
   ),
   'types' => array (
     'cat_text'  => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden'),
     'cat_color' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_color,   color,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
     'cat_image' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
@@ -2876,7 +2886,8 @@ $TCA['tx_org_doccat'] = array (
   ),
   'palettes' => array (
     '1'               => array ('showitem' => 'title_lang_ol'),
-    '2'               => array ('showitem' => 'imageseo_lang_ol'),
+    '2'               => array ('showitem' => 'text_lang_ol'),
+    '3'               => array ('showitem' => 'imageseo_lang_ol'),
     'imagefiles'      => array (
       'showitem'        =>  'image;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat, imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline' ,
       'canNotCollapse'  =>  1,
