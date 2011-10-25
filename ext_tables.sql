@@ -320,6 +320,7 @@ CREATE TABLE tx_org_doccat (
   cruser_id int(11) DEFAULT '0' NOT NULL,
   deleted tinyint(4) DEFAULT '0' NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
+  type tinytext NOT NULL,
   title tinytext NOT NULL,
   title_lang_ol tinytext NOT NULL,
   color tinytext NOT NULL,
