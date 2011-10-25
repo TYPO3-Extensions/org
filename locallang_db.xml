@@ -157,6 +157,10 @@
       <label index="tx_org_doccat.div_color">Colour</label>
       <label index="tx_org_doccat.div_control">Controlling</label>
       <label index="tx_org_doccat.div_media">Media</label>
+      <label index="tx_org_doccat.type">Type</label>
+      <label index="tx_org_doccat.type.cat_color">Colour</label>
+      <label index="tx_org_doccat.type.cat_image">Icon</label>
+      <label index="tx_org_doccat.type.cat_text">Text</label>
       <label index="tx_org_doccat.title">Category label</label>
       <label index="tx_org_doccat.title_lang_ol"><![CDATA[Translations (i.e. fr:Traduction|de:Übersetzung)]]></label>
       <label index="tx_org_doccat.note">Note (internal)</label>
@@ -464,6 +468,10 @@
       <label index="tx_org_doccat.div_color">Farbe</label>
       <label index="tx_org_doccat.div_control">Steuerung</label>
       <label index="tx_org_doccat.div_media">Medien</label>
+      <label index="tx_org_doccat.type">Typ</label>
+      <label index="tx_org_doccat.type.cat_color">Farbe</label>
+      <label index="tx_org_doccat.type.cat_image">Symbol</label>
+      <label index="tx_org_doccat.type.cat_text">Text</label>
       <label index="tx_org_doccat.title">Bezeichnung der Dokumenten-Kategorie</label>
       <label index="tx_org_doccat.title_lang_ol"><![CDATA[Übersetzungen (z.B. en:Translation|fr:Traduction)]]></label>
       <label index="tx_org_doccat.note">Bemerkung (intern)</label>
