@@ -2827,25 +2827,6 @@ $TCA['tx_org_doccat'] = array (
         ),
       ),
     ),
-    'image_frames' => array (
-      'exclude'   => $bool_exclude_none,
-      'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:cms/locallang_ttc.xml:image_frames',
-      'config'    => array (
-        'type'  => 'select',
-        'items' => array (
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array ('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8),
-        ),
-      ),
-    ),
     'image_compression' => array (
       'exclude'   => $bool_exclude_none,
       'l10n_mode' => 'exclude',
