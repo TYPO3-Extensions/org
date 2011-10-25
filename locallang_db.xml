@@ -174,6 +174,8 @@
       <label index="tx_org_doccat.type.cat_text">Text</label>
       <label index="tx_org_doccat.title">Category label</label>
       <label index="tx_org_doccat.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
+      <label index="tx_org_doccat.text">Description</label>
+      <label index="tx_org_doccat.text_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tx_org_doccat.note">Note (internal)</label>
       <label index="tx_org_event">Event</label>
       <label index="tx_org_event.div_event">Event</label>
@@ -496,6 +498,8 @@
       <label index="tx_org_doccat.type.cat_text">Text</label>
       <label index="tx_org_doccat.title">Bezeichnung der Dokumenten-Kategorie</label>
       <label index="tx_org_doccat.title_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tx_org_doccat.text">Kurze Beschreibung der Dokumenten-Kategorie</label>
+      <label index="tx_org_doccat.text_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_doccat.note">Bemerkung (intern)</label>
       <label index="tx_org_event">Veranstaltung</label>
       <label index="tx_org_event.div_event">Veranstaltung</label>
