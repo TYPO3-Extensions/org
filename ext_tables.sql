@@ -286,6 +286,8 @@ CREATE TABLE tx_org_doc (
   documentscaption tinytext,
   documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
   documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  statistics_hits tinytext,
+  statistics_downloads tinytext,
   keywords text,
   description text,
 
