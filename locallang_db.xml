@@ -138,6 +138,7 @@
       <label index="tx_org_doc">Document</label>
       <label index="tx_org_doc.div_doc">Document</label>
       <label index="tx_org_doc.div_teaser">Teaser</label>
+      <label index="tx_org_doc.div_image">Thumbnail</label>
       <label index="tx_org_doc.div_file">File</label>
       <label index="tx_org_doc.div_design">Design</label>
       <label index="tx_org_doc.div_feuser">Author</label>
@@ -457,6 +458,7 @@
       <label index="tx_org_doc">Dokumente</label>
       <label index="tx_org_doc.div_doc">Dokument</label>
       <label index="tx_org_doc.div_teaser">Listenansicht</label>
+      <label index="tx_org_doc.div_image">Vorschaubild</label>
       <label index="tx_org_doc.div_file">Datei</label>
       <label index="tx_org_doc.div_design">Design</label>
       <label index="tx_org_doc.div_feuser">Autor</label>
