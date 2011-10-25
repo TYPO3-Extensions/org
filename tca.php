@@ -2870,8 +2870,8 @@ $TCA['tx_org_doccat'] = array (
     'cat_image' => array ( 'showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   ' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
   ),
   'palettes' => array (
