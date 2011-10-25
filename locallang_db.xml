@@ -37,6 +37,8 @@
       <label index="tca_phrase.image">Images</label>
       <label index="tca_phrase.imagecaption">Captions (one per line)</label>
       <label index="tca_phrase.imageseo">Label for Search Engines (one per line)</label>
+      <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
+      <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
       <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.location">Location</label>
@@ -357,6 +359,7 @@
       <label index="tca_phrase.imagecaption">Unterschriften (eine pro Zeile)</label>
       <label index="tca_phrase.imageseo">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen (eine pro Zeile)</label>
       <label index="tca_phrase.imageseo.oneline">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen</label>
+      <label index="tca_phrase.imageseo_lang_ol.oneline"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
       <label index="tca_phrase.keywords">Stichworte f<![CDATA[ü]]>r Suchmaschinen (drei bis f<![CDATA[ü]]>nf, mit Komma trennen)</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>

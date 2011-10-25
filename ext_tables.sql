@@ -328,6 +328,11 @@ CREATE TABLE tx_org_doccat (
   color tinytext NOT NULL,
   image text,
   imageseo text,
+  imageseo_lang_ol text,
+  imageheight tinytext,
+  imagewidth tinytext,
+  image_effects tinyint(3) unsigned NOT NULL default '0',
+  image_compression tinyint(3) unsigned NOT NULL default '0',
 
   PRIMARY KEY (uid),
   KEY parent (pid)
