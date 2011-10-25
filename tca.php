@@ -2731,12 +2731,12 @@ $TCA['tx_org_doccat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    'cat_text'  => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+    'cat_text'  => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden'),
-    'cat_color' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+    'cat_color' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_color,   color,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
-    'cat_image' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     title;;1;;1-1-1,' .
+    'cat_image' => array ('showitem' => '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   image;;3;;,' .
                                         '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
   ),
