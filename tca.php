@@ -2156,17 +2156,17 @@ $TCA['tx_org_doc'] = array (
         'items'   => array (
           'doc_download' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_download',
-            '1' => 'doc_default',
+            '1' => 'doc_download',
             '2' => 'EXT:org/ext_icon/doc_default.gif',
           ),
           'doc_download_shipping' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_download_shipping',
-            '1' => 'doc_online',
+            '1' => 'doc_download_shipping',
             '2' => 'EXT:org/ext_icon/doc_online.gif',
           ),
           'doc_shipping' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_shipping',
-            '1' => 'doc_print',
+            '1' => 'doc_shipping',
             '2' => 'EXT:org/ext_icon/doc_print.gif',
           ),
         ),
