@@ -320,6 +320,7 @@ CREATE TABLE tx_org_doccat (
   tstamp int(11) DEFAULT '0' NOT NULL,
   crdate int(11) DEFAULT '0' NOT NULL,
   cruser_id int(11) DEFAULT '0' NOT NULL,
+  sorting int(10) unsigned DEFAULT '0' NOT NULL,
   deleted tinyint(4) DEFAULT '0' NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   type tinytext NOT NULL,
