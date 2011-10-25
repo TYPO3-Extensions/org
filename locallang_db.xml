@@ -140,7 +140,7 @@
       <label index="tx_org_doc.div_seo">Search Engines</label>
       <label index="tx_org_doc.type">Type</label>
       <label index="tx_org_doc.type.doc_download">Download only</label>
-      <label index="tx_org_doc.type.doc_download_shipping">Download & Shipping</label>
+      <label index="tx_org_doc.type.doc_download_shipping">Download <![CDATA[&]]> Shipping</label>
       <label index="tx_org_doc.type.doc_shipping">Shipping only</label>
       <label index="tx_org_doc.title">Header</label>
       <label index="tx_org_doc.subtitle">Subheader</label>
@@ -446,7 +446,7 @@
       <label index="tx_org_doc.div_seo">Suchmaschinen</label>
       <label index="tx_org_doc.type">Typ</label>
       <label index="tx_org_doc.type.doc_download">Nur Download</label>
-      <label index="tx_org_doc.type.doc_download_shipping">Download & Versand</label>
+      <label index="tx_org_doc.type.doc_download_shipping">Download <![CDATA[&]]> Versand</label>
       <label index="tx_org_doc.type.doc_shipping">Nur Versand</label>
       <label index="tx_org_doc.title"><![CDATA[Überschrift]]></label>
       <label index="tx_org_doc.subtitle">Untertitel / Dachzeile</label>
