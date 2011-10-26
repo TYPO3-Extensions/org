@@ -254,6 +254,7 @@ switch($confArr['store_records'])
     'disallowed'    => 'php,php3', 
     'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'], 
     'uploadfolder'  => 'uploads/tx_org',
+    'show_thumbs'   => 1,
     'size'          => 10,
     'minitems'      => 0,
     'maxitems'      => 99,
