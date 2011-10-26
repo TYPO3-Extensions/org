@@ -430,7 +430,7 @@ switch($confArr['store_records'])
 $TCA['tx_org_cal'] = array (
   'ctrl' => $TCA['tx_org_cal']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_headquarters'.
@@ -455,17 +455,17 @@ $TCA['tx_org_cal'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.uid=###REC_FIELD_l10n_parent### AND tx_org_cal.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_cal.uid=###REC_FIELD_l18n_parent### AND tx_org_cal.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -1429,7 +1429,7 @@ if(!$bool_full_wizardSupport_catTables)
 $TCA['tx_org_department'] = array (
   'ctrl' => $TCA['tx_org_department']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,shortcut,tx_org_departmentcat,tx_org_headquarters,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,title,shortcut,tx_org_departmentcat,tx_org_headquarters,'.
                               'manager,telephone,fax,email,url,'.
                               'fe_users,'.
                               'tx_org_cal,'.
@@ -1455,17 +1455,17 @@ $TCA['tx_org_department'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude'     => 1,
-      'label'       => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label'       => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config'      => array (
         'type'  => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.uid=###REC_FIELD_l10n_parent### AND tx_org_department.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_department.uid=###REC_FIELD_l18n_parent### AND tx_org_department.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -2126,7 +2126,7 @@ $TCA['tx_org_departmentcat'] = array (
 $TCA['tx_org_doc'] = array (
   'ctrl' => $TCA['tx_org_doc']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,' .
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,' .
                               'type,title,subtitle,datetime,tx_org_doccat,bodytext,' .
                               'teaser_title,teaser_subtitle,teaser_short' .
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -2151,17 +2151,17 @@ $TCA['tx_org_doc'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_doc',
-        'foreign_table_where' => 'AND tx_org_doc.uid=###REC_FIELD_l10n_parent### AND tx_org_doc.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_doc.uid=###REC_FIELD_l18n_parent### AND tx_org_doc.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -2613,7 +2613,7 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,' .
       ''),
     'doc_download_shipping' => array ('showitem' =>
@@ -2627,7 +2627,7 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,' .
       ''),
     'doc_shipping' => array ('showitem' =>
@@ -2640,7 +2640,7 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,' .
       ''),
   ),
@@ -2914,7 +2914,7 @@ $bool_exclude_feuser = true;
 $TCA['tx_org_event'] = array (
   'ctrl' => $TCA['tx_org_event']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,subtitle,producer,length,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,title,subtitle,producer,length,bodytext,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
                               'tx_org_cal,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -2939,17 +2939,17 @@ $TCA['tx_org_event'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_event',
-        'foreign_table_where' => 'AND tx_org_event.uid=###REC_FIELD_l10n_parent### AND tx_org_event.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_event.uid=###REC_FIELD_l18n_parent### AND tx_org_event.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -3474,7 +3474,7 @@ $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -3499,17 +3499,17 @@ $TCA['tx_org_headquarters'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.uid=###REC_FIELD_l10n_parent### AND tx_org_headquarters.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_headquarters.uid=###REC_FIELD_l18n_parent### AND tx_org_headquarters.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -4011,7 +4011,7 @@ $TCA['tx_org_location'] = array (
   'ctrl' => $TCA['tx_org_location']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
                               'telephone,ticket_telephone,ticket_url,fax,email,'.
                               'tx_org_cal,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,citymap_url,citymap_embeddedcode,'.
@@ -4036,17 +4036,17 @@ $TCA['tx_org_location'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.uid=###REC_FIELD_l10n_parent### AND tx_org_location.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_location.uid=###REC_FIELD_l18n_parent### AND tx_org_location.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -4568,7 +4568,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l18n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,bodytext,'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_headquarters,'.
@@ -4595,17 +4595,17 @@ $TCA['tx_org_news'] = array (
         ),
       ),
     ),
-    'l10n_parent' => array (
+    'l18n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l10n_parent',
+      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
         'type' => 'select',
         'items' => array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.uid=###REC_FIELD_l10n_parent### AND tx_org_news.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_news.uid=###REC_FIELD_l18n_parent### AND tx_org_news.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -5197,7 +5197,7 @@ $TCA['tx_org_news'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_feuser,     fe_user,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
       ''),
     'newspage' => array ('showitem' =>
@@ -5212,7 +5212,7 @@ $TCA['tx_org_news'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       ''),
     'newsurl' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
@@ -5226,7 +5226,7 @@ $TCA['tx_org_news'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l18n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       ''),
   ),
   'palettes' => array (
