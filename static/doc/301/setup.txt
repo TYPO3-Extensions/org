@@ -1,0 +1,476 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      301: +Org: Documents
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      org {
+        doc {
+          name      = +Org: Documents
+          file      = EXT:org/res/html/doc/301/default.tmpl
+          csvViews  = 301
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      301 = +Org: Documents
+      301 {
+        name    = +Org: Documents
+        showUid = docUid
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          selectBox_orderBy.display = 0
+        }
+        select (
+          tx_org_doc.title,
+          tx_org_doc.subtitle,
+          tx_org_doc.datetime,
+          tx_org_doc.teaser_title,
+          tx_org_doc.teaser_subtitle,
+          tx_org_doc.teaser_short,
+          tx_org_doc.type,
+          tx_org_doc.bodytext,
+          tx_org_doc.image,
+          tx_org_doc.imageseo,
+          tx_org_doc.keywords,
+          tx_org_doc.description
+        )
+        orderBy (
+          tx_org_doc.datetime DESC
+        )
+        csvLinkToSingleView = tx_org_doc.title
+        tx_org_doc {
+          title = COA
+          title {
+              // doc_download, doc_download_shipping, doc_shipping
+            10 = CASE
+            10 {
+              key = ###TX_ORG_DOC.TYPE###
+                // doc_download
+              default = COA
+              default {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc} - linktosingle
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc} - linktosingle
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                  }
+                }
+              }
+              doc_download_shipping = COA
+              doc_download_shipping {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSPAGE###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSPAGE###
+                  }
+                }
+              }
+              doc_shipping = COA
+              doc_shipping {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSURL###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSURL###
+                  }
+                }
+              }
+            }
+          }
+          subtitle = COA
+          subtitle {
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_DOC.TEASER_SUBTITLE###
+              value     = ###TX_ORG_DOC.TEASER_SUBTITLE###
+            }
+            11 = TEXT
+            11 {
+              if.isFalse  = ###TX_ORG_DOC.TEASER_SUBTITLE###
+              value       = ###TX_ORG_DOC.SUBTITLE###
+            }
+          }
+          teaser_short = COA
+          teaser_short {
+            10 = TEXT
+            10 {
+              value       = ###TX_ORG_DOC.DATETIME###
+              strftime    = %d. %b %Y
+              noTrimWrap  = |<span class="datetime">| &ndash;</span> |
+            }
+            11 = TEXT
+            11 {
+              value       = ###TX_ORG_DOC.TEASER_SHORT###
+            }
+            12 = TEXT
+            12 {
+              if {
+                isFalse = ###TX_ORG_DOC.TEASER_SHORT###
+              }
+              value       = ###TX_ORG_DOC.BODYTEXT###
+              crop        = 200 | ... | 1
+              stripHtml = 1
+            }
+              // doc_download, doc_download_shipping, doc_shipping
+            13 = CASE
+            13 {
+              key = ###TX_ORG_DOC.TYPE###
+                // doc_download
+              default = TEXT
+              default {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = {$plugin.org.pages.doc} - linktosingle
+                  additionalParams = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                }
+              }
+              doc_download_shipping = TEXT
+              doc_download_shipping {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = ###TX_ORG_DOC.NEWSPAGE### - linktosingle
+                }
+              }
+              doc_shipping = TEXT
+              doc_shipping {
+                value = more &raquo;
+                lang.de = mehr &raquo;
+                noTrimWrap = | <span class="more">|</span>|
+                typolink {
+                  parameter = ###TX_ORG_DOC.NEWSURL###
+                }
+              }
+            }
+          }
+        }
+        filter {
+          tx_org_doc {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            datetime {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
+                }
+              }
+              wrap = <span class="category_menu">|</span>
+              wrap {
+                item {
+                  //display_without_any_hit = 1
+                  stdWrap {
+                    htmlSpecialChars = 0
+                    crop >
+                  }
+                }
+              }
+              order.field = uid
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = year
+                  monthXYZ {
+                    times_stdWrap {
+                      value = 3
+                    }
+                    value_stdWrap {
+                      // %Y: full year like 2009
+                      strftime = %Y
+                    }
+                  }
+                }
+              }
+            }
+          }
+          tx_org_doccat {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      301 = +Org: Documents
+      301 {
+        displaySingle < plugin.tx_browser_pi1.displaySingle
+        displaySingle {
+          image.file >
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Documents &raquo;
+            lang.de = Alle Dokumente &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.doc}
+              title {
+                value = All Documents
+                lang.de = Alle Dokumente
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Document
+            lang.de = Nachricht
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_doc.title,
+          tx_org_doc.subtitle,
+          tx_org_doc.datetime,
+          tx_org_doc.bodytext,
+
+          tx_org_doc.documents_from_path,
+          tx_org_doc.documents,
+          tx_org_doc.documentslayout,
+          tx_org_doc.documentscaption,
+          tx_org_doc.documentssize,
+
+          tx_org_doc.image,
+          tx_org_doc.imagecaption,
+          tx_org_doc.imageseo,
+          tx_org_doc.imagewidth,
+          tx_org_doc.imageheight,
+          tx_org_doc.imageorient,
+          tx_org_doc.imagecols,
+          tx_org_doc.imageborder,
+          tx_org_doc.image_frames,
+          tx_org_doc.image_link,
+          tx_org_doc.image_zoom,
+          tx_org_doc.image_noRows,
+          tx_org_doc.image_effects,
+          tx_org_doc.image_compression,
+
+          tx_org_doc.keywords,
+          tx_org_doc.description
+        )
+        tx_org_doc {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="doc_documents">|</h2>
+            }
+              // documents
+            20 < tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_doc.documents
+              fields {
+                from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_DOC.DOCUMENTS###
+                caption   = ###TX_ORG_DOC.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_DOC.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_DOC.IMAGEWIDTH###
+                height  = ###TX_ORG_DOC.IMAGEHEIGHT###
+              }
+              altText.field                 >
+              altText                       = ###TX_ORG_DOC.IMAGESEO###
+              titleText.field               >
+              titleText                     = ###TX_ORG_DOC.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_DOC.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_DOC.IMAGE_LINK###
+                enable.field                >
+                enable                      = ###TX_ORG_DOC.IMAGE_ZOOM###
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_DOC.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_DOC.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_DOC.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_DOC.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_DOC.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_DOC.IMAGEBORDER###
+            caption.1.field         >
+            caption.1.value         = ###TX_ORG_DOC.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_DOC.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_DOC.IMAGEORIENT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // title, address
+            text {
+              required  = 1
+                // bodytext
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_DOC.SUBTITLE###
+                wrap      = <h2 class="doc_subtitle">|</h2>
+              }
+              20 = TEXT
+              20 {
+                required  = 1
+                value     = ###TX_ORG_DOC.TITLE###
+                wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
+              }
+              30 = COA
+              30 {
+                stdWrap.parseFunc < lib.parseFunc_RTE
+                10 = TEXT
+                10 {
+                  value       = ###TX_ORG_DOC.DATETIME###
+                  strftime    = %d. %b. %Y
+                  noTrimWrap  = |<span class="datetime">| &ndash;</span> |
+                }
+                20 = TEXT
+                20 {
+                  value = ###TX_ORG_DOC.BODYTEXT###
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_401_titleTag      = TYPO3 Organiser - Documents
+      list_mode_401_keywords      = TYPO3, Organiser, Documents
+      list_mode_401_summary       = TYPO3 Organiser: Documents
+      single_mode_401_titleTag    = TYPO3 Organiser - ###TX_ORG_DOC.TITLE###
+      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_DOC.KEYWORDS###
+      single_mode_401_summary     = TYPO3 Organiser - Documents: ###TX_ORG_DOC.DESCRIPTION###
+    }
+    de {
+      list_mode_401_titleTag      = TYPO3 Organiser - Dokumente
+      list_mode_401_keywords      = TYPO3, Organiser,  Dokumente
+      list_mode_401_summary       = TYPO3 Organiser: Dokumente
+      single_mode_401_titleTag    = TYPO3 Organiser: ###TX_ORG_DOC.TITLE###
+      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_DOC.KEYWORDS###
+      single_mode_401_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_DOC.DESCRIPTION###
+    }
+  }
+}
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

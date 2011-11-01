@@ -1,0 +1,211 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      311: doc - right column
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      org {
+        doc_margin {
+          name      = +Org: Documents - margin
+          file      = EXT:org/res/html/doc/311/default.tmpl
+          csvViews  = 311
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      311 = +Org: Documents (margin)
+      311 {
+        name    = +Org: Documents - margin
+        showUid = docUid
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap = <h3><span>|</span></h3>
+            value = Documents
+            lang.de = Dokumente
+            typolink {
+              parameter = {$plugin.org.pages.doc}
+              title {
+                value = All Documents
+                lang.de = Alle Dokumente
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value   = All Documents &raquo;
+            lang.de = Alle Dokumente &raquo;
+            wrap    = <p>|</p>
+            typolink {
+              parameter = {$plugin.org.pages.doc}
+              title {
+                value = All Documents
+                lang.de = Alle Dokumente
+              }
+            }
+          }
+        }
+        select (
+          tx_org_doc.title,
+          tx_org_doc.teaser_title,
+          tx_org_doc.subtitle,
+          tx_org_doc.teaser_subtitle,
+          tx_org_doc.datetime,
+          tx_org_doc.type,
+          tx_org_doc.newspage,
+          tx_org_doc.newsurl,
+          tx_org_doc.uid
+        )
+        orderBy = tx_org_doc.datetime DESC
+        csvLinkToSingleView = tx_org_doc.title
+        tx_org_doc {
+          title = COA
+          title {
+              // datetime
+            10 = COA
+            10 {
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_DOC.DATETIME###
+                noTrimWrap = || |
+                strftime = %d.%m:
+              }
+            }
+              // doc_download, doc_download_shipping, doc_shipping
+            11 = CASE
+            11 {
+              key = ###TX_ORG_DOC.TYPE###
+                // doc_download
+              default = COA
+              default {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc}
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc}
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                  }
+                }
+              }
+              doc_download_shipping = COA
+              doc_shipping {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSPAGE###
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSPAGE###
+                  }
+                }
+              }
+              doc_shipping = COA
+              doc_shipping {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
+                  value     = ###TX_ORG_DOC.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSURL###
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
+                  value       = ###TX_ORG_DOC.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter = ###TX_ORG_DOC.NEWSURL###
+                  }
+                }
+              }
+            }
+              // subtitle
+            20 = COA
+            20 {
+                // linebreak
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_DOC.TEASER_SUBTITLE######TX_ORG_DOC.SUBTITLE###
+                }
+                value = <br />
+              }
+                // teaser subtitle or ...
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###TX_ORG_DOC.TEASER_SUBTITLE###
+                }
+                value = ###TX_ORG_DOC.TEASER_SUBTITLE###
+              }
+                // ... subtitle
+              22 = TEXT
+              22 {
+                if {
+                  isFalse = ###TX_ORG_DOC.TEASER_SUBTITLE###
+                }
+                value = ###TX_ORG_DOC.SUBTITLE###
+                crop  = 36 | ... | 1
+              }
+            }
+          }
+        }
+      }
+    }
+    single {
+      311 = +Org: Documents (margin)
+      311 {
+        comment = This plugin should not used in the single view!
+        template {
+          file = EXT:org/res/html/doc/311/default.tmpl
+        }
+        select = tx_org_doc.title
+      }
+    }
+  }
+  
+}
+  // plugin.tx_browser_pi1

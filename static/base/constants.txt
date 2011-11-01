@@ -6,34 +6,38 @@ plugin.org {
   pages.calendar_expired =
   # cat=Organiser Pages/page/102; type=+int; label= department:Uid of your department page
   pages.department =
-  # cat=Organiser Pages/page/103; type=+int; label= event:Uid of your event page
+  # cat=Organiser Pages/page/103; type=+int; label= documents:Uid of your document page
+  pages.doc =
+  # cat=Organiser Pages/page/104; type=+int; label= event:Uid of your event page
   pages.event =
-  # cat=Organiser Pages/page/104; type=+int; label= headquarters:Uid of your headquarters page
+  # cat=Organiser Pages/page/105; type=+int; label= headquarters:Uid of your headquarters page
   pages.headquarter =
-  # cat=Organiser Pages/page/105; type=+int; label= locations:Uid of your locations page
+  # cat=Organiser Pages/page/106; type=+int; label= locations:Uid of your locations page
   pages.location =
-  # cat=Organiser Pages/page/106; type=+int; label= news:Uid of your news page
+  # cat=Organiser Pages/page/107; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser Pages/page/107; type=+int; label= staff:Uid of your staff page
+  # cat=Organiser Pages/page/108; type=+int; label= staff:Uid of your staff page
   pages.staff =
-  # cat=Organiser Pages/page/108; type=+int; label= shopping cart:Uid of your shopping cart page
+  # cat=Organiser Pages/page/109; type=+int; label= shopping cart:Uid of your shopping cart page
   pages.shopping_cart =
-  # cat=Organiser Pages/page/109; type=+int; label= terms & conditions:Uid of your page with terms and conditions
+  # cat=Organiser Pages/page/110; type=+int; label= terms & conditions:Uid of your page with terms and conditions
   pages.terms =
 
   # cat=Organiser Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =
   # cat=Organiser Sysfolders/page/102; type=+int; label= department:Uid of the sysfolder with the department data
   sysfolder.department =
-  # cat=Organiser Sysfolders/page/103; type=+int; label= event:Uid of the sysfolder with the event data
+  # cat=Organiser Sysfolders/page/103; type=+int; label= document:Uid of the sysfolder with the document data
+  sysfolder.doc =
+  # cat=Organiser Sysfolders/page/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
-  # cat=Organiser Sysfolders/page/104; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
+  # cat=Organiser Sysfolders/page/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
   sysfolder.headquarter =
-  # cat=Organiser Sysfolders/page/105; type=+int; label= locations:Uid of the sysfolder with the locations data
+  # cat=Organiser Sysfolders/page/106; type=+int; label= locations:Uid of the sysfolder with the locations data
   sysfolder.location =
-  # cat=Organiser Sysfolders/page/106; type=+int; label= news:Uid of the sysfolder with the news data
+  # cat=Organiser Sysfolders/page/107; type=+int; label= news:Uid of the sysfolder with the news data
   sysfolder.news =
-  # cat=Organiser Sysfolders/page/107; type=+int; label= staff:Uid of the sysfolder with the staff data
+  # cat=Organiser Sysfolders/page/108; type=+int; label= staff:Uid of the sysfolder with the staff data
   sysfolder.staff =
 
   # cat=Organiser static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)
