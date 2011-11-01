@@ -2143,6 +2143,7 @@ $TCA['tx_org_doc'] = array (
       'label'   => 'LLL:EXT:lang/locallang_general.php:LGL.language',
       'config'  => array (
         'type'                => 'select',
+        'suppress_icons'      => 1,
         'foreign_table'       => 'sys_language',
         'foreign_table_where' => 'ORDER BY sys_language.title',
         'items' => array (
@@ -2156,11 +2157,12 @@ $TCA['tx_org_doc'] = array (
       'exclude' => 1,
       'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
       'config' => array (
-        'type' => 'select',
+        'type'            => 'select',
+        'suppress_icons'  => 1,
         'items' => array (
           array ('', 0),
         ),
-        'foreign_table' => 'tx_org_doc',
+        'foreign_table'       => 'tx_org_doc',
         'foreign_table_where' => 'AND tx_org_doc.uid=###REC_FIELD_l10n_parent### AND tx_org_doc.sys_language_uid IN (-1,0)',
       ),
     ),
