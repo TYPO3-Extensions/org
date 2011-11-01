@@ -164,6 +164,7 @@ switch($confArr['store_records'])
   $arr_config_feuser = array (
     'type'                => 'select', 
     'size'                => $size_feuser, 
+    'suppress_icons'      => 1,
     'minitems'            => 0,
     'maxitems'            => 999,
     'foreign_table'       => 'fe_users',
@@ -2154,12 +2155,12 @@ $TCA['tx_org_doc'] = array (
     ),
     'l10n_parent' => array (
       'displayCond' => 'FIELD:sys_language_uid:>:0',
-      'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
-      'config' => array (
+      'exclude'     => 1,
+      'label'       => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
+      'config'      => array (
         'type'            => 'select',
         'suppress_icons'  => 1,
-        'items' => array (
+        'items'           => array (
           array ('', 0),
         ),
         'foreign_table'       => 'tx_org_doc',
