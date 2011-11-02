@@ -85,8 +85,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              doc_download_shipping = COA
-              doc_download_shipping {
+              XXX_doc_download_shipping = COA
+              XXX_doc_download_shipping {
                 10 = TEXT
                 10 {
                   if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
@@ -104,8 +104,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              doc_shipping = COA
-              doc_shipping {
+              XXX_doc_shipping = COA
+              XXX_doc_shipping {
                 10 = TEXT
                 10 {
                   if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
@@ -174,8 +174,8 @@ plugin.tx_browser_pi1 {
                   additionalParams = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
                 }
               }
-              doc_download_shipping = TEXT
-              doc_download_shipping {
+              XXX_doc_download_shipping = TEXT
+              XXX_doc_download_shipping {
                 value = more &raquo;
                 lang.de = mehr &raquo;
                 noTrimWrap = | <span class="more">|</span>|
@@ -183,8 +183,8 @@ plugin.tx_browser_pi1 {
                   parameter = ###TX_ORG_DOC.NEWSPAGE### - linktosingle
                 }
               }
-              doc_shipping = TEXT
-              doc_shipping {
+              XXX_doc_shipping = TEXT
+              XXX_doc_shipping {
                 value = more &raquo;
                 lang.de = mehr &raquo;
                 noTrimWrap = | <span class="more">|</span>|
