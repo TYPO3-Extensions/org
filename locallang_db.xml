@@ -14,6 +14,7 @@
       <label index="filter_phrase.caltype.title">All categories</label>
       <label index="filter_phrase.company">Company</label>
       <label index="filter_phrase.department">Department</label>
+      <label index="filter_phrase.doccat">Category</label>
       <label index="filter_phrase.newscat">Category</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
@@ -338,6 +339,7 @@
       <label index="filter_phrase.caltype.title">Alle Kategorien</label>
       <label index="filter_phrase.company">Firma</label>
       <label index="filter_phrase.department">Abteilung</label>
+      <label index="filter_phrase.doccat">Kategorie</label>
       <label index="filter_phrase.newscat">Kategorie</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
