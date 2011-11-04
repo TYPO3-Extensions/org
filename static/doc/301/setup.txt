@@ -312,47 +312,6 @@ plugin.tx_browser_pi1 {
           tx_org_doc.description
         )
         tx_org_doc {
-          documents = COA
-          documents {
-              // title
-            10 = TEXT
-            10 {
-              if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-              value     = Documents
-              lang.de   = Dokumente
-              wrap      = <h2 class="doc_documents">|</h2>
-            }
-              // documents
-            20 < tt_content.uploads.20
-            20 {
-              userFunc = tx_browser_cssstyledcontent->render_uploads
-              filePath >
-              itemRendering {
-                10 {
-                  if {
-                    isPositive.field >
-                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
-                  }
-                }
-                30 {
-                  if {
-                    isTrue.field >
-                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
-                  }
-                }
-              }
-              tableField = tx_org_doc.documents
-              fields {
-                from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-                files     = ###TX_ORG_DOC.DOCUMENTS###
-                caption   = ###TX_ORG_DOC.DOCUMENTSCAPTION###
-                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
-              }
-              stdWrap {
-                if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-              }
-            }
-          }
             // title, address and image
           title < tt_content.image.20
           title {
