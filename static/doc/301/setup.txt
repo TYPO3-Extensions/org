@@ -442,20 +442,9 @@ plugin.tx_browser_pi1 {
                   value = ###TX_ORG_DOC.BODYTEXT###
                 }
               }
-              40 = USER
-              40.userFunc = tx_browser_typoscript->numberFormat
-              40.userFunc {
-                number = TEXT
-                number {
-                  value = ###TX_QUICKSHOP_PRODUCTS.PRICE###
-                }
-                decimal   = 2
-                dec_point = {$quick_shop.dec_point}
-                thousands_sep = {$quick_shop.thousands_sep}
-              }
                 // Link
-              50 = COA
-              50 {
+              40 = COA
+              40 {
                   // title
                 10 = TEXT
                 10 {
