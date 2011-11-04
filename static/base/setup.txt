@@ -176,27 +176,33 @@ plugin.tx_browser_pi1 {
             dataWrap        = &tx_browser_pi1[departmentUid]={GPvar:tx_browser_pi1|departmentUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|departmentUid
           }
-            // eventUid
+            // docUid
           30 = TEXT
           30 {
+            dataWrap        = &tx_browser_pi1[docUid]={GPvar:tx_browser_pi1|docUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|docUid
+          }
+            // eventUid
+          40 = TEXT
+          40 {
             dataWrap        = &tx_browser_pi1[eventUid]={GPvar:tx_browser_pi1|eventUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|eventUid
           }
             // headquarterUid
-          40 = TEXT
-          40 {
+          50 = TEXT
+          50 {
             dataWrap        = &tx_browser_pi1[headquarterUid]={GPvar:tx_browser_pi1|headquarterUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|headquarterUid
           }
             // locationUid
-          50 = TEXT
-          50 {
+          60 = TEXT
+          60 {
             dataWrap        = &tx_browser_pi1[locationUid]={GPvar:tx_browser_pi1|locationUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|locationUid
           }
             // newsUid
-          60 = TEXT
-          60 {
+          70 = TEXT
+          70 {
             dataWrap        = &tx_browser_pi1[newsUid]={GPvar:tx_browser_pi1|newsUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|newsUid
           }
