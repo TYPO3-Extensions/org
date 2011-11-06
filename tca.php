@@ -2530,7 +2530,7 @@ $TCA['tx_org_doc'] = array (
       'canNotCollapse' => 1,
     ),
     'type_documents_download' => array (
-      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download' .
+      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download, --linebreak--,' .
                     'thumbnail_width;LLL:EXT:org/locallang_db.xml:thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
