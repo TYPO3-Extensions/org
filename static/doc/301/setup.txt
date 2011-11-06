@@ -320,19 +320,14 @@ plugin.tx_browser_pi1 {
             10 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               filePath >
-              itemRenderingX {
+              itemRendering {
                 10 {
-                  if {
-                    isPositive.field >
-                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
-                  }
+                  if    >
+                  wrap  >
                 }
-                30 {
-                  if {
-                    isTrue.field >
-                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
-                  }
-                }
+                20 >
+                30 >
+                wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
               }
               linkProc {
                 tx_browser_pi1 = TEXT
@@ -352,7 +347,10 @@ plugin.tx_browser_pi1 {
                 files {
                   override = ###TX_ORG_DOC.IMAGE###
                 }
-                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+                layout    = 2
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_DOC.IMAGE######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
             }
               // subtitle
@@ -393,11 +391,17 @@ plugin.tx_browser_pi1 {
               filePath >
               itemRendering {
                 10 {
-                  wrap >
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+                  }
                 }
-                20 >
-                30 >
-                wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                  }
+                }
               }
               linkProc {
                 tx_browser_pi1 = TEXT
@@ -417,10 +421,10 @@ plugin.tx_browser_pi1 {
                 files {
                   override = ###TX_ORG_DOC.IMAGE###
                 }
-                layout    = 2
+                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
               }
               stdWrap {
-                if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                if.isTrue = ###TX_ORG_DOC.IMAGE######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
             }
           }
