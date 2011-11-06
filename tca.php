@@ -2531,14 +2531,14 @@ $TCA['tx_org_doc'] = array (
     ),
     'type_documents_download' => array (
       'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download, --linebreak--,' .
-                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:thumbnail_height' ,
+                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, --linebreak--,' .
-                    'thumbnail;LLL:EXT:org/locallang_db.xml:thumbnail, --linebreak--,' .
-                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:thumbnail_height' ,
+                    'thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail, --linebreak--,' .
+                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
   ),
