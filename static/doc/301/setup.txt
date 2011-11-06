@@ -47,6 +47,7 @@ plugin.tx_browser_pi1 {
           tx_org_doc.teaser_short,
           tx_org_doc.type,
           tx_org_doc.bodytext,
+          tx_org_doc.documents,
           tx_org_doc.thumbnail,
           tx_org_doc.keywords,
           tx_org_doc.description
@@ -290,12 +291,12 @@ plugin.tx_browser_pi1 {
                 from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_DOC.DOCUMENTS###
                 files {
-                  override = ###TX_ORG_DOC.IMAGE###
+                  override = ###TX_ORG_DOC.THUMBNAIL###
                 }
                 layout    = 2
               }
               stdWrap {
-                if.isTrue = ###TX_ORG_DOC.IMAGE######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                if.isTrue = ###TX_ORG_DOC.THUMBNAIL######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
             }
               // subtitle
@@ -364,12 +365,12 @@ plugin.tx_browser_pi1 {
                 from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_DOC.DOCUMENTS###
                 files {
-                  override = ###TX_ORG_DOC.IMAGE###
+                  override = ###TX_ORG_DOC.THUMBNAIL###
                 }
                 layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
               }
               stdWrap {
-                if.isTrue = ###TX_ORG_DOC.IMAGE######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                if.isTrue = ###TX_ORG_DOC.THUMBNAIL######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
             }
           }
