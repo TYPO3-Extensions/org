@@ -540,7 +540,7 @@
       <label index="tx_org_doccat.type.cat_color">Farbe</label>
       <label index="tx_org_doccat.type.cat_image">Symbol</label>
       <label index="tx_org_doccat.type.cat_text">Text</label>
-      <label index="tx_org_doccat.title">Bezeichnung der Dokumenten-Kategorie</label>
+      <label index="tx_org_doccat.title">Bezeichnung des Datentr<![CDATA[ä]]>gers</label>
       <label index="tx_org_doccat.title_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_doccat.text">Kurze Beschreibung</label>
       <label index="tx_org_doccat.text_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
