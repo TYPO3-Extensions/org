@@ -313,7 +313,7 @@ plugin.tx_browser_pi1 {
         )
         tx_org_doc {
             // thumbnail, subtitle, title, datetime, bodytext, link
-          title < COA
+          title = COA
           title {
               // subtitle
             10 = TEXT
