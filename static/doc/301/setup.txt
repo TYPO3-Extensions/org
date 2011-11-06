@@ -427,12 +427,30 @@ plugin.tx_browser_pi1 {
                     isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
                   }
                 }
+                20 {
+                  1 {
+                    wrap = |
+                    data = register:filename
+                  }
+                  3 = TEXT
+                  3 {
+                    if.isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                    data      = register:fileSize
+                    wrap      = <td class="csc-uploads-fileSize">(|)</td>
+                    bytes     = 1
+                    bytes {
+                      labels = {$styles.content.uploads.filesizeBytesLabels}
+                    }
+                  }
+                }
                 30 {
                   if {
                     isTrue.field >
                     isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
                   }
+                  wrap = <td class="csc-uploads-fileSize">(|)</td>
                 }
+                30 >
               }
               linkProc {
                 iconCObject {
