@@ -42,13 +42,28 @@ plugin.tx_browser_pi1 {
           tx_org_doc.title,
           tx_org_doc.subtitle,
           tx_org_doc.datetime,
+
           tx_org_doc.teaser_title,
           tx_org_doc.teaser_subtitle,
           tx_org_doc.teaser_short,
+
           tx_org_doc.type,
+
           tx_org_doc.bodytext,
+
           tx_org_doc.documents,
+          tx_org_doc.documents_from_path,
+          tx_org_doc.documentslayout,
+          tx_org_doc.documentscaption,
+          tx_org_doc.documentssize,
+
           tx_org_doc.thumbnail,
+          tx_org_doc.thumbnail_width,
+          tx_org_doc.thumbnail_height,
+
+          tx_org_doc.linkicon_width,
+          tx_org_doc.linkicon_height,
+
           tx_org_doc.keywords,
           tx_org_doc.description
         )
