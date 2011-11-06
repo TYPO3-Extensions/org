@@ -250,7 +250,6 @@ plugin.tx_browser_pi1 {
           tx_org_doc.thumbnail_width,
           tx_org_doc.thumbnail_height,
 
-          tx_org_doc.linkicon,
           tx_org_doc.linkicon_width,
           tx_org_doc.linkicon_height,
 
