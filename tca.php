@@ -2526,12 +2526,15 @@ $TCA['tx_org_doc'] = array (
       'canNotCollapse' => 1,
     ),
     'linkicon_size' => array (
-      'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:linkicon_height' ,
+      'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height' ,
+      'canNotCollapse' => 1,
+    ),
+    'thumbnail_size' => array (
+      'showitem' => 'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_download' => array (
-      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download, --linebreak--,' .
-                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
+      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_upload' => array (
