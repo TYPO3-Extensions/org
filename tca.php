@@ -2495,10 +2495,6 @@ $TCA['tx_org_doc'] = array (
   ),
   'palettes' => array (
     '3' => array ('showitem' => 'starttime, endtime'),
-    'type_documents_download' => array (
-      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download',
-      'canNotCollapse' => 1,
-    ),
     'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
@@ -2531,6 +2527,11 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_size' => array (
       'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:linkicon_height' ,
+      'canNotCollapse' => 1,
+    ),
+    'type_documents_download' => array (
+      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download' .
+                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_upload' => array (
