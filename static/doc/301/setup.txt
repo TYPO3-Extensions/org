@@ -312,26 +312,66 @@ plugin.tx_browser_pi1 {
           tx_org_doc.description
         )
         tx_org_doc {
-            // thumbnail, subtitle, title, datetime, bodytext, link
+            // thumbnail, subtitle, title, datetime, bodytext, filelink
           title = COA
           title {
-              // subtitle
-            10 = TEXT
+              // thumbnail
+            10 < tt_content.uploads.20
             10 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              filePath >
+              itemRenderingX {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              linkProc {
+                tx_browser_pi1 = TEXT
+                tx_browser_pi1 {
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc}
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                    useCacheHash      = 1
+                    returnLast        = url
+                  }
+                }
+              }
+              tableField = tx_org_doc.documents
+              fields {
+                from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_DOC.DOCUMENTS###
+                files {
+                  override = ###TX_ORG_DOC.IMAGE###
+                }
+                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+              }
+            }
+              // subtitle
+            20 = TEXT
+            20 {
               required  = 1
               value     = ###TX_ORG_DOC.SUBTITLE###
               wrap      = <h2 class="doc_subtitle">|</h2>
             }
               // title
-            20 = TEXT
-            20 {
+            30 = TEXT
+            30 {
               required  = 1
               value     = ###TX_ORG_DOC.TITLE###
               wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
             }
               // datetime, bodytext
-            30 = COA
-            30 {
+            40 = COA
+            40 {
               stdWrap.parseFunc < lib.parseFunc_RTE
                 // datetime
               10 = TEXT
@@ -346,59 +386,47 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DOC.BODYTEXT###
               }
             }
-              // Link
-            40 = COA
-            40 {
-                // title
-              10 = TEXT
-              10 {
-                if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-                value     = Documents
-                lang.de   = Dokumente
-                wrap      = <h2 class="doc_documents">|</h2>
+              // filelink
+            50 < tt_content.uploads.20
+            50 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                  }
+                }
               }
-                // documents
-              20 < tt_content.uploads.20
-              20 {
-                userFunc = tx_browser_cssstyledcontent->render_uploads
-                filePath >
-                itemRendering {
-                  10 {
-                    if {
-                      isPositive.field >
-                      isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
-                    }
-                  }
-                  30 {
-                    if {
-                      isTrue.field >
-                      isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
-                    }
+              linkProc {
+                tx_browser_pi1 = TEXT
+                tx_browser_pi1 {
+                  typolink {
+                    parameter         = {$plugin.org.pages.doc}
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                    useCacheHash      = 1
+                    returnLast        = url
                   }
                 }
-                linkProc {
-                  tx_browser_pi1 = TEXT
-                  tx_browser_pi1 {
-                    typolink {
-                      parameter         = {$plugin.org.pages.doc}
-                      additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
-                      useCacheHash      = 1
-                      returnLast        = url
-                    }
-                  }
+              }
+              tableField = tx_org_doc.documents
+              fields {
+                from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_DOC.DOCUMENTS###
+                files {
+                  override = ###TX_ORG_DOC.IMAGE###
                 }
-                tableField = tx_org_doc.documents
-                fields {
-                  from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-                  files     = ###TX_ORG_DOC.DOCUMENTS###
-                  files {
-                    override = ###TX_ORG_DOC.IMAGE###
-                  }
-                  layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
-                }
-                stdWrap {
-                  if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
-                }
+                layout    = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
             }
           }
