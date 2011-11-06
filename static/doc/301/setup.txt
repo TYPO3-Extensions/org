@@ -415,7 +415,7 @@ plugin.tx_browser_pi1 {
                   // documents
                 20 < tt_content.uploads.20
                 20 {
-                  userFunc = tx_browser_useruplod->render_uploads
+                  userFunc = tx_browser_userfunc->render_uploads
                   filePath >
                   itemRendering {
                     10 {
