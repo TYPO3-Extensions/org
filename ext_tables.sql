@@ -19,7 +19,9 @@
 # tx_org_departmentcat
 # tx_org_doc
 # tx_org_doc_mm_tx_org_doccat
+# tx_org_doc_mm_tx_org_docmedia
 # tx_org_doccat
+# tx_org_docmedia
 # tx_org_event
 # tx_org_event_mm_tx_org_cal
 # tx_org_event_mm_tx_org_news
@@ -258,6 +260,7 @@ CREATE TABLE tx_org_doc (
   teaser_subtitle tinytext,
   teaser_short text,
   tx_org_doccat tinytext,
+  tx_org_docmedia tinytext,
   pages tinytext,
   documents text,
   documents_from_path tinytext,
@@ -300,9 +303,56 @@ CREATE TABLE tx_org_doc_mm_tx_org_doccat (
 
 
 #
+# Table structure for table 'tx_org_doc_mm_tx_org_docmedia'
+#
+CREATE TABLE tx_org_doc_mm_tx_org_docmedia (
+  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
+#
 # Table structure for table 'tx_org_doccat'
 #
 CREATE TABLE tx_org_doccat (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) DEFAULT '0' NOT NULL,
+  tstamp int(11) DEFAULT '0' NOT NULL,
+  crdate int(11) DEFAULT '0' NOT NULL,
+  cruser_id int(11) DEFAULT '0' NOT NULL,
+  sorting int(10) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  type tinytext NOT NULL,
+  title tinytext NOT NULL,
+  title_lang_ol tinytext NOT NULL,
+  text text,
+  text_lang_ol text,
+  color tinytext NOT NULL,
+  image text,
+  imageseo text,
+  imageseo_lang_ol text,
+  imageheight tinytext,
+  imagewidth tinytext,
+  image_effects tinyint(3) unsigned NOT NULL default '0',
+  image_compression tinyint(3) unsigned NOT NULL default '0',
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+
+);
+
+
+
+#
+# Table structure for table 'tx_org_docmedia'
+#
+CREATE TABLE tx_org_docmedia (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,

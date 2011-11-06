@@ -266,6 +266,24 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+          tx_org_docmedia {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -313,7 +331,10 @@ plugin.tx_browser_pi1 {
           tx_org_doc.linkicon_height,
 
           tx_org_doc.keywords,
-          tx_org_doc.description
+          tx_org_doc.description,
+
+          tx_org_doccat.title,
+          tx_org_docmedia.title
         )
         tx_org_doc {
             // thumbnail, subtitle, title, datetime, bodytext, filelink

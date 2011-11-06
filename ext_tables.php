@@ -699,6 +699,7 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
   // departmentcat
   // doc
   // doccat
+  // docmedia
 
   // news ////////////////////////////////////////////////////////////////////
 $TCA['tx_org_news'] = array (
@@ -1070,6 +1071,34 @@ $TCA['tx_org_doccat'] = array (
   )
 );
   // doccat /////////////////////////////////////////////////////////////////////
+
+  // docmedia /////////////////////////////////////////////////////////////////////
+$TCA['tx_org_docmedia'] = array (
+  'ctrl' => array (
+    'title'           => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia',
+    'label'           => 'title',
+    'tstamp'          => 'tstamp',
+    'crdate'          => 'crdate',
+    'sortby'          => 'sorting',
+    'delete'          => 'deleted',
+    'enablecolumns'   => array (
+      'disabled'  => 'hidden',
+    ),
+    'hideAtCopy'        => false,
+    'dividers2tabs'     => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/docmedia.gif',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'cat_text'  => '../typo3conf/ext/org/ext_icon/cat_text.gif',
+      'cat_color' => '../typo3conf/ext/org/ext_icon/cat_color.gif',
+      'cat_image' => '../typo3conf/ext/org/ext_icon/cat_image.gif',
+    ),
+  )
+);
+  // docmedia /////////////////////////////////////////////////////////////////////
 
   // TCA tables //////////////////////////////////////////////////////////////
 
