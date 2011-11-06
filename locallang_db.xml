@@ -25,7 +25,7 @@
       <label index="palette.appearance">Appearance</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
-      <label index="palette.linkicon">Size in case of a link with a thumbnail</label>
+      <label index="palette.linkicon_size">Size in case of a link with a thumbnail</label>
       <label index="palette.type_documents_download">Document for download</label>
       <label index="tca_phrase.color">Colour</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
