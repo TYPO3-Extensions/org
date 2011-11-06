@@ -2457,8 +2457,8 @@ $TCA['tx_org_doc'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,       ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.type_documents_download;type_documents_download,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.thumbnail_size;thumbnail_size,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_design,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_link,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
@@ -2495,10 +2495,6 @@ $TCA['tx_org_doc'] = array (
   ),
   'palettes' => array (
     '3' => array ('showitem' => 'starttime, endtime'),
-    'documents_appearance' => array (
-      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
-      'canNotCollapse' => 1,
-    ),
     'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
@@ -2523,6 +2519,10 @@ $TCA['tx_org_doc'] = array (
     'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
+      'canNotCollapse' => 1,
+    ),
+    'link' => array (
+      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
     'linkicon_size' => array (
