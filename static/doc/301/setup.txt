@@ -57,6 +57,44 @@ plugin.tx_browser_pi1 {
         )
         csvLinkToSingleView = tx_org_doc.title
         tx_org_doc {
+            // thumbnail
+          thumbnail < tt_content.uploads.20
+          thumbnail {
+            userFunc = tx_browser_cssstyledcontent->render_uploads
+            filePath >
+            itemRendering {
+              10 {
+                if    >
+                wrap  >
+              }
+              20 >
+              30 >
+              wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+            }
+            linkProc {
+              tx_browser_pi1 = TEXT
+              tx_browser_pi1 {
+                typolink {
+                  parameter         = {$plugin.org.pages.doc}
+                  additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                  useCacheHash      = 1
+                  returnLast        = url
+                }
+              }
+            }
+            tableField = tx_org_doc.documents
+            fields {
+              from_path = ###TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+              files     = ###TX_ORG_DOC.DOCUMENTS###
+              files {
+                override = ###TX_ORG_DOC.THUMBNAIL###
+              }
+              layout    = 2
+            }
+            stdWrap {
+              if.isTrue = ###TX_ORG_DOC.THUMBNAIL######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
+            }
+          }
           title = COA
           title {
               // doc_download, doc_download_shipping, doc_shipping
