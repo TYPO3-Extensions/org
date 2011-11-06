@@ -2129,7 +2129,7 @@ $TCA['tx_org_doc'] = array (
   'ctrl' => $TCA['tx_org_doc']['ctrl'],
   'interface' => array (
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,' .
-                              'type,title,subtitle,datetime,tx_org_doccat,bodytext,' .
+                              'type,title,subtitle,datetime,tx_org_doccat,tx_org_docmedia,bodytext,' .
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
