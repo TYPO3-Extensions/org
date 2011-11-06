@@ -47,8 +47,7 @@ plugin.tx_browser_pi1 {
           tx_org_doc.teaser_short,
           tx_org_doc.type,
           tx_org_doc.bodytext,
-          tx_org_doc.image,
-          tx_org_doc.imageseo,
+          tx_org_doc.thumbnail,
           tx_org_doc.keywords,
           tx_org_doc.description
         )
@@ -72,7 +71,8 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_DOC.TEASER_TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.doc} - linktosingle
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###
+                    useCacheHash      = 1
                   }
                 }
                 11 = TEXT
@@ -81,47 +81,16 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_DOC.TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.doc} - linktosingle
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###
+                    useCacheHash      = 1
                   }
                 }
               }
               XXX_doc_download_shipping = COA
               XXX_doc_download_shipping {
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
-                  value     = ###TX_ORG_DOC.TEASER_TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOC.NEWSPAGE###
-                  }
-                }
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
-                  value       = ###TX_ORG_DOC.TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOC.NEWSPAGE###
-                  }
-                }
               }
               XXX_doc_shipping = COA
               XXX_doc_shipping {
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOC.TEASER_TITLE###
-                  value     = ###TX_ORG_DOC.TEASER_TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOC.NEWSURL###
-                  }
-                }
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOC.TEASER_TITLE###
-                  value       = ###TX_ORG_DOC.TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOC.NEWSURL###
-                  }
-                }
               }
             }
           }
@@ -176,21 +145,9 @@ plugin.tx_browser_pi1 {
               }
               XXX_doc_download_shipping = TEXT
               XXX_doc_download_shipping {
-                value = more &raquo;
-                lang.de = mehr &raquo;
-                noTrimWrap = | <span class="more">|</span>|
-                typolink {
-                  parameter = ###TX_ORG_DOC.NEWSPAGE### - linktosingle
-                }
               }
               XXX_doc_shipping = TEXT
               XXX_doc_shipping {
-                value = more &raquo;
-                lang.de = mehr &raquo;
-                noTrimWrap = | <span class="more">|</span>|
-                typolink {
-                  parameter = ###TX_ORG_DOC.NEWSURL###
-                }
               }
             }
           }
@@ -256,10 +213,6 @@ plugin.tx_browser_pi1 {
     single {
       301 = +Org: Documents
       301 {
-        displaySingle < plugin.tx_browser_pi1.displaySingle
-        displaySingle {
-          image.file >
-        }
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_page = TEXT
@@ -287,26 +240,19 @@ plugin.tx_browser_pi1 {
           tx_org_doc.datetime,
           tx_org_doc.bodytext,
 
-          tx_org_doc.documents_from_path,
           tx_org_doc.documents,
+          tx_org_doc.documents_from_path,
           tx_org_doc.documentslayout,
           tx_org_doc.documentscaption,
           tx_org_doc.documentssize,
 
-          tx_org_doc.image,
-          tx_org_doc.imagecaption,
-          tx_org_doc.imageseo,
-          tx_org_doc.imagewidth,
-          tx_org_doc.imageheight,
-          tx_org_doc.imageorient,
-          tx_org_doc.imagecols,
-          tx_org_doc.imageborder,
-          tx_org_doc.image_frames,
-          tx_org_doc.image_link,
-          tx_org_doc.image_zoom,
-          tx_org_doc.image_noRows,
-          tx_org_doc.image_effects,
-          tx_org_doc.image_compression,
+          tx_org_doc.thumbnail,
+          tx_org_doc.thumbnail_width,
+          tx_org_doc.thumbnail_height,
+
+          tx_org_doc.linkicon,
+          tx_org_doc.linkicon_width,
+          tx_org_doc.linkicon_height,
 
           tx_org_doc.keywords,
           tx_org_doc.description
