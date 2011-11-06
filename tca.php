@@ -2461,9 +2461,9 @@ $TCA['tx_org_doc'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_downloads,' .
       ''),
     'doc_download_shipping' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .

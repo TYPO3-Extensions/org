@@ -319,9 +319,23 @@ plugin.tx_browser_pi1 {
             // thumbnail, subtitle, title, datetime, bodytext, filelink
           title = COA
           title {
-              // thumbnail
-            10 < tt_content.uploads.20
+              // subtitle
+            10 = TEXT
             10 {
+              required  = 1
+              value     = ###TX_ORG_DOC.SUBTITLE###
+              wrap      = <h2 class="doc_subtitle">|</h2>
+            }
+              // title
+            20 = TEXT
+            20 {
+              required  = 1
+              value     = ###TX_ORG_DOC.TITLE###
+              wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
+            }
+              // thumbnail
+            30 < tt_content.uploads.20
+            30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               filePath >
               itemRendering {
@@ -362,20 +376,6 @@ plugin.tx_browser_pi1 {
               stdWrap {
                 if.isTrue = ###TX_ORG_DOC.THUMBNAIL######TX_ORG_DOC.DOCUMENTS######TX_ORG_DOC.DOCUMENTS_FROM_PATH###
               }
-            }
-              // subtitle
-            20 = TEXT
-            20 {
-              required  = 1
-              value     = ###TX_ORG_DOC.SUBTITLE###
-              wrap      = <h2 class="doc_subtitle">|</h2>
-            }
-              // title
-            30 = TEXT
-            30 {
-              required  = 1
-              value     = ###TX_ORG_DOC.TITLE###
-              wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
             }
               // datetime, bodytext
             40 = COA
