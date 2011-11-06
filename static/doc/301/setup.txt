@@ -312,7 +312,7 @@ plugin.tx_browser_pi1 {
           tx_org_doc.description
         )
         tx_org_doc {
-            // title, address and image
+            // thumbnail, subtitle, title, datetime, bodytext, link
           title < tt_content.image.20
           title {
             imgList.field >
@@ -367,7 +367,7 @@ plugin.tx_browser_pi1 {
             stdWrap {
               prefixComment >
             }
-              // subtitle, title, datetime, bodytext
+              // subtitle, title, datetime, bodytext, link
             text {
               required  = 1
                 // subtitle
@@ -415,7 +415,7 @@ plugin.tx_browser_pi1 {
                   // documents
                 20 < tt_content.uploads.20
                 20 {
-                  userFunc = tx_browser_cssstyledcontent->render_uploads
+                  userFunc = tx_browser_useruplod->render_uploads
                   filePath >
                   itemRendering {
                     10 {
