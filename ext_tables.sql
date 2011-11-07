@@ -280,6 +280,7 @@ CREATE TABLE tx_org_doc (
   keywords text,
   description text,
   statistics_hits tinytext,
+  statistics_visits tinytext,
   statistics_downloads tinytext,
 
   PRIMARY KEY (uid),

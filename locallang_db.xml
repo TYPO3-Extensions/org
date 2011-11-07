@@ -54,6 +54,7 @@
       <label index="tca_phrase.print">Images (high quality)</label>
       <label index="tca_phrase.statistics_downloads">Downloads</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
+      <label index="tca_phrase.statistics_visits">Visits</label>
       <label index="fe_users">Staff</label>
       <label index="fe_users.div_tx_org_company">Company</label>
       <label index="fe_users.div_tx_org_department">Department</label>
@@ -408,6 +409,7 @@
       <label index="tca_phrase.print">Bilder (in Druckqualit<![CDATA[ä]]>t)</label>
       <label index="tca_phrase.statistics_downloads">Downloads</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
+      <label index="tca_phrase.statistics_visits">Besuche</label>
       <label index="fe_users">Personal</label>
       <label index="fe_users.div_tx_org_company">Firma</label>
       <label index="fe_users.div_tx_org_department">Abteilung</label>
