@@ -28,6 +28,7 @@
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.link">Download link</label>
       <label index="palette.linkicon_size">Size in case of a link with a thumbnail</label>
+      <label index="palette.statistics">Statistics</label>
       <label index="palette.thumbnail_size">Size of the thumbnail</label>
       <label index="palette.type_documents_download">Document for download</label>
       <label index="tca_phrase.color">Colour</label>
@@ -382,6 +383,7 @@
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="palette.link">Download-Link</label>
+      <label index="palette.statistics">Statistik</label>
       <label index="palette.linkicon_size">Gr<![CDATA[öß]]>e im Fall eines Links mit Vorschau-Bild</label>
       <label index="palette.thumbnail_size">Gr<![CDATA[öß]]>e für das Vorschau-Bild</label>
       <label index="palette.type_documents_download">Dokument f<![CDATA[ü]]>r Download</label>

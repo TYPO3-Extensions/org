@@ -2508,18 +2508,19 @@ $TCA['tx_org_doc'] = array (
   ),
   'types' => array (
     'doc_download' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,tx_org_docmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,       ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,tx_org_docmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.type_documents_download;type_documents_download,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.thumbnail_size;thumbnail_size,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_link,' .
-        '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_link,        ' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,     fe_user,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,        keywords;;;;7-7-7, description,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics, statistics_hits,statistics_visits,statistics_downloads,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,      fe_user,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,         keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics,  ' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
     'doc_download_shipping' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
@@ -2562,6 +2563,10 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_size' => array (
       'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height' ,
+      'canNotCollapse' => 1,
+    ),
+    'statistics' => array (
+      'showitem' => 'statistics_hits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_hits,statistics_visits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_visits,statistics_downloads;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_downloads',
       'canNotCollapse' => 1,
     ),
     'thumbnail_size' => array (
