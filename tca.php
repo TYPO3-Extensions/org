@@ -2138,7 +2138,7 @@ $TCA['tx_org_doc'] = array (
                               'fe_user,' .
                               'hidden,pages,starttime,endtime,fe_group,' .
                               'keywords,description,' .
-                              'statistics_hits,statistics_visits,statistics_downloads,' ,
+                              'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,' ,
   ),
   'feInterface' => $TCA['tx_org_doc']['feInterface'],
   'columns' => array (
@@ -2505,6 +2505,14 @@ $TCA['tx_org_doc'] = array (
         'size' => '10',
       ),
     ),
+    'statistics_downloads_by_visits' => array (
+      'exclude' => $bool_exclude_default,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_downloads_by_visits',
+      'config'  => array (
+        'type' => 'none',
+        'size' => '10',
+      ),
+    ),
   ),
   'types' => array (
     'doc_download' => array ('showitem' =>
@@ -2566,7 +2574,7 @@ $TCA['tx_org_doc'] = array (
       'canNotCollapse' => 1,
     ),
     'statistics' => array (
-      'showitem' => 'statistics_hits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_hits,statistics_visits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_visits,statistics_downloads;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_downloads',
+      'showitem' => 'statistics_hits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_hits,statistics_visits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_visits,statistics_downloads;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_downloads,statistics_downloads_by_visits;LLL:EXT:org/locallang_db.xml:tca_phrase.statistics_downloads_by_visits',
       'canNotCollapse' => 1,
     ),
     'thumbnail_size' => array (

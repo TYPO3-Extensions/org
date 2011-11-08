@@ -53,7 +53,8 @@
       <label index="tca_phrase.news">News</label>
       <label index="tca_phrase.pages">Display on pages with configured plugins:</label>
       <label index="tca_phrase.print">Images (high quality)</label>
-      <label index="tca_phrase.statistics_downloads">Downloads (depending on visits)</label>
+      <label index="tca_phrase.statistics_downloads">Downloads</label>
+      <label index="tca_phrase.statistics_downloads_by_visits">Downloads (depending on visits)</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
       <label index="tca_phrase.statistics_visits">Visits</label>
       <label index="fe_users">Staff</label>
@@ -409,8 +410,9 @@
       <label index="tca_phrase.news">Nachrichten</label>
       <label index="tca_phrase.pages">F<![CDATA[ü]]>r entsprechende Plugins: zeige auf Seiten</label>
       <label index="tca_phrase.print">Bilder (in Druckqualit<![CDATA[ä]]>t)</label>
-      <label index="tca_phrase.statistics_downloads">Downloads (in Abh<![CDATA[ä]]>ngigkeit von Besuchen)</label>
-      <label index="tca_phrase.statistics_hits">Hits</label>
+      <label index="tca_phrase.statistics_downloads">Downloads</label>
+      <label index="tca_phrase.statistics_downloads_by_visits">Downloads (in Abh<![CDATA[ä]]>ngigkeit von Besuchen)</label>
+      <label index="tca_phrase.statistics_hits">Aufrufe</label>
       <label index="tca_phrase.statistics_visits">Besuche</label>
       <label index="fe_users">Personal</label>
       <label index="fe_users.div_tx_org_company">Firma</label>

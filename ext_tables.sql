@@ -282,6 +282,7 @@ CREATE TABLE tx_org_doc (
   statistics_hits int(11) DEFAULT '0' NOT NULL,
   statistics_visits int(11) DEFAULT '0' NOT NULL,
   statistics_downloads int(11) DEFAULT '0' NOT NULL,
+  statistics_downloads_by_visits int(11) DEFAULT '0' NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
