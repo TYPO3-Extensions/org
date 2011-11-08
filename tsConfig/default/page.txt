@@ -20,6 +20,12 @@ mod.tx_linkhandler {
       // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
+  tx_org_doc {
+    label       = Org: Documents
+    listTables  = tx_org_doc
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
+    // onlyPids    = 1
+  }
   tx_org_event {
     label       = Org: Event
     listTables  = tx_org_event
@@ -28,7 +34,7 @@ mod.tx_linkhandler {
   }
   tx_org_headquarters {
     label       = Org: Headquarters, Departments
-    listTables  = tx_org_headquarters, tx_org_departments
+    listTables  = tx_org_headquarters, tx_org_department
       // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
@@ -61,6 +67,7 @@ mod.tx_linkhandler {
 
 RTE.default.tx_linkhandler.fe_users             < mod.tx_linkhandler.fe_users
 RTE.default.tx_linkhandler.tx_org_cal           < mod.tx_linkhandler.tx_org_cal
+RTE.default.tx_linkhandler.tx_org_doc           < mod.tx_linkhandler.tx_org_doc
 RTE.default.tx_linkhandler.tx_org_event         < mod.tx_linkhandler.tx_org_event
 RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
 RTE.default.tx_linkhandler.tx_org_location      < mod.tx_linkhandler.tx_org_location
