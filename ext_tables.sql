@@ -279,9 +279,9 @@ CREATE TABLE tx_org_doc (
   fe_group varchar(100) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  statistics_hits tinytext,
-  statistics_visits tinytext,
-  statistics_downloads tinytext,
+  statistics_hits int(11) DEFAULT '0' NOT NULL,
+  statistics_visits int(11) DEFAULT '0' NOT NULL,
+  statistics_downloads int(11) DEFAULT '0' NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
