@@ -95,8 +95,8 @@ plugin.tx_browser_pi1 {
               tx_browser_pi1 = TEXT
               tx_browser_pi1 {
                 typolink {
-                  parameter         = {$plugin.org.pages.doc}
-                  additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                  parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                  additionalParams  = &tx_browser_pi1[table]=tx_org_doc&tx_browser_pi1[uid]=###TX_ORG_DOC.UID###&tx_browser_pi1[file]=###FILENAME###
                   useCacheHash      = 1
                   returnLast        = url
                 }
@@ -379,7 +379,7 @@ plugin.tx_browser_pi1 {
                 tx_browser_pi1 {
                   typolink {
                     parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                    additionalParams  = &tx_browser_pi1[table]=tx_org_doc&tx_browser_pi1[uid]=###TX_ORG_DOC.UID###&tx_browser_pi1[file]=###FILENAME###
                     useCacheHash      = 1
                     returnLast        = url
                   }
@@ -433,7 +433,7 @@ plugin.tx_browser_pi1 {
                     data = register:filename
                     typolink {
                       parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                      additionalParams  = &tx_browser_pi1[table]=tx_org_doc&tx_browser_pi1[uid]=###TX_ORG_DOC.UID###&tx_browser_pi1[file]=###FILENAME###
                       useCacheHash      = 1
                     }
                   }
@@ -448,7 +448,7 @@ plugin.tx_browser_pi1 {
                     }
                     typolink {
                       parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                      additionalParams  = &tx_browser_pi1[table]=tx_org_doc&tx_browser_pi1[uid]=###TX_ORG_DOC.UID###&tx_browser_pi1[file]=###FILENAME###
                       useCacheHash      = 1
                     }
                   }
@@ -466,7 +466,7 @@ plugin.tx_browser_pi1 {
                 tx_browser_pi1 {
                   typolink {
                     parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOC.UID###&tx_browser_pi1[download]=###FILENAME###
+                    additionalParams  = &tx_browser_pi1[table]=tx_org_doc&tx_browser_pi1[uid]=###TX_ORG_DOC.UID###&tx_browser_pi1[file]=###FILENAME###
                     useCacheHash      = 1
                     returnLast        = url
                   }
