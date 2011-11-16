@@ -424,7 +424,7 @@ plugin.tx_browser_pi1 {
                 renderCurrentLanguageOnly = TEXT
                 renderCurrentLanguageOnly {
                     // [Boolean] 1 (default), 0: render each existing language record
-                  value = 1
+                  value = 0
                 }
                   // DRS - Development Reporting System
                 drs = TEXT
