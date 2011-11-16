@@ -468,9 +468,9 @@ plugin.tx_browser_pi1 {
                     tx_org_docmedia.title
                   )
                 }
-
-                conf < tt_content.uploads.20
-                conf {
+                  // Filelink: Should be a modified copy of the parent configuration
+                filelink < tt_content.uploads.20
+                filelink {
                   filePath >
                   itemRendering {
                     10 {
