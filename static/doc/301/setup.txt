@@ -432,6 +432,74 @@ plugin.tx_browser_pi1 {
                     // [STRING] Current table. I.e: tx_org_doc
                   value = tx_org_doc
                 }
+                conf < tt_content.uploads.20
+                conf {
+                  filePath >
+                  itemRendering {
+                    10 {
+                      if {
+                        isPositive.field >
+                        isPositive = ###TABLE.DOCUMENTSLAYOUT###
+                      }
+                    }
+                    20 {
+                      1 {
+                        wrap = |
+                        data = register:filename
+                        typolink {
+                          parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TABLE.UID###.documents.###KEY###
+                          useCacheHash      = 1
+                        }
+                      }
+                      3 = TEXT
+                      3 {
+                        if.isTrue   = ###TABLE.DOCUMENTSSIZE###
+                        data        = register:fileSize
+                        noTrimWrap  = | (|)
+                        bytes       = 1
+                        bytes {
+                          labels = {$styles.content.uploads.filesizeBytesLabels}
+                        }
+                        typolink {
+                          parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TABLE.UID###.documents.###KEY###
+                          useCacheHash      = 1
+                        }
+                      }
+                    }
+                    30 >
+                  }
+                  linkProc {
+                    iconCObject {
+                      file {
+                        width   = ###TABLE.LINKICON_WIDTH###
+                        height  = ###TABLE.LINKICON_HEIGHT###
+                      }
+                    }
+                    tx_browser_pi1 = TEXT
+                    tx_browser_pi1 {
+                      typolink {
+                        parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TABLE.UID###.documents.###KEY###
+                        useCacheHash      = 1
+                        returnLast        = url
+                      }
+                    }
+                  }
+                  tableField = tx_org_doc.documents
+                  fields {
+                    from_path = ###TABLE.DOCUMENTS_FROM_PATH###
+                    files     = ###TABLE.DOCUMENTS###
+                    files {
+                      override = ###TABLE.THUMBNAIL###
+                    }
+                    layout    = ###TABLE.DOCUMENTSLAYOUT###
+                  }
+                  stdWrap {
+                    if.isTrue = ###TABLE.THUMBNAIL######TABLE.DOCUMENTS######TABLE.DOCUMENTS_FROM_PATH###
+                  }
+                }
               }
               filePath >
               itemRendering {
