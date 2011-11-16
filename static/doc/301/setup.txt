@@ -419,6 +419,20 @@ plugin.tx_browser_pi1 {
             50 < tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Should this TypoScript executed for each language record?
+                renderCurrentLanguageOnly = TEXT
+                renderCurrentLanguageOnly {
+                    // [Boolean] 1 (default), 0: render each existing language record
+                  value = 1
+                }
+                  // Current table
+                table = TEXT
+                table {
+                    // [STRING] Current table. I.e: tx_org_doc
+                  value = tx_org_doc
+                }
+              }
               filePath >
               itemRendering {
                 10 {
