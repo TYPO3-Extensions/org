@@ -2359,9 +2359,10 @@ $TCA['tx_org_doc'] = array (
       'config'  => $conf_text_30_05,
     ),
     'documentslayout' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout',
-      'config'  => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout',
+      'config'    => array (
         'type'      => 'select',
         'size'      => 1,
         'maxitems'  => 1,
@@ -2373,12 +2374,13 @@ $TCA['tx_org_doc'] = array (
       ),
     ),
     'documentssize' => array (
-      'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
-      'config' => array (
-        'type' => 'check',
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
+      'config'    => array (
+        'type'  => 'check',
         'items' => array (
-          '1'     => array (
+          '1' => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
