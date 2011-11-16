@@ -263,8 +263,8 @@ switch($confArr['store_records'])
   );
 
   $conf_file_one_document             = $conf_file_document;
-  $conf_file_one_document['size']     =  1;
-  $conf_file_one_document['maxitems'] = 99;
+  $conf_file_one_document['size']     = 1;
+  $conf_file_one_document['maxitems'] = 1;
 
   $conf_file_image = array (
     'type'          => 'group',
@@ -2338,13 +2338,14 @@ $TCA['tx_org_doc'] = array (
       'config'    => $conf_text_50_10,
     ),
     'documents_from_path' => array (
-      'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
-      'config' => array (
-        'type' => 'input',
-        'size' => '50',
-        'max' =>  '80',
-        'eval' => 'trim',
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
+      'config'    => array (
+        'type'  => 'input',
+        'size'  => '50',
+        'max'   =>  '80',
+        'eval'  => 'trim',
       ),
     ),
     'documents' => array (
@@ -2385,14 +2386,12 @@ $TCA['tx_org_doc'] = array (
     ),
     'thumbnail' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail',
       'config'    => $conf_file_one_image,
     ),
     'thumbnail_width' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2404,8 +2403,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'thumbnail_height' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2417,8 +2415,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_width' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2430,8 +2427,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_height' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
