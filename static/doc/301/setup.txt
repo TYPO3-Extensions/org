@@ -438,12 +438,6 @@ plugin.tx_browser_pi1 {
                     // [STRING] Current table. I.e: tx_org_doc
                   value = tx_org_doc
                 }
-                  // Current record
-                record = TEXT
-                record {
-                    // [INTEGER] uid of the current record. I.e: ###TX_ORG_DOC.UID###
-                  value = ###TX_ORG_DOC.UID###
-                }
                   // Needed fields
                 select = TEXT
                 select {
@@ -461,9 +455,15 @@ plugin.tx_browser_pi1 {
                     linkicon_height
                   )
                 }
-                  // Filelink: Should be a modified copy of the parent configuration
-                filelink < tt_content.uploads.20
-                filelink {
+                  // Current record
+                record = TEXT
+                record {
+                    // [INTEGER] uid of the current record. I.e: ###TX_ORG_DOC.UID###
+                  value = ###TX_ORG_DOC.UID###
+                }
+                  // conf: Should be a modified copy of the parent configuration
+                conf < tt_content.uploads.20
+                conf {
                   filePath >
                   itemRendering {
                     10 {
