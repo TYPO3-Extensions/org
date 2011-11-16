@@ -426,6 +426,12 @@ plugin.tx_browser_pi1 {
                     // [Boolean] 1 (default), 0: render each existing language record
                   value = 1
                 }
+                  // DRS - Development Reporting System
+                drs = TEXT
+                drs {
+                    // [Boolean] 0: disabled (default), 1: enabled
+                  value = 1
+                }
                   // Current table
                 table = TEXT
                 table {
