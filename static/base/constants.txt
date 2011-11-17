@@ -22,8 +22,10 @@ plugin.org {
   pages.shopping_cart =
   # cat=Organiser Pages/page/110; type=+int; label= shopping cart (documents):Uid of your shopping cart page for documents
   pages.shopping_cart2 =
-  # cat=Organiser Pages/page/111; type=+int; label= terms & conditions:Uid of your page with terms and conditions
+  # cat=Organiser Pages/page/111; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
+  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (documents):Uid of your page with terms and conditions for ordering documents
+  pages.terms2 =
 
   # cat=Organiser Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =
