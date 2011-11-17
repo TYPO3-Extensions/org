@@ -460,6 +460,7 @@ plugin.tx_browser_pi1 {
                 conf {
                   filePath >
                   itemRendering >
+                  itemRendering = COA
                   itemRendering {
                       // Flag
                     10 = TEXT
@@ -512,6 +513,7 @@ plugin.tx_browser_pi1 {
                         useCacheHash      = 1
                       }
                     }
+                    wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
                   }
                   linkProc {
                     iconCObject {
