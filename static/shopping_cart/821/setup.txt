@@ -28,15 +28,15 @@ plugin.tx_wtcart_pi1 {
   }
   db {
     sql (
-      SELECT CONCAT(
-              '<strong>', tx_org_doc.title, '</strong><br />',
-              '###GP:TX_ORG_DOC.TEST###<br />',
-              'Karte 0,00 &euro;') as title,
+      SELECT  CONCAT(
+                '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TABLE.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TABLE.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
+                ' ',
+                '<strong>', tx_org_doc.title, '</strong>'
+              ) as title,
               '0,00' as price,
               '0,00' as tax
       FROM `tx_org_doc`
-      WHERE tx_org_doc.uid                = '###GP:TX_ORG_DOC.UID###'
-        ###ENABLE_FIELDS:TX_ORG_DOC###
+      WHERE tx_org_doc.uid = CAST( '###GP:TX_ORG_DOC.UID###' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOC###
 )
   }
   

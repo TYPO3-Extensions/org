@@ -495,9 +495,11 @@ plugin.tx_browser_pi1 {
                         wrap (
             <fieldset id="add-to-cart">
               <legend>|</legend>
-              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart2}" />
-              <input type="hidden"  name="tx_org_doc[uid]"         value="###TX_ORG_DOC.UID###" />
-              <input type="hidden"  name="tx_org_doc[test]"        value="Dirks Test" />
+              <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart2}" />
+              <input type="hidden"  name="tx_org_doc[uid]"        value="###TABLE.UID###" />
+              <input type="hidden"  name="tx_org_doc[documents]"  value="###TABLE.DOCUMENTS###" />
+              <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
+              <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
 )
                       }
                     }
