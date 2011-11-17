@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      101: Staff
+  //      101: +Org: Staff
 
 
 
@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      101 = Staff
+      101 = +Org: Staff
       101 {
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
@@ -93,7 +93,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      101 = Staff
+      101 = +Org: Staff
       101 {
         displaySingle < plugin.tx_browser_pi1.displaySingle
         displaySingle {

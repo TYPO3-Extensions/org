@@ -32,7 +32,7 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      211 = calendar (margin)
+      211 = +Org: Calendar (margin)
       211 {
         name    = calendar - margin
         showUid = calendarUid
@@ -152,7 +152,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      211 = calendar (margin)
+      211 = +Org: Calendar (margin)
       211 {
         comment = This plugin should not used in the single view!
         template {

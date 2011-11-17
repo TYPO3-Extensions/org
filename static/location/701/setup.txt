@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      701 = Locations
+      701 = +Org: Locations
       701 {
         name    = Veranstaltungsorte
         showUid = locationUid
@@ -64,7 +64,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      701 = Locations
+      701 = +Org: Locations
       701 {
         advanced < plugin.tx_browser_pi1.advanced
         advanced.sql.devider.childrenRecords >

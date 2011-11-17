@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
   
   views {
     list {
-      111 = Staff (margin)
+      111 = +Org: Staff (margin)
       111 {
         name    = staff - margin (don't cache!)
         showUid = staffUid
@@ -86,7 +86,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      111 = Staff (margin)
+      111 = +Org: Staff (margin)
       111 {
         comment = This plugin should not used in the single view!
         template < plugin.tx_browser_pi1.template

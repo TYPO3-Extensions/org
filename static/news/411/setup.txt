@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      411 = News (margin)
+      411 = +Org: News (margin)
       411 {
         name    = news - margin
         showUid = newsUid
@@ -197,7 +197,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      411 = News (margin)
+      411 = +Org: News (margin)
       411 {
         comment = This plugin should not used in the single view!
         template {
