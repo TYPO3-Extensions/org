@@ -1,0 +1,149 @@
+
+  // 821: shopping cart main template for tx_org_doc
+
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_wtcart_pi1
+  // plugin.tx_powermail_pi1
+  // page
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_wtcart_pi1
+
+plugin.tx_wtcart_pi1 {
+  
+  main {
+    template = EXT:org/res/html/shopping_cart/821/default.tmpl
+  }
+  
+  powermailContent {
+    uid = {$plugin.org.tx_wtcart_pi1.powermailContentUid2}
+  }
+  db {
+    sql (
+      SELECT CONCAT(
+              '<strong>', tx_org_doc.title, '</strong><br />',
+              '###GP:TX_ORG_CAL.DATETIME###<br />', 
+              'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') as title,
+              '0,00' as price,
+              '0,00' as tax
+      FROM `tx_org_doc`
+      WHERE tx_org_doc.uid                = '###GP:TX_ORG_DOC.UID###'
+        ###ENABLE_FIELDS:TX_ORG_DOC###
+)
+  }
+  
+  settings {
+    overall {
+      cart_gross >
+      cart_gross = COA
+      cart_gross {
+        wrap = |&nbsp;{$plugin.wtcart.main.currencySymbol}
+        10 = USER
+        10.userFunc = user_wtcart_userfuncs->user_wtcart_numberFormat
+        10.userFunc {
+          number = TEXT
+          number.field = cart_gross
+          decimal = 2
+          dec_point = {$plugin.wtcart.main.dec_point}
+          thousands_sep = {$plugin.wtcart.main.thousands_sep}
+        }
+      }
+    }
+  }
+
+  _LOCAL_LANG {
+    default {
+      wtcart_ll_title = Have a ticket reserved
+      wtcart_ll_price = Price
+      wtcart_ll_empty (
+          If you like to have a ticket reserved, please select an event
+          <a title="Have a seat reserved!" href="{$plugin.org.url.default.calendar}">
+            in the playing schedule</a>.<br />
+          Informationen about having a ticket reserved are part of our 
+          <a title="Informationen about booking" href="{$plugin.org.url.default.terms}">
+            terms and conditions</a>.
+)
+    }
+    de {
+      wtcart_ll_title = Kartenreservierung
+      wtcart_ll_price = Preis
+      wtcart_ll_empty (
+          Wenn Sie eine Karte reservieren m&ouml;chten, wählen Sie ein St&uuml;ck
+          <a title="Platz reservieren!" href="{$plugin.org.url.de.documents}">
+            im Spielplan</a>
+          aus. Dort können Sie Karten online reservieren.<br />
+          <br />
+          Allgemeine Informationen zum Reservieren finden Sie in unseren
+          <a title="Informationen zum Karten reservieren" href="{$plugin.org.url.de.terms2}">
+            AGB</a>.
+)
+    }
+  }
+}
+  // plugin.tx_wtcart_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_powermail_pi1
+
+plugin.tx_powermail_pi1 {
+  email {
+    noreply = {$plugin.org.powermail.noreply}
+    sender_mail {
+      sender {
+        name {
+          value = {$plugin.org.powermail.sender.name}
+        }
+        email {
+          value = {$plugin.org.powermail.sender.mail}
+        }
+      }
+    }
+  }
+  _LOCAL_LANG {
+    default {
+      locallangmarker_confirmation_submit = Have tickets reserved
+    }
+    de {
+      locallangmarker_confirmation_submit = Karten verbindlich reservieren
+    }
+  }
+}
+  // plugin.tx_powermail_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // page
+
+page {
+  includeCSS {
+    // remove the cart default css
+    file3456     >
+    // add the quick shop default css
+    cartCSS = EXT:org/res/html/shopping_cart/801/default.css
+  }
+}
+  // page
+
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment
