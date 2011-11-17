@@ -310,77 +310,6 @@ plugin.tx_browser_pi1 {
             lang.de = Nachricht
             wrap    = <div class="header01">|</div>
           }
-            // form > fieldset > select
-          my_form_begin = COA
-          my_form_begin {
-              // 10: date isn't expired
-            XXX_if {
-              value.data = date : U
-              isGreaterThan = ###TX_ORG_CAL.DATETIME###
-            }
-              // form
-            10 = TEXT
-            10 {
-              wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
-              //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="get">
-              typolink {
-                parameter = {$plugin.org.pages.shopping_cart}
-                returnLast = url
-              }
-            }
-              // fieldset > input
-            20 = TEXT
-            20 {
-              value = Order a ticket
-              lang {
-                de = Ticket bestellen
-              }
-
-              wrap (
-            <fieldset id="add-to-cart">
-              <legend>|</legend>
-              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart}" />
-              <input type="hidden"  name="tx_org_cal[uid]"         value="###TX_ORG_DOC.UID###" />
-)
-            }
-              // input > select
-            30 = TEXT
-            30 {
-              value = ###TX_ORG_CAL.DATETIME###
-              strftime = %A, %d. %B %Y, %H:%M Uhr
-              wrap (
-              <input type="hidden"  name="tx_org_cal[datetime]"    value="|" />
-              <select               name="tx_org_calentrance[uid]" id="tx_browser_pi1_tx_org_calentrance_uid" size="1">
-)
-            }
-            30 >
-          }
-            // /select > /fieldset > /form
-          my_form_end = TEXT
-          my_form_end {
-              // 10: date isn't expired
-            XXX_if {
-              value.data = date : U
-              isGreaterThan = ###TX_ORG_CAL.DATETIME###
-            }
-            value = Into the cart
-            lang {
-              de = Karte reservieren
-            }
-            XXX_wrap (
-            </select>
-            <input type="text"   name="quantity" class="quantity" value="1" />
-            <input type="submit" name="submit"                    value="|" />
-          </fieldset>
-        </form>
-)
-            wrap (
-            <input type="text"   name="quantity" class="quantity" value="1" />
-            <input type="submit" name="submit"                    value="|" />
-          </fieldset>
-        </form>
-)
-          }
         }
         select (
           tx_org_doc.title,
@@ -486,9 +415,6 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DOC.BODYTEXT###
               }
             }
-          }
-          documents = COA
-          documents {
               // filelink
             50 < tt_content.uploads.20
             50 {
@@ -536,7 +462,41 @@ plugin.tx_browser_pi1 {
                   itemRendering >
                   itemRendering = COA
                   itemRendering {
-                      // Flag
+                      // form > fieldset > select
+                    10 = COA
+                    10 {
+                        // 10: date isn't expired
+                      XXX_if {
+                        value.data = date : U
+                        isGreaterThan = ###TX_ORG_CAL.DATETIME###
+                      }
+                        // form
+                      10 = TEXT
+                      10 {
+                        wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
+                        //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="get">
+                        typolink {
+                          parameter = {$plugin.org.pages.shopping_cart}
+                          returnLast = url
+                        }
+                      }
+                        // fieldset > input
+                      20 = TEXT
+                      20 {
+                        value = Ordering
+                        lang {
+                          de = Bestellen
+                        }
+
+                        wrap (
+            <fieldset id="add-to-cart">
+              <legend>|</legend>
+              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart}" />
+              <input type="hidden"  name="tx_org_doc[uid]"         value="###TABLE.UID###" />
+)
+                      }
+                    }
+                     // Flag
                     20 = TEXT
                     20 {
                       value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
@@ -603,6 +563,26 @@ plugin.tx_browser_pi1 {
                       wrap = <td class="csc-uploads-download-icon">|</td>
                     }
                     wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
+
+                      // /fieldset > /form
+                    my_form_end = TEXT
+                    my_form_end {
+                        // 10: date isn't expired
+                      XXX_if {
+                        value.data = date : U
+                        isGreaterThan = ###TX_ORG_CAL.DATETIME###
+                      }
+                      value = Ordering
+                      lang {
+                        de = Bestellen
+                      }
+                      wrap (
+                      <input type="text"   name="quantity" class="quantity" value="1" />
+                      <input type="submit" name="submit"                    value="|" />
+                    </fieldset>
+                  </form>
+)
+                    }
                   }
                   linkProc {
                     iconCObject {
