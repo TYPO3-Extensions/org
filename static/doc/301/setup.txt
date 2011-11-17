@@ -443,6 +443,7 @@ plugin.tx_browser_pi1 {
                 select {
                     // [String] select fields of the local table only! Fields are needed with localisation only
                   value (
+                    uid,
                     documents,
                     thumbnail,
                     linkicon_width,
