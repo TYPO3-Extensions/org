@@ -486,7 +486,7 @@ plugin.tx_browser_pi1 {
                       1 {
                         wrap = |
                         data = register:filename
-                        typolink {
+                        typolinkXX {
                           parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
                           title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -497,14 +497,21 @@ plugin.tx_browser_pi1 {
                         wrap >
                         noTrimWrap = | ||
                       }
-                    }
-                    50 < tt_content.uploads.20.itemRendering.30
-                    50 {
-                      if >
-                      if.isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
-                      wrap      = <td class="csc-uploads-fileSize">(|)</td>
-                      bytes {
-                        labels = {$styles.content.uploads.filesizeBytesLabels}
+                      3 < tt_content.uploads.20.itemRendering.30
+                      3 {
+                        if >
+                        if.isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                        wrap >
+                        noTrimWrap = | (|)|
+                        bytes {
+                          labels = {$styles.content.uploads.filesizeBytesLabels}
+                        }
+                        typolinkXX {
+                          parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
+                          title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                          useCacheHash      = 1
+                        }
                       }
                       typolink {
                         parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
