@@ -502,7 +502,7 @@ plugin.tx_browser_pi1 {
                       5 = IMAGE
                       5 {
                         file      = typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif
-                        file      = typo3/gfx/flags/de.gif
+                        file.import      = typo3/gfx/flags/de.gif
                         altText   = ###SYS_LANGUAGE.TITLE###
                         titleText = ###SYS_LANGUAGE.TITLE###
                         imageLinkWrap = 1
