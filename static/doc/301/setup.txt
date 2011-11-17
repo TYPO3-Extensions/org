@@ -497,7 +497,7 @@ plugin.tx_browser_pi1 {
                       }
                       4 = TEXT
                       4 {
-                        value = <img src="typo3/gfx/flags/de.gif" alt="German" title="German"/>
+                        value = <img src="typo3/gfx/flags/###FLAG###.gif" alt="German" title="German"/>
                       }
                     }
                     30 >
