@@ -464,7 +464,7 @@ plugin.tx_browser_pi1 {
                   itemRendering {
                     10 = IMAGE
                     10 {
-                      file = EXT:org/ext_icon/doc_download.gif
+                      file = EXT:org/res/download_blue_white.gif
                       imageLinkWrap = 1
                       imageLinkWrap {
                         enable = 1
