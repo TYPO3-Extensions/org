@@ -458,6 +458,8 @@ plugin.tx_browser_pi1 {
                   // conf: Should be a modified copy of the parent configuration
                 conf < tt_content.uploads.20
                 conf {
+                    // Don't outerWrap with <table> by default
+                  outerWrap = |
                   filePath >
                   itemRendering >
                   itemRendering = COA
@@ -565,7 +567,8 @@ plugin.tx_browser_pi1 {
                         }
                         wrap = <td class="csc-uploads-download-icon">|</td>
                       }
-                      wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
+                      //wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
+                      wrap = <table class="csc-uploads"><tr>|</tr></table>
                     }
                       // /fieldset > /form
                     30 = TEXT
