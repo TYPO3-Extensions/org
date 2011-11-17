@@ -31,8 +31,7 @@ plugin.tx_wtcart_pi1 {
       SELECT  CONCAT(
                 '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TX_ORG_DOC.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TX_ORG_DOC.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
                 ' ',
-                '<strong>', tx_org_doc.title, '</strong>'
-              ) AS title,
+                '<strong>', tx_org_doc.title, '</strong>') AS title,
               '0,00' as price,
               '0,00' as tax
       FROM `tx_org_doc`
