@@ -459,52 +459,59 @@ plugin.tx_browser_pi1 {
                 conf < tt_content.uploads.20
                 conf {
                   filePath >
+                  itemRendering >
                   itemRendering {
+                      // Flag
+                    10 = TEXT
                     10 {
+                      value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
+                      typolink {
+                        parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
+                        title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        useCacheHash      = 1
+                      }
+                      wrap = <td class="csc-uploads-flag">|</td>
+                    }
+                    20 < tt_content.uploads.20.itemRendering.10
+                    20 {
                       if {
                         isPositive.field >
                         isPositive = ###TX_ORG_DOC.DOCUMENTSLAYOUT###
                       }
                     }
-                    20 {
+                    30 < tt_content.uploads.20.itemRendering.20
+                    30 {
                       1 {
                         wrap = |
                         data = register:filename
                         typolink {
                           parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
-                          title             = ###TABLE.DOCUMENTS###
+                          title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                           useCacheHash      = 1
                         }
                       }
-                      3 = TEXT
-                      3 {
-                        if.isTrue   = ###TX_ORG_DOC.DOCUMENTSSIZE###
-                        data        = register:fileSize
-                        noTrimWrap  = | (|)
-                        bytes       = 1
-                        bytes {
-                          labels = {$styles.content.uploads.filesizeBytesLabels}
-                        }
-                        typolink {
-                          parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
-                          title             = ###TABLE.DOCUMENTS###
-                          useCacheHash      = 1
-                        }
-                      }
-                      4 = TEXT
-                      4 {
-                        value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###SYS_LANGUAGE.TITLE###" title="###SYS_LANGUAGE.TITLE###"/>
-                        typolink {
-                          parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
-                          title             = ###TABLE.DOCUMENTS###
-                          useCacheHash      = 1
-                        }
+                      2 {
+                        wrap >
+                        noTrimWrap = | ||
                       }
                     }
-                    30 >
+                    40 < tt_content.uploads.20.itemRendering.30
+                    40 {
+                      if >
+                      if.isTrue = ###TX_ORG_DOC.DOCUMENTSSIZE###
+                      wrap      = <td class="csc-uploads-fileSize"> (|)</td>
+                      bytes {
+                        labels = {$styles.content.uploads.filesizeBytesLabels}
+                      }
+                      typolink {
+                        parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
+                        title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        useCacheHash      = 1
+                      }
+                    }
                   }
                   linkProc {
                     iconCObject {
