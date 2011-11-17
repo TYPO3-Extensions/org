@@ -31,7 +31,7 @@ plugin.tx_wtcart_pi1 {
       SELECT CONCAT(
               '<strong>', tx_org_doc.title, '</strong><br />',
               '###GP:TX_ORG_CAL.DATETIME###<br />', 
-              'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') as title,
+              'Karte 0,00 &euro;') as title,
               '0,00' as price,
               '0,00' as tax
       FROM `tx_org_doc`
