@@ -493,7 +493,7 @@ plugin.tx_browser_pi1 {
                         wrap (
             <fieldset id="add-to-cart">
               <legend>|</legend>
-              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart}" />
+              <input type="hidden"  name="id"                      value="{$plugin.org.pages.shopping_cart2}" />
               <input type="hidden"  name="tx_org_doc[uid]"         value="###TX_ORG_DOC.UID###" />
 )
                       }
