@@ -561,7 +561,7 @@ plugin.tx_browser_pi1 {
                         // Download button
                       60 = COA
                       60 {
-                        noTrimWrap = |<td class="csc-uploads-download-icon"><button type="button" |</button></td>|
+                        wrap = <td class="csc-uploads-download-icon"><button type="button"|</button></td>
                           // onclick="location='http://...'">
                         10 = COA
                         10 {
@@ -582,6 +582,7 @@ plugin.tx_browser_pi1 {
                             append {
                               value = '">
                             }
+                            noTrimWrap = | ||
                           }
                             // <img src="typo3conf/.../download.gif">
                           20 = IMAGE
