@@ -61,29 +61,40 @@ plugin.tx_wtcart_pi1 {
 
   _LOCAL_LANG {
     default {
-      wtcart_ll_title = Have a ticket reserved
+      wtcart_ll_title = Ordered document
       wtcart_ll_price = Price
       wtcart_ll_empty (
-          If you like to have a ticket reserved, please select an event
-          <a title="Have a seat reserved!" href="{$plugin.org.url.default.calendar}">
-            in the playing schedule</a>.<br />
-          Informationen about having a ticket reserved are part of our 
-          <a title="Informationen about booking" href="{$plugin.org.url.default.terms}">
-            terms and conditions</a>.
+          If you like to order a document, please visit the page
+          <a title="Documents" href="{$plugin.org.url.default.documents}">
+            Documents &raquo;</a>.<br />
+          If you are interested in our terms and conditions, please visit the page
+          <a title="Informationen about booking" href="{$plugin.org.url.default.terms2}">
+            terms and conditions &raquo;</a>.
 )
     }
     de {
-      wtcart_ll_title = Kartenreservierung
+      wtcart_ll_title = Bestelltes Dokument
       wtcart_ll_price = Preis
       wtcart_ll_empty (
-          Wenn Sie eine Karte reservieren m&ouml;chten, wählen Sie ein St&uuml;ck
-          <a title="Platz reservieren!" href="{$plugin.org.url.de.documents}">
-            im Spielplan</a>
-          aus. Dort können Sie Karten online reservieren.<br />
+          Wenn Du ein Dokument bestellen m&ouml;chtest,
+          w&auml;hle das Dokument oder den Datenträger
+          auf der Seite
+          <ul>
+            <li>
+              <a title="Dokumente" href="{$plugin.org.url.de.documents}">
+                Dokumente &raquo;</a>
+            </li>
+          </ul>
+          aus.<br />
           <br />
-          Allgemeine Informationen zum Reservieren finden Sie in unseren
-          <a title="Informationen zum Karten reservieren" href="{$plugin.org.url.de.terms2}">
-            AGB</a>.
+          Es gibt keine allgemeinen Geschäftsbedingungen.
+          Wenn Du dazu mehr wissen möchtest, klicke auf
+          <ul>
+            <li>
+              <a title="Allgemeinen Geschäftsbedingungen" href="{$plugin.org.url.de.terms2}">
+                AGB &raquo;</a>.
+            </li>
+          </ul>
 )
     }
   }
@@ -112,10 +123,10 @@ plugin.tx_powermail_pi1 {
   }
   _LOCAL_LANG {
     default {
-      locallangmarker_confirmation_submit = Have tickets reserved
+      locallangmarker_confirmation_submit = Send the order
     }
     de {
-      locallangmarker_confirmation_submit = Karten verbindlich reservieren
+      locallangmarker_confirmation_submit = Bestellung absenden
     }
   }
 }
@@ -132,7 +143,7 @@ page {
     // remove the cart default css
     file3456     >
     // add the quick shop default css
-    cartCSS = EXT:org/res/html/shopping_cart/801/default.css
+    cartCSS = EXT:org/res/html/shopping_cart/821/default.css
   }
 }
   // page

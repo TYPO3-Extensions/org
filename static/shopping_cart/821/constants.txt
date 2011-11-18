@@ -1,0 +1,8 @@
+plugin.wtcart {
+  gpvar {
+    puid = tx_org_doc|uid
+  }
+  db {
+    table = tx_org_doc
+  }
+}
