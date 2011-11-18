@@ -61,7 +61,7 @@ plugin.tx_wtcart_pi1 {
 
   _LOCAL_LANG {
     default {
-      wtcart_ll_title = Ordered document
+      wtcart_ll_title = Document
       wtcart_ll_price = Price
       wtcart_ll_empty (
           If you like to order a document, please visit the page
@@ -73,7 +73,7 @@ plugin.tx_wtcart_pi1 {
 )
     }
     de {
-      wtcart_ll_title = Bestelltes Dokument
+      wtcart_ll_title = Dokument
       wtcart_ll_price = Preis
       wtcart_ll_empty (
           Wenn Du ein Dokument bestellen m&ouml;chtest,
