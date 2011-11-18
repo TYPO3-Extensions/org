@@ -558,8 +558,47 @@ plugin.tx_browser_pi1 {
                           useCacheHash      = 1
                         }
                       }
-                      60 = IMAGE
+                        // Download button
+                      60 = COA
                       60 {
+                        noTrimWrap = |<td class="csc-uploads-download-icon"><button type="button" |</button></td>|
+                          // onclick="location='http://...'">
+                        10 = COA
+                        10 {
+                          10 = TEXT
+                          10 {
+                            prepend = TEXT
+                            prepend {
+                              value = onclick="location='
+                            }
+                            typolink {
+                              parameter         = {$plugin.org.pages.doc},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_doc.###TX_ORG_DOC.UID###.documents.###KEY###
+                              title             = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              useCacheHash      = 1
+                              returnLast        = url
+                            }
+                            append = TEXT
+                            append {
+                              value = '">
+                            }
+                          }
+                            // <img src="typo3conf/.../download.gif">
+                          20 = IMAGE
+                          20 {
+                            file = EXT:org/res/download_blue_white.gif
+                          }
+                          30 = TEXT
+                          30 {
+                            value   = Download
+                            lang.de = Herunterladen
+                          }
+                        }
+//    <button type="button" onclick="location='http://google.de'">
+//      <img src="button-Dateien/selfhtml.gif" alt="SELFHTML Logo"> Was passiert wohl?</button>
+                      }
+                      61 = IMAGE
+                      61 {
                         file = EXT:org/res/download_blue_white.gif
                         imageLinkWrap = 1
                         imageLinkWrap {
