@@ -477,6 +477,42 @@ plugin.tx_browser_pi1 {
                       // Download link and ordering form
                     10 = COA
                     10 {
+                        // Ordering form beginn
+                      9 = COA
+                      9 {
+                            // <form name="form_add_to_cart" ... method="post">
+                          20 = TEXT
+                          20 {
+                            wrap (
+            <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
+  )
+                            //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="get">
+                            typolink {
+                              parameter     = {$plugin.org.pages.shopping_cart_downloads}
+                              returnLast    = url
+                              useCacheHash  = 1
+                            }
+                          }
+                            // <fieldset><legend>...</legend><input ... /><input ... /><input ... />
+                          30 = TEXT
+                          30 {
+                            value = Ordering
+                            lang {
+                              de = Bestellen
+                            }
+
+                            wrap (
+              <fieldset id="add-to-cart">
+                <legend>|</legend>
+                <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart_downloads}" />
+                <input type="hidden"  name="tx_org_downloads[uid]"        value="###TABLE.UID###" />
+                <input type="hidden"  name="tx_org_downloads[documents]"  value="###TABLE.DOCUMENTS###" />
+                <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
+                <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
+                <input type="text"    name="quantity"               value="1" class="quantity" />
+  )
+                          }
+                      }
                         // Download link
                       10 = COA
                       10 {
@@ -675,38 +711,6 @@ plugin.tx_browser_pi1 {
                               value       = <td class="csc-uploads-form" colspan="2">
                             }
                           }
-                            // <form name="form_add_to_cart" ... method="post">
-                          20 = TEXT
-                          20 {
-                            wrap (
-            <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
-  )
-                            //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="get">
-                            typolink {
-                              parameter     = {$plugin.org.pages.shopping_cart_downloads}
-                              returnLast    = url
-                              useCacheHash  = 1
-                            }
-                          }
-                            // <fieldset><legend>...</legend><input ... /><input ... /><input ... />
-                          30 = TEXT
-                          30 {
-                            value = Ordering
-                            lang {
-                              de = Bestellen
-                            }
-
-                            wrap (
-              <fieldset id="add-to-cart">
-                <legend>|</legend>
-                <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart_downloads}" />
-                <input type="hidden"  name="tx_org_downloads[uid]"        value="###TABLE.UID###" />
-                <input type="hidden"  name="tx_org_downloads[documents]"  value="###TABLE.DOCUMENTS###" />
-                <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
-                <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
-                <input type="text"    name="quantity"               value="1" class="quantity" />
-  )
-                          }
                             // Cart icon
                           40 = IMAGE
                           40 {
@@ -738,6 +742,16 @@ plugin.tx_browser_pi1 {
                   <input type="submit" name="submit"                    value="|" />
     )
                           }
+                            // </td>
+                          70 = TEXT
+                          70 {
+                            value = </td>
+                          }
+                        }
+                      }
+                        // Form end
+                      30 = COA
+                      30 {
                             // </fieldset></form>
                           60 = TEXT
                           60 {
@@ -746,12 +760,6 @@ plugin.tx_browser_pi1 {
               </form>
     )
                           }
-                            // </td>
-                          60 = TEXT
-                          60 {
-                            value = </td>
-                          }
-                        }
                       }
                     }
                   }
