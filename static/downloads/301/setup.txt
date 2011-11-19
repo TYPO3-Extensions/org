@@ -464,10 +464,10 @@ plugin.tx_browser_pi1 {
                 conf < tt_content.uploads.20
                 conf =
                 conf {
-                  stdWrap.wrap = <table class="csc-uploads">|</table>
+                  //stdWrap.wrap = <table class="csc-uploads">|</table>
                   userFunc >
                     // Don't outerWrap with <table> by default
-                  outerWrap = |
+                  //outerWrap = |
                   filePath >
                   itemRendering >
                     // Download link and ordering form
