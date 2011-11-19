@@ -419,9 +419,10 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DOWNLOADS.BODYTEXT###
               }
             }
-              // filelink
+              // File link and order form
             50 < tt_content.uploads.20
             50 {
+              stdWrap.wrap = <table class="csc-uploads">|</table>
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
                   // Should this TypoScript executed for each language record?
@@ -466,7 +467,7 @@ plugin.tx_browser_pi1 {
                 conf {
                   userFunc >
                     // Don't outerWrap with <table> by default
-                  //outerWrap = <table class="csc-uploads">|</table>
+                  outerWrap = |
                   filePath >
                   itemRendering >
                     // Download link and ordering form
@@ -659,8 +660,8 @@ plugin.tx_browser_pi1 {
                             isGreaterThan = ###TX_ORG_CAL.DATETIME###
                           }
                             // <td class="csc-uploads-form" colspan="X">
-                          9 = COA
-                          9 {
+                          10 = COA
+                          10 {
                               // if tx_ord_downloads.documentsize is true
                             10 = TEXT
                             10 {
@@ -675,8 +676,8 @@ plugin.tx_browser_pi1 {
                             }
                           }
                             // <form name="form_add_to_cart" ... method="post">
-                          10 = TEXT
-                          10 {
+                          20 = TEXT
+                          20 {
                             wrap (
             <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
   )
@@ -688,8 +689,8 @@ plugin.tx_browser_pi1 {
                             }
                           }
                             // <fieldset><legend>...</legend><input ... /><input ... /><input ... />
-                          20 = TEXT
-                          20 {
+                          30 = TEXT
+                          30 {
                             value = Ordering
                             lang {
                               de = Bestellen
@@ -707,8 +708,8 @@ plugin.tx_browser_pi1 {
   )
                           }
                             // Cart icon
-                          30 = IMAGE
-                          30 {
+                          40 = IMAGE
+                          40 {
                             //wrap = <td class="csc-uploads-icon">|</td>
                             file = EXT:org/res/cart.gif
                             imageLinkWrap = 1
@@ -727,8 +728,8 @@ plugin.tx_browser_pi1 {
                             }
                           }
                             // <input type="submit" value="..." />
-                          40 = TEXT
-                          40 {
+                          50 = TEXT
+                          50 {
                             value = Ordering
                             lang {
                               de = Bestellen
@@ -738,8 +739,8 @@ plugin.tx_browser_pi1 {
     )
                           }
                             // </fieldset></form>
-                          50 = TEXT
-                          50 {
+                          60 = TEXT
+                          60 {
                             wrap (
                 </fieldset>
               </form>
