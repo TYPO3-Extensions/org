@@ -120,6 +120,9 @@
   text-align: right;
   width: 3em;
 }
+.tx-browser-pi1 form.tx_org_downloads-order table td {
+  padding-right: .2em;
+}
 
 
 .tx-browser-pi1 tx_powermail_pi1_formconfirmation_submit {
