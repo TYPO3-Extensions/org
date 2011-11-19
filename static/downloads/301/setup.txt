@@ -492,9 +492,9 @@ plugin.tx_browser_pi1 {
                         // <fieldset><legend>X</legend><input ... /><input ... /><input ... />
                       20 = TEXT
                       20 {
-                        value = Ordering
+                        value = Donwload or Ordering
                         lang {
-                          de = Bestellen
+                          de = Herunterladen oder Bestellen
                         }
                         wrap (
             <fieldset id="add-to-cart">
