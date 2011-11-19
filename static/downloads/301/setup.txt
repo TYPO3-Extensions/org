@@ -608,22 +608,6 @@ plugin.tx_browser_pi1 {
                       20 = COA
                       20 {
                         wrap = <tr class="tr-last">|</tr>
-                          // <td class="csc-uploads-form" colspan="X">
-                        9 = COA
-                        9 {
-                            // if tx_ord_downloads.documentsize is true
-                          10 = TEXT
-                          10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value     = <td class="csc-uploads-form" colspan="3">
-                          }
-                            // if tx_ord_downloads.documentsize is false
-                          20 = TEXT
-                          20 {
-                            if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value       = <td class="csc-uploads-form" colspan="2">
-                          }
-                        }
                           // Flag
                         10 = TEXT
                         10 {
@@ -674,6 +658,22 @@ plugin.tx_browser_pi1 {
                             value.data = date : U
                             isGreaterThan = ###TX_ORG_CAL.DATETIME###
                           }
+                            // <td class="csc-uploads-form" colspan="X">
+                          9 = COA
+                          9 {
+                              // if tx_ord_downloads.documentsize is true
+                            10 = TEXT
+                            10 {
+                              if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              value     = <td class="csc-uploads-form" colspan="3">
+                            }
+                              // if tx_ord_downloads.documentsize is false
+                            20 = TEXT
+                            20 {
+                              if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              value       = <td class="csc-uploads-form" colspan="2">
+                            }
+                          }
                             // <form name="form_add_to_cart" ... method="post">
                           10 = TEXT
                           10 {
@@ -706,50 +706,50 @@ plugin.tx_browser_pi1 {
                 <input type="text"    name="quantity"               value="1" class="quantity" />
   )
                           }
-                        }
-                          // Cart icon
-                        30 = IMAGE
-                        30 {
-                          //wrap = <td class="csc-uploads-icon">|</td>
-                          file = EXT:org/res/cart.gif
-                          imageLinkWrap = 1
-                          imageLinkWrap {
-                            enable = 1
-                            typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title = TEXT
-                              title {
-                                value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                                lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                            // Cart icon
+                          30 = IMAGE
+                          30 {
+                            //wrap = <td class="csc-uploads-icon">|</td>
+                            file = EXT:org/res/cart.gif
+                            imageLinkWrap = 1
+                            imageLinkWrap {
+                              enable = 1
+                              typolink {
+                                parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                                additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                                title = TEXT
+                                title {
+                                  value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                                  lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                                }
+                                useCacheHash      = 1
                               }
-                              useCacheHash      = 1
                             }
                           }
-                        }
-                          // <input type="submit" value="..." />
-                        40 = TEXT
-                        40 {
-                          value = Ordering
-                          lang {
-                            de = Bestellen
+                            // <input type="submit" value="..." />
+                          40 = TEXT
+                          40 {
+                            value = Ordering
+                            lang {
+                              de = Bestellen
+                            }
+                            wrap (
+                  <input type="submit" name="submit"                    value="|" />
+    )
                           }
-                          wrap (
-                <input type="submit" name="submit"                    value="|" />
-  )
-                        }
-                          // </fieldset></form>
-                        50 = TEXT
-                        50 {
-                          wrap (
-              </fieldset>
-            </form>
-  )
-                        }
-                          // </td>
-                        60 = TEXT
-                        60 {
-                          value = </td>
+                            // </fieldset></form>
+                          50 = TEXT
+                          50 {
+                            wrap (
+                </fieldset>
+              </form>
+    )
+                          }
+                            // </td>
+                          60 = TEXT
+                          60 {
+                            value = </td>
+                          }
                         }
                       }
                     }
