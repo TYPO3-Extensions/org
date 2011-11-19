@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      701: Locations
+  //      701: +Org: Locations
 
 
 
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         locations {
-          name      = Org: Veranstaltungsorte
+          name      = Org: Locations
           file      = EXT:org/res/html/location/701/default.tmpl
           csvViews  = 701
         }

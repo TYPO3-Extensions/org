@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         headquarters {
-          name      = +Org: Headquarters
+          name      = Org: Headquarters
           file      = EXT:org/res/html/headquarters/501/default.tmpl
           csvViews  = 501
         }

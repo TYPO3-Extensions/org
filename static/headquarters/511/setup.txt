@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      511: headquarters - right column
+  //      511: +Org: headquarters - right column
 
 
 
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         headquarters_margin {
-          name      = Org: headquarters - margin
+          name      = Org: Headquarters - margin
           file      = EXT:org/res/html/headquarters/511/default.tmpl
           csvViews  = 511
         }
@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      511 = headquarters (margin)
+      511 = +Org: Headquarters (margin)
       511 {
         name    = headquarters - margin
         showUid = headquartersUid
@@ -126,7 +126,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      511 = headquarters (margin)
+      511 = +Org: Headquarters (margin)
       511 {
         comment = This plugin should not used in the single view!
         template < plugin.tx_browser_pi1.template

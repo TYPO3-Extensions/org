@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         news {
-          name      = +Org: News
+          name      = Org: News
           file      = EXT:org/res/html/news/401/default.tmpl
           csvViews  = 401
         }

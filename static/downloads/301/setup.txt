@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         doc {
-          name      = +Org: Downloads
+          name      = Org: Downloads
           file      = EXT:org/res/html/downloads/301/default.tmpl
           csvViews  = 301
         }

@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         department_margin {
-          name      = Org: departments - margin
+          name      = +Org: Department - margin
           file      = EXT:org/res/html/department/611/default.tmpl
           csvViews  = 611
         }
@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
     list {
       611 = Department (margin)
       611 {
-        name    = departments - margin
+        name    = +Org Department - margin
         showUid = departmentUid
         autoconfig < plugin.tx_browser_pi1.autoconfig
         autoconfig {
@@ -150,7 +150,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      611 = department (margin)
+      611 = +Org: Department (margin)
       611 {
         comment = This plugin should not used in the single view!
         template < plugin.tx_browser_pi1.template

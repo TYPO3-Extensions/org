@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      211: calendar - right column
+  //      211: +Org Calendar - right column
 
 
 

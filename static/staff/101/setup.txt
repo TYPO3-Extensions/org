@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         staff {
-          name      = Org: Personen
+          name      = Org: Staff
           file      = EXT:org/res/html/staff/101/default.tmpl
           csvViews  = 101
         }

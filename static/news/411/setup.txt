@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      411: news - right column
+  //      411: +Org: News - right column
 
 
 
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         news_margin {
-          name      = Org: news - margin
+          name      = Org: News - margin
           file      = EXT:org/res/html/news/411/default.tmpl
           csvViews  = 411
         }

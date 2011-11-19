@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         department {
-          name      = +Org: Department
+          name      = Org: Department
           file      = EXT:org/res/html/department/601/default.tmpl
           csvViews  = 601
         }

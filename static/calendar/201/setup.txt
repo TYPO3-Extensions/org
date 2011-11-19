@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         calendar {
-          name      = +Org: Calendar
+          name      = Org: Calendar
           file      = EXT:org/res/html/calendar/201/default.tmpl
           csvViews  = 201
         }

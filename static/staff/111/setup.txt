@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      111: staff - margin / random (no cache)
+  //      111: +Org: Staff - margin / random (no cache)
 
 
 
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
       tt_news >
       org {
         staff_margin {
-          name      = Org: staff - margin
+          name      = Org: Staff - margin
           file      = EXT:org/res/html/staff/111/default.tmpl
           csvViews  = 111
         }
