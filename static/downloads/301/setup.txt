@@ -572,7 +572,7 @@ plugin.tx_browser_pi1 {
                         10 {
                           10 = IMAGE
                           10 {
-                            file = EXT:org/res/download_blue_white.gif
+                            file = EXT:org/res/download.gif
                             imageLinkWrap = 1
                             imageLinkWrap {
                               enable = 1
