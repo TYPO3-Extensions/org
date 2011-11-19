@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
       311 = +Org: Downloads (margin)
       311 {
         name    = +Org: Downloads - margin
-        showUid = docUid
+        showUid = downloadsUid
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
@@ -102,7 +102,7 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
                   }
                 }
                   // ... title
@@ -113,7 +113,7 @@ plugin.tx_browser_pi1 {
                   crop        = 24 | ... | 1
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
                   }
                 }
               }
