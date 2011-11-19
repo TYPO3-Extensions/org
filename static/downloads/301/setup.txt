@@ -509,7 +509,6 @@ plugin.tx_browser_pi1 {
                 <input type="hidden"  name="tx_org_downloads[documents]"  value="###TABLE.DOCUMENTS###" />
                 <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
                 <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
-                <input type="text"    name="quantity"               value="1" class="quantity" />
                 <table class="csc-uploads csc-uploads-0">
   )
                           }
@@ -711,6 +710,11 @@ plugin.tx_browser_pi1 {
                               if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
                               value       = <td class="csc-uploads-form" colspan="2">
                             }
+                          }
+                            // Input quantity
+                          30 = TEXT
+                          30 {
+                            value = <input type="text"    name="quantity"               value="1" class="quantity" />
                           }
                             // Cart icon
                           40 = IMAGE
