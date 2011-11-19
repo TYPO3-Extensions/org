@@ -14,9 +14,9 @@
 mod.tx_linkhandler {
     // extension tt_news isn't installed
   tt_news >
-  tx_org_doc {
-    label       = Org: Dokumente
-    listTables  = tx_org_doc
+  tx_org_downloads {
+    label       = Org: Downloads
+    listTables  = tx_org_downloads
       // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
   }
@@ -67,7 +67,7 @@ mod.tx_linkhandler {
 
 RTE.default.tx_linkhandler.fe_users             < mod.tx_linkhandler.fe_users
 RTE.default.tx_linkhandler.tx_org_cal           < mod.tx_linkhandler.tx_org_cal
-RTE.default.tx_linkhandler.tx_org_doc           < mod.tx_linkhandler.tx_org_doc
+RTE.default.tx_linkhandler.tx_org_downloads           < mod.tx_linkhandler.tx_org_downloads
 RTE.default.tx_linkhandler.tx_org_event         < mod.tx_linkhandler.tx_org_event
 RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
 RTE.default.tx_linkhandler.tx_org_location      < mod.tx_linkhandler.tx_org_location

@@ -1,5 +1,5 @@
 
-  // 821: shopping cart main template for tx_org_doc
+  // 821: shopping cart main template for tx_org_downloads
 
 
 
@@ -24,19 +24,19 @@ plugin.tx_wtcart_pi1 {
   }
   
   powermailContent {
-    uid = {$plugin.org.tx_wtcart_pi1.powermailContentUid2}
+    uid = {$plugin.org.tx_wtcart_pi1.powermailContentUid_downloads}
   }
   db {
     sql (
-      SELECT  CAST( '###GP:TX_ORG_DOC.UID###' AS SIGNED) AS puid,
+      SELECT  CAST( '###GP:TX_ORG_DOWNLOADS.UID###' AS SIGNED) AS puid,
               CONCAT(
-                '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TX_ORG_DOC.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TX_ORG_DOC.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
+                '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
                 ' ',
-                '<strong>', tx_org_doc.title, '</strong>') AS title,
+                '<strong>', tx_org_downloads.title, '</strong>') AS title,
               '0,00' as price,
               '0,00' as tax
-      FROM `tx_org_doc`
-      WHERE tx_org_doc.uid = CAST( '###GP:TX_ORG_DOC.UID###' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOC###
+      FROM `tx_org_downloads`
+      WHERE tx_org_downloads.uid = CAST( '###GP:TX_ORG_DOWNLOADS.UID###' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
 )
   }
   
@@ -65,10 +65,10 @@ plugin.tx_wtcart_pi1 {
       wtcart_ll_price = Price
       wtcart_ll_empty (
           If you like to order a document, please visit the page
-          <a title="Documents" href="{$plugin.org.url.default.documents}">
-            Documents &raquo;</a>.<br />
+          <a title="Downloads" href="{$plugin.org.url.default.downloads}">
+            Downloads &raquo;</a>.<br />
           If you are interested in our terms and conditions, please visit the page
-          <a title="Informationen about booking" href="{$plugin.org.url.default.terms2}">
+          <a title="Informationen about booking" href="{$plugin.org.url.default.terms_downloads}">
             terms and conditions &raquo;</a>.
 )
     }
@@ -81,8 +81,8 @@ plugin.tx_wtcart_pi1 {
           auf der Seite
           <ul>
             <li>
-              <a title="Dokumente" href="{$plugin.org.url.de.documents}">
-                Dokumente &raquo;</a>
+              <a title="Downloads" href="{$plugin.org.url.de.downloads}">
+                Downloads &raquo;</a>
             </li>
           </ul>
           aus.<br />
@@ -91,7 +91,7 @@ plugin.tx_wtcart_pi1 {
           Wenn Du dazu mehr wissen möchtest, klicke auf
           <ul>
             <li>
-              <a title="Allgemeinen Geschäftsbedingungen" href="{$plugin.org.url.de.terms2}">
+              <a title="Allgemeinen Geschäftsbedingungen" href="{$plugin.org.url.de.terms_downloads}">
                 AGB &raquo;</a>.
             </li>
           </ul>

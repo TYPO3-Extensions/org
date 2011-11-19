@@ -6,8 +6,8 @@ plugin.org {
   pages.calendar_expired =
   # cat=Organiser Pages/page/102; type=+int; label= department:Uid of your department page
   pages.department =
-  # cat=Organiser Pages/page/103; type=+int; label= documents:Uid of your document page
-  pages.doc =
+  # cat=Organiser Pages/page/103; type=+int; label= downloads:Uid of your downloads page
+  pages.downloads =
   # cat=Organiser Pages/page/104; type=+int; label= event:Uid of your event page
   pages.event =
   # cat=Organiser Pages/page/105; type=+int; label= headquarters:Uid of your headquarters page
@@ -20,12 +20,12 @@ plugin.org {
   pages.staff =
   # cat=Organiser Pages/page/109; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
   pages.shopping_cart =
-  # cat=Organiser Pages/page/110; type=+int; label= shopping cart (documents):Uid of your shopping cart page for documents
-  pages.shopping_cart2 =
+  # cat=Organiser Pages/page/110; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
+  pages.shopping_cart_downloads =
   # cat=Organiser Pages/page/111; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
-  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (documents):Uid of your page with terms and conditions for ordering documents
-  pages.terms2 =
+  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
+  pages.terms_downloads =
 
   # cat=Organiser Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =
@@ -46,25 +46,25 @@ plugin.org {
 
   # cat=Organiser static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)
   url.default.calendar = schedule/
-  # cat=Organiser static url/page/101; type=+int; label= [default] documents:URL of your document manager (default language)
-  url.default.documents = documents/
+  # cat=Organiser static url/page/101; type=+int; label= [default] downloads:URL of your downloads manager (default language)
+  url.default.downloads = downloads/
   # cat=Organiser static url/page/107; type=+int; label= [default] shopping cart:URL of your shopping cart (default language)
   url.default.shopping_cart = tickets/
   # cat=Organiser static url/page/108; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
   url.default.terms = tickets/terms/
-  # cat=Organiser static url/page/109; type=+int; label= [default] terms & conditions for documents:URL of your terms and conditions for ordering documents (default language)
-  url.default.terms2 = documents/terms/
+  # cat=Organiser static url/page/109; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
+  url.default.terms_downloads = downloads/terms/
 
   # cat=Organiser static url/page/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
   url.de.calendar = spielplan/
-  # cat=Organiser static url/page/201; type=+int; label= [de] Dokumente:URL of your document manager (only if German is configured!)
-  url.de.documents = dokumente/
+  # cat=Organiser static url/page/201; type=+int; label= [de] Downloads:URL of your download manager (only if German is configured!)
+  url.de.downloads = downloads/
   # cat=Organiser static url/page/207; type=+int; label= [de] Warenkorb:URL of your shopping cart (only if German is configured!)
   url.de.shopping_cart = karten/
   # cat=Organiser static url/page/208; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
   url.de.terms = karten/agb/
-  # cat=Organiser static url/page/209; type=+int; label= [de] AGB Dokumente:URL of your terms and conditions for ordering documents (only if German is configured!)
-  url.de.terms2 = karten/agb/
+  # cat=Organiser static url/page/209; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
+  url.de.terms_downloads = downloads/agb/
 
   # cat=Organiser Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
   powermail.noreply = no-reply@typo3-organiser.de
@@ -76,6 +76,6 @@ plugin.org {
   powermail.sender.mail = ticket@typo3-organiser.de
   # cat=Organiser Shopping Cart//103; type=+int; label= Uid of the order form for events:Uid of the content element with the powermail form for events. The page shopping cart for events contains it.
   tx_wtcart_pi1.powermailContentUid =
-  # cat=Organiser Shopping Cart//104; type=+int; label= Uid of the order form for docs:Uid of the content element with the powermail form for documents. The page shopping cart for documents contains it.
-  tx_wtcart_pi1.powermailContentUid2 =
+  # cat=Organiser Shopping Cart//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page shopping cart for downloads contains it.
+  tx_wtcart_pi1.powermailContentUid_downloads =
 }

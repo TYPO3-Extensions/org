@@ -1,9 +1,9 @@
 2.0.9
   11-11-17
   New Feature
-  * #31231: Document Manager
-    * HTML templates for documents and the shopping cart
-    * TypoScript templates for documents and the shopping cart
+  * #31231: Download Manager
+    * HTML templates for downloads and the shopping cart
+    * TypoScript templates for downloads and the shopping cart
 
 2.0.4
   11-05-12

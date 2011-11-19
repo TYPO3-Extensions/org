@@ -1,8 +1,8 @@
 plugin.wtcart {
   gpvar {
-    puid = tx_org_doc|uid
+    puid = tx_org_downloads|uid
   }
   db {
-    table = tx_org_doc
+    table = tx_org_downloads
   }
 }

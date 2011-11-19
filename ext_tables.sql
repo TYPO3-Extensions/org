@@ -1,7 +1,7 @@
 # INDEX
 # -----
 # fe_users
-# fe_users_mm_tx_org_doc
+# fe_users_mm_tx_org_downloads
 # fe_users_mm_tx_org_news
 # fe_groups
 # tx_org_cal
@@ -17,11 +17,11 @@
 # tx_org_department_mm_tx_org_news
 # tx_org_department_mm_fe_users
 # tx_org_departmentcat
-# tx_org_doc
-# tx_org_doc_mm_tx_org_doccat
-# tx_org_doc_mm_tx_org_docmedia
-# tx_org_doccat
-# tx_org_docmedia
+# tx_org_downloads
+# tx_org_downloads_mm_tx_org_downloadscat
+# tx_org_downloads_mm_tx_org_downloadsmedia
+# tx_org_downloadscat
+# tx_org_downloadsmedia
 # tx_org_event
 # tx_org_event_mm_tx_org_cal
 # tx_org_event_mm_tx_org_news
@@ -42,7 +42,7 @@
 # Table structure for table 'fe_users'
 #
 CREATE TABLE fe_users (
-  tx_org_doc tinytext,
+  tx_org_downloads tinytext,
   tx_org_news tinytext,
   tx_org_headquarters tinytext,
   tx_org_department tinytext,
@@ -54,9 +54,9 @@ CREATE TABLE fe_users (
 
 
 #
-# Table structure for table 'fe_users_mm_tx_org_doc'
+# Table structure for table 'fe_users_mm_tx_org_downloads'
 #
-CREATE TABLE fe_users_mm_tx_org_doc (
+CREATE TABLE fe_users_mm_tx_org_downloads (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -239,9 +239,9 @@ CREATE TABLE tx_org_cal_mm_tx_org_location (
 
 
 #
-# Table structure for table 'tx_org_doc'
+# Table structure for table 'tx_org_downloads'
 #
-CREATE TABLE tx_org_doc (
+CREATE TABLE tx_org_downloads (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,
@@ -259,8 +259,8 @@ CREATE TABLE tx_org_doc (
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short text,
-  tx_org_doccat tinytext,
-  tx_org_docmedia tinytext,
+  tx_org_downloadscat tinytext,
+  tx_org_downloadsmedia tinytext,
   pages tinytext,
   documents text,
   documents_from_path tinytext,
@@ -291,9 +291,9 @@ CREATE TABLE tx_org_doc (
 
 
 #
-# Table structure for table 'tx_org_doc_mm_tx_org_doccat'
+# Table structure for table 'tx_org_downloads_mm_tx_org_downloadscat'
 #
-CREATE TABLE tx_org_doc_mm_tx_org_doccat (
+CREATE TABLE tx_org_downloads_mm_tx_org_downloadscat (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -305,9 +305,9 @@ CREATE TABLE tx_org_doc_mm_tx_org_doccat (
 
 
 #
-# Table structure for table 'tx_org_doc_mm_tx_org_docmedia'
+# Table structure for table 'tx_org_downloads_mm_tx_org_downloadsmedia'
 #
-CREATE TABLE tx_org_doc_mm_tx_org_docmedia (
+CREATE TABLE tx_org_downloads_mm_tx_org_downloadsmedia (
   uid_local int(11) unsigned DEFAULT '0' NOT NULL,
   uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
   tablenames varchar(30) DEFAULT '' NOT NULL,
@@ -319,9 +319,9 @@ CREATE TABLE tx_org_doc_mm_tx_org_docmedia (
 
 
 #
-# Table structure for table 'tx_org_doccat'
+# Table structure for table 'tx_org_downloadscat'
 #
-CREATE TABLE tx_org_doccat (
+CREATE TABLE tx_org_downloadscat (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,
@@ -352,9 +352,9 @@ CREATE TABLE tx_org_doccat (
 
 
 #
-# Table structure for table 'tx_org_docmedia'
+# Table structure for table 'tx_org_downloadsmedia'
 #
-CREATE TABLE tx_org_docmedia (
+CREATE TABLE tx_org_downloadsmedia (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,

@@ -22,9 +22,9 @@ if (!defined ('TYPO3_MODE'))
   //   tx_org_caltype
   //   tx_org_department
   //   tx_org_departmentcat
-  //   tx_org_doc
-  //   tx_org_doccat
-  //   tx_org_docmedia
+  //   tx_org_downloads
+  //   tx_org_downloadscat
+  //   tx_org_downloadsmedia
   //   tx_org_events
   //   tx_org_headquarters
   //   tx_org_location
@@ -2123,13 +2123,13 @@ $TCA['tx_org_departmentcat'] = array (
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_doc
+  // tx_org_downloads
 
-$TCA['tx_org_doc'] = array (
-  'ctrl' => $TCA['tx_org_doc']['ctrl'],
+$TCA['tx_org_downloads'] = array (
+  'ctrl' => $TCA['tx_org_downloads']['ctrl'],
   'interface' => array (
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,' .
-                              'type,title,subtitle,datetime,tx_org_doccat,tx_org_docmedia,bodytext,' .
+                              'type,title,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext,' .
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
@@ -2140,7 +2140,7 @@ $TCA['tx_org_doc'] = array (
                               'keywords,description,' .
                               'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,' ,
   ),
-  'feInterface' => $TCA['tx_org_doc']['feInterface'],
+  'feInterface' => $TCA['tx_org_downloads']['feInterface'],
   'columns' => array (
     'sys_language_uid' => array (
       'exclude' => 1,
@@ -2166,8 +2166,8 @@ $TCA['tx_org_doc'] = array (
         'items'           => array (
           array ('', 0),
         ),
-        'foreign_table'       => 'tx_org_doc',
-        'foreign_table_where' => 'AND tx_org_doc.uid=###REC_FIELD_l10n_parent### AND tx_org_doc.sys_language_uid IN (-1,0)',
+        'foreign_table'       => 'tx_org_downloads',
+        'foreign_table_where' => 'AND tx_org_downloads.uid=###REC_FIELD_l10n_parent### AND tx_org_downloads.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -2178,24 +2178,24 @@ $TCA['tx_org_doc'] = array (
     'type' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type',
       'config'    => array (
         'type'    => 'select',
         'items'   => array (
           'doc_download' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_download',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_download',
             '1' => 'doc_download',
-            '2' => 'EXT:org/ext_icon/doc_download.gif',
+            '2' => 'EXT:org/ext_icon/download.gif',
           ),
           'doc_download_shipping' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_download_shipping',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_download_shipping',
             '1' => 'doc_download_shipping',
-            '2' => 'EXT:org/ext_icon/doc_download_shipping.gif',
+            '2' => 'EXT:org/ext_icon/download_and_shipping.gif',
           ),
           'doc_shipping' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.type.doc_shipping',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_shipping',
             '1' => 'doc_shipping',
-            '2' => 'EXT:org/ext_icon/doc_shipping.gif',
+            '2' => 'EXT:org/ext_icon/download_shipping_only.gif',
           ),
         ),
         'default' => 'doc_download',
@@ -2204,42 +2204,42 @@ $TCA['tx_org_doc'] = array (
     'title' => array (
       'exclude'   => 0,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.title',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.title',
       'config'    => $conf_input_30_trimRequired,
     ),
     'subtitle' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.subtitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.subtitle',
       'config'    => $conf_input_30_trim,
     ),
     'datetime' => array (
       'exclude'   => 0,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.datetime',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.datetime',
       'config'    => $conf_datetime,
     ),
-    'tx_org_doccat' => array (
+    'tx_org_downloadscat' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.tx_org_doccat',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_org_downloadscat',
       'config'    => array (
         'type'                => 'select',
         'size'                => 10,
         'minitems'            => 0,
         'maxitems'            => 99,
-        'MM'                  => 'tx_org_doc_mm_tx_org_doccat',
-        'foreign_table'       => 'tx_org_doccat',
-        'foreign_table_where' => 'AND tx_org_doccat.' . $str_store_record_conf . ' ORDER BY tx_org_doccat.title',
+        'MM'                  => 'tx_org_downloads_mm_tx_org_downloadscat',
+        'foreign_table'       => 'tx_org_downloadscat',
+        'foreign_table_where' => 'AND tx_org_downloadscat.' . $str_store_record_conf . ' ORDER BY tx_org_downloadscat.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
           'add' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_doccat.add',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadscat.add',
             'icon'   => 'add.gif',
             'params' => array (
-              'table'    => 'tx_org_doccat',
+              'table'    => 'tx_org_downloadscat',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
@@ -2247,17 +2247,17 @@ $TCA['tx_org_doc'] = array (
           ),
           'list' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_doccat.list',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadscat.list',
             'icon'   => 'list.gif',
             'params' => array (
-              'table' => 'tx_org_doccat',
+              'table' => 'tx_org_downloadscat',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
           'edit' => array (
             'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_doccat.edit',
+            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadscat.edit',
             'script'                    => 'wizard_edit.php',
             'popup_onlyOpenIfSelected'  => 1,
             'icon'                      => 'edit2.gif',
@@ -2266,27 +2266,27 @@ $TCA['tx_org_doc'] = array (
         ),
       ),
     ),
-    'tx_org_docmedia' => array (
+    'tx_org_downloadsmedia' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.tx_org_docmedia',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_org_downloadsmedia',
       'config'    => array (
         'type'                => 'select',
         'size'                => 10,
         'minitems'            => 0,
         'maxitems'            => 99,
-        'MM'                  => 'tx_org_doc_mm_tx_org_docmedia',
-        'foreign_table'       => 'tx_org_docmedia',
-        'foreign_table_where' => 'AND tx_org_docmedia.' . $str_store_record_conf . ' ORDER BY tx_org_docmedia.title',
+        'MM'                  => 'tx_org_downloads_mm_tx_org_downloadsmedia',
+        'foreign_table'       => 'tx_org_downloadsmedia',
+        'foreign_table_where' => 'AND tx_org_downloadsmedia.' . $str_store_record_conf . ' ORDER BY tx_org_downloadsmedia.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
           'add' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_docmedia.add',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadsmedia.add',
             'icon'   => 'add.gif',
             'params' => array (
-              'table'    => 'tx_org_docmedia',
+              'table'    => 'tx_org_downloadsmedia',
               'pid'      => $str_marker_pid,
               'setValue' => 'prepend'
             ),
@@ -2294,17 +2294,17 @@ $TCA['tx_org_doc'] = array (
           ),
           'list' => array (
             'type'   => 'script',
-            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_docmedia.list',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadsmedia.list',
             'icon'   => 'list.gif',
             'params' => array (
-              'table' => 'tx_org_docmedia',
+              'table' => 'tx_org_downloadsmedia',
               'pid'   => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
           'edit' => array (
             'type'                      => 'popup',
-            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_docmedia.edit',
+            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_downloadsmedia.edit',
             'script'                    => 'wizard_edit.php',
             'popup_onlyOpenIfSelected'  => 1,
             'icon'                      => 'edit2.gif',
@@ -2316,25 +2316,25 @@ $TCA['tx_org_doc'] = array (
     'bodytext' => array (
       'exclude'     => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.bodytext',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.bodytext',
       'config'    => $conf_text_rte,
     ),
     'teaser_title' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.teaser_title',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.teaser_title',
       'config'    => $conf_input_30_trim,
     ),
     'teaser_subtitle' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.teaser_subtitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.teaser_subtitle',
       'config'    => $conf_input_30_trim,
     ),
     'teaser_short' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.teaser_short',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.teaser_short',
       'config'    => $conf_text_50_10,
     ),
     'documents_from_path' => array (
@@ -2350,7 +2350,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'documents' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.file',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.file',
       'config'  => $conf_file_one_document,
     ),
     'documentscaption' => array (
@@ -2388,12 +2388,12 @@ $TCA['tx_org_doc'] = array (
     ),
     'thumbnail' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail',
       'config'    => $conf_file_one_image,
     ),
     'thumbnail_width' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_width',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2405,7 +2405,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'thumbnail_height' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_height',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2417,7 +2417,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_width' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.linkicon_width',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2429,7 +2429,7 @@ $TCA['tx_org_doc'] = array (
     ),
     'linkicon_height' => array (
       'exclude'   => $bool_exclude_default,
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.linkicon_height',
       'config'    => array (
         'type'      => 'input',
         'size'      => '10',
@@ -2442,7 +2442,7 @@ $TCA['tx_org_doc'] = array (
     'fe_user' => array (
       'exclude'     => $bool_exclude_default,
 //      'l10n_mode'   => 'exclude',
-      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_doc.fe_user',
+      'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.fe_user',
       'config'      => array (
         'type'            => 'select',
         'size'            => $size_doc,
@@ -2455,8 +2455,8 @@ $TCA['tx_org_doc'] = array (
             '1' => '',
           ),
         ),
-        'MM'                  => 'fe_users_mm_tx_org_doc',
-        'MM_opposite_field'   => 'tx_org_doc',
+        'MM'                  => 'fe_users_mm_tx_org_downloads',
+        'MM_opposite_field'   => 'tx_org_downloads',
         'foreign_table'       => 'fe_users',
         'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
         'wizards' => $arr_config_feuser['wizards'],
@@ -2514,25 +2514,25 @@ $TCA['tx_org_doc'] = array (
   ),
   'types' => array (
     'doc_download' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,tx_org_docmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_file,        ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_file,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.type_documents_download;type_documents_download,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.thumbnail_size;thumbnail_size,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_link,        ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_link,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_feuser,      fe_user,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_seo,         keywords;;;;7-7-7, description,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_statistics,  ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_statistics,  ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
     'doc_download_shipping' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       ''),
     'doc_shipping' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doc.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_doccat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,        type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       ''),
   ),
   'palettes' => array (
@@ -2568,7 +2568,7 @@ $TCA['tx_org_doc'] = array (
       'canNotCollapse' => 1,
     ),
     'linkicon_size' => array (
-      'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.linkicon_height' ,
+      'showitem' => 'linkicon_width;LLL:EXT:org/locallang_db.xml:tx_org_downloads.linkicon_width, linkicon_height;LLL:EXT:org/locallang_db.xml:tx_org_downloads.linkicon_height' ,
       'canNotCollapse' => 1,
     ),
     'statistics' => array (
@@ -2576,44 +2576,44 @@ $TCA['tx_org_doc'] = array (
       'canNotCollapse' => 1,
     ),
     'thumbnail_size' => array (
-      'showitem' => 'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
+      'showitem' => 'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_download' => array (
-      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_doc.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_type_documents_download' ,
+      'showitem' => 'documents;LLL:EXT:org/locallang_db.xml:tx_org_downloads.file,thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_type_documents_download' ,
       'canNotCollapse' => 1,
     ),
     'type_documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, --linebreak--,' .
-                    'thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail, --linebreak--,' .
-                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_doc.thumbnail_height' ,
+                    'thumbnail;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail, --linebreak--,' .
+                    'thumbnail_width;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_width, thumbnail_height;LLL:EXT:org/locallang_db.xml:tx_org_downloads.thumbnail_height' ,
       'canNotCollapse' => 1,
     ),
   ),
 );
 if(!$bool_full_wizardSupport_catTables)
 {
-  unset($TCA['tx_org_doc']['columns']['tx_org_doccat']['config']['wizards']['add']);
-  unset($TCA['tx_org_doc']['columns']['tx_org_doccat']['config']['wizards']['list']);
-  unset($TCA['tx_org_doc']['columns']['tx_org_docmedia']['config']['wizards']['add']);
-  unset($TCA['tx_org_doc']['columns']['tx_org_docmedia']['config']['wizards']['list']);
+  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadscat']['config']['wizards']['add']);
+  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadscat']['config']['wizards']['list']);
+  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['add']);
+  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['list']);
 }
 if(!$bool_full_wizardSupport_allTables)
 {
-  unset($TCA['tx_org_doc']['columns']['tx_org_department']['config']['wizards']['add']);
-  unset($TCA['tx_org_doc']['columns']['tx_org_department']['config']['wizards']['list'] );
+  unset($TCA['tx_org_downloads']['columns']['tx_org_department']['config']['wizards']['add']);
+  unset($TCA['tx_org_downloads']['columns']['tx_org_department']['config']['wizards']['list'] );
 }
-  // tx_org_doc
+  // tx_org_downloads
 
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_doccat
+  // tx_org_downloadscat
 
-$TCA['tx_org_doccat'] = array (
-  'ctrl' => $TCA['tx_org_doccat']['ctrl'],
+$TCA['tx_org_downloadscat'] = array (
+  'ctrl' => $TCA['tx_org_downloadscat']['ctrl'],
   'interface' => array (
     'showRecordFieldList' =>  'type,title,title_lang_ol,text,text_lang_ol,' .
                               'color,' .
@@ -2624,22 +2624,22 @@ $TCA['tx_org_doccat'] = array (
     'type' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.type',
       'config'    => array (
         'type'    => 'select',
         'items'   => array (
           'cat_text' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_text',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.type.cat_text',
             '1' => 'cat_text',
             '2' => 'EXT:org/ext_icon/cat_text.gif',
           ),
           'cat_color' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_color',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.type.cat_color',
             '1' => 'cat_color',
             '2' => 'EXT:org/ext_icon/cat_color.gif',
           ),
           'cat_image' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.type.cat_image',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.type.cat_image',
             '1' => 'cat_image',
             '2' => 'EXT:org/ext_icon/cat_image.gif',
           ),
@@ -2649,22 +2649,22 @@ $TCA['tx_org_doccat'] = array (
     ),
     'title' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.title',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.title',
       'config'  => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.title_lang_ol',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.title_lang_ol',
       'config'  => $conf_input_30_trim,
     ),
     'text' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.text',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.text',
       'config'  => $conf_text_30_05,
     ),
     'text_lang_ol' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_doccat.text_lang_ol',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.text_lang_ol',
       'config'  => $conf_text_30_05,
     ),
     'color' => array (
@@ -2783,18 +2783,18 @@ $TCA['tx_org_doccat'] = array (
   ),
   'types' => array (
     'cat_text'  => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden'),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_control, hidden'),
     'cat_color' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_color,   color,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_color,   color,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_control, hidden' ),
     'cat_image' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_media,   ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_media,   ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_doccat.div_control, hidden' ),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadscat.div_control, hidden' ),
   ),
   'palettes' => array (
     '1'               => array ('showitem' => 'title_lang_ol'),
@@ -2811,7 +2811,7 @@ $TCA['tx_org_doccat'] = array (
     ),
   ),
 );
-  // tx_org_doccat
+  // tx_org_downloadscat
 
 
 
@@ -2820,10 +2820,10 @@ $TCA['tx_org_doccat'] = array (
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
-  // tx_org_docmedia
+  // tx_org_downloadsmedia
 
-$TCA['tx_org_docmedia'] = array (
-  'ctrl' => $TCA['tx_org_docmedia']['ctrl'],
+$TCA['tx_org_downloadsmedia'] = array (
+  'ctrl' => $TCA['tx_org_downloadsmedia']['ctrl'],
   'interface' => array (
     'showRecordFieldList' =>  'type,title,title_lang_ol,text,text_lang_ol,' .
                               'color,' .
@@ -2834,22 +2834,22 @@ $TCA['tx_org_docmedia'] = array (
     'type' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.type',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.type',
       'config'    => array (
         'type'    => 'select',
         'items'   => array (
           'cat_text' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.type.cat_text',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.type.cat_text',
             '1' => 'cat_text',
             '2' => 'EXT:org/ext_icon/cat_text.gif',
           ),
           'cat_color' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.type.cat_color',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.type.cat_color',
             '1' => 'cat_color',
             '2' => 'EXT:org/ext_icon/cat_color.gif',
           ),
           'cat_image' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.type.cat_image',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.type.cat_image',
             '1' => 'cat_image',
             '2' => 'EXT:org/ext_icon/cat_image.gif',
           ),
@@ -2859,22 +2859,22 @@ $TCA['tx_org_docmedia'] = array (
     ),
     'title' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.title',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.title',
       'config'  => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array (
       'exclude' => 0,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.title_lang_ol',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.title_lang_ol',
       'config'  => $conf_input_30_trim,
     ),
     'text' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.text',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.text',
       'config'  => $conf_text_30_05,
     ),
     'text_lang_ol' => array (
       'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_docmedia.text_lang_ol',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.text_lang_ol',
       'config'  => $conf_text_30_05,
     ),
     'color' => array (
@@ -2993,18 +2993,18 @@ $TCA['tx_org_docmedia'] = array (
   ),
   'types' => array (
     'cat_text'  => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_control, hidden'),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_control, hidden'),
     'cat_color' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_color,   color,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_control, hidden' ),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_color,   color,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_control, hidden' ),
     'cat_image' => array ( 'showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_media,   ' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_media,   ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_docmedia.div_control, hidden' ),
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloadsmedia.div_control, hidden' ),
   ),
   'palettes' => array (
     '1'               => array ('showitem' => 'title_lang_ol'),
@@ -3021,7 +3021,7 @@ $TCA['tx_org_docmedia'] = array (
     ),
   ),
 );
-  // tx_org_docmedia
+  // tx_org_downloadsmedia
 
 
 
