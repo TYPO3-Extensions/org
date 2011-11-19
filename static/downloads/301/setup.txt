@@ -269,6 +269,7 @@ plugin.tx_browser_pi1 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
                 // doc_download
               default = TEXT
+              default {
                 value = more &raquo;
                 lang.de = mehr &raquo;
                 noTrimWrap = | <span class="more">|</span>|
