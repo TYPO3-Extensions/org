@@ -31,8 +31,8 @@ plugin.org {
   sysfolder.calendar =
   # cat=Organiser Sysfolders/page/102; type=+int; label= department:Uid of the sysfolder with the department data
   sysfolder.department =
-  # cat=Organiser Sysfolders/page/103; type=+int; label= document:Uid of the sysfolder with the document data
-  sysfolder.doc =
+  # cat=Organiser Sysfolders/page/103; type=+int; label= downloads:Uid of the sysfolder with the downloads
+  sysfolder.downloads =
   # cat=Organiser Sysfolders/page/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
   # cat=Organiser Sysfolders/page/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
