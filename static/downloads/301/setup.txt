@@ -472,13 +472,14 @@ plugin.tx_browser_pi1 {
                     // Download link and ordering form
                   itemRendering = COA
                   itemRendering {
-                    wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
+                    //wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
                       // Download link and ordering form
                     10 = COA
                     10 {
                         // Download link
                       10 = COA
                       10 {
+                        wrap = <tr class="tr-first">|</tr>
                           // Flag
                         10 = TEXT
                         10 {
@@ -606,6 +607,7 @@ plugin.tx_browser_pi1 {
                         // Form for cart
                       20 = COA
                       20 {
+                        wrap = <tr class="tr-last">|</tr>
                           // Flag
                         10 = TEXT
                         10 {
