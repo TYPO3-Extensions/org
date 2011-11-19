@@ -422,7 +422,6 @@ plugin.tx_browser_pi1 {
               // File link and order form
             50 < tt_content.uploads.20
             50 {
-              stdWrap.wrap = <table class="csc-uploads">|</table>
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
                   // Should this TypoScript executed for each language record?
@@ -465,6 +464,7 @@ plugin.tx_browser_pi1 {
                 conf < tt_content.uploads.20
                 conf =
                 conf {
+                  stdWrap.wrap = <table class="csc-uploads">|</table>
                   userFunc >
                     // Don't outerWrap with <table> by default
                   outerWrap = |
