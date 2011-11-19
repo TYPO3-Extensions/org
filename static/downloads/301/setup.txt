@@ -606,20 +606,6 @@ plugin.tx_browser_pi1 {
                         // Form for cart
                       20 = COA
                       20 {
-                          // <td class="csc-uploads-form" colspan="X">
-                        9 = COA
-                        9 {
-                          10 = TEXT
-                          10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value     = <td class="csc-uploads-form" colspan="3">
-                          }
-                          20 = TEXT
-                          20 {
-                            if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value       = <td class="csc-uploads-form" colspan="2">
-                          }
-                        }
                           // Flag
                         10 = TEXT
                         10 {
@@ -665,6 +651,20 @@ plugin.tx_browser_pi1 {
                           // Form
                         50 = COA
                         50 {
+                            // <td class="csc-uploads-form" colspan="X">
+                          9 = COA
+                          9 {
+                            10 = TEXT
+                            10 {
+                              if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              value     = <td class="csc-uploads-form" colspan="3">
+                            }
+                            20 = TEXT
+                            20 {
+                              if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              value       = <td class="csc-uploads-form" colspan="2">
+                            }
+                          }
                             // if date isn't expired
                           XXX_if {
                             value.data = date : U
@@ -707,7 +707,7 @@ plugin.tx_browser_pi1 {
                         30 = IMAGE
                         30 {
                           //wrap = <td class="csc-uploads-icon">|</td>
-                          file = EXT:org/res/download.gif
+                          file = EXT:org/res/cart.gif
                           imageLinkWrap = 1
                           imageLinkWrap {
                             enable = 1
