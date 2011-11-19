@@ -107,6 +107,7 @@
 .tx-browser-pi1 form.tx_org_cal-ticket input[type=submit] {
   float:right;
 }
+.tx-browser-pi1 form.tx_org_downloads-order button.ui-button,
 .tx-browser-pi1 form.tx_org_downloads-order input.ui-button {
   padding: 0;
   width: 10em;
