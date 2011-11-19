@@ -121,7 +121,10 @@
   width: 3em;
 }
 .tx-browser-pi1 form.tx_org_downloads-order table td {
-  padding-right: .2em;
+  padding-right: 1em;
+}
+.tx-browser-pi1 form.tx_org_downloads-order table td.csc-uploads-fileSize {
+  text-align: right;
 }
 
 
