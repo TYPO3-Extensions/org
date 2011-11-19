@@ -467,7 +467,7 @@ plugin.tx_browser_pi1 {
                   //stdWrap.wrap = <table class="csc-uploads">|</table>
                   userFunc >
                     // Don't outerWrap with <table> by default
-                  //outerWrap = |
+                  outerWrap = |
                   filePath >
                   itemRendering >
                     // Download link and ordering form
@@ -510,6 +510,7 @@ plugin.tx_browser_pi1 {
                 <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
                 <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
                 <input type="text"    name="quantity"               value="1" class="quantity" />
+                <table class="csc-uploads csc-uploads-0">
   )
                           }
                       }
@@ -757,7 +758,7 @@ plugin.tx_browser_pi1 {
                           60 {
                             wrap (
                 </fieldset>
-              </form>
+              </form></table>
     )
                           }
                       }
