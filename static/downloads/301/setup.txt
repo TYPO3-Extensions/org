@@ -473,50 +473,50 @@ plugin.tx_browser_pi1 {
                     // Download link and ordering form
                   itemRendering = COA
                   itemRendering {
-                    //wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
-                      // Download link and ordering form
+                      // Form begin
                     10 = COA
                     10 {
-                        // Ordering form beginn
-                      9 = COA
-                      9 {
-                            // <form name="form_add_to_cart" ... method="post">
-                          20 = TEXT
-                          20 {
-                            wrap (
-            <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
-  )
-                            //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="get">
-                            typolink {
-                              parameter     = {$plugin.org.pages.shopping_cart_downloads}
-                              returnLast    = url
-                              useCacheHash  = 1
-                            }
-                          }
-                            // <fieldset><legend>...</legend><input ... /><input ... /><input ... />
-                          30 = TEXT
-                          30 {
-                            value = Ordering
-                            lang {
-                              de = Bestellen
-                            }
-
-                            wrap (
-              <fieldset id="add-to-cart">
-                <legend>|</legend>
-                <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart_downloads}" />
-                <input type="hidden"  name="tx_org_downloads[uid]"        value="###TABLE.UID###" />
-                <input type="hidden"  name="tx_org_downloads[documents]"  value="###TABLE.DOCUMENTS###" />
-                <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
-                <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
-                <table class="csc-uploads csc-uploads-0">
-  )
-                          }
+                        // <form name="form_add_to_cart" ... method="post">
+                      10 = TEXT
+                      10 {
+                        wrap (
+          <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
+)
+                        //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="get">
+                        typolink {
+                          parameter     = {$plugin.org.pages.shopping_cart_downloads}
+                          returnLast    = url
+                          useCacheHash  = 1
+                        }
                       }
+                        // <fieldset><legend>X</legend><input ... /><input ... /><input ... />
+                      20 = TEXT
+                      20 {
+                        value = Ordering
+                        lang {
+                          de = Bestellen
+                        }
+                        wrap (
+            <fieldset id="add-to-cart">
+              <legend>|</legend>
+              <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart_downloads}" />
+              <input type="hidden"  name="tx_org_downloads[uid]"        value="###TABLE.UID###" />
+              <input type="hidden"  name="tx_org_downloads[documents]"  value="###TABLE.DOCUMENTS###" />
+              <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
+              <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
+)
+                      }
+                    }
+                      // <table class="csc-uploads">|</table>
+                    20 = COA
+                    20 {
+                      wrap (
+              <table class="csc-uploads">|</table>
+)
                         // Download link
                       10 = COA
                       10 {
-                        wrap = <tr class="tr-first">|</tr>
+                        wrap = <tr class="download">|</tr>
                           // Flag
                         10 = TEXT
                         10 {
@@ -569,20 +569,23 @@ plugin.tx_browser_pi1 {
                           // Filesize
                         50 = COA
                         50 {
-                          10 < tt_content.uploads.20.itemRendering.30
+                          10 = COA
                           10 {
-                            if >
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            //wrap      = <td class="csc-uploads-fileSize">(|)</td>
-                            wrap      = <td class="csc-uploads-fileSize">|</td>
-                            bytes {
-                              labels = {$styles.content.uploads.filesizeBytesLabels}
-                            }
-                            typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              useCacheHash      = 1
+                            wrap = <td class="csc-uploads-fileSize">|</td>
+                            10 < tt_content.uploads.20.itemRendering.30
+                            10 {
+                              if >
+                              if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              wrap >
+                              bytes {
+                                labels = {$styles.content.uploads.filesizeBytesLabels}
+                              }
+                              typolink {
+                                parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                                additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                                title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                                useCacheHash      = 1
+                              }
                             }
                           }
                         }
@@ -644,18 +647,11 @@ plugin.tx_browser_pi1 {
                         // Form for cart
                       20 = COA
                       20 {
-                        wrap = <tr class="tr-last">|</tr>
-                          // Flag
+                        wrap = <tr class="ordering">|</tr>
+                          // Flag (empty!)
                         10 = TEXT
                         10 {
-                          wrap  = <td class="csc-uploads-flag">|</td>
-                          value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                          typolink {
-                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                            title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            useCacheHash      = 1
-                          }
+                          wrap  = <td class="csc-uploads-flag">&nbsp;</td>
                         }
                           // File icon (empty!)
                         20 = TEXT
@@ -687,85 +683,60 @@ plugin.tx_browser_pi1 {
                           }
                         }
                         40 >
-                          // Form
-                        50 = COA
+                          // form input quantity
+                        50 = TEXT
                         50 {
-                            // if date isn't expired
-                          XXX_if {
-                            value.data = date : U
-                            isGreaterThan = ###TX_ORG_CAL.DATETIME###
-                          }
-                            // <td class="csc-uploads-form" colspan="X">
-                          10 = COA
-                          10 {
-                              // if tx_ord_downloads.documentsize is true
-                            10 = TEXT
-                            10 {
-                              if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                              value     = <td class="csc-uploads-form" colspan="3">
-                            }
-                              // if tx_ord_downloads.documentsize is false
-                            20 = TEXT
-                            20 {
-                              if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                              value       = <td class="csc-uploads-form" colspan="2">
-                            }
-                          }
-                            // Input quantity
-                          30 = TEXT
-                          30 {
-                            value = <input type="text"    name="quantity"               value="1" class="quantity" />
-                          }
-                            // Cart icon
-                          40 = IMAGE
-                          40 {
-                            //wrap = <td class="csc-uploads-icon">|</td>
-                            file = EXT:org/res/cart.gif
-                            imageLinkWrap = 1
-                            imageLinkWrap {
-                              enable = 1
-                              typolink {
-                                parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                                additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                                title = TEXT
-                                title {
-                                  value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                                  lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                                }
-                                useCacheHash      = 1
+                          wrap = <td class="csc-uploads-fileSize">|</td>
+                          value = <input type="text" name="quantity" value="1" class="quantity" />
+                        }
+                          // Cart icon
+                        60 = IMAGE
+                        60 {
+                          wrap = <td class="csc-uploads-icon">|</td>
+                          file = EXT:org/res/cart.gif
+                          imageLinkWrap = 1
+                          imageLinkWrap {
+                            enable = 1
+                            typolink {
+                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                              title = TEXT
+                              title {
+                                value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                                lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
                               }
+                              useCacheHash      = 1
                             }
                           }
+                        }
+                          // Form submit
+                        70 = COA
+                        70 {
+                          wrap (
+                <td class="csc-uploads-button">|</td>
+)
                             // <input type="submit" value="..." />
-                          50 = TEXT
-                          50 {
+                          70 = TEXT
+                          70 {
                             value = Ordering
                             lang {
                               de = Bestellen
                             }
                             wrap (
-                  <input type="submit" name="submit"                    value="|" />
-    )
-                          }
-                            // </td>
-                          70 = TEXT
-                          70 {
-                            value = </td>
+                  <input type="submit" name="submit" value="|" />
+)
                           }
                         }
                       }
-                        // Form end
-                      30 = COA
-                      30 {
-                            // </fieldset></form>
-                          60 = TEXT
-                          60 {
-                            wrap (
-                </table></fieldset>
-              </form>
-    )
-                          }
-                      }
+                    }
+                      // Form end
+                    30 = TEXT
+                    30 {
+                      wrap (
+              </table>
+            </fieldset>
+          </form>
+)
                     }
                   }
                   linkProc {
