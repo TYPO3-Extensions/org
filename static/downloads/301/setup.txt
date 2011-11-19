@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
       301 = +Org: Downloads
       301 {
         name    = +Org: Downloads
-        showUid = docUid
+        showUid = downloadsUid
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
           selectBox_orderBy.display = 0
@@ -130,7 +130,7 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOWNLOADS.UID###
+                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                     useCacheHash      = 1
                   }
                 }
@@ -140,7 +140,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_DOWNLOADS.TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
-                    additionalParams  = &tx_browser_pi1[docUid]=###TX_ORG_DOWNLOADS.UID###
+                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                     useCacheHash      = 1
                   }
                 }
@@ -198,8 +198,9 @@ plugin.tx_browser_pi1 {
                 lang.de = mehr &raquo;
                 noTrimWrap = | <span class="more">|</span>|
                 typolink {
-                  parameter = {$plugin.org.pages.downloads} - linktosingle
-                  additionalParams = &tx_browser_pi1[docUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
+                  parameter         = {$plugin.org.pages.downloads} - linktosingle
+                  additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                  useCacheHash      = 1
                 }
               }
               XXX_doc_download_shipping = TEXT
@@ -302,6 +303,7 @@ plugin.tx_browser_pi1 {
                 value = All Downloads
                 lang.de = Alle Downloads
               }
+              useCacheHash = 1
             }
           }
           my_singleview_title = TEXT
@@ -481,8 +483,9 @@ plugin.tx_browser_pi1 {
                         wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="post">
                         //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_cal-ticket" action="|" method="get">
                         typolink {
-                          parameter = {$plugin.org.pages.shopping_cart_downloads}
-                          returnLast = url
+                          parameter     = {$plugin.org.pages.shopping_cart_downloads}
+                          returnLast    = url
+                          useCacheHash  = 1
                         }
                       }
                         // fieldset > input
