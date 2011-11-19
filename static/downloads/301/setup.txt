@@ -757,8 +757,8 @@ plugin.tx_browser_pi1 {
                           60 = TEXT
                           60 {
                             wrap (
-                </fieldset>
-              </form></table>
+                </table></fieldset>
+              </form>
     )
                           }
                       }
