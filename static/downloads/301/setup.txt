@@ -608,6 +608,22 @@ plugin.tx_browser_pi1 {
                       20 = COA
                       20 {
                         wrap = <tr class="tr-last">|</tr>
+                          // <td class="csc-uploads-form" colspan="X">
+                        9 = COA
+                        9 {
+                            // if tx_ord_downloads.documentsize is true
+                          10 = TEXT
+                          10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                            value     = <td class="csc-uploads-form" colspan="3">
+                          }
+                            // if tx_ord_downloads.documentsize is false
+                          20 = TEXT
+                          20 {
+                            if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                            value       = <td class="csc-uploads-form" colspan="2">
+                          }
+                        }
                           // Flag
                         10 = TEXT
                         10 {
@@ -650,24 +666,6 @@ plugin.tx_browser_pi1 {
                           }
                         }
                         40 >
-                          // <td class="csc-uploads-form" colspan="X">
-                        49 = COA
-                        49 {
-                            // if tx_ord_downloads.documentsize is true
-                          10 = TEXT
-                          10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value     = <td class="csc-uploads-form" colspan="3">xxxx
-                            wrap        = |
-                          }
-                            // if tx_ord_downloads.documentsize is false
-                          20 = TEXT
-                          20 {
-                            if.isFalse  = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                            value       = <td class="csc-uploads-form" colspan="2">yyyyy
-                            wrap        = |
-                          }
-                        }
                           // Form
                         50 = COA
                         50 {
