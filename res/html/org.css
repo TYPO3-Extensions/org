@@ -112,6 +112,9 @@
   padding: 0;
   width: 10em;
 }
+.tx-browser-pi1 form.tx_org_downloads-order legend {
+  display: none;
+}
 .tx-browser-pi1 form.tx_org_downloads-order button span.ui-button-text {
   padding: 0;
 }
