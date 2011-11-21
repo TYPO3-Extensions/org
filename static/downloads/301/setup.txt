@@ -323,6 +323,7 @@ plugin.tx_browser_pi1 {
 
           tx_org_downloads.documents,
           tx_org_downloads.documentscaption,
+          tx_org_downloads.documents_from_path,
           tx_org_downloads.documents_display_label,
           tx_org_downloads.documents_display_caption,
           tx_org_downloads.documentslayout,
