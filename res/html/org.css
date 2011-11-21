@@ -107,21 +107,17 @@
 .tx-browser-pi1 form.tx_org_cal-ticket input[type=submit] {
   float:right;
 }
-.tx-browser-pi1 form.tx_org_downloads-order button.ui-button,
-.tx-browser-pi1 form.tx_org_downloads-order div.ui-button,
-.tx-browser-pi1 form.tx_org_downloads-order input.ui-button {
+.tx-browser-pi1 form.tx_org_downloads-order .ui-button {
   padding: 0;
   width: 10em;
 }
 .tx-browser-pi1 form.tx_org_downloads-order legend {
   display: none;
 }
-.tx-browser-pi1 form.tx_org_downloads-order div span.ui-button-text,
-.tx-browser-pi1 form.tx_org_downloads-order button span.ui-button-text {
+.tx-browser-pi1 form.tx_org_downloads-order .ui-button-text {
   padding: 0;
 }
-.tx-browser-pi1 form.tx_org_downloads-order div span.ui-button-text img,
-.tx-browser-pi1 form.tx_org_downloads-order button span.ui-button-text img {
+.tx-browser-pi1 form.tx_org_downloads-order span.ui-button-text img {
   position: relative;
   top: 3px;
 }
