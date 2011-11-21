@@ -942,7 +942,7 @@ plugin.tx_browser_pi1 {
                     60 {
                         // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
                       wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
-                        // <a href="X" ...
+                        // <a href="X" class="ui-button-text" ...
                       10 = TEXT
                       10 {
                         typolink {
@@ -951,7 +951,7 @@ plugin.tx_browser_pi1 {
                           useCacheHash      = 1
                           returnLast        = url
                         }
-                        wrap    = <a href="|"
+                        wrap    = <a href="|" class="ui-button-text"
                       }
                         // ... title="X">
                       20 = TEXT

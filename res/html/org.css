@@ -120,9 +120,10 @@
 .tx-browser-pi1 form.tx_org_downloads-order .ui-button-text {
   padding: 0;
 }
-.tx-browser-pi1 form.tx_org_downloads-order .ui-button-text a {
+/*.tx-browser-pi1 form.tx_org_downloads-order .ui-button-text a {
   font-weight: normal;
 }
+*/
 .tx-browser-pi1 form.tx_org_downloads-order .ui-button-text img {
   position: relative;
   top: 3px;
