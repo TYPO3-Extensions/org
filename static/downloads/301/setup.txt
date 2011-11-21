@@ -444,7 +444,7 @@ plugin.tx_browser_pi1 {
                     // [STRING] Current table. I.e: tx_org_downloads
                   value = tx_org_downloads
                 }
-                  // Fields (fields with localisation only)
+                  // Fields (fields which needed localised only)
                 select = TEXT
                 select {
                     // [String] select fields of the local table only! Fields are needed with localisation only
