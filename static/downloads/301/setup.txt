@@ -545,6 +545,7 @@ plugin.tx_browser_pi1 {
                         30 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap = |
                             data = register:filename
                             typolink {
@@ -555,17 +556,16 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
-                        30 >
                           // File description
                         40 = COA
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
                             wrap >
                             noTrimWrap = | ||
                           }
                         }
-                        40 >
                           // Filesize
                         50 = COA
                         50 {
