@@ -916,10 +916,10 @@ plugin.tx_browser_pi1 {
                         }
                       }
                     }
-                      // Download icon
+                      // Download button (download icon)
                     60 = IMAGE
                     60 {
-                      wrap = <td class="csc-uploads-icon">|</td>
+                      wrap = <td class="csc-uploads-button">|</td>
                       file = EXT:org/res/download.gif
                       imageLinkWrap = 1
                       imageLinkWrap {
@@ -946,18 +946,20 @@ plugin.tx_browser_pi1 {
                       10 {
                         prepend = TEXT
                         prepend {
-                          value = <button type="button" onclick="location='
+                          //value = <button type="button" onclick="location='
+                          value = Anfang
                         }
                         typolink {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                           title             = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                           useCacheHash      = 1
-                          returnLast        = url
+                          //returnLast        = url
                         }
                         append = TEXT
                         append {
-                          value = '">
+                          //value = '">
+                          value = ende 1
                         }
                       }
                         // label</button>
@@ -967,7 +969,8 @@ plugin.tx_browser_pi1 {
                         lang.de = Herunterladen
                         append = TEXT
                         append {
-                          value = </button>
+                          //value = </button>
+                          value = Ende2
                         }
                       }
                     }
