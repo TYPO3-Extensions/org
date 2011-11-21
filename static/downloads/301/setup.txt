@@ -856,6 +856,7 @@ plugin.tx_browser_pi1 {
                         useCacheHash      = 1
                       }
                     }
+                    10 >
                       // File icon
                     20 = COA
                     20 {
@@ -991,6 +992,7 @@ plugin.tx_browser_pi1 {
                         useCacheHash      = 1
                       }
                     }
+                    10 >
                       // File icon (empty!)
                     20 = TEXT
                     20 {
