@@ -2547,6 +2547,7 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_file,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.type_documents_download;type_documents_download,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.documentscaption;documentscaption,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.thumbnail_size;thumbnail_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_link,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
@@ -2566,8 +2567,12 @@ $TCA['tx_org_downloads'] = array (
   ),
   'palettes' => array (
     '3' => array ('showitem' => 'starttime, endtime'),
+    'documentscaption' => array (
+      'showitem' => 'documentscaption;LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
+      'canNotCollapse' => 1,
+    ),
     'image_accessibility' => array (
-      'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
+      'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
       'canNotCollapse' => 1,
     ),
     'imageblock' => array (

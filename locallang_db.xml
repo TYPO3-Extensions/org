@@ -24,8 +24,9 @@
       <label index="filter_phrase.schedule">Playing schedule</label>
       <label index="filter_phrase.schedule.expired">Playing schedule (expired)</label>
       <label index="palette.appearance">Appearance</label>
-      <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
+      <label index="palette.documentscaption">Description</label>
+      <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.link">Download link</label>
       <label index="palette.linkicon_size">Size in case of a link with a thumbnail</label>
       <label index="palette.statistics">Statistics</label>
@@ -35,7 +36,7 @@
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
-      <label index="tca_phrase.documentscaption">Captions (one per line)</label>
+      <label index="tca_phrase.documentscaption">Captions (one line per file)</label>
       <label index="tca_phrase.documents_display_caption">Display file description</label>
       <label index="tca_phrase.documents_display_label">Display file name</label>
       <label index="tca_phrase.documentslayout">Type of link</label>
@@ -44,8 +45,8 @@
       <label index="tca_phrase.documentslayout.2">with a preview</label>
       <label index="tca_phrase.embeddedcode">Embedded Code</label>
       <label index="tca_phrase.image">Images</label>
-      <label index="tca_phrase.imagecaption">Captions (one per line)</label>
-      <label index="tca_phrase.imageseo">Label for Search Engines (one per line)</label>
+      <label index="tca_phrase.imagecaption">Captions (one line per image)</label>
+      <label index="tca_phrase.imageseo">Label for Search Engines (one line per image)</label>
       <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
@@ -383,8 +384,9 @@
       <label index="filter_phrase.schedule">Spielplan</label>
       <label index="filter_phrase.schedule.expired">Spielplan (Archiv)</label>
       <label index="palette.appearance">Design</label>
-      <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
+      <label index="palette.documentscaption">Kurzbeschreibung</label>
+      <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.link">Download-Link</label>
       <label index="palette.statistics">Statistik</label>
       <label index="palette.linkicon_size">Gr<![CDATA[öß]]>e im Fall eines Links mit Vorschau-Bild</label>
@@ -394,7 +396,7 @@
       <label index="tca_phrase.description">Beschreibung f<![CDATA[ü]]>r Suchmaschinen (bis etwa 200 Zeichen)</label>
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
-      <label index="tca_phrase.documentscaption">Beschriftung (eine pro Zeile)</label>
+      <label index="tca_phrase.documentscaption">Beschriftung (eine Zeile pro Datei)</label>
       <label index="tca_phrase.documents_display_caption">Dateibeschreibung anzeigen</label>
       <label index="tca_phrase.documents_display_label">Dateibezeichnung anzeigen</label>
       <label index="tca_phrase.documentslayout">Typ des Links</label>
@@ -403,8 +405,8 @@
       <label index="tca_phrase.documentslayout.2">mit Vorschau-Bild</label>
       <label index="tca_phrase.embeddedcode">Eingebetteter Code</label>
       <label index="tca_phrase.image">Bilder</label>
-      <label index="tca_phrase.imagecaption">Unterschriften (eine pro Zeile)</label>
-      <label index="tca_phrase.imageseo">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen (eine pro Zeile)</label>
+      <label index="tca_phrase.imagecaption">Unterschriften (eine Zeile pro Datei)</label>
+      <label index="tca_phrase.imageseo">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen (eine Zeile pro Datei)</label>
       <label index="tca_phrase.imageseo.oneline">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
