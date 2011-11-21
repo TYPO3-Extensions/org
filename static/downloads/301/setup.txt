@@ -937,18 +937,17 @@ plugin.tx_browser_pi1 {
                         }
                       }
                     }
-                      // Form submit (cart icon)
+                      // Download button (download icon)
                     60 = COA
                     60 {
                         // <td class="csc-uploads-button"><a href="X" class="iconbutton"
                       10 = TEXT
                       10 {
-                        value   = Ordering
-                        lang.de = Bestellen
                         typolink {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                           useCacheHash      = 1
+                          returnLast        = url
                         }
                         wrap    = <td class="csc-uploads-button"><a href="|" class="iconbutton"
                       }
