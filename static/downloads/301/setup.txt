@@ -1030,18 +1030,17 @@ plugin.tx_browser_pi1 {
                       // Cart icon
                     60 = COA
                     60 {
-                        // <td class="csc-uploads-icon"><button type="submit" name="submit" value="X" />
+                        // <td class="csc-uploads-button"><button type="submit" name="submit" value="X" />
                       10 = TEXT
                       10 {
                         value   = Ordering
                         lang.de = Bestellen
-                        wrap    = <td class="csc-uploads-icon"><button type="submit" name="submit" value="|" />
+                        wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|" />
                       }
                         // <img ... />
                       20 = IMAGE
                       20 {
                         file    = EXT:org/res/cart.gif
-                        params  = class="button_icon"
                       }
                         // label</button></td>
                       30 = TEXT

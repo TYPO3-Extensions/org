@@ -118,6 +118,10 @@
 .tx-browser-pi1 form.tx_org_downloads-order button span.ui-button-text {
   padding: 0;
 }
+.tx-browser-pi1 form.tx_org_downloads-order button span.ui-button-text img {
+  position: relative;
+  top: 3px;
+}
 .tx-browser-pi1 form.tx_org_downloads-order input.quantity {
   padding-right: .2em;
   text-align: right;
