@@ -932,7 +932,7 @@ plugin.tx_browser_pi1 {
                             value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                             lang.de = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
                           }
-                          aTagParams        = class="backbutton"
+                          ATagParams        = class="backbutton"
                           useCacheHash      = 1
                         }
                       }
