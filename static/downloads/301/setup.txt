@@ -1035,18 +1035,20 @@ plugin.tx_browser_pi1 {
                       10 {
                         value   = Ordering
                         lang.de = Bestellen
+                        wrap    = <td class="csc-uploads-icon"><button type="submit" name="submit" value="|" />
                       }
+                        // <img ... />
                       20 = IMAGE
                       20 {
                         file    = EXT:org/res/cart.gif
                         params  = class="button_icon"
                       }
-                        // label</td>
+                        // label</button></td>
                       30 = TEXT
                       30 {
                         value       = Ordering
                         lang.de     = Bestellen
-                        noTrimWrap  = | ||
+                        noTrimWrap  = | |</button></td>|
                       }
                     }
                       // Form submit
