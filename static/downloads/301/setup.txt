@@ -1030,10 +1030,10 @@ plugin.tx_browser_pi1 {
                       // Cart icon
                     60 = IMAGE
                     60 {
-                      wrap = <td class="csc-uploads-icon">|</td>
+                      wrap = <td class="csc-uploads-icon"><input type="submit" name="submit" value="X" />|</td>
                       file = EXT:org/res/cart.gif
-                      imageLinkWrap = 1
-                      imageLinkWrap {
+                      XimageLinkWrap = 1
+                      XimageLinkWrap {
                         enable = 1
                         typolink {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
