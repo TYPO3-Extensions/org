@@ -940,7 +940,9 @@ plugin.tx_browser_pi1 {
                       // Download button (download icon)
                     60 = COA
                     60 {
-                        // <td class="csc-uploads-button"><a href="X" class="iconbutton"
+                        // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
+                      wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
+                        // <a href="X" ...
                       10 = TEXT
                       10 {
                         typolink {
@@ -949,9 +951,9 @@ plugin.tx_browser_pi1 {
                           useCacheHash      = 1
                           returnLast        = url
                         }
-                        wrap    = <td class="csc-uploads-button"><a href="|" class="iconbutton"
+                        wrap    = <a href="|"
                       }
-                        // title="X">
+                        // ... title="X">
                       20 = TEXT
                       20 {
                         value       = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -963,12 +965,12 @@ plugin.tx_browser_pi1 {
                       30 {
                         file    = EXT:org/res/download.gif
                       }
-                        // label</a></td>
+                        // ... label</a>
                       40 = TEXT
                       40 {
                         value       = Download
                         lang.de     = Herunterladen
-                        noTrimWrap  = | |</a></td>|
+                        noTrimWrap  = | |</a>|
                       }
                     }
                       // Download button
