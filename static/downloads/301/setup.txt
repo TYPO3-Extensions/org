@@ -675,21 +675,21 @@ plugin.tx_browser_pi1 {
                         30 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             data  >
                             value = &nbsp;
                           }
                         }
-                        30 >
                           // File description (empty!)
                         40 = COA
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
                             data  >
                             value = &nbsp;
                           }
                         }
-                        40 >
                           // form input quantity
                         50 = TEXT
                         50 {
