@@ -563,8 +563,8 @@ plugin.tx_browser_pi1 {
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
-                            wrap      = <td class="csc-uploads-file-name">|</td>
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                            wrap      = <td class="csc-uploads-file-caption">|</td>
                           }
                         }
                           // Filesize
@@ -685,8 +685,8 @@ plugin.tx_browser_pi1 {
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
-                            if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
-                            wrap        = <td class="csc-uploads-file-description">|</td>
+                            if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                            wrap        = <td class="csc-uploads-file-caption">|</td>
                           }
                         }
                           // form input quantity

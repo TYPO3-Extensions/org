@@ -3208,7 +3208,7 @@ $TCA['tx_org_event'] = array (
       'config'  => array (
         'type'  => 'input',
         'size'  => '50',
-        'max'   =>  '80',
+        'max'   => '80',
         'eval'  => 'trim',
       ),
     ),
@@ -3221,8 +3221,8 @@ $TCA['tx_org_event'] = array (
     'documentscaption' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
-      'config'    => $conf_text_30_05,
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.documentscaption',
+      'config'    => $conf_input_80_trim,
     ),
     'documentslayout' => array (
       'exclude'   => $bool_exclude_default,
