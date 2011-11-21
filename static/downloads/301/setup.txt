@@ -546,7 +546,7 @@ plugin.tx_browser_pi1 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
-                            wrap = |
+                            wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
                             typolink {
                               parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
@@ -562,8 +562,7 @@ plugin.tx_browser_pi1 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
-                            wrap >
-                            noTrimWrap = | ||
+                            wrap      = <td class="csc-uploads-file-name">|</td>
                           }
                         }
                           // Filesize
@@ -676,8 +675,9 @@ plugin.tx_browser_pi1 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
-                            data  >
-                            value = &nbsp;
+                            data      >
+                            value     = &nbsp;
+                            wrap      = <td class="csc-uploads-file-name">|</td>
                           }
                         }
                           // File description (empty!)
@@ -685,9 +685,10 @@ plugin.tx_browser_pi1 {
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
-                            data  >
-                            value = &nbsp;
+                            if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_DESCRIPTION###
+                            data        >
+                            value       = &nbsp;
+                            wrap        = <td class="csc-uploads-file-description">|</td>
                           }
                         }
                           // form input quantity
