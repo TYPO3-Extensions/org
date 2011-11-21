@@ -519,6 +519,11 @@ plugin.tx_browser_pi1 {
                         // Download link
                       10 = COA
                       10 {
+                        if {
+                          value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          equals  = doc_shipping
+                          negate  = 1
+                        }
                         wrap = <tr class="download">|</tr>
                           // Flag
                         10 = TEXT
@@ -649,6 +654,11 @@ plugin.tx_browser_pi1 {
                         // Form for cart
                       20 = COA
                       20 {
+                        if {
+                          value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          equals  = doc_download
+                          negate  = 1
+                        }
                         wrap = <tr class="ordering">|</tr>
                           // Flag
                         10 = TEXT
