@@ -517,7 +517,7 @@ plugin.tx_browser_pi1 {
                       wrap (
               <table class="csc-uploads">|</table>
 )
-                        // Download link
+                        // <tr> ... Donwload link line ... </tr>
                       10 = COA
                       10 {
                         if {
@@ -597,62 +597,44 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
-                          // Download icon
-                        60 = IMAGE
+                          // Download button (download icon)
+                        60 = COA
                         60 {
-                          wrap = <td class="csc-uploads-icon">|</td>
-                          file = EXT:org/res/download.gif
-                          imageLinkWrap = 1
-                          imageLinkWrap {
-                            enable = 1
-                            typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title = TEXT
-                              title {
-                                value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                                lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                              }
-                              useCacheHash      = 1
-                            }
-                          }
-                        }
-                          // Download button
-                        70 = COA
-                        70 {
-                          wrap = <td class="csc-uploads-button">|</td>
-                            // <button type="button" onclick="location='de/downloads/?type=31230&amp;...'">
+                            // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
+                          wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
+                            // <a href="X" class="ui-button-text" ...
                           10 = TEXT
                           10 {
-                            prepend = TEXT
-                            prepend {
-                              value = <button type="button" onclick="location='
-                            }
                             typolink {
                               parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title             = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
                               useCacheHash      = 1
                               returnLast        = url
                             }
-                            append = TEXT
-                            append {
-                              value = '">
-                            }
+                            wrap    = <a href="|" class="ui-button-text"
                           }
-                            // label</button>
+                            // ... title="X">
                           20 = TEXT
                           20 {
-                            value   = Download
-                            lang.de = Herunterladen
-                            append = TEXT
-                            append {
-                              value = </button>
-                            }
+                            value       = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            lang.de     = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                            noTrimWrap  = | title="|">|
+                          }
+                            // <img ... />
+                          30 = IMAGE
+                          30 {
+                            file    = EXT:org/res/download.gif
+                          }
+                            // ... label</a>
+                          40 = TEXT
+                          40 {
+                            value       = Download
+                            lang.de     = Herunterladen
+                            noTrimWrap  = | |</a>|
                           }
                         }
                       }
-                        // Form for cart
+                        // <tr> ... Ordering link line ... </tr>
                       20 = COA
                       20 {
                         if {
@@ -707,42 +689,27 @@ plugin.tx_browser_pi1 {
                           wrap = <td class="csc-uploads-fileSize">|</td>
                           value = <input type="text" name="quantity" value="1" class="quantity" />
                         }
-                          // Cart icon
-                        60 = IMAGE
+                          // Form submit (cart icon)
+                        60 = COA
                         60 {
-                          wrap = <td class="csc-uploads-icon">|</td>
-                          file = EXT:org/res/cart.gif
-                          imageLinkWrap = 1
-                          imageLinkWrap {
-                            enable = 1
-                            typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title = TEXT
-                              title {
-                                value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                                lang.de = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                              }
-                              useCacheHash      = 1
-                            }
-                          }
-                        }
-                          // Form submit
-                        70 = COA
-                        70 {
-                          wrap (
-                <td class="csc-uploads-button">|</td>
-)
-                            // <input type="submit" value="..." />
+                            // <td class="csc-uploads-button"><button type="submit" name="submit" value="X" />
                           10 = TEXT
                           10 {
-                            value = Ordering
-                            lang {
-                              de = Bestellen
-                            }
-                            wrap (
-                  <input type="submit" name="submit" value="|" />
-)
+                            value   = Ordering
+                            lang.de = Bestellen
+                            wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|" />
+                          }
+                            // <img ... />
+                          20 = IMAGE
+                          20 {
+                            file    = EXT:org/res/cart.gif
+                          }
+                            // label</button></td>
+                          30 = TEXT
+                          30 {
+                            value       = Ordering
+                            lang.de     = Bestellen
+                            noTrimWrap  = | |</button></td>|
                           }
                         }
                       }
@@ -835,7 +802,7 @@ plugin.tx_browser_pi1 {
                   wrap (
               <table class="csc-uploads">|</table>
 )
-                    // Download link
+                    // <tr> ... Download link line ... </tr>
                   10 = COA
                   10 {
                     if {
@@ -917,27 +884,6 @@ plugin.tx_browser_pi1 {
                       }
                     }
                       // Download button (download icon)
-                    x60 = IMAGE
-                    x60 {
-                      wrap = <td class="csc-uploads-button">|</td>
-                      file = EXT:org/res/download.gif
-                      imageLinkWrap = 1
-                      imageLinkWrap {
-                        enable = 1
-                        typolink {
-                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                          title = TEXT
-                          title {
-                            value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            lang.de = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                          }
-                          ATagParams        = class="iconbutton"
-                          useCacheHash      = 1
-                        }
-                      }
-                    }
-                      // Download button (download icon)
                     60 = COA
                     60 {
                         // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
@@ -973,46 +919,8 @@ plugin.tx_browser_pi1 {
                         noTrimWrap  = | |</a>|
                       }
                     }
-                      // Download button
-                    70 = COA
-                    70 {
-                      wrap = <td class="csc-uploads-button">|</td>
-                        // <button type="button" onclick="location='de/downloads/?type=31230&amp;...'">
-                      10 = TEXT
-                      10 {
-                        prepend = TEXT
-                        prepend {
-                          //value = <button type="button" onclick="location='
-                          value = Anfang
-                        }
-                        typolink {
-                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                          title             = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                          useCacheHash      = 1
-                          returnLast        = url
-                        }
-                        append = TEXT
-                        append {
-                          //value = '">
-                          value = ende 1
-                        }
-                      }
-                        // label</button>
-                      20 = TEXT
-                      20 {
-                        value   = Download
-                        lang.de = Herunterladen
-                        append = TEXT
-                        append {
-                          //value = </button>
-                          value = Ende2
-                        }
-                      }
-                    }
-                    70 >
                   }
-                    // Form for cart
+                    // <tr> ... Ordering link line ... </tr>
                   20 = COA
                   20 {
                     if {
