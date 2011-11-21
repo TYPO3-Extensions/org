@@ -764,6 +764,7 @@ plugin.tx_browser_pi1 {
                   }
                   tableField = tx_org_downloads.documents
                   fields {
+                    caption   = ###TABLE.CAPTION###
                     from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                     files     = ###TABLE.DOCUMENTS###
                     files {
@@ -906,6 +907,7 @@ plugin.tx_browser_pi1 {
               }
               tableField = tx_org_downloads.documents
               fields {
+                caption   = ###TX_ORG_DOWNLOADS.CAPTION###
                 from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
                 files {
