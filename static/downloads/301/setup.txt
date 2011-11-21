@@ -451,8 +451,8 @@ plugin.tx_browser_pi1 {
                   value (
                     uid,
                     documents,
+                    documentscaption,
                     thumbnail,
-                    caption,
                     linkicon_width,
                     linkicon_height
                   )
@@ -765,7 +765,7 @@ plugin.tx_browser_pi1 {
                   }
                   tableField = tx_org_downloads.documents
                   fields {
-                    caption   = ###TABLE.CAPTION###
+                    caption   = ###TABLE.DOCUMENTSCAPTION###
                     from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                     files     = ###TABLE.DOCUMENTS###
                     files {
@@ -908,7 +908,7 @@ plugin.tx_browser_pi1 {
               }
               tableField = tx_org_downloads.documents
               fields {
-                caption   = ###TX_ORG_DOWNLOADS.CAPTION###
+                caption   = ###TX_ORG_DOWNLOADS.DOCUMENTSCAPTION###
                 from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
                 files {
