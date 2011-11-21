@@ -1030,7 +1030,7 @@ plugin.tx_browser_pi1 {
                       // Cart icon
                     60 = IMAGE
                     60 {
-                      wrap = <td class="csc-uploads-icon"><input type="submit" name="submit" value="X" />|</td>
+                      wrap = <td class="csc-uploads-icon"><button type="submit" name="submit" value="X" />|</td>
                       file = EXT:org/res/cart.gif
                       XimageLinkWrap = 1
                       XimageLinkWrap {
