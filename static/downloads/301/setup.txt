@@ -452,6 +452,7 @@ plugin.tx_browser_pi1 {
                     uid,
                     documents,
                     thumbnail,
+                    caption,
                     linkicon_width,
                     linkicon_height
                   )
