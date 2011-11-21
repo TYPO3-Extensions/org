@@ -2130,7 +2130,7 @@ $TCA['tx_org_downloads'] = array (
   'interface' => array (
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,' .
                               'type,title,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext,' .
-                              'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
+                              'documents_from_path,documents,documentscaption,documentslayout,documents_display_label,documents_display_caption,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
                               'teaser_title,teaser_subtitle,teaser_short' .
@@ -2373,6 +2373,32 @@ $TCA['tx_org_downloads'] = array (
         ),
       ),
     ),
+    'documents_display_label' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents_display_label',
+      'config'    => array (
+        'type'  => 'check',
+        'items' => array (
+          '1' => array (
+            '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
+          ),
+        ),
+      ),
+    ),
+    'documents_display_caption' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents_display_caption',
+      'config'    => array (
+        'type'  => 'check',
+        'items' => array (
+          '1' => array (
+            '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
+          ),
+        ),
+      ),
+    ),
     'documentssize' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
@@ -2564,7 +2590,7 @@ $TCA['tx_org_downloads'] = array (
       'canNotCollapse' => 1,
     ),
     'link' => array (
-      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
+      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documents_display_label,documents_display_caption,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
     'linkicon_size' => array (

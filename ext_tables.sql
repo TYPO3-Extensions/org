@@ -267,6 +267,8 @@ CREATE TABLE tx_org_downloads (
   documentscaption tinytext,
   documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
   documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documents_display_label tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documents_display_caption tinyint(4) unsigned DEFAULT '0' NOT NULL,
   linkicon_height tinytext,
   linkicon_width tinytext,
   thumbnail text,
