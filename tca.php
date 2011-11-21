@@ -2384,6 +2384,7 @@ $TCA['tx_org_downloads'] = array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
+        'default' => '0'
       ),
     ),
     'documents_display_caption' => array (
@@ -2397,6 +2398,7 @@ $TCA['tx_org_downloads'] = array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
+        'default' => '0'
       ),
     ),
     'documentssize' => array (

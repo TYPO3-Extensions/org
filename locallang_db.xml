@@ -36,6 +36,8 @@
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Captions (one per line)</label>
+      <label index="tca_phrase.documents_display_caption">Display file description</label>
+      <label index="tca_phrase.documents_display_label">Display file name</label>
       <label index="tca_phrase.documentslayout">Type of link</label>
       <label index="tca_phrase.documentslayout.0">without any icon and any preview</label>
       <label index="tca_phrase.documentslayout.1">with an application icon</label>
@@ -393,6 +395,8 @@
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Beschriftung (eine pro Zeile)</label>
+      <label index="tca_phrase.documents_display_caption">Dateibeschreibung anzeigen</label>
+      <label index="tca_phrase.documents_display_label">Dateibezeichnung anzeigen</label>
       <label index="tca_phrase.documentslayout">Typ des Links</label>
       <label index="tca_phrase.documentslayout.0">ohne Icon und ohne Vorschau-Bild</label>
       <label index="tca_phrase.documentslayout.1">mit Icon des Dateityps</label>
