@@ -40,6 +40,7 @@ plugin.tx_browser_pi1 {
         }
         select (
           tx_org_downloads.title,
+          tx_org_downloads.type,
           tx_org_downloads.subtitle,
           tx_org_downloads.datetime,
 
@@ -468,7 +469,6 @@ plugin.tx_browser_pi1 {
                 conf < tt_content.uploads.20
                 conf =
                 conf {
-                  //stdWrap.wrap = <table class="csc-uploads">|</table>
                   userFunc >
                     // Don't outerWrap with <table> by default
                   outerWrap = |
@@ -734,8 +734,8 @@ plugin.tx_browser_pi1 {
                 <td class="csc-uploads-button">|</td>
 )
                             // <input type="submit" value="..." />
-                          70 = TEXT
-                          70 {
+                          10 = TEXT
+                          10 {
                             value = Ordering
                             lang {
                               de = Bestellen
@@ -790,115 +790,288 @@ plugin.tx_browser_pi1 {
                 }
               }
               filePath >
-              itemRendering {
-                10 {
-                  if {
-                    isPositive.field >
-                    isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-                  }
-                }
-                20 {
-                  1 {
-                    wrap = |
-                    data = register:filename
-                    typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      useCacheHash      = 1
-                    }
-                  }
-                  3 = TEXT
-                  3 {
-                    if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                    data        = register:fileSize
-                    noTrimWrap  = | (|)
-                    bytes       = 1
-                    bytes {
-                      labels = {$styles.content.uploads.filesizeBytesLabels}
-                    }
-                    typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      useCacheHash      = 1
-                    }
-                  }
-                  4 = TEXT
-                  4 {
-                    value = <img src="typo3/gfx/flags/de.gif" alt="German" title="German"/>
-                  }
-                }
-                30 >
-              }
               itemRendering >
+                // Download link and ordering form
               itemRendering = COA
               itemRendering {
-                  // Flag
-                20 = TEXT
+                  // Form begin
+                10 = COA
+                10 {
+                    // <form name="form_add_to_cart" ... method="post">
+                  10 = TEXT
+                  10 {
+                    wrap (
+          <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
+)
+                    typolink {
+                      parameter     = {$plugin.org.pages.shopping_cart_downloads}
+                      returnLast    = url
+                      useCacheHash  = 1
+                    }
+                  }
+                    // <fieldset><legend>X</legend><input ... /><input ... /><input ... />
+                  20 = TEXT
+                  20 {
+                    value = Donwload or Ordering
+                    lang {
+                      de = Herunterladen oder Bestellen
+                    }
+                    wrap (
+            <fieldset id="add-to-cart">
+              <legend>|</legend>
+              <input type="hidden"  name="id"                     value="{$plugin.org.pages.shopping_cart_downloads}" />
+              <input type="hidden"  name="tx_org_downloads[uid]"        value="###TX_ORG_DOWNLOADS.UID###" />
+              <input type="hidden"  name="tx_org_downloads[documents]"  value="###TX_ORG_DOWNLOADS.DOCUMENTS###" />
+              <input type="hidden"  name="sys_language[flag]"     value="###SYS_LANGUAGE.FLAG###" />
+              <input type="hidden"  name="sys_language[title]"    value="###SYS_LANGUAGE.TITLE###" />
+)
+                  }
+                }
+                  // <table class="csc-uploads">|</table>
+                20 = COA
                 20 {
-                  value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                    title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                    useCacheHash      = 1
+                  wrap (
+              <table class="csc-uploads">|</table>
+)
+                    // Download link
+                  10 = COA
+                  10 {
+                    if {
+                      value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      equals  = doc_shipping
+                      negate  = 1
+                    }
+                    wrap = <tr class="download">|</tr>
+                      // Flag
+                    10 = TEXT
+                    10 {
+                      wrap  = <td class="csc-uploads-flag">|</td>
+                      value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
+                      typolink {
+                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                        title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        useCacheHash      = 1
+                      }
+                    }
+                      // File icon
+                    20 = COA
+                    20 {
+                      10 < tt_content.uploads.20.itemRendering.10
+                      10 {
+                        if {
+                          isPositive.field >
+                          isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                        }
+                      }
+                    }
+                      // File name
+                    30 = COA
+                    30 {
+                      10 < tt_content.uploads.20.itemRendering.20.1
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        wrap      = <td class="csc-uploads-file-name">|</td>
+                        data = register:filename
+                        typolink {
+                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                          useCacheHash      = 1
+                        }
+                      }
+                    }
+                      // File description
+                    40 = COA
+                    40 {
+                      10 < tt_content.uploads.20.itemRendering.20.2
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        wrap      = <td class="csc-uploads-file-caption">|</td>
+                      }
+                    }
+                      // Filesize
+                    50 = COA
+                    50 {
+                      10 = COA
+                      10 {
+                        wrap = <td class="csc-uploads-fileSize">|</td>
+                        10 < tt_content.uploads.20.itemRendering.30
+                        10 {
+                          if >
+                          if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                          wrap >
+                          bytes {
+                            labels = {$styles.content.uploads.filesizeBytesLabels}
+                          }
+                          typolink {
+                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                            title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            useCacheHash      = 1
+                          }
+                        }
+                      }
+                    }
+                      // Download icon
+                    60 = IMAGE
+                    60 {
+                      wrap = <td class="csc-uploads-icon">|</td>
+                      file = EXT:org/res/download.gif
+                      imageLinkWrap = 1
+                      imageLinkWrap {
+                        enable = 1
+                        typolink {
+                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          title = TEXT
+                          title {
+                            value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            lang.de = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                          }
+                          useCacheHash      = 1
+                        }
+                      }
+                    }
+                      // Download button
+                    70 = COA
+                    70 {
+                      wrap = <td class="csc-uploads-button">|</td>
+                        // <button type="button" onclick="location='de/downloads/?type=31230&amp;...'">
+                      10 = TEXT
+                      10 {
+                        prepend = TEXT
+                        prepend {
+                          value = <button type="button" onclick="location='
+                        }
+                        typolink {
+                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          title             = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                          useCacheHash      = 1
+                          returnLast        = url
+                        }
+                        append = TEXT
+                        append {
+                          value = '">
+                        }
+                      }
+                        // label</button>
+                      20 = TEXT
+                      20 {
+                        value   = Download
+                        lang.de = Herunterladen
+                        append = TEXT
+                        append {
+                          value = </button>
+                        }
+                      }
+                    }
                   }
-                  wrap = <td class="csc-uploads-flag">|</td>
+                    // Form for cart
+                  20 = COA
+                  20 {
+                    if {
+                      value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      equals  = doc_download
+                      negate  = 1
+                    }
+                    wrap = <tr class="ordering">|</tr>
+                      // Flag
+                    10 = TEXT
+                    10 {
+                      wrap  = <td class="csc-uploads-flag">|</td>
+                      value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
+                      typolink {
+                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                        title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        useCacheHash      = 1
+                      }
+                    }
+                      // File icon (empty!)
+                    20 = TEXT
+                    20 {
+                      if {
+                        isPositive.field >
+                        isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                      }
+                      value = &nbsp;
+                      wrap  = <td class="csc-uploads-icon">|</td>
+                    }
+                      // File name (empty!)
+                    30 = COA
+                    30 {
+                      10 < tt_content.uploads.20.itemRendering.20.1
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        wrap      = <td class="csc-uploads-file-name">|</td>
+                      }
+                    }
+                      // File description (empty!)
+                    40 = COA
+                    40 {
+                      10 < tt_content.uploads.20.itemRendering.20.2
+                      10 {
+                        if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        wrap        = <td class="csc-uploads-file-caption">|</td>
+                      }
+                    }
+                      // form input quantity
+                    50 = TEXT
+                    50 {
+                      wrap = <td class="csc-uploads-fileSize">|</td>
+                      value = <input type="text" name="quantity" value="1" class="quantity" />
+                    }
+                      // Cart icon
+                    60 = IMAGE
+                    60 {
+                      wrap = <td class="csc-uploads-icon">|</td>
+                      file = EXT:org/res/cart.gif
+                      imageLinkWrap = 1
+                      imageLinkWrap {
+                        enable = 1
+                        typolink {
+                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          title = TEXT
+                          title {
+                            value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            lang.de = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                          }
+                          useCacheHash      = 1
+                        }
+                      }
+                    }
+                      // Form submit
+                    70 = COA
+                    70 {
+                      wrap (
+                <td class="csc-uploads-button">|</td>
+)
+                        // <input type="submit" value="..." />
+                      10 = TEXT
+                      10 {
+                        value = Ordering
+                        lang {
+                          de = Bestellen
+                        }
+                        wrap (
+                  <input type="submit" name="submit" value="|" />
+)
+                      }
+                    }
+                  }
                 }
-                30 < tt_content.uploads.20.itemRendering.10
+                  // Form end
+                30 = TEXT
                 30 {
-                  if {
-                    isPositive.field >
-                    isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-                  }
+                  wrap (
+              </table>
+            </fieldset>
+          </form>
+)
                 }
-                40 < tt_content.uploads.20.itemRendering.20
-                40 {
-                  1 {
-                    wrap = |
-                    data = register:filename
-                    typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                      useCacheHash      = 1
-                    }
-                  }
-                  2 {
-                    wrap >
-                    noTrimWrap = | ||
-                  }
-                }
-                50 < tt_content.uploads.20.itemRendering.30
-                50 {
-                  if >
-                  if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
-                  wrap      = <td class="csc-uploads-fileSize">(|)</td>
-                  bytes {
-                    labels = {$styles.content.uploads.filesizeBytesLabels}
-                  }
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                    title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                    useCacheHash      = 1
-                  }
-                }
-                60 = IMAGE
-                60 {
-                  file = EXT:org/res/download_blue_white.gif
-                  imageLinkWrap = 1
-                  imageLinkWrap {
-                    enable = 1
-                    typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      title             = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                      useCacheHash      = 1
-                    }
-                  }
-                  wrap = <td class="csc-uploads-download-icon">|</td>
-                }
-                wrap = <tr class="tr-odd tr-first">|</tr> |*| <tr class="tr-even">|</tr> || <tr class="tr-odd">|</tr> |*|
               }
               linkProc {
                 iconCObject {
