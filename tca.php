@@ -1717,7 +1717,7 @@ $TCA['tx_org_department'] = array (
       'config'    => array (
         'type'  => 'check',
         'items' => array (
-            '1' => array (
+          '1' => array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
@@ -2384,7 +2384,7 @@ $TCA['tx_org_downloads'] = array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
-        'default' => '0'
+        'default' => '1'
       ),
     ),
     'documents_display_caption' => array (
@@ -2412,6 +2412,7 @@ $TCA['tx_org_downloads'] = array (
             '0' => 'LLL:EXT:lang/locallang_core.xml:labels.enabled',
           ),
         ),
+        'default' => '1'
       ),
     ),
     'thumbnail' => array (
