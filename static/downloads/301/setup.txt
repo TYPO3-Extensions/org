@@ -1028,23 +1028,25 @@ plugin.tx_browser_pi1 {
                       value = <input type="text" name="quantity" value="1" class="quantity" />
                     }
                       // Cart icon
-                    60 = IMAGE
+                    60 = COA
                     60 {
-                      wrap = <td class="csc-uploads-icon"><button type="submit" name="submit" value="X" />| Bestellen</td>
-                      file = EXT:org/res/cart.gif
-                      XimageLinkWrap = 1
-                      XimageLinkWrap {
-                        enable = 1
-                        typolink {
-                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                          title = TEXT
-                          title {
-                            value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            lang.de = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                          }
-                          useCacheHash      = 1
-                        }
+                        // <td class="csc-uploads-icon"><button type="submit" name="submit" value="X" />
+                      10 = TEXT
+                      10 {
+                        value   = Ordering
+                        lang.de = Bestellen
+                      }
+                      20 = IMAGE
+                      20 {
+                        file    = EXT:org/res/cart.gif
+                        params  = class="button_icon"
+                      }
+                        // label</td>
+                      30 = TEXT
+                      30 {
+                        value       = Ordering
+                        lang.de     = Bestellen
+                        noTrimWrap  = | ||
                       }
                     }
                       // Form submit
@@ -1065,6 +1067,7 @@ plugin.tx_browser_pi1 {
 )
                       }
                     }
+                    70 >
                   }
                 }
                   // Form end
