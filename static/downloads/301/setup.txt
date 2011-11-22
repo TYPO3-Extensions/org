@@ -367,7 +367,7 @@ plugin.tx_browser_pi1 {
               stripHtml   = 1
               noTrimWrap = || |
             }
-              // button: download, download_shipping, shipping
+              // statistics download, button: download, download_shipping, shipping
             13 = CASE
             13 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
@@ -645,7 +645,8 @@ plugin.tx_browser_pi1 {
                         import {
                           data = register : ICON_REL_PATH
                         }
-                        width = 80
+                        width   = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+                        height  = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
                       }
                       imageLinkWrap = 1
                       imageLinkWrap {
