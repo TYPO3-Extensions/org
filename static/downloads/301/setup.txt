@@ -594,30 +594,13 @@ plugin.tx_browser_pi1 {
                         JSwindow = 1
                         JSwindow {
                           newWindow = 1
-                          expand    = 17,20
+                          //expand    = 17,20
                         }
                         typolink >
-                        xx_typolink {
-                          title {
-                            value = Order '###TX_ORG_DOWNLOADS.TITLE###'
-                            lang {
-                              de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
-                              en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
-                            }
-                          }
-                        }
                       }
                     }
                     30 {
-                      typolink {
-                        title {
-                          value = Order '###TX_ORG_DOWNLOADS.TITLE###'
-                          lang {
-                            de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
-                            en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
-                          }
-                        }
-                      }
+                      typolink >
                     }
                   }
                 }
