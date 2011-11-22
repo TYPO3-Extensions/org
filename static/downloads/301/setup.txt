@@ -1158,7 +1158,7 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // Don't outerWrap with <table> by default
-              outerWrap = |
+              outerWrap = x|y
               filePath >
               itemRendering >
                 // Download link and ordering form
