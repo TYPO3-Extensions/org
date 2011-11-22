@@ -460,10 +460,10 @@ plugin.tx_browser_pi1 {
                 30 {
                   typolink {
                     title {
-                      value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                      value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                       lang {
-                        de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                        en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                        de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                        en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                       }
                     }
                   }
@@ -475,10 +475,10 @@ plugin.tx_browser_pi1 {
                 30 {
                   typolink {
                     title {
-                      value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
                       lang {
-                        de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                        en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                        en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
                       }
                     }
                   }
