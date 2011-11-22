@@ -123,6 +123,9 @@
   position: relative;
   top: 3px;
 }
+#content .tx-browser-pi1-list .more .statistics-downloads {
+  font-size:.8em;
+}
 
 #content .tx-browser-pi1-single .ui-button,
 .tx-browser-pi1-single form.tx_org_downloads-order .ui-button {
