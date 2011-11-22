@@ -805,6 +805,9 @@ plugin.tx_browser_pi1 {
               }
             }
               // File link and order form
+          50 = COA
+          50 {
+            wrap = a|z
             50 < tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
@@ -852,7 +855,7 @@ plugin.tx_browser_pi1 {
                 conf {
                   userFunc >
                     // Don't outerWrap with <table> by default
-                  outerWrap = a|z
+                  outerWrap = |
                   filePath >
                   itemRendering >
                     // Download link and ordering form
@@ -867,7 +870,6 @@ plugin.tx_browser_pi1 {
                         wrap (
           <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="post">
 )
-                        //wrap = <form name="form_add_to_cart" id="form-order" class="tx_org_downloads-order" action="|" method="get">
                         typolink {
                           parameter     = {$plugin.org.pages.shopping_cart_downloads}
                           returnLast    = url
@@ -1158,7 +1160,7 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // Don't outerWrap with <table> by default
-              outerWrap = x|y
+              outerWrap = |
               filePath >
               itemRendering >
                 // Download link and ordering form
@@ -1454,6 +1456,7 @@ plugin.tx_browser_pi1 {
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }
+            }
             }
           }
         }
