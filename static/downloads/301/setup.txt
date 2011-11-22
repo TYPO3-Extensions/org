@@ -421,42 +421,15 @@ plugin.tx_browser_pi1 {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
                     additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                     useCacheHash      = 1
+                    title             = TEXT
+                    title {
+                      value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      lang {
+                        de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
+                        en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      }
+                    }
                   }
-                }
-                xxx10 = TEXT
-                xxx10 {
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads} - linktosingle
-                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                    useCacheHash      = 1
-                    returnLast        = url
-                  }
-                  wrap    = <a href="|" class="ui-button-text"
-                }
-                  // ... title="X">
-                xxx20 = TEXT
-                xxx20 {
-                  value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                  lang {
-                    de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                    en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                  }
-                  noTrimWrap  = | title="|">|
-                }
-                  // <img ... />
-                xxx30 = IMAGE
-                xxx30 {
-                  file    = EXT:org/res/download.gif
-                }
-                  // ... label</a>
-                xxx40 = TEXT
-                xxx40 {
-                  value = Download
-                  lang {
-                    de  = Herunterladen
-                    en  = Download
-                  }
-                  noTrimWrap  = | |</a>|
                 }
               }
               download_shipping < .default
