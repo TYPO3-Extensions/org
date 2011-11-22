@@ -376,7 +376,7 @@ plugin.tx_browser_pi1 {
               }
               value       = ###TX_ORG_DOWNLOADS.BODYTEXT###
               crop        = 200 | ... | 1
-              stripHtml = 1
+              stripHtml   = 1
             }
               // button: download, download_shipping, shipping
             13 = CASE
@@ -386,7 +386,7 @@ plugin.tx_browser_pi1 {
               default = COA
               default {
                   // <div class="more">...</div>
-                wrap = <div class="more">|</div>
+                wrap = <span class="more_icon_button">|</span>
                   // Download icon
                 10 = IMAGE
                 10 {
@@ -416,6 +416,11 @@ plugin.tx_browser_pi1 {
                   lang {
                     de  = mehr &raquo;
                     en  = more &raquo;
+                  }
+                  value = Download &raquo;
+                  lang {
+                    de  = Herunterladen &raquo;
+                    en  = Download &raquo;
                   }
                   noTrimWrap = | <span class="more">|</span>|
                   typolink {
@@ -458,6 +463,11 @@ plugin.tx_browser_pi1 {
                   }
                 }
                 30 {
+                  value = Order or download &raquo;
+                  lang {
+                    de  = Herunterladen oder Bestellen &raquo;
+                    en  = Order or download &raquo;
+                  }
                   typolink {
                     title {
                       value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
@@ -473,6 +483,11 @@ plugin.tx_browser_pi1 {
               shipping {
                 10 >
                 30 {
+                  value = Order &raquo;
+                  lang {
+                    de  = Bestellen &raquo;
+                    en  = Order &raquo;
+                  }
                   typolink {
                     title {
                       value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
