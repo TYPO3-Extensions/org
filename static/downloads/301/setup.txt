@@ -807,7 +807,7 @@ plugin.tx_browser_pi1 {
               // File link and order form
           50 = COA
           50 {
-            wrap = a|z
+            wrap = <div>|</div>
             50 < tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
