@@ -189,8 +189,8 @@ plugin.tx_browser_pi1 {
                         parameter         = {$plugin.org.pages.downloads}
                         title = TEXT
                         title {
-                          value       = Download ###DOWNLOADS.DOCUMENTS###
-                          lang.de     = ###TX_ORG_DOWNLOADS.DOCUMENTS### herunterladen
+                          value       = Download ###TX_ORG_DOWNLOADS.TITLE###
+                          lang.de     = ###TX_ORG_DOWNLOADS.TITLE### herunterladen
                         }
                         additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                         useCacheHash      = 1
@@ -208,8 +208,8 @@ plugin.tx_browser_pi1 {
                       parameter         = {$plugin.org.pages.downloads}
                       title = TEXT
                       title {
-                        value       = Download ###DOWNLOADS.DOCUMENTS###
-                        lang.de     = ###TX_ORG_DOWNLOADS.DOCUMENTS### herunterladen
+                        value       = Download ###TX_ORG_DOWNLOADS.TITLE###
+                        lang.de     = ###TX_ORG_DOWNLOADS.TITLE### herunterladen
                       }
                       additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                       useCacheHash      = 1
