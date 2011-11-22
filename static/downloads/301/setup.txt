@@ -171,7 +171,6 @@ plugin.tx_browser_pi1 {
               tx_browser_pi1 = CASE
               tx_browser_pi1 {
                 key = ###TX_ORG_DOWNLOADS.TYPE###
-                  // download
                 default = COA
                 default {
                   10 = IMAGE
@@ -189,8 +188,8 @@ plugin.tx_browser_pi1 {
                         parameter         = {$plugin.org.pages.downloads}
                         title = TEXT
                         title {
-                          value       = Download ###TX_ORG_DOWNLOADS.TITLE###
-                          lang.de     = ###TX_ORG_DOWNLOADS.TITLE### herunterladen
+                          value       = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                          lang.de     = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
                         }
                         additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                         useCacheHash      = 1
@@ -208,81 +207,53 @@ plugin.tx_browser_pi1 {
                       parameter         = {$plugin.org.pages.downloads}
                       title = TEXT
                       title {
-                        value       = Download ###TX_ORG_DOWNLOADS.TITLE###
-                        lang.de     = ###TX_ORG_DOWNLOADS.TITLE### herunterladen
+                        value       = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang.de     = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
                       }
                       additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                       useCacheHash      = 1
                     }
                   }
                 }
-                  // download and shipping
-                download_shipping = COA
+                download_shipping < .default
                 download_shipping {
-                  10 = IMAGE
                   10 {
-                    file {
-                      import {
-                        data = register : ICON_REL_PATH
-                      }
-                      width = 80
-                    }
-                    imageLinkWrap = 1
                     imageLinkWrap {
-                      enable = 1
                       typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        useCacheHash      = 1
+                        title {
+                          value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                          lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                        }
                       }
                     }
                   }
-                  20 = TEXT
-                  20 {
-                    value = //**//
-                  }
-                  30 = TEXT
                   30 {
-                    data = register : filename
                     typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      useCacheHash      = 1
+                      title {
+                        value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                      }
                     }
                   }
                 }
-                  // shipping
-                shipping = COA
+                shipping < .default
                 shipping {
-                  10 = IMAGE
                   10 {
-                    file {
-                      import {
-                        data = register : ICON_REL_PATH
-                      }
-                      width = 80
-                    }
-                    imageLinkWrap = 1
                     imageLinkWrap {
-                      enable = 1
                       typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        useCacheHash      = 1
+                        title {
+                          value   = Order'###TX_ORG_DOWNLOADS.TITLE###'
+                          lang.de = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
+                        }
                       }
                     }
                   }
-                  20 = TEXT
-                  20 {
-                    value = //**//
-                  }
-                  30 = TEXT
                   30 {
-                    data = register : filename
                     typolink {
-                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                      useCacheHash      = 1
+                      title {
+                        value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                      }
                     }
                   }
                 }
