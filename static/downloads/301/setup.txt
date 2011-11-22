@@ -805,9 +805,6 @@ plugin.tx_browser_pi1 {
               }
             }
               // File link and order form
-          50 = COA
-          50 {
-            wrap = <div>|</div>
             50 < tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
@@ -1456,7 +1453,6 @@ plugin.tx_browser_pi1 {
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }
-            }
             }
           }
         }
