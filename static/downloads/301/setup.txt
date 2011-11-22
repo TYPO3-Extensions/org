@@ -232,7 +232,7 @@ plugin.tx_browser_pi1 {
                         title {
                           value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                           lang {
-                            de  = Herunterladen oder bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
                             en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                           }
                         }
@@ -244,7 +244,7 @@ plugin.tx_browser_pi1 {
                       title {
                         value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                         lang {
-                          de  = Herunterladen oder bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
                           en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                         }
                       }
@@ -385,7 +385,7 @@ plugin.tx_browser_pi1 {
                 // download
               default = COA
               default {
-                  // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
+                  // <div class="iconbutton">...</div>
                 wrap = <div class="iconbutton">|</div>
                   // <a href="X" class="ui-button-text" ...
                 10 = TEXT
@@ -440,7 +440,7 @@ plugin.tx_browser_pi1 {
                 20 {
                   value = Order or download '###TABLE.DOCUMENTS###'
                   lang {
-                    de  = Bestellen oder herunterladen: '###TABLE.DOCUMENTS###'
+                    de  = Herunterladen oder Bestellen: '###TABLE.DOCUMENTS###'
                     en  = Order or download '###TABLE.DOCUMENTS###'
                   }
                 }
@@ -450,7 +450,7 @@ plugin.tx_browser_pi1 {
                 40 {
                   value = Order or download
                   lang {
-                    de  = Bestellen oder herunterladen
+                    de  = Herunterladen oder Bestellen
                     en  = Order or download
                   }
                   noTrimWrap  = | |</a>|
@@ -669,7 +669,7 @@ plugin.tx_browser_pi1 {
                           title {
                             value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                             lang {
-                              de  = Herunterladen oder bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                              de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
                               en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                             }
                           }
@@ -681,7 +681,7 @@ plugin.tx_browser_pi1 {
                         title {
                           value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                           lang {
-                            de  = Herunterladen oder bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
                             en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
                           }
                         }
