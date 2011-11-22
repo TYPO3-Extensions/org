@@ -852,7 +852,7 @@ plugin.tx_browser_pi1 {
                 conf {
                   userFunc >
                     // Don't outerWrap with <table> by default
-                  outerWrap = |
+                  outerWrap = a|z
                   filePath >
                   itemRendering >
                     // Download link and ordering form
