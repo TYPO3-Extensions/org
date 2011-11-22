@@ -587,7 +587,7 @@ plugin.tx_browser_pi1 {
                   shipping {
                     10 {
                       imageLinkWrap {
-                        bodyTag   = <BODY bgColor=black>
+                        bodyTag   = <BODY style="margin:0;padding0;">
                         wrap      = <A href="javascript:close();"> | </A>
                         width     = 800m
                         height    = 600
