@@ -186,7 +186,7 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       enable = 1
                       typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                        parameter         = {$plugin.org.pages.downloads}
                         title = TEXT
                         title {
                           value       = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
