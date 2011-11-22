@@ -185,12 +185,14 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       enable = 1
                       typolink {
-                        parameter         = {$plugin.org.pages.downloads}
+                        parameter = {$plugin.org.pages.downloads}
                         title = TEXT
                         title {
-                          value   = Download '###TX_ORG_DOWNLOADS.TITLE###'
-                          lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
-                          lang.en = EN Download '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                          lang {
+                            de  = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
+                            en  = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                          }
                         }
                         additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                         useCacheHash      = 1
@@ -205,11 +207,14 @@ plugin.tx_browser_pi1 {
                   30 {
                     data = register : filename
                     typolink {
-                      parameter         = {$plugin.org.pages.downloads}
+                      parameter = {$plugin.org.pages.downloads}
                       title = TEXT
                       title {
-                        value     = Download '###TX_ORG_DOWNLOADS.TITLE###'
-                        lang.de   = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
+                        value = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang {
+                          de  = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen
+                          en  = Download '###TX_ORG_DOWNLOADS.TITLE###'
+                        }
                       }
                       additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                       useCacheHash      = 1
@@ -222,8 +227,11 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       typolink {
                         title {
-                          value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
-                          lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                          value = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                          lang {
+                            de  = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                            en  = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                          }
                         }
                       }
                     }
@@ -231,8 +239,11 @@ plugin.tx_browser_pi1 {
                   30 {
                     typolink {
                       title {
-                        value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
-                        lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                        value = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang {
+                          de  = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                          en  = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
+                        }
                       }
                     }
                   }
@@ -243,8 +254,11 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       typolink {
                         title {
-                          value   = Order'###TX_ORG_DOWNLOADS.TITLE###'
-                          lang.de = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
+                          value = Order'###TX_ORG_DOWNLOADS.TITLE###'
+                          lang {
+                            de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
+                            en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                          }
                         }
                       }
                     }
@@ -252,8 +266,11 @@ plugin.tx_browser_pi1 {
                   30 {
                     typolink {
                       title {
-                        value   = Order or download '###TX_ORG_DOWNLOADS.TITLE###'
-                        lang.de = '###TX_ORG_DOWNLOADS.TITLE###' herunterladen oder bestellen
+                        value = Order'###TX_ORG_DOWNLOADS.TITLE###'
+                        lang {
+                          de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
+                          en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                        }
                       }
                     }
                   }
@@ -355,7 +372,10 @@ plugin.tx_browser_pi1 {
               default = TEXT
               default {
                 value = more &raquo;
-                lang.de = mehr &raquo;
+                lang {
+                  de  = mehr &raquo;
+                  en  = more &raquo;
+                }
                 noTrimWrap = | <span class="more">|</span>|
                 typolink {
                   parameter         = {$plugin.org.pages.downloads} - linktosingle
@@ -382,21 +402,30 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All Downloads &raquo;
-            lang.de = Alle Downloads &raquo;
+            lang {
+              de  = Alle Downloads &raquo;
+              en  = All Downloads &raquo;
+            }
             typolink {
               parameter = {$plugin.org.pages.downloads}
               title = TEXT
               title {
                 value = All Downloads
-                lang.de = Alle Downloads
+                lang {
+                  de  = Alle Downloads
+                  en  = All Downloads
+                }
               }
               useCacheHash = 1
             }
           }
           my_singleview_title = TEXT
           my_singleview_title {
-            value   = Document
-            lang.de = Nachricht
+            value   = Download
+            lang {
+              de  = Download
+              en  = Download
+            }
             wrap    = <div class="header01">|</div>
           }
         }
@@ -726,8 +755,11 @@ plugin.tx_browser_pi1 {
                             // ... title="X">
                           20 = TEXT
                           20 {
-                            value       = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            lang.de     = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                            value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            lang {
+                              de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                              en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            }
                             noTrimWrap  = | title="|">|
                           }
                             // <img ... />
@@ -738,8 +770,11 @@ plugin.tx_browser_pi1 {
                             // ... label</a>
                           40 = TEXT
                           40 {
-                            value       = Download
-                            lang.de     = Herunterladen
+                            value = Download
+                            lang {
+                              de  = Download
+                              en  = Herunterladen
+                            }
                             noTrimWrap  = | |</a>|
                           }
                         }
@@ -813,8 +848,11 @@ plugin.tx_browser_pi1 {
                             // <td class="csc-uploads-button"><button type="submit" name="submit" value="X" />
                           10 = TEXT
                           10 {
-                            value   = Ordering
-                            lang.de = Bestellen
+                            value = Ordering
+                            lang {
+                              de  = Bestellen
+                              en  = Ordering
+                            }
                             wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|" />
                           }
                             // <img ... />
@@ -825,8 +863,11 @@ plugin.tx_browser_pi1 {
                             // label</button></td>
                           30 = TEXT
                           30 {
-                            value       = Ordering
-                            lang.de     = Bestellen
+                            value = Ordering
+                            lang {
+                              de  = Bestellen
+                              en  = Ordering
+                            }
                             noTrimWrap  = | |</button></td>|
                           }
                         }
@@ -1020,8 +1061,11 @@ plugin.tx_browser_pi1 {
                         // ... title="X">
                       20 = TEXT
                       20 {
-                        value       = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                        lang.de     = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                        value = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        lang {
+                          de  = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                          en  = Download ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                        }
                         noTrimWrap  = | title="|">|
                       }
                         // <img ... />
@@ -1033,7 +1077,10 @@ plugin.tx_browser_pi1 {
                       40 = TEXT
                       40 {
                         value       = Download
-                        lang.de     = Herunterladen
+                        lang {
+                          de  = Herunterladen
+                          en  = Download
+                        }
                         noTrimWrap  = | |</a>|
                       }
                     }
@@ -1100,8 +1147,11 @@ plugin.tx_browser_pi1 {
                         // <td class="csc-uploads-button"><button type="submit" name="submit" value="X" />
                       10 = TEXT
                       10 {
-                        value   = Ordering
-                        lang.de = Bestellen
+                        value = Ordering
+                        lang {
+                          de  = Bestellen
+                          en  = Ordering
+                        }
                         wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|" />
                       }
                         // <img ... />
@@ -1112,8 +1162,11 @@ plugin.tx_browser_pi1 {
                         // label</button></td>
                       30 = TEXT
                       30 {
-                        value       = Ordering
-                        lang.de     = Bestellen
+                        value = Ordering
+                        lang {
+                          de  = Bestellen
+                          en  = Ordering
+                        }
                         noTrimWrap  = | |</button></td>|
                       }
                     }
