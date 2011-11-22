@@ -581,7 +581,16 @@ plugin.tx_browser_pi1 {
                   shipping {
                     10 {
                       imageLinkWrap {
-                        typolink {
+                        bodyTag   = <BODY bgColor=black>
+                        wrap      = <A href="javascript:close();"> | </A>
+                        width     = 800m
+                        height    = 600
+                        JSwindow = 1
+                        JSwindow {
+                          newWindow = 1
+                          expand    = 17,20
+                        }
+                        xx_typolink {
                           title {
                             value = Order '###TX_ORG_DOWNLOADS.TITLE###'
                             lang {
