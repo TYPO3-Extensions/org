@@ -367,6 +367,7 @@ plugin.tx_browser_pi1 {
                 isTrue = ###TX_ORG_DOWNLOADS.TEASER_SHORT###
               }
               value       = ###TX_ORG_DOWNLOADS.TEASER_SHORT###
+              noTrimWrap = || |
             }
               // bodytext
             12 = TEXT
@@ -377,6 +378,7 @@ plugin.tx_browser_pi1 {
               value       = ###TX_ORG_DOWNLOADS.BODYTEXT###
               crop        = 200 | ... | 1
               stripHtml   = 1
+              noTrimWrap = || |
             }
               // button: download, download_shipping, shipping
             13 = CASE
