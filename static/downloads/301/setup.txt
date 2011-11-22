@@ -655,23 +655,31 @@ plugin.tx_browser_pi1 {
                             useCacheHash      = 1
                           }
                         }
-                          // File icon (empty!)
-                        20 = TEXT
+                          // File icon
+                        20 = COA
                         20 {
-                          if {
-                            isPositive.field >
-                            isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                          10 < tt_content.uploads.20.itemRendering.10
+                          10 {
+                            if {
+                              isPositive.field >
+                              isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                            }
                           }
-                          value = &nbsp;
-                          wrap  = <td class="csc-uploads-icon">|</td>
                         }
-                          // File name (empty!)
+                          // File name
                         30 = COA
                         30 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap      = <td class="csc-uploads-file-name">|</td>
+                            data = register:filename
+                            XX_typolink {
+                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                              title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              useCacheHash      = 1
+                            }
                           }
                         }
                           // File description (empty!)
