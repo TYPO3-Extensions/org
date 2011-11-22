@@ -2182,23 +2182,23 @@ $TCA['tx_org_downloads'] = array (
       'config'    => array (
         'type'    => 'select',
         'items'   => array (
-          'doc_download' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_download',
-            '1' => 'doc_download',
+          'download' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.download',
+            '1' => 'download',
             '2' => 'EXT:org/ext_icon/download.gif',
           ),
-          'doc_download_shipping' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_download_shipping',
-            '1' => 'doc_download_shipping',
-            '2' => 'EXT:org/ext_icon/download_and_shipping.gif',
+          'download_shipping' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.download_shipping',
+            '1' => 'download_shipping',
+            '2' => 'EXT:org/ext_icon/download_shipping.gif',
           ),
-          'doc_shipping' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.doc_shipping',
-            '1' => 'doc_shipping',
-            '2' => 'EXT:org/ext_icon/download_shipping_only.gif',
+          'shipping' => array (
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type.shipping',
+            '1' => 'shipping',
+            '2' => 'EXT:org/ext_icon/shipping.gif',
           ),
         ),
-        'default' => 'doc_download',
+        'default' => 'download',
       ),
     ),
     'title' => array (
@@ -2542,7 +2542,7 @@ $TCA['tx_org_downloads'] = array (
     ),
   ),
   'types' => array (
-    'doc_download' => array ('showitem' =>
+    'download' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_file,        ' .
@@ -2558,7 +2558,7 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_statistics,  ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
-    'doc_download_shipping' => array ('showitem' =>
+    'download_shipping' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_file,        ' .
@@ -2574,7 +2574,7 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_statistics,  ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
-    'doc_shipping' => array ('showitem' =>
+    'shipping' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_file,        ' .

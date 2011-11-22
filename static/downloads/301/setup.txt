@@ -167,13 +167,39 @@ plugin.tx_browser_pi1 {
                   width = 80
                 }
               }
-              tx_browser_pi1 = TEXT
+                // download, download_shipping, shipping
+              tx_browser_pi1 = CASE
               tx_browser_pi1 {
-                typolink {
-                  parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                  additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                  useCacheHash      = 1
-                  returnLast        = url
+                key = ###TX_ORG_DOWNLOADS.TYPE###
+                  // download
+                default = COA
+                default {
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                    useCacheHash      = 1
+                    returnLast        = url
+                  }
+                }
+                  // download and shipping
+                download_shipping = TEXT
+                download_shipping {
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                    useCacheHash      = 1
+                    returnLast        = url
+                  }
+                }
+                  // shipping
+                shipping = TEXT
+                shipping {
+                  xx_typolink {
+                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                    useCacheHash      = 1
+                    returnLast        = url
+                  }
                 }
               }
             }
@@ -192,11 +218,11 @@ plugin.tx_browser_pi1 {
           }
           title = COA
           title {
-              // doc_download, doc_download_shipping, doc_shipping
+              // download, download_shipping, shipping
             10 = CASE
             10 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
-                // doc_download
+                // download
               default = COA
               default {
                   // If tx_org_downloads.teaser_title is true
@@ -222,11 +248,11 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              XXX_doc_download_shipping = COA
-              XXX_doc_download_shipping {
+              XXX_download_shipping = COA
+              XXX_download_shipping {
               }
-              XXX_doc_shipping = COA
-              XXX_doc_shipping {
+              XXX_shipping = COA
+              XXX_shipping {
               }
             }
           }
@@ -264,11 +290,11 @@ plugin.tx_browser_pi1 {
               crop        = 200 | ... | 1
               stripHtml = 1
             }
-              // doc_download, doc_download_shipping, doc_shipping
+              // download, download_shipping, shipping
             13 = CASE
             13 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
-                // doc_download
+                // download
               default = TEXT
               default {
                 value = more &raquo;
@@ -280,11 +306,11 @@ plugin.tx_browser_pi1 {
                   useCacheHash      = 1
                 }
               }
-              XXX_doc_download_shipping = TEXT
-              XXX_doc_download_shipping {
+              xxx_download_shipping = TEXT
+              xxx_download_shipping {
               }
-              XXX_doc_shipping = TEXT
-              XXX_doc_shipping {
+              xxx_shipping = TEXT
+              xxx_shipping {
               }
             }
           }
@@ -522,7 +548,7 @@ plugin.tx_browser_pi1 {
                       10 {
                         if {
                           value   = ###TX_ORG_DOWNLOADS.TYPE###
-                          equals  = doc_shipping
+                          equals  = shipping
                           negate  = 1
                         }
                         wrap = <tr class="download">|</tr>
@@ -639,7 +665,7 @@ plugin.tx_browser_pi1 {
                       20 {
                         if {
                           value   = ###TX_ORG_DOWNLOADS.TYPE###
-                          equals  = doc_download
+                          equals  = download
                           negate  = 1
                         }
                         wrap = <tr class="ordering">|</tr>
@@ -815,7 +841,7 @@ plugin.tx_browser_pi1 {
                   10 {
                     if {
                       value   = ###TX_ORG_DOWNLOADS.TYPE###
-                      equals  = doc_shipping
+                      equals  = shipping
                       negate  = 1
                     }
                     wrap = <tr class="download">|</tr>
@@ -933,7 +959,7 @@ plugin.tx_browser_pi1 {
                   20 {
                     if {
                       value   = ###TX_ORG_DOWNLOADS.TYPE###
-                      equals  = doc_download
+                      equals  = download
                       negate  = 1
                     }
                     wrap = <tr class="ordering">|</tr>

@@ -165,9 +165,9 @@
       <label index="tx_org_downloads.div_control">Controlling</label>
       <label index="tx_org_downloads.div_seo">Search Engines</label>
       <label index="tx_org_downloads.type">Type</label>
-      <label index="tx_org_downloads.type.doc_download">Download only</label>
-      <label index="tx_org_downloads.type.doc_download_shipping">Download <![CDATA[&]]> Shipping</label>
-      <label index="tx_org_downloads.type.doc_shipping">Shipping only</label>
+      <label index="tx_org_downloads.type.download">Download only</label>
+      <label index="tx_org_downloads.type.download_shipping">Download <![CDATA[&]]> Shipping</label>
+      <label index="tx_org_downloads.type.shipping">Shipping only</label>
       <label index="tx_org_downloads.title">Header</label>
       <label index="tx_org_downloads.subtitle">Subheader</label>
       <label index="tx_org_downloads.datetime">Datetime</label>
@@ -528,9 +528,9 @@
       <label index="tx_org_downloads.div_control">Steuerung</label>
       <label index="tx_org_downloads.div_seo">Suchmaschinen</label>
       <label index="tx_org_downloads.type">Typ</label>
-      <label index="tx_org_downloads.type.doc_download">Nur Download</label>
-      <label index="tx_org_downloads.type.doc_download_shipping">Download <![CDATA[&]]> Versand</label>
-      <label index="tx_org_downloads.type.doc_shipping">Nur Versand</label>
+      <label index="tx_org_downloads.type.download">Nur Download</label>
+      <label index="tx_org_downloads.type.download_shipping">Download <![CDATA[&]]> Versand</label>
+      <label index="tx_org_downloads.type.shipping">Nur Versand</label>
       <label index="tx_org_downloads.title"><![CDATA[Ü]]>berschrift</label>
       <label index="tx_org_downloads.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_downloads.datetime">Datum der Ver<![CDATA[ö]]>ffentlichung</label>

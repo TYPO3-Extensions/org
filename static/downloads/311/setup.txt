@@ -88,11 +88,11 @@ plugin.tx_browser_pi1 {
                 strftime = %d.%m:
               }
             }
-              // doc_download, doc_download_shipping, doc_shipping
+              // download, download_shipping, shipping
             11 = CASE
             11 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
-                // doc_download
+                // download
               default = COA
               default {
                   // teaser_title or ...
@@ -117,8 +117,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              doc_download_shipping = COA
-              doc_shipping {
+              download_shipping = COA
+              shipping {
                   // teaser_title or ...
                 10 = TEXT
                 10 {
@@ -139,8 +139,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              doc_shipping = COA
-              doc_shipping {
+              shipping = COA
+              shipping {
                   // teaser_title or ...
                 10 = TEXT
                 10 {

@@ -1038,9 +1038,9 @@ $TCA['tx_org_downloads'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
-      'doc_download'           => '../typo3conf/ext/org/ext_icon/download.gif',
-      'doc_download_shipping'  => '../typo3conf/ext/org/ext_icon/download_and_shipping.gif',
-      'doc_shipping'           => '../typo3conf/ext/org/ext_icon/download_shipping_only.gif',
+      'download'           => '../typo3conf/ext/org/ext_icon/download.gif',
+      'download_shipping'  => '../typo3conf/ext/org/ext_icon/download_shipping.gif',
+      'shipping'           => '../typo3conf/ext/org/ext_icon/shipping.gif',
     ),
   ),
 );
