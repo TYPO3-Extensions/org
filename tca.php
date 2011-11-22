@@ -2177,7 +2177,6 @@ $TCA['tx_org_downloads'] = array (
     ),
     'type' => array (
       'exclude'   => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.type',
       'config'    => array (
         'type'    => 'select',
