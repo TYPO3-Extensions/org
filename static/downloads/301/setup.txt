@@ -591,10 +591,10 @@ plugin.tx_browser_pi1 {
                         wrap      = <A href="javascript:close();"> | </A>
                         width     = 800m
                         height    = 600
+                        title     = ###TX_ORG_DOWNLOADS.TITLE###
                         JSwindow = 1
                         JSwindow {
                           newWindow = 1
-                          //expand    = 17,20
                         }
                         typolink >
                       }
