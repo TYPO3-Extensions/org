@@ -65,6 +65,8 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.linkicon_width,
           tx_org_downloads.linkicon_height,
 
+          tx_org_downloads.statistics_downloads_by_visits,
+
           tx_org_downloads.keywords,
           tx_org_downloads.description
         )
@@ -296,41 +298,26 @@ plugin.tx_browser_pi1 {
             // teaser_title or title
           title = COA
           title {
-              // download, download_shipping, shipping
-            10 = CASE
+              // If tx_org_downloads.teaser_title is true
+            10 = TEXT
             10 {
-              key = ###TX_ORG_DOWNLOADS.TYPE###
-                // download
-              default = COA
-              default {
-                  // If tx_org_downloads.teaser_title is true
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads} - linktosingle
-                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                    useCacheHash      = 1
-                  }
-                }
-                  // If tx_org_downloads.teaser_title is false
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value       = ###TX_ORG_DOWNLOADS.TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads} - linktosingle
-                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                    useCacheHash      = 1
-                  }
-                }
+              if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              typolink {
+                parameter         = {$plugin.org.pages.downloads} - linktosingle
+                additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                useCacheHash      = 1
               }
-              XXX_download_shipping = COA
-              XXX_download_shipping {
-              }
-              XXX_shipping = COA
-              XXX_shipping {
+            }
+              // If tx_org_downloads.teaser_title is false
+            11 = TEXT
+            11 {
+              if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              value       = ###TX_ORG_DOWNLOADS.TITLE###
+              typolink {
+                parameter         = {$plugin.org.pages.downloads} - linktosingle
+                additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                useCacheHash      = 1
               }
             }
           }
@@ -389,7 +376,12 @@ plugin.tx_browser_pi1 {
               default {
                   // <span class="more">...</span>
                 wrap = <span class="more">|</span>
+
                   // Download icon
+                9 = TEXT
+                9 {
+                  value = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
+                }
                 10 = IMAGE
                 10 {
                   file = EXT:org/res/download.gif
@@ -851,7 +843,7 @@ plugin.tx_browser_pi1 {
                         10 {
                           wrap  = <td class="csc-uploads-flag">|</td>
                           value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                          XX_typolink {
+                          xxx_typolink {
                             parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                             additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                             title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -877,7 +869,7 @@ plugin.tx_browser_pi1 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
-                            XX_typolink {
+                            xxx_typolink {
                               parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                               additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                               title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -908,7 +900,7 @@ plugin.tx_browser_pi1 {
                               bytes {
                                 labels = {$styles.content.uploads.filesizeBytesLabels}
                               }
-                              XX_typolink {
+                              xxx_typolink {
                                 parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                                 additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                                 title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -974,7 +966,7 @@ plugin.tx_browser_pi1 {
                         10 {
                           wrap  = <td class="csc-uploads-flag">|</td>
                           value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                          XX_typolink {
+                          xxx_typolink {
                             parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                             additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                             title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1000,7 +992,7 @@ plugin.tx_browser_pi1 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
-                            XX_typolink {
+                            xxx_typolink {
                               parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                               additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                               title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1156,7 +1148,7 @@ plugin.tx_browser_pi1 {
                     10 {
                       wrap  = <td class="csc-uploads-flag">|</td>
                       value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                      XX_typolink {
+                      xxx_typolink {
                         parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                         additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                         title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1183,7 +1175,7 @@ plugin.tx_browser_pi1 {
                         if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                         wrap      = <td class="csc-uploads-file-name">|</td>
                         data = register:filename
-                        XX_typolink {
+                        xxx_typolink {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                           title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1214,7 +1206,7 @@ plugin.tx_browser_pi1 {
                           bytes {
                             labels = {$styles.content.uploads.filesizeBytesLabels}
                           }
-                          XX_typolink {
+                          xxx_typolink {
                             parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                             additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                             title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1280,7 +1272,7 @@ plugin.tx_browser_pi1 {
                     10 {
                       wrap  = <td class="csc-uploads-flag">|</td>
                       value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                      XX_typolink {
+                      xxx_typolink {
                         parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                         additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                         title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
@@ -1402,20 +1394,20 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_401_titleTag      = TYPO3 Organiser - Downloads
-      list_mode_401_keywords      = TYPO3, Organiser, Downloads
-      list_mode_401_summary       = TYPO3 Organiser: Downloads
-      single_mode_401_titleTag    = TYPO3 Organiser - ###TX_ORG_DOWNLOADS.TITLE###
-      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_401_summary     = TYPO3 Organiser - Downloads: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      list_mode_301_titleTag      = TYPO3 Organiser - Downloads
+      list_mode_301_keywords      = TYPO3, Organiser, Downloads
+      list_mode_301_summary       = TYPO3 Organiser: Downloads
+      single_mode_301_titleTag    = TYPO3 Organiser - ###TX_ORG_DOWNLOADS.TITLE###
+      single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
+      single_mode_301_summary     = TYPO3 Organiser - Downloads: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
     de {
-      list_mode_401_titleTag      = TYPO3 Organiser - Downloads
-      list_mode_401_keywords      = TYPO3, Organiser,  Downloads
-      list_mode_401_summary       = TYPO3 Organiser: Downloads
-      single_mode_401_titleTag    = TYPO3 Organiser: ###TX_ORG_DOWNLOADS.TITLE###
-      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_401_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      list_mode_301_titleTag      = TYPO3 Organiser - Downloads
+      list_mode_301_keywords      = TYPO3, Organiser,  Downloads
+      list_mode_301_summary       = TYPO3 Organiser: Downloads
+      single_mode_301_titleTag    = TYPO3 Organiser: ###TX_ORG_DOWNLOADS.TITLE###
+      single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
+      single_mode_301_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
   }
 }
