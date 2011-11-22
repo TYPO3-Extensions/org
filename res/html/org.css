@@ -111,10 +111,18 @@
 #content .tx-browser-pi1 .ui-button,
 .tx-browser-pi1 form.tx_org_downloads-order .ui-button {
   padding: 0;
+}
+#content .tx-browser-pi1-list .ui-button {
+  font-size:.85em;
+}
+
+#content .tx-browser-pi1-single .ui-button,
+.tx-browser-pi1-single form.tx_org_downloads-order .ui-button {
+  padding: 0;
   width: 10em;
 }
-#content .tx-browser-pi1 div.ui-button,
-.tx-browser-pi1 form.tx_org_downloads-order div.ui-button {
+#content .tx-browser-pi1-single div.ui-button,
+.tx-browser-pi1-single form.tx_org_downloads-order div.ui-button {
   width: 9.9em;
 }
 .tx-browser-pi1 form.tx_org_downloads-order legend {
