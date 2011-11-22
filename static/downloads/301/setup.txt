@@ -385,8 +385,8 @@ plugin.tx_browser_pi1 {
                 // download
               default = COA
               default {
-                  // <div class="more">...</div>
-                wrap = <span class="more_icon_button">|</span>
+                  // <span class="more">...</span>
+                wrap = <span class="more">|</span>
                   // Download icon
                 10 = IMAGE
                 10 {
@@ -422,7 +422,7 @@ plugin.tx_browser_pi1 {
                     de  = Herunterladen &raquo;
                     en  = Download &raquo;
                   }
-                  noTrimWrap = | <span class="more">|</span>|
+                  //noTrimWrap = | <span class="more">|</span>|
                   typolink {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
                     additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
