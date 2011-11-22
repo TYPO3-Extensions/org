@@ -414,17 +414,16 @@ plugin.tx_browser_pi1 {
                   // Download label
                 30 = TEXT
                 30 {
-                  value = more &raquo;
-                  lang {
-                    de  = mehr &raquo;
-                    en  = more &raquo;
-                  }
                   value = Download &raquo;
                   lang {
                     de  = Herunterladen &raquo;
                     en  = Download &raquo;
                   }
-                  //noTrimWrap = | <span class="more">|</span>|
+                  value = Proceed &raquo;
+                  lang {
+                    de  = Weiter &raquo;
+                    en  = Proceed &raquo;
+                  }
                   typolink {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
                     additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
@@ -465,8 +464,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
                 30 {
-                  value = Order or download &raquo;
-                  lang {
+                  xxx_value = Order or download &raquo;
+                  xxx_lang {
                     de  = Herunterladen oder Bestellen &raquo;
                     en  = Order or download &raquo;
                   }
@@ -485,8 +484,8 @@ plugin.tx_browser_pi1 {
               shipping {
                 10 >
                 30 {
-                  value = Order &raquo;
-                  lang {
+                  xxx_value = Order &raquo;
+                  xxx_lang {
                     de  = Bestellen &raquo;
                     en  = Order &raquo;
                   }
