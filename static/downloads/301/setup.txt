@@ -173,6 +173,7 @@ plugin.tx_browser_pi1 {
                 key = ###TX_ORG_DOWNLOADS.TYPE###
                 default = COA
                 default {
+                    // Link with preview / icon
                   10 = IMAGE
                   10 {
                     file {
@@ -199,10 +200,12 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
+                    // Link devider
                   20 = TEXT
                   20 {
                     value = //**//
                   }
+                    // Link with label
                   30 = TEXT
                   30 {
                     data = register : filename
@@ -502,6 +505,7 @@ plugin.tx_browser_pi1 {
                   key = ###TX_ORG_DOWNLOADS.TYPE###
                   default = COA
                   default {
+                      // Link with preview / icon
                     10 = IMAGE
                     10 {
                       file {
@@ -528,10 +532,12 @@ plugin.tx_browser_pi1 {
                         }
                       }
                     }
+                      // Link devider
                     20 = TEXT
                     20 {
                       value = //**//
                     }
+                      // Link with label
                     30 = TEXT
                     30 {
                       data = register : filename
@@ -590,6 +596,7 @@ plugin.tx_browser_pi1 {
                           newWindow = 1
                           expand    = 17,20
                         }
+                        typolink >
                         xx_typolink {
                           title {
                             value = Order '###TX_ORG_DOWNLOADS.TITLE###'
