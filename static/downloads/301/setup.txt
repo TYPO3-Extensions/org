@@ -337,11 +337,13 @@ plugin.tx_browser_pi1 {
             // teaser_subtitle or subtitle
           subtitle = COA
           subtitle {
+              // teaser_subtitle
             10 = TEXT
             10 {
               if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
               value     = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
             }
+              // subtitle
             11 = TEXT
             11 {
               if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
@@ -351,12 +353,14 @@ plugin.tx_browser_pi1 {
             // datetime, teaser_short or bodytext, button
           teaser_short = COA
           teaser_short {
+              // datetime
             10 = TEXT
             10 {
               value       = ###TX_ORG_DOWNLOADS.DATETIME###
               strftime    = %d. %b %Y
               noTrimWrap  = |<span class="datetime">| &ndash;</span> |
             }
+              // teaser_short
             11 = TEXT
             11 {
               if {
@@ -364,6 +368,7 @@ plugin.tx_browser_pi1 {
               }
               value       = ###TX_ORG_DOWNLOADS.TEASER_SHORT###
             }
+              // bodytext
             12 = TEXT
             12 {
               if {
@@ -373,7 +378,7 @@ plugin.tx_browser_pi1 {
               crop        = 200 | ... | 1
               stripHtml = 1
             }
-              // download, download_shipping, shipping
+              // button: download, download_shipping, shipping
             13 = CASE
             13 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
@@ -413,8 +418,8 @@ plugin.tx_browser_pi1 {
                 40 {
                   value = Download
                   lang {
-                    de  = Download
-                    en  = Herunterladen
+                    de  = Herunterladen
+                    en  = Download
                   }
                   noTrimWrap  = | |</a>|
                 }
@@ -430,7 +435,7 @@ plugin.tx_browser_pi1 {
                   useCacheHash      = 1
                 }
               }
-              download_shipping < .download
+              download_shipping < .default
               download_shipping {
                 20 {
                   value = Order or download '###TABLE.DOCUMENTS###'
@@ -486,8 +491,8 @@ plugin.tx_browser_pi1 {
                 40 {
                   value = Download
                   lang {
-                    de  = Download
-                    en  = Herunterladen
+                    de  = Herunterladen
+                    en  = Download
                   }
                   noTrimWrap  = | |</a>|
                 }
@@ -945,8 +950,8 @@ plugin.tx_browser_pi1 {
                           40 {
                             value = Download
                             lang {
-                              de  = Download
-                              en  = Herunterladen
+                              de  = Herunterladen
+                              en  = Download
                             }
                             noTrimWrap  = | |</a>|
                           }
