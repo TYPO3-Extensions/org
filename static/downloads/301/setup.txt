@@ -585,6 +585,8 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.linkicon_width,
           tx_org_downloads.linkicon_height,
 
+          tx_org_downloads.statistics_downloads_by_visits,
+
           tx_org_downloads.keywords,
           tx_org_downloads.description,
 
@@ -764,6 +766,41 @@ plugin.tx_browser_pi1 {
               20 = TEXT
               20 {
                 value = ###TX_ORG_DOWNLOADS.BODYTEXT###
+              }
+                // Download statistics
+              30 = COA
+              30 {
+                  // <span class="statistics-downloads">...</span>
+                wrap = <br /><br /><span class="statistics-downloads">|</span>
+                  // If it is 1 download
+                10 = TEXT
+                10 {
+                  if {
+                    value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
+                    equals = 1
+                  }
+                  value = download
+                  lang {
+                    de = Download
+                    en = download
+                  }
+                  noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
+                }
+                  // If it is 0 downloads or more than 1 downloads
+                20 = TEXT
+                20 {
+                  if {
+                    value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
+                    equals = 1
+                    negate = 1
+                  }
+                  value = downloads
+                  lang {
+                    de = Downloads
+                    en = downloads
+                  }
+                  noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
+                }
               }
             }
               // File link and order form
