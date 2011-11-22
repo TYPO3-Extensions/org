@@ -409,13 +409,39 @@ plugin.tx_browser_pi1 {
                     height  = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
                   }
                 }
-                tx_browser_pi1 = TEXT
+                  // download, download_shipping, shipping
+                tx_browser_pi1 = CASE
                 tx_browser_pi1 {
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                    useCacheHash      = 1
-                    returnLast        = url
+                  key = ###TX_ORG_DOWNLOADS.TYPE###
+                    // download
+                  default = COA
+                  default {
+                    typolink {
+                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                      useCacheHash      = 1
+                      returnLast        = url
+                    }
+                  }
+                    // download and shipping
+                  download_shipping = TEXT
+                  download_shipping {
+                    typolink {
+                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                      useCacheHash      = 1
+                      returnLast        = url
+                    }
+                  }
+                    // shipping
+                  shipping = TEXT
+                  shipping {
+                    xx_typolink {
+                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                      useCacheHash      = 1
+                      returnLast        = url
+                    }
                   }
                 }
               }
@@ -458,7 +484,7 @@ plugin.tx_browser_pi1 {
                 renderCurrentLanguageOnly = TEXT
                 renderCurrentLanguageOnly {
                     // [Boolean] 1 (default), 0: render each existing language record
-                  value = 0
+                  value = 1
                 }
                   // DRS - Development Reporting System
                 drs = TEXT
