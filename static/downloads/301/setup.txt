@@ -386,10 +386,45 @@ plugin.tx_browser_pi1 {
               default = COA
               default {
                   // <div class="iconbutton">...</div>
-                wrap = <div class="iconbutton">|</div>
+                //wrap = <div class="iconbutton">|</div>
                   // <a href="X" class="ui-button-text" ...
-                10 = TEXT
+                10 = IMAGE
                 10 {
+                  file = EXT:org/res/download.gif
+                  imageLinkWrap = 1
+                  imageLinkWrap {
+                    enable = 1
+                    typolink {
+                      parameter         = {$plugin.org.pages.downloads} - linktosingle
+                      title = TEXT
+                      title {
+                        value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang {
+                          de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
+                          en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        }
+                      }
+                      additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                      useCacheHash      = 1
+                    }
+                  }
+                }
+                20 = TEXT
+                20 {
+                  value = more &raquo;
+                  lang {
+                    de  = mehr &raquo;
+                    en  = more &raquo;
+                  }
+                  noTrimWrap = | <span class="more">|</span>|
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads} - linktosingle
+                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                    useCacheHash      = 1
+                  }
+                }
+                xxx10 = TEXT
+                xxx10 {
                   typolink {
                     parameter         = {$plugin.org.pages.downloads} - linktosingle
                     additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
@@ -399,8 +434,8 @@ plugin.tx_browser_pi1 {
                   wrap    = <a href="|" class="ui-button-text"
                 }
                   // ... title="X">
-                20 = TEXT
-                20 {
+                xxx20 = TEXT
+                xxx20 {
                   value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                   lang {
                     de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
@@ -409,30 +444,19 @@ plugin.tx_browser_pi1 {
                   noTrimWrap  = | title="|">|
                 }
                   // <img ... />
-                30 = IMAGE
-                30 {
+                xxx30 = IMAGE
+                xxx30 {
                   file    = EXT:org/res/download.gif
                 }
                   // ... label</a>
-                40 = TEXT
-                40 {
+                xxx40 = TEXT
+                xxx40 {
                   value = Download
                   lang {
                     de  = Herunterladen
                     en  = Download
                   }
                   noTrimWrap  = | |</a>|
-                }
-                xxx_value = more &raquo;
-                xxx_lang {
-                  de  = mehr &raquo;
-                  en  = more &raquo;
-                }
-                xxx_noTrimWrap = | <span class="more">|</span>|
-                xxx_typolink {
-                  parameter         = {$plugin.org.pages.downloads} - linktosingle
-                  additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                  useCacheHash      = 1
                 }
               }
               download_shipping < .default
