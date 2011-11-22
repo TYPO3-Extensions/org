@@ -385,9 +385,9 @@ plugin.tx_browser_pi1 {
                 // download
               default = COA
               default {
-                  // <div class="iconbutton">...</div>
-                //wrap = <div class="iconbutton">|</div>
-                  // <a href="X" class="ui-button-text" ...
+                  // <div class="more">...</div>
+                wrap = <div class="more">|</div>
+                  // Download icon
                 10 = IMAGE
                 10 {
                   file = EXT:org/res/download.gif
@@ -409,8 +409,9 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                20 = TEXT
-                20 {
+                  // Download label
+                30 = TEXT
+                30 {
                   value = more &raquo;
                   lang {
                     de  = mehr &raquo;
@@ -434,64 +435,53 @@ plugin.tx_browser_pi1 {
               }
               download_shipping < .default
               download_shipping {
+                  // Cart icon
+                20 = IMAGE
                 20 {
-                  value = Order or download '###TABLE.DOCUMENTS###'
-                  lang {
-                    de  = Herunterladen oder Bestellen: '###TABLE.DOCUMENTS###'
-                    en  = Order or download '###TABLE.DOCUMENTS###'
+                  file = EXT:org/res/cart.gif
+                  imageLinkWrap = 1
+                  imageLinkWrap {
+                    enable = 1
+                    typolink {
+                      parameter         = {$plugin.org.pages.downloads} - linktosingle
+                      additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                      useCacheHash      = 1
+                      title = TEXT
+                      title {
+                        value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                        lang {
+                          de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                          en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                        }
+                      }
+                    }
                   }
                 }
                 30 {
-                  file    = EXT:org/res/download.gif
-                }
-                40 {
-                  value = Order or download
-                  lang {
-                    de  = Herunterladen oder Bestellen
-                    en  = Order or download
+                  typolink {
+                    title {
+                      value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                      lang {
+                        de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                        en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                      }
+                    }
                   }
-                  noTrimWrap  = | |</a>|
                 }
               }
-              xxx_shipping = COA
-              xxx_shipping {
-                  // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
-                //wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
-                  // <a href="X" class="ui-button-text" ...
-                10 = TEXT
-                10 {
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
-                    useCacheHash      = 1
-                    returnLast        = url
-                  }
-                  wrap    = <a href="|" class="ui-button-text"
-                }
-                  // ... title="X">
-                20 = TEXT
-                20 {
-                  value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                  lang {
-                    de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                    en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                  }
-                  noTrimWrap  = | title="|">|
-                }
-                  // <img ... />
-                30 = IMAGE
+              shipping < .download_shipping
+              shipping {
+                10 >
                 30 {
-                  file    = EXT:org/res/download.gif
-                }
-                  // ... label</a>
-                40 = TEXT
-                40 {
-                  value = Download
-                  lang {
-                    de  = Herunterladen
-                    en  = Download
+                  typolink {
+                    title {
+                      value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      lang {
+                        de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                        en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      }
+                    }
                   }
-                  noTrimWrap  = | |</a>|
                 }
               }
             }
