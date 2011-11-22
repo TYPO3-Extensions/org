@@ -376,14 +376,42 @@ plugin.tx_browser_pi1 {
               default {
                   // <span class="more">...</span>
                 wrap = <span class="more">|</span>
-
-                  // Download icon
-                9 = TEXT
-                9 {
-                  value = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
-                }
-                10 = IMAGE
+                  // Download statistics
+                10 = COA
                 10 {
+                    // If it is 1 download
+                  10 = TEXT
+                  10 {
+                    if {
+                      value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
+                      equals = 1
+                    }
+                    value = download
+                    lang {
+                      de = Download
+                      en = download
+                    }
+                    noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
+                  }
+                    // If it is 0 downloads or more than 1 downloads
+                  20 = TEXT
+                  20 {
+                    if {
+                      value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
+                      equals = 1
+                      negate = 1
+                    }
+                    value = downloads
+                    lang {
+                      de = Downloads
+                      en = downloads
+                    }
+                    noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
+                  }
+                }
+                  // Download icon
+                20 = IMAGE
+                20 {
                   file = EXT:org/res/download.gif
                   imageLinkWrap = 1
                   imageLinkWrap {
@@ -404,8 +432,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
                   // Download label
-                30 = TEXT
-                30 {
+                40 = TEXT
+                40 {
                   value = Download &raquo;
                   lang {
                     de  = Herunterladen &raquo;
@@ -434,8 +462,8 @@ plugin.tx_browser_pi1 {
               download_shipping < .default
               download_shipping {
                   // Cart icon
-                20 = IMAGE
-                20 {
+                30 = IMAGE
+                30 {
                   file = EXT:org/res/cart.gif
                   imageLinkWrap = 1
                   imageLinkWrap {
@@ -455,7 +483,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                30 {
+                40 {
                   xxx_value = Order or download &raquo;
                   xxx_lang {
                     de  = Herunterladen oder Bestellen &raquo;
@@ -475,7 +503,8 @@ plugin.tx_browser_pi1 {
               shipping < .download_shipping
               shipping {
                 10 >
-                30 {
+                20 >
+                40 {
                   xxx_value = Order &raquo;
                   xxx_lang {
                     de  = Bestellen &raquo;
