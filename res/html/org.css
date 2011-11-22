@@ -118,6 +118,11 @@
 #content .tx-browser-pi1-list .more {
   float:right;
 }
+#content .tx-browser-pi1-list .more img {
+  padding-right:.2em;
+  position: relative;
+  top: 3px;
+}
 
 #content .tx-browser-pi1-single .ui-button,
 .tx-browser-pi1-single form.tx_org_downloads-order .ui-button {
