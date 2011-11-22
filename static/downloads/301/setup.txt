@@ -379,6 +379,8 @@ plugin.tx_browser_pi1 {
                   // Download statistics
                 10 = COA
                 10 {
+                    // <span class="statistics-downloads">...</span>
+                  wrap = <span class="statistics-downloads">|</span>
                     // If it is 1 download
                   10 = TEXT
                   10 {
