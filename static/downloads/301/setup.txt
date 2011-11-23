@@ -153,6 +153,8 @@ plugin.tx_browser_pi1 {
           thumbnail < tt_content.uploads.20
           thumbnail {
             userFunc = tx_browser_cssstyledcontent->render_uploads
+              // Don't outerWrap with <table> by default
+            outerWrap = |
             filePath >
             itemRendering {
               10 {
@@ -594,7 +596,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloadsmedia.title
         )
         tx_org_downloads {
-            // thumbnail, subtitle, title, datetime, bodytext, filelink
+            // subtitle, title, thumbnail, datetime, bodytext, filelink
           title = COA
           title {
               // subtitle
@@ -615,6 +617,8 @@ plugin.tx_browser_pi1 {
             30 < tt_content.uploads.20
             30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
+                // Don't outerWrap with <table> by default
+              outerWrap = |
               filePath >
               itemRendering {
                 10 {
