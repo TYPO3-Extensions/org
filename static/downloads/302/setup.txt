@@ -1,0 +1,150 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      302: +Org: Downloads Categories
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  template {
+    extensions {
+      org {
+        downloadscat {
+          name      = Org: Downloads Categories
+          file      = EXT:org/res/html/downloads/302/default.tmpl
+          csvViews  = 302
+        }
+      }
+    }
+  }
+
+  views {
+    list {
+      302 = +Org: Downloads Categories
+      302 {
+        name    = +Org: Downloads Categories
+        showUid = downloadscatUid
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          selectBox_orderBy.display = 0
+        }
+        select (
+          tx_org_downloadscat.title,
+          tx_org_downloadscat.type,
+          tx_org_downloadscat.text,
+
+          tx_org_downloadscat.color,
+
+          tx_org_downloadscat.image,
+          tx_org_downloadscat.image_width,
+          tx_org_downloadscat.image_height,
+          tx_org_downloadscat.image_effects,
+          tx_org_downloadscat.image_compression
+        )
+        orderBy (
+          tx_org_downloadscat.sorting
+        )
+        tx_org_downloadscat {
+            // cat_text, cat_color, cat_image
+          title = CASE
+          title {
+            key = ###TX_ORG_DONWLOADSCAT.TYPE###
+              // cat_text
+            default = COA
+            default {
+                // title
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_DONWLOADSCAT.TYPE###
+                typolink {
+                  parameter         = {$plugin.org.pages.downloads}
+                  additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DONWLOADSCAT.UID###
+                  useCacheHash      = 1
+                }
+                wrap  = <h2>|<h2>
+              }
+                // text, more
+              20 = COA
+              20 {
+                wrap = <p>|</p>
+                10 = TEXT
+                10 {
+                  value = ###TX_ORG_DONWLOADSCAT.TEXT###
+                }
+                20 = TEXT
+                20 {
+                  value = Downloads &raquo;
+                  lang {
+                    de = Downloads &raquo;
+                    en = Downloads &raquo;
+                  }
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads}
+                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DONWLOADSCAT.UID###
+                    useCacheHash      = 1
+                    title             = TEXT
+                    title {
+                      value = ###TX_ORG_DONWLOADSCAT.TITLE###
+                    }
+                  }
+                }
+              }
+            }
+            xxx_cat_color = COA
+            xxx_cat_color {
+            }
+            xxx_cat_image = COA
+            xxx_cat_image {
+            }
+          }
+        }
+      }
+    }
+    single {
+      302 = +Org: Downloads Categories
+      302 {
+        comment = This plugin should not used in the single view!
+        select  = tx_org_downloadscat.title
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_302_titleTag      = TYPO3 Organiser - Downloads categories
+      list_mode_302_keywords      = TYPO3, Organiser, Downloads, Categories
+      list_mode_302_summary       = TYPO3 Organiser: Downloads categories
+      single_mode_302_titleTag    = TYPO3 Organiser - ###TX_ORG_DOWNLOADSCAT.TITLE###
+      single_mode_302_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADSCAT.KEYWORDS###
+      single_mode_302_summary     = TYPO3 Organiser - Downloads categories: ###TX_ORG_DOWNLOADSCAT.DESCRIPTION###
+    }
+    de {
+      list_mode_302_titleTag      = TYPO3 Organiser - Download Kategorien
+      list_mode_302_keywords      = TYPO3, Organiser, Downloads, Kategorien
+      list_mode_302_summary       = TYPO3 Organiser: Downloads Kategorien
+      single_mode_302_titleTag    = TYPO3 Organiser: ###TX_ORG_DOWNLOADSCAT.TITLE###
+      single_mode_302_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADSCAT.KEYWORDS###
+      single_mode_302_summary     = TYPO3 Organiser - Download Kategorien: ###TX_ORG_DOWNLOADSCAT.DESCRIPTION###
+    }
+  }
+}
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

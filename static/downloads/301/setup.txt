@@ -1471,7 +1471,7 @@ plugin.tx_browser_pi1 {
       list_mode_301_summary       = TYPO3 Organiser: Downloads
       single_mode_301_titleTag    = TYPO3 Organiser - ###TX_ORG_DOWNLOADS.TITLE###
       single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_301_summary     = TYPO3 Organiser - Downloads: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      single_mode_301_summary     = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
     de {
       list_mode_301_titleTag      = TYPO3 Organiser - Downloads
@@ -1479,7 +1479,7 @@ plugin.tx_browser_pi1 {
       list_mode_301_summary       = TYPO3 Organiser: Downloads
       single_mode_301_titleTag    = TYPO3 Organiser: ###TX_ORG_DOWNLOADS.TITLE###
       single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_301_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      single_mode_301_summary     = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
   }
 }

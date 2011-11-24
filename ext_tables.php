@@ -145,6 +145,7 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',      '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301',        '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311',        '+Org: Downloads - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302',        '+Org: Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',        '+Org: Kalender');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired', '+Org: Kalender +Archiv');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',        '+Org: Kalender - Rand');
@@ -171,6 +172,7 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301',          '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311',          '+Org: Downloads - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302',          '+Org: Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',       '+Org: Headquarters');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',       '+Org: Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',           '+Org: Locations');
@@ -235,14 +237,14 @@ switch(true) {
 }
   // Case $llStatic
 
-$ICON_TYPES['org']       = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
-$ICON_TYPES['org_cal']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
-$ICON_TYPES['org_dwnlds']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif');
-$ICON_TYPES['org_event'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
-$ICON_TYPES['org_headq'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
-$ICON_TYPES['org_locat'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
-$ICON_TYPES['org_news']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-$ICON_TYPES['org_staff'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
+$ICON_TYPES['org']        = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
+$ICON_TYPES['org_cal']    = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
+$ICON_TYPES['org_dwnlds'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif');
+$ICON_TYPES['org_event']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
+$ICON_TYPES['org_headq']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
+$ICON_TYPES['org_locat']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
+$ICON_TYPES['org_news']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
+$ICON_TYPES['org_staff']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 
   // Add pagetree icons
 
