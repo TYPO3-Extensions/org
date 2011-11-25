@@ -65,7 +65,7 @@ plugin.tx_browser_pi1 {
                 // title
               10 = TEXT
               10 {
-                value = ###TX_ORG_DOWNLOADSCAT.TYPE###
+                value = ###TX_ORG_DOWNLOADSCAT.TITLE###
                 typolink {
                   parameter         = {$plugin.org.pages.downloads}
                   additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
@@ -97,6 +97,7 @@ plugin.tx_browser_pi1 {
                       value = ###TX_ORG_DOWNLOADSCAT.TITLE###
                     }
                   }
+                  noTrimWrap = | <span class="more">|</span>|
                 }
               }
             }
