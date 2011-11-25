@@ -131,7 +131,7 @@ plugin.tx_browser_pi1 {
                   // color
                 10 = TEXT
                 10 {
-                  value = <span style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:2em;margin-right:.4em;width:2em;">&nbsp;</span>
+                  value = <span class="cat_color" style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;">&nbsp;</span>
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
                     additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###

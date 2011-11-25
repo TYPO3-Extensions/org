@@ -75,6 +75,13 @@
 /*  padding:1em 0; */
 }
 
+.tx-browser-pi1 .cat_color {
+  float:left;
+  height:2em;
+  margin-right:.4em;
+  width:2em;
+}
+
 .tx-browser-pi1 .listview .image01 {
   float:left;
   padding:0 1em 0 0;
