@@ -23,6 +23,7 @@
   //    calendarUid
   //    departmentUid
   //    downloadsUid
+  //    downloadscatUid
   //    eventUid
   //    headquarterUid
   //    locationUid
@@ -30,7 +31,7 @@
   //    staffUid
 
   // page
-[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0]|| [globalVar = GP:tx_browser_pi1|downloadsUid > 0]|| [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
   page {
     config {
       noPageTitle = 2
@@ -183,33 +184,39 @@ plugin.tx_browser_pi1 {
             dataWrap        = &tx_browser_pi1[downloadsUid]={GPvar:tx_browser_pi1|downloadsUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|downloadsUid
           }
-            // eventUid
+            // downloadscatUid
           40 = TEXT
           40 {
+            dataWrap        = &tx_browser_pi1[downloadscatUid]={GPvar:tx_browser_pi1|downloadscatUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|downloadscatUid
+          }
+            // eventUid
+          50 = TEXT
+          50 {
             dataWrap        = &tx_browser_pi1[eventUid]={GPvar:tx_browser_pi1|eventUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|eventUid
           }
             // headquarterUid
-          50 = TEXT
-          50 {
+          60 = TEXT
+          60 {
             dataWrap        = &tx_browser_pi1[headquarterUid]={GPvar:tx_browser_pi1|headquarterUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|headquarterUid
           }
             // locationUid
-          60 = TEXT
-          60 {
+          70 = TEXT
+          70 {
             dataWrap        = &tx_browser_pi1[locationUid]={GPvar:tx_browser_pi1|locationUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|locationUid
           }
             // newsUid
-          70 = TEXT
-          70 {
+          80 = TEXT
+          80 {
             dataWrap        = &tx_browser_pi1[newsUid]={GPvar:tx_browser_pi1|newsUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|newsUid
           }
             // staffUid
-          80 = TEXT
-          80 {
+          90 = TEXT
+          90 {
             dataWrap        = &tx_browser_pi1[staffUid]={GPvar:tx_browser_pi1|staffUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|staffUid
           }
