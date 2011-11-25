@@ -632,8 +632,15 @@ plugin.tx_browser_pi1 {
               linkProc {
                 iconCObject {
                   file {
-                    width   = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
-                    height  = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                    width = 240m
+                    width {
+                      field >
+                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+                    }
+                    height = 400m
+                    height {
+                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                    }
                   }
                 }
                   // download, download_shipping, shipping
@@ -649,8 +656,15 @@ plugin.tx_browser_pi1 {
                         import {
                           data = register : ICON_REL_PATH
                         }
-                        width   = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
-                        height  = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                        width = 240m
+                        width {
+                          field >
+                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+                        }
+                        height = 400m
+                        height {
+                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                        }
                       }
                       imageLinkWrap = 1
                       imageLinkWrap {
@@ -1131,8 +1145,15 @@ plugin.tx_browser_pi1 {
                   linkProc {
                     iconCObject {
                       file {
-                        width   = ###TABLE.LINKICON_WIDTH###
-                        height  = ###TABLE.LINKICON_HEIGHT###
+                        width = 240m
+                        width {
+                          field >
+                          override = ###TABLE.LINKICON_WIDTH###
+                        }
+                        height = 400m
+                        height {
+                          override = ###TABLE.LINKICON_HEIGHT###
+                        }
                       }
                     }
                     tx_browser_pi1 = TEXT
@@ -1430,8 +1451,15 @@ plugin.tx_browser_pi1 {
               linkProc {
                 iconCObject {
                   file {
-                    width   = ###TX_ORG_DOWNLOADS.LINKICON_WIDTH###
-                    height  = ###TX_ORG_DOWNLOADS.LINKICON_HEIGHT###
+                    width = 240m
+                    width {
+                      field >
+                      override = ###TX_ORG_DOWNLOADS.LINKICON_WIDTH###
+                    }
+                    height = 400m
+                    height {
+                      override = ###TX_ORG_DOWNLOADS.LINKICON_HEIGHT###
+                    }
                   }
                 }
                 tx_browser_pi1 = TEXT

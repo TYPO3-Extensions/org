@@ -165,12 +165,12 @@ plugin.tx_browser_pi1 {
               imgPath = uploads/tx_org/
               1 {
                 file {
-                  width = 20m
+                  width = 80m
                   width {
                     field >
                     override = ###TX_ORG_DOWNLOADSCAT.IMAGEWIDTH###
                   }
-                  height = 40m
+                  height = 120m
                   height {
                     override = ###TX_ORG_DOWNLOADSCAT.IMAGEHEIGHT###
                   }
