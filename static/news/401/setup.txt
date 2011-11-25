@@ -449,20 +449,21 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_401_titleTag      = TYPO3 Organiser - News
-      list_mode_401_keywords      = TYPO3, Organiser, News
-      list_mode_401_summary       = TYPO3 Organiser: News
-      single_mode_401_titleTag    = TYPO3 Organiser - ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
-      single_mode_401_summary     = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
+      list_mode_401             = News
+      list_mode_401_titleTag    = TYPO3 Organiser - News
+      list_mode_401_keywords    = TYPO3, Organiser, News
+      list_mode_401_summary     = TYPO3 Organiser: News
+      single_mode_401_titleTag  = TYPO3 Organiser - ###TX_ORG_NEWS.TITLE###
+      single_mode_401_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_summary   = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
     }
     de {
-      list_mode_401_titleTag      = TYPO3 Organiser - Nachrichten
-      list_mode_401_keywords      = TYPO3, Organiser,  Nachrichten
-      list_mode_401_summary       = TYPO3 Organiser: Nachrichten
-      single_mode_401_titleTag    = TYPO3 Organiser: ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords    = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
-      single_mode_401_summary     = TYPO3 Organiser - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
+      list_mode_401_titleTag    = Nachrichten
+      list_mode_401_keywords    = TYPO3, Organiser,  Nachrichten
+      list_mode_401_summary     = TYPO3 Organiser: Nachrichten
+      single_mode_401_titleTag  = TYPO3 Organiser: ###TX_ORG_NEWS.TITLE###
+      single_mode_401_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_summary   = TYPO3 Organiser - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
     }
   }
 }

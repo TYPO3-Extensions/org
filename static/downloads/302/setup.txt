@@ -121,6 +121,7 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
+      list_mode_302               = Downloads categories
       list_mode_302_titleTag      = TYPO3 Organiser - Downloads categories
       list_mode_302_keywords      = TYPO3, Organiser, Downloads, Categories
       list_mode_302_summary       = TYPO3 Organiser: Downloads categories
@@ -129,6 +130,7 @@ plugin.tx_browser_pi1 {
       single_mode_302_summary     = TYPO3 Organiser - Downloads categories: ###TX_ORG_DOWNLOADSCAT.DESCRIPTION###
     }
     de {
+      list_mode_302               = Download Kategorien
       list_mode_302_titleTag      = TYPO3 Organiser - Download Kategorien
       list_mode_302_keywords      = TYPO3, Organiser, Downloads, Kategorien
       list_mode_302_summary       = TYPO3 Organiser: Downloads Kategorien

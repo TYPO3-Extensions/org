@@ -913,20 +913,22 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_201_titleTag      = TYPO3 Organiser: Events
-      list_mode_201_keywords      = TYPO3, Organiser, Events
-      list_mode_201_summary       = TYPO3 Organiser: Events
-      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
-      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
-      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
+      list_mode_201             = Events
+      list_mode_201_titleTag    = TYPO3 Organiser: Events
+      list_mode_201_keywords    = TYPO3, Organiser, Events
+      list_mode_201_summary     = TYPO3 Organiser: Events
+      single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
+      single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
+      single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
     }
     de {
-      list_mode_201_titleTag      = TYPO3 Organiser: Veranstaltungen
-      list_mode_201_keywords      = TYPO3, Organiser, Veranstaltungen
-      list_mode_201_summary       = TYPO3 Organiser: Veranstaltungen
-      single_mode_201_titleTag    = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
-      single_mode_201_keywords    = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
-      single_mode_201_summary     = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
+      list_mode_201             = Veranstaltungen
+      list_mode_201_titleTag    = TYPO3 Organiser: Veranstaltungen
+      list_mode_201_keywords    = TYPO3, Organiser, Veranstaltungen
+      list_mode_201_summary     = TYPO3 Organiser: Veranstaltungen
+      single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
+      single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
+      single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
     }
   }
 }

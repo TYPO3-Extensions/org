@@ -501,20 +501,22 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_701_titleTag      = TYPO3 Organiser: Locations
-      list_mode_701_keywords      = TYPO3, Organiser, Locations
-      list_mode_701_summary       = TYPO3 Organiser: Locations
-      single_mode_701_titleTag    = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
-      single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
-      single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
+      list_mode_701             = Locations
+      list_mode_701_titleTag    = TYPO3 Organiser: Locations
+      list_mode_701_keywords    = TYPO3, Organiser, Locations
+      list_mode_701_summary     = TYPO3 Organiser: Locations
+      single_mode_701_titleTag  = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords  = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary   = ###TX_ORG_LOCATION.DESCRIPTION###
     }
     de {
-      list_mode_701_titleTag      = TYPO3 Organiser: Veranstaltungsorte
-      list_mode_701_keywords      = TYPO3, Organiser, Veranstaltungsorte
-      list_mode_701_summary       = TYPO3 Organiser: Veranstaltungsorte
-      single_mode_701_titleTag    = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
-      single_mode_701_keywords    = ###TX_ORG_LOCATION.KEYWORDS###
-      single_mode_701_summary     = ###TX_ORG_LOCATION.DESCRIPTION###
+      list_mode_701             = Veranstaltungsorte
+      list_mode_701_titleTag    = TYPO3 Organiser: Veranstaltungsorte
+      list_mode_701_keywords    = TYPO3, Organiser, Veranstaltungsorte
+      list_mode_701_summary     = TYPO3 Organiser: Veranstaltungsorte
+      single_mode_701_titleTag  = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords  = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary   = ###TX_ORG_LOCATION.DESCRIPTION###
     }
   }
 }

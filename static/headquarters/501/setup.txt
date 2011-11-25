@@ -504,20 +504,22 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_501_titleTag      = TYPO3 Organiser: Headquarters
-      list_mode_501_keywords      = TYPO3, Organiser, Headquarters
-      list_mode_501_summary       = TYPO3 Organiser: Headquarters
-      single_mode_501_titleTag    = TYPO3 Organiser - Headquarter: ###TX_ORG_HEADQUARTERS.TITLE###
-      single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
-      single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
+      list_mode_501             = Headquarters
+      list_mode_501_titleTag    = TYPO3 Organiser: Headquarters
+      list_mode_501_keywords    = TYPO3, Organiser, Headquarters
+      list_mode_501_summary     = TYPO3 Organiser: Headquarters
+      single_mode_501_titleTag  = TYPO3 Organiser - Headquarter: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_keywords  = ###TX_ORG_HEADQUARTERS.KEYWORDS###
+      single_mode_501_summary   = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }
     de {
-      list_mode_501_titleTag      = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
-      list_mode_501_keywords      = TYPO3, Organiser, Standorte, Hauptverwaltung, Verwaltungsgebäude
-      list_mode_501_summary       = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
-      single_mode_501_titleTag    = TYPO3 Organiser - Standort: ###TX_ORG_HEADQUARTERS.TITLE###
-      single_mode_501_keywords    = ###TX_ORG_HEADQUARTERS.KEYWORDS###
-      single_mode_501_summary     = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
+      list_mode_501             = Hauptverwaltung
+      list_mode_501_titleTag    = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      list_mode_501_keywords    = TYPO3, Organiser, Standorte, Hauptverwaltung, Verwaltungsgebäude
+      list_mode_501_summary     = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      single_mode_501_titleTag  = TYPO3 Organiser - Standort: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_keywords  = ###TX_ORG_HEADQUARTERS.KEYWORDS###
+      single_mode_501_summary   = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
     }
   }
 }

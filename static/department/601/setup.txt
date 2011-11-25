@@ -443,7 +443,7 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_601               = TYPO3-Organiser: Departments
+      list_mode_601               = Departments
       list_mode_601_titleTag      = TYPO3-Organiser: Department
       list_mode_601_keywords      = TYPO3, Organiser, Departments
       list_mode_601_summary       = Departments presented by TYPO3-Organiser
@@ -452,7 +452,7 @@ plugin.tx_browser_pi1 {
       single_mode_601_summary     = ###TX_ORG_DEPARTMENT.DESCRIPTION###
     }
     de {
-      list_mode_601               = TYPO3-Organiser: Abteilungen
+      list_mode_601               = Abteilungen
       list_mode_601_titleTag      = TYPO3-Organiser: Abteilung
       list_mode_601_keywords      = Abteilung, TYPO3, Organiser
       list_mode_601_summary       = Abteilungen, präsentiert vom TYPO3 Organiser
