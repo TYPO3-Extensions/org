@@ -58,17 +58,17 @@ plugin.tx_browser_pi1 {
             // cat_text, cat_color, cat_image
           title = CASE
           title {
-            key = ###TX_ORG_DONWLOADSCAT.TYPE###
+            key = ###TX_ORG_DOWNLOADSCAT.TYPE###
               // cat_text
             default = COA
             default {
                 // title
               10 = TEXT
               10 {
-                value = ###TX_ORG_DONWLOADSCAT.TYPE###
+                value = ###TX_ORG_DOWNLOADSCAT.TYPE###
                 typolink {
                   parameter         = {$plugin.org.pages.downloads}
-                  additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DONWLOADSCAT.UID###
+                  additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
                 }
                 wrap  = <h2>|<h2>
@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
                 wrap = <p>|</p>
                 10 = TEXT
                 10 {
-                  value = ###TX_ORG_DONWLOADSCAT.TEXT###
+                  value = ###TX_ORG_DOWNLOADSCAT.TEXT###
                 }
                 20 = TEXT
                 20 {
@@ -90,11 +90,11 @@ plugin.tx_browser_pi1 {
                   }
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DONWLOADSCAT.UID###
+                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
                     title             = TEXT
                     title {
-                      value = ###TX_ORG_DONWLOADSCAT.TITLE###
+                      value = ###TX_ORG_DOWNLOADSCAT.TITLE###
                     }
                   }
                 }
