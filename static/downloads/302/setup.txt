@@ -165,14 +165,14 @@ plugin.tx_browser_pi1 {
               imgPath = uploads/tx_org/
               1 {
                 file {
-                  width = ###TX_ORG_DOWNLOADSCAT.IMAGEWIDTH###
+                  width = 20m
                   width {
                     field >
-                    override = 20m
+                    override = ###TX_ORG_DOWNLOADSCAT.IMAGEWIDTH###
                   }
-                  height = ###TX_ORG_DOWNLOADSCAT.IMAGEHEIGHT###
+                  height = 40m
                   height {
-                    override = 40m
+                    override = ###TX_ORG_DOWNLOADSCAT.IMAGEHEIGHT###
                   }
                 }
                 altText.field                 >
