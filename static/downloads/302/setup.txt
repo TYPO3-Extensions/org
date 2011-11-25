@@ -71,7 +71,7 @@ plugin.tx_browser_pi1 {
                   additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
                 }
-                wrap  = <h2>|<h2>
+                wrap  = <h2>|</h2>
               }
                 // text, more
               20 = COA
