@@ -1466,20 +1466,21 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_301_titleTag      = TYPO3 Organiser - Downloads
-      list_mode_301_keywords      = TYPO3, Organiser, Downloads
-      list_mode_301_summary       = TYPO3 Organiser: Downloads
-      single_mode_301_titleTag    = TYPO3 Organiser - ###TX_ORG_DOWNLOADS.TITLE###
-      single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_301_summary     = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      list_mode_301             = Downloads
+      list_mode_301_titleTag    = TYPO3 Organiser - Downloads
+      list_mode_301_keywords    = TYPO3, Organiser, Downloads
+      list_mode_301_summary     = TYPO3 Organiser: Downloads
+      single_mode_301_titleTag  = TYPO3 Organiser - ###TX_ORG_DOWNLOADS.TITLE###
+      single_mode_301_keywords  = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
+      single_mode_301_summary   = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
     de {
-      list_mode_301_titleTag      = TYPO3 Organiser - Downloads
-      list_mode_301_keywords      = TYPO3, Organiser,  Downloads
-      list_mode_301_summary       = TYPO3 Organiser: Downloads
-      single_mode_301_titleTag    = TYPO3 Organiser: ###TX_ORG_DOWNLOADS.TITLE###
-      single_mode_301_keywords    = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
-      single_mode_301_summary     = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
+      list_mode_301             = Downloads
+      list_mode_301_keywords    = TYPO3, Organiser,  Downloads
+      list_mode_301_summary     = TYPO3 Organiser: Downloads
+      single_mode_301_titleTag  = TYPO3 Organiser: ###TX_ORG_DOWNLOADS.TITLE###
+      single_mode_301_keywords  = TYPO3 Organiser, ###TX_ORG_DOWNLOADS.KEYWORDS###
+      single_mode_301_summary   = TYPO3 Organiser - Download: ###TX_ORG_DOWNLOADS.DESCRIPTION###
     }
   }
 }
