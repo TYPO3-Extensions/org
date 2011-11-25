@@ -46,8 +46,8 @@ plugin.tx_browser_pi1 {
           tx_org_downloadscat.color,
 
           tx_org_downloadscat.image,
-          tx_org_downloadscat.image_width,
-          tx_org_downloadscat.image_height,
+          tx_org_downloadscat.imagewidth,
+          tx_org_downloadscat.imageheight,
           tx_org_downloadscat.image_effects,
           tx_org_downloadscat.image_compression
         )
