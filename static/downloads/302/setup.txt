@@ -59,7 +59,7 @@ plugin.tx_browser_pi1 {
           title = CASE
           title {
             key = ###TX_ORG_DOWNLOADSCAT.TYPE###
-              // cat_text
+              // cat_text: title, color, text, more
             default = COA
             default {
                 // title
@@ -77,10 +77,12 @@ plugin.tx_browser_pi1 {
               20 = COA
               20 {
                 wrap = <p>|</p>
+                  // text
                 10 = TEXT
                 10 {
                   value = ###TX_ORG_DOWNLOADSCAT.TEXT###
                 }
+                  // more
                 20 = TEXT
                 20 {
                   value = Downloads &raquo;
@@ -101,6 +103,7 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
+              // cat_color: title, color, text, more
             cat_color = COA
             cat_color {
                 // title
@@ -120,17 +123,19 @@ plugin.tx_browser_pi1 {
                   // color
                 10 = TEXT
                 10 {
-                  wrap = <div style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:3em;width:3em;">|</div>
+                  wrap = <div style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:2em;width:2em;">|</div>
                   value = &nbsp;
                 }
                   // text, more
                 20 = COA
                 20 {
                   wrap = <p>|</p>
+                    // text
                   10 = TEXT
                   10 {
                     value = ###TX_ORG_DOWNLOADSCAT.TEXT###
                   }
+                    // more
                   20 = TEXT
                   20 {
                     value = Downloads &raquo;
@@ -152,8 +157,112 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-            xxx_cat_image = COA
-            xxx_cat_image {
+              // cat_image: title, image, text, more
+            cat_image < tt_content.image.20
+            cat_image {
+              imgList.field >
+              imgList = ###TX_ORG_DOWNLOADSCAT.IMAGE###
+              imgPath = uploads/tx_org/
+              1 {
+                file {
+                  width.field >
+                  width   = ###TX_ORG_DOWNLOADSCAT.IMAGEWIDTH###
+                  height  = ###TX_ORG_DOWNLOADSCAT.IMAGEHEIGHT###
+                }
+                altText.field                 >
+                altText                       = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                titleText.field               >
+                titleText                     = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                imageLinkWrap {
+                  ifEmpty {
+                    typolink.parameter.field  >
+                    typolink.parameter        = ###TX_ORG_DOWNLOADSCAT.IMAGE_LINK###
+                  }
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads}
+                    parameter {
+                      field >
+                    }
+                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
+                    useCacheHash      = 1
+                    title             = TEXT
+                    title {
+                      value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    }
+                  }
+                  enable.field                >
+                  enable                      = 0
+                  width                       = 1000;
+                  height                      = 800m;
+                  //JSwindow = 0
+                }
+              }
+              textPos.field           >
+                // 26: Left beside the text
+              textPos                 = 26
+              equalH                  >
+              image_compression.field >
+              image_compression       = ###TX_ORG_DOWNLOADSCAT.IMAGE_COMPRESSION###
+              image_effects.field     >
+              image_effects           = ###TX_ORG_DOWNLOADSCAT.IMAGE_EFFECTS###
+              noRows.field            >
+              noRows                  = 1
+              cols.field              >
+              cols                    = 1
+              border.field            >
+              border                  = 0
+              caption.1.field         >
+              caption.1.value         = 
+              captionAlign.field      >
+              captionAlign            = 0
+              layout {
+                key.field        >
+                key              = 26
+                default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+              }
+              stdWrap {
+                prefixComment >
+              }
+                // title, text
+              text {
+                required  = 1
+                  // title
+                10 = TEXT
+                10 {
+                  required  = 1
+                  value     = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  wrap      = <h2>|</h2>
+                }
+                  // text, more
+                20 = COA
+                20 {
+                  wrap = <p>|</p>
+                    // text
+                  10 = TEXT
+                  10 {
+                    value = ###TX_ORG_DOWNLOADSCAT.TEXT###
+                  }
+                    // more
+                  20 = TEXT
+                  20 {
+                    value = Downloads &raquo;
+                    lang {
+                      de = Downloads &raquo;
+                      en = Downloads &raquo;
+                    }
+                    typolink {
+                      parameter         = {$plugin.org.pages.downloads}
+                      additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
+                      useCacheHash      = 1
+                      title             = TEXT
+                      title {
+                        value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      }
+                    }
+                    noTrimWrap = | <span class="more">|</span>|
+                  }
+                }
+              }
             }
           }
         }
