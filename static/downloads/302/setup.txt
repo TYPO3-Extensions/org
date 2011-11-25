@@ -123,8 +123,12 @@ plugin.tx_browser_pi1 {
                   // color
                 10 = TEXT
                 10 {
-                  wrap = <div style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:2em;width:2em;">|</div>
-                  value = &nbsp;
+                  value = <span style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:2em;margin-right:.4em;width:2em;">&nbsp;</span>
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads}
+                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
+                    useCacheHash      = 1
+                  }
                 }
                   // text, more
                 20 = COA
