@@ -117,13 +117,11 @@ plugin.tx_browser_pi1 {
                 // color, text, more
               20 = COA
               20 {
-                20 = COA
-                20 {
+                  // color
+                10 = TEXT
+                10 {
                   wrap = <div style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;float:left;height:3em;width:3em;">|</div>
-                  10 = TEXT
-                  10 {
-                    value = &nbsp;
-                  }
+                  value = &nbsp;
                 }
                   // text, more
                 20 = COA
