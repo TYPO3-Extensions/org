@@ -70,6 +70,10 @@ plugin.tx_browser_pi1 {
                   parameter         = {$plugin.org.pages.downloads}
                   additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
+                  title             = TEXT
+                  title {
+                    value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  }
                 }
                 wrap  = <h2>|</h2>
               }
@@ -114,6 +118,10 @@ plugin.tx_browser_pi1 {
                   parameter         = {$plugin.org.pages.downloads}
                   additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
+                  title             = TEXT
+                  title {
+                    value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  }
                 }
                 wrap  = <h2>|</h2>
               }
@@ -128,6 +136,10 @@ plugin.tx_browser_pi1 {
                     parameter         = {$plugin.org.pages.downloads}
                     additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
+                    title             = TEXT
+                    title {
+                      value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    }
                   }
                 }
                   // text, more
