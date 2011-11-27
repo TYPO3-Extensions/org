@@ -43,11 +43,12 @@ plugin.tx_browser_pi1 {
             // Back button, devider, all downloads button
           my_back_button_line = COA
           my_back_button_line {
-            xxx_if {
+            if {
               isTrue {
                 data = GPvar:tx_browser_pi1|tx_org_downloadscat.title
               }
             }
+            wrap = <p class="backbutton">|</p>
               // Back button
             10 = TEXT
             10 {
