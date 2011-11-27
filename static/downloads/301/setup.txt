@@ -121,7 +121,7 @@ plugin.tx_browser_pi1 {
                   value = 0
                   if {
                     isTrue {
-                      data = GPvar:tx_browser_pi1|tx_org_downloadscat.title|0
+                      data = GPvar:tx_browser_pi1|tx_org_downloadscat.title
                     }
                   }
                 }
@@ -130,7 +130,7 @@ plugin.tx_browser_pi1 {
                   value = 0
                   if {
                     isFalse {
-                      data = GPvar:tx_browser_pi1|tx_org_downloadscat.title|0
+                      data = GPvar:tx_browser_pi1|tx_org_downloadscat.title
                     }
                   }
                 }
