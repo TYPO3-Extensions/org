@@ -68,7 +68,7 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DOWNLOADSCAT.TITLE###
                 typolink {
                   parameter         = {$plugin.org.pages.downloads}
-                  additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                  additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
                   title             = TEXT
                   title {
@@ -100,7 +100,7 @@ plugin.tx_browser_pi1 {
                   }
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                    additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
                     title             = TEXT
                     title {
@@ -124,7 +124,7 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DOWNLOADSCAT.TITLE###
                 typolink {
                   parameter         = {$plugin.org.pages.downloads}
-                  additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                  additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                   useCacheHash      = 1
                   title             = TEXT
                   title {
@@ -146,7 +146,7 @@ plugin.tx_browser_pi1 {
                   value = <span class="cat_color" style="background-color:###TX_ORG_DOWNLOADSCAT.COLOR###;">&nbsp;</span>
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                    additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
                     title             = TEXT
                     title {
@@ -177,7 +177,7 @@ plugin.tx_browser_pi1 {
                     }
                     typolink {
                       parameter         = {$plugin.org.pages.downloads}
-                      additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                      additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                       useCacheHash      = 1
                       title             = TEXT
                       title {
@@ -225,7 +225,7 @@ plugin.tx_browser_pi1 {
                     parameter {
                       field >
                     }
-                    additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                    additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
                     title             = TEXT
                     title {
@@ -279,7 +279,7 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_DOWNLOADSCAT.TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                    additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                     useCacheHash      = 1
                     title             = TEXT
                     title {
@@ -311,7 +311,7 @@ plugin.tx_browser_pi1 {
                     }
                     typolink {
                       parameter         = {$plugin.org.pages.downloads}
-                      additionalParams  = &tx_browser_pi1tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
+                      additionalParams  = &tx_browser_pi1[tx_org_downloadscat.title][]=###TX_ORG_DOWNLOADSCAT.UID###
                       useCacheHash      = 1
                       title             = TEXT
                       title {
