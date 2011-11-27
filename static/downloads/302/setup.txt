@@ -73,6 +73,10 @@ plugin.tx_browser_pi1 {
                   title             = TEXT
                   title {
                     value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    lang {
+                      de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    }
                   }
                 }
                 wrap  = <h2>|</h2>
@@ -101,6 +105,10 @@ plugin.tx_browser_pi1 {
                     title             = TEXT
                     title {
                       value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      lang {
+                        de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      }
                     }
                   }
                   noTrimWrap = | <span class="more">|</span>|
@@ -121,6 +129,10 @@ plugin.tx_browser_pi1 {
                   title             = TEXT
                   title {
                     value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    lang {
+                      de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                    }
                   }
                 }
                 wrap  = <h2>|</h2>
@@ -139,6 +151,10 @@ plugin.tx_browser_pi1 {
                     title             = TEXT
                     title {
                       value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      lang {
+                        de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      }
                     }
                   }
                 }
@@ -166,6 +182,10 @@ plugin.tx_browser_pi1 {
                       title             = TEXT
                       title {
                         value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        lang {
+                          de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                          en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        }
                       }
                     }
                     noTrimWrap = | <span class="more">|</span>|
@@ -210,6 +230,10 @@ plugin.tx_browser_pi1 {
                     title             = TEXT
                     title {
                       value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      lang {
+                        de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      }
                     }
                   }
                   enable.field                >
@@ -253,6 +277,19 @@ plugin.tx_browser_pi1 {
                 10 {
                   required  = 1
                   value     = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.downloads}
+                    additionalParams  = &tx_browser_pi1[downloadscatUid]=###TX_ORG_DOWNLOADSCAT.UID###
+                    useCacheHash      = 1
+                    title             = TEXT
+                    title {
+                      value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      lang {
+                        de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                      }
+                    }
+                  }
                   wrap      = <h2>|</h2>
                 }
                   // text, more
@@ -279,6 +316,10 @@ plugin.tx_browser_pi1 {
                       title             = TEXT
                       title {
                         value = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        lang {
+                          de = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                          en = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                        }
                       }
                     }
                     noTrimWrap = | <span class="more">|</span>|

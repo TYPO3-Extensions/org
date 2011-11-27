@@ -70,6 +70,20 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.keywords,
           tx_org_downloads.description
         )
+        andWhere = COA
+        andWhere {
+          10 = TEXT
+          10 {
+            if {
+              isTrue {
+                data = GPvar:tx_browser_pi1|tx_org_downloadscatUid
+              }
+            }
+            value       = tx_org_downloadscat.uid = {GPvar:tx_browser_pi1|tx_org_downloadscatUid}
+            insertData  = 1
+            noTrimWrap  = | | |
+          }
+        }
         orderBy (
           tx_org_downloads.datetime DESC
         )
