@@ -76,10 +76,10 @@ plugin.tx_browser_pi1 {
           10 {
             if {
               isTrue {
-                data = GPvar:tx_browser_pi1|tx_org_downloadscatUid
+                data = GPvar:tx_browser_pi1|downloadscatUid
               }
             }
-            value       = tx_org_downloadscat.uid = {GPvar:tx_browser_pi1|tx_org_downloadscatUid}
+            value       = tx_org_downloadscat.uid = {GPvar:tx_browser_pi1|downloadscatUid}
             insertData  = 1
             noTrimWrap  = | | |
           }
