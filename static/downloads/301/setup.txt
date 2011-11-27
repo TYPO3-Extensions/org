@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
           my_back_button_line {
             if {
               isTrue {
-                data = GPvar:tx_browser_pi1|tx_org_downloadscat.title
+                data = GPvar:tx_browser_pi1|tx_org_downloadscat.title|0
               }
             }
             wrap = <p class="backbutton">|</p>
