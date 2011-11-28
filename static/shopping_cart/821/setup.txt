@@ -44,7 +44,7 @@ plugin.tx_wtcart_pi1 {
       10 = TEXT
       10 {
         value (
-          SELECT  CAST( '###GP:TX_ORG_DOWNLOADS.UID###' AS SIGNED) AS puid,
+          SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
                   CONCAT(
                     '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
                     ' ',
