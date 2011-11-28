@@ -49,7 +49,6 @@ plugin.tx_wtcart_pi1 {
           value {
             insertData = 1
           }
-          //data    = GPvar:sys_language|flag
           equals  = ###SYS_LANGUAGE.FLAG###
           negate  = 1
         }
@@ -74,7 +73,6 @@ plugin.tx_wtcart_pi1 {
           value {
             insertData = 1
           }
-          //data    = GPvar:sys_language|flag
           equals  = ###SYS_LANGUAGE.FLAG###
         }
         value (
