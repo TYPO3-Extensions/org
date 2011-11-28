@@ -41,13 +41,38 @@ plugin.tx_wtcart_pi1 {
     sql >
     sql = COA
     sql {
+        // Query with sys_language.flag
       10 = TEXT
       10 {
+        if {
+          isTrue {
+            data = GPvar:sys_language|flag
+          }
+        }
         value (
           SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
                   CONCAT(
                     '<img src="typo3/gfx/flags/{GP:sys_language|flag}.gif" alt="{GP:tx_org_downloads|documents} ({GP:sys_language|title})" title="{GP:tx_org_downloads|documents} ({GP:sys_language|title})"/>',
                     ' ',
+                    '<strong>', tx_org_downloads.title, '</strong>') AS title,
+                  '0,00' as price,
+                  '0,00' as tax
+          FROM `tx_org_downloads`
+          WHERE tx_org_downloads.uid = CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
+)
+        insertData = 1
+      }
+        // Query without sys_language.flag
+      20 = TEXT
+      20 {
+        if {
+          isFalse {
+            data = GPvar:sys_language|flag
+          }
+        }
+        value (
+          SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
+                  CONCAT(
                     '<strong>', tx_org_downloads.title, '</strong>') AS title,
                   '0,00' as price,
                   '0,00' as tax
