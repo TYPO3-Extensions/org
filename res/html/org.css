@@ -135,11 +135,13 @@
 }
 
 #content .tx-browser-pi1-single .ui-button,
+#content .ajax_single .ui-button,
 .tx-browser-pi1-single form.tx_org_downloads-order .ui-button {
   padding: 0;
   width: 11em;
 }
 #content .tx-browser-pi1-single div.ui-button,
+#content .ajax-single div.ui-button,
 .tx-browser-pi1-single form.tx_org_downloads-order div.ui-button {
   width: 10.9em;
 }
