@@ -45,15 +45,13 @@ plugin.tx_wtcart_pi1 {
       10 = TEXT
       10 {
         if {
-          data    = GPvar:sys_language|flag
+          value   = {GP:sys_language|flag}
+          value {
+            insertData = 1
+          }
+          //data    = GPvar:sys_language|flag
           equals  = ###SYS_LANGUAGE.FLAG###
           negate  = 1
-        }
-        if >
-        if {
-          isTrue {
-            data = GPvar:sys_language|flag
-          }
         }
         value (
           SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
@@ -72,15 +70,12 @@ plugin.tx_wtcart_pi1 {
       20 = TEXT
       20 {
         if {
-          data    = GPvar:sys_language|flag
-          equals  = ###SYS_LANGUAGE.FLAG###
-        }
-        if >
-        if {
-          isTrue {
-            data = GPvar:sys_language|flag
+          value   = {GP:sys_language|flag}
+          value {
+            insertData = 1
           }
-          negate = 1
+          //data    = GPvar:sys_language|flag
+          equals  = ###SYS_LANGUAGE.FLAG###
         }
         value (
           SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
