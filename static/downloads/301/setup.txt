@@ -878,7 +878,6 @@ plugin.tx_browser_pi1 {
                     en = download
                   }
                   noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
-                  }
                 }
                   // If it is 0 downloads or more than 1 downloads
                 20 = TEXT
