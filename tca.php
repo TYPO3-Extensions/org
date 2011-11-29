@@ -2229,7 +2229,7 @@ $TCA['tx_org_downloads'] = array (
         'maxitems'            => 99,
         'MM'                  => 'tx_org_downloads_mm_tx_org_downloadscat',
         'foreign_table'       => 'tx_org_downloadscat',
-        'foreign_table_where' => 'AND tx_org_downloadscat.' . $str_store_record_conf . ' ORDER BY tx_org_downloadscat.title',
+        'foreign_table_where' => 'AND tx_org_downloadscat.' . $str_store_record_conf . ' AND tx_org_downloadscat.deleted = 0 AND tx_org_downloadscat.hidden = 0 ORDER BY tx_org_downloadscat.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
