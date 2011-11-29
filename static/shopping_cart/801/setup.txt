@@ -74,6 +74,48 @@ plugin.tx_wtcart_pi1 {
     }
   }
 
+  wtcart_ts_ {
+      // Back button, devider, all downloads button
+    my_back_button_line = COA
+    my_back_button_line {
+      wrap = <p class="backbutton">|</p>
+        // Back button
+      10 = TEXT
+      10 {
+        value = Back
+        lang.de = Zur&uuml;ck
+        noTrimWrap  = |<a href="javascript:history.back()">&laquo; |</a>|
+      }
+        // Devider
+      20 = TEXT
+      20 {
+        value       = |
+        noTrimWrap  = | | |
+      }
+        // All downloads button
+      30 = TEXT
+      30 {
+        value = All Events &raquo;
+        lang {
+          de  = Alle Veranstaltungen &raquo;
+          en  = All Events &raquo;
+        }
+        typolink {
+          parameter = {$plugin.org.pages.calendar}
+          title = TEXT
+          title {
+            value = All Downloads
+            lang {
+              de  = Alle Downloads
+              en  = All Downloads
+            }
+          }
+          useCacheHash = 1
+        }
+      }
+    }
+  }
+
   _LOCAL_LANG {
     default {
       wtcart_ll_title = Have a ticket reserved
