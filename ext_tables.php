@@ -371,7 +371,7 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
     'maxitems' => 999,
     'MM'                  => 'fe_users_mm_tx_org_news',
     'foreign_table'       => 'tx_org_news',
-    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0  ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
+    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0  AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
     'wizards' => array(
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
