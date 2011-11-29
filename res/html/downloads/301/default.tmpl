@@ -14,8 +14,8 @@ VERSION 3.7.0
           ###MY_TITLE###
           <!-- ###LIST_TITLE### end -->
           <!-- ###SEARCHFORM### begin -->
-          <div class="searchbox searchbox-###VIEW###-###MODE###">
-            <form action="###ACTION###" method="post" >
+          <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-###VIEW###-###MODE###">
+            <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
               <fieldset>
                 <legend>###MY_SEARCH_LEGEND###</legend>
                 <div style="float:right; text-align:right;">
@@ -38,56 +38,65 @@ VERSION 3.7.0
             ###RESULTPHRASE###
           </div><!-- ###SEARCHFORM### end -->
           <div class="listarea">
-            <!-- ###AZSELECTOR### begin -->
-            <div class="azSelector azSelector-###UL_VIEW###-###UL_MODE###">
-              <ul class="azSelector azSelector-###UL_VIEW###-###UL_MODE###"><!-- ###AZSELECTORTABS### begin -->
-                <li###LI_CLASS###>###TAB###</li><!-- ###AZSELECTORTABS### end -->
+            <!-- ###LISTTABS### begin -->
+            <div id="c###TT_CONTENT.UID###-list-tabs-###MODE###" class="ui-tabs ui-tabs-list-###MODE### ui-widget ui-widget-content ui-corner-all">
+              <!-- ###CATEGORY_MENU### begin -->
+              <!-- Enable the subpart CATEGORY_MENU: Set plugin.tx_browser_pi1.displayList.display.category_menu = 1 -->
+              <div id="c###TT_CONTENT.UID###-list-category-menu-###MODE###" class="category_menu category_menu-###VIEW###-###MODE###">
+                <!-- Add a category_menu with the ###TABLE.FIELD### syntax and configure your category_menu like a filter with TypoScript -->
+              </div><!-- ###CATEGORY_MENU### end -->
+              <!-- ###AZSELECTOR### begin -->
+                <div id="c###TT_CONTENT.UID###-list-azSelector-###MODE###" class="azSelector azSelector-###UL_VIEW###-###UL_MODE###">
+                <ul class="azSelector azSelector-###UL_VIEW###-###UL_MODE###"><!-- ###AZSELECTORTABS### begin -->
+                  <li###LI_CLASS###>###TAB###</li><!-- ###AZSELECTORTABS### end -->
+                </ul>
+              </div><!-- ###AZSELECTOR### end -->
+              <!-- ###PAGEBROWSER### begin -->
+              <div id="c###TT_CONTENT.UID###-list-browsebox-###MODE###" class="browsebox browsebox-###VIEW###-###MODE###">
+                ###RESULT_AND_ITEMS###
+              </div><!-- ###PAGEBROWSER### end -->
+              <!-- ###MODESELECTOR### begin -->
+              <ul class="ui-tabs-nav ui-tabs-nav-list-###MODE### ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                <!-- ###MODESELECTORTABS### begin -->
+                <li id="c###TT_CONTENT.UID###-list-tab-###MODE###" class="ui-state-default ui-corner-top c###TT_CONTENT.UID###-list-tab###UI-STATE-ACTIVE######UI-TABS-SELECTED###">###TABS###</li>
+                <!-- ###MODESELECTORTABS### end -->
               </ul>
-            </div><!-- ###AZSELECTOR### end -->
-            <!-- ###PAGEBROWSER### begin -->
-            <div class="browsebox browsebox-###VIEW###-###MODE###">
-              ###RESULT_AND_ITEMS###
-            </div><!-- ###PAGEBROWSER### end -->
-            <!-- ###MODESELECTOR### begin -->
-            <div class="modeSelector modeSelector-###VIEW###-###MODE###">
-              <ul class="modeSelector modeSelector-###VIEW###-###MODE###"><!-- ###MODESELECTORTABS### begin -->
-                <li###CLASS###>###TABS###</li><!-- ###MODESELECTORTABS### end -->
-              </ul>
-            </div><!-- ###MODESELECTOR### end -->
-            <!-- ###LISTVIEW### begin -->
-            <div class="###VIEW###view ###VIEW###view-downloads ###VIEW###view-###MODE### ###VIEW###view-downloads-###MODE###">
-              <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
-              <!-- ###GROUPBY### begin -->
-              <!-- ###GROUPBYHEAD### begin -->
-              <h3>
-                ###GROUPBY_GROUPNAME###
-              </h3>
-              <!-- ###GROUPBYHEAD### end -->
-              <!-- ###GROUPBYBODY### begin -->
-              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record01">
-                <div class="image01">
-                  ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                </div>
-                <div class="sbmFloatRight">
-                  ###SOCIALMEDIA_BOOKMARKS###
-                </div>
+              <!-- ###MODESELECTOR### end -->
+              <!-- ###LISTVIEW### begin -->
+              <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-downloads listview-###MODE### listview-downloads-###MODE### ui-tabs-panel ui-widget-content ui-corner-bottom">
+                <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
+                <!-- ###GROUPBY### begin -->
+                <!-- ###GROUPBYHEAD### begin -->
                 <h3>
-                  ###TX_ORG_DOWNLOADS.SUBTITLE###
+                  ###GROUPBY_GROUPNAME###
                 </h3>
-                <h2>
-                   ###TX_ORG_DOWNLOADS.TITLE###
-                </h2>
-                <p>
-                  ###TX_ORG_DOWNLOADS.TEASER_SHORT###
-                </p>
-              </div>
-              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-              <!-- ###GROUPBYBODY### end -->
-              <!-- ###GROUPBY### end -->
-              ###MY_BACK_BUTTON_LINE###
-            </div>
-            <!-- ###LISTVIEW### end -->
+                <!-- ###GROUPBYHEAD### end -->
+                <!-- ###GROUPBYBODY### begin -->
+                <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                <div class="record01">
+                  <div class="image01">
+                    ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                  </div>
+                  <div class="sbmFloatRight">
+                    ###SOCIALMEDIA_BOOKMARKS###
+                  </div>
+                  <h3>
+                    ###TX_ORG_DOWNLOADS.SUBTITLE###
+                  </h3>
+                  <h2>
+                     ###TX_ORG_DOWNLOADS.TITLE###
+                  </h2>
+                  <p>
+                    ###TX_ORG_DOWNLOADS.TEASER_SHORT###
+                  </p>
+                </div>
+                <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                <!-- ###GROUPBYBODY### end -->
+                <!-- ###GROUPBY### end -->
+                ###MY_BACK_BUTTON_LINE###
+              </div><!-- ###LISTVIEW### end -->
+            </div> <!-- /ui-tabs -->
+            <!-- ###LISTTABS### end -->
           </div> <!-- /listarea -->
         </div> <!-- /ui-widget -->
 <!-- ###TEMPLATE_LIST### end -->
@@ -97,7 +106,7 @@ VERSION 3.7.0
 <!-- ###TEMPLATE_SINGLE### begin -->
 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
 <!-- ###MODESELECTOR### begin -->
-        <div class="modeSelector modeSelector-###VIEW###-###MODE###">
+        <div id="c###TT_CONTENT.UID###-modeSelector-###VIEW###-###MODE###" class="modeSelector modeSelector-###VIEW###-###MODE###">
           <ul class="modeSelector modeSelector-###VIEW###-###MODE###"><!-- ###MODESELECTORTABS### begin -->
             <li###CLASS###>###TABS###</li><!-- ###MODESELECTORTABS### end -->
           </ul>
