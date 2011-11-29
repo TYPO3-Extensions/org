@@ -52,7 +52,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloadscat.image_compression
         )
         orderBy (
-          tx_org_downloadscat.title
+          tx_org_downloadscat.sorting
         )
         tx_org_downloadscat {
             // cat_text, cat_color, cat_image
