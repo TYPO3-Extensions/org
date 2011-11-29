@@ -169,7 +169,7 @@ switch($confArr['store_records'])
     'minitems'            => 0,
     'maxitems'            => 999,
     'foreign_table'       => 'fe_users',
-    'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
+    'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
     'wizards' => array (
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
@@ -450,7 +450,7 @@ $TCA['tx_org_cal'] = array (
       'config'  => array (
         'type'                => 'select',
         'foreign_table'       => 'sys_language',
-        'foreign_table_where' => 'ORDER BY sys_language.title',
+        'foreign_table_where' => 'AND sys_language.hidden = 0 ORDER BY sys_language.title',
         'items' => array (
           array ('LLL:EXT:lang/locallang_general.php:LGL.allLanguages',-1),
           array ('LLL:EXT:lang/locallang_general.php:LGL.default_value',0),
@@ -584,7 +584,7 @@ $TCA['tx_org_cal'] = array (
         'suppress_icons' => 1,
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
         'foreign_table'       => 'tx_org_caltype',
-        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' ORDER BY tx_org_caltype.title',
+        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' AND tx_org_caltype.deleted = 0 AND tx_org_caltype.hidden = 0 ORDER BY tx_org_caltype.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -638,7 +638,7 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_event_mm_tx_org_cal',
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_event',
-        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' AND tx_org_event.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_event.title',
+        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' AND tx_org_event.deleted = 0 AND tx_org_event.hidden = 0 AND tx_org_event.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_event.title',
         'items' => array (
           '0' => array (
             '0' => '',
@@ -709,7 +709,7 @@ $TCA['tx_org_cal'] = array (
         'maxitems'            => 1,
         'MM'                  => 'tx_org_cal_mm_tx_org_location',
         'foreign_table'       => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.title',
+        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.title',
         'items' => array (
           '0' => array (
             '0' => '',
@@ -763,7 +763,7 @@ $TCA['tx_org_cal'] = array (
         'maxitems' => 999,
         'MM'                  => 'tx_org_cal_mm_tx_org_calentrance',
         'foreign_table'       => 'tx_org_calentrance',
-        'foreign_table_where' => 'AND tx_org_calentrance.' . $str_store_record_conf . ' ORDER BY tx_org_calentrance.title',
+        'foreign_table_where' => 'AND tx_org_calentrance.' . $str_store_record_conf . ' AND tx_org_calentrance.deleted = 0 AND tx_org_calentrance.hidden = 0 ORDER BY tx_org_calentrance.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -811,7 +811,7 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_headquarters_mm_tx_org_cal',
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle'   => 'width:360px;',
         'itemListStyle'       => 'width:360px;',
         'wizards' => array (
@@ -861,7 +861,7 @@ $TCA['tx_org_cal'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_cal',
         'MM_opposite_field'   => 'tx_org_cal',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
         'selectedListStyle'   => 'width:360px;',
         'itemListStyle'       => 'width:360px;',
         'wizards' => array (
@@ -1367,7 +1367,7 @@ $TCA['tx_org_caltype'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
         'MM_opposite_field'   => 'tx_org_caltype',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1496,7 +1496,7 @@ $TCA['tx_org_department'] = array (
         'maxitems' => 1,
         'MM'                  => 'tx_org_department_mm_tx_org_departmentcat',
         'foreign_table'       => 'tx_org_departmentcat',
-        'foreign_table_where' => 'AND tx_org_departmentcat.' . $str_store_record_conf . ' ORDER BY tx_org_departmentcat.sorting',
+        'foreign_table_where' => 'AND tx_org_departmentcat.' . $str_store_record_conf . ' AND tx_org_departmentcat.deleted = 0 AND tx_org_departmentcat.hidden = 0 ORDER BY tx_org_departmentcat.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1544,7 +1544,7 @@ $TCA['tx_org_department'] = array (
         'MM'                  => 'tx_org_headquarters_mm_tx_org_department',
         'MM_opposite_field'   => 'tx_org_department',
         'foreign_table'       => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.sorting',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1597,7 +1597,7 @@ $TCA['tx_org_department'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_department_mm_fe_users',
         'foreign_table'       => 'fe_users',
-        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
+        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
         'wizards'             => $arr_config_feuser['wizards'],
       ),
     ),
@@ -1612,7 +1612,7 @@ $TCA['tx_org_department'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_department_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -1734,7 +1734,7 @@ $TCA['tx_org_department'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_department_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -2276,7 +2276,7 @@ $TCA['tx_org_downloads'] = array (
         'maxitems'            => 99,
         'MM'                  => 'tx_org_downloads_mm_tx_org_downloadsmedia',
         'foreign_table'       => 'tx_org_downloadsmedia',
-        'foreign_table_where' => 'AND tx_org_downloadsmedia.' . $str_store_record_conf . ' ORDER BY tx_org_downloadsmedia.title',
+        'foreign_table_where' => 'AND tx_org_downloadsmedia.' . $str_store_record_conf . ' AND tx_org_downloadsmedia.deleted = 0 AND tx_org_downloadsmedia.hidden = 0 ORDER BY tx_org_downloadsmedia.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -2486,7 +2486,7 @@ $TCA['tx_org_downloads'] = array (
         'MM'                  => 'fe_users_mm_tx_org_downloads',
         'MM_opposite_field'   => 'tx_org_downloads',
         'foreign_table'       => 'fe_users',
-        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
+        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
         'wizards' => $arr_config_feuser['wizards'],
       ),
     ),
@@ -3195,7 +3195,7 @@ $TCA['tx_org_event'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_event_mm_tx_org_cal',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -3293,7 +3293,7 @@ $TCA['tx_org_event'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_event_mm_tx_org_news',
         'foreign_table'       => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -3694,7 +3694,7 @@ $TCA['tx_org_headquarters'] = array (
           array ('', 0),
         ),
         'foreign_table' => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.uid=###REC_FIELD_l10n_parent### AND tx_org_headquarters.sys_language_uid IN (-1,0)',
+        'foreign_table_where' => 'AND tx_org_headquarters.uid=###REC_FIELD_l10n_parent### AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array (
@@ -3803,7 +3803,7 @@ $TCA['tx_org_headquarters'] = array (
         'maxitems'            => 999,
         'MM'                  => 'tx_org_headquarters_mm_tx_org_department',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.sorting',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -4328,7 +4328,7 @@ $TCA['tx_org_location'] = array (
         'MM'                  => 'tx_org_cal_mm_tx_org_location',
         'MM_opposite_field'   => 'tx_org_location',
         'foreign_table'       => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -4853,7 +4853,7 @@ $TCA['tx_org_news'] = array (
         'maxitems'            => 99,
         'MM'                  => 'tx_org_news_mm_tx_org_newscat',
         'foreign_table'       => 'tx_org_newscat',
-        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' ORDER BY tx_org_newscat.title',
+        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
@@ -4950,7 +4950,7 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'fe_users_mm_tx_org_news',
         'MM_opposite_field'   => 'tx_org_news',
         'foreign_table'       => 'fe_users',
-        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' ORDER BY fe_users.last_name',
+        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
         'wizards' => $arr_config_feuser['wizards'],
       ),
     ),
@@ -4966,7 +4966,7 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'tx_org_headquarters_mm_tx_org_news',
         'MM_opposite_field'   => 'tx_org_news',
         'foreign_table'       => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle'   => 'width:360px;',
         'itemListStyle'       => 'width:360px;',
         'wizards' => array (
@@ -5016,7 +5016,7 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'tx_org_department_mm_tx_org_news',
         'MM_opposite_field'   => 'tx_org_news',
         'foreign_table'       => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
+        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,

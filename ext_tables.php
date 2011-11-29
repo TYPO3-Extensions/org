@@ -371,7 +371,7 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
     'maxitems' => 999,
     'MM'                  => 'fe_users_mm_tx_org_news',
     'foreign_table'       => 'tx_org_news',
-    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.hidden=0 ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
+    'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0  ORDER BY tx_org_news.datetime DESC, tx_org_news.title',
     'wizards' => array(
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
@@ -419,7 +419,7 @@ $TCA['fe_users']['columns']['tx_org_headquarters'] = array (
     'MM'                  => 'tx_org_headquarters_mm_fe_users',
     'MM_opposite_field'   => 'fe_users',
     'foreign_table'       => 'tx_org_headquarters',
-    'foreign_table_where' =>  'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.hidden=0 '.
+    'foreign_table_where' =>  'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 '.
                               'ORDER BY tx_org_headquarters.title',
     'wizards' => array(
       '_PADDING'  => 2,
@@ -468,7 +468,7 @@ $TCA['fe_users']['columns']['tx_org_department'] = array (
     'MM'                  => 'tx_org_department_mm_fe_users',
     'MM_opposite_field'   => 'fe_users',
     'foreign_table'       => 'tx_org_department',
-    'foreign_table_where' =>  'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.hidden=0 '.
+    'foreign_table_where' =>  'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 '.
                               'ORDER BY tx_org_department.sorting',
     'wizards' => array(
       '_PADDING'  => 2,
@@ -558,7 +558,7 @@ $TCA['fe_users']['columns']['tx_org_downloads'] = array (
     'maxitems' => 999,
     'MM'                  => 'fe_users_mm_tx_org_downloads',
     'foreign_table'       => 'tx_org_downloads',
-    'foreign_table_where' => 'AND tx_org_downloads.' . $str_store_record_conf . ' AND tx_org_downloads.hidden=0 ORDER BY tx_org_downloads.datetime DESC, tx_org_downloads.title',
+    'foreign_table_where' => 'AND tx_org_downloads.' . $str_store_record_conf . ' AND tx_org_downloads.deleted = 0 AND tx_org_downloads.hidden = 0 ORDER BY tx_org_downloads.datetime DESC, tx_org_downloads.title',
     'wizards' => array(
       '_PADDING'  => 2,
       '_VERTICAL' => 0,
