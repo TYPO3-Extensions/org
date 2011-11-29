@@ -85,6 +85,18 @@
   padding:5px;
 }
 
+.tx-wtcart-pi1 p.backbutton {
+  padding-top:1em;
+  text-align:right;
+}
+.tx-wtcart-pi1 a, .tx-wtcart-pi1 a:link, .tx-wtcart-pi1 a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+.tx-wtcart-pi1 a:active, .tx-wtcart-pi1 a:focus, .tx-wtcart-pi1 a:hover {
+    color: #F66800;
+}
+
 #content .wtcart_cart input {
   border: 1px solid #AAA;
   margin:0;
@@ -170,3 +182,4 @@ fieldset.tx-powermail-pi1_fieldset br, fieldset.tx-powermail-pi1_fieldset .tx_po
 td.powermail_all_td {
   padding: 2px 5px;
 }
+

@@ -117,7 +117,7 @@ plugin.tx_wtcart_pi1 {
           data = GPvar:tx_browser_pi1|tx_org_downloadscat.title|0
         }
       }
-      wrap = <div class="tx_browser_pi1"><p class="backbutton">|</p></div>
+      wrap = <p class="backbutton">|</p>
         // Back button
       10 = TEXT
       10 {
