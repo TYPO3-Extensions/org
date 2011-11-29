@@ -104,10 +104,10 @@ plugin.tx_wtcart_pi1 {
           parameter = {$plugin.org.pages.calendar}
           title = TEXT
           title {
-            value = All Downloads
+            value = All Events
             lang {
-              de  = Alle Downloads
-              en  = All Downloads
+              de  = Alle Veranstaltungen
+              en  = All Events
             }
           }
           useCacheHash = 1
