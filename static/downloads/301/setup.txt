@@ -145,15 +145,6 @@ plugin.tx_browser_pi1 {
               area {
                 interval {
                   case = year
-                  monthXYZ {
-                    times_stdWrap {
-                      value = 3
-                    }
-                    value_stdWrap {
-                      // %Y: full year like 2009
-                      strftime = %Y
-                    }
-                  }
                 }
               }
             }
