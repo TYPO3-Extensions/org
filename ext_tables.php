@@ -159,8 +159,8 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',         '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',         '+Org: Veranstaltorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',   '+Org: Warenkorb Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',   '+Org: Warenkorb Veranstaltungen');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',   '+Org: Warenkorb Veranstaltungen - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',   '+Org: Warenkorb Tickets');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',   '+Org: Warenkorb Tickets - Rand');
     break;
   default:
       // English
@@ -181,8 +181,8 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',               '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',               '+Org: News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Shopping cart for downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Shopping cart for events');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Shopping cart for events - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Shopping cart for tickets');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Shopping cart for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
 }

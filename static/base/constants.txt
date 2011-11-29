@@ -48,22 +48,26 @@ plugin.org {
   url.default.calendar = schedule/
   # cat=Organiser static url/page/101; type=+int; label= [default] downloads:URL of your downloads manager (default language)
   url.default.downloads = downloads/
-  # cat=Organiser static url/page/107; type=+int; label= [default] shopping cart:URL of your shopping cart (default language)
+  # cat=Organiser static url/page/107; type=+int; label= [default] shopping cart tickets:URL of your shopping cart for tickets(default language)
   url.default.shopping_cart = tickets/
-  # cat=Organiser static url/page/108; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
+  # cat=Organiser static url/page/108; type=+int; label= [default] shopping cart downloads:URL of your shopping cart for downloads(default language)
+  url.default.shopping_cart_downloads = orders/
+  # cat=Organiser static url/page/109; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
   url.default.terms = tickets/terms/
-  # cat=Organiser static url/page/109; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
+  # cat=Organiser static url/page/110; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
   url.default.terms_downloads = downloads/terms/
 
   # cat=Organiser static url/page/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
   url.de.calendar = spielplan/
   # cat=Organiser static url/page/201; type=+int; label= [de] Downloads:URL of your download manager (only if German is configured!)
   url.de.downloads = downloads/
-  # cat=Organiser static url/page/207; type=+int; label= [de] Warenkorb:URL of your shopping cart (only if German is configured!)
+  # cat=Organiser static url/page/207; type=+int; label= [de] Warenkorb Eintrittskarten:URL of your shopping cart for tickets (only if German is configured!)
   url.de.shopping_cart = karten/
-  # cat=Organiser static url/page/208; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
+  # cat=Organiser static url/page/208; type=+int; label= [de] Warenkorb Downloads:URL of your shopping cart for downloads (only if German is configured!)
+  url.de.shopping_cart_downloads = bestellungen/
+  # cat=Organiser static url/page/209; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
   url.de.terms = karten/agb/
-  # cat=Organiser static url/page/209; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
+  # cat=Organiser static url/page/210; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
   url.de.terms_downloads = downloads/agb/
 
   # cat=Organiser Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
