@@ -839,7 +839,7 @@ CREATE TABLE tx_org_news (
   tx_org_event tinytext NOT NULL,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   tx_org_newscat tinytext,
-  tx_org_newscat_tree int(11) DEFAULT '0' NOT NULL,
+#  tx_org_newscat_tree int(11) DEFAULT '0' NOT NULL,
   topnews tinyint(4) DEFAULT '0' NOT NULL,
   pages tinytext,
   starttime int(11) DEFAULT '0' NOT NULL,
@@ -897,7 +897,7 @@ CREATE TABLE tx_org_news_mm_tx_org_newscat (
 CREATE TABLE tx_org_newscat (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
-  tx_org_newscat_tree int(11) DEFAULT '0' NOT NULL,
+#  tx_org_newscat_tree int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,
   crdate int(11) DEFAULT '0' NOT NULL,
   cruser_id int(11) DEFAULT '0' NOT NULL,
