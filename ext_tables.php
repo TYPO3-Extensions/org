@@ -1,15 +1,15 @@
 <?php
-if (!defined ('TYPO3_MODE')) 
+if (!defined ('TYPO3_MODE'))
 {
   die ('Access denied.');
 }
 
 
-  
+
   ////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // INDEX
-  
+
   // Configuration by the extension manager
   //    Localization support
   //    Store record configuration
@@ -20,9 +20,9 @@ if (!defined ('TYPO3_MODE'))
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Configuration by the extension manager
-  
+
 $confArr  = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
   // Language for labels of static templates and page tsConfig
@@ -36,13 +36,13 @@ switch($llStatic) {
 }
   // Language for labels of static templates and page tsConfig
 
-  // Don't exclude fe_user fields by default 
+  // Don't exclude fe_user fields by default
 $bool_excludeFeuser = false;
 if (strtolower(substr($confArr['TCA_adapt_fe_user'], 0, strlen('no'))) == 'no')
 {
   $bool_excludeFeuser = true;
 }
-  // Don't exclude fe_user fields by default 
+  // Don't exclude fe_user fields by default
 
   // Simplify backend forms
 $bool_time_control = true;
@@ -51,7 +51,7 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
   $bool_time_control = false;
 }
   // Simplify backend forms
-  
+
   // Relation fe_users to company
 switch ($confArr['TCA_fe_user_company'])
 {
@@ -79,7 +79,7 @@ switch ($confArr['TCA_fe_user_company'])
 
   // Store record configuration
 $bool_wizards_wo_add_and_list = false;
-switch($confArr['store_records']) 
+switch($confArr['store_records'])
 {
     // IN CASE OF CHANGES: BE AWARE OF THE ORGANISER INSTALLER!
   case('Multi grouped: record groups in different directories'):
@@ -107,7 +107,7 @@ switch($confArr['store_records'])
 //$bool_wizards_wo_add_and_list = false;
 $andWhere_feuser_fegroups   = false;
 $andWhere_fegroups_subgroup = false;
-switch($confArr['store_fe_groups']) 
+switch($confArr['store_fe_groups'])
 {
     // IN CASE OF CHANGES: BE AWARE OF THE ORGANISER INSTALLER!
   case('Managed by page TSconfig (list)'):
@@ -133,7 +133,7 @@ switch($confArr['store_fe_groups'])
 
 
   ////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Enables the Include Static Templates
 
   // Case $llStatic
@@ -192,47 +192,47 @@ switch(true) {
 
 
   ////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Add pagetree icons
 
   // Case $llStatic
 switch(true) {
   case($llStatic == 'de'):
       // German
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org', 'org', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Downloads', 'org_dwnlds', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Kalender', 'org_cal', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Nachrichten', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Personal', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Standorte', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Veranstaltungen', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Veranstaltungsorte', 'org_locat', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
     break;
   default:
       // English
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org', 'org', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Calendar', 'org_cal', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Downloads', 'org_dwnlds', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Event', 'org_event', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Headquarters', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Location', 'org_locat', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: News', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-    $TCA['pages']['columns']['module']['config']['items'][] = 
+    $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Staff', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 }
   // Case $llStatic
@@ -260,7 +260,7 @@ t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKE
 
 
   ////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Configure third party tables
 
   // fe_users
@@ -365,8 +365,8 @@ $TCA['fe_users']['columns']['tx_org_news'] = array (
   'exclude' => 0,
   'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
   'config' => array (
-    'type' => 'select', 
-    'size' => 10, 
+    'type' => 'select',
+    'size' => 10,
     'minitems' => 0,
     'maxitems' => 999,
     'MM'                  =>  'fe_users_mm_tx_org_news',
@@ -415,8 +415,8 @@ $TCA['fe_users']['columns']['tx_org_headquarters'] = array (
   'exclude' => $bool_exclude_fe_user_tx_org_company,
   'label' => 'LLL:EXT:org/locallang_db.xml:fe_users.tx_org_headquarters',
   'config' => array (
-    'type' => 'select', 
-    'size' => 20, 
+    'type' => 'select',
+    'size' => 20,
     'minitems' => 0,
     'maxitems' => 999,
     'MM'                  => 'tx_org_headquarters_mm_fe_users',
@@ -466,8 +466,8 @@ $TCA['fe_users']['columns']['tx_org_department'] = array (
   'exclude' => $bool_exclude_fe_user_tx_org_department,
   'label' => 'LLL:EXT:org/locallang_db.xml:fe_users.tx_org_department',
   'config' => array (
-    'type' => 'select', 
-    'size' => 20, 
+    'type' => 'select',
+    'size' => 20,
     'minitems' => 0,
     'maxitems' => 999,
     'MM'                  => 'tx_org_department_mm_fe_users',
@@ -519,7 +519,7 @@ $TCA['fe_users']['columns']['tx_org_imagecaption'] = array (
   'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
   'config'  => array (
     'type' => 'text',
-    'cols' => '30', 
+    'cols' => '30',
     'rows' => '5',
   ),
 );
@@ -530,7 +530,7 @@ $TCA['fe_users']['columns']['tx_org_imageseo'] = array (
   'label'   => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
   'config'  => array (
     'type' => 'text',
-    'cols' => '30', 
+    'cols' => '30',
     'rows' => '5',
   ),
 );
@@ -645,7 +645,7 @@ if($bool_wizards_wo_add_and_list)
   unset($TCA['fe_users']['columns']['tx_org_downloads']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['list']);
-}  
+}
   // Relation to fe_groups
 if($andWhere_feuser_fegroups)
 {
@@ -677,7 +677,7 @@ $TCA['fe_groups']['ctrl']['title']          = 'LLL:EXT:org/locallang_db.xml:fe_g
 $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
 if( $andWhere_fegroups_subgroup )
 {
- 
+
   $andWhere_default = $TCA['fe_groups']['columns']['subgroup']['config']['foreign_table_where'];
   $andWhere = $andWhere_fegroups_subgroup . $andWhere_default;
   $TCA['fe_groups']['columns']['subgroup']['config']['foreign_table_where'] = $andWhere;
@@ -697,7 +697,7 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
 
 
   ////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // TCA tables
 
   // news
@@ -771,6 +771,8 @@ $TCA['tx_org_newscat'] = array (
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/newscat.gif',
   )
 );
+// #32223 Category tree, 111130, dwildt+
+$TCA['tx_org_newscat']['ctrl']['treeParentField'] = 'tx_org_newscat_tree';
   // newscat ////////////////////////////////////////////////////////////////////
 
   // cal /////////////////////////////////////////////////////////////////////
