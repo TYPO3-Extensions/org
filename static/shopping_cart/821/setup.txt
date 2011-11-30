@@ -27,36 +27,19 @@ plugin.tx_wtcart_pi1 {
     uid = {$plugin.org.tx_wtcart_pi1.powermailContentUid_downloads}
   }
   db {
-    sql (
-      SELECT  CAST( '###GP:TX_ORG_DOWNLOADS.UID###' AS SIGNED) AS puid,
-              CONCAT(
-                '<img src="typo3/gfx/flags/###GP:SYS_LANGUAGE.FLAG###.gif" alt="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)" title="###GP:TX_ORG_DOWNLOADS.DOCUMENTS### (###GP:SYS_LANGUAGE.TITLE###)"/>',
-                ' ',
-                '<strong>', tx_org_downloads.title, '</strong>') AS title,
-              '0,00' as price,
-              '0,00' as tax
-      FROM `tx_org_downloads`
-      WHERE tx_org_downloads.uid = CAST( '###GP:TX_ORG_DOWNLOADS.UID###' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
-)
-    sql >
     sql = COA
     sql {
-        // Query with sys_language.flag
+        // GP data without sys_language[flag]
       10 = TEXT
       10 {
         if {
-          value   = {GP:sys_language|flag}
-          value {
-            insertData = 1
+          isFalse {
+            data = GPvar:sys_language|flag
           }
-          equals  = ###SYS_LANGUAGE.FLAG###
-          negate  = 1
         }
         value (
           SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
                   CONCAT(
-                    '<img src="typo3/gfx/flags/{GP:sys_language|flag}.gif" alt="{GP:tx_org_downloads|documents} ({GP:sys_language|title})" title="{GP:tx_org_downloads|documents} ({GP:sys_language|title})"/>',
-                    ' ',
                     '<strong>', tx_org_downloads.title, ' </strong>') AS title,
                   '0,00' as price,
                   '0,00' as tax
@@ -65,26 +48,54 @@ plugin.tx_wtcart_pi1 {
 )
         insertData = 1
       }
-        // Query without sys_language.flag
-      20 = TEXT
+        // GP data with sys_language[flag]
+      20 = COA
       20 {
-        if {
-          value   = {GP:sys_language|flag}
-          value {
-            insertData = 1
+          // sys_language[flag] with value: query with sys_language.flag
+        10 = TEXT
+        10 {
+          if {
+            value   = {GP:sys_language|flag}
+            value {
+              insertData = 1
+            }
+            equals  = ###SYS_LANGUAGE.FLAG###
+            negate  = 1
           }
-          equals  = ###SYS_LANGUAGE.FLAG###
+          value (
+            SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
+                    CONCAT(
+                      '<img src="typo3/gfx/flags/{GP:sys_language|flag}.gif" alt="{GP:tx_org_downloads|documents} ({GP:sys_language|title})" title="{GP:tx_org_downloads|documents} ({GP:sys_language|title})"/>',
+                      ' ',
+                      '<strong>', tx_org_downloads.title, ' </strong>') AS title,
+                    '0,00' as price,
+                    '0,00' as tax
+            FROM `tx_org_downloads`
+            WHERE tx_org_downloads.uid = CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
+  )
+          insertData = 1
         }
-        value (
-          SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
-                  CONCAT(
-                    '<strong>', tx_org_downloads.title, ' </strong>') AS title,
-                  '0,00' as price,
-                  '0,00' as tax
-          FROM `tx_org_downloads`
-          WHERE tx_org_downloads.uid = CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
-)
-        insertData = 1
+          // sys_language[flag] with MARKER: query without sys_language.flag
+        20 = TEXT
+        20 {
+          if {
+            value   = {GP:sys_language|flag}
+            value {
+              insertData = 1
+            }
+            equals  = ###SYS_LANGUAGE.FLAG###
+          }
+          value (
+            SELECT  CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) AS puid,
+                    CONCAT(
+                      '<strong>', tx_org_downloads.title, ' </strong>') AS title,
+                    '0,00' as price,
+                    '0,00' as tax
+            FROM `tx_org_downloads`
+            WHERE tx_org_downloads.uid = CAST( '{GP:tx_org_downloads|uid}' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
+  )
+          insertData = 1
+        }
       }
     }
   }
