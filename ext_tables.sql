@@ -893,9 +893,11 @@ CREATE TABLE tx_org_news_mm_tx_org_newscat (
 #
 # Table structure for table 'tx_org_newscat'
 #
+# #32223 Category tree, 111130, dwildt+, tx_org_newscat_tree
 CREATE TABLE tx_org_newscat (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
+  tx_org_newscat_tree int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,
   crdate int(11) DEFAULT '0' NOT NULL,
   cruser_id int(11) DEFAULT '0' NOT NULL,
