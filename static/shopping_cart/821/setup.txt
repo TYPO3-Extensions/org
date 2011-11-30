@@ -51,6 +51,11 @@ plugin.tx_wtcart_pi1 {
         // GP data with sys_language[flag]
       20 = COA
       20 {
+        if {
+          isTrue {
+            data = GPvar:sys_language|flag
+          }
+        }
           // sys_language[flag] with value: query with sys_language.flag
         10 = TEXT
         10 {
