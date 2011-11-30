@@ -140,27 +140,27 @@ switch($confArr['store_fe_groups'])
 switch(true) {
   case($llStatic == 'de'):
       // German
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                'Org: Basis (immer einbinden!)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',      '+Org: Abteilung');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',      '+Org: Abteilung - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301',        '+Org: Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311',        '+Org: Downloads - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302',        '+Org: Downloads Kategorien');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',        '+Org: Kalender');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired', '+Org: Kalender +Archiv');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',        '+Org: Kalender - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',             '+Org: Nachrichten');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',             '+Org: Nachrichten - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',             '+Org: Nachrichten (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',           '+Org: Personal');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',           '+Org: Personal - Rand (nicht cachen!)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',     '+Org: Standorte');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',     '+Org: Standorte - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',         '+Org: Veranstaltungsorte');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',         '+Org: Veranstaltorte - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',   '+Org: Warenkorb Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',   '+Org: Warenkorb Tickets');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',   '+Org: Warenkorb Tickets - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (immer einbinden!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Abteilung');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Abteilung - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads Kategorien');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Kalender');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired/',  '+Org: Kalender +Archiv');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',          '+Org: Kalender - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401/',              '+Org: Nachrichten');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: Nachrichten - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: Nachrichten (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personal');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Standorte');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Veranstaltungsorte');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Veranstaltorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Warenkorb Downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Warenkorb Tickets');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Warenkorb Tickets - Rand');
     break;
   default:
       // English
@@ -170,16 +170,16 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',          '+Org: Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Department');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301',          '+Org: Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311',          '+Org: Downloads - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302',          '+Org: Downloads categories');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501',       '+Org: Headquarters');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511',       '+Org: Headquarters - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701',           '+Org: Locations');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711',           '+Org: Locations - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401',               '+Org: News');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411',               '+Org: News - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499',               '+Org: News (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Headquarters');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Headquarters - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Locations');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Locations - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401/',              '+Org: News');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: News - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Shopping cart for downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Shopping cart for tickets');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Shopping cart for tickets - margin');
