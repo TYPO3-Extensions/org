@@ -880,7 +880,7 @@ plugin.tx_browser_pi1 {
                 drs = TEXT
                 drs {
                     // [Boolean] 0: disabled (default), 1: enabled
-                  value = 1
+                  value = 0
                 }
                   // Current table
                 table = TEXT
