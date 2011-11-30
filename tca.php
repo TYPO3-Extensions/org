@@ -4753,7 +4753,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_tree,bodytext,'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_headquarters,'.
@@ -5385,7 +5385,7 @@ $TCA['tx_org_news'] = array (
   ),
   'types' => array (
     'news' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_tree,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
