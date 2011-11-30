@@ -4753,7 +4753,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_tree,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_pidtree,bodytext,'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_headquarters,'.
@@ -4873,12 +4873,12 @@ $TCA['tx_org_news'] = array (
         'foreign_table'       => 'tx_org_newscat',
         'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
 
-        'form_type'     => 'user',
-        'userFunc'      => 'tx_cpstcatree->getTree',
-        'treeView'      => 1,
-        'expandable'    => 1,
-        'expandFirst'   => 0,
-        'expandAll'     => 0,
+//        'form_type'     => 'user',
+//        'userFunc'      => 'tx_cpstcatree->getTree',
+//        'treeView'      => 1,
+//        'expandable'    => 1,
+//        'expandFirst'   => 0,
+//        'expandAll'     => 0,
 
         'wizards' => array (
           '_PADDING'  => 2,
@@ -5393,7 +5393,7 @@ $TCA['tx_org_news'] = array (
   ),
   'types' => array (
     'news' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_tree,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_pidtree,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
