@@ -4872,6 +4872,14 @@ $TCA['tx_org_news'] = array (
         'MM'                  => 'tx_org_news_mm_tx_org_newscat',
         'foreign_table'       => 'tx_org_newscat',
         'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
+
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+
         'wizards' => array (
           '_PADDING'  => 2,
           '_VERTICAL' => 0,
