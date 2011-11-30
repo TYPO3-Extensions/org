@@ -772,7 +772,7 @@ $TCA['tx_org_newscat'] = array (
   )
 );
 // #32223 Category tree, 111130, dwildt+
-//$TCA['tx_org_newscat']['ctrl']['treeParentField'] = 'tx_org_newscat_tree';
+$TCA['tx_org_newscat']['ctrl']['treeParentField'] = 'pidtree';
   // newscat ////////////////////////////////////////////////////////////////////
 
   // cal /////////////////////////////////////////////////////////////////////

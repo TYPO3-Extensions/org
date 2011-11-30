@@ -4842,24 +4842,24 @@ $TCA['tx_org_news'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.datetime',
       'config'    => $conf_datetime,
     ),
-//    'tx_org_newscat_tree' => array (
-//      'exclude'   => 0,
-//      'label'     => 'tx_org_newscat_tree',
-//      'config'    => array (
-//        'type'          => 'select',
-//        'form_type'     => 'user',
-//        'userFunc'      => 'tx_cpstcatree->getTree',
-//        'foreign_table' => 'tx_org_newscat',
-//        'treeView'      => 1,
-//        'expandable'    => 1,
-//        'expandFirst'   => 0,
-//        'expandAll'     => 0,
-//        'size'          => 1,
-//        'minitems'      => 0,
-//        'maxitems'      => 2,
-//        'trueMaxItems'  => 1,
-//      ),
-//    ),
+    'tx_org_newscat_pidtree' => array (
+      'exclude'   => 0,
+      'label'     => 'tx_org_newscat_pidtree',
+      'config'    => array (
+        'type'          => 'select',
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_org_newscat',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+        'size'          => 1,
+        'minitems'      => 0,
+        'maxitems'      => 2,
+        'trueMaxItems'  => 1,
+      ),
+    ),
     'tx_org_newscat' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
@@ -5500,7 +5500,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_newscat'] = array (
   'ctrl' => $TCA['tx_org_newscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,pidtree,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -5514,6 +5514,24 @@ $TCA['tx_org_newscat'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title_lang_ol',
       'config'  => $conf_input_30_trim,
+    ),
+    'pidtree' => array (
+      'exclude'   => 0,
+      'label'     => 'pidtree',
+      'config'    => array (
+        'type'          => 'select',
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_org_newscat',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+        'size'          => 1,
+        'minitems'      => 0,
+        'maxitems'      => 2,
+        'trueMaxItems'  => 1,
+      ),
     ),
     'image' => array (
       'l10n_mode' => 'exclude',
@@ -5534,7 +5552,7 @@ $TCA['tx_org_newscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;1;;1-1-1,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;1;;1-1-1,pidtree,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_control, hidden,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_media,   image, imagecaption;;3;;'),
   ),
