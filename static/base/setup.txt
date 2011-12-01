@@ -308,6 +308,11 @@ plugin.tx_linkhandler {
     parameter        = {$plugin.org.pages.department}
     additionalParams = &tx_browser_pi1[departmentUid]={field:uid}
   }
+  tx_org_downloads < .fe_users
+  tx_org_downloads {
+    parameter        = {$plugin.org.pages.downloads}
+    additionalParams = &tx_browser_pi1[downloadsUid]={field:uid}
+  }
   tx_org_event < .fe_users
   tx_org_event {
     parameter        = {$plugin.org.pages.event}
