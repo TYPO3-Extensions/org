@@ -118,7 +118,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.description
         )
         orderBy (
-          tx_org_downloads.title DESC
+          tx_org_downloads.title
         )
         csvLinkToSingleView = tx_org_downloads.title
         filter {
