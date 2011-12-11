@@ -663,9 +663,14 @@ $TCA['fe_users']['columns']['tx_org_headquarters']['config_filter'] =
 $TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['maxitems'] = 1;
 $TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['size']     = 1;
 $items = array ('-99' => array ( '0' => '', '1' => '' ));
-foreach($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue)
-{
-  $items[$key] = $arrValue;
+  // uherrmann, 111211: #32440
+if (!empty ($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'])
+    AND is_array ($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'])) {
+	  // /#32440
+  foreach($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue)
+  {
+    $items[$key] = $arrValue;
+  }
 }
 $TCA['fe_users']['columns']['tx_org_headquarters']['config_filter']['items'] = $items;
 
