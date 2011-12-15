@@ -1635,8 +1635,9 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
-
                 }
+                tx_browser_pi1 >
+
               }
               tableField = tx_org_downloads.documents
               fields {
