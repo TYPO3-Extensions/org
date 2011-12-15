@@ -216,7 +216,7 @@ plugin.tx_browser_pi1 {
                   // download
                 default = COA
                 default {
-                    // Link with preview / icon
+                    // Link with preview or application icon
                   10 = IMAGE
                   10 {
                     file {
@@ -688,7 +688,7 @@ plugin.tx_browser_pi1 {
                   key = ###TX_ORG_DOWNLOADS.TYPE###
                   default = COA
                   default {
-                      // Link with preview / icon
+                      // Link with preview or application icon
                     10 = IMAGE
                     10 {
                       file {
@@ -980,7 +980,7 @@ plugin.tx_browser_pi1 {
                             useCacheHash      = 1
                           }
                         }
-                          // File icon
+                          // File preview or application icon
                         20 = COA
                         20 {
                           10 < tt_content.uploads.20.itemRendering.10
@@ -1103,7 +1103,7 @@ plugin.tx_browser_pi1 {
                             useCacheHash      = 1
                           }
                         }
-                          // File icon
+                          // File preview or application icon
                         20 = COA
                         20 {
                           10 < tt_content.uploads.20.itemRendering.10
@@ -1202,7 +1202,7 @@ plugin.tx_browser_pi1 {
                     }
                     tx_browser_pi1 = COA
                     tx_browser_pi1 {
-                        // Link with preview / icon
+                        // Link with preview or application icon
                       10 = IMAGE
                       10 {
                         file {
@@ -1337,7 +1337,7 @@ plugin.tx_browser_pi1 {
                       }
                     }
                     10 >
-                      // File icon
+                      // File preview or application icon
                     20 = COA
                     20 {
                       10 < tt_content.uploads.20.itemRendering.10
@@ -1461,7 +1461,7 @@ plugin.tx_browser_pi1 {
                       }
                     }
                     10 >
-                      // File icon (empty!)
+                      // File preview or application icon
                     20 = TEXT
                     20 {
                       if {
@@ -1552,7 +1552,7 @@ plugin.tx_browser_pi1 {
                 }
                 tx_browser_pi1 = COA
                 tx_browser_pi1 {
-                    // Link with preview / icon
+                    // Link with preview or application icon
                   10 = IMAGE
                   10 {
                     file {
@@ -1588,8 +1588,10 @@ plugin.tx_browser_pi1 {
                   30 {
                     data = register : filename
                     typolink {
-                      parameter = {$plugin.org.pages.downloads}
-                      title = TEXT
+                      parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                      additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                      useCacheHash      = 1
+                      title             = TEXT
                       title {
                         value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                         lang {
@@ -1597,13 +1599,9 @@ plugin.tx_browser_pi1 {
                           en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                         }
                       }
-                      additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                      useCacheHash      = 1
                     }
                   }
                 }
-
-
               }
               tableField = tx_org_downloads.documents
               fields {
