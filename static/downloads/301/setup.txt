@@ -1103,7 +1103,7 @@ plugin.tx_browser_pi1 {
                             useCacheHash      = 1
                           }
                         }
-                          // File preview or application icon
+                          // File preview or application icon (empty!)
                         20 = COA
                         20 {
                           10 < tt_content.uploads.20.itemRendering.10
@@ -1112,6 +1112,7 @@ plugin.tx_browser_pi1 {
                               isPositive.field >
                               isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                             }
+                            value = &nbsp;
                           }
                         }
                           // File name
@@ -1130,7 +1131,7 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
-                          // File description (empty!)
+                          // File description
                         40 = COA
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
@@ -1461,7 +1462,7 @@ plugin.tx_browser_pi1 {
                       }
                     }
                     10 >
-                      // File preview or application icon
+                      // File preview or application icon (empty!)
                     20 = TEXT
                     20 {
                       if {
@@ -1469,9 +1470,8 @@ plugin.tx_browser_pi1 {
                         isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                       }
                       value = &nbsp;
-                      wrap  = <td class="csc-uploads-icon">|</td>
                     }
-                      // File name (empty!)
+                      // File name
                     30 = COA
                     30 {
                       10 < tt_content.uploads.20.itemRendering.20.1
@@ -1480,7 +1480,7 @@ plugin.tx_browser_pi1 {
                         wrap      = <td class="csc-uploads-file-name">|</td>
                       }
                     }
-                      // File description (empty!)
+                      // File description
                     40 = COA
                     40 {
                       10 < tt_content.uploads.20.itemRendering.20.2
