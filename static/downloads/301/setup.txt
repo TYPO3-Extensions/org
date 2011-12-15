@@ -1200,17 +1200,6 @@ plugin.tx_browser_pi1 {
                         }
                       }
                     }
-                    tx_browser_pi1 = TEXT
-                    tx_browser_pi1 {
-                      typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        useCacheHash      = 1
-                        returnLast        = url
-                      }
-                    }
-
-                    tx_browser_pi1 >
                     tx_browser_pi1 = COA
                     tx_browser_pi1 {
                         // Link with preview / icon
@@ -1218,16 +1207,17 @@ plugin.tx_browser_pi1 {
                       10 {
                         file {
                           import {
-                            data = register : ICON_REL_PATH
+                            data = register : ICON_REL_PATH_FROM_LINCPROC
                           }
-                          width = 80
                         }
                         imageLinkWrap = 1
                         imageLinkWrap {
                           enable = 1
                           typolink {
-                            parameter = {$plugin.org.pages.downloads}
-                            title = TEXT
+                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                            useCacheHash      = 1
+                            title             = TEXT
                             title {
                               value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                               lang {
@@ -1235,8 +1225,6 @@ plugin.tx_browser_pi1 {
                                 en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                               }
                             }
-                            additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                            useCacheHash      = 1
                           }
                         }
                       }
@@ -1250,7 +1238,9 @@ plugin.tx_browser_pi1 {
                       30 {
                         data = register : filename
                         typolink {
-                          parameter = {$plugin.org.pages.downloads}
+                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          useCacheHash      = 1
                           title = TEXT
                           title {
                             value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
@@ -1259,8 +1249,6 @@ plugin.tx_browser_pi1 {
                               en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                             }
                           }
-                          additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
-                          useCacheHash      = 1
                         }
                       }
                     }
@@ -1562,17 +1550,6 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                tx_browser_pi1 = TEXT
-                tx_browser_pi1 {
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                    additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                    useCacheHash      = 1
-                    returnLast        = url
-                  }
-                }
-
-                tx_browser_pi1 >
                 tx_browser_pi1 = COA
                 tx_browser_pi1 {
                     // Link with preview / icon
@@ -1580,16 +1557,17 @@ plugin.tx_browser_pi1 {
                   10 {
                     file {
                       import {
-                        data = register : CURR_ICON_REL_PATH
+                        data = register : ICON_REL_PATH_FROM_LINCPROC
                       }
-                      width = 80
                     }
                     imageLinkWrap = 1
                     imageLinkWrap {
                       enable = 1
                       typolink {
                         parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        title = TEXT
+                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                        useCacheHash      = 1
+                        title             = TEXT
                         title {
                           value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                           lang {
@@ -1597,8 +1575,6 @@ plugin.tx_browser_pi1 {
                             en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                           }
                         }
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        useCacheHash      = 1
                       }
                     }
                   }
