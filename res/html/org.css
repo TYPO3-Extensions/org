@@ -134,12 +134,17 @@
   font-weight: normal;
 }
 */
-#content .tx-browser-pi1 .ui-button,
-.tx-browser-pi1 form.tx_org_downloads-order .ui-button {
+#content .ui-button {
+  padding: .2em .4em;
+}
+#content form.tx_org_downloads-order .ui-button {
+  padding: 0;
+}
+#xxx_content .tx-browser-pi1 .ui-button,
+.xxx_tx-browser-pi1 form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
 #content form.tx_org_downloads-order .ui-button {
-  font-size:.85em;
   width: 11em;
 }
 #content .tx-browser-pi1-list .tx-browser-pi1-single form.tx_org_downloads-order .ui-button {
