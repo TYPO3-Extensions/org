@@ -213,6 +213,7 @@ plugin.tx_browser_pi1 {
               tx_browser_pi1 = CASE
               tx_browser_pi1 {
                 key = ###TX_ORG_DOWNLOADS.TYPE###
+                  // download
                 default = COA
                 default {
                     // Link with preview / icon
@@ -1208,6 +1209,62 @@ plugin.tx_browser_pi1 {
                         returnLast        = url
                       }
                     }
+
+                    tx_browser_pi1 >
+                    tx_browser_pi1 = COA
+                    tx_browser_pi1 {
+                        // Link with preview / icon
+                      10 = IMAGE
+                      10 {
+                        file {
+                          import {
+                            data = register : ICON_REL_PATH
+                          }
+                          width = 80
+                        }
+                        imageLinkWrap = 1
+                        imageLinkWrap {
+                          enable = 1
+                          typolink {
+                            parameter = {$plugin.org.pages.downloads}
+                            title = TEXT
+                            title {
+                              value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              lang {
+                                de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
+                                en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              }
+                            }
+                            additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                            useCacheHash      = 1
+                          }
+                        }
+                      }
+                        // Link devider
+                      20 = TEXT
+                      20 {
+                        value = //**//
+                      }
+                        // Link with label
+                      30 = TEXT
+                      30 {
+                        data = register : filename
+                        typolink {
+                          parameter = {$plugin.org.pages.downloads}
+                          title = TEXT
+                          title {
+                            value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            lang {
+                              de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
+                              en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            }
+                          }
+                          additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                          useCacheHash      = 1
+                        }
+                      }
+                    }
+
                   }
                   tableField = tx_org_downloads.documents
                   fields {
