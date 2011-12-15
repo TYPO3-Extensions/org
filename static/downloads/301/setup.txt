@@ -1608,8 +1608,8 @@ plugin.tx_browser_pi1 {
                   20 {
                     value = //**//
                   }
-                    // Link with icon
-                  10 = IMAGE
+                    // Link with application icon
+                  30 = IMAGE
                   30 {
                     file {
                       import {
