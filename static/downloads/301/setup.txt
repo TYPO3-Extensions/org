@@ -1104,16 +1104,14 @@ plugin.tx_browser_pi1 {
                           }
                         }
                           // File preview or application icon (empty!)
-                        20 = COA
+                        20 = TEXT
                         20 {
-                          10 < tt_content.uploads.20.itemRendering.10
-                          10 {
-                            if {
-                              isPositive.field >
-                              isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-                            }
-                            value = &nbsp;
+                          if {
+                            isPositive.field >
+                            isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                           }
+                          value = &nbsp;
+                          wrap  = <td class="csc-uploads-icon">|</td>
                         }
                           // File name
                         30 = COA
@@ -1470,6 +1468,7 @@ plugin.tx_browser_pi1 {
                         isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                       }
                       value = &nbsp;
+                      wrap  = <td class="csc-uploads-icon">|</td>
                     }
                       // File name
                     30 = COA
