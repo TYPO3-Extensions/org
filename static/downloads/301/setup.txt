@@ -126,7 +126,7 @@ plugin.tx_browser_pi1 {
             datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             datetime {
               first_item {
-                stdWrap {
+                value_stdWrap {
                   data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
                 }
               }
@@ -134,9 +134,13 @@ plugin.tx_browser_pi1 {
               wrap {
                 item {
                   //display_without_any_hit = 1
-                  stdWrap {
-                    htmlSpecialChars = 0
-                    crop >
+                  wraps {
+                    value {
+                      stdWrap {
+                        htmlSpecialChars = 0
+                        crop >
+                      }
+                    }
                   }
                 }
               }
@@ -153,15 +157,19 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                stdWrap {
+                value_stdWrap {
                   data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
                 }
               }
               wrap = <span class="selectbox">|</span>
               wrap {
                 item {
-                  stdWrap {
-                    crop = 30 | ... | 1
+                  wraps {
+                    value {
+                      stdWrap {
+                        crop = 30 | ... | 1
+                      }
+                    }
                   }
                 }
               }
@@ -171,15 +179,19 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                stdWrap {
+                value_stdWrap {
                   data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
                 }
               }
               wrap = <span class="selectbox">|</span>
               wrap {
                 item {
-                  stdWrap {
-                    crop = 30 | ... | 1
+                 wraps {
+                    value {
+                      stdWrap {
+                        crop = 30 | ... | 1
+                      }
+                    }
                   }
                 }
               }
