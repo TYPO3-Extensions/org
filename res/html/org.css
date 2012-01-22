@@ -179,6 +179,14 @@
   text-align:right;
 }
 
+.tx-browser-pi1 .category_menu_treeview {
+    float: left;
+    padding-right: 1em;
+    position: relative;
+    top: -1em;
+    width: 30em;
+}
+
 #treeview {
   border: 1px solid #CCC;
   border-radius: 6px 6px 6px 6px;
