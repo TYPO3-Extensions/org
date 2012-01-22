@@ -4753,7 +4753,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_pidtree,bodytext,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext,'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_headquarters,'.
@@ -4842,9 +4842,9 @@ $TCA['tx_org_news'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.datetime',
       'config'    => $conf_datetime,
     ),
-//    'tx_org_newscat_pidtree' => array (
+//    'tx_org_newscat_uid_parent' => array (
 //      'exclude'   => 0,
-//      'label'     => 'tx_org_newscat_pidtree',
+//      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.tx_org_newscat_uid_parent',
 //      'config'    => array (
 //        'type'          => 'select',
 //        'form_type'     => 'user',
@@ -4865,23 +4865,27 @@ $TCA['tx_org_news'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.tx_org_newscat',
       'config'    => array (
-        'type'                => 'select', 
-        'size'                => 10, 
-        'minitems'            => 0,
-        'maxitems'            => 99,
-        'MM'                  => 'tx_org_news_mm_tx_org_newscat',
-        'foreign_table'       => 'tx_org_newscat',
-        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
-
-//        'form_type'     => 'user',
-//        'userFunc'      => 'tx_cpstcatree->getTree',
-//        'treeView'      => 1,
-//        'expandable'    => 1,
-//        'expandFirst'   => 0,
-//        'expandAll'     => 0,
+//        'type'                => 'select',
+//        'size'                => 10,
+//        'minitems'            => 0,
+//        'maxitems'            => 99,
 //        'MM'                  => 'tx_org_news_mm_tx_org_newscat',
 //        'foreign_table'       => 'tx_org_newscat',
-//        'foreign_table_where' => 'AND  tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
+//        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
+
+        'type'                => 'select',
+        'size'                => 10,
+        'minitems'            => 0,
+        'maxitems'            => 99,
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+        'MM'                  => 'tx_org_news_mm_tx_org_newscat',
+        'foreign_table'       => 'tx_org_newscat',
+        'foreign_table_where' => 'AND  tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
 
         'wizards' => array (
           '_PADDING'  => 2,
@@ -5396,7 +5400,7 @@ $TCA['tx_org_news'] = array (
   ),
   'types' => array (
     'news' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_pidtree,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
@@ -5511,7 +5515,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_newscat'] = array (
   'ctrl' => $TCA['tx_org_newscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,pidtree,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,uid_parent,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -5526,9 +5530,9 @@ $TCA['tx_org_newscat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.title_lang_ol',
       'config'  => $conf_input_30_trim,
     ),
-    'pidtree' => array (
+    'uid_parent' => array (
       'exclude'   => 0,
-      'label'     => 'pidtree',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_newscat.uid_parent',
       'config'    => array (
         'type'          => 'select',
         'form_type'     => 'user',
@@ -5563,7 +5567,7 @@ $TCA['tx_org_newscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;1;;1-1-1,pidtree,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_cat,     title;;1;;1-1-1,uid_parent,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_control, hidden,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_newscat.div_media,   image, imagecaption;;3;;'),
   ),

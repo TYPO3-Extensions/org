@@ -315,6 +315,7 @@
       <label index="tx_org_news.newspage">Link to an internal page</label>
       <label index="tx_org_news.newsurl">Link to an external page (URL)</label>
       <label index="tx_org_news.fe_user">Author</label>
+      <label index="tx_org_news.tx_org_newscat_uid_parent">Category</label>
       <label index="tx_org_news.tx_org_headquarters">Company</label>
       <label index="tx_org_news.tx_org_department">Department</label>
       <label index="tx_org_news.topnews">Top News</label>
@@ -327,6 +328,7 @@
       <label index="tx_org_newscat.title">Category label</label>
       <label index="tx_org_newscat.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tx_org_newscat.note">Note (internal)</label>
+      <label index="tx_org_newscat.uid_parent">Superior category</label>
       <label index="tx_org_tax">Tax</label>
       <label index="tx_org_tax.div_tax">Tax rates</label>
       <label index="tx_org_tax.div_control">Controlling</label>
@@ -682,6 +684,7 @@
       <label index="tx_org_news.newspage">Link zu interner Seite</label>
       <label index="tx_org_news.newsurl">Link zu externer Seite</label>
       <label index="tx_org_news.fe_user">Autor</label>
+      <label index="tx_org_news.tx_org_newscat_uid_parent">Kategorie</label>
       <label index="tx_org_news.tx_org_headquarters">Firma</label>
       <label index="tx_org_news.tx_org_department">Abteilung</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
@@ -693,6 +696,7 @@
       <label index="tx_org_newscat.title">Bezeichnung der Nachrichten-Kategorie</label>
       <label index="tx_org_newscat.title_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_newscat.note">Bemerkung (intern)</label>
+      <label index="tx_org_newscat.uid_parent"><![CDATA[Ü]]>bergeordnete Kategorie</label>
       <label index="tx_org_tax">Mehrwertsteuers<![CDATA[ä]]>tze</label>
       <label index="tx_org_tax.div_tax">Mehrwertsteuer</label>
       <label index="tx_org_tax.div_control">Steuerung</label>

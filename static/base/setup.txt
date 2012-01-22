@@ -98,10 +98,6 @@ plugin.tx_browser_pi1 {
 
 plugin.tx_browser_pi1 {
 
-    // dwildt, 110123
-  general_stdWrap.parseFunc >
-  general_stdWrap.parseFunc < lib.parseFunc_RTE
-
   displayList {
     image {
       wrap = |
@@ -243,8 +239,11 @@ plugin.tx_browser_pi1 {
   }
 
   general_stdWrap {
+      // dwildt, 110123
+    parseFunc >
+    parseFunc < lib.parseFunc_RTE
     parseFunc {
-      allowTags = {$styles.content.links.allowTags},table,td,tr,small,iframe,option
+      allowTags = {$styles.content.links.allowTags},table,td,tr,small,iframe,option,form,legend,fieldset,input,button
       externalBlocks {
         comment (
           div > 

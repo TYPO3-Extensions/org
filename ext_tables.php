@@ -774,10 +774,10 @@ $TCA['tx_org_newscat'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/newscat.gif',
+      // #32223 Category tree, 111130, dwildt+
+    'treeParentField'   => 'uid_parent',
   )
 );
-// #32223 Category tree, 111130, dwildt+
-$TCA['tx_org_newscat']['ctrl']['treeParentField'] = 'pidtree';
   // newscat ////////////////////////////////////////////////////////////////////
 
   // cal /////////////////////////////////////////////////////////////////////

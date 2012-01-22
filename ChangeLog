@@ -1,3 +1,9 @@
+2.0.13
+  12-01-17
+  Bugfix
+  * #00000: Download line contains data about the thumbnail and not the real document
+	Dirk Wildt  <http://wildt.at.die-netzmacher.de>
+
 2.0.12
   11-12-11
   Bugfix
@@ -44,7 +50,7 @@
   * #00000: Relations to fe_groups are configurable by the extension manager and page TSconfig
   Improvements
   * #28939: Localization: Relations between tables are localized
-  
+
 2.0.0
   11-08-13
   New Features
@@ -52,7 +58,7 @@
             * single views got the marker ###RECORD_BROWSER### in the HTML templates
             * single views got an ID
   * #28939: Localization
-  
+
 1.0.0
   11-04-02
   Publishing
@@ -121,7 +127,7 @@
   Improvement
   * client specific configuration is cleaned up in
     * in all HTML templates
-    * in all static templates 
+    * in all static templates
   * Simplifying backend: field sorting is removed in tables
     * tx_org_calentrance
     * tx_org_caltype
@@ -214,12 +220,12 @@
   10-09-07
   Development
   * Extending database with locations, calendar and productions
-  
+
 0.0.2
   10-09-05
   Development
   * Extending database with estate and organisation
-  
+
 0.0.1
   10-09-02
   Initial Release (extKey: organiser)

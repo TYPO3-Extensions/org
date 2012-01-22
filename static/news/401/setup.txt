@@ -288,6 +288,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.subtitle,
           tx_org_news.datetime,
           tx_org_news.bodytext,
+          tx_org_news.teaser_short,
 
           tx_org_news.documents_from_path,
           tx_org_news.documents,
@@ -437,7 +438,8 @@ plugin.tx_browser_pi1 {
                 }
                 20 = TEXT
                 20 {
-                  value = ###TX_ORG_NEWS.BODYTEXT###
+                  value = ###TX_ORG_NEWS.TEASER_SHORT###
+                  override = ###TX_ORG_NEWS.BODYTEXT###
                 }
               }
             }

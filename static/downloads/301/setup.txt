@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   template {
     extensions {
       org {
@@ -1258,9 +1258,10 @@ plugin.tx_browser_pi1 {
                     caption   = ###TABLE.DOCUMENTSCAPTION###
                     from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                     files     = ###TABLE.DOCUMENTS###
-                    files {
-                      override = ###TABLE.THUMBNAIL###
-                    }
+                    // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
+                    //files {
+                    //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                    //}
                     layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                   }
                   stdWrap {
@@ -1607,9 +1608,10 @@ plugin.tx_browser_pi1 {
                 caption   = ###TX_ORG_DOWNLOADS.DOCUMENTSCAPTION###
                 from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                 files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                files {
-                  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                }
+                // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
+                //files {
+                //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                //}
                 layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
               }
               stdWrap {
@@ -1621,7 +1623,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_301             = Downloads
