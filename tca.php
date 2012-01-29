@@ -562,9 +562,10 @@ $TCA['tx_org_cal'] = array (
       'config'    => $conf_datetime,
     ),
     'datetimeend' => array (
-      'exclude' => $bool_exclude_default,
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.datetimeend',
-      'config'  => $conf_datetimeend,
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.datetimeend',
+      'config'    => $conf_datetimeend,
     ),
     'tx_org_caltype' => array (
       'exclude'   => $bool_exclude_default,
