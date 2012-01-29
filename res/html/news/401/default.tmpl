@@ -9,6 +9,8 @@ VERSION 3.7.0
   <body>
 
 <!-- ###TEMPLATE_LIST### begin -->
+  <div id="ausgabe"></div>
+  <ol id="protokoll"></ol>
 <!-- ###LIST_TITLE### begin -->
         ###MY_TITLE###
 <!-- ###LIST_TITLE### end -->
@@ -19,10 +21,10 @@ VERSION 3.7.0
               <legend>###MY_SEARCH_LEGEND###</legend>
               <div style="float:right; text-align:right;">
                 <input class="reset" type="button" onclick="location='###MY_URL###'" value="###MY_RESET###" />
-                <input class="button" type="submit" value="###BUTTON###" />
                 <!-- ###BUTTON_CSV-EXPORT### begin -->
                 <input id="c###TT_CONTENT.UID###-list-submit-csv-export-###MODE###" class="button hidesubmit"  type="submit"  value="###MY_CSV_EXPORT###" />
                 <!-- ###BUTTON_CSV-EXPORT### end -->
+                <input class="button" type="submit" value="###BUTTON###" />
               </div>
               <input type="hidden" name="no_cache" value="1" />
               ###HIDDEN###
@@ -36,13 +38,7 @@ VERSION 3.7.0
           ###RESULTPHRASE###
         </div><!-- ###SEARCHFORM### end -->
         <div class="listarea">
-<!-- ###AZSELECTOR### begin --><em>
-  Position of subpart markers is impportant for line beaks!
-</em>
-<!-- ###TEMPLATE_CSV### begin --><!-- ###LISTVIEW### begin --><!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
-<!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->###ITEM###<!-- ###LISTBODYITEM### end -->
-<!-- ###LISTBODY### end --><!-- ###LISTVIEW### end --><!-- ###TEMPLATE_CSV### end -->
-
+<!-- ###AZSELECTOR### begin -->
           <div class="azSelector azSelector-###UL_VIEW###-###UL_MODE###">
             <ul class="azSelector azSelector-###UL_VIEW###-###UL_MODE###"><!-- ###AZSELECTORTABS### begin -->
               <li###LI_CLASS###>###TAB###</li><!-- ###AZSELECTORTABS### end -->
@@ -59,7 +55,7 @@ VERSION 3.7.0
             </ul>
           </div><!-- ###MODESELECTOR### end -->
           <!-- ###LISTVIEW### begin -->
-          <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+          <div class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
             <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
 <!-- ###GROUPBY### begin -->
 <!-- ###GROUPBYHEAD### begin -->
@@ -138,6 +134,15 @@ VERSION 3.7.0
               </form>
             </div>
 <!-- ###TEMPLATE_SELECTBOX_VALID### end -->
+
+
+
+<em>
+  Position of subpart markers is impportant for line beaks!
+</em>
+<!-- ###TEMPLATE_CSV### begin --><!-- ###LISTVIEW### begin --><!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
+<!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->###ITEM###<!-- ###LISTBODYITEM### end -->
+<!-- ###LISTBODY### end --><!-- ###LISTVIEW### end --><!-- ###TEMPLATE_CSV### end -->
 
 
 
