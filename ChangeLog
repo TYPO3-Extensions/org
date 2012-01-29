@@ -1,5 +1,5 @@
 2.0.14
-  12-01-22
+  12-01-29
   Maintenance
   * #00000: TypoScript is adapted to Browser version 3.9.6
             Properties
@@ -9,6 +9,9 @@
             * calendar/201/setup.txt
             * downloads/301/setup.txt
             * news/401/setup.txt
+  Improvement
+  * #00000: Database field 'datetime end' in calendar is integrated in the TCA
+
 2.0.13
   12-01-17
   Bugfix
