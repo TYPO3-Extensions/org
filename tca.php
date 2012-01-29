@@ -1160,7 +1160,9 @@ $TCA['tx_org_cal'] = array (
   ),
   'types' => array (
     '0' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,' .
+        'tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_company,     tx_org_headquarters,'.
@@ -1215,6 +1217,10 @@ $TCA['tx_org_cal'] = array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
+    'datetime_datetimeend' => array(
+      'showitem' => 'datetime, datetimeend',
+      'canNotCollapse' => 1,
+    ),
     'documents_upload' => array (
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
                     'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
@@ -1240,11 +1246,6 @@ $TCA['tx_org_cal'] = array (
     'image_settings' => array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
-      'canNotCollapse' => 1,
-    ),
-    // currently used only by org_workshops:
-    'datetime_datetimeend' => array(
-      'showitem' => 'datetime, datetimeend',
       'canNotCollapse' => 1,
     ),
   ),
