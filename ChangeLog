@@ -10,6 +10,7 @@
             * downloads/301/setup.txt
             * news/401/setup.txt
   Improvement
+  * #32440: Proper code
   * #00000: Database field 'datetime end' in calendar is integrated in the TCA
 
 2.0.13
