@@ -3661,7 +3661,7 @@ $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_lat,mail_lon,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -4210,7 +4210,7 @@ $TCA['tx_org_location'] = array (
   'ctrl' => $TCA['tx_org_location']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,'.
                               'telephone,ticket_telephone,ticket_url,fax,email,'.
                               'tx_org_cal,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,citymap_url,citymap_embeddedcode,'.
@@ -4286,6 +4286,18 @@ $TCA['tx_org_location'] = array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_country',
+      'config'    => $conf_input_30,
+    ),
+    'mail_lat' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_lat',
+      'config'    => $conf_input_30,
+    ),
+    'mail_lon' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_location.mail_lon',
       'config'    => $conf_input_30,
     ),
     'mail_url' => array (
@@ -4699,7 +4711,7 @@ $TCA['tx_org_location'] = array (
   ),
   'types' => array (
     '0' => array ('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_location,     title,url,mail_address;;;;2-2-2,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_location,     title,url,mail_address;;;;2-2-2,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_contact,      telephone,ticket_telephone,ticket_url,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_calendar,     tx_org_cal,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,citymap_url;;;;5-5-5,citymap_embeddedcode,'.

@@ -2,10 +2,13 @@
   12-02-12
   New Feature
   #32654: Integration of Open Street Map - Step I
+          Effected tables:
+          * tx_org_headquarters
+          * tx_org_location
           Effected files:
-          ext_tables.sql
-          locallang.db
-          tca.php
+          * ext_tables.sql
+          * locallang.db
+          * tca.php
 
 2.0.14
   12-01-29

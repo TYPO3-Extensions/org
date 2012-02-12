@@ -280,6 +280,8 @@
       <label index="tx_org_location.mail_postcode">Address: Postcode</label>
       <label index="tx_org_location.mail_city">Address: City</label>
       <label index="tx_org_location.mail_country">Address: Country</label>
+      <label index="tx_org_location.mail_lat">Address: Latitude</label>
+      <label index="tx_org_location.mail_lon">Address: Longitude</label>
       <label index="tx_org_location.mail_url">City map: URL</label>
       <label index="tx_org_location.mail_embeddedcode">City map: Embedded Code</label>
       <label index="tx_org_location.telephone">Telephone</label>
@@ -647,6 +649,8 @@
       <label index="tx_org_location.mail_postcode">Adresse: Postleitzahl</label>
       <label index="tx_org_location.mail_city">Adresse: Stadt</label>
       <label index="tx_org_location.mail_country">Adresse: Land</label>
+      <label index="tx_org_location.mail_lat">Adresse: Breitengrad</label>
+      <label index="tx_org_location.mail_lon">Adresse: L<![CDATA[&auml;]]>ngengrad</label>
       <label index="tx_org_location.mail_url">Stadtplan: URL</label>
       <label index="tx_org_location.mail_embeddedcode">Stadtplan: Eingebetter Code</label>
       <label index="tx_org_location.telephone">Telefon</label>
