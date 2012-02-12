@@ -3661,7 +3661,7 @@ $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_lat,mail_lon,mail_country,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -3732,6 +3732,18 @@ $TCA['tx_org_headquarters'] = array (
       'exclude'   => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_country',
+      'config'    => $conf_input_30,
+    ),
+    'mail_lat' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_lat',
+      'config'    => $conf_input_30,
+    ),
+    'mail_lon' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.mail_lon',
       'config'    => $conf_input_30,
     ),
     'mail_url' => array (
@@ -4116,7 +4128,7 @@ $TCA['tx_org_headquarters'] = array (
   ),
   'types' => array (
     '0' => array ('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,mail_address,mail_postcode,mail_city,mail_country,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_contact,      telephone,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_department,   tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,'.

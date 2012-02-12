@@ -637,6 +637,8 @@ CREATE TABLE tx_org_headquarters (
   mail_country tinytext NOT NULL,
   mail_url text NOT NULL,
   mail_embeddedcode text,
+  mail_lat text NOT NULL,
+  mail_lon text NOT NULL,
   postbox_postbox text NOT NULL,
   postbox_postcode tinytext NOT NULL,
   postbox_city tinytext NOT NULL,
