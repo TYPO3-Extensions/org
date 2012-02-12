@@ -95,8 +95,11 @@
   padding-bottom:1em;
 }
 
+.tx-browser-pi1 .listview-content {
+  padding:.6em;
+}
 .tx-browser-pi1 .singleview-content {
-  padding:.4em;
+  padding:1em;
 }
 
 .tx-browser-pi1 .singleview li.csc-textpic-image {

@@ -82,7 +82,7 @@ VERSION 3.7.0
 <!-- ###SEARCHFORM### begin -->
         <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-list-###MODE###">
           <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
-            <fieldset>
+            <fieldset class="ui-corner-all">
               <legend>###MY_SEARCH_LEGEND###</legend>
               ###HIDDEN###
               <input type="hidden" name="no_cache" value="1" />
@@ -121,24 +121,26 @@ VERSION 3.7.0
             </div><!-- ###MODESELECTOR### end -->
             <!-- ###LISTVIEW### begin -->
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-content listview-###MODE### listview-content-###MODE###">
-              <!-- ###GROUPBY### begin -->
-              <!-- ###GROUPBYHEAD### begin -->
-              ###GROUPBY_GROUPNAME###
-              <!-- ###GROUPBYHEAD### end -->
-              <!-- ###GROUPBYBODY### begin -->
-              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record01">
-                <div class="image01">
-                  ###TX_ORG_LOCATION.IMAGE###
+              <div class="listview-content">
+                <!-- ###GROUPBY### begin -->
+                <!-- ###GROUPBYHEAD### begin -->
+                ###GROUPBY_GROUPNAME###
+                <!-- ###GROUPBYHEAD### end -->
+                <!-- ###GROUPBYBODY### begin -->
+                <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                <div class="record01">
+                  <div class="image01">
+                    ###TX_ORG_LOCATION.IMAGE###
+                  </div>
+                  <p>
+                    ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_LOCATION.TITLE###, ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
+                    ###TX_ORG_LOCATION.MAIL_URL###
+                  </p>
                 </div>
-                <p>
-                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_LOCATION.TITLE###, ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
-                  ###TX_ORG_LOCATION.MAIL_URL###
-                </p>
-              </div>
-              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-              <!-- ###GROUPBYBODY### end -->
-              <!-- ###GROUPBY### end -->
+                <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                <!-- ###GROUPBYBODY### end -->
+                <!-- ###GROUPBY### end -->
+              </div> <!-- /listview-content -->
             </div> <!-- /listview -->
             <!-- ###LISTVIEW### end -->
           </div> <!-- /ui-tabs -->
