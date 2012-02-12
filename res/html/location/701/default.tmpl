@@ -8,7 +8,7 @@ VERSION 3.7.0
             
   <body>
 
-<!-- ###TEMPLATE_LIST### begin -->
+<!-- ###XXX_TEMPLATE_LIST### begin -->
 <!-- ###LIST_TITLE### begin -->
         ###MY_TITLE###
 <!-- ###LIST_TITLE### end -->
@@ -70,11 +70,87 @@ VERSION 3.7.0
           </div>
           <!-- ###LISTVIEW### end -->
         </div> <!-- /listarea -->
+<!-- ###XXX_TEMPLATE_LIST### end -->
+
+
+
+<!-- ###TEMPLATE_LIST### begin -->
+      <div class="###MODE### listview-###MODE### ui-widget ui-corner-all">
+<!-- ###LIST_TITLE### begin -->
+        ###MY_TITLE###
+<!-- ###LIST_TITLE### end -->
+<!-- ###SEARCHFORM### begin -->
+        <div id="c###TT_CONTENT.UID###-list-searchbox-###MODE###" class="searchbox searchbox-list-###MODE###">
+          <form id="c###TT_CONTENT.UID###-list-searchbox-form-###MODE###" action="###ACTION###" method="post" >
+            <fieldset>
+              <legend>###MY_SEARCH_LEGEND###</legend>
+              ###HIDDEN###
+              <input type="hidden" name="no_cache" value="1" />
+              <input type="hidden" name="tx_browser_pi1[plugin]" value="###PLUGIN###" />
+              <input class="sword" type="text" name="tx_browser_pi1[sword]" onfocus="if(this.value =='###SWORD_DEFAULT###') this.value=''" value="###SWORD###" />
+              <input class="button hidesubmit" type="submit" value="###MY_SEARCH###" />
+              <!-- ###BUTTON_CSV-EXPORT### begin -->
+                <input id="c###TT_CONTENT.UID###-list-submit-csv-export-###MODE###" class="button hidesubmit"  type="submit"  value="###MY_CSV_EXPORT###" />
+              <!-- ###BUTTON_CSV-EXPORT### end -->
+              <input class="button reset" type="button" onclick="location='###MY_URL###'" value="###MY_RESET###" />
+              <!-- Add filters with the ###TABLE.FIELD### syntax and configure your filters with TypoScript -->
+            </fieldset>
+          </form>
+          ###RESULTPHRASE###
+        </div><!-- ###SEARCHFORM### end -->
+        <div class="listarea">
+          <!-- ###LISTTABS### begin -->
+          <div id="c###TT_CONTENT.UID###-list-tabs-###MODE###" class="ui-tabs ui-tabs-list-###MODE### ui-widget ui-widget-content ui-corner-all">
+            <!-- ###AZSELECTOR### begin -->
+            <div id="c###TT_CONTENT.UID###-azSelector-###MODE###" class="azSelector azSelector-###UL_VIEW###-###UL_MODE###">
+              <ul class="azSelector azSelector-###UL_VIEW###-###UL_MODE###"><!-- ###AZSELECTORTABS### begin -->
+                <li###LI_CLASS###>###TAB###</li><!-- ###AZSELECTORTABS### end -->
+              </ul>
+            </div><!-- ###AZSELECTOR### end -->
+            <!-- ###PAGEBROWSER### begin -->
+            <div id="c###TT_CONTENT.UID###-browsebox-###MODE###" class="browsebox browsebox-list-###MODE###">
+              ###RESULT_AND_ITEMS###
+            </div><!-- ###PAGEBROWSER### end -->
+            <!-- ###MODESELECTOR### begin -->
+            <div id="c###TT_CONTENT.UID###-modeSelector-###MODE###" class="modeSelector modeSelector-list-###MODE###">
+              <ul class="ui-tabs-nav ui-tabs-nav-list-###MODE### ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                <!-- ###MODESELECTORTABS### begin -->
+                <li id="c###TT_CONTENT.UID###-list-tab-###MODE###" class="ui-state-default ui-corner-top c###TT_CONTENT.UID###-list-tab###UI-STATE-ACTIVE######UI-TABS-SELECTED###">###TABS###</li>
+                <!-- ###MODESELECTORTABS### end -->
+              </ul>
+            </div><!-- ###MODESELECTOR### end -->
+            <!-- ###LISTVIEW### begin -->
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-content listview-###MODE### listview-content-###MODE###">
+              <!-- ###GROUPBY### begin -->
+              <!-- ###GROUPBYHEAD### begin -->
+              ###GROUPBY_GROUPNAME###
+              <!-- ###GROUPBYHEAD### end -->
+              <!-- ###GROUPBYBODY### begin -->
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <div class="image01">
+                  ###TX_ORG_LOCATION.IMAGE###
+                </div>
+                <p>
+                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_LOCATION.TITLE###, ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
+                  ###TX_ORG_LOCATION.MAIL_URL###
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+              <!-- ###GROUPBYBODY### end -->
+              <!-- ###GROUPBY### end -->
+            </div> <!-- /listview -->
+            <!-- ###LISTVIEW### end -->
+          </div> <!-- /ui-tabs -->
+          ###MAP###
+          <!-- ###LISTTABS### end -->
+        </div> <!-- /listarea -->
+      </div> <!-- /ui-widget -->
 <!-- ###TEMPLATE_LIST### end -->
 
 
 
-<!-- ###TEMPLATE_SINGLE### begin -->
+<!-- ###XXX_TEMPLATE_SINGLE### begin -->
 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
 <!-- ###MODESELECTOR### begin -->
         <div class="modeSelector modeSelector-###VIEW###-###MODE###">
@@ -104,6 +180,38 @@ VERSION 3.7.0
         </div>
 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
         <!-- ###SINGLEVIEW### end -->
+<!-- ###XXX_TEMPLATE_SINGLE### end -->
+
+
+
+<!-- ###TEMPLATE_SINGLE### begin -->
+      <div class="###MODE### singleview-###MODE### ui-widget ui-corner-all">
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+<!-- ###SINGLEVIEW### begin -->
+          <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+            ###RECORD_BROWSER###
+            <div style="float:right;">
+              ###SOCIALMEDIA_BOOKMARKS###
+            </div>
+            ###TX_ORG_LOCATION.TITLE###
+            ###MY_CAL_DIV_BEGIN###
+            ###TX_ORG_CAL.TITLE###
+            ###MY_CAL_DIV_END###
+            ###TX_ORG_LOCATION.TELEPHONE###
+            ###TX_ORG_LOCATION.PUBTRANS_STOP###
+            ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+            ###TX_ORG_LOCATION.DOCUMENTS###
+  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <p class="backbutton">
+              ###MY_BACK_BUTTON### | ###MY_LISTVIEW_PAGE###
+            </p>
+  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+            <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+          </div>
+  <!-- ###AREA_FOR_AJAX_LIST_02### end -->
+        <!-- ###SINGLEVIEW### end -->
+      </div> <!-- /ui-widget -->
 <!-- ###TEMPLATE_SINGLE### end -->
 
 
