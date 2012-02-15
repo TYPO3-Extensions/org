@@ -337,6 +337,13 @@ plugin.tx_browser_pi1 {
             20 < tt_content.uploads.20
             20 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Enable the DRS (you need devlog)
+                drs = TEXT
+                drs {
+                  value = 0
+                }
+              }
               filePath >
               itemRendering {
                 10 {

@@ -12,6 +12,10 @@
   * #28562: Integration jQuery UI
             Effected files:
             * res/html/location/701/default.tmpl
+  Maintenance
+  * #31231: Download Manager
+            All userFunc = tx_browser_cssstyledcontent->render_uploads
+            get the drs property
 
 2.0.14
   12-01-29

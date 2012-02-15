@@ -203,6 +203,13 @@ plugin.tx_browser_pi1 {
           thumbnail < tt_content.uploads.20
           thumbnail {
             userFunc = tx_browser_cssstyledcontent->render_uploads
+            userFunc {
+                // Enable the DRS (you need devlog)
+              drs = TEXT
+              drs {
+                value = 0
+              }
+            }
               // Don't outerWrap with <table> by default
             outerWrap = |
             filePath >
@@ -668,6 +675,13 @@ plugin.tx_browser_pi1 {
             30 < tt_content.uploads.20
             30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Enable the DRS (you need devlog)
+                drs = TEXT
+                drs {
+                  value = 0
+                }
+              }
                 // Don't outerWrap with <table> by default
               outerWrap = |
               filePath >
@@ -889,10 +903,9 @@ plugin.tx_browser_pi1 {
                     // [Boolean] 1 (default), 0: render each existing language record
                   value = 1
                 }
-                  // DRS - Development Reporting System
+                  // Enable the DRS (you need devlog)
                 drs = TEXT
                 drs {
-                    // [Boolean] 0: disabled (default), 1: enabled
                   value = 0
                 }
                   // Current table
