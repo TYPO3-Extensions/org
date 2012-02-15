@@ -17,7 +17,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'shy' => 0,
 	'version' => '2.0.15',
 	'dependencies' => 'browser,cps_tcatree,css_styled_content,linkhandler,static_info_tables,wt_cart',
-	'conflicts' => '',
+	'conflicts' => 'css_filelinks',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
@@ -42,6 +42,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'wt_cart' => '1.3.9-0.0.0',
 		),
 		'conflicts' => array(
+      'css_filelinks' => '-0.0.0',
 		),
 		'suggests' => array(
 			'powermail' => '1.6.3-0.0.0',

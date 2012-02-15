@@ -16,6 +16,8 @@
   * #31231: Download Manager
             All userFunc = tx_browser_cssstyledcontent->render_uploads
             get the drs property
+  * #00000: static/base/setup.txt: plugin.tx_browser_pi1.general_stdWrap >
+
 
 2.0.14
   12-01-29
