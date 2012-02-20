@@ -38,44 +38,49 @@ plugin.tx_browser_pi1 {
         marker {
           my_listview_title {
             wrap = <h3><span>|</span></h3>
-            value = Downloads
-            lang.de = Downloads
+            value = Downloads - TOP 5
+            lang {
+              de = Downloads - TOP 5
+              en = Downloads - TOP 5
+            }
             typolink {
               parameter = {$plugin.org.pages.downloads}
               title {
                 value = All Downloads
-                lang.de = Alle Downloads
+                lang {
+                  de = Alle Downloads
+                  en = All Downloads
+                }
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
             value   = All Downloads &raquo;
-            lang.de = Alle Downloads &raquo;
+            lang {
+              de = Alle Downloads &raquo;
+              en = All Downloads &raquo;
+            }
             wrap    = <p>|</p>
             typolink {
               parameter = {$plugin.org.pages.downloads}
               title {
                 value = All Downloads
-                lang.de = Alle Downloads
+                lang {
+                  de = Alle Downloads
+                  en = All Downloads
+                }
               }
             }
           }
         }
         select (
           tx_org_downloads.title,
-          tx_org_downloads.teaser_title,
-          tx_org_downloads.subtitle,
-          tx_org_downloads.teaser_subtitle,
-          tx_org_downloads.datetime,
-          tx_org_downloads.type,
-          tx_org_downloads.newspage,
-          tx_org_downloads.newsurl,
-          tx_org_downloads.uid
+          tx_org_downloads.teaser_title
         )
-        orderBy = tx_org_downloads.datetime DESC
-        csvLinkToSingleView = tx_org_downloads.title
+        orderBy = tx_org_downloads.statistics_downloads_by_visits DESC
         tx_org_downloads {
+            // teaser_title or title
           title = COA
           title {
               // teaser_title or ...
