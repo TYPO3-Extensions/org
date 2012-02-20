@@ -88,6 +88,7 @@ plugin.tx_browser_pi1 {
             10 {
               if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
               value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              crop      = 60 | ... | 1
               typolink {
                 parameter         = {$plugin.org.pages.downloads}
                 additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
@@ -99,13 +100,14 @@ plugin.tx_browser_pi1 {
             11 {
               if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
               value       = ###TX_ORG_DOWNLOADS.TITLE###
-              crop        = 24 | ... | 1
+              crop        = 60 | ... | 1
               typolink {
                 parameter         = {$plugin.org.pages.downloads}
                 additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                 useCacheHash      = 1
               }
             }
+            wrap = <li>|</li>
           }
         }
       }
