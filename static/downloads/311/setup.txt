@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     extensions {
       org {
         doc_margin {
-          name      = Org: Downloads - margin
+          name      = Org: Downloads - Top 5
           file      = EXT:org/res/html/downloads/311/default.tmpl
           csvViews  = 311
         }
@@ -30,9 +30,9 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      311 = +Org: Downloads (margin)
+      311 = +Org: Downloads - Top 5
       311 {
-        name    = +Org: Downloads - margin
+        name    = +Org: Downloads - Top 5
         showUid = downloadsUid
         marker < plugin.tx_browser_pi1.marker
         marker {
@@ -78,117 +78,27 @@ plugin.tx_browser_pi1 {
         tx_org_downloads {
           title = COA
           title {
-              // datetime
-            10 = COA
+              // teaser_title or ...
+            10 = TEXT
             10 {
-              10 = TEXT
-              10 {
-                value = ###TX_ORG_DOWNLOADS.DATETIME###
-                noTrimWrap = || |
-                strftime = %d.%m:
+              if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              typolink {
+                parameter         = {$plugin.org.pages.downloads}
+                additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                useCacheHash      = 1
               }
             }
-              // download, download_shipping, shipping
-            11 = CASE
+              // ... title
+            11 = TEXT
             11 {
-              key = ###TX_ORG_DOWNLOADS.TYPE###
-                // download
-              default = COA
-              default {
-                  // teaser_title or ...
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
-                  }
-                }
-                  // ... title
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value       = ###TX_ORG_DOWNLOADS.TITLE###
-                  crop        = 24 | ... | 1
-                  typolink {
-                    parameter         = {$plugin.org.pages.downloads}
-                    additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###&###CHASH###
-                  }
-                }
-              }
-              download_shipping = COA
-              shipping {
-                  // teaser_title or ...
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOWNLOADS.NEWSPAGE###
-                  }
-                }
-                  // ... title
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value       = ###TX_ORG_DOWNLOADS.TITLE###
-                  crop        = 24 | ... | 1
-                  typolink {
-                    parameter = ###TX_ORG_DOWNLOADS.NEWSPAGE###
-                  }
-                }
-              }
-              shipping = COA
-              shipping {
-                  // teaser_title or ...
-                10 = TEXT
-                10 {
-                  if.isTrue = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value     = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  typolink {
-                    parameter = ###TX_ORG_DOWNLOADS.NEWSURL###
-                  }
-                }
-                  // ... title
-                11 = TEXT
-                11 {
-                  if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
-                  value       = ###TX_ORG_DOWNLOADS.TITLE###
-                  crop        = 24 | ... | 1
-                  typolink {
-                    parameter = ###TX_ORG_DOWNLOADS.NEWSURL###
-                  }
-                }
-              }
-            }
-              // subtitle
-            20 = COA
-            20 {
-                // linebreak
-              10 = TEXT
-              10 {
-                if {
-                  isTrue = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE######TX_ORG_DOWNLOADS.SUBTITLE###
-                }
-                value = <br />
-              }
-                // teaser subtitle or ...
-              21 = TEXT
-              21 {
-                if {
-                  isTrue = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
-                }
-                value = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
-              }
-                // ... subtitle
-              22 = TEXT
-              22 {
-                if {
-                  isFalse = ###TX_ORG_DOWNLOADS.TEASER_SUBTITLE###
-                }
-                value = ###TX_ORG_DOWNLOADS.SUBTITLE###
-                crop  = 36 | ... | 1
+              if.isFalse  = ###TX_ORG_DOWNLOADS.TEASER_TITLE###
+              value       = ###TX_ORG_DOWNLOADS.TITLE###
+              crop        = 24 | ... | 1
+              typolink {
+                parameter         = {$plugin.org.pages.downloads}
+                additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
+                useCacheHash      = 1
               }
             }
           }
@@ -196,7 +106,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      311 = +Org: Downloads (margin)
+      311 = +Org: Downloads - Top 5
       311 {
         comment = This plugin should not used in the single view!
         template {
