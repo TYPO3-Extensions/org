@@ -4,19 +4,18 @@
   <body>
 
 <!-- ###TEMPLATE_LIST### begin -->
-        ###MY_LISTVIEW_TITLE###
-        <!-- ###LISTVIEW### begin -->
-        <div class="###VIEW###view ###VIEW###view-###MODE###">
-          <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->
-            ###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
-          <ol>
-          <!-- ###LISTBODY### begin -->
-            <!-- ###LISTBODYITEM### begin -->###TX_ORG_DOWNLOADS.TITLE###<!-- ###LISTBODYITEM### end -->
-          <!-- ###LISTBODY### end -->
-          </ol>
-          ###MY_LISTVIEW_PAGE###
-        </div>
-        <!-- ###LISTVIEW### end -->
+        <div class="ui-widget ui-corner-all">
+          ###MY_LISTVIEW_TITLE###
+          <!-- ###LISTVIEW### begin -->
+          <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-downloads listview-downloads-top-5">
+            <ol><!-- ###LISTBODY### begin -->
+              <!-- ###LISTBODYITEM### begin -->###TX_ORG_DOWNLOADS.TITLE###
+              <!-- ###LISTBODYITEM### end -->
+            <!-- ###LISTBODY### end -->
+            </ol>
+            ###MY_LISTVIEW_PAGE###
+          </div>
+          <!-- ###LISTVIEW### end -->
 <!-- ###TEMPLATE_LIST### end -->
 
 
