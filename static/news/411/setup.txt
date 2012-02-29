@@ -103,7 +103,8 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_NEWS.TEASER_TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.news}
-                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
                   }
                 }
                   // ... title
@@ -114,7 +115,8 @@ plugin.tx_browser_pi1 {
                   crop        = 24 | ... | 1
                   typolink {
                     parameter         = {$plugin.org.pages.news}
-                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###&###CHASH###
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
                   }
                 }
               }

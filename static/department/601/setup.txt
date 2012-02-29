@@ -219,7 +219,8 @@ plugin.tx_browser_pi1 {
                 parameter {
                   insertData = 1
                 }
-                additionalParams = &tx_browser_pi1[staffUid]=###FE_USERS.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[staffUid]=###FE_USERS.UID###
+                useCacheHash = 1
               }
             }
           }
@@ -437,7 +438,8 @@ plugin.tx_browser_pi1 {
                     parameter {
                       insertData = 1
                     }
-                    additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###&###CHASH###
+                    additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###
+                    useCacheHash = 1
                   }
                 }
               }

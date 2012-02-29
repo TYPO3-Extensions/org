@@ -90,7 +90,8 @@ plugin.tx_browser_pi1 {
                 parameter {
                   insertData = 1
                 }
-                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###
+                useCacheHash = 1
                 title {
                   value = ###TX_ORG_LOCATION.TITLE###
                 }

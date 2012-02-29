@@ -938,6 +938,38 @@ plugin.tx_browser_pi1 {
                 conf =
                 conf {
                   userFunc >
+                  linkProc {
+                    tx_browser_pi1 {
+                      10 {
+                        imageLinkWrap {
+                          typolink {
+                            additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
+                            title {
+                              value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              lang {
+                                de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                                en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              }
+                            }
+                          }
+                        }
+                      }
+                      30 {
+                        imageLinkWrap {
+                          typolink {
+                            additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
+                            title {
+                              value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              lang {
+                                de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                                en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                     // Don't outerWrap with <table> by default
                   outerWrap = |
                   filePath >
@@ -998,12 +1030,6 @@ plugin.tx_browser_pi1 {
                         10 {
                           wrap  = <td class="csc-uploads-flag">|</td>
                           value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                          xxx_typolink {
-                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                            title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            useCacheHash      = 1
-                          }
                         }
                           // File preview or application icon
                         20 = COA
@@ -1024,12 +1050,6 @@ plugin.tx_browser_pi1 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
-                            xxx_typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              useCacheHash      = 1
-                            }
                           }
                         }
                           // File description
@@ -1054,12 +1074,6 @@ plugin.tx_browser_pi1 {
                               wrap >
                               bytes {
                                 labels = {$styles.content.uploads.filesizeBytesLabels}
-                              }
-                              xxx_typolink {
-                                parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                                additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                                title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                                useCacheHash      = 1
                               }
                             }
                           }
@@ -1121,12 +1135,6 @@ plugin.tx_browser_pi1 {
                         10 {
                           wrap  = <td class="csc-uploads-flag">|</td>
                           value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                          xxx_typolink {
-                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                            title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            useCacheHash      = 1
-                          }
                         }
                           // File preview or application icon (empty!)
                         20 = TEXT
@@ -1146,12 +1154,6 @@ plugin.tx_browser_pi1 {
                             if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
-                            xxx_typolink {
-                              parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                              additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                              title             = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              useCacheHash      = 1
-                            }
                           }
                         }
                           // File description
@@ -1354,12 +1356,6 @@ plugin.tx_browser_pi1 {
                     10 {
                       wrap  = <td class="csc-uploads-flag">|</td>
                       value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                      xxx_typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                        useCacheHash      = 1
-                      }
                     }
                     10 >
                       // File preview or application icon
@@ -1381,12 +1377,6 @@ plugin.tx_browser_pi1 {
                         if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                         wrap      = <td class="csc-uploads-file-name">|</td>
                         data = register:filename
-                        xxx_typolink {
-                          parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                          title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                          useCacheHash      = 1
-                        }
                       }
                     }
                       // File description
@@ -1411,12 +1401,6 @@ plugin.tx_browser_pi1 {
                           wrap >
                           bytes {
                             labels = {$styles.content.uploads.filesizeBytesLabels}
-                          }
-                          xxx_typolink {
-                            parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                            title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            useCacheHash      = 1
                           }
                         }
                       }
@@ -1478,12 +1462,6 @@ plugin.tx_browser_pi1 {
                     10 {
                       wrap  = <td class="csc-uploads-flag">|</td>
                       value = <img src="typo3/gfx/flags/###SYS_LANGUAGE.FLAG###.gif" alt="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)" title="###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)"/>
-                      xxx_typolink {
-                        parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                        additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
-                        title             = ###TX_ORG_DOWNLOADS.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                        useCacheHash      = 1
-                      }
                     }
                     10 >
                       // File preview or application icon (empty!)

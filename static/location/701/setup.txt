@@ -175,7 +175,8 @@ plugin.tx_browser_pi1 {
               strftime = %a, %d. %b %Y, %H:%M Uhr
               typolink {
                 parameter = {$plugin.org.pages.calendar}
-                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                useCacheHash = 1
               }
             }
             11 = TEXT

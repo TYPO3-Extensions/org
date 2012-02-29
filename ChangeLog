@@ -1,6 +1,12 @@
+2.0.16
+  12-02-29
+  * #00000: removed: &###CHASH###, added: useCacheHash = 1
+  * #00000: Bugfix localisation for download icon and download label
+
 2.0.15
   12-02-12
   New Feature
+  * #34121: TOP 5 template for downloads
   * #32654: Integration of Open Street Map - Step I
             Effected tables:
             * tx_org_headquarters

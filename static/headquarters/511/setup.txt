@@ -87,7 +87,8 @@ plugin.tx_browser_pi1 {
                 title {
                   value = ###TX_ORG_HEADQUARTERS.TITLE###
                 }
-                additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###
+                useCacheHash = 1
               }
             }
             20 = TEXT

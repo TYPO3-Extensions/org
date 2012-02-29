@@ -94,7 +94,8 @@ plugin.tx_browser_pi1 {
                 title {
                   value = ###TX_ORG_DEPARTMENT.TITLE###
                 }
-                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###
+                useCacheHash = 1
               }
             }
             11 = TEXT
@@ -111,7 +112,8 @@ plugin.tx_browser_pi1 {
                 title {
                   value = ###TX_ORG_DEPARTMENT.TITLE###
                 }
-                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###&###CHASH###
+                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###
+                useCacheHash = 1
               }
             }
             20 = TEXT
