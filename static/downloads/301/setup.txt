@@ -938,36 +938,6 @@ plugin.tx_browser_pi1 {
                 conf =
                 conf {
                   userFunc >
-                  linkProc {
-                    tx_browser_pi1 {
-                      10 {
-                        imageLinkWrap {
-                          typolink {
-                            additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
-                            title {
-                              value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              lang {
-                                de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                                en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              }
-                            }
-                          }
-                        }
-                      }
-                      30 {
-                        typolink {
-                          additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
-                          title {
-                            value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            lang {
-                              de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                              en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
                     // Don't outerWrap with <table> by default
                   outerWrap = |
                   filePath >
@@ -1239,14 +1209,14 @@ plugin.tx_browser_pi1 {
                           enable = 1
                           typolink {
                             parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                            additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
                             useCacheHash      = 1
                             title             = TEXT
                             title {
-                              value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                               lang {
-                                de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                                en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                                de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                                en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                               }
                             }
                           }
@@ -1263,14 +1233,14 @@ plugin.tx_browser_pi1 {
                         data = register : filename
                         typolink {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
-                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
                           useCacheHash      = 1
                           title = TEXT
                           title {
-                            value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                             lang {
-                              de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                              en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                              en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                             }
                           }
                         }
