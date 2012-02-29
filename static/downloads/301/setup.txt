@@ -955,15 +955,13 @@ plugin.tx_browser_pi1 {
                         }
                       }
                       30 {
-                        imageLinkWrap {
-                          typolink {
-                            additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
-                            title {
-                              value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              lang {
-                                de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
-                                en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
-                              }
+                        typolink {
+                          additionalParams = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TABLE.UID###.documents.###KEY###
+                          title {
+                            value = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
+                            lang {
+                              de  = ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###) herunterladen
+                              en  = Download ###TABLE.DOCUMENTS### (###SYS_LANGUAGE.TITLE###)
                             }
                           }
                         }
