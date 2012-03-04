@@ -1,3 +1,11 @@
+2.0.17
+  12-03-04
+  Imrovements
+  * #00000: a-z-browser is renamed as index browser
+            Effects
+            * CSS             : azSelector              -> indexBrowser
+            * HTML templates  : AZSELECTOR              -> INDEXBROWSER
+
 2.0.16
   12-02-29
   * #00000: removed: &###CHASH###, added: useCacheHash = 1
