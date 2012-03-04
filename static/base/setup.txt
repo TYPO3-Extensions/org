@@ -224,7 +224,7 @@ plugin.tx_browser_pi1 {
   }
 
   navigation {
-    a-z_Browser {
+    indexBrowser {
       tabs {
         2 {
           valuesCSV = A,Ä,a,ä
