@@ -1,10 +1,13 @@
 2.0.17
-  12-03-04
+  12-03-18
   Imrovements
   * #00000: a-z-browser is renamed as index browser
             Effects
             * CSS             : azSelector              -> indexBrowser
             * HTML templates  : AZSELECTOR              -> INDEXBROWSER
+  Bugfix
+  * #34988: Buggy competition of thumbnail and download
+  * #27642: Calendar without search
 
 2.0.16
   12-02-29
