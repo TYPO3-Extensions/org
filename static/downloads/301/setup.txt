@@ -1252,11 +1252,18 @@ plugin.tx_browser_pi1 {
                   fields {
                     caption   = ###TABLE.DOCUMENTSCAPTION###
                     from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                    files     = ###TABLE.DOCUMENTS###
+                      // #34988, 120318, dwildt, 1-
+                    //files     = ###TABLE.DOCUMENTS###
                     // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
                     //files {
                     //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
                     //}
+                      // #34988, 120318, dwildt, 4+
+                    files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                    files {
+                      override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
+                    }
+                      // #34988, 120318, dwildt, 4+
                     layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                   }
                   stdWrap {
@@ -1578,11 +1585,18 @@ plugin.tx_browser_pi1 {
               fields {
                 caption   = ###TX_ORG_DOWNLOADS.DOCUMENTSCAPTION###
                 from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
+                  // #34988, 120318, dwildt, 1-
+                //files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
                 // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
                 //files {
                 //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
                 //}
+                  // #34988, 120318, dwildt, 4+
+                files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                files {
+                  override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
+                }
+                  // #34988, 120318, dwildt, 4+
                 layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
               }
               stdWrap {
