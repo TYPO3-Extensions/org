@@ -237,14 +237,15 @@ switch(true) {
 }
   // Case $llStatic
 
-$ICON_TYPES['org']        = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon.gif');
-$ICON_TYPES['org_cal']    = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/cal.gif');
-$ICON_TYPES['org_dwnlds'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif');
-$ICON_TYPES['org_event']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/event.gif');
-$ICON_TYPES['org_headq']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
-$ICON_TYPES['org_locat']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/location.gif');
-$ICON_TYPES['org_news']   = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
-$ICON_TYPES['org_staff']  = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
+  //  #34858, 120320, dwildt
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org', '../typo3conf/ext/org/ext_icon.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_cal', '../typo3conf/ext/org/ext_icon/cal.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_dwnlds', '../typo3conf/ext/org/ext_icon/download.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_event', '../typo3conf/ext/org/ext_icon/event.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_headq', '../typo3conf/ext/org/ext_icon/headquarters.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_locat', '../typo3conf/ext/org/ext_icon/location.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_news', '../typo3conf/ext/org/ext_icon/news.gif');
+t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf/ext/org/ext_icon/staff.gif');
 
   // Add pagetree icons
 
@@ -319,7 +320,7 @@ $TCA['fe_users']['ctrl']['thumbnail']       = 'image';
   // Don't exclude any field by default'
 if(!$bool_excludeFeuser)
 {
-  foreach($TCA['fe_users']['columns'] as $key => $arr_column)
+  foreach( ( array ) $TCA['fe_users']['columns'] as $key => $arr_column)
   {
     if(isset($TCA['fe_users']['columns'][$key]['exclude']))
     {
@@ -668,7 +669,7 @@ $items = array ('-99' => array ( '0' => '', '1' => '' ));
 //if (!empty ($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'])
 //    AND is_array ($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'])) {
 //	  // /#32440
-//  foreach($TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue)
+//  foreach( ( array ) $TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue)
 //  {
 //    $items[$key] = $arrValue;
 //  }
