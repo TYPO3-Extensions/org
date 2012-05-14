@@ -126,8 +126,10 @@ plugin.tx_browser_pi1 {
             datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             datetime {
               first_item {
-                value_stdWrap {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
+                  }
                 }
               }
               wrap = <span class="category_menu">|</span>
@@ -157,8 +159,10 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                value_stdWrap {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
+                  }
                 }
               }
               wrap = <span class="selectbox">|</span>
@@ -179,8 +183,10 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                value_stdWrap {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
+                  }
                 }
               }
               wrap = <span class="selectbox">|</span>
