@@ -8,15 +8,15 @@
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
       <label index="filter_phrase.all">All</label>
-      <label index="filter_phrase.cal.title">All events</label>
+      <label index="filter_phrase.cal.title">Events</label>
       <label index="filter_phrase.calendar">Calendar</label>
       <label index="filter_phrase.calendar.expired">Calendar (expired)</label>
-      <label index="filter_phrase.caltype.title">All categories</label>
-      <label index="filter_phrase.company">Company</label>
-      <label index="filter_phrase.department">Department</label>
-      <label index="filter_phrase.doccat">Category</label>
+      <label index="filter_phrase.caltype.title">Categories</label>
+      <label index="filter_phrase.company">Companies</label>
+      <label index="filter_phrase.department">Departments</label>
+      <label index="filter_phrase.doccat">Categories</label>
       <label index="filter_phrase.docmedia">Media</label>
-      <label index="filter_phrase.newscat">Category</label>
+      <label index="filter_phrase.newscat">Categories</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
       <label index="filter_phrase.period">Period</label>
@@ -380,15 +380,15 @@
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
       <label index="filter_phrase.all">Alle</label>
-      <label index="filter_phrase.cal.title">Alle Veranstaltungen</label>
+      <label index="filter_phrase.cal.title">Veranstaltungen</label>
       <label index="filter_phrase.calendar">Kalender</label>
       <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
-      <label index="filter_phrase.caltype.title">Alle Kategorien</label>
+      <label index="filter_phrase.caltype.title">Rubriken</label>
       <label index="filter_phrase.company">Firma</label>
-      <label index="filter_phrase.department">Abteilung</label>
-      <label index="filter_phrase.doccat">Kategorie</label>
+      <label index="filter_phrase.department">Abteilungen</label>
+      <label index="filter_phrase.doccat">Kategorien</label>
       <label index="filter_phrase.docmedia">Datentr<![CDATA[ä]]>ger</label>
-      <label index="filter_phrase.newscat">Kategorie</label>
+      <label index="filter_phrase.newscat">Rubriken</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
       <label index="filter_phrase.period">Zeitraum</label>
