@@ -16,6 +16,7 @@
       <label index="filter_phrase.department">Departments</label>
       <label index="filter_phrase.doccat">Categories</label>
       <label index="filter_phrase.docmedia">Media</label>
+      <label index="filter_phrase.fe_group">Groups</label>
       <label index="filter_phrase.newscat">Categories</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
@@ -388,6 +389,7 @@
       <label index="filter_phrase.department">Abteilungen</label>
       <label index="filter_phrase.doccat">Kategorien</label>
       <label index="filter_phrase.docmedia">Datentr<![CDATA[ä]]>ger</label>
+      <label index="filter_phrase.fe_group">Gruppen</label>
       <label index="filter_phrase.newscat">Rubriken</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>

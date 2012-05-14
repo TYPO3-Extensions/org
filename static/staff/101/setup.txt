@@ -53,10 +53,10 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                stdWrap {
-                  data >
-                  value   = All Groups
-                  lang.de = Alle Gruppen
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.fe_group
+                  }
                 }
               }
               wrap = <span class="selectbox">|</span>
@@ -73,10 +73,10 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                stdWrap {
-                  data >
-                  value   = All Departments
-                  lang.de = Alle Bereiche
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
+                  }
                 }
               }
               wrap = <span class="selectbox">|</span>
