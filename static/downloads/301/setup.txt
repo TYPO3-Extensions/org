@@ -87,7 +87,6 @@ plugin.tx_browser_pi1 {
         }
         select (
           tx_org_downloads.title,
-          tx_org_downloads.type,
           tx_org_downloads.subtitle,
           tx_org_downloads.datetime,
 

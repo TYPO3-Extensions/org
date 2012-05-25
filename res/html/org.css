@@ -205,7 +205,12 @@
   font-weight:bold;
 }
 
-#tx-browser-pi1-jstree {
+#tx-browser-pi1-jstree-01,
+#tx-browser-pi1-jstree-02,
+#tx-browser-pi1-jstree-03,
+#tx-browser-pi1-jstree-04,
+#tx-browser-pi1-jstree-05
+{
   border: 1px solid #CCC;
   border-radius: 6px 6px 6px 6px;
   padding: 0.4em;
