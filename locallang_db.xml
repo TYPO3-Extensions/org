@@ -313,6 +313,7 @@
       <label index="tx_org_news.title">Header</label>
       <label index="tx_org_news.subtitle">Subheader</label>
       <label index="tx_org_news.datetime">Datetime</label>
+      <label index="tx_org_news.archivedate">Archive date</label>
       <label index="tx_org_news.bodytext">Bodytext</label>
       <label index="tx_org_news.teaser_title">Header (in list views)</label>
       <label index="tx_org_news.teaser_subtitle">Subheader (in list views)</label>
@@ -324,6 +325,10 @@
       <label index="tx_org_news.tx_org_headquarters">Company</label>
       <label index="tx_org_news.tx_org_department">Department</label>
       <label index="tx_org_news.topnews">Top News</label>
+      <label index="tx_org_news.topnews.3">High Priority</label>
+      <label index="tx_org_news.topnews.2">Medium Priority</label>
+      <label index="tx_org_news.topnews.1">Low Priority</label>
+      <label index="tx_org_news.topnews.0">Standard</label>
       <label index="tx_org_news.tx_org_newscat">Category</label>
       <label index="tx_org_newscat">News: Categories</label>
       <label index="tx_org_newscat.div_cat">Category</label>
@@ -687,6 +692,12 @@
       <label index="tx_org_news.title"><![CDATA[Ü]]>berschrift</label>
       <label index="tx_org_news.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_news.datetime">Datum der Ver<![CDATA[ö]]>ffentlichung</label>
+      <label index="tx_org_news.archivedate">Archivdatum</label>
+      <label index="tx_org_news.topnews">Spitzenmeldung</label>
+      <label index="tx_org_news.topnews.3">Hohe Priorit<![CDATA[ä]]>t</label>
+      <label index="tx_org_news.topnews.2">Mittlere Priorit<![CDATA[ä]]>t</label>
+      <label index="tx_org_news.topnews.1">Niedrige Priorit<![CDATA[ä]]>t</label>
+      <label index="tx_org_news.topnews.0">Standard</label>
       <label index="tx_org_news.bodytext">Text</label>
       <label index="tx_org_news.teaser_title"><![CDATA[Ü]]>berschrift (in Listen-Ansichten)</label>
       <label index="tx_org_news.teaser_subtitle">Untertitel / Dachzeile (in Listen-Ansichten)</label>

@@ -70,6 +70,11 @@ if (strtolower(substr($confArr['TCA_simplify_time_control'], 0, strlen('no'))) =
 {
   $bool_time_control = false;
 }
+$bool_topnews_sorting = false;
+if (strtolower(substr($confArr['TCA_simplify_topnews_sorting'], 0, strlen('no'))) == 'no')
+{
+  $bool_topnews_sorting = true;
+}
   // Simplify backend forms
   
   // Relation fe_users to company
@@ -249,6 +254,9 @@ switch($confArr['store_records'])
   $conf_datetimeend = $conf_datetime;
   unset($conf_datetimeend['default']);
 
+  $conf_archivedate = $conf_datetimeend;
+  $conf_archivedate['eval'] = 'date';
+
   $conf_file_document = array (
     'type'          => 'group',
     'internal_type' => 'file',
@@ -407,6 +415,31 @@ switch($confArr['store_records'])
       'foreign_table' => 'fe_groups'
     ),
   );
+  $conf_topnews = array (
+    'exclude' => $bool_exclude_none,
+//    'l10n_mode'   => 'exclude',
+    'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_news.topnews',
+    'config'  => array (
+      'type'    => 'check',
+      'default' => '0',
+    ),
+  );
+  if ($bool_topnews_sorting === true)
+  {
+    $conf_topnews['config'] = array (
+      'type'          => 'select',
+      'items' => array(
+        array('LLL:EXT:org/locallang_db.xml:tx_org_news.topnews.3', 3),
+        array('LLL:EXT:org/locallang_db.xml:tx_org_news.topnews.2', 2),
+        array('LLL:EXT:org/locallang_db.xml:tx_org_news.topnews.1', 1),
+        array('LLL:EXT:org/locallang_db.xml:tx_org_news.topnews.0', 0),
+      ),
+      'size'           => 4,
+      'maxitems'       => 1,
+      'suppress_icons' => 1,
+      'default'        => 0,
+    );
+  }
   $conf_pages = array (
     'exclude'   => $bool_exclude_default,
     'l10n_mode' => 'exclude',
@@ -4787,7 +4820,7 @@ $TCA['tx_org_news'] = array (
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,'.
-                              'hidden,topnews,pages,starttime,endtime,fe_group,'.
+                              'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'.
                               'keywords,description,'.
                               'teaser_title,teaser_subtitle,teaser_short',
   ),
@@ -4868,7 +4901,13 @@ $TCA['tx_org_news'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.datetime',
       'config'    => $conf_datetime,
     ),
-//    'tx_org_newscat_uid_parent' => array (
+    'archivedate' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.archivedate',
+      'config'    => $conf_archivedate,
+    ),
+//    'tx_org_newscat_pidtree' => array (
 //      'exclude'   => 0,
 //      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.tx_org_newscat_uid_parent',
 //      'config'    => array (
@@ -5105,15 +5144,7 @@ $TCA['tx_org_news'] = array (
       ),
     ),
     'hidden'    => $conf_hidden,
-    'topnews' => array (
-      'exclude' => $bool_exclude_none,
-//      'l10n_mode'   => 'exclude',
-      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_news.topnews',
-      'config'  => array (
-        'type'    => 'check',
-        'default' => '0'
-      ),
-    ),
+    'topnews' => $conf_topnews,
     'pages' => $conf_pages,
     'starttime' => $conf_starttime,
     'endtime'   => $conf_endtime,
@@ -5419,7 +5450,9 @@ $TCA['tx_org_news'] = array (
   ),
   'types' => array (
     'news' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,' .
+        '--palette--;LLL:EXT:cms/locallang_ttc.xml:date;datetime_archivedate,' .
+          'tx_org_newscat,tx_org_newscat_uid_parent,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
@@ -5434,11 +5467,13 @@ $TCA['tx_org_news'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_feuser,     fe_user,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_company,    tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_department, tx_org_department,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews;;topnews_sorting,pages, fe_group,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_seo,        keywords;;;;7-7-7, description,'.
       ''),
     'newspage' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,' .
+        '--palette--;LLL:EXT:cms/locallang_ttc.xml:date;datetime_archivedate,' .
+          'tx_org_newscat,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newspage,   newspage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
@@ -5452,7 +5487,9 @@ $TCA['tx_org_news'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,'.
       ''),
     'newsurl' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,datetime,tx_org_newscat,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_news,       type,title;;;;1-1-1,subtitle,' .
+        '--palette--;LLL:EXT:cms/locallang_ttc.xml:date;datetime_archivedate,' .
+          'tx_org_newscat,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newsurl,    newsurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
@@ -5468,6 +5505,10 @@ $TCA['tx_org_news'] = array (
   ),
   'palettes' => array (
     '3' => array ('showitem' => 'starttime, endtime'),
+    'datetime_archivedate' => array (
+      'showitem' => 'datetime, archivedate',
+      'canNotCollapse' => 1,
+    ),
     'documents_appearance' => array (
       'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
@@ -5498,6 +5539,10 @@ $TCA['tx_org_news'] = array (
       'showitem' => 'imagewidth;LLL:EXT:cms/locallang_ttc.xml:imagewidth_formlabel, imageheight;LLL:EXT:cms/locallang_ttc.xml:imageheight_formlabel, imageborder;LLL:EXT:cms/locallang_ttc.xml:imageborder_formlabel, --linebreak--,' .
                     'image_compression;LLL:EXT:cms/locallang_ttc.xml:image_compression_formlabel, image_effects;LLL:EXT:cms/locallang_ttc.xml:image_effects_formlabel, image_frames;LLL:EXT:cms/locallang_ttc.xml:image_frames_formlabel',
       'canNotCollapse' => 1,
+    ),
+    'topnews_sorting' => array (
+      'showitem' => 'topnews_sorting',
+    # 'canNotCollapse' => 1,
     ),
   ),
 );
@@ -5648,4 +5693,10 @@ $TCA['tx_org_tax'] = array (
 );
   // tx_org_tax
 
+
+
+/**
+ * Setting up TCA_DESCR - Context Sensitive Help
+ */
+t3lib_extMgm::addLLrefForTCAdescr('tx_org_news','EXT:org/csh/locallang_csh_org_news.xml');
 ?>

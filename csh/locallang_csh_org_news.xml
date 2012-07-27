@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>CSH for table tx_org_news</description>
+        <type>CSH</type>
+        <csh_table>tx_org_news</csh_table>
+        <fileId>EXT:org/csh/locallang_csh_org_news.xml</fileId>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="archivedate.description">The date entered in this field will determine if news are handled as &quot;archived&quot; or not.</label>
+            <label index="archivedate.details">If archivedate shows a value in the past, the news record will be shown in lists showing only archived news. Of course it will disappear from lists showing only non-archived news.</label>
+            <label index="topnews.description">This field controls the order of news in list views: Top news will be displayed first.</label>
+            <label index="topnews.details">News will be sorted in list views by date (descending) by default. Top news will be displayed first..
+If priorities are available (depending on system configuration) top new with the highest priority will be displayed first, news without priority ("Standard") last. News with the same priority still will be sorted by date (descending).</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="archivedate.description">Das hier angegebene Datum legt fest, ob diese Nachricht als archiviert angesehen wird oder nicht.</label>
+            <label index="archivedate.details">Wenn das Archivdatum in der Vergangenheit liegt, wird diese Nachricht nur in Listen dargestellt, die archivierte Nachrichten umfassen.</label>
+            <label index="topnews.description">Dieses Feld beeinflusst die Reihenfolge von Nachrichten in der Listenansicht: Spitzenmeldungen werden zuerst angezeigt.</label>
+            <label index="topnews.details"><![CDATA[Nachrichten werden in Listenansichten im Standard nach Datum (absteigend) sortiert. Spitzenmeldungen werden dabei zuerst angezeigt.
+Sind Prioritäten verfügbar (abhängig von der Systemkonfiguration), werden zuerst Spitzenmeldungen mit der höchsten Priorität angezeigt, Meldungen ohne Priorität ("Standard") zuletzt. Meldungen mit gleicher Priorität werden weiterhin nach Datum (absteigend) sortiert.]]></label>
+        </languageKey>
+    </data>
+</T3locallang>

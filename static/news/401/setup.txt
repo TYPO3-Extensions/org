@@ -54,8 +54,11 @@ plugin.tx_browser_pi1 {
           tx_org_news.keywords,
           tx_org_news.description
         )
+        andWhere (
+          (tx_org_news.archivedate = 0 OR tx_org_news.archivedate > UNIX_TIMESTAMP())
+        )
         orderBy (
-          tx_org_news.datetime DESC
+          tx_org_news.topnews DESC, tx_org_news.datetime DESC
         )
         csvLinkToSingleView = tx_org_news.title
         tx_org_news {
