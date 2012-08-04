@@ -268,10 +268,10 @@
       <label index="tx_org_headquarters.pubtrans_stop">Public Transport: Stop</label>
       <label index="tx_org_headquarters.pubtrans_url">Public Transport: URL</label>
       <label index="tx_org_headquarters.pubtrans_embeddedcode">Public Transport: Embedded Code</label>
-      <label index="tx_org_headquarterscat">Headquarter: Groups</label>
+      <label index="tx_org_headquarterscat">Company: Groups</label>
       <label index="tx_org_headquarterscat.div_cat">Group</label>
       <label index="tx_org_headquarterscat.div_control">Controlling</label>
-      <label index="tx_org_headquarterscat.title">Headquarters: Group</label>
+      <label index="tx_org_headquarterscat.title">Company: Group</label>
       <label index="tx_org_headquarterscat.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tx_org_headquarterscat.note">Note (internal)</label>
       <label index="tx_org_location">Locations</label>
