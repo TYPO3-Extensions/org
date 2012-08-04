@@ -723,6 +723,7 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
   // event
   // location
   // headquarters
+  // headquarterscat
   // department
   // departmentcat
   // doc
@@ -987,6 +988,27 @@ if( ! $bool_exclude_tx_org_company )
   $TCA['tx_org_headquarters']['ctrl']['title'] = 'LLL:EXT:org/locallang_db.xml:tx_org_company';
 }
   // headquarters //////////////////////////////////////////////////////////////////
+  // 
+  // headquarterscat ////////////////////////////////////////////////////////////////////
+$TCA['tx_org_headquarterscat'] = array (
+  'ctrl' => array (
+    'title'         => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat',
+    'label'         => 'title',
+    'tstamp'        => 'tstamp',
+    'crdate'        => 'crdate',
+    'sortby'        => 'sorting',
+    'delete'        => 'deleted',
+    'enablecolumns' => array (
+      'disabled'  => 'hidden',
+    ),
+    'hideAtCopy'        => false,
+    'dividers2tabs'     => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+    'thumbnail'         => 'image',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarterscat.gif',
+  )
+);
+  // headquarterscat ////////////////////////////////////////////////////////////////////
 
   // org /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_department'] = array (
