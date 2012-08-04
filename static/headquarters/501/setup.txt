@@ -39,22 +39,10 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
           tx_org_headquarters.mail_address,
-          tx_org_department.title,
           tx_org_headquarters.image,
           tx_org_headquarters.imageseo
         )
         orderBy = tx_org_headquarters.title
-//        orderBy {
-//          tx_org_department (
-//            SELECT    tx_org_department.uid   AS 'uid', 
-//                      tx_org_department.title AS 'title'
-//            FROM      tx_org_department,
-//                      tx_org_headquarters_mm_tx_org_department
-//            WHERE     tx_org_headquarters_mm_tx_org_department.uid_local    = ###UID_LOCAL###
-//            AND       tx_org_headquarters_mm_tx_org_department.uid_foreign  = tx_org_department.uid
-//            ORDER BY  tx_org_headquarters_mm_tx_org_department.title
-//)
-//        }
         csvLinkToSingleView = tx_org_headquarters.title
         filter {
           tx_org_headquarterscat {
