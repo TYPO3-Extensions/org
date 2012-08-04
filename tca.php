@@ -3747,13 +3747,13 @@ $TCA['tx_org_headquarters'] = array (
     'tx_org_headquarterscat' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.tx_org_headquarterscat',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.tx_org_headquarterscat',
       'config'    => array (
         'type' => 'select', 
         'size' => 10, 
         'minitems' => 0,
         'maxitems' => 1,
-        'MM'                  => 'tx_org_department_mm_tx_org_headquarterscat',
+        'MM'                  => 'tx_org_headquarters_mm_tx_org_headquarterscat',
         'foreign_table'       => 'tx_org_headquarterscat',
         'foreign_table_where' => 'AND tx_org_headquarterscat.' . $str_store_record_conf . ' AND tx_org_headquarterscat.deleted = 0 AND tx_org_headquarterscat.hidden = 0 ORDER BY tx_org_headquarterscat.sorting',
         'wizards' => array (

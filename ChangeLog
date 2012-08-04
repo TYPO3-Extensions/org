@@ -3,6 +3,7 @@
   New Feature
   * #00000: Categories for headquarters
             Effected files:
+            * ext_tables.php
             * ext_tables.sql
             * locallang_db.xml
             * tca.php
