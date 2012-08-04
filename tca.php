@@ -27,6 +27,7 @@ if (!defined ('TYPO3_MODE'))
   //   tx_org_downloadsmedia
   //   tx_org_events
   //   tx_org_headquarters
+  //   tx_org_headquarterscat
   //   tx_org_location
   //   tx_org_news
   //   tx_org_newscat
@@ -3694,7 +3695,7 @@ $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
   
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -3742,6 +3743,53 @@ $TCA['tx_org_headquarters'] = array (
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.title',
       'config'    => $conf_input_30_trimRequired,
+    ),
+    'tx_org_headquarterscat' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.tx_org_headquarterscat',
+      'config'    => array (
+        'type' => 'select', 
+        'size' => 10, 
+        'minitems' => 0,
+        'maxitems' => 1,
+        'MM'                  => 'tx_org_department_mm_tx_org_headquarterscat',
+        'foreign_table'       => 'tx_org_headquarterscat',
+        'foreign_table_where' => 'AND tx_org_headquarterscat.' . $str_store_record_conf . ' AND tx_org_headquarterscat.deleted = 0 AND tx_org_headquarterscat.hidden = 0 ORDER BY tx_org_headquarterscat.sorting',
+        'wizards' => array (
+          '_PADDING'  => 2,
+          '_VERTICAL' => 0,
+          'add' => array (
+            'type'   => 'script',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarterscat.add',
+            'icon'   => 'add.gif',
+            'params' => array (
+              'table'    => 'tx_org_headquarterscat',
+              'pid'      => $str_marker_pid,
+              'setValue' => 'prepend'
+            ),
+            'script' => 'wizard_add.php',
+          ),
+          'list' => array (
+            'type'   => 'script',
+            'title'  => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarterscat.list',
+            'icon'   => 'list.gif',
+            'params' => array (
+              'table' => 'tx_org_headquarterscat',
+              'pid'   => $str_marker_pid,
+            ),
+            'script' => 'wizard_list.php',
+          ),
+          'edit' => array (
+            'type'                      => 'popup',
+            'title'                     => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_headquarterscat.edit',
+            'script'                    => 'wizard_edit.php',
+            'popup_onlyOpenIfSelected'  => 1,
+            'icon'                      => 'edit2.gif',
+            'JSopenParams'              => $JSopenParams,
+          ),
+        ),
+      ),
     ),
     'mail_address' => array (
       'exclude'   => $bool_exclude_default,
@@ -4161,7 +4209,7 @@ $TCA['tx_org_headquarters'] = array (
   ),
   'types' => array (
     '0' => array ('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_contact,      telephone,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_department,   tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,'.
@@ -4231,6 +4279,42 @@ if(!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_headquarters']['columns']['tx_org_department']['config']['wizards']['list'] );
 }
   // tx_org_headquarters
+
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // 
+  // tx_org_headquarterscat
+  
+$TCA['tx_org_headquarterscat'] = array (
+  'ctrl' => $TCA['tx_org_headquarterscat']['ctrl'],
+  'interface' => array (
+    'showRecordFieldList' =>  'title,title_lang_ol,'.
+                              'hidden,'.
+                              'image,imagecaption,imageseo',
+  ),
+  'columns' => array (
+    'title' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title',
+      'config'  => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title_lang_ol',
+      'config'  => $conf_input_30_trim,
+    ),
+    'hidden'    => $conf_hidden,
+  ),
+  'types' => array (
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,'.
+                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control, hidden'),
+  ),
+  'palettes' => array (
+    '1' => array ('showitem' => 'title_lang_ol,'),
+  ),
+);
+  // tx_org_headquarterscat
 
 
 
