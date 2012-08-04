@@ -3752,7 +3752,7 @@ $TCA['tx_org_headquarters'] = array (
         'type' => 'select', 
         'size' => 10, 
         'minitems' => 0,
-        'maxitems' => 1,
+        'maxitems' => 99,
         'MM'                  => 'tx_org_headquarters_mm_tx_org_headquarterscat',
         'foreign_table'       => 'tx_org_headquarterscat',
         'foreign_table_where' => 'AND tx_org_headquarterscat.' . $str_store_record_conf . ' AND tx_org_headquarterscat.deleted = 0 AND tx_org_headquarterscat.hidden = 0 ORDER BY tx_org_headquarterscat.sorting',
