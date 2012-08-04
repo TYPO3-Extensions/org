@@ -7,6 +7,7 @@
             * ext_tables.sql
             * locallang_db.xml
             * tca.php
+            * res/html/department/601/default.tmpl
             * static/headquarters/501/setup.txt
 
 2.1.2
