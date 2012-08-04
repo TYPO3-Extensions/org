@@ -56,6 +56,29 @@ plugin.tx_browser_pi1 {
 //)
 //        }
         csvLinkToSingleView = tx_org_headquarters.title
+        filter {
+          tx_org_headquarterscat {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                stdWrap {
+                  //data = LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title
+                  data >
+                  value   = All Groups
+                  lang.de = Alle Gruppen
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  stdWrap {
+                    crop = 30 | ... | 1
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     single {
