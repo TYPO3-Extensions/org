@@ -4,11 +4,39 @@
   //
   // INDEX
 
+  // config
+  // page
   // plugin.tx_browser_pi1
   //    views
   //      501: +Org: Headquarters
 
 
+
+  /////////////////////////
+  //
+  // config
+
+config {
+  xhtml_cleaning >
+}
+  // config
+
+
+
+  /////////////////////////
+  //
+  // page
+
+page {
+  config {
+    xhtml_cleaning >
+  }
+}
+  // page
+
+
+
+  // plugin.tx_browser_pi1
 
   ////////////////////////////////////////
   //
@@ -40,7 +68,10 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.mail_city,
           tx_org_headquarters.mail_address,
           tx_org_headquarters.image,
-          tx_org_headquarters.imageseo
+          tx_org_headquarters.imageseo,
+          tx_org_headquarters.mail_lat,
+          tx_org_headquarters.mail_lon,
+          tx_org_headquarterscat.title
         )
         orderBy = tx_org_headquarters.title
         csvLinkToSingleView = tx_org_headquarters.title
@@ -62,6 +93,19 @@ plugin.tx_browser_pi1 {
                   stdWrap {
                     crop = 30 | ... | 1
                   }
+                }
+              }
+            }
+          }
+        }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              variables {
+                system {
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
               }
             }
@@ -516,6 +560,9 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+        }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
         }
       }
     }
