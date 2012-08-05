@@ -264,8 +264,8 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-          XXX_mail_embeddedcode = COA
-          XXX_mail_embeddedcode {
+          mail_embeddedcode = COA
+          mail_embeddedcode {
             10 = TEXT
             10 {
               if {
