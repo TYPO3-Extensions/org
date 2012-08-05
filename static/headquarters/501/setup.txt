@@ -555,7 +555,6 @@ plugin.tx_browser_pi1 {
             wrap  = <li>|</li>
             10 = TEXT
             10 {
-              required  = 1
               value = ###TX_ORG_DEPARTMENT.TITLE###
               typolink {
                 parameter = {$plugin.org.pages.department}
