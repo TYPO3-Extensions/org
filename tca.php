@@ -4289,7 +4289,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_headquarterscat'] = array (
   'ctrl' => $TCA['tx_org_headquarterscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,icons'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -4317,7 +4317,7 @@ $TCA['tx_org_headquarterscat'] = array (
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control, hidden'),
   ),
   'palettes' => array (
-    '1' => array ('showitem' => 'title_lang_ol,'),
+    '1' => array ('showitem' => 'title_lang_ol,icons,'),
   ),
 );
   // tx_org_headquarterscat
