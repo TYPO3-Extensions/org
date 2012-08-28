@@ -4313,11 +4313,11 @@ $TCA['tx_org_headquarterscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,icons,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control, hidden'),
   ),
   'palettes' => array (
-    '1' => array ('showitem' => 'title_lang_ol,icons,'),
+    '1' => array ('showitem' => 'title_lang_ol,'),
   ),
 );
   // tx_org_headquarterscat
