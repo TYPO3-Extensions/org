@@ -775,6 +775,7 @@ CREATE TABLE tx_org_headquarterscat (
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   title tinytext NOT NULL,
   title_lang_ol tinytext,
+  icons text
 
   PRIMARY KEY (uid),
   KEY parent (pid)

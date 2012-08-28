@@ -4304,6 +4304,12 @@ $TCA['tx_org_headquarterscat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title_lang_ol',
       'config'  => $conf_input_30_trim,
     ),
+    'icons' => array (
+      'exclude'   => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icons',
+      'config'    => $conf_file_image,
+    ),
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
