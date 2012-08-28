@@ -6,6 +6,7 @@ plugin.tx_browser_pi1.map {
     longitude     = tx_org_headquarters.mail_lon
     description   = tx_org_headquarters.title
     category      = tx_org_headquarterscat.title
+    categoryIcon  = tx_org_headquarterscat.icons
   }
   width = 700
 }
