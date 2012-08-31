@@ -110,6 +110,9 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
+            position {
+              categoryIconMap = 1
+            }
           }
         }
       }
@@ -574,6 +577,11 @@ plugin.tx_browser_pi1 {
         }
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
+          map {
+            position {
+              categoryIconMap = 1
+            }
+          }
         }
       }
     }
