@@ -11,5 +11,8 @@ plugin.tx_browser_pi1.map {
   path {
     categoryIcon  = uploads/tx_org/
   }
+  position {
+    categoryIconMap = 1
+  }
   width = 700
 }
