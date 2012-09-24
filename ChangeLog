@@ -1,3 +1,13 @@
+2.1.5
+  12-09-24
+  New Feature (see 0.5.1)
+  * #00000: departments are allowed to have more than one manager
+            Effected files:
+            * ext_tables.sql
+            * res/html/department/601/default.tmpl
+            * static/department/601/setup.txt
+
+
 2.1.4
   12-08-28
   New Feature
@@ -172,7 +182,7 @@
 0.5.1
   12-09-24
   New Feature
-  * #00000: departments are allowed to have more than manager
+  * #00000: departments are allowed to have more than one manager
             Effected files:
             * ext_tables.sql
             * res/html/department/601/default.tmpl
