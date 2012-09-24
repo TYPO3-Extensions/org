@@ -406,7 +406,7 @@ CREATE TABLE tx_org_department (
   shortcut tinytext,
   tx_org_departmentcat tinytext,
   tx_org_headquarters int(11) unsigned DEFAULT '0' NOT NULL,
-  manager int(11) unsigned DEFAULT '0' NOT NULL,
+  manager tinytext,
   telephone tinytext NOT NULL,
   fax tinytext NOT NULL,
   email tinytext NOT NULL,

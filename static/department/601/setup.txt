@@ -112,6 +112,15 @@ plugin.tx_browser_pi1 {
         }
         marker < plugin.tx_browser_pi1.marker
         marker {
+          my_manager = TEXT
+          my_manager {
+            value = Manager
+            lang {
+              de = Leitung
+              en = Manager
+            }
+            noTrimWrap = ||: |
+          }
           my_listview_page = TEXT
           my_listview_page {
             value = All Departments &raquo;
@@ -165,6 +174,7 @@ plugin.tx_browser_pi1 {
           fe_users.title,
           fe_users.first_name,
           fe_users.last_name,
+          fe_users.uid,
           
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
@@ -175,16 +185,6 @@ plugin.tx_browser_pi1 {
           first_name {
             if {
               isTrue = ###FE_USERS.TITLE######FE_USERS.FIRST_NAME######FE_USERS.LAST_NAME###
-            }
-            wrap = <p>|</p>
-            10 = TEXT
-            10 {
-              if {
-                isTrue = ###FE_USERS.TITLE######FE_USERS.FIRST_NAME######FE_USERS.LAST_NAME###
-              }
-              value = Manager
-              lang.de = Leitung
-              noTrimWrap = ||: |
             }
             20 = TEXT
             20 {
