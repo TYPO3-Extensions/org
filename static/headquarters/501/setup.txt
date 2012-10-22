@@ -121,16 +121,13 @@ plugin.tx_browser_pi1 {
                   categoryIconMap {
                   20 {
                     stdWrap {
-                      listNum = 2
+                      listNum = 1
                     }
                   }
                   description >
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
               }
-            }
-            position {
-              categoryIconMap = 1
             }
           }
         }
@@ -597,8 +594,19 @@ plugin.tx_browser_pi1 {
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
           map {
-            position {
-              categoryIconMap = 2
+            marker {
+              variables {
+                system {
+                  categoryIconMap {
+                  20 {
+                    stdWrap {
+                      listNum = 1
+                    }
+                  }
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
             }
           }
         }
