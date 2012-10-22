@@ -119,9 +119,10 @@ plugin.tx_browser_pi1 {
               variables {
                 system {
                   categoryIconMap {
-                  20 {
-                    stdWrap {
-                      listNum = 1
+                    20 {
+                      stdWrap {
+                        listNum = 1
+                      }
                     }
                   }
                   description >
@@ -598,9 +599,10 @@ plugin.tx_browser_pi1 {
               variables {
                 system {
                   categoryIconMap {
-                  20 {
-                    stdWrap {
-                      listNum = 1
+                    20 {
+                      stdWrap {
+                        listNum = 1
+                      }
                     }
                   }
                   description >
