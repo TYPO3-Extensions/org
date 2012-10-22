@@ -8,5 +8,8 @@ plugin.tx_browser_pi1.map {
     category      = tx_org_headquarterscat.title
     categoryIcon  = tx_org_headquarterscat.icons
   }
+  position {
+    categoryIconMap = 1
+  }
   width = 700
 }
