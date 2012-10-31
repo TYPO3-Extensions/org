@@ -4,11 +4,12 @@
   * #42125: OpenStreetMap: offset for categories
             New fields
             * tx_org_headquarterscat.icon_offset_x
-            * tx_org_headquarterscat.icon_offset_Y
+            * tx_org_headquarterscat.icon_offset_y
             Effected files:
             * ext_tables.sql
             * locallang_db.xml
             * tca.php
+            * static/department/601/setup.txt
 
 2.1.6
   12-10-23
@@ -25,7 +26,6 @@
             * ext_tables.sql
             * res/html/department/601/default.tmpl
             * static/department/601/setup.txt
-
 
 2.1.4
   12-08-28
