@@ -155,6 +155,8 @@
       <label index="tx_org_departmentcat.title">Department: Group</label>
       <label index="tx_org_departmentcat.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tx_org_departmentcat.note">Note (internal)</label>
+      <label index="tx_org_departmentcat.icon_offset_x">X-offset of the icon in a map</label>
+      <label index="tx_org_departmentcat.icon_offset_y">Y-offset of the icon in a map</label>
       <label index="tx_org_downloads">Document</label>
       <label index="tx_org_downloads.div_doc">Document</label>
       <label index="tx_org_downloads.div_teaser">Teaser</label>
@@ -538,6 +540,8 @@
       <label index="tx_org_departmentcat.title">Abteilung-Gruppe</label>
       <label index="tx_org_departmentcat.title_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_departmentcat.note">Bemerkung (intern)</label>
+      <label index="tx_org_departmentcat.icon_offset_x">X-Offset des Icons in einer Karte</label>
+      <label index="tx_org_departmentcat.icon_offset_y">Y-Offset des Icons in einer Karte</label>
       <label index="tx_org_downloads">Dokumente</label>
       <label index="tx_org_downloads.div_doc">Dokument</label>
       <label index="tx_org_downloads.div_teaser">Listenansicht</label>

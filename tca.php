@@ -4289,7 +4289,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_headquarterscat'] = array (
   'ctrl' => $TCA['tx_org_headquarterscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,icons'.
+    'showRecordFieldList' =>  'title,title_lang_ol,icons,icon_offset_x,icon_offset_y,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -4310,10 +4310,34 @@ $TCA['tx_org_headquarterscat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icons',
       'config'    => $conf_file_image,
     ),
+    'icon_offset_x' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icon_offset_x',
+      'config'    => array (
+        'type'     => 'input',
+        'size'     => '8',
+        'max'      => '20',
+        'eval'     => 'int',
+        'default'  => '0',
+        'checkbox' => '0'
+      ),
+    ),
+    'icon_offset_y' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icon_offset_y',
+      'config'    => array (
+        'type'     => 'input',
+        'size'     => '8',
+        'max'      => '20',
+        'eval'     => 'int',
+        'default'  => '0',
+        'checkbox' => '0'
+      ),
+    ),
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,icons,'.
+    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,icons,icon_offset_x,icon_offset_y,'.
                                 '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control, hidden'),
   ),
   'palettes' => array (

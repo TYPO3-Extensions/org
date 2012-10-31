@@ -1,3 +1,15 @@
+2.1.7
+  12-10-31
+  New Features
+  * #42125: OpenStreetMap: offset for categories
+            New fields
+            * tx_org_headquarterscat.icon_offset_x
+            * tx_org_headquarterscat.icon_offset_Y
+            Effected files:
+            * ext_tables.sql
+            * locallang_db.xml
+            * tca.php
+
 2.1.6
   12-10-23
   Improvement
