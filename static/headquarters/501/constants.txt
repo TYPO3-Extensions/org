@@ -1,12 +1,14 @@
 plugin.tx_browser_pi1.map {
   enabled = 0
   field {
-    linktoSingle  = tx_org_headquarters.uid
-    latitude      = tx_org_headquarters.mail_lat
-    longitude     = tx_org_headquarters.mail_lon
-    description   = tx_org_headquarters.title
-    category      = tx_org_headquarterscat.title
-    categoryIcon  = tx_org_headquarterscat.icons
+    linktoSingle    = tx_org_headquarters.uid
+    latitude        = tx_org_headquarters.mail_lat
+    longitude       = tx_org_headquarters.mail_lon
+    description     = tx_org_headquarters.title
+    category        = tx_org_headquarterscat.title
+    categoryIcon    = tx_org_headquarterscat.icons
+    categoryOffsetX = tx_org_headquarterscat.icon_offset_x
+    categoryOffsetY = tx_org_headquarterscat.icon_offset_y
   }
   path {
     categoryIcon  = uploads/tx_org/

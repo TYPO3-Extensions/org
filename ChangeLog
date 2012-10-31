@@ -9,7 +9,9 @@
             * ext_tables.sql
             * locallang_db.xml
             * tca.php
-            * static/department/601/setup.txt
+            * static/department/601
+              * constants.txt
+              * setup.txt
 
 2.1.6
   12-10-23
