@@ -4315,11 +4315,11 @@ $TCA['tx_org_headquarterscat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icon_offset_x',
       'config'    => array (
         'type'     => 'input',
-        'size'     => '8',
-        'max'      => '20',
+        'size'     => '3',
+        'max'      => '3',
         'eval'     => 'int',
         'default'  => '0',
-        'checkbox' => '0'
+        'checkbox' => '1'
       ),
     ),
     'icon_offset_y' => array (
@@ -4327,11 +4327,11 @@ $TCA['tx_org_headquarterscat'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.icon_offset_y',
       'config'    => array (
         'type'     => 'input',
-        'size'     => '8',
-        'max'      => '20',
+        'size'     => '3',
+        'max'      => '3',
         'eval'     => 'int',
         'default'  => '0',
-        'checkbox' => '0'
+        'checkbox' => '1'
       ),
     ),
     'hidden'    => $conf_hidden,
