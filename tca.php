@@ -4319,7 +4319,6 @@ $TCA['tx_org_headquarterscat'] = array (
         'max'      => '3',
         'eval'     => 'int',
         'default'  => '0',
-        'checkbox' => '1'
       ),
     ),
     'icon_offset_y' => array (
@@ -4331,7 +4330,6 @@ $TCA['tx_org_headquarterscat'] = array (
         'max'      => '3',
         'eval'     => 'int',
         'default'  => '0',
-        'checkbox' => '1'
       ),
     ),
     'hidden'    => $conf_hidden,
