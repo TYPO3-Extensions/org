@@ -144,6 +144,8 @@ switch($confArr['store_records'])
   $JSopenParams     = 'height=680,width=800,status=0,menubar=0,scrollbars=1';
   // Rows of calendar select box
   $size_calendar    = 10;
+  // Rows of department select box
+  $size_department  = 10;
   // Rows of document select box
   $size_doc        = 30;
   // Rows of event select box
@@ -152,10 +154,10 @@ switch($confArr['store_records'])
   $size_fegroup     = 10;
   // Rows of fe_user select box
   $size_feuser      = 30;
+  // Rows of headquarters select box
+  $size_headquarters  = 10;
   // Rows of location select box
   $size_location    = 1;
-  // Rows of department select box
-  $size_department  = 10;
   // Rows of news select box
   $size_news        = 30;
 

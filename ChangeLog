@@ -1,7 +1,26 @@
 2.1.9
-  12-11-30
+  12-12-02
   Improvements
   * #00000: Updated dependencies
+  Manual
+  * #00000: Updated
+  Bugfixes
+  * #43507: Invalid argument supplied for foreach()
+    #35218: dito
+            Thanks to rbert dalien and Kay Strobach for repoting this bug
+            Effected files:
+            * ext_tables.php         
+
+  * #39387: HTML template with wrong name for wt_cart
+            quantity -> qty
+            Thanks to Ulfried Herrmann / Die Netzmacher GbR
+            Effected files:
+            * static/calendar/201
+              * setup.txt         
+  * #37456: $size_headquarters is not declared in the tca.php
+            Thanks to Tobias H. for report the bug
+            Effected files:
+            * tca.php
 
 2.1.8
   12-11-28

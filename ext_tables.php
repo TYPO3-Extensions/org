@@ -675,7 +675,7 @@ $items = array ('-99' => array ( '0' => '', '1' => '' ));
 //  }
 //}
   // #32440, 120203, dwildt-
-  // #32440, 120203, dwildt+
+  // #32440, #43507, #35218, 120203, dwildt+
 foreach( ( array ) $TCA['fe_users']['columns']['tx_org_headquarters']['config']['items'] as $key => $arrValue )
 {
   $items[$key] = $arrValue;
