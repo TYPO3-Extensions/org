@@ -12,7 +12,6 @@ static/shopping_cart/801/setup.txt
             Thanks to rbert dalien and Kay Strobach for repoting this bug
             Effected files:
             * ext_tables.php         
-
   * #39387: HTML template with wrong name for wt_cart
             quantity -> qty
             Thanks to Ulfried Herrmann / Die Netzmacher GbR
