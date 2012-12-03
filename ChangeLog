@@ -5,6 +5,8 @@
   Manual
   * #00000: Updated
   Bugfixes
+
+static/shopping_cart/801/setup.txt
   * #43507: Invalid argument supplied for foreach()
     #35218: dito
             Thanks to rbert dalien and Kay Strobach for repoting this bug
