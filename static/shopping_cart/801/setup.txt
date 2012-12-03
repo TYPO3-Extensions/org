@@ -52,6 +52,7 @@ plugin.tx_wtcart_pi1 {
         WHERE tx_org_cal.uid                = '###GP:TX_ORG_CAL.UID###'
           ###ENABLE_FIELDS:TX_ORG_CAL###
 )
+    }
   }
   
   settings {
