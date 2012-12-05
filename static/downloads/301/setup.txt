@@ -591,6 +591,51 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+                <div class="filter">
+                  ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  ###TX_ORG_DOWNLOADSMEDIA.TITLE###
+                  ###TX_ORG_DOWNLOADS.DATETIME###
+                </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                <div class="record01">
+                <div class="image01">
+                  ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                </div>
+                <div class="sbmFloatRight">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                <h3>
+                  ###TX_ORG_DOWNLOADS.SUBTITLE###
+                </h3>
+                <h2>
+                    ###TX_ORG_DOWNLOADS.TITLE###
+                </h2>
+                <p>
+                  ###TX_ORG_DOWNLOADS.TEASER_SHORT###
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+              </div> <!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
@@ -1607,6 +1652,40 @@ plugin.tx_browser_pi1 {
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_DOWNLOADS.TITLE###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }

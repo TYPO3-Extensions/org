@@ -7,13 +7,23 @@
             * res/html/calendar/201/default.tmpl
             * res/html/calendar/211/default.tmpl
             * res/html/department/601/default.tmpl
+            * res/html/downloads/301/default.tmpl
+            * res/html/downloads/302/default.tmpl
+            * res/html/headquarters/501/default.tmpl
+            * res/html/location/701/default.tmpl
             * res/html/news/401/default.tmpl
             * res/html/news/411/default.tmpl
             * static/calendar/201/setup.txt
+            * static/calendar/201/expired/setup.txt
             * static/calendar/211/setup.txt
             * static/department/601/setup.txt
+            * static/downloads/301/setup.txt
+            * static/downloads/302/setup.txt
+            * static/headquarters/501/setup.txt
+            * static/location/701/setup.txt
             * static/news/401/setup.txt
             * static/news/411/setup.txt
+
 2.1.9
   12-12-02
   Improvements

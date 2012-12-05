@@ -134,6 +134,41 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                ###TX_ORG_HEADQUARTERSCAT.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <div class="image01">
+                  ###TX_ORG_HEADQUARTERS.IMAGE###
+                </div>
+                <p>
+                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_HEADQUARTERS.TITLE###, ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###<br />
+                  <small>###TX_ORG_DEPARTMENT.TITLE###</small>
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+            </div> <!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
@@ -611,6 +646,51 @@ plugin.tx_browser_pi1 {
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
               }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_HEADQUARTERS.TITLE###
+
+              ###TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+              ###TX_ORG_HEADQUARTERS.TELEPHONE###
+              ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP###
+              ###MY_PHRASE_DEPARTMENTS###
+              <ul>
+                ###TX_ORG_DEPARTMENT.TITLE###
+              </ul>
+              ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
+              ###TX_ORG_HEADQUARTERS.DOCUMENTS###
+              ###MAP###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }

@@ -95,6 +95,49 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                <div class="period_menu">
+                  ###TX_ORG_CAL.DATETIME###
+                </div>
+                ###TX_ORG_CALTYPE.TITLE### ###TX_ORG_DEPARTMENT.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <div class="socialbookmarks">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###MY_DATESHEET###
+                <div class="cal_datetime">
+                  ###TX_ORG_CAL.DATETIME###
+                </div>
+                ###TX_ORG_CAL.SUBTITLE###
+                <div class="cal_title">
+                  ###TX_ORG_CAL.TITLE###
+                </div>
+                ###TX_ORG_CAL.TEASER_SHORT###
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+              </div> <!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
@@ -118,6 +161,55 @@ plugin.tx_browser_pi1 {
           datetime {
               // %A, %d. %B %Y, %H:%M Uhr: Freitag, 07. Januar 2011, 20:00 Uhr 
             strftime = %A, %d. %B %Y, %H:%M Uhr
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="my_datesheet_socialbookmarks">
+                ###MY_DATESHEET###
+                <div class="socialbookmarks">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+              </div>
+              <div class="cal_datetime">
+                ###TX_ORG_CAL.DATETIME###
+              </div>
+              ###TX_ORG_CAL.SUBTITLE###
+              ###TX_ORG_CAL.TITLE###
+              ###TX_ORG_CAL.TEASER_SHORT###
+              ###TX_ORG_CAL.BODYTEXT###
+              ###TX_ORG_LOCATION.TITLE###
+              ###TX_ORG_EVENT.DOCUMENTS###
+              <div class="cleaner">&nbsp;</div>
+              ###MY_FORM_BEGIN###
+              ###TX_ORG_CALENTRANCE.TITLE###
+              ###MY_FORM_END###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
           }
         }
       }
