@@ -148,6 +148,9 @@
 #content .ui-button {
   padding: .2em .4em;
 }
+#content .ui-widget {
+  font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
+}
 #content form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
