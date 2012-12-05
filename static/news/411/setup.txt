@@ -207,9 +207,14 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
+        <div class="###VIEW###view ###VIEW###view-###MODE###">
+          <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
           <p>
             ###TX_ORG_NEWS.TITLE###
           </p>
+          <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+          ###MY_LISTVIEW_PAGE###
+        </div>
 )
             }
           }
