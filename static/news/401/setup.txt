@@ -249,7 +249,7 @@ plugin.tx_browser_pi1 {
           tx_org_newscat {
               // #43641, dwildt, 1-, 1+
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title < plugin.tx_browser_pi1.displayList.master_templates.checkbox
+            title < plugin.tx_browser_pi1.displayList.master_templates.category_menu
             title {
               first_item {
                 cObject {
