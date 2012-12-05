@@ -55,6 +55,16 @@
   padding:.4em;
   text-align:center;
 }
+.tx-browser-pi1 .my_datesheet a,
+.tx-browser-pi1 .my_datesheet a:link,
+.tx-browser-pi1 .my_datesheet a:visited {
+  text-decoration: none; 
+}
+.tx-browser-pi1 .my_datesheet a:focus,
+.tx-browser-pi1 .my_datesheet a:hover,
+.tx-browser-pi1 .my_datesheet a:active {
+/*  text-decoration: underline;*/
+}
 .tx-browser-pi1 .my_datesheet_expired {
   background-color:#CCC;
 }
