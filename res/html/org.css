@@ -155,6 +155,9 @@
 .xxx_tx-browser-pi1 form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
+#content .tx-browser-pi1 .singleview .ui-widget-content {
+  padding: 1em 1em 0 1em;
+}
 #content form.tx_org_downloads-order .ui-button {
   width: 11em;
 }

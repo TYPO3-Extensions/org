@@ -3,6 +3,7 @@
   New Feature
   * #43636: TypoScript snippets for HTML templates
             Effected files:
+            * res/html/org.css
             * res/html/calendar/201/default.tmpl
             * static/calendar/201/setup.txt
 2.1.9
