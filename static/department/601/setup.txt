@@ -101,6 +101,38 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                ###TX_ORG_DEPARTMENTCAT.TITLE###
+                ###TX_ORG_HEADQUARTERS.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <p>
+                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_DEPARTMENT.TITLE###
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+              </div> <!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
@@ -443,6 +475,45 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_DEPARTMENT.TITLE###
+              <p>
+                ###MY_MANAGER###: ###FE_USERS.FIRST_NAME###
+              </p>
+              ###TX_ORG_DEPARTMENT.TELEPHONE###
+              ###TX_ORG_DEPARTMENT.DOCUMENTS###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }

@@ -21,6 +21,7 @@ plugin.tx_browser_pi1 {
   }
   views {
     list {
+      499 = +Org: News (RSS)
       499 {
         name = +Org: News (RSS)
         select (
@@ -120,6 +121,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
+      499 = +Org: News (RSS)
       499 {
         select = tx_org_news.title
         andWhere (

@@ -467,11 +467,6 @@ plugin.tx_browser_pi1 {
             listview {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-              <!-- ###GROUPBY### begin -->
-              <!-- ###GROUPBYHEAD### begin -->
-              ###GROUPBY_GROUPNAME###
-              <!-- ###GROUPBYHEAD### end -->
-              <!-- ###GROUPBYBODY### begin -->
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
               <div class="record01">
                 <div class="socialbookmarks">
@@ -488,8 +483,6 @@ plugin.tx_browser_pi1 {
                 ###TX_ORG_CAL.TEASER_SHORT###
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-                <!-- ###GROUPBYBODY### end -->
-                <!-- ###GROUPBY### end -->
               </div> <!-- /listview -->
 )
             }
