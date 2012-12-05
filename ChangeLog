@@ -40,6 +40,11 @@
             * static/news/411/setup.txt
             * static/staff/101/setup.txt
             * static/staff/111/setup.txt
+  Improvements
+  * #43646: Update wt_cart 1.4.5
+            Effected files:
+            * res/html/shoping_cart/811/default.tmpl
+            * static/shoping_cart/811/setup.txt
 
 2.1.9
   12-12-02
