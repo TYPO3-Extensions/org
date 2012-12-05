@@ -80,7 +80,7 @@ This template is the default template for all list views.
                 <input id="c###TT_CONTENT.UID###-list-submit-csv-export-###MODE###" class="button hidesubmit"  type="submit"  value="###MY_CSV_EXPORT###" />
               <!-- ###BUTTON_CSV-EXPORT### end -->
               <input class="button reset" type="button" onclick="location='###MY_URL###'" value="###MY_RESET###" />
-              <! -- FILTER marker will replaced by plugin.tx_browser_pi1.views.list.401.htmlSnippets.marker.filter while runtime ... -->
+              <! -- FILTER marker will replaced by plugin.tx_browser_pi1.views.list.###MODE###.htmlSnippets.marker.filter while runtime ... -->
               ###FILTER###
             </fieldset>
           </form>
@@ -109,7 +109,7 @@ This template is the default template for all list views.
             </div><!-- ###MODESELECTOR### end -->
             <!-- ###LISTVIEW### begin -->
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-              LISTVIEW subpart will replaced by plugin.tx_browser_pi1.views.list.401.htmlSnippets.subparts.listview while runtime ...
+              LISTVIEW subpart will replaced by plugin.tx_browser_pi1.views.list.###MODE###.htmlSnippets.subparts.listview while runtime ...
             </div> <!-- /listview -->
             <!-- ###LISTVIEW### end -->
           </div> <!-- /ui-tabs -->
@@ -162,7 +162,7 @@ plugin.tx_browser_pi1.views.single.XX.template.default = 1
 <!-- ###TEMPLATE_SINGLE### begin -->
       <div class="###MODE### singleview-###MODE### ui-widget ui-corner-all">
         <!-- ###SINGLEVIEW### begin -->
-          SINGLEVIEW subpart will replaced by plugin.tx_browser_pi1.views.single.401.htmlSnippets.subparts.singleview while runtime ...
+          SINGLEVIEW subpart will replaced by plugin.tx_browser_pi1.views.single.###MODE###.htmlSnippets.subparts.singleview while runtime ...
         <!-- ###SINGLEVIEW### end -->
       </div> <!-- /ui-widget -->
 <!-- ###TEMPLATE_SINGLE### end -->
