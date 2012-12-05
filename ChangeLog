@@ -13,6 +13,7 @@
             * res/html/location/701/default.tmpl
             * res/html/news/401/default.tmpl
             * res/html/news/411/default.tmpl
+            * res/html/staff/101/default.tmpl
             * static/calendar/201/setup.txt
             * static/calendar/201/expired/setup.txt
             * static/calendar/211/setup.txt
@@ -23,6 +24,7 @@
             * static/location/701/setup.txt
             * static/news/401/setup.txt
             * static/news/411/setup.txt
+            * static/staff/101/setup.txt
 
 2.1.9
   12-12-02
