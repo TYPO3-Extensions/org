@@ -492,6 +492,7 @@ plugin.tx_browser_pi1 {
                 <!-- ###GROUPBYBODY### end -->
                 <!-- ###GROUPBY### end -->
               </div> <!-- /listview -->
+)
             }
           }
         }
@@ -1041,6 +1042,7 @@ plugin.tx_browser_pi1 {
           </div>
         </div>
 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }
