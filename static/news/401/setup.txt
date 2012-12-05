@@ -247,7 +247,9 @@ plugin.tx_browser_pi1 {
             }
           }
           tx_org_newscat {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+              // #43641, dwildt, 1-, 1+
+            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title < plugin.tx_browser_pi1.displayList.master_templates.category_menu
             title {
               first_item {
                 cObject {
@@ -256,7 +258,9 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <span class="selectbox">|</span>
+                // #43641, dwildt, 1-, 1+
+              //wrap = <span class="selectbox">|</span>
+              wrap = <div class="category_menu category_menu_treeview">|</div>
               wrap {
                 item {
                   wraps {

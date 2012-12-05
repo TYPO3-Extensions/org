@@ -1,6 +1,9 @@
 2.2.0
   12-12-05
   New Feature
+  * #43641: News categories are ordered in a tree
+            Effected files:
+            * static/news/401/setup.txt
   * #43636: TypoScript snippets for HTML templates
             Effected files:
             * res/html/org.css
