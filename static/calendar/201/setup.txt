@@ -1005,10 +1005,7 @@ plugin.tx_browser_pi1 {
         <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
           ###RECORD_BROWSER###
           <div class="ui-widget ui-corner-all">
-<!--            <h1 class="ui-widget-header ui-corner-top">
-              ###TITLE###
-            </h1> -->
-            <div class="ui-widget-content ui-corner-bottom">
+            <div class="ui-widget-content ui-corner-all">
               <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
               <div class="my_datesheet_socialbookmarks">
                 ###MY_DATESHEET###
