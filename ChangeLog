@@ -1,3 +1,10 @@
+2.2.0
+  12-12-05
+  New Feature
+  * #43636: TypoScript snippets for HTML templates
+            Effected files:
+            * res/html/calendar/201/default.tmpl
+            * static/calendar/201/setup.txt
 2.1.9
   12-12-02
   Improvements

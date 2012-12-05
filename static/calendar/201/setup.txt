@@ -445,6 +445,59 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                <div class="period_menu">
+                  ###TX_ORG_CAL.DATETIME###
+                </div>
+                ###TX_ORG_CALTYPE.TITLE### ###TX_ORG_DEPARTMENT.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+          <div class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+            <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
+<!-- ###GROUPBY### begin -->
+<!-- ###GROUPBYHEAD### begin -->
+            <h3>
+              ###GROUPBY_GROUPNAME###
+            </h3>
+<!-- ###GROUPBYHEAD### end -->
+<!-- ###GROUPBYBODY### begin -->
+            <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+            <div class="record01">
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###MY_DATESHEET###
+              <div class="cal_datetime">
+                ###TX_ORG_CAL.DATETIME###
+              </div>
+              ###TX_ORG_CAL.SUBTITLE###
+              <div class="cal_title">
+                ###TX_ORG_CAL.TITLE###
+              </div>
+              ###TX_ORG_CAL.TEASER_SHORT###
+            </div>
+            <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+<!-- ###GROUPBYBODY### end -->
+<!-- ###GROUPBY### end -->
+          </div><!-- /listview -->
+)
+            }
+          }
+        }
       }
     }
     single {
@@ -940,6 +993,48 @@ plugin.tx_browser_pi1 {
                 additionalParams = &tx_browser_pi1[locationUid]=###TX_ORG_LOCATION.UID###
                 useCacheHash = 1
               }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-###VIEW###view-###MODE###" class="###VIEW###view ###VIEW###view-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+          ###RECORD_BROWSER###
+          <div class="my_datesheet_socialbookmarks">
+            ###MY_DATESHEET###
+            <div class="socialbookmarks">
+              ###SOCIALMEDIA_BOOKMARKS###
+            </div>
+          </div>
+          <div class="cal_datetime">
+            ###TX_ORG_CAL.DATETIME###
+          </div>
+          ###TX_ORG_CAL.SUBTITLE###
+          ###TX_ORG_CAL.TITLE###
+          ###TX_ORG_CAL.TEASER_SHORT###
+          ###TX_ORG_CAL.BODYTEXT###
+          ###TX_ORG_LOCATION.TITLE###
+          ###TX_ORG_EVENT.DOCUMENTS###
+          <div class="cleaner">&nbsp;</div>
+          ###MY_FORM_BEGIN###
+          ###TX_ORG_CALENTRANCE.TITLE###
+          ###MY_FORM_END###
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+          <p class="backbutton">
+            ###MY_BACK_BUTTON### | ###MY_LISTVIEW_PAGE###
+          </p>
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
             }
           }
         }

@@ -28,12 +28,8 @@ VERSION 3.7.0
                   <!-- ###BUTTON_CSV-EXPORT### end -->
                 </div>
               <input type="hidden" name="no_cache" value="1" />
-              <div class="filter">
-                <div class="period_menu">
-                  ###TX_ORG_CAL.DATETIME###
-                </div>
-                ###TX_ORG_CALTYPE.TITLE### ###TX_ORG_DEPARTMENT.TITLE###
-              </div>
+              <! -- FILTER marker will replaced by plugin.tx_browser_pi1.views.list.401.htmlSnippets.marker.filter while runtime ... -->
+              ###FILTER###
             </fieldset>
           </form>
           ###RESULTPHRASE###
@@ -61,35 +57,9 @@ VERSION 3.7.0
             </ul>
           </div><!-- ###MODESELECTOR### end -->
           <!-- ###LISTVIEW### begin -->
-          <div class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-            <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
-<!-- ###GROUPBY### begin -->
-<!-- ###GROUPBYHEAD### begin -->
-            <h3>
-              ###GROUPBY_GROUPNAME###
-            </h3>
-<!-- ###GROUPBYHEAD### end -->
-<!-- ###GROUPBYBODY### begin -->
-            <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-            <div class="record01">
-              <div class="socialbookmarks">
-                ###SOCIALMEDIA_BOOKMARKS###
-              </div>
-              ###MY_DATESHEET###
-              <div class="cal_datetime">
-                ###TX_ORG_CAL.DATETIME###
-              </div>
-              ###TX_ORG_CAL.SUBTITLE###
-              <div class="cal_title">
-                ###TX_ORG_CAL.TITLE###
-              </div>
-              ###TX_ORG_CAL.TEASER_SHORT###
-            </div>
-            <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-<!-- ###GROUPBYBODY### end -->
-<!-- ###GROUPBY### end -->
-          </div>
-          <!-- ###LISTVIEW### end -->
+          <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-content listview-###MODE### listview-content-###MODE###">
+            LISTVIEW subpart will replaced by plugin.tx_browser_pi1.views.list.401.htmlSnippets.subparts.listview while runtime ...
+          </div><!-- /listview --><!-- ###LISTVIEW### end -->
         </div> <!-- /listarea -->
 <!-- ###TEMPLATE_LIST### end -->
 
@@ -99,36 +69,9 @@ VERSION 3.7.0
 
 <!-- ###TEMPLATE_SINGLE### begin -->
         <!-- ###SINGLEVIEW### begin -->
-<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-        <div id="c###TT_CONTENT.UID###-###VIEW###view-###MODE###" class="###VIEW###view ###VIEW###view-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
-          ###RECORD_BROWSER###
-          <div class="my_datesheet_socialbookmarks">
-            ###MY_DATESHEET###
-            <div class="socialbookmarks">
-              ###SOCIALMEDIA_BOOKMARKS###
-            </div>
-          </div>
-          <div class="cal_datetime">
-            ###TX_ORG_CAL.DATETIME###
-          </div>
-          ###TX_ORG_CAL.SUBTITLE###
-          ###TX_ORG_CAL.TITLE###
-          ###TX_ORG_CAL.TEASER_SHORT###
-          ###TX_ORG_CAL.BODYTEXT###
-          ###TX_ORG_LOCATION.TITLE###
-          ###TX_ORG_EVENT.DOCUMENTS###
-          <div class="cleaner">&nbsp;</div>
-          ###MY_FORM_BEGIN###
-          ###TX_ORG_CALENTRANCE.TITLE###
-          ###MY_FORM_END###
-<!-- ###AREA_FOR_AJAX_LIST_01### end -->
-          <p class="backbutton">
-            ###MY_BACK_BUTTON### | ###MY_LISTVIEW_PAGE###
-          </p>
-<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
-          <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          SINGLEVIEW subpart will replaced by plugin.tx_browser_pi1.views.single.401.htmlSnippets.subparts.singleview while runtime ...
         </div>
-<!-- ###AREA_FOR_AJAX_LIST_02### end -->
         <!-- ###SINGLEVIEW### end -->
 <!-- ###TEMPLATE_SINGLE### end -->
 
