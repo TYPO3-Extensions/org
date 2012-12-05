@@ -147,13 +147,7 @@ plugin.tx_browser_pi1 {
               area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
               area {
                 interval {
-                  case = month
-                  month {
-                    value_stdWrap {
-                      // %B: full name of the month
-                      strftime = %B
-                    }
-                  }
+                  case = year
                 }
               }
             }
