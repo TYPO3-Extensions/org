@@ -466,35 +466,32 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-          <div class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
-            <!-- ###LISTHEAD### begin --><!-- ###LISTHEADITEM### begin -->###ITEM###<!-- ###LISTHEADITEM### end --><!-- ###LISTHEAD### end -->
-<!-- ###GROUPBY### begin -->
-<!-- ###GROUPBYHEAD### begin -->
-            <h3>
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              LISTVIEW subpart will replaced by plugin.tx_browser_pi1.views.list.401.htmlSnippets.subparts.listview while runtime ...
+              <!-- ###GROUPBY### begin -->
+              <!-- ###GROUPBYHEAD### begin -->
               ###GROUPBY_GROUPNAME###
-            </h3>
-<!-- ###GROUPBYHEAD### end -->
-<!-- ###GROUPBYBODY### begin -->
-            <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-            <div class="record01">
-              <div class="socialbookmarks">
-                ###SOCIALMEDIA_BOOKMARKS###
+              <!-- ###GROUPBYHEAD### end -->
+              <!-- ###GROUPBYBODY### begin -->
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <div class="socialbookmarks">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###MY_DATESHEET###
+                <div class="cal_datetime">
+                  ###TX_ORG_CAL.DATETIME###
+                </div>
+                ###TX_ORG_CAL.SUBTITLE###
+                <div class="cal_title">
+                  ###TX_ORG_CAL.TITLE###
+                </div>
+                ###TX_ORG_CAL.TEASER_SHORT###
               </div>
-              ###MY_DATESHEET###
-              <div class="cal_datetime">
-                ###TX_ORG_CAL.DATETIME###
-              </div>
-              ###TX_ORG_CAL.SUBTITLE###
-              <div class="cal_title">
-                ###TX_ORG_CAL.TITLE###
-              </div>
-              ###TX_ORG_CAL.TEASER_SHORT###
-            </div>
-            <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-<!-- ###GROUPBYBODY### end -->
-<!-- ###GROUPBY### end -->
-          </div><!-- /listview -->
-)
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                <!-- ###GROUPBYBODY### end -->
+                <!-- ###GROUPBY### end -->
+              </div> <!-- /listview -->
             }
           }
         }
@@ -1005,36 +1002,45 @@ plugin.tx_browser_pi1 {
             singleview {
               value (
 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-        <div id="c###TT_CONTENT.UID###-###VIEW###view-###MODE###" class="###VIEW###view ###VIEW###view-###MODE###"><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
           ###RECORD_BROWSER###
-          <div class="my_datesheet_socialbookmarks">
-            ###MY_DATESHEET###
-            <div class="socialbookmarks">
-              ###SOCIALMEDIA_BOOKMARKS###
+          <div class="ui-widget ui-corner-all">
+            <h1 class="ui-widget-header ui-corner-top">
+              ###TITLE###
+            </h1>
+            <div class="ui-widget-content ui-corner-bottom">
+                <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+                <div class="my_datesheet_socialbookmarks">
+                  ###MY_DATESHEET###
+                  <div class="socialbookmarks">
+                    ###SOCIALMEDIA_BOOKMARKS###
+                  </div>
+                </div>
+                <div class="cal_datetime">
+                  ###TX_ORG_CAL.DATETIME###
+                </div>
+                ###TX_ORG_CAL.SUBTITLE###
+                ###TX_ORG_CAL.TITLE###
+                ###TX_ORG_CAL.TEASER_SHORT###
+                ###TX_ORG_CAL.BODYTEXT###
+                ###TX_ORG_LOCATION.TITLE###
+                ###TX_ORG_EVENT.DOCUMENTS###
+                <div class="cleaner">&nbsp;</div>
+                ###MY_FORM_BEGIN###
+                ###TX_ORG_CALENTRANCE.TITLE###
+                ###MY_FORM_END###
+                <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
             </div>
-          </div>
-          <div class="cal_datetime">
-            ###TX_ORG_CAL.DATETIME###
-          </div>
-          ###TX_ORG_CAL.SUBTITLE###
-          ###TX_ORG_CAL.TITLE###
-          ###TX_ORG_CAL.TEASER_SHORT###
-          ###TX_ORG_CAL.BODYTEXT###
-          ###TX_ORG_LOCATION.TITLE###
-          ###TX_ORG_EVENT.DOCUMENTS###
-          <div class="cleaner">&nbsp;</div>
-          ###MY_FORM_BEGIN###
-          ###TX_ORG_CALENTRANCE.TITLE###
-          ###MY_FORM_END###
 <!-- ###AREA_FOR_AJAX_LIST_01### end -->
-          <p class="backbutton">
-            ###MY_BACK_BUTTON### | ###MY_LISTVIEW_PAGE###
-          </p>
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
 <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
-          <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+          </div>
         </div>
 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
-)
             }
           }
         }
