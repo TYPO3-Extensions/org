@@ -161,8 +161,15 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-          ###TX_ORG_CAL.DATETIME###
-          ###TX_ORG_CAL.TITLE###
+        <div class="###VIEW###view ###VIEW###view-###MODE###">
+          <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+          <p>
+            ###TX_ORG_CAL.DATETIME###
+            ###TX_ORG_CAL.TITLE###
+          </p>
+          <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+          ###MY_LISTVIEW_PAGE###
+        </div>
 )
             }
           }

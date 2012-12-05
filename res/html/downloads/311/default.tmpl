@@ -4,19 +4,15 @@
   <body>
 
 <!-- ###TEMPLATE_LIST### begin -->
-        <div class="ui-widget ui-widget-content ui-corner-all">
-          ###MY_LISTVIEW_TITLE###
-          <!-- ###LISTVIEW### begin -->
-          <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-downloads listview-downloads-top-5">
-            <ol class="listview listview-downloads listview-downloads-top-5"><!-- ###LISTBODY### begin -->
-              <!-- ###LISTBODYITEM### begin -->###TX_ORG_DOWNLOADS.TITLE###
-              <!-- ###LISTBODYITEM### end -->
-            <!-- ###LISTBODY### end -->
-            </ol>
-            ###MY_LISTVIEW_PAGE###
-          </div> <!-- /c###TT_CONTENT.UID###-listview-###MODE### -->
-          <!-- ###LISTVIEW### end -->
-        </div> <!-- /ui-widget -->
+        ###MY_LISTVIEW_TITLE###
+        <!-- ###LISTVIEW### begin -->
+        <div class="###VIEW###view ###VIEW###view-###MODE###">
+          <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+          LISTVIEW subpart will replaced by plugin.tx_browser_pi1.views.list.###MODE###.htmlSnippets.subparts.listview while runtime ...
+          <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+          ###MY_LISTVIEW_PAGE###
+        </div>
+        <!-- ###LISTVIEW### end -->
 <!-- ###TEMPLATE_LIST### end -->
 
 
@@ -34,17 +30,19 @@
       <br />
       The Organiser using constants for the template controlling. See TypoScript constants "Organiser Pages".
       <br />
-      Please maintain the id of the page, which contains the plugin for the single view of a download.
+      Please maintain the id of the page, which contains the plugin for the news-single-view.
     </p>
     <p>
       [GERMAN] F&uuml;r dieses Plugin gibt es keine Detailansicht.
       <br />
       Der Organiser steuert das Templating mit Konstanten. Siehe TypoScript Konstanten "Organiser Pages".
       <br />
-      Bitte gebe dort die Id der Seite an, die das Plugin f&uuml;r die Download-Single-Ansicht enth&auml;lt.
+      Bitte gebe dort die Id der Seite an, die das Plugin f&uuml;r die News Single-Ansicht enth&auml;lt.
     </p>
     </div>
 <!-- ###TEMPLATE_SINGLE### end -->
+
+
 
   </body>
 </html>
