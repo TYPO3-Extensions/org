@@ -198,6 +198,7 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+        }
           // marker and subparts will replaced in the HTML template before data handling
           // #43627, 121205, dwildt
         htmlSnippets =
