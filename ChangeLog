@@ -5,7 +5,11 @@
             Effected files:
             * res/html/org.css
             * res/html/calendar/201/default.tmpl
+            * res/html/calendar/211/default.tmpl
+            * res/html/news/401/default.tmpl
             * static/calendar/201/setup.txt
+            * static/calendar/211/setup.txt
+            * static/news/401/setup.txt
 2.1.9
   12-12-02
   Improvements
