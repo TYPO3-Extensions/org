@@ -3,6 +3,7 @@
   New Feature
   * #43641: News categories are ordered in a tree
             Effected files:
+            * static/base/constants.txt
             * static/news/401/setup.txt
   * #43636: TypoScript snippets for HTML templates
             Effected files:

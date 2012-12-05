@@ -1,3 +1,7 @@
+plugin.tx_browser_pi1 {
+  jQuery.plugin.jstree.tablefield_01 = tx_org_newscat.title
+}
+
 plugin.org {
 
   # cat=Organiser Pages/page/100; type=+int; label= calendar:Uid of your calendar page
