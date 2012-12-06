@@ -8,6 +8,8 @@
   * #43636: TypoScript snippets for HTML templates
             Effected files:
             * res/html/org.css
+            * res/html/default/main.tmpl              (new)
+            * res/html/default/margin.tmpl            (new)
             * res/html/calendar/201/default.tmpl      (removed)
             * res/html/calendar/211/default.tmpl      (removed)
             * res/html/department/601/default.tmpl    (removed)

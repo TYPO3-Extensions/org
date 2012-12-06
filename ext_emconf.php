@@ -39,7 +39,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'css_styled_content' => '1.0.0-0.0.0',
 			'linkhandler' => '0.3.1-0.0.0',
 			'static_info_tables' => '2.3.0-0.0.0',
-			'wt_cart' => '1.4.5-0.0.0',
+			'wt_cart' => '1.4.6-1.4.6',
 		),
 		'conflicts' => array(
                         'css_filelinks' => '-0.0.0',
