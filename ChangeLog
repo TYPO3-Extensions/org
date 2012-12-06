@@ -45,6 +45,9 @@
             Effected files:
             * res/html/shoping_cart/811/default.tmpl
             * static/shoping_cart/811/setup.txt
+  * ##43662: Remove jq_fancybox
+            Effected files:
+            * static/base/setup.txt
 
 2.1.9
   12-12-02

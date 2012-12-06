@@ -64,6 +64,25 @@
   // plugin.tx_browser_pi1
 plugin.tx_browser_pi1 {
 
+  template {
+    extensions {
+      org {
+        default {
+          name      = Org: Default
+            // #43636, 121206, dwildt, 1-/1+
+          file      = EXT:org/res/html/_default/main.tmpl
+          csvViews  = 101,201,301,401,501,501,601,701
+        }
+        default {
+          name      = Org: Margin
+            // #43636, 121206, dwildt, 1-/1+
+          file      = EXT:org/res/html/_default/margin.tmpl
+          csvViews  = 111,211,311,411,511,511,611,711
+        }
+      }
+    }
+  }
+
   general_stdWrap >
 
   displayList {
@@ -91,65 +110,6 @@ plugin.tx_browser_pi1 {
 }
   // plugin.tx_browser_pi1
   // SEO - Search Engine Optimisation
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // jq_fancybox for plugin.tx_browser_pi1
-
-plugin.tx_browser_pi1 {
-
-  displayList {
-    image {
-      wrap = |
-      imageLinkWrap >
-      imageLinkWrap = 1
-      imageLinkWrap {
-        enable = 1
-        typolink {
-          parameter.cObject = IMG_RESOURCE
-          parameter.cObject.file.import.data = TSFE:lastImageInfo|origFile
-          parameter.override.field = image_link
-          parameter.override.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
-          parameter.override.if.isTrue.field = image_link
-          title.field = imagecaption // header
-          title.split.token.char = 10
-          title.split.returnKey.data = register : IMAGE_NUM_CURRENT
-          ATagParams = rel="fancybox"  class="jqfancybox"
-          ATagParams.override = rel="fancybox{field:uid}" class="jqfancybox"
-          ATagParams.insertData = 1
-        }
-      }
-    }
-    imageWrapIfAny = <div class="thumb">|</div>
-  }
-  displaySingle {
-    image {
-      wrap = |
-      imageLinkWrap >
-      imageLinkWrap = 1
-      imageLinkWrap {
-        enable = 1
-        typolink {
-          parameter.cObject = IMG_RESOURCE
-          parameter.cObject.file.import.data = TSFE:lastImageInfo|origFile
-          parameter.override.field = image_link
-          parameter.override.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
-          parameter.override.if.isTrue.field = image_link
-          title.field = imagecaption // header
-          title.split.token.char = 10
-          title.split.returnKey.data = register : IMAGE_NUM_CURRENT
-          ATagParams = rel="fancybox"  class="jqfancybox"
-          ATagParams.override = rel="fancybox{field:uid}" class="jqfancybox"
-          ATagParams.insertData = 1
-        }
-      }
-    }
-    imageWrapIfAny = <div class="thumb">|</div>
-  }
-}
-  // jq_fancybox
 
 
 
