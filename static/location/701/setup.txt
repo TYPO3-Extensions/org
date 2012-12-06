@@ -16,19 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      tt_news >
-      org {
-        locations {
-          name      = Org: Locations
-          file      = EXT:org/res/html/location/701/default.tmpl
-          csvViews  = 701
-        }
-      }
-    }
-  }
-
   views {
     list {
       701 = +Org: Locations

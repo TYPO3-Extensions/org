@@ -44,18 +44,6 @@ page {
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      tt_news >
-      org {
-        headquarters {
-          name      = Org: Headquarters
-          file      = EXT:org/res/html/headquarters/501/default.tmpl
-          csvViews  = 501
-        }
-      }
-    }
-  }
   views {
     list {
       501 = +Org: Headquarters

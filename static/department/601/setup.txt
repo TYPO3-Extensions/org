@@ -18,18 +18,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      org {
-        department {
-          name      = Org: Department
-          file      = EXT:org/res/html/department/601/default.tmpl
-          csvViews  = 601
-        }
-      }
-    }
-  }
-
   views {
     list {
       601 = +Org: Department

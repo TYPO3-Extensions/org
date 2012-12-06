@@ -16,19 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      tt_news >
-      org {
-        staff {
-          name      = Org: Staff
-          file      = EXT:org/res/html/staff/101/default.tmpl
-          csvViews  = 101
-        }
-      }
-    }
-  }
-
   views {
     list {
       101 = +Org: Staff
