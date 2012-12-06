@@ -16,19 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      tt_news >
-      org {
-        news_margin {
-          name      = Org: News - margin
-          file      = EXT:org/res/html/news/411/default.tmpl
-          csvViews  = 411
-        }
-      }
-    }
-  }
-
   views {
     list {
       411 = +Org: News (margin)
