@@ -16,20 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      org {
-        calendar {
-          name      = Org: Calendar
-            // #43636, 121206, dwildt, 1-/1+
-          //file      = EXT:org/res/html/calendar/201/default.tmpl
-          csvViews  = 201
-          file      = EXT:org/res/html/_default/main.tmpl
-        }
-      }
-    }
-  }
-
   general_stdWrap >
   
   views {
