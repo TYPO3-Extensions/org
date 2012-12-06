@@ -251,6 +251,7 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              count_hits = 0
               treeview {
                 enabled {
                   value = 1

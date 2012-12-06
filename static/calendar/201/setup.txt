@@ -21,8 +21,10 @@ plugin.tx_browser_pi1 {
       org {
         calendar {
           name      = Org: Calendar
-          file      = EXT:org/res/html/calendar/201/default.tmpl
+            // #43636, 121206, dwildt, 1-/1+
+          //file      = EXT:org/res/html/calendar/201/default.tmpl
           csvViews  = 201
+          file      = EXT:org/res/html/_default/main.tmpl
         }
       }
     }
@@ -605,10 +607,7 @@ plugin.tx_browser_pi1 {
             }
             wrap (
             </select>
-            <!-- #39387, 121202, uhermann, 1- -->
-            <!-- <input type="text"   name="quantity" class="qty" value="1" /> -->
-            <!-- #39387, 121202, uhermann, 1+ -->
-            <input type="text"   name="qty"      class="quantity" value="1" />
+            <input type="text"   name="quantity" class="qty" value="1" />
             <input type="submit" name="submit"               value="|" />
           </fieldset>
         </form>

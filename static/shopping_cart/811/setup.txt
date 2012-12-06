@@ -6,7 +6,7 @@
 plugin.tx_wtcart_pi3 {
   main {
       // Marginal: minicart template
-    template = EXT:org/res/html/shoping_cart/811/default.tmpl
+    template = EXT:org/res/html/shopping_cart/811/default.tmpl
   }
   settings {
     fields {

@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.image,
           tx_org_location.imageseo
         )
-        orderBy = tx_org_location.sorting
+        orderBy = tx_org_location.title
         csvLinkToSingleView = tx_org_location.title
         tx_org_location {
           mail_url = TEXT
