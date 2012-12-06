@@ -16,18 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      org {
-        doc_margin {
-          name      = Org: Downloads - Top 5
-          file      = EXT:org/res/html/downloads/311/default.tmpl
-          csvViews  = 311
-        }
-      }
-    }
-  }
-
   views {
     list {
       311 = +Org: Downloads - Top 5

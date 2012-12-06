@@ -8,21 +8,22 @@
   * #43636: TypoScript snippets for HTML templates
             Effected files:
             * res/html/org.css
-            * res/html/calendar/201/default.tmpl
-            * res/html/calendar/211/default.tmpl
-            * res/html/department/601/default.tmpl
-            * res/html/department/611/default.tmpl
-            * res/html/downloads/301/default.tmpl
-            * res/html/downloads/302/default.tmpl
-            * res/html/downloads/311/default.tmpl
-            * res/html/headquarters/501/default.tmpl
-            * res/html/headquarters/511/default.tmpl
-            * res/html/location/701/default.tmpl
-            * res/html/location/711/default.tmpl
-            * res/html/news/401/default.tmpl
-            * res/html/news/411/default.tmpl
-            * res/html/staff/101/default.tmpl
-            * res/html/staff/111/default.tmpl
+            * res/html/calendar/201/default.tmpl      (removed)
+            * res/html/calendar/211/default.tmpl      (removed)
+            * res/html/department/601/default.tmpl    (removed)
+            * res/html/department/611/default.tmpl    (removed)
+            * res/html/downloads/301/default.tmpl     (removed)
+            * res/html/downloads/302/default.tmpl     (removed)
+            * res/html/downloads/311/default.tmpl     (removed)
+            * res/html/headquarters/501/default.tmpl  (removed)
+            * res/html/headquarters/511/default.tmpl  (removed)
+            * res/html/location/701/default.tmpl      (removed)
+            * res/html/location/711/default.tmpl      (removed)
+            * res/html/news/401/default.tmpl          (removed)
+            * res/html/news/411/default.tmpl          (removed)
+            * res/html/staff/101/default.tmpl         (removed)
+            * res/html/staff/111/default.tmpl         (removed)
+            * static/base/setup.txt
             * static/calendar/201/setup.txt
             * static/calendar/201/expired/setup.txt
             * static/calendar/211/setup.txt

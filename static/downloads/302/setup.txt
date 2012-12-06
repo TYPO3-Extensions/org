@@ -16,18 +16,6 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      org {
-        downloadscat {
-          name      = Org: Downloads Categories
-          file      = EXT:org/res/html/downloads/302/default.tmpl
-          csvViews  = 302
-        }
-      }
-    }
-  }
-
   views {
     list {
       302 = +Org: Downloads Categories
