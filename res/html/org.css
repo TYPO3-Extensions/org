@@ -149,10 +149,15 @@
 }
 */
 #content .ui-button {
-  padding: .2em .4em;
+  font-size:0.75em;
+  font-weight:bold;
 }
 #content .ui-widget {
   font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
+}
+#content .ui-tabs ul li {
+  font-size:0.75em;
+  font-weight:bold;
 }
 #content .ui-tabs .without-href {
   opacity: 0.20;
