@@ -154,6 +154,10 @@
 #content .ui-widget {
   font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
 }
+#content .ui-tabs .without-href {
+  opacity: 0.5;
+  cursor:default;
+}
 #content form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
