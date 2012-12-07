@@ -1,6 +1,9 @@
 2.2.0
   12-12-05
   New Feature
+  * #43733: Integration of index browser in jQuery UI themes
+            Effected files:
+            * res/html/default/main.tmpl
   * #43641: News categories are ordered in a tree
             Effected files:
             * static/base/constants.txt
