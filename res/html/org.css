@@ -163,6 +163,9 @@
   opacity: 0.20;
   cursor:default;
 }
+.tx-browser-pi1 .ui-tabs-list {
+  padding:0.2em;
+}
 #content form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
