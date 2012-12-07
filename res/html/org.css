@@ -155,7 +155,7 @@
   font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
 }
 #content .ui-tabs .without-href {
-  opacity: 0.5;
+  opacity: 0.20;
   cursor:default;
 }
 #content form.tx_org_downloads-order .ui-button {
