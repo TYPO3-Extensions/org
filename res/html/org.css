@@ -155,7 +155,7 @@
 #content .ui-widget {
   font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
 }
-#content .ui-tabs ul li {
+/* #content .ui-tabs ul li {
   font-size:0.75em;
   font-weight:bold;
 }
@@ -165,7 +165,7 @@
 }
 .tx-browser-pi1 .ui-tabs-list {
   padding:0.2em;
-}
+} */
 #content form.tx_org_downloads-order .ui-button {
   padding: 0;
 }
