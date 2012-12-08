@@ -203,19 +203,6 @@ plugin.tx_browser_pi1 {
                 }
               }
               wrap = <span class="category_menu">|</span>
-              wrap {
-                item {
-                  //display_without_any_hit = 1
-                  wraps {
-                    value {
-                      stdWrap {
-                        htmlSpecialChars = 0
-                        crop >
-                      }
-                    }
-                  }
-                }
-              }
               order.field = uid
               area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
               area {
@@ -255,17 +242,6 @@ plugin.tx_browser_pi1 {
                 // #43641, dwildt, 1-, 1+
               //wrap = <span class="selectbox">|</span>
               wrap = <div class="category_menu category_menu_treeview">|</div>
-              wrap {
-                item {
-                  wraps {
-                    value {
-                      stdWrap {
-                        crop = 30 | ... | 1
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
         }

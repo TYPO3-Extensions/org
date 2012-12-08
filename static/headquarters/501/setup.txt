@@ -71,18 +71,21 @@ plugin.tx_browser_pi1 {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
-                stdWrap {
-                  //data = LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title
-                  data >
-                  value   = All Groups
-                  lang.de = Alle Gruppen
+                cObject {
+                  20 {
+                    data >
+                    value   = All Groups
+                    lang.de = Alle Gruppen
+                  }
                 }
               }
               wrap = <span class="selectbox">|</span>
               wrap {
                 item {
-                  stdWrap {
-                    crop = 30 | ... | 1
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
                   }
                 }
               }
