@@ -16,24 +16,11 @@
 
 plugin.tx_browser_pi1 {
   
-  template {
-    extensions {
-      tt_news >
-      org {
-        locations_margin {
-          name      = Org: Location - margin
-          file      = EXT:org/res/html/location/711/default.tmpl
-          csvViews  = 711
-        }
-      }
-    }
-  }
-
   views {
     list {
-      711 = locations (margin)
+      711 = +Org: Locations - margin
       711 {
-        name    = +Org: Location - margin
+        name    = +Org: Locations - margin
         showUid = locationUid
         marker < plugin.tx_browser_pi1.marker
         marker {
@@ -149,8 +136,9 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      711 = +Org: Location (margin)
+      711 = +Org: Locations - margin
       711 {
+        name    = +Org: Locations - margin
         comment = This plugin should not used in the single view!
         template < plugin.tx_browser_pi1.template
         template {

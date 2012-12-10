@@ -4,10 +4,8 @@
   //
   // INDEX
 
-  // SEO - Search Engine Optimisation
-  //    page
-  //    plugin.tx_browser_pi1
-  // jq_fancybox for plugin.tx_browser_pi1
+  // globals: page / SEO
+  // plugin.tx_browser_pi1 - SEO
   // plugin.tx_browser_pi1
   // plugin.tx_linkhandler
   // page
@@ -17,7 +15,7 @@
 
   ////////////////////////////////////////////////////////////////////////////////
   //
-  // SEO - Search Engine Optimisation
+  // globals: page / SEO
 
   //    showUid
   //    calendarUid
@@ -30,7 +28,6 @@
   //    newsUid
   //    staffUid
 
-  // page
 [globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
   page {
     config {
@@ -59,29 +56,15 @@
     }
   }
 [global]
-  // page
+  // globals: page / SEO
 
-  // plugin.tx_browser_pi1
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1 - SEO
+
 plugin.tx_browser_pi1 {
-
-  template {
-    extensions {
-      org {
-        default {
-          name      = Org: Default
-            // #43636, 121206, dwildt, 1-/1+
-          file      = EXT:org/res/html/_default/main.tmpl
-          csvViews  = 101,201,301,302,401,501,501,601,701
-        }
-        margin {
-          name      = Org: Margin
-            // #43636, 121206, dwildt, 1-/1+
-          file      = EXT:org/res/html/_default/margin.tmpl
-          csvViews  = 111,211,311,411,511,511,611,711
-        }
-      }
-    }
-  }
 
   general_stdWrap >
 
@@ -108,8 +91,7 @@ plugin.tx_browser_pi1 {
     }
   }
 }
-  // plugin.tx_browser_pi1
-  // SEO - Search Engine Optimisation
+  // plugin.tx_browser_pi1 - SEO
 
 
 
@@ -120,6 +102,22 @@ plugin.tx_browser_pi1 {
 plugin.tx_browser_pi1 {
 
   template {
+    extensions {
+      org {
+        default {
+          name      = Org: Default
+            // #43636, 121206, dwildt, 1-/1+
+          file      = EXT:org/res/html/_default/main.tmpl
+          csvViews  = 101,201,301,302,401,501,501,601,701
+        }
+        margin {
+          name      = Org: Margin
+            // #43636, 121206, dwildt, 1-/1+
+          file      = EXT:org/res/html/_default/margin.tmpl
+          csvViews  = 111,211,311,411,511,511,611,711
+        }
+      }
+    }
     add_parameter {
       extensions {
         org = COA
