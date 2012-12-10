@@ -709,7 +709,7 @@
       <label index="tx_org_news.type.news">Nachricht</label>
       <label index="tx_org_news.type.newspage">Link zu interner Seite</label>
       <label index="tx_org_news.type.newsurl">Link zu externer Seite (URL)</label>
-      <label index="tx_org_news.title">XXX_berschrift</label>
+      <label index="tx_org_news.title"><![CDATA[Ü]]>berschrift</label>
       <label index="tx_org_news.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_news.datetime">Datum der Ver<![CDATA[ö]]>ffentlichung</label>
       <label index="tx_org_news.archivedate">Archivdatum</label>
