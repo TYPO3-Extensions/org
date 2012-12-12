@@ -100,10 +100,10 @@
          <br />
        Have fun!
       ]]></label>
-      <label index="promptVersionPrompt47Equal"><![CDATA[
+      <label index="promptVersionPrompt47equal"><![CDATA[
         Best case: your TYPO3 version is 4.7.
       ]]></label>
-      <label index="promptVersionPrompt47Greater"><![CDATA[
+      <label index="promptVersionPrompt47greater"><![CDATA[
         Your TYPO3 version is greater than 4.7.<br />
         The Organiser isn't tested for the current TYPO3 version.
       ]]></label>
