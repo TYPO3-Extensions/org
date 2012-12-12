@@ -466,6 +466,84 @@ plugin.tx_browser_pi1 {
             stdWrap {
               prefixComment >
             }
+            rendering {
+              singleNoCaption {
+                fallbackRendering {
+                  10 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  20 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  40 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                }
+              }
+              noCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              singleCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              splitCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              globalCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+            }
               // title, address
             text {
               required  = 1
