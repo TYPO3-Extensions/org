@@ -424,13 +424,16 @@ plugin.tx_browser_pi1 {
                 typolink.parameter          = ###TX_ORG_NEWS.IMAGE_LINK###
 // #43936
                 enable                      = ###TX_ORG_NEWS.IMAGE_ZOOM###
-//                enable.ifEmpty.typolink.parameter.field
                 enable {
                   field >
-//                  ifEmpty {
-//                    typolink.parameter.field  >
-//                    typolink.parameter        = ###TX_ORG_NEWS.IMAGE_LINK###
-//                  }
+                  ifEmpty {
+                    typolink {
+                      parameter = ###TX_ORG_NEWS.IMAGE_LINK###
+                      parameter {
+                        field  >
+                     }
+                    }
+                  }
                 }
                 width                       = 1000;
                 height                      = 800m;
