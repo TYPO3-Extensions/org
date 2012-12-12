@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 - Dirk Wildt <http://wildt.at.die-netzmacher.de>
+*  (c) 2011-2012 - Dirk Wildt <http://wildt.at.die-netzmacher.de>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,7 +28,7 @@
 * @author    Dirk Wildt <http://wildt.at.die-netzmacher.de>
 * @package    TYPO3
 * @subpackage    org
-* @version 0.3.1
+* @version 2.2.0
 * @since 0.3.1
 */
 
@@ -48,6 +48,8 @@
 class tx_org_extmanager
 {
 
+    // [INTEGER] TYPO3 version. Sample: 4.7.7 -> 4007007
+  var $typo3Version = null;
 
 
 
@@ -122,6 +124,108 @@ class tx_org_extmanager
     return $str_prompt;
   }
 
+
+
+/**
+ * promptVersionPrompt(): 
+ *
+ * @return  string    message wrapped in HTML
+ * @version 2.2.0
+ * @since 2.2.0
+ */
+  function promptVersionPrompt( )
+  {
+//.message-notice
+//.message-information
+//.message-ok
+//.message-warning
+//.message-error
+
+    $str_prompt = null;
+
+    switch( true )
+    {
+      case( $this->typo3Version < 4007000 ):
+          // Smaller than 4.7
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-warning">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47smaller'). '
+            </div>
+          </div>
+          ';
+        break;
+      case( $this->typo3Version >= 4007999 ):
+          // Greater than 4.7
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-warning">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47Greater'). '
+            </div>
+          </div>
+          ';
+        break;
+      default:
+          // Equal to 4.7
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-ok">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47Equal'). '
+            </div>
+          </div>
+          ';
+        break;
+    }
+        
+    return $str_prompt;
+  }
+  
+  
+  
+/**
+ * promptVersionPrompt(): 
+ *
+ * @return  string    message wrapped in HTML
+ * @version 2.2.0
+ * @since 2.2.0
+ */
+  private function set_typo3Version( )
+  {
+      // #43108, 121212, dwildt, +
+      // RETURN : typo3Version is set
+    if( $this->typo3Version !== null )
+    {
+      return;
+    }
+      // RETURN : typo3Version is set
+    
+      // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
+    list( $main, $sub, $bugfix ) = explode( '.', TYPO3_version );
+    $version = ( ( int ) $main ) * 1000000;
+    $version = $version + ( ( int ) $sub ) * 1000;
+    $version = $version + ( ( int ) $bugfix ) * 1;
+    $this->typo3Version = $version;
+      // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
+
+    if( $this->typo3Version < 3000000 ) 
+    {
+      $prompt = '<h1>ERROR</h1>
+        <h2>Unproper TYPO3 version</h2>
+        <ul>
+          <li>
+            TYPO3 version is smaller than 3.0.0
+          </li>
+          <li>
+            constant TYPO3_version: ' . TYPO3_version . '
+          </li>
+          <li>
+            integer $this->typo3Version: ' . ( int ) $this->typo3Version . '
+          </li>
+        </ul>
+          ';
+      die ( $prompt );
+    }
+  }
 
 
 

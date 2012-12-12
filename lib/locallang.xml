@@ -6,25 +6,6 @@
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
-      <label index="promptQuickstartBody"><![CDATA[
-        If you like to start with the Organiser immediately, start with the default configuration of the extension manager.
-        You have to take care of two items:
-        <br />
-        <br />
-        <ol style="list-style:outside;">
-          <li>
-            Linking from a record of one Organiser table to a record of another Organiser table is possible only, if the records are store in the same directory.
-          </li>
-          <li>
-            "Store record configuration" has set to [EASY]. Please check below.
-          </li>
-        </ol>
-         <br />
-       Have fun!
-      ]]></label>
-      <label index="promptGeneralInfo"><![CDATA[
-        All alignments in the extension manager effect the TYPO3 backend only.
-      ]]></label>
       <label index="promptExternalLinksBody"><![CDATA[
         <div style="float:right;padding-left:1em;">
           <a href="http://die-netzmacher.de/" 
@@ -99,6 +80,45 @@
             width="120" 
             height="90" 
             alt="Your logo with your URL. 120 x 90 pixel." /></a>
+      ]]></label>
+      <label index="promptGeneralInfo"><![CDATA[
+        All alignments in the extension manager effect the TYPO3 backend only.
+      ]]></label>
+      <label index="promptQuickstartBody"><![CDATA[
+        If you like to start with the Organiser immediately, start with the default configuration of the extension manager.
+        You have to take care of two items:
+        <br />
+        <br />
+        <ol style="list-style:outside;">
+          <li>
+            Linking from a record of one Organiser table to a record of another Organiser table is possible only, if the records are store in the same directory.
+          </li>
+          <li>
+            "Store record configuration" has set to [EASY]. Please check below.
+          </li>
+        </ol>
+         <br />
+       Have fun!
+      ]]></label>
+      <label index="promptVersionPrompt47Equal"><![CDATA[
+        Best case: your TYPO3 version is 4.7.
+      ]]></label>
+      <label index="promptVersionPrompt47Greater"><![CDATA[
+        Your TYPO3 version is greater than 4.7.<br />
+        The Organiser isn't tested for the current TYPO3 version.
+      ]]></label>
+      <label index="promptVersionPrompt47smaller"><![CDATA[
+        Your TYPO3 version is smaller than 4.7
+        <br />
+        <br />
+        <ol style="list-style:outside;">
+          <li>
+            Please add the static template '+Org: Basis for TYPO3 < 4.7' to your TypoScript template.
+          </li>
+          <li>
+             Add this template below all other Organiser templates! 
+          </li>
+        </ol>
       ]]></label>
     </languageKey>
     <languageKey index="de" type="array">
