@@ -198,9 +198,14 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Warenkorb Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Warenkorb Tickets');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Warenkorb Tickets - Rand');
-    if( $typo3Version < 4007000 )
+    switch( true )
     {
-      t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',       '+Org: Basis fuer TYPO3 4.6 (einbinden!)');
+      case( $typo3Version < 4007000 ):
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis fuer TYPO3 < 4.7 (einbinden!)');
+        break;
+      default:
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis fuer TYPO3 < 4.7 (NICHT einbinden!)');
+        break;
     }
     break;
   default:
@@ -226,10 +231,16 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Shopping cart for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
-    if( $typo3Version < 4007000 )
+    switch( true )
     {
-      t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',       '+Org: Basis for TYPO3 4.6 (obligate!)');
+      case( $typo3Version < 4007000 ):
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis for TYPO3 < 4.7 (obligate!)');
+        break;
+      default:
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis for TYPO3 < 4.7 (don\'t use it!)');
+        break;
     }
+    break;
     break;
 }
   // Case $llStatic
