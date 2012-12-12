@@ -1,0 +1,72 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1.views.single.101
+  // plugin.tx_browser_pi1.views.single.201
+  // plugin.tx_browser_pi1.views.single.301
+  // plugin.tx_browser_pi1.views.single.401
+  // plugin.tx_browser_pi1.views.single.501
+  // plugin.tx_browser_pi1.views.single.601
+  // plugin.tx_browser_pi1.views.single.701
+
+  // @internal: #43912
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.101
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      101 {
+        fe_users {
+          image {
+            caption.1.1 >
+            caption.1 {
+              field >
+              value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.101
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.201
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      201 {
+        tx_org_cal {
+          bodytext {
+            key = ###TX_ORG_CAL.TYPE###
+              // 0 (direct)
+            default < tt_content.image.20
+            default {
+              image {
+                caption.1.1 >
+                caption.1 {
+                  field >
+                  value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.201

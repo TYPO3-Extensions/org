@@ -672,9 +672,11 @@ plugin.tx_browser_pi1 {
                   height  = ###TX_ORG_CAL.IMAGEHEIGHT###
                 }
                 altText.field                 >
-                altText                       = ###TX_ORG_CAL.IMAGESEO###
+                  // #43922, 121212, dwildt, 1-
+                //altText                       = ###TX_ORG_CAL.IMAGESEO###
                 titleText.field               >
-                titleText                     = ###TX_ORG_CAL.IMAGESEO###
+                  // #43922, 121212, dwildt, 1-
+                //titleText                     = ###TX_ORG_CAL.IMAGESEO###
                 imageLinkWrap {
                   ifEmpty {
                     typolink.parameter.field  >
@@ -702,8 +704,9 @@ plugin.tx_browser_pi1 {
               cols                    = ###TX_ORG_CAL.IMAGECOLS###
               border.field            >
               border                  = ###TX_ORG_CAL.IMAGEBORDER###
-              caption.1.field         >
-              caption.1.value         = ###TX_ORG_CAL.IMAGECAPTION###
+                // #43912, 121212, dwildt
+              caption.1.1.field         >
+              caption.1.1.value         = ###TX_ORG_CAL.IMAGECAPTION###
               captionAlign.field      >
               captionAlign            = ###TX_ORG_CAL.IMAGECAPTION_POSITION###
               layout {
