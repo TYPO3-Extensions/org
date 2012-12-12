@@ -53,8 +53,16 @@ plugin.tx_browser_pi1 {
           bodytext {
             key = ###TX_ORG_CAL.TYPE###
               // 0 (direct)
-            default < tt_content.image.20
             default {
+              caption {
+                1 {
+                  1 >
+                  field >
+                  value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+                }
+              }
+            }
+            tx_org_event {
               caption {
                 1 {
                   1 >
