@@ -37,7 +37,8 @@ plugin.tx_browser_pi1 {
           fe_users.last_name,
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
-          tx_org_headquarters.mail_address 
+          tx_org_headquarters.mail_address, 
+          tx_org_departmentcat.title
         )
         groupBy (
           tx_org_departmentcat.title
@@ -114,6 +115,13 @@ plugin.tx_browser_pi1 {
             listview {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###GROUPBY### begin -->
+              <!-- ###GROUPBYHEAD### begin -->
+              <h2>
+                ###GROUPBY_GROUPNAME###
+              </h2>
+              <!-- ###GROUPBYHEAD### end -->
+              <!-- ###GROUPBYBODY### begin -->
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
               <div class="record01">
                 <p>
@@ -121,7 +129,9 @@ plugin.tx_browser_pi1 {
                 </p>
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-              </div> <!-- /listview -->
+              <!-- ###GROUPBYBODY### end -->
+              <!-- ###GROUPBY### end -->
+            </div> <!-- /listview -->
 )
             }
           }
