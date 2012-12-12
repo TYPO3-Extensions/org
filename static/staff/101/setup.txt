@@ -197,11 +197,10 @@ plugin.tx_browser_pi1 {
                 width   = 160c;
                 height  = 110c;
               }
-              altText.field   >
-                // #43922, dwildt, 1-
+                // #43922, dwildt, 4-
+              //altText.field   >
               //altText         = ###FE_USERS.TX_ORG_IMAGESEO###
-              titleText.field >
-                // #43922, dwildt, 1-
+              //titleText.field >
               //titleText       = ###FE_USERS.TX_ORG_IMAGESEO###
               imageLinkWrap {
                 enable.field >

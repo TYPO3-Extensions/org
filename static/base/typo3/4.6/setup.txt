@@ -6,7 +6,6 @@
 
   // plugin.tx_browser_pi1.views.single.101
   // plugin.tx_browser_pi1.views.single.201
-  // plugin.tx_browser_pi1.views.single.301
   // plugin.tx_browser_pi1.views.single.401
   // plugin.tx_browser_pi1.views.single.501
   // plugin.tx_browser_pi1.views.single.601
@@ -58,7 +57,7 @@ plugin.tx_browser_pi1 {
                 1 {
                   1 >
                   field >
-                  value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+                  value = ###TX_ORG_CAL.IMAGECAPTION###
                 }
               }
             }
@@ -67,7 +66,7 @@ plugin.tx_browser_pi1 {
                 1 {
                   1 >
                   field >
-                  value = ###FE_USERS.TX_ORG_IMAGECAPTION###
+                  value = ###TX_ORG_CAL.IMAGECAPTION###
                 }
               }
             }
@@ -78,3 +77,112 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1.views.single.201
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.401
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      401 {
+        tx_org_news {
+          title {
+            caption {
+              1 {
+                1 >
+                field >
+                value = ###TX_ORG_NEWS.IMAGECAPTION###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.401
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.501
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      501 {
+        tx_org_headquarters {
+          title {
+            caption {
+              1 {
+                1 >
+                field >
+                value = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.501
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.601
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      601 {
+        tx_org_department {
+          title {
+            caption {
+              1 {
+                1 >
+                field >
+                value = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.601
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.701
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      701 {
+        tx_org_location {
+          title {
+            caption {
+              1 {
+                1 >
+                field >
+                value = ###TX_ORG_LOCATION.IMAGECAPTION###
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.701
+

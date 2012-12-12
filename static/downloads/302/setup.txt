@@ -199,10 +199,11 @@ plugin.tx_browser_pi1 {
                     override = ###TX_ORG_DOWNLOADSCAT.IMAGEHEIGHT###
                   }
                 }
-                altText.field                 >
-                altText                       = ###TX_ORG_DOWNLOADSCAT.TITLE###
-                titleText.field               >
-                titleText                     = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                  // #43922, dwildt, 4-
+                //altText.field                 >
+                //altText                       = ###TX_ORG_DOWNLOADSCAT.TITLE###
+                //titleText.field               >
+                //titleText                     = ###TX_ORG_DOWNLOADSCAT.TITLE###
                 imageLinkWrap {
                   ifEmpty {
                     typolink.parameter.field  >

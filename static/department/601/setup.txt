@@ -383,10 +383,11 @@ plugin.tx_browser_pi1 {
                 width   = ###TX_ORG_DEPARTMENT.IMAGEWIDTH###
                 height  = ###TX_ORG_DEPARTMENT.IMAGEHEIGHT###
               }
-              altText.field                 >
-              altText                       = ###TX_ORG_DEPARTMENT.IMAGESEO###
-              titleText.field               >
-              titleText                     = ###TX_ORG_DEPARTMENT.IMAGESEO###
+                // #43922, dwildt, 4-
+              //altText.field                 >
+              //altText                       = ###TX_ORG_DEPARTMENT.IMAGESEO###
+              //titleText.field               >
+              //titleText                     = ###TX_ORG_DEPARTMENT.IMAGESEO###
               imageLinkWrap {
                 ifEmpty {
                   typolink.parameter.field  >
@@ -414,8 +415,9 @@ plugin.tx_browser_pi1 {
             cols                    = ###TX_ORG_DEPARTMENT.IMAGECOLS###
             border.field            >
             border                  = ###TX_ORG_DEPARTMENT.IMAGEBORDER###
-            caption.1.field         >
-            caption.1.value         = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
+              // #43912, 121211, dwildt
+            caption.1.1.field         >
+            caption.1.1.value         = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
             captionAlign.field      >
             captionAlign            = ###TX_ORG_DEPARTMENT.IMAGECAPTION_POSITION###
             layout {

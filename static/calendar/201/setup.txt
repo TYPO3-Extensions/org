@@ -671,11 +671,10 @@ plugin.tx_browser_pi1 {
                   width   = ###TX_ORG_CAL.IMAGEWIDTH###
                   height  = ###TX_ORG_CAL.IMAGEHEIGHT###
                 }
-                altText.field                 >
-                  // #43922, 121212, dwildt, 1-
+                  // #43922, 121212, dwildt, 4-
+                //altText.field                 >
                 //altText                       = ###TX_ORG_CAL.IMAGESEO###
-                titleText.field               >
-                  // #43922, 121212, dwildt, 1-
+                //titleText.field               >
                 //titleText                     = ###TX_ORG_CAL.IMAGESEO###
                 imageLinkWrap {
                   ifEmpty {
