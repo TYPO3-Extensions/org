@@ -10,6 +10,7 @@ if (!defined ('TYPO3_MODE'))
   //
   // INDEX
 
+  // Set TYPO3 version
   // Configuration by the extension manager
   //    Localization support
   //    Store record configuration
@@ -18,6 +19,41 @@ if (!defined ('TYPO3_MODE'))
   // Configure third party tables
   // TCA tables
 
+
+
+  ////////////////////////////////////////////////////////////////////////////
+  //
+  // Set TYPO3 version
+
+  // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
+list( $main, $sub, $bugfix ) = explode( '.', TYPO3_version );
+$version = ( ( int ) $main ) * 1000000;
+$version = $version + ( ( int ) $sub ) * 1000;
+$version = $version + ( ( int ) $bugfix ) * 1;
+$typo3Version = $version;
+  // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
+
+if( $this->typo3Version < 3000000 ) 
+{
+  $prompt = '<h1>ERROR</h1>
+    <h2>Unproper TYPO3 version</h2>
+    <ul>
+      <li>
+        TYPO3 version is smaller than 3.0.0
+      </li>
+      <li>
+        constant TYPO3_version: ' . TYPO3_version . '
+      </li>
+      <li>
+        integer $this->typo3Version: ' . ( int ) $this->typo3Version . '
+      </li>
+    </ul>
+      ';
+  die ( $prompt );
+}
+  // Set TYPO3 version
+
+    
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
@@ -137,7 +173,8 @@ switch($confArr['store_fe_groups'])
   // Enables the Include Static Templates
 
   // Case $llStatic
-switch(true) {
+switch( true ) 
+{
   case($llStatic == 'de'):
       // German
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (immer einbinden!)');
@@ -161,6 +198,10 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Warenkorb Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Warenkorb Tickets');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Warenkorb Tickets - Rand');
+    if( $typo3Version < 4007000 )
+    {
+      t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',       '+Org: Basis fuer TYPO3 4.6 (einbinden!)');
+    }
     break;
   default:
       // English
@@ -185,10 +226,14 @@ switch(true) {
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Shopping cart for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
+    if( $typo3Version < 4007000 )
+    {
+      t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',       '+Org: Basis for TYPO3 4.6 (obligate!)');
+    }
+    break;
 }
   // Case $llStatic
   // Enables the Include Static Templates
-
 
 
   ////////////////////////////////////////////////////////////////////////////
