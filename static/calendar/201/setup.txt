@@ -749,8 +749,10 @@ plugin.tx_browser_pi1 {
                   width                 = ###TX_ORG_EVENT.IMAGEWIDTH###
                   height                = ###TX_ORG_EVENT.IMAGEHEIGHT###
                 }
-                altText                 = ###TX_ORG_EVENT.IMAGESEO###
-                titleText               = ###TX_ORG_EVENT.IMAGESEO###
+                  // #43922, 121212, dwildt, 1-
+                //altText                 = ###TX_ORG_EVENT.IMAGESEO###
+                  // #43922, 121212, dwildt, 1-
+                //titleText               = ###TX_ORG_EVENT.IMAGESEO###
                 imageLinkWrap {
                   ifEmpty {
                     typolink.parameter  = ###TX_ORG_EVENT.IMAGE_LINK###
@@ -765,7 +767,8 @@ plugin.tx_browser_pi1 {
               noRows                    = ###TX_ORG_EVENT.IMAGE_NOROWS###
               cols                      = ###TX_ORG_EVENT.IMAGECOLS###
               border                    = ###TX_ORG_EVENT.IMAGEBORDER###
-              caption.1.value           = ###TX_ORG_EVENT.IMAGECAPTION###
+              // #43912, 121212, dwildt
+              caption.1.1.value         = ###TX_ORG_EVENT.IMAGECAPTION###
               captionAlign              = ###TX_ORG_EVENT.IMAGECAPTION_POSITION###
               layout {
                 key                     = ###TX_ORG_EVENT.IMAGEORIENT###
