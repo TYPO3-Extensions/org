@@ -64,6 +64,8 @@
             Effected files:
             * static/base/setup.txt
   Bug
+  * #43936: css_styled_content 4.7: caption is missing, if image isn't linked
+
   * #43922: Image object alt- and title tag: unproper HTML code
 
 2.1.9
