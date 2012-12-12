@@ -1,13 +1,9 @@
   # cat=basic/enable/100;                   type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptVersionPrompt]; label=Version Prompt
 versionPrompt=0
-  # cat=basic/others/999;                   type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
-external_linksBase=0
-
-
-  # cat=BE Language/enable/100;             type=options[English,German]; label= Localise special backend labels: Language for special backend labels like TypoScript static templates and the link handler.
+  # cat=basic/enable/200;             type=options[English,German]; label= Localise special backend labels: Language for special backend labels like TypoScript static templates and the link handler.
 LLstatic = English
   # cat=basic/others/999;                   type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
-external_linksBeLang=0
+external_linksBase=0
 
 
   # cat=configuration/enable/200;           type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptQuickstart]; label=Quick Start
