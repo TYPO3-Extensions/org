@@ -1,6 +1,7 @@
 2.2.0
   12-12-05
   New Feature
+  * #43898: HTML5 / CSS Styles Content 4.7
   * #43912: css_styled_content 4.7
             Effected files:
   * #43733: Integration of index browser in jQuery UI themes

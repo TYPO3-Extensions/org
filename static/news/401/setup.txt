@@ -420,14 +420,16 @@ plugin.tx_browser_pi1 {
               //titleText.field               >
               //titleText                     = ###TX_ORG_NEWS.IMAGESEO###
               imageLinkWrap {
-                ifEmpty {
-                  typolink.parameter.field  >
-                  typolink.parameter        = ###TX_ORG_NEWS.IMAGE_LINK###
-                }
                 typolink.parameter.field    >
                 typolink.parameter          = ###TX_ORG_NEWS.IMAGE_LINK###
                 enable.field                >
                 enable                      = ###TX_ORG_NEWS.IMAGE_ZOOM###
+                enable {
+                  ifEmpty {
+                    typolink.parameter.field  >
+                    typolink.parameter        = ###TX_ORG_NEWS.IMAGE_LINK###
+                  }
+                }
                 width                       = 1000;
                 height                      = 800m;
                 //JSwindow = 0
