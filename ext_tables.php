@@ -33,7 +33,7 @@ $version = $version + ( ( int ) $bugfix ) * 1;
 $typo3Version = $version;
   // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
 
-if( $this->typo3Version < 3000000 ) 
+if( $typo3Version < 3000000 ) 
 {
   $prompt = '<h1>ERROR</h1>
     <h2>Unproper TYPO3 version</h2>
