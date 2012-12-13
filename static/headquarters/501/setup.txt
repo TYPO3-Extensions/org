@@ -675,16 +675,20 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-              // title, address
+              // title, mail
+            text = COA
             text {
               required  = 1
-                // bodytext
+                // #43970
+              wrap      =  <div class="csc-textpic-text"> | </div>
+                // title
               10 = TEXT
               10 {
                 required  = 1
                 value     = ###TX_ORG_HEADQUARTERS.TITLE###
                 wrap      = <h1 class="headquarters_title">|</h1>
               }
+                // mail
               20 = TEXT
               20 {
                 if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###

@@ -807,9 +807,11 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // caltype, bodytext
+              text = COA
               text {
                 required  = 1
-                wrap      = <div class="cal_bodytext cal_bodytext_default">|</div>
+                  // #43970
+                wrap      = <div class="csc-textpic-text cal_bodytext cal_bodytext_default">|</div>
                 stdWrap {
                   parseFunc < lib.parseFunc_RTE
                 }
@@ -863,7 +865,6 @@ plugin.tx_browser_pi1 {
                 key                     = ###TX_ORG_EVENT.IMAGEORIENT###
               }
               text {
-                wrap      = <div class="cal_bodytext cal_bodytext_event">|</div>
                 20 {
                   if.isTrue   = ###TX_ORG_EVENT.BODYTEXT###
                   value       = ###TX_ORG_EVENT.BODYTEXT###

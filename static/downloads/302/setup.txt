@@ -348,9 +348,12 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-                // title, text
+                // title, text, more
+              text = COA
               text {
                 required  = 1
+                  // #43970
+                wrap      =  <div class="csc-textpic-text"> | </div>
                   // title
                 10 = TEXT
                 10 {
