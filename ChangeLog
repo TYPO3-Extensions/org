@@ -1,5 +1,5 @@
-2.2.0
-  12-12-05
+3.0.0
+  12-12-13
   New Feature
   * #43898: HTML5 / CSS Styles Content 4.7
             Effected files:
@@ -76,6 +76,9 @@
             * static/staff/101/setup.txt
             * static/staff/111/setup.txt
   Improvements
+  * #43976: css_styled_content 4.7: improve rendering of download previews
+            Effected Files:
+            * static/downloads/301/setup.txt
   * #43646: Update wt_cart 1.4.5
             Effected files:
             * res/html/shoping_cart/811/default.tmpl

@@ -189,13 +189,24 @@ plugin.tx_browser_pi1 {
               // Don't outerWrap with <table> by default
             outerWrap = |
             filePath >
+              // #43976, 121213, dwildt, 9-
+            //itemRendering {
+            //  10 {
+            //    if    >
+            //    wrap  >
+            //  }
+            //  20 >
+            //  30 >
+            //  wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+            //}
+              // #43976, 121213, dwildt, 9+
+            itemRendering >
+            itemRendering = COA
             itemRendering {
+              10 = TEXT
               10 {
-                if    >
-                wrap  >
+                data = register:linkedIcon
               }
-              20 >
-              30 >
               wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
             }
             linkProc {
@@ -706,13 +717,24 @@ plugin.tx_browser_pi1 {
                 // Don't outerWrap with <table> by default
               outerWrap = |
               filePath >
+                // #43976, 121213, dwildt, 9-
+              //itemRendering {
+              //  10 {
+              //    if    >
+              //    wrap  >
+              //  }
+              //  20 >
+              //  30 >
+              //  wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+              //}
+                // #43976, 121213, dwildt, 9+
+              itemRendering >
+              itemRendering = COA
               itemRendering {
+                10 = TEXT
                 10 {
-                  if    >
-                  wrap  >
+                  data = register:linkedIcon
                 }
-                20 >
-                30 >
                 wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
               }
               linkProc {
