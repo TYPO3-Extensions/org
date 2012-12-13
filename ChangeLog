@@ -11,6 +11,9 @@
             * static/location/701/setup.txt
             * static/news/401/setup.txt
             * static/staff/101/setup.txt
+            Procedure:
+            * File: typo3_src-X.X.X/typo3/sysext/css_styled_content/static/setup.txt
+            * Look for fields in tzhe rendering section
   * #43912: css_styled_content 4.7
             Effected files:
             * static/base/typo3/4.6/setup.txt

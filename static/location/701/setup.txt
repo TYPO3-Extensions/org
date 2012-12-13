@@ -512,6 +512,16 @@ plugin.tx_browser_pi1 {
               // #43936
             rendering {
               singleNoCaption {
+                allStdWrap {
+                  innerWrap {
+                    cObject {
+                      key = ###TX_ORG_LOCATION.IMAGEORIENT###
+                      key {
+                        field > 
+                      }
+                    }
+                  }
+                }
                 fallbackRendering {
                   10 {
                     if {

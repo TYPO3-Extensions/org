@@ -240,6 +240,16 @@ plugin.tx_browser_pi1 {
               // #43936
             xxx_rendering {
               singleNoCaption {
+                allStdWrap {
+                  innerWrap {
+                    cObject {
+                      key = ###TX_ORG_NEWS.IMAGEORIENT###
+                      key {
+                        field > 
+                      }
+                    }
+                  }
+                }
                 fallbackRendering {
                   10 {
                     if {
