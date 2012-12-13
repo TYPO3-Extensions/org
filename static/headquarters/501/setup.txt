@@ -183,6 +183,16 @@ plugin.tx_browser_pi1 {
         advanced.sql.devider.childrenRecords >
         marker < plugin.tx_browser_pi1.marker
         marker {
+          my_department_ul_close = TEXT
+          my_department_ul_close {
+            value = </ul>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+          }
+          my_department_ul_open = TEXT
+          my_department_ul_open {
+            value = <ul>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+          }
           my_listview_page = TEXT
           my_listview_page {
             value = All Headquarters &raquo;
@@ -701,9 +711,11 @@ plugin.tx_browser_pi1 {
         tx_org_department {
           title = COA
           title {
+            required = 1
             wrap  = <li>|</li>
             10 = TEXT
             10 {
+              required = 1
               value = ###TX_ORG_DEPARTMENT.TITLE###
               typolink {
                 parameter = {$plugin.org.pages.department}
@@ -759,9 +771,9 @@ plugin.tx_browser_pi1 {
               ###TX_ORG_HEADQUARTERS.TELEPHONE###
               ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP###
               ###MY_PHRASE_DEPARTMENTS###
-              <ul>
-                ###TX_ORG_DEPARTMENT.TITLE###
-              </ul>
+              ###MY_DEPARTMENT_UL_OPEN###
+              ###TX_ORG_DEPARTMENT.TITLE###
+              ###MY_DEPARTMENT_UL_CLOSE###
               ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
               ###TX_ORG_HEADQUARTERS.DOCUMENTS###
               ###MAP###
