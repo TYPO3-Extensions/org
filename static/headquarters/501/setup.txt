@@ -709,22 +709,18 @@ plugin.tx_browser_pi1 {
           }
         }
         tx_org_department {
-          title = COA
+          title = TEXT
           title {
             required = 1
+            value = ###TX_ORG_DEPARTMENT.TITLE###
             wrap  = <li>|</li>
-            10 = TEXT
-            10 {
-              required = 1
-              value = ###TX_ORG_DEPARTMENT.TITLE###
-              typolink {
-                parameter = {$plugin.org.pages.department}
-                parameter {
-                  insertData = 1
-                }
-                additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###
-                useCacheHash = 1
+            typolink {
+              parameter = {$plugin.org.pages.department}
+              parameter {
+                insertData = 1
               }
+              additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###
+              useCacheHash = 1
             }
           }
         }
