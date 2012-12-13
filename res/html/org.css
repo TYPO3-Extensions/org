@@ -105,8 +105,8 @@
   padding:1em;
 }
 
-.tx-browser-pi1 .singleview li.csc-textpic-image {
-  padding-right:.4em;
+DIV.csc-textpic-center {
+    text-align: center;
 }
 
 .tx-browser-pi1 .singleview li.csc-textpic-image {
