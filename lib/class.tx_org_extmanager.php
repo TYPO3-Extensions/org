@@ -177,7 +177,7 @@ class tx_org_extmanager
           </div>
           <div class="typo3-message message-warning">
             <div class="message-body">
-              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47greater'). '
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47equalCSC'). '
             </div>
           </div>
           ';
