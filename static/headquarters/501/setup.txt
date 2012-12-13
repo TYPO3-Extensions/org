@@ -602,7 +602,7 @@ plugin.tx_browser_pi1 {
             layout {
               key.field        >
               key              = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
-              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+              //default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
             }
             stdWrap {
               prefixComment >
