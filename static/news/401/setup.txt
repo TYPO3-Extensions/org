@@ -545,22 +545,26 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-              // title, address
+              // subtitle, title, datetime
+            text = COA
             text {
               required  = 1
-                // bodytext
+              wrap      =  <div class="csc-textpic-text"> | </div>
+                // subtitle
               10 = TEXT
               10 {
                 required  = 1
                 value     = ###TX_ORG_NEWS.SUBTITLE###
                 wrap      = <h2 class="news_subtitle">|</h2>
               }
+              // title
               20 = TEXT
               20 {
                 required  = 1
                 value     = ###TX_ORG_NEWS.TITLE###
                 wrap      = <h1 class="news_title csc-firstHeader">|</h1>
               }
+              // datetime
               30 = COA
               30 {
                 stdWrap.parseFunc < lib.parseFunc_RTE
