@@ -30,6 +30,13 @@ plugin.tx_browser_pi1 {
               field >
               value = ###FE_USERS.TX_ORG_IMAGECAPTION###
             }
+            xxx_rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
+            }
           }
         }
       }
@@ -60,6 +67,13 @@ plugin.tx_browser_pi1 {
                   value = ###TX_ORG_CAL.IMAGECAPTION###
                 }
               }
+              rendering {
+                singleNoCaption >
+                noCaption       >
+                singleCaption   >
+                splitCaption    >
+                globalCaption   >
+              }
             }
             tx_org_event {
               caption {
@@ -68,6 +82,13 @@ plugin.tx_browser_pi1 {
                   field >
                   value = ###TX_ORG_CAL.IMAGECAPTION###
                 }
+              }
+              rendering {
+                singleNoCaption >
+                noCaption       >
+                singleCaption   >
+                splitCaption    >
+                globalCaption   >
               }
             }
           }
@@ -97,6 +118,13 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_NEWS.IMAGECAPTION###
               }
             }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
+            }
           }
         }
       }
@@ -123,6 +151,13 @@ plugin.tx_browser_pi1 {
                 field >
                 value = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
               }
+            }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
             }
           }
         }
@@ -151,6 +186,13 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
               }
             }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
+            }
           }
         }
       }
@@ -178,6 +220,13 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_LOCATION.IMAGECAPTION###
               }
             }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
+            }
           }
         }
       }
@@ -185,4 +234,3 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1.views.single.701
-

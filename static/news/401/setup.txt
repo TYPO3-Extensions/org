@@ -422,7 +422,7 @@ plugin.tx_browser_pi1 {
               imageLinkWrap {
                 typolink.parameter.field    >
                 typolink.parameter          = ###TX_ORG_NEWS.IMAGE_LINK###
-// #43936
+                  // #43936
                 enable                      = ###TX_ORG_NEWS.IMAGE_ZOOM###
                 enable {
                   field >
@@ -431,7 +431,7 @@ plugin.tx_browser_pi1 {
                       parameter = ###TX_ORG_NEWS.IMAGE_LINK###
                       parameter {
                         field  >
-                     }
+                      }
                     }
                   }
                 }
@@ -466,6 +466,7 @@ plugin.tx_browser_pi1 {
             stdWrap {
               prefixComment >
             }
+              // #43936
             rendering {
               singleNoCaption {
                 fallbackRendering {

@@ -465,8 +465,19 @@ plugin.tx_browser_pi1 {
                 }
                 typolink.parameter.field    >
                 typolink.parameter          = ###TX_ORG_LOCATION.IMAGE_LINK###
-                enable.field                >
+                  // #43936
                 enable                      = ###TX_ORG_LOCATION.IMAGE_ZOOM###
+                enable {
+                  field >
+                  ifEmpty {
+                    typolink {
+                      parameter = ###TX_ORG_LOCATION.IMAGE_LINK###
+                      parameter {
+                        field  >
+                      }
+                    }
+                  }
+                }
                 width                       = 1000;
                 height                      = 800m;
                 //JSwindow = 0
@@ -497,6 +508,85 @@ plugin.tx_browser_pi1 {
             }
             stdWrap {
               prefixComment >
+            }
+              // #43936
+            rendering {
+              singleNoCaption {
+                fallbackRendering {
+                  10 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  20 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  40 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                }
+              }
+              noCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              singleCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              splitCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              globalCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
             }
               // title, address
             text {

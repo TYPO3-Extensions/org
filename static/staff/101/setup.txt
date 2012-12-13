@@ -203,8 +203,19 @@ plugin.tx_browser_pi1 {
               //titleText.field >
               //titleText       = ###FE_USERS.TX_ORG_IMAGESEO###
               imageLinkWrap {
-                enable.field >
+                  // #43936
                 enable = 1
+                enable {
+                  field >
+//                  ifEmpty {
+//                    typolink {
+//                      parameter = ###TX_ORG_NEWS.IMAGE_LINK###
+//                      parameter {
+//                        field  >
+//                      }
+//                    }
+//                  }
+                }
                 width   = 1000;
                 height  = 800m;
                 //JSwindow = 0
@@ -225,6 +236,85 @@ plugin.tx_browser_pi1 {
             stdWrap {
               prefixComment >
               wrap          = <div class="image">|</div>
+            }
+              // #43936
+            xxx_rendering {
+              singleNoCaption {
+                fallbackRendering {
+                  10 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  20 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  40 {
+                    if {
+                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                }
+              }
+              noCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              singleCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              splitCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              globalCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
             }
           }
             // title, first_name, last_name
