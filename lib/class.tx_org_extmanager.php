@@ -185,9 +185,9 @@ class tx_org_extmanager
   
   
 /**
- * promptVersionPrompt(): 
+ * set_typo3Version(): 
  *
- * @return  string    message wrapped in HTML
+ * @return  void
  * @version 2.2.0
  * @since 2.2.0
  */
