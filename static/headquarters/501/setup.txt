@@ -216,6 +216,7 @@ plugin.tx_browser_pi1 {
             value   = Departments
             lang.de = Verwaltungen und Abteilungen
             wrap    = <h3>|</h3>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
           }
         }
         select (
