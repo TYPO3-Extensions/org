@@ -45,7 +45,7 @@
   font-size: 1em;
 }
 .tx-browser-pi1 .my_datesheet_box {
-  float:none;
+  float:left;
   width:70px;
 }
 .tx-browser-pi1 .my_datesheet {
