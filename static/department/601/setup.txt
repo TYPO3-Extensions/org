@@ -479,8 +479,8 @@ plugin.tx_browser_pi1 {
                   }
                   40 {
                     if {
-                      isTrue = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
-                      isTrue {
+                      isFalse = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
+                      isFalse {
                         field >
                       }
                     }

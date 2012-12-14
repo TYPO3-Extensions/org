@@ -463,9 +463,6 @@ plugin.tx_browser_pi1 {
               key              = ###TX_ORG_NEWS.IMAGEORIENT###
               default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
             }
-            stdWrap {
-              prefixComment >
-            }
               // #43936
             rendering {
               singleNoCaption {
@@ -506,8 +503,8 @@ plugin.tx_browser_pi1 {
                   }
                   40 {
                     if {
-                      isTrue = ###TX_ORG_NEWS.IMAGECAPTION###
-                      isTrue {
+                      isFalse = ###TX_ORG_NEWS.IMAGECAPTION###
+                      isFalse {
                         field >
                       }
                     }
@@ -591,6 +588,9 @@ plugin.tx_browser_pi1 {
                   override = ###TX_ORG_NEWS.BODYTEXT###
                 }
               }
+            }
+            stdWrap {
+              prefixComment >
             }
           }
         }
