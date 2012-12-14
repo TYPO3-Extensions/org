@@ -4,46 +4,10 @@
   //
   // INDEX
 
-  // plugin.tx_browser_pi1.views.single.101
   // plugin.tx_browser_pi1.views.single.201
-  // plugin.tx_browser_pi1.views.single.401
-  // plugin.tx_browser_pi1.views.single.501
-  // plugin.tx_browser_pi1.views.single.601
-  // plugin.tx_browser_pi1.views.single.701
+  // plugin.tx_browser_pi1.views.single.331
 
-  // @internal: #43912
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1.views.single.101
-
-plugin.tx_browser_pi1 {
-  views {
-    single {
-      101 {
-        fe_users {
-          image {
-            caption.1.1 >
-            caption.1 {
-              field >
-              value = ###FE_USERS.TX_ORG_IMAGECAPTION###
-            }
-            xxx_rendering {
-              singleNoCaption >
-              noCaption       >
-              singleCaption   >
-              splitCaption    >
-              globalCaption   >
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // plugin.tx_browser_pi1.views.single.101
+  // @internal: #44024
 
 
 
@@ -57,39 +21,19 @@ plugin.tx_browser_pi1 {
       201 {
         tx_org_cal {
           bodytext {
-            key = ###TX_ORG_CAL.TYPE###
-              // 0 (direct)
-            default {
-              caption {
-                1 {
-                  1 >
-                  field >
-                  value = ###TX_ORG_CAL.IMAGECAPTION###
-                }
-              }
-              rendering {
-                singleNoCaption >
-                noCaption       >
-                singleCaption   >
-                splitCaption    >
-                globalCaption   >
+            tx_org_repertoire {
+              caption.1.1 >
+              caption.1 {
+                field >
+                value = ###TX_ORG_REPERTOIRE.IMAGECAPTION###
               }
             }
-            tx_org_event {
-              caption {
-                1 {
-                  1 >
-                  field >
-                  value = ###TX_ORG_CAL.IMAGECAPTION###
-                }
-              }
-              rendering {
-                singleNoCaption >
-                noCaption       >
-                singleCaption   >
-                splitCaption    >
-                globalCaption   >
-              }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
             }
           }
         }
@@ -103,20 +47,18 @@ plugin.tx_browser_pi1 {
 
   ////////////////////////////////////////////////////////////////////////////////
   //
-  // plugin.tx_browser_pi1.views.single.401
+  // plugin.tx_browser_pi1.views.single.331
 
 plugin.tx_browser_pi1 {
   views {
     single {
-      401 {
-        tx_org_news {
-          title {
-            caption {
-              1 {
-                1 >
-                field >
-                value = ###TX_ORG_NEWS.IMAGECAPTION###
-              }
+      331 {
+        tx_org_repertoire {
+          bodytext {
+            caption.1.1 >
+            caption.1 {
+              field >
+              value = ###TX_ORG_REPERTOIRE.IMAGECAPTION###
             }
             rendering {
               singleNoCaption >
@@ -131,106 +73,4 @@ plugin.tx_browser_pi1 {
     }
   }
 }
-  // plugin.tx_browser_pi1.views.single.401
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1.views.single.501
-
-plugin.tx_browser_pi1 {
-  views {
-    single {
-      501 {
-        tx_org_headquarters {
-          title {
-            caption {
-              1 {
-                1 >
-                field >
-                value = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
-              }
-            }
-            rendering {
-              singleNoCaption >
-              noCaption       >
-              singleCaption   >
-              splitCaption    >
-              globalCaption   >
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // plugin.tx_browser_pi1.views.single.501
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1.views.single.601
-
-plugin.tx_browser_pi1 {
-  views {
-    single {
-      601 {
-        tx_org_department {
-          title {
-            caption {
-              1 {
-                1 >
-                field >
-                value = ###TX_ORG_DEPARTMENT.IMAGECAPTION###
-              }
-            }
-            rendering {
-              singleNoCaption >
-              noCaption       >
-              singleCaption   >
-              splitCaption    >
-              globalCaption   >
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // plugin.tx_browser_pi1.views.single.601
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1.views.single.701
-
-plugin.tx_browser_pi1 {
-  views {
-    single {
-      701 {
-        tx_org_location {
-          title {
-            caption {
-              1 {
-                1 >
-                field >
-                value = ###TX_ORG_LOCATION.IMAGECAPTION###
-              }
-            }
-            rendering {
-              singleNoCaption >
-              noCaption       >
-              singleCaption   >
-              splitCaption    >
-              globalCaption   >
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // plugin.tx_browser_pi1.views.single.701
+  // plugin.tx_browser_pi1.views.single.331

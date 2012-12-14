@@ -241,7 +241,6 @@ switch( true )
         break;
     }
     break;
-    break;
 }
   // Case $llStatic
   // Enables the Include Static Templates
