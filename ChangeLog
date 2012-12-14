@@ -86,7 +86,7 @@
   * ##43662: Remove jq_fancybox
             Effected files:
             * static/base/setup.txt
-  Bug
+  Bugfixes
   * #43970: img-text: missing div-tag for text
             Effected files:
             * static/calendar/201/setup.txt
