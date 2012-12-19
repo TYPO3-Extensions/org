@@ -5,20 +5,7 @@
 <pre>
 <em>
 
-VERSION 3.9.6
-  * #00000: Marker ###VIEW### is moved to list or single
-  * #00000: Most tags got an id
-  * #00000: Subpart ###MODESELECTORTABS###
-            <li###CLASS###> is moved to
-            <li id="c###TT_CONTENT.UID###-list-tab-###MODE###" class="ui-state-default ...
-
-VERSION 3.7.0
-  * #27041: Single view got the record browser. See marker ###RECORD_BROWSER### below.
-            Single view got an id.
-  *  #28562: Single view got some classes with jQuery ui. See ui-widget among others.
-
-VERSION 3.6.1
-  * #11886: List view search form got the new hidden field: tx_browser_pi1[plugin]
+VERSION 4.3.1
 
 
 
@@ -30,6 +17,27 @@ This template is the default template for all list views.
   CONTROLLING MARKERS
   ===================
   You can control the display of subparts and markers with typoscript:
+
+    EACH MARKER AND SUBPART 
+    =======================
+
+    plugin.tx_browser_pi1.views.list.XX.htmlSnippets {
+      marker {
+        filter = TEXT
+        filter {
+          ...
+        }
+      }
+      subparts {
+        listview = TEXT
+        listview {
+          ...
+        }
+      }
+    }
+
+    TABLE: SUMMARY AND CAPTION
+    ==========================
 
     plugin.tx_browser_pi1.views.list.XX.display {
       table {
@@ -141,6 +149,27 @@ plugin.tx_browser_pi1.views.single.XX.template.default = 1
   CONTROLLING MARKERS
   ===================
   You can control the display of subparts and markers with typoscript:
+
+    EACH MARKER AND SUBPART 
+    =======================
+
+    plugin.tx_browser_pi1.views.list.XX.htmlSnippets {
+      marker {
+        filter = TEXT
+        filter {
+          ...
+        }
+      }
+      subparts {
+        listview = TEXT
+        listview {
+          ...
+        }
+      }
+    }
+
+    TABLE: SUMMARY AND CAPTION
+    ==========================
 
     plugin.tx_browser_pi1.views.single.XX.display {
       title         = 1     // Display [1] or hide [0] the title
