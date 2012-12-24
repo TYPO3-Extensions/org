@@ -118,7 +118,7 @@ plugin.tx_browser_pi1 {
 //        csvViews  = 111,211,311,411,511,511,611,711
 //      }
 //    }
-    }
+//    }
     add_parameter {
       extensions {
         org = COA

@@ -1,3 +1,10 @@
+3.0.2
+  12-12-24
+  Improvement
+  * #00000: ERROR: Line 8145: An end brace is in excess.
+            Effected files:
+            * static/base/setup.txt
+
 3.0.1
   12-12-19
   Improvement
