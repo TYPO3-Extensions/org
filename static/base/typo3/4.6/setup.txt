@@ -5,7 +5,6 @@
   // INDEX
 
   // plugin.tx_browser_pi1.views.single.201
-  // plugin.tx_browser_pi1.views.single.331
 
   // @internal: #44024
 
@@ -42,35 +41,3 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1.views.single.201
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1.views.single.331
-
-plugin.tx_browser_pi1 {
-  views {
-    single {
-      331 {
-        tx_org_repertoire {
-          bodytext {
-            caption.1.1 >
-            caption.1 {
-              field >
-              value = ###TX_ORG_REPERTOIRE.IMAGECAPTION###
-            }
-            rendering {
-              singleNoCaption >
-              noCaption       >
-              singleCaption   >
-              splitCaption    >
-              globalCaption   >
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  // plugin.tx_browser_pi1.views.single.331
