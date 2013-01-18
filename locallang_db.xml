@@ -28,7 +28,9 @@
       <label index="palette.appearance">Appearance</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.documentscaption">Description</label>
-      <label index="palette.flipit_properties">Properties</label>
+      <label index="palette.flipit_fancybox">Lightbox</label>
+      <label index="palette.flipit_files">Files</label>
+      <label index="palette.flipit_properties">Main properties</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.link">Download link</label>
       <label index="palette.link_shipping">Link for shipping</label>
@@ -438,6 +440,9 @@
       <label index="palette.appearance">Design</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="palette.documentscaption">Kurzbeschreibung</label>
+      <label index="palette.flipit_fancybox">Lightbox</label>
+      <label index="palette.flipit_files">Dateien</label>
+      <label index="palette.flipit_properties">Einstellungen</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.link">Download-Link</label>
       <label index="palette.statistics">Statistik</label>
