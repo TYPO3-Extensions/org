@@ -174,7 +174,7 @@
       <label index="tx_org_downloads.flipit_enabled_item_disabled">disabled</label>
       <label index="tx_org_downloads.flipit_enabled_item_enabled">enabled</label>
       <label index="tx_org_downloads.flipit_enabled_item_ts">Value from the Constant Editor (recommended)</label>
-      <label index="tx_org_downloads.flipit_fancybox">Fancybox</label>
+      <label index="tx_org_downloads.flipit_fancybox">Use fancybox?</label>
       <label index="tx_org_downloads.flipit_fancybox_item_disabled">disabled</label>
       <label index="tx_org_downloads.flipit_fancybox_item_enabled">enabled</label>
       <label index="tx_org_downloads.flipit_fancybox_item_ts">Value from the Constant Editor (recommended)</label>
@@ -579,11 +579,11 @@
       <label index="tx_org_downloads.div_statistics">Statistik</label>
       <label index="tx_org_downloads.div_control">Steuerung</label>
       <label index="tx_org_downloads.div_seo">Suchmaschinen</label>
-      <label index="tx_org_downloads.flipit_enabled">Flip it! benutzen?</label>
+      <label index="tx_org_downloads.flipit_enabled">Flip it! verwenden?</label>
       <label index="tx_org_downloads.flipit_enabled_item_disabled">deaktiviert</label>
       <label index="tx_org_downloads.flipit_enabled_item_enabled">aktiviert</label>
       <label index="tx_org_downloads.flipit_enabled_item_ts">Wert vom Konstanten-Editor (empfohlen)</label>
-      <label index="tx_org_downloads.flipit_fancybox">Fancybox</label>
+      <label index="tx_org_downloads.flipit_fancybox">Fancybox verwenden?</label>
       <label index="tx_org_downloads.flipit_fancybox_item_0">aktiviert</label>
       <label index="tx_org_downloads.flipit_fancybox_item_disabled">deaktiviert</label>
       <label index="tx_org_downloads.flipit_fancybox_item_enabled">aktiviert</label>
