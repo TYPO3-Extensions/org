@@ -740,7 +740,7 @@ plugin.tx_browser_pi1 {
                 // #44657
               outerWrap = <table>|</table>
               itemRendering >
-              itemRendering < plugin.tx_flipit.master_templates.layout
+              itemRendering < plugin.tx_flipit.master_templates.layout.default
                 // #44657
               linkProc {
                 iconCObject {
