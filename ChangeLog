@@ -7,6 +7,7 @@
               * ext_tables.sql    : tx_org_downloads
               * locallang_db.xml  : tx_org_downloads
               * tca.php           : tx_org_downloads
+    * #44657: Flip it! Extend the static template for the needs of Flip it!
 
 3.0.3
   12-12-26
