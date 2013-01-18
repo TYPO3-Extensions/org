@@ -2718,7 +2718,8 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_properties;flipit_properties,' .
-        'flipit_updateswfxml,flipit_swf_files,flipit_xml_file,flipit_fancybox,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_files;flipit_files,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_fancybox;flipit_fancybox,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
@@ -2737,7 +2738,8 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_properties;flipit_properties,' .
-        'flipit_updateswfxml,flipit_swf_files,flipit_xml_file,flipit_fancybox,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_files;flipit_files,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.flipit_fancybox;flipit_fancybox,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
