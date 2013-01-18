@@ -28,6 +28,7 @@
       <label index="palette.appearance">Appearance</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.documentscaption">Description</label>
+      <label index="palette.flipit_properties">Properties</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.link">Download link</label>
       <label index="palette.link_shipping">Link for shipping</label>
