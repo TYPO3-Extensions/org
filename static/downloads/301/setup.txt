@@ -738,9 +738,9 @@ plugin.tx_browser_pi1 {
                 wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
               }
                 // #44657
-              outerWrap = <table>|</table>
-              itemRendering >
-              itemRendering < plugin.tx_flipit.master_templates.layout.default
+//              outerWrap = <table>|</table>
+//              itemRendering >
+//              itemRendering < plugin.tx_flipit.master_templates.layout.default
                 // #44657
               linkProc {
                 iconCObject {
