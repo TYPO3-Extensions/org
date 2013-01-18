@@ -2779,7 +2779,7 @@ $TCA['tx_org_downloads'] = array (
     ),
     'flipit_files' => array (
       'showitem' => 'flipit_updateswfxml;LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_updateswfxml, --linebreak--,' .
-                    'flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_swf_files,',
+                    'flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_swf_files,' . 
                     'flipit_xml_file;LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_xml_file',
       'canNotCollapse' => 1,
     ),
