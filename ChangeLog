@@ -1,3 +1,13 @@
+3.1.0
+  13-01-18
+  New Feature
+  * #44654: Flip it! Browse in online documents
+    * #44654: Extend the database and the TCA with fields needed by Flip it!
+              Effected files:
+              * ext_tables.sql    : tx_org_downloads
+              * locallang_db.xml  : tx_org_downloads
+              * tca.php           : tx_org_downloads
+
 3.0.3
   12-12-26
   Bug

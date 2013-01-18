@@ -137,6 +137,8 @@
           </li>
         </ol>
       ]]></label>
+      <label index="wordCommand">Command</label>
+      <label index="wordResult">Result</label>
     </languageKey>
     <languageKey index="de" type="array">
       <label index="promptExternalLinksBody"><![CDATA[
@@ -269,6 +271,8 @@
           </li>
         </ol>
       ]]></label>
+      <label index="wordCommand">Befehl</label>
+      <label index="wordResult">Ergebnis</label>
     </languageKey>
   </data>
 </T3locallang>

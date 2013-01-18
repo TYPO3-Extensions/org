@@ -2171,6 +2171,7 @@ $TCA['tx_org_downloads'] = array (
                               'documents_from_path,documents,documentscaption,documentslayout,documents_display_label,documents_display_caption,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
+                              'tx_flipit_enabled,tx_flipit_layout,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,' .
                               'teaser_title,teaser_subtitle,teaser_short' .
                               'pages,' .
                               'fe_user,' .
@@ -2505,6 +2506,140 @@ $TCA['tx_org_downloads'] = array (
         'default'   => ''
       ),
     ),
+
+      
+      
+'tx_flipit_enabled' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_enabled',
+  'config'  => array (
+    'type' => 'select',
+    'items' => array(
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_enabled_item_disabled',
+        'disabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_enabled_item_enabled',
+        'enabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_enabled_item_ts',
+        'ts',
+      ),
+    ),
+    'default' => 'ts',
+  ),
+),
+'tx_flipit_layout' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout',
+  'config'  => array (
+    'type' => 'select',
+    'items' => array(
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout_item_00',
+        'layout_00',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout_item_01',
+        'layout_01',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout_item_02',
+        'layout_02',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout_item_03',
+        'layout_03',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_layout_item_ts',
+        'ts',
+      ),
+    ),
+    'default' => 'ts',
+  ),
+),
+'tx_flipit_updateswfxml' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_updateswfxml',
+  'config'  => array (
+    'type' => 'select',
+    'items' => array(
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_updateswfxml_item_disabled',
+        'disabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_updateswfxml_item_enabled',
+        'enabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_updateswfxml_item_ts',
+        'ts',
+      ),
+    ),
+    'default' => 'ts',
+  ),
+),
+'tx_flipit_swf_files' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_swf_files',
+  'config' => array(
+    'type'          => 'group',
+    'internal_type' => 'file',
+    'allowed'       => 'swf',
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+    'uploadfolder'  => 'uploads/tx_flipit',
+    'show_thumbs'   => '1',
+    'size'          => '10',
+    'maxitems'      => '100',
+    'minitems'      => '0',
+  ),
+),
+'tx_flipit_xml_file' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_xml_file',
+  'config' => array(
+    'type'          => 'group',
+    'internal_type' => 'file',
+    'allowed'       => 'xml',
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+    'uploadfolder'  => 'uploads/tx_flipit',
+    'show_thumbs'   => '1',
+    'size'          => '1',
+    'maxitems'      => '1',
+    'minitems'      => '0',
+  ),
+),
+'tx_flipit_fancybox' => array (
+  'exclude' => 0,
+  'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_fancybox',
+  'config'  => array (
+    'type' => 'select',
+    'items' => array(
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_fancybox_item_disabled',
+        'disabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_fancybox_item_enabled',
+        'enabled',
+      ),
+      array(
+        'LLL:EXT:org/locallang_db.xml:tx_org_downloads.flipit_fancybox_item_ts',
+        'ts',
+      ),
+    ),
+    'default' => 'ts',
+  ),
+),
+      
+      
+      
+      
+      
     'fe_user' => array (
       'exclude'     => $bool_exclude_default,
 //      'l10n_mode'   => 'exclude',
@@ -2589,6 +2724,8 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_link,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
+        'tx_flipit_enabled,tx_flipit_layout,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
@@ -2605,6 +2742,8 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_link,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
+        'tx_flipit_enabled,tx_flipit_layout,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
@@ -2621,6 +2760,8 @@ $TCA['tx_org_downloads'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_link,        ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link_shipping;link_shipping,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
+        'tx_flipit_enabled,tx_flipit_layout,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
