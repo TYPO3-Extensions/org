@@ -1,3 +1,10 @@
+3.1.1
+  13-01-19
+  Bugfix
+  * #00000: ERROR: Line 7965: An end brace is in excess.
+            Effected files:
+            * static/base/setup.txt
+
 3.1.0
   13-01-18
   New Feature
