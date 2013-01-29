@@ -676,6 +676,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.tx_flipit_swf_files,
           tx_org_downloads.tx_flipit_updateswfxml,
           tx_org_downloads.tx_flipit_xml_file,
+          tx_org_downloads.tstamp,
 
           tx_org_downloads.thumbnail,
           tx_org_downloads.thumbnail_width,
