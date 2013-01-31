@@ -670,6 +670,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.documentslayout,
           tx_org_downloads.documentssize,
 
+          tx_org_downloads.tx_flipit_evaluate,
           tx_org_downloads.tx_flipit_fancybox,
           tx_org_downloads.tx_flipit_layout,
           tx_org_downloads.tx_flipit_swf_files,
