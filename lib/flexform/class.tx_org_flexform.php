@@ -109,15 +109,6 @@ class tx_org_flexform
  */
   public function evaluate( $arr_pluginConf )
   {
-      // Require classes, init page id, page object and TypoScript object
-    $bool_success = $this->init( $arr_pluginConf );
-
-      // RETURN error with init()
-    if(!$bool_success)
-    {
-      return $arr_pluginConf;
-    }
-
       //.message-notice
       //.message-information
       //.message-ok
