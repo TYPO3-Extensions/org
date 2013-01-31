@@ -16,6 +16,8 @@ if (!defined ('TYPO3_MODE'))
   //    Store record configuration
   // Enables the Include Static Templates
   // Add pagetree icons
+  // Add default page and user TSconfig
+  // Methods for backend workflows
   // Configure third party tables
   // TCA tables
 
@@ -312,6 +314,15 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
 
 t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/' . $llStatic . '/page.txt">');
   // Add default page and user TSconfig
+
+
+
+  ///////////////////////////////////////////////////////////
+  //
+  // Methods for backend workflows
+
+  // #i0004, 130130, dwildt, 1+
+require_once(t3lib_extMgm::extPath($_EXTKEY).'lib/flexform/class.tx_flipit_flexform.php');
 
 
 

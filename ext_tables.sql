@@ -276,7 +276,7 @@ CREATE TABLE tx_org_downloads (
   thumbnail text,
   thumbnail_height tinytext,
   thumbnail_width tinytext,
-  tx_flipit_enabled tinytext,
+  tx_flipit_evaluate tinytext,
   tx_flipit_fancybox tinytext,
   tx_flipit_layout tinytext,
   tx_flipit_swf_files text,
