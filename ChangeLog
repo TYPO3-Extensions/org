@@ -5,7 +5,7 @@
             Flexform evaluation
             Effected files:
             * lib/flexform
-              * class.tx_flipit_flexform.php  (new)
+              * class.tx_org_flexform.php  (new)
               * locallang.xml                 (new)
             * static/downloads/301/setup.txt
             * ext_tables.php

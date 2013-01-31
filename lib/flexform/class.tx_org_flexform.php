@@ -38,7 +38,7 @@
  *
  *
  *
- *   49: class tx_flipit_flexform
+ *   49: class tx_org_flexform
  *   67:     function promptCheckUpdate()
  *  102:     function promptCurrIP()
  *
@@ -46,7 +46,7 @@
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
-class tx_flipit_flexform
+class tx_org_flexform
 {
   
  /**
@@ -138,9 +138,9 @@ class tx_flipit_flexform
 }
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/org/flexform/class.tx_flipit_flexform.php'])
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/org/flexform/class.tx_org_flexform.php'])
 {
-  include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/org/flexform/class.tx_flipit_flexform.php']);
+  include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/org/flexform/class.tx_org_flexform.php']);
 }
 
 ?>

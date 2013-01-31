@@ -2615,7 +2615,7 @@ $TCA['tx_org_downloads'] = array (
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_evaluate',
       'config'  => array (
         'type'      => 'user',
-        'userFunc'  => 'tx_flipit_flexform->evaluate',
+        'userFunc'  => 'tx_org_flexform->evaluate',
       ),
     ),
     'fe_user' => array (
