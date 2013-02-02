@@ -185,9 +185,6 @@ plugin.tx_browser_pi1 {
               drs {
                 value = 0
               }
-              tx_flipit {
-                fields < plugin.tx_flipit.constant_editor.database.field
-              } 
             }
               // Don't outerWrap with <table> by default
             outerWrap = |
@@ -723,6 +720,9 @@ plugin.tx_browser_pi1 {
                 drs {
                   value = 0
                 }
+                tx_flipit {
+                  fields < plugin.tx_flipit.constant_editor.database.field
+                } 
               }
                 // Don't outerWrap with <table> by default
               outerWrap = |
