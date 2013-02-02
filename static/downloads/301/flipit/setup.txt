@@ -16,7 +16,7 @@ plugin.tx_browser_pi1 {
                   itemRendering {
                     20 {
                       10 {
-                        20
+                        20 {
                           10 >
                           10 < tt_content.uploads.20.itemRendering.layout_00.10
                           10 {
@@ -26,7 +26,7 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
-                        30
+                        30 {
                           10 >
                           10 < tt_content.uploads.20.itemRendering.layout_00.20.1
                           10 {
@@ -35,7 +35,7 @@ plugin.tx_browser_pi1 {
                             data = register:filename
                           }
                         }
-                        40
+                        40 {
                           10 >
                           10 < tt_content.uploads.20.itemRendering.layout_00.20.2
                           10 {
@@ -43,7 +43,7 @@ plugin.tx_browser_pi1 {
                             wrap      = <td class="csc-uploads-file-caption">|</td>
                           }
                         }
-                        50
+                        50 {
                           10 {
                             10 >
                             10 < tt_content.uploads.20.itemRendering.layout_00.30
