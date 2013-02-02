@@ -58,6 +58,91 @@ plugin.tx_browser_pi1 {
                           }
                         }
                       }
+                      20 {
+                        30 {
+                          10 >
+                          10 < tt_content.uploads.20.itemRendering.layout_00.20.1
+                          10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                            wrap      = <td class="csc-uploads-file-name">|</td>
+                            data = register:filename
+                          }
+                        }
+                        40 {
+                          10 >
+                          10 < tt_content.uploads.20.itemRendering.layout_00.20.2
+                          10 {
+                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                            wrap      = <td class="csc-uploads-file-caption">|</td>
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              itemRendering {
+                20 {
+                  10 {
+                    20 {
+                      10 >
+                      10 < tt_content.uploads.20.itemRendering.layout_00.10
+                      10 {
+                        if {
+                          isPositive.field >
+                          isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                        }
+                      }
+                    }
+                    30 {
+                      10 >
+                      10 < tt_content.uploads.20.itemRendering.layout_00.20.1
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        wrap      = <td class="csc-uploads-file-name">|</td>
+                        data = register:filename
+                      }
+                    }
+                    40 {
+                      10 >
+                      10 < tt_content.uploads.20.itemRendering.layout_00.20.2
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        wrap      = <td class="csc-uploads-file-caption">|</td>
+                      }
+                    }
+                    50 {
+                      10 {
+                        10 >
+                        10 < tt_content.uploads.20.itemRendering.layout_00.30
+                        10 {
+                          if >
+                          if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                          wrap >
+                          bytes {
+                            labels = {$styles.content.uploads.filesizeBytesLabels}
+                          }
+                        }
+                      }
+                    }
+                  }
+                  20 {
+                    30 {
+                      10 >
+                      10 < tt_content.uploads.20.itemRendering.layout_00.20.1
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        wrap      = <td class="csc-uploads-file-name">|</td>
+                        data = register:filename
+                      }
+                    }
+                    40 {
+                      10 >
+                      10 < tt_content.uploads.20.itemRendering.layout_00.20.2
+                      10 {
+                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        wrap      = <td class="csc-uploads-file-caption">|</td>
+                      }
                     }
                   }
                 }
