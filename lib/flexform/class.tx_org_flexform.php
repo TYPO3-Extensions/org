@@ -151,14 +151,12 @@ class tx_org_flexform
 
       // Include class userfunc
     $typo3_document_root  = t3lib_div::getIndpEnv( 'TYPO3_DOCUMENT_ROOT' );
-    $pathToUserfunc       = $typo3_document_root . '/typo3conf/ext/flipit/lib/userfunc/class.tx_flipit_userfunc.php';
+    $pathToUserfunc       = $typo3_document_root . '/typo3conf/ext/flipit/lib/userfunc/class.tx_flipit_userfunc.phpXX';
     
     if( ! file_exists( $pathToUserfunc ) ) 
     {
       return;
     }
-    
-    return;
     
     require_once( $pathToUserfunc );
     $this->objUserfunc = new tx_flipit_userfunc( $this );
