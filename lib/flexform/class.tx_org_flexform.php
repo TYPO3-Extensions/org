@@ -124,8 +124,64 @@ class tx_org_flexform
       </div>
       ';
 
+    $str_prompt = $str_prompt . $this->evaluate_promptSwftools( );
     return $str_prompt;
   }
+  
+  
+/**
+ * evaluate_promptSwftools: Evaluates the plugin, flexform, TypoScript
+ *                  Returns a HTML report
+ *
+ * Tab [evaluate]
+ *
+ * @param	array		$arr_pluginConf:  Current plugin/flexform configuration
+ * @param	array		$obj_TCEform:     Current TCE form object
+ * @return	string		$str_prompt: HTML prompt
+ * @version 1.0.1
+ * @since 1.0.1
+ */
+  private function evaluate_promptSwftools( )
+  {
+      //.message-notice
+      //.message-information
+      //.message-ok
+      //.message-warning
+      //.message-error
+
+      // Include class userfunc
+    $typo3_document_root  = t3lib_div::getIndpEnv( 'TYPO3_DOCUMENT_ROOT' );
+    $pathToUserfunc       = $typo3_document_root . '/typo3conf/ext/flipit/lib/userfunc/class.tx_flipit_userfunc.php';
+    require_once( $pathToUserfunc );
+    $this->objUserfunc = new tx_flipit_userfunc( $this );
+    $this->objUserfunc->set_allParams( );
+      // Include class userfunc
+
+    switch( $this->objUserfunc->swfTools )
+    {
+      case( 'installed' ):
+        $type   = 'ok';
+        $prompt = $GLOBALS['LANG']->sL('LLL:EXT:flipit/locallang_db.xml:sheetFlipit_evaluate_ok_swftools');
+        break;
+      case( 'notInstalled' ):
+      default:
+        $type   = 'information';
+        $prompt = $GLOBALS['LANG']->sL('LLL:EXT:flipit/locallang_db.xml:sheetFlipit_evaluate_warn_swftools');
+        break;
+    }
+
+    $str_prompt = '
+      <div class="typo3-message message-'. $type . '" style="max-width:' . $this->maxWidth . ';">
+        <div class="message-body">
+          ' . $prompt . '
+        </div>
+      </div>
+      ';
+    
+    $str_prompt = str_replace( '%pid%', $this->pid, $str_prompt );
+    return $str_prompt;
+  }
+
 }
 
 
