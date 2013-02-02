@@ -720,7 +720,10 @@ plugin.tx_browser_pi1 {
                 drs {
                   value = 0
                 }
+                  // add fields to cObj->data
+                field_mapper =
                 field_mapper {
+                    // Adds tx_org_downloads.tx_flipit_layout as tx_flipit_layout
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
               }
