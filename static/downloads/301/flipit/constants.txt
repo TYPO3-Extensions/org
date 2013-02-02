@@ -1,0 +1,10 @@
+plugin.tx_flipit {
+  database {
+    field {
+      title         = tx_org_downloads.title
+      media         = tx_org_downloads.documents
+      layout        = tx_org_downloads.documentslayout
+      filelink_size = tx_org_downloads.documentssize
+    }
+  }
+}

@@ -183,6 +183,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Abteilung');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Kalender');
@@ -219,6 +220,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Department');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Headquarters');

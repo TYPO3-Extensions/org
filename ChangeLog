@@ -1,13 +1,15 @@
 3.1.1
-  13-01-31
+  13-02-02
   Feature
   * #44654: Flip it! Browse in online documents
             Flexform evaluation
             Effected files:
             * lib/flexform
-              * class.tx_org_flexform.php  (new)
+              * class.tx_org_flexform.php     (new)
               * locallang.xml                 (new)
-            * static/downloads/301/setup.txt
+            * static/downloads/301/flipit
+              * constants.txt                 (new)
+              * setup.txt                     (new)
             * ext_tables.php
             * locallang_db.xml
             * tca.php
