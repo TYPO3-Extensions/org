@@ -720,9 +720,9 @@ plugin.tx_browser_pi1 {
                 drs {
                   value = 0
                 }
-                tx_flipit {
-                  fields < plugin.tx_flipit.constant_editor.database.field
-                } 
+                field_mapper {
+                  tx_flipit_layout = tx_org_downloads.tx_flipit_layout
+                }
               }
                 // Don't outerWrap with <table> by default
               outerWrap = |
