@@ -2569,7 +2569,7 @@ $TCA['tx_org_downloads'] = array (
         'uploadfolder'  => 'uploads/tx_flipit',
         'show_thumbs'   => '1',
         'size'          => '10',
-        'maxitems'      => '100',
+        'maxitems'      => '999',
         'minitems'      => '0',
       ),
     ),
