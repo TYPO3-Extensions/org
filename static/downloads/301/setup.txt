@@ -179,13 +179,6 @@ plugin.tx_browser_pi1 {
           thumbnail < tt_content.uploads.20
           thumbnail {
             userFunc = tx_browser_cssstyledcontent->render_uploads
-            userFunc {
-                // Enable the DRS (you need devlog)
-              drs = TEXT
-              drs {
-                value = 0
-              }
-            }
               // Don't outerWrap with <table> by default
             outerWrap = |
             filePath >
@@ -715,11 +708,6 @@ plugin.tx_browser_pi1 {
             30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
-                  // Enable the DRS (you need devlog)
-                drs = TEXT
-                drs {
-                  value = 0
-                }
                   // add the value of a field to another field in cObj->data
                 cObjDataFieldWrapper =
                 cObjDataFieldWrapper {
@@ -960,11 +948,6 @@ plugin.tx_browser_pi1 {
                 renderCurrentLanguageOnly {
                     // [Boolean] 1 (default), 0: render each existing language record
                   value = 1
-                }
-                  // Enable the DRS (you need devlog)
-                drs = TEXT
-                drs {
-                  value = 0
                 }
                   // Current table
                 table = TEXT
