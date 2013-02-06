@@ -22,6 +22,10 @@ plugin.tx_browser_pi1 {
                   userFunc {
                     content {
                       10 {
+                        10 {
+                          wrap >
+                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                        }
                         20 {
                           20 >
                           30 >
