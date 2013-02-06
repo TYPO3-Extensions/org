@@ -723,9 +723,9 @@ plugin.tx_browser_pi1 {
                   // add fields to cObj->data
                 cObjData =
                 cObjData {
-                    // Overwrite fileSize with value from tx_org_downloads.documentssize
-                  fileSize = TEXT
-                  fileSize {
+                    // Overwrite filelink_size with value from tx_org_downloads.documentssize
+                  filelink_size = TEXT
+                  filelink_size {
                     field = tx_org_downloads.documentssize
                   }
                     // Adds value tx_org_downloads.tx_flipit_layout to tx_flipit_layout
