@@ -55,8 +55,6 @@ plugin.tx_browser_pi1 {
                           10 {
                             20 {
                               20 {
-                                30 {
-                                }
                                 40 >
                               }
                             }
@@ -82,23 +80,19 @@ plugin.tx_browser_pi1 {
                           10 {
                             20 {
                               20 {
-                                30 {
-                                  wrap >
-                                }
                                 40 >
                               }
                             }
                           }
                           wrap >
-                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
                         }
                         20 {
                           20 >
                           30 >
                           wrap >
-                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
                         }
                       }
+                      wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
                     }
                   }
                 }
