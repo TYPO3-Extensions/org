@@ -16,15 +16,6 @@
 
 plugin.tx_browser_pi1 {
 
-    // add the value of a field to another field in cObj->data
-  cObjDataFieldWrapper =
-  cObjDataFieldWrapper {
-      // Adds the value from tx_org_downloads.documentssize to filelink_size
-    filelink_size = tx_org_downloads.documentssize
-      // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
-    tx_flipit_layout = tx_org_downloads.tx_flipit_layout
-  }
-
   views {
     list {
       301 = +Org: Downloads
