@@ -46,6 +46,64 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
+                  // #i0001
+                layout_02 {
+                  userFunc {
+                    content {
+                      10 {
+                        10 {
+                          10 {
+                            20 {
+                              20 {
+                                30 {
+                                  wrap >
+                                }
+                                40 >
+                              }
+                            }
+                          }
+                          wrap >
+                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                        }
+                        20 {
+                          20 >
+                          30 >
+                          wrap >
+                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                        }
+                      }
+                    }
+                  }
+                }
+                  // #i0001
+                layout_03 {
+                  userFunc {
+                    content {
+                      10 {
+                        10 {
+                          10 {
+                            20 {
+                              20 {
+                                30 {
+                                  wrap >
+                                }
+                                40 >
+                              }
+                            }
+                          }
+                          wrap >
+                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                        }
+                        20 {
+                          20 >
+                          30 >
+                          wrap >
+                          wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
             50 {
