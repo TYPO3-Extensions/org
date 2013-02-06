@@ -10,7 +10,7 @@ plugin.tx_flipit {
   thumbnails {
       // #i0001: Same as plugin.tx_browser_pi1.downloadmodule.thumbnailSingleViewMaxW
     fancybox {
-      width         = 240
+      width         = 200
     }
   }
 }
