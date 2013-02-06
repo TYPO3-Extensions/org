@@ -723,8 +723,16 @@ plugin.tx_browser_pi1 {
                   // add fields to cObj->data
                 cObjData =
                 cObjData {
-                    // Adds tx_org_downloads.tx_flipit_layout as tx_flipit_layout
-                  tx_flipit_layout = tx_org_downloads.tx_flipit_layout
+                    // Overwrite fileSize with value from tx_org_downloads.documentssize
+                  fileSize = TEXT
+                  fileSize {
+                    field = tx_org_downloads.documentssize
+                  }
+                    // Adds value tx_org_downloads.tx_flipit_layout to tx_flipit_layout
+                  tx_flipit_layout = TEXT
+                  tx_flipit_layout {
+                    field = tx_org_downloads.tx_flipit_layout
+                  }
                 }
               }
                 // Don't outerWrap with <table> by default
