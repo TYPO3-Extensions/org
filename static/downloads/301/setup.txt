@@ -714,7 +714,7 @@ plugin.tx_browser_pi1 {
                     // Adds the value from tx_org_downloads.documentssize to filelink_size
                   filelink_size = tx_org_downloads.documentssize
                     // Adds the value from tx_org_downloads.documentslayout to layout
-                  layout = tx_org_downloads.documentssize
+                  layout = tx_org_downloads.documentslayout
                     // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
