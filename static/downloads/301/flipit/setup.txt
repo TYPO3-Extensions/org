@@ -12,8 +12,8 @@ plugin.tx_browser_pi1 {
               itemRendering {
                   // #i0001
                 layout_00 {
-                  20 >
-                  30 >
+                  XX20 >
+                  XX30 >
                   wrap >
                   wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
                 }
