@@ -722,8 +722,9 @@ plugin.tx_browser_pi1 {
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
               }
-//                // 130207, dwildt, 1+
+//                // 130207, dwildt, 2+
               field = tx_org_downloads.documents
+              thumbnail = tx_org_downloads.thumbnail
                 // Don't outerWrap with <table> by default
 //              outerWrap = <ul class="csc-uploads csc-uploads-{field:layout}">|</ul>
                 // 130207, dwildt, 1-
@@ -878,8 +879,7 @@ plugin.tx_browser_pi1 {
                         bodyTag   = <BODY style="margin:0;padding0;">
                         wrap      = <A href="javascript:close();"> | </A>
                         width     = 800m
-                        height    = 800
-                        //title     = ###TX_ORG_DOWNLOADS.TITLE###
+                        height    = 600
                         title {
                           field = tx_org_downloads.title
                         }
@@ -1072,7 +1072,6 @@ plugin.tx_browser_pi1 {
                       10 = COA
                       10 {
                         if {
-                          //value   = ###TX_ORG_DOWNLOADS.TYPE###
                           field   = tx_org_downloads.type
                           equals  = shipping
                           negate  = 1
