@@ -877,6 +877,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+                // 130207, dwildt, 1-
               tableField = tx_org_downloads.documents
                 // 130207, dwildt, -8
 //              fields {
