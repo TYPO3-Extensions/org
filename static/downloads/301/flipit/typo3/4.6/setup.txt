@@ -5,7 +5,7 @@ plugin.tx_browser_pi1 {
         tx_org_downloads {
           title {
             30 {
-              outerWrap = <table>|</table>
+              outerWrap = <table style="float:left;padding-right:1em;">|</table>
               itemRendering {
                 layout_00 {
                   wrap >
@@ -27,7 +27,6 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                  // #i0001
                 layout_02 {
                   userFunc {
                     content {
