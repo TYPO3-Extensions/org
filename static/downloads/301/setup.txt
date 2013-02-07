@@ -793,7 +793,10 @@ plugin.tx_browser_pi1 {
                         }
                         height = 400m
                         height {
-                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                          //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                          override {
+                            field = tx_org_downloads.thumbnail_height
+                          }
                         }
                       }
                       imageLinkWrap = 1
@@ -803,10 +806,11 @@ plugin.tx_browser_pi1 {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           title = TEXT
                           title {
-                            value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            //value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            value = Download: '{field:tx_org_downloads.title}'
                             lang {
                               de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                              en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              en  = Download: '{field:tx_org_downloads.title}'
                             }
                           }
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
