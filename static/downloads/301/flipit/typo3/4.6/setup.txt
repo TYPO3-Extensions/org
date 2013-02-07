@@ -24,6 +24,8 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
+                    // 130207: Doc title and descriptions should not displayed beside the thumbnail in principle
+                  20 >
                   wrap >
                   wrap = <tr class="tx_flipit_layout_00">|</tr>
                 }
