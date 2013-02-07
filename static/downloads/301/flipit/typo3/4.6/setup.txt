@@ -8,6 +8,22 @@ plugin.tx_browser_pi1 {
               outerWrap = <table style="float:left;padding-right:1em;">|</table>
               itemRendering {
                 layout_00 {
+                  20 {
+                    1 {
+                      if {
+                        isTrue {
+                          field = tx_org_downloads.documents_display_label
+                        }
+                      }
+                    }
+                    2 {
+                      if {
+                        isTrue {
+                          field = tx_org_downloads.documents_display_caption
+                        }
+                      }
+                    }
+                  }
                   wrap >
                   wrap = <tr class="tx_flipit_layout_00">|</tr>
                 }
