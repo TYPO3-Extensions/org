@@ -1422,6 +1422,7 @@ plugin.tx_browser_pi1 {
                           isPositive.field >
                           isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                         }
+                        wrap = <td class="csc-uploads-icon">|</td>
                       }
                     }
                       // File name
