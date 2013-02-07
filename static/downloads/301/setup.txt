@@ -880,7 +880,7 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // 130207, dwildt, 1-
-              tableField = tx_org_downloads.documents
+//              tableField = tx_org_downloads.documents
                 // 130207, dwildt, -8
 //              fields {
 //                from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
