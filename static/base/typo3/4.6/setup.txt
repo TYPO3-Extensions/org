@@ -5,6 +5,7 @@
   // INDEX
 
   // plugin.tx_browser_pi1.views.single.201
+  // plugin.tx_browser_pi1.views.single.301
 
   // @internal: #44024
 
@@ -41,3 +42,27 @@ plugin.tx_browser_pi1 {
   }
 }
   // plugin.tx_browser_pi1.views.single.201
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.301
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      301 {
+        tx_org_downloads {
+          title {
+            30 {
+              outerWrap = <table style="float:left;padding-right:1em;">|</table>
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.301
+
