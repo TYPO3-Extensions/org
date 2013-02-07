@@ -11,6 +11,10 @@ plugin.tx_browser_pi1 {
               itemRendering {
                   // #i0001
                 layout_00 {
+                    // 130207: Doc title and descriptions should not displayed beside the thumbnail in principle
+                  20 >
+                    // 130207: Doc size should not displayed beside the thumbnail in principle
+                  30 >
                   wrap >
                   wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
                 }
