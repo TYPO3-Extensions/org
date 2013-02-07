@@ -228,7 +228,9 @@ plugin.tx_browser_pi1 {
                     20 >
                     30 {
                       10 >
-                      10 < tt_content.uploads.20.itemRendering.layout_00.20.1
+                        // 4.6
+                      //10 < tt_content.uploads.20.itemRendering.layout_00.20.1
+                      10 < tt_content.uploads.20.itemRendering.layout_00.10
                       10 {
                         if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                         wrap      = <td class="csc-uploads-file-name">|</td>
@@ -237,7 +239,9 @@ plugin.tx_browser_pi1 {
                     }
                     40 {
                       10 >
-                      10 < tt_content.uploads.20.itemRendering.layout_00.20.2
+                        // 4.6
+                      //10 < tt_content.uploads.20.itemRendering.layout_00.20.2
+                      10 < tt_content.uploads.20.itemRendering.layout_00.20
                       10 {
                         if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
                         wrap      = <td class="csc-uploads-file-caption">|</td>
