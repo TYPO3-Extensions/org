@@ -711,6 +711,8 @@ plugin.tx_browser_pi1 {
                   // add the value of a field to another field in cObj->data
                 cObjDataFieldWrapper =
                 cObjDataFieldWrapper {
+//tx_org_downloads.documents_display_label,
+//tx_org_downloads.documents_display_caption,
                     // Adds the value from tx_org_downloads.documentssize to filelink_size
                   filelink_size = tx_org_downloads.documentssize
                     // Adds the value from tx_org_downloads.documentscaption to imagecaption
@@ -722,7 +724,10 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // Don't outerWrap with <table> by default
+                // 130207, dwildt, 1+
+              media = tx_org_downloads.documents
               outerWrap = |
+                // 130207, dwildt, 1-
               filePath >
                 // #43976, 121213, dwildt, 9-
               //itemRendering {
