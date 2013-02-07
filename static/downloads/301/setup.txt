@@ -179,6 +179,20 @@ plugin.tx_browser_pi1 {
           thumbnail < tt_content.uploads.20
           thumbnail {
             userFunc = tx_browser_cssstyledcontent->render_uploads
+            userFunc {
+                // add the value of a field to another field in cObj->data
+              cObjDataFieldWrapper =
+              cObjDataFieldWrapper {
+                  // Adds the value from tx_org_downloads.documentssize to filelink_size
+                filelink_size = tx_org_downloads.documentssize
+                  // Adds the value from tx_org_downloads.documentscaption to imagecaption
+                imagecaption = tx_org_downloads.documentscaption
+                  // Adds the value from tx_org_downloads.documentslayout to layout
+                layout = tx_org_downloads.documentslayout
+                  // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
+                tx_flipit_layout = tx_org_downloads.tx_flipit_layout
+              }
+            }
               // Don't outerWrap with <table> by default
             outerWrap = |
             filePath >
