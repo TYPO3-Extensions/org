@@ -878,14 +878,15 @@ plugin.tx_browser_pi1 {
                 }
               }
               tableField = tx_org_downloads.documents
-              fields {
-                from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                files {
-                  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                }
-                layout    = 2
-              }
+                // 130207, dwildt, -8
+//              fields {
+//                from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
+//                files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
+//                files {
+//                  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+//                }
+//                layout    = 2
+//              }
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }
