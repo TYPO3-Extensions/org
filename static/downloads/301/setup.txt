@@ -848,10 +848,11 @@ plugin.tx_browser_pi1 {
                       imageLinkWrap {
                         typolink {
                           title {
-                            value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            //value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            value = Order or download: '{field:tx_org_downloads.title}'
                             lang {
                               de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                              en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                              en  = Order or download: '{field:tx_org_downloads.title}'
                             }
                           }
                         }
