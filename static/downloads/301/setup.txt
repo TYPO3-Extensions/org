@@ -693,14 +693,16 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               required  = 1
-              value     = ###TX_ORG_DOWNLOADS.SUBTITLE###
+//              value     = ###TX_ORG_DOWNLOADS.SUBTITLE###
+              field     = tx_org_downloads.subtitle
               wrap      = <h2 class="doc_subtitle">|</h2>
             }
               // title
             20 = TEXT
             20 {
               required  = 1
-              value     = ###TX_ORG_DOWNLOADS.TITLE###
+//              value     = ###TX_ORG_DOWNLOADS.TITLE###
+              field     = tx_org_downloads.title
               wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
             }
               // thumbnail
