@@ -1,0 +1,53 @@
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      301 {
+        tx_org_downloads {
+          title {
+            30 {
+              outerWrap = <table>|</table>
+              itemRendering {
+                layout_00 {
+                  wrap >
+                  wrap = <tr class="tx_flipit_layout_00">|</tr>
+                }
+                layout_01 {
+                  userFunc {
+                    content {
+                      10 {
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_01">|</tr>
+                    }
+                  }
+                }
+                  // #i0001
+                layout_02 {
+                  userFunc {
+                    content {
+                      10 {
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_02">|</tr>
+                    }
+                  }
+                }
+                  // #i0001
+                layout_03 {
+                  userFunc {
+                    content {
+                      10 {
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_03">|</tr>
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

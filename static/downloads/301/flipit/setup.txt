@@ -6,8 +6,6 @@ plugin.tx_browser_pi1 {
           title {
             30 {
                 // #44654, 130202, dwildt, 3+
-                // 130207, dwildt, 1-
-              //outerWrap = <table>|</table>
               itemRendering >
               itemRendering < plugin.tx_flipit.master_templates.layout
               itemRendering {

@@ -205,9 +205,11 @@ switch( true )
     {
       case( $typo3Version < 4007000 ):
         t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis fuer TYPO3 < 4.7 (einbinden!)');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! TYPO3 < 4.7 (einbinden!');
         break;
       default:
         t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis fuer TYPO3 < 4.7 (NICHT einbinden!)');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! TYPO3 < 4.7 (NICHT einbinden!');
         break;
     }
     break;
@@ -239,9 +241,11 @@ switch( true )
     {
       case( $typo3Version < 4007000 ):
         t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis for TYPO3 < 4.7 (obligate!)');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! TYPO3 < 4.7 (obligate!');
         break;
       default:
         t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/typo3/4.6/',     '+Org: Basis for TYPO3 < 4.7 (don\'t use it!)');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! TYPO3 < 4.7 (don\'t use it!');
         break;
     }
     break;
