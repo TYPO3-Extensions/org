@@ -186,6 +186,7 @@ plugin.tx_browser_pi1 {
                           isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                         }
                       }
+                      wrap = <td class="csc-uploads-icon">|</td>
                     }
                     xx20 >
                     30 {
