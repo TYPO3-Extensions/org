@@ -1353,8 +1353,7 @@ plugin.tx_browser_pi1 {
               field = tx_org_downloads.documents
                 // Don't outerWrap with <table> by default
               outerWrap = |
-                // 130207, dwildt, 1-
-              //filePath >
+              filePath >
               itemRendering >
                 // Download link and ordering form
               itemRendering = COA
@@ -1664,8 +1663,10 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              tableField = tx_org_downloads.documents
-              fields {
+                // 130207, dwildt, -
+              //tableField = tx_org_downloads.documents
+                // 130207, dwildt, -
+              XXX_fields {
                 caption   = ###TX_ORG_DOWNLOADS.DOCUMENTSCAPTION###
                 from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                   // #34988, 120318, dwildt, 1-
