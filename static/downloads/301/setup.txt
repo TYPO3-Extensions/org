@@ -693,16 +693,14 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               required  = 1
-//              value     = ###TX_ORG_DOWNLOADS.SUBTITLE###
-              field     = tx_org_downloads.subtitle
+              value     = ###TX_ORG_DOWNLOADS.SUBTITLE###
               wrap      = <h2 class="doc_subtitle">|</h2>
             }
               // title
             20 = TEXT
             20 {
               required  = 1
-//              value     = ###TX_ORG_DOWNLOADS.TITLE###
-              field     = tx_org_downloads.title
+              value     = ###TX_ORG_DOWNLOADS.TITLE###
               wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
             }
               // thumbnail
@@ -755,20 +753,27 @@ plugin.tx_browser_pi1 {
                     width = 240m
                     width {
                       field >
+                      //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
                       override {
                         field = tx_org_downloads.thumbnail_width
                       }
                     }
                     height = 400m
                     height {
-                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                      //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
+                      override {
+                        field = tx_org_downloads.thumbnail_height
+                      }
                     }
                   }
                 }
                   // download, download_shipping, shipping
                 tx_browser_pi1 = CASE
                 tx_browser_pi1 {
-                  key = ###TX_ORG_DOWNLOADS.TYPE###
+                  //key = ###TX_ORG_DOWNLOADS.TYPE###
+                  key {
+                    field = tx_org_downloads.type
+                  }
                   default = COA
                   default {
                       // Link with preview or application icon
