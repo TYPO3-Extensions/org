@@ -711,16 +711,12 @@ plugin.tx_browser_pi1 {
                   // add the value of a field to another field in cObj->data
                 cObjDataFieldWrapper =
                 cObjDataFieldWrapper {
-//tx_org_downloads.documents_display_label,
-//tx_org_downloads.documents_display_caption,
                     // Adds the value from tx_org_downloads.documentssize to filelink_size
                   filelink_size = tx_org_downloads.documentssize
                     // Adds the value from tx_org_downloads.documentscaption to imagecaption
                   imagecaption = tx_org_downloads.documentscaption
                     // Adds the value from tx_org_downloads.documentslayout to layout
                   layout = tx_org_downloads.documentslayout
-//                    // Adds the value from tx_org_downloads.documents to media
-//                  media = tx_org_downloads.documents
                     // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
@@ -730,7 +726,7 @@ plugin.tx_browser_pi1 {
               field = tx_org_downloads.documents
               outerWrap = |
                 // 130207, dwildt, 1-
-              filePath >
+//              filePath >
                 // #43976, 121213, dwildt, 9-
               //itemRendering {
               //  10 {
@@ -757,7 +753,10 @@ plugin.tx_browser_pi1 {
                     width = 240m
                     width {
                       field >
-                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+//                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+                      override {
+                        field = tx_org_downloads.thumbnial_width
+                      }
                     }
                     height = 400m
                     height {
