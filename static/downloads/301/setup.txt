@@ -854,6 +854,7 @@ plugin.tx_browser_pi1 {
                               de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
                               en  = Order or download: '{field:tx_org_downloads.title}'
                             }
+                            insertData  = 1
                           }
                         }
                       }
