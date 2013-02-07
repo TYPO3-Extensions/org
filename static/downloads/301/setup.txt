@@ -809,7 +809,6 @@ plugin.tx_browser_pi1 {
                             }
                             insertData = 1
                           }
-                          //additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                           additionalParams  = &tx_browser_pi1[plugin]={field:tt_content.uid}&tx_browser_pi1[file]=single.301.tx_org_downloads.{field:tx_org_downloads.uid}.documents.{field:key}
                           additionalParams.insertData = 1
                           useCacheHash      = 1
@@ -879,8 +878,11 @@ plugin.tx_browser_pi1 {
                         bodyTag   = <BODY style="margin:0;padding0;">
                         wrap      = <A href="javascript:close();"> | </A>
                         width     = 800m
-                        height    = 600
-                        title     = ###TX_ORG_DOWNLOADS.TITLE###
+                        height    = 800
+                        //title     = ###TX_ORG_DOWNLOADS.TITLE###
+                        title {
+                          field = tx_org_downloads.title
+                        }
                         JSwindow = 1
                         JSwindow {
                           newWindow = 1
