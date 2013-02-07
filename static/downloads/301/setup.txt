@@ -231,11 +231,12 @@ plugin.tx_browser_pi1 {
                         parameter = {$plugin.org.pages.downloads}
                         title = TEXT
                         title {
-                          value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Download: {field:tx_org_downloads.title}'
                           lang {
-                            de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen: {field:tx_org_downloads.title}'
+                            en  = Download: {field:tx_org_downloads.title}'
                           }
+                          insertData = 1
                         }
                         additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                         useCacheHash      = 1
@@ -255,11 +256,12 @@ plugin.tx_browser_pi1 {
                       parameter = {$plugin.org.pages.downloads}
                       title = TEXT
                       title {
-                        value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Download: {field:tx_org_downloads.title}'
                         lang {
-                          de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                          en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Herunterladen: {field:tx_org_downloads.title}'
+                          en  = Download: {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                       additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                       useCacheHash      = 1
@@ -272,11 +274,12 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       typolink {
                         title {
-                          value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Order or download: {field:tx_org_downloads.title}'
                           lang {
-                            de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen oder Bestellen: {field:tx_org_downloads.title}'
+                            en  = Order or download: {field:tx_org_downloads.title}'
                           }
+                          insertData = 1
                         }
                       }
                     }
@@ -284,11 +287,12 @@ plugin.tx_browser_pi1 {
                   30 {
                     typolink {
                       title {
-                        value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Order or download: {field:tx_org_downloads.title}'
                         lang {
-                          de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                          en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Herunterladen oder Bestellen: {field:tx_org_downloads.title}'
+                          en  = Order or download: {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                     }
                   }
@@ -299,11 +303,12 @@ plugin.tx_browser_pi1 {
                     imageLinkWrap {
                       typolink {
                         title {
-                          value = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Order {field:tx_org_downloads.title}'
                           lang {
-                            de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
-                            en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = {field:tx_org_downloads.title}' bestellen
+                            en  = Order {field:tx_org_downloads.title}'
                           }
+                        insertData = 1
                         }
                       }
                     }
@@ -311,11 +316,12 @@ plugin.tx_browser_pi1 {
                   30 {
                     typolink {
                       title {
-                        value = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Order {field:tx_org_downloads.title}'
                         lang {
-                          de  = '###TX_ORG_DOWNLOADS.TITLE###' bestellen
-                          en  = Order '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = {field:tx_org_downloads.title}' bestellen
+                          en  = Order {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                     }
                   }
@@ -462,11 +468,12 @@ plugin.tx_browser_pi1 {
                       parameter         = {$plugin.org.pages.downloads} - linktosingle
                       title = TEXT
                       title {
-                        value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Download: {field:tx_org_downloads.title}'
                         lang {
-                          de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                          en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Herunterladen: {field:tx_org_downloads.title}'
+                          en  = Download: {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                       additionalParams  = &tx_browser_pi1[downloadsUid]=###TX_ORG_DOWNLOADS.UID###
                       useCacheHash      = 1
@@ -492,11 +499,12 @@ plugin.tx_browser_pi1 {
                     useCacheHash      = 1
                     title             = TEXT
                     title {
-                      value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      value = Download: {field:tx_org_downloads.title}'
                       lang {
-                        de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                        en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        de  = Herunterladen: {field:tx_org_downloads.title}'
+                        en  = Download: {field:tx_org_downloads.title}'
                       }
+                      insertData = 1
                     }
                   }
                 }
@@ -516,28 +524,25 @@ plugin.tx_browser_pi1 {
                       useCacheHash      = 1
                       title = TEXT
                       title {
-                        value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Order: {field:tx_org_downloads.title}'
                         lang {
-                          de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                          en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Bestellen: {field:tx_org_downloads.title}'
+                          en  = Order: {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                     }
                   }
                 }
                 40 {
-                  xxx_value = Order or download &raquo;
-                  xxx_lang {
-                    de  = Herunterladen oder Bestellen &raquo;
-                    en  = Order or download &raquo;
-                  }
                   typolink {
                     title {
-                      value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                      value = Order or download: {field:tx_org_downloads.title}'
                       lang {
-                        de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                        en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        de  = Herunterladen oder Bestellen: {field:tx_org_downloads.title}'
+                        en  = Order or download: {field:tx_org_downloads.title}'
                       }
+                      insertData = 1
                     }
                   }
                 }
@@ -547,18 +552,14 @@ plugin.tx_browser_pi1 {
                 10 >
                 20 >
                 40 {
-                  xxx_value = Order &raquo;
-                  xxx_lang {
-                    de  = Bestellen &raquo;
-                    en  = Order &raquo;
-                  }
                   typolink {
                     title {
-                      value = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                      value = Order: {field:tx_org_downloads.title}'
                       lang {
-                        de  = Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                        en  = Order: '###TX_ORG_DOWNLOADS.TITLE###'
+                        de  = Bestellen: {field:tx_org_downloads.title}'
+                        en  = Order: {field:tx_org_downloads.title}'
                       }
+                      insertData = 1
                     }
                   }
                 }
@@ -721,10 +722,10 @@ plugin.tx_browser_pi1 {
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
               }
-                // Don't outerWrap with <table> by default
 //                // 130207, dwildt, 1+
               field = tx_org_downloads.documents
-              outerWrap = |
+                // Don't outerWrap with <table> by default
+//              outerWrap = <ul class="csc-uploads csc-uploads-{field:layout}">|</ul>
                 // 130207, dwildt, 1-
 //              filePath >
                 // #43976, 121213, dwildt, 9-
@@ -753,14 +754,12 @@ plugin.tx_browser_pi1 {
                     width = 240m
                     width {
                       field >
-                      //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
                       override {
                         field = tx_org_downloads.thumbnail_width
                       }
                     }
                     height = 400m
                     height {
-                      //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
                       override {
                         field = tx_org_downloads.thumbnail_height
                       }
@@ -770,7 +769,6 @@ plugin.tx_browser_pi1 {
                   // download, download_shipping, shipping
                 tx_browser_pi1 = CASE
                 tx_browser_pi1 {
-                  //key = ###TX_ORG_DOWNLOADS.TYPE###
                   key {
                     field = tx_org_downloads.type
                   }
@@ -786,14 +784,12 @@ plugin.tx_browser_pi1 {
                         width = 240m
                         width {
                           field >
-//                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
                           override {
                             field = tx_org_downloads.thumbnail_width
                           }
                         }
                         height = 400m
                         height {
-                          //override = ###TX_ORG_DOWNLOADS.THUMBNAIL_HEIGHT###
                           override {
                             field = tx_org_downloads.thumbnail_height
                           }
@@ -806,12 +802,12 @@ plugin.tx_browser_pi1 {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           title = TEXT
                           title {
-                            //value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
                             value = Download: '{field:tx_org_downloads.title}'
                             lang {
-                              de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
+                              de  = Herunterladen: {field:tx_org_downloads.title}'
                               en  = Download: '{field:tx_org_downloads.title}'
                             }
+                            insertData = 1
                           }
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                           useCacheHash      = 1
@@ -831,11 +827,12 @@ plugin.tx_browser_pi1 {
                         parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                         title = TEXT
                         title {
-                          value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Download: {field:tx_org_downloads.title}'
                           lang {
-                            de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen: {field:tx_org_downloads.title}'
+                            en  = Download: {field:tx_org_downloads.title}'
                           }
+                          insertData = 1
                         }
                         additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
                         useCacheHash      = 1
@@ -848,10 +845,10 @@ plugin.tx_browser_pi1 {
                       imageLinkWrap {
                         typolink {
                           title {
-                            //value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            //value = Order or download: {field:tx_org_downloads.title}'
                             value = Order or download: '{field:tx_org_downloads.title}'
                             lang {
-                              de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
+                              de  = Herunterladen oder Bestellen: {field:tx_org_downloads.title}'
                               en  = Order or download: '{field:tx_org_downloads.title}'
                             }
                             insertData  = 1
@@ -862,11 +859,12 @@ plugin.tx_browser_pi1 {
                     30 {
                       typolink {
                         title {
-                          value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Order or download: {field:tx_org_downloads.title}'
                           lang {
-                            de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen oder Bestellen: {field:tx_org_downloads.title}'
+                            en  = Order or download: {field:tx_org_downloads.title}'
                           }
+                          insertData = 1
                         }
                       }
                     }
@@ -970,6 +968,18 @@ plugin.tx_browser_pi1 {
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
+                  // add the value of a field to another field in cObj->data
+                cObjDataFieldWrapper =
+                cObjDataFieldWrapper {
+                    // Adds the value from tx_org_downloads.documentssize to filelink_size
+                  filelink_size = tx_org_downloads.documentssize
+                    // Adds the value from tx_org_downloads.documentscaption to imagecaption
+                  imagecaption = tx_org_downloads.documentscaption
+                    // Adds the value from tx_org_downloads.documentslayout to layout
+                  layout = tx_org_downloads.documentslayout
+                    // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
+                  tx_flipit_layout = tx_org_downloads.tx_flipit_layout
+                }
                   // Should this TypoScript executed for each language record?
                 renderCurrentLanguageOnly = TEXT
                 renderCurrentLanguageOnly {
@@ -1615,11 +1625,12 @@ plugin.tx_browser_pi1 {
                         useCacheHash      = 1
                         title             = TEXT
                         title {
-                          value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          value = Download: {field:tx_org_downloads.title}'
                           lang {
-                            de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            de  = Herunterladen: {field:tx_org_downloads.title}'
+                            en  = Download: {field:tx_org_downloads.title}'
                           }
+                          insertData = 1
                         }
                       }
                     }
@@ -1639,11 +1650,12 @@ plugin.tx_browser_pi1 {
                       useCacheHash      = 1
                       title             = TEXT
                       title {
-                        value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                        value = Download: {field:tx_org_downloads.title}'
                         lang {
-                          de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                          en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          de  = Herunterladen: {field:tx_org_downloads.title}'
+                          en  = Download: {field:tx_org_downloads.title}'
                         }
+                        insertData = 1
                       }
                     }
                   }
