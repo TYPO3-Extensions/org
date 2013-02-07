@@ -1326,8 +1326,10 @@ plugin.tx_browser_pi1 {
                     }
 
                   }
-                  tableField = tx_org_downloads.documents
-                  fields {
+                    // 130207, dwildt, 1+
+                  field = tx_org_downloads.documents
+                  //tableField = tx_org_downloads.documents
+                  XXXfields {
                     caption   = ###TABLE.DOCUMENTSCAPTION###
                     from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                       // #34988, 120318, dwildt, 1-
