@@ -926,7 +926,8 @@ plugin.tx_browser_pi1 {
               30 = COA
               30 {
                 if {
-                  value   = ###TX_ORG_DOWNLOADS.TYPE###
+                  //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                  field   = tx_org_downloads.type
                   equals  = shipping
                   negate  = 1
                 }
@@ -1066,7 +1067,8 @@ plugin.tx_browser_pi1 {
                       10 = COA
                       10 {
                         if {
-                          value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          field   = tx_org_downloads.type
                           equals  = shipping
                           negate  = 1
                         }
@@ -1083,8 +1085,9 @@ plugin.tx_browser_pi1 {
                           10 < tt_content.uploads.20.itemRendering.10
                           10 {
                             if {
-                              isPositive.field >
-                              isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                              //isPositive.field >
+                              //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                              isPositive.field   = tx_org_downloads.documentslayout
                             }
                           }
                         }
@@ -1093,7 +1096,8 @@ plugin.tx_browser_pi1 {
                         30 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                            //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                            if.isTrue.field   = tx_org_downloads.documents_display_label
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
                           }
@@ -1103,7 +1107,8 @@ plugin.tx_browser_pi1 {
                         40 {
                           10 < tt_content.uploads.20.itemRendering.20.2
                           10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                            //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                            if.isTrue.field = tx_org_downloads.documents_display_caption
                             wrap      = <td class="csc-uploads-file-caption">|</td>
                           }
                         }
@@ -1116,7 +1121,8 @@ plugin.tx_browser_pi1 {
                             10 < tt_content.uploads.20.itemRendering.30
                             10 {
                               if >
-                              if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                              if.isTrue.field = tx_org_downloads.documentssize
                               wrap >
                               bytes {
                                 labels = {$styles.content.uploads.filesizeBytesLabels}
@@ -1171,7 +1177,8 @@ plugin.tx_browser_pi1 {
                       20 = COA
                       20 {
                         if {
-                          value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          field   = tx_org_downloads.type
                           equals  = download
                           negate  = 1
                         }
@@ -1186,8 +1193,9 @@ plugin.tx_browser_pi1 {
                         20 = TEXT
                         20 {
                           if {
-                            isPositive.field >
-                            isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                            //isPositive.field >
+                            //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                            isPositive.field   = tx_org_downloads.documentslayout
                           }
                           value = &nbsp;
                           wrap  = <td class="csc-uploads-icon">|</td>
@@ -1197,7 +1205,8 @@ plugin.tx_browser_pi1 {
                         30 {
                           10 < tt_content.uploads.20.itemRendering.20.1
                           10 {
-                            if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                            //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                            if.isTrue.field   = tx_org_downloads.documents_display_label
                             wrap      = <td class="csc-uploads-file-name">|</td>
                             data = register:filename
                           }
@@ -1401,7 +1410,8 @@ plugin.tx_browser_pi1 {
                   10 = COA
                   10 {
                     if {
-                      value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      field   = tx_org_downloads.type
                       equals  = shipping
                       negate  = 1
                     }
@@ -1419,8 +1429,9 @@ plugin.tx_browser_pi1 {
                       10 < tt_content.uploads.20.itemRendering.10
                       10 {
                         if {
-                          isPositive.field >
-                          isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                          //isPositive.field >
+                          //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                          isPositive.field   = tx_org_downloads.documentslayout
                         }
                         wrap = <td class="csc-uploads-icon">|</td>
                       }
@@ -1430,7 +1441,8 @@ plugin.tx_browser_pi1 {
                     30 {
                       10 < tt_content.uploads.20.itemRendering.20.1
                       10 {
-                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        if.isTrue.field   = tx_org_downloads.documents_display_label
                         wrap      = <td class="csc-uploads-file-name">|</td>
                         data = register:filename
                       }
@@ -1440,7 +1452,8 @@ plugin.tx_browser_pi1 {
                     40 {
                       10 < tt_content.uploads.20.itemRendering.20.2
                       10 {
-                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
+                        if.isTrue.field = tx_org_downloads.documents_display_caption
                         wrap      = <td class="csc-uploads-file-caption">|</td>
                       }
                     }
@@ -1453,7 +1466,8 @@ plugin.tx_browser_pi1 {
                         10 < tt_content.uploads.20.itemRendering.30
                         10 {
                           if >
-                          if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                          //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
+                          if.isTrue.field = tx_org_downloads.documentssize
                           wrap >
                           bytes {
                             labels = {$styles.content.uploads.filesizeBytesLabels}
@@ -1508,7 +1522,8 @@ plugin.tx_browser_pi1 {
                   20 = COA
                   20 {
                     if {
-                      value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                      field   = tx_org_downloads.type
                       equals  = download
                       negate  = 1
                     }
@@ -1524,8 +1539,9 @@ plugin.tx_browser_pi1 {
                     20 = TEXT
                     20 {
                       if {
-                        isPositive.field >
-                        isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                        //isPositive.field >
+                        //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                        isPositive.field   = tx_org_downloads.documentslayout
                       }
                       value = &nbsp;
                       wrap  = <td class="csc-uploads-icon">|</td>
@@ -1535,7 +1551,8 @@ plugin.tx_browser_pi1 {
                     30 {
                       10 < tt_content.uploads.20.itemRendering.20.1
                       10 {
-                        if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
+                        if.isTrue.field   = tx_org_downloads.documents_display_label
                         wrap      = <td class="csc-uploads-file-name">|</td>
                       }
                     }
