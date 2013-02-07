@@ -810,6 +810,7 @@ plugin.tx_browser_pi1 {
                             insertData = 1
                           }
                           additionalParams  = &tx_browser_pi1[plugin]=###TT_CONTENT.UID###&tx_browser_pi1[file]=single.301.tx_org_downloads.###TX_ORG_DOWNLOADS.UID###.documents.###KEY###
+                          additionalParams  = &xxx=23
                           useCacheHash      = 1
                         }
                       }
