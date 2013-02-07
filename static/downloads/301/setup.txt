@@ -719,15 +719,15 @@ plugin.tx_browser_pi1 {
                   imagecaption = tx_org_downloads.documentscaption
                     // Adds the value from tx_org_downloads.documentslayout to layout
                   layout = tx_org_downloads.documentslayout
-                    // Adds the value from tx_org_downloads.documents to media
-                  media = tx_org_downloads.documents
+//                    // Adds the value from tx_org_downloads.documents to media
+//                  media = tx_org_downloads.documents
                     // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                 }
               }
                 // Don't outerWrap with <table> by default
 //                // 130207, dwildt, 1+
-//              field = tx_org_downloads.documents
+              field = tx_org_downloads.documents
               outerWrap = |
                 // 130207, dwildt, 1-
               filePath >
