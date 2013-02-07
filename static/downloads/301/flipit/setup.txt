@@ -177,7 +177,7 @@ plugin.tx_browser_pi1 {
               itemRendering {
                 20 {
                   10 {
-                    xx20 {
+                    20 {
                       10 >
                       10 < tt_content.uploads.20.itemRendering.layout_00.10
                       10 {
