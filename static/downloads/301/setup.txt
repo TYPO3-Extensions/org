@@ -753,9 +753,8 @@ plugin.tx_browser_pi1 {
                     width = 240m
                     width {
                       field >
-//                      override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
                       override {
-                        field = tx_org_downloads.thumbnial_width
+                        field = tx_org_downloads.thumbnail_width
                       }
                     }
                     height = 400m
@@ -780,7 +779,10 @@ plugin.tx_browser_pi1 {
                         width = 240m
                         width {
                           field >
-                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+//                          override = ###TX_ORG_DOWNLOADS.THUMBNAIL_WIDTH###
+                          override {
+                            field = tx_org_downloads.thumbnail_width
+                          }
                         }
                         height = 400m
                         height {
