@@ -18,6 +18,9 @@ plugin.tx_browser_pi1 {
                         10 {
                           wrap >
                         }
+                        20 {
+                          wrap >
+                        }
                         wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
                       }
                       wrap = <tr class="tx_flipit_layout_01">|</tr>
