@@ -1041,6 +1041,7 @@ plugin.tx_browser_pi1 {
                 conf =
                 conf {
                   userFunc >
+                  field = tx_org_downloads.documents
                     // Don't outerWrap with <table> by default
                   outerWrap = |
                   filePath >
@@ -1364,24 +1365,25 @@ plugin.tx_browser_pi1 {
                     }
 
                   }
-                  tableField = tx_org_downloads.documents
-                  fields {
-                    caption   = ###TABLE.DOCUMENTSCAPTION###
-                    from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                      // #34988, 120318, dwildt, 1-
-                    //files     = ###TABLE.DOCUMENTS###
-                    // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
-                    //files {
-                    //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                    //}
-                      // #34988, 120318, dwildt, 4+
-                    files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                    files {
-                      override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                    }
-                      // #34988, 120318, dwildt, 4+
-                    layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-                  }
+                    // 130207
+                  //tableField = tx_org_downloads.documents
+                  //fields {
+                  //  caption   = ###TABLE.DOCUMENTSCAPTION###
+                  //  from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
+                  //    // #34988, 120318, dwildt, 1-
+                  //  //files     = ###TABLE.DOCUMENTS###
+                  //  // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
+                  //  //files {
+                  //  //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                  //  //}
+                  //    // #34988, 120318, dwildt, 4+
+                  //  files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
+                  //  files {
+                  //    override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
+                  //  }
+                  //    // #34988, 120318, dwildt, 4+
+                  //  layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
+                  //}
                   stdWrap {
                     if.isTrue = ###TABLE.THUMBNAIL######TABLE.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                   }
