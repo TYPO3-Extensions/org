@@ -1,3 +1,12 @@
+3.1.5
+  13-02-14
+  Feature
+  * #45471: Property: Rendering a PDF as a bitmap
+            Effected files:
+            * ext_tables.php
+            * locallang_db.xml
+            * tca.php
+
 3.1.4
   13-02-07
   Bugfix

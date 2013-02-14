@@ -2171,7 +2171,7 @@ $TCA['tx_org_downloads'] = array (
                               'documents_from_path,documents,documentscaption,documentslayout,documents_display_label,documents_display_caption,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
-                              'tx_flipit_layout,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,tx_flipit_evaluate,' .
+                              'tx_flipit_layout,tx_flipit_quality,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,tx_flipit_evaluate,' .
                               'teaser_title,teaser_subtitle,teaser_short' .
                               'pages,' .
                               'fe_user,' .
@@ -2536,6 +2536,28 @@ $TCA['tx_org_downloads'] = array (
         'default' => 'ts',
       ),
     ),
+    'tx_flipit_quality' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality',
+      'config'  => array (
+        'type' => 'select',
+        'items' => array(
+          array(
+            'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality_item_high',
+            'high',
+          ),
+          array(
+            'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality_item_low',
+            'low',
+          ),
+          array(
+            'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality_item_ts',
+            'ts',
+          ),
+        ),
+        'default' => 'ts',
+      ),
+    ),      
     'tx_flipit_updateswfxml' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_updateswfxml',
@@ -2703,8 +2725,8 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
-//        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_properties;tx_flipit_properties,' .
         'tx_flipit_layout,' .
+        'tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2725,8 +2747,8 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link;link,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
-//        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_properties;tx_flipit_properties,' .
         'tx_flipit_layout,' .
+        'tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2747,8 +2769,8 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.link_shipping;link_shipping,    ' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
-//        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_properties;tx_flipit_properties,' .
         'tx_flipit_layout,' .
+        'tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2775,10 +2797,6 @@ $TCA['tx_org_downloads'] = array (
                     'tx_flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_swf_files', 
       'canNotCollapse' => 1,
     ),
-//    'tx_flipit_properties' => array (
-//      'showitem' => 'tx_flipit_evaluate;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_evaluate, tx_flipit_layout;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_layout',
-//      'canNotCollapse' => 1,
-//    ),
     'image_accessibility' => array (
       'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
       'canNotCollapse' => 1,
