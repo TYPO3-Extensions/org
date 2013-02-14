@@ -191,6 +191,8 @@ plugin.tx_browser_pi1 {
                 layout = tx_org_downloads.documentslayout
                   // Adds the value from tx_org_downloads.tx_flipit_layout to tx_flipit_layout
                 tx_flipit_layout = tx_org_downloads.tx_flipit_layout
+                  // Adds the value from tx_org_downloads.tx_flipit_quality to tx_flipit_quality
+                tx_flipit_quality = tx_org_downloads.tx_flipit_quality
               }
             }
               // 130207, dwildt, 2+
