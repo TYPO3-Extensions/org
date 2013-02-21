@@ -1,3 +1,14 @@
+3.1.6
+  13-02-21
+  Feature
+  * #45712: Handle PDF > 1.3
+            Pages with forms, shaded fills or transparency groups should rendered as bitmap
+            Effected files:
+            * ext_tables.sql
+            * locallang_db.xml
+            * tca.php
+            * static/downloads/301/setup.txt
+
 3.1.5
   13-02-14
   Feature

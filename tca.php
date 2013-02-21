@@ -2171,7 +2171,7 @@ $TCA['tx_org_downloads'] = array (
                               'documents_from_path,documents,documentscaption,documentslayout,documents_display_label,documents_display_caption,documentssize,' .
                               'thumbnail,thumbnail_width,thumbnail_height,' .
                               'linkicon_width,linkicon_height,' .
-                              'tx_flipit_layout,tx_flipit_quality,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,tx_flipit_evaluate,' .
+                              'tx_flipit_layout,tx_flipit_quality,tx_flipit_pagelist,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,tx_flipit_evaluate,' .
                               'teaser_title,teaser_subtitle,teaser_short' .
                               'pages,' .
                               'fe_user,' .
@@ -2558,6 +2558,17 @@ $TCA['tx_org_downloads'] = array (
         'default' => 'ts',
       ),
     ),      
+    'tx_flipit_pagelist' => array (
+      'exclude' => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_pagelist',
+      'config'  => array (
+        'type'      => 'input',
+        'size'      => '40',
+        'max'       => '256',
+        'checkbox'  => '',
+        'eval'      => 'trim',
+      ),
+    ),      
     'tx_flipit_updateswfxml' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_updateswfxml',
@@ -2726,7 +2737,7 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
         'tx_flipit_layout,' .
-        'tx_flipit_quality,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2748,7 +2759,7 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
         'tx_flipit_layout,' .
-        'tx_flipit_quality,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2770,7 +2781,7 @@ $TCA['tx_org_downloads'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.linkicon_size;linkicon_size,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_downloads.div_flipit,' .
         'tx_flipit_layout,' .
-        'tx_flipit_quality,' .
+        '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_quality,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_files;tx_flipit_files,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.tx_flipit_fancybox;tx_flipit_fancybox,' .
         'tx_flipit_evaluate,' .
@@ -2795,6 +2806,11 @@ $TCA['tx_org_downloads'] = array (
       'showitem' => 'tx_flipit_updateswfxml;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_updateswfxml, --linebreak--,' .
                     'tx_flipit_xml_file;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_xml_file, --linebreak--,' .
                     'tx_flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_swf_files', 
+      'canNotCollapse' => 1,
+    ),
+    'tx_flipit_quality' => array (
+      'showitem' => 'tx_flipit_quality;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality,' .
+                    'tx_flipit_pagelist;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_pagelist', 
       'canNotCollapse' => 1,
     ),
     'image_accessibility' => array (

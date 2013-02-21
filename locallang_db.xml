@@ -30,7 +30,7 @@
       <label index="palette.documentscaption">Description</label>
       <label index="palette.tx_flipit_fancybox">Lightbox</label>
       <label index="palette.tx_flipit_files">Files</label>
-      <label index="palette.tx_flipit_properties">Main properties</label>
+      <label index="palette.tx_flipit_quality">Quality and bitmap pages</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.link">Download link</label>
       <label index="palette.link_shipping">Link for shipping</label>
@@ -182,6 +182,7 @@
       <label index="tx_org_downloads.tx_flipit_layout_item_03">3: Flip it! and tt_content default</label>
       <label index="tx_org_downloads.tx_flipit_layout_item_ts">Value from the Constant Editor (recommended)</label>
       <label index="tx_org_downloads.tx_flipit_layout">Layout</label>
+      <label index="tx_org_downloads.tx_flipit_pagelist">Comma seperated list of pages, which should rendered as bitmap</label>
       <label index="tx_org_downloads.tx_flipit_quality">Quality</label>
       <label index="tx_org_downloads.tx_flipit_quality_item_high">High: vector file (best quality)</label>
       <label index="tx_org_downloads.tx_flipit_quality_item_low">Low: bitmap file (best performance)</label>
@@ -444,6 +445,7 @@
       <label index="palette.documentscaption">Kurzbeschreibung</label>
       <label index="palette.tx_flipit_fancybox">Lightbox</label>
       <label index="palette.tx_flipit_files">Dateien</label>
+      <label index="palette.tx_flipit_quality">Qualit<![CDATA[&auml;]]>t und Bitmap-Seiten</label>
       <label index="palette.tx_flipit_properties">Einstellungen</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.link">Download-Link</label>
@@ -593,6 +595,7 @@
       <label index="tx_org_downloads.tx_flipit_layout_item_02">2: Flip it! und tt_content-Standard ohne Download-Bild</label>
       <label index="tx_org_downloads.tx_flipit_layout_item_03">3: Flip it! und tt_content-Standard</label>
       <label index="tx_org_downloads.tx_flipit_layout_item_ts">Wert vom Konstanten-Editor (empfohlen)</label>
+      <label index="tx_org_downloads.tx_flipit_pagelist">Komma getrennte Liste von Seiten, die als Bitmap verarbeitet werden sollen</label>
       <label index="tx_org_downloads.tx_flipit_quality">Qualit<![CDATA[&auml;]]>t</label>
       <label index="tx_org_downloads.tx_flipit_quality_item_high">Hoch: Vektor-Datei (beste Qualit<![CDATA[&auml;]]>t)</label>
       <label index="tx_org_downloads.tx_flipit_quality_item_low">Niedrig: Bitmap-Datei (beste Performance)</label>

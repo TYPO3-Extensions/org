@@ -193,6 +193,8 @@ plugin.tx_browser_pi1 {
                 tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                   // Adds the value from tx_org_downloads.tx_flipit_quality to tx_flipit_quality
                 tx_flipit_quality = tx_org_downloads.tx_flipit_quality
+                  // Adds the value from tx_org_downloads.tx_flipit_pagelist to tx_flipit_pagelist
+                tx_flipit_pagelist = tx_org_downloads.tx_flipit_pagelist
               }
             }
               // 130207, dwildt, 2+
@@ -687,6 +689,7 @@ plugin.tx_browser_pi1 {
 
           tx_org_downloads.tx_flipit_fancybox,
           tx_org_downloads.tx_flipit_layout,
+          tx_org_downloads.tx_flipit_pagelist,
           tx_org_downloads.tx_flipit_quality,
           tx_org_downloads.tx_flipit_swf_files,
           tx_org_downloads.tx_flipit_updateswfxml,
@@ -744,6 +747,8 @@ plugin.tx_browser_pi1 {
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                     // Adds the value from tx_org_downloads.tx_flipit_quality to tx_flipit_quality
                   tx_flipit_quality = tx_org_downloads.tx_flipit_quality
+                    // Adds the value from tx_org_downloads.tx_flipit_pagelist to tx_flipit_pagelist
+                  tx_flipit_pagelist = tx_org_downloads.tx_flipit_pagelist
                 }
               }
 //                // 130207, dwildt, 2+
@@ -1011,6 +1016,8 @@ plugin.tx_browser_pi1 {
                   tx_flipit_layout = tx_org_downloads.tx_flipit_layout
                     // Adds the value from tx_org_downloads.tx_flipit_quality to tx_flipit_quality
                   tx_flipit_quality = tx_org_downloads.tx_flipit_quality
+                    // Adds the value from tx_org_downloads.tx_flipit_pagelist to tx_flipit_pagelist
+                  tx_flipit_pagelist = tx_org_downloads.tx_flipit_pagelist
                 }
                   // Should this TypoScript executed for each language record?
                 renderCurrentLanguageOnly = TEXT
