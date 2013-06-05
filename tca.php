@@ -4516,8 +4516,12 @@ $TCA['tx_org_headquarterscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,     title;;1;;1-1-1,icons,icon_offset_x,icon_offset_y,'.
-                                '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control, hidden'),
+    '0' => array ('showitem' =>  
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,' . 
+        'title;;1;;1-1-1,icons,icon_offset_x,icon_offset_y,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control,' . 
+        'hidden'
+    ),
   ),
   'palettes' => array (
     '1' => array ('showitem' => 'title_lang_ol,'),
@@ -4670,7 +4674,7 @@ $TCA['tx_org_location'] = array (
     ),
     'tx_org_cal' => array (
       'exclude'     => $bool_exclude_default,
-       'l10n_mode'  => 'exclude',
+      'l10n_mode'   => 'exclude',
       'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_location.tx_org_cal',
       'config'      => array (
         'type'                => 'select', 

@@ -1,3 +1,10 @@
+3.1.7
+  13-06-05
+  Bugfix
+  * #48871: Form Download and Ordering
+            Effected files:
+            * static/downloads/301/setup.txt
+
 3.1.6
   13-02-21
   Feature

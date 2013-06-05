@@ -71,7 +71,7 @@ plugin.tx_browser_pi1 {
   displayList {
     seo {
       htmlHead {
-      title = 1
+        title = 1
         meta {
           description = 1
           keywords    = 1
@@ -82,7 +82,7 @@ plugin.tx_browser_pi1 {
   displaySingle {
     seo {
       htmlHead {
-      title = 1
+        title = 1
         meta {
           description = 1
           keywords    = 1
