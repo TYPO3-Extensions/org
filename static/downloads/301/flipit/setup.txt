@@ -117,7 +117,8 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
-                        20 >
+                          // 130605, dwildt, 1-
+                        //20 >
                         30 {
                           10 >
                           10 < tt_content.uploads.20.itemRendering.layout_00.20.1
@@ -151,7 +152,8 @@ plugin.tx_browser_pi1 {
                         }
                       }
                       20 {
-                        20 >
+                          // 130605, dwildt, 1-
+                        //20 >
                         30 {
                           10 >
                           10 < tt_content.uploads.20.itemRendering.layout_00.20.1
