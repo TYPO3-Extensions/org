@@ -198,8 +198,8 @@ plugin.tx_browser_pi1 {
               }
             }
               // 130207, dwildt, 2+
-            field     = tx_org_downloads.documents
-            thumbnail = tx_org_downloads.thumbnail
+            field     = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.documents}
+            thumbnail = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.thumbnail}
               // Don't outerWrap with <table> by default
             outerWrap = |
               // 130207, dwildt, 1-
@@ -756,8 +756,8 @@ plugin.tx_browser_pi1 {
                 }
               }
 //                // 130207, dwildt, 2+
-              field     = tx_org_downloads.documents
-              thumbnail = tx_org_downloads.thumbnail
+              field     = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.documents}
+              thumbnail = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.thumbnail}
                 // Don't outerWrap with <table> by default
 //              outerWrap = <ul class="csc-uploads csc-uploads-{field:layout}">|</ul>
                 // 130207, dwildt, 1-
@@ -1065,8 +1065,8 @@ plugin.tx_browser_pi1 {
                 conf {
                   userFunc >
                     // 130207, dwildt, 2+
-                  field = tx_org_downloads.documents
-                  thumbnail = tx_org_downloads.thumbnail
+                  field = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.documents}
+                  thumbnail = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.thumbnail}
                     // Don't outerWrap with <table> by default
                   outerWrap = |
                   filePath >
@@ -1426,8 +1426,8 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // 130207, dwildt, 1+
-              field     = tx_org_downloads.documents
-              thumbnail = tx_org_downloads.thumbnail
+              field     = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.documents}
+              thumbnail = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.thumbnail}
                 // Don't outerWrap with <table> by default
               outerWrap = |
               filePath >

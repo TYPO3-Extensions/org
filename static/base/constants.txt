@@ -86,4 +86,19 @@ plugin.org {
   tx_wtcart_pi1.powermailContentUid =
   # cat=Organiser Shopping Cart//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page shopping cart for downloads contains it.
   tx_wtcart_pi1.powermailContentUid_downloads =
+
+  # cat=Organiser Table Downloads//100; type=+int; label= table:lable of the downloads table. Example: tx_org_downloads
+  table.downloads = tx_org_downloads
+  # cat=Organiser Table Downloads//200; type=+int; label= documents:field with uploaded files. Example: documents
+  table.downloads.field.documents = documents
+  # cat=Organiser Table Downloads//201; type=+int; label= caption:field with the caption. Example: documentscaption
+  table.downloads.field.documentscaption = documentscaption
+  # cat=Organiser Table Downloads//202; type=+int; label= layout:field with layout. Example: documentslayout
+  table.downloads.field.documentslayout = documentslayout
+  # cat=Organiser Table Downloads//203; type=+int; label= layout size:field with size layout. Example: documentssize
+  table.downloads.field.documentssize = documentssize
+  # cat=Organiser Table Downloads//204; type=+int; label= path:field with path. Example: documents_from_path
+  table.downloads.field.documents_from_path = documents_from_path
+  # cat=Organiser Table Downloads//300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
+  table.downloads.field.thumbnail = thumbnail  
 }
