@@ -440,6 +440,9 @@ plugin.tx_browser_pi1 {
             13 = CASE
             13 {
               key = ###TX_ORG_DOWNLOADS.TYPE###
+// TEST, 130605                
+              key >
+              key.field = tx_org_downloads.type
                 // download
               default = COA
               default {
