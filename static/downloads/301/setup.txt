@@ -964,9 +964,12 @@ plugin.tx_browser_pi1 {
               30 = COA
               30 {
                 if {
+                  // #48871
                   //value   = ###TX_ORG_DOWNLOADS.TYPE###
-                  field   = tx_org_downloads.type
-                  equals  = shipping
+                  //field   = tx_org_downloads.type
+                  //equals  = shipping
+                  value         = shipping
+                  equals.field  = tx_org_downloads.type
                   negate  = 1
                 }
                   // <span class="statistics-downloads">...</span>
@@ -1112,8 +1115,12 @@ plugin.tx_browser_pi1 {
                       10 = COA
                       10 {
                         if {
-                          field   = tx_org_downloads.type
-                          equals  = shipping
+                          // #48871
+                          //value   = ###TX_ORG_DOWNLOADS.TYPE###
+                          //field   = tx_org_downloads.type
+                          //equals  = shipping
+                          value         = shipping
+                          equals.field  = tx_org_downloads.type
                           negate  = 1
                         }
                         wrap = <tr class="download">|</tr>
@@ -1224,9 +1231,12 @@ plugin.tx_browser_pi1 {
                       20 = COA
                       20 {
                         if {
+                          // #48871
                           //value   = ###TX_ORG_DOWNLOADS.TYPE###
-                          field   = tx_org_downloads.type
-                          equals  = download
+                          //field   = tx_org_downloads.type
+                          //equals  = download
+                          value         = download
+                          equals.field  = tx_org_downloads.type
                           negate  = 1
                         }
                         wrap = <tr class="ordering">|</tr>
@@ -1462,9 +1472,12 @@ plugin.tx_browser_pi1 {
                   10 = COA
                   10 {
                     if {
+                      // #48871
                       //value   = ###TX_ORG_DOWNLOADS.TYPE###
-                      field   = tx_org_downloads.type
-                      equals  = shipping
+                      //field   = tx_org_downloads.type
+                      //equals  = shipping
+                      value         = shipping
+                      equals.field  = tx_org_downloads.type
                       negate  = 1
                     }
                     wrap = <tr class="download">|</tr>
@@ -1575,9 +1588,12 @@ plugin.tx_browser_pi1 {
                   20 = COA
                   20 {
                     if {
+                      // #48871
                       //value   = ###TX_ORG_DOWNLOADS.TYPE###
-                      field   = tx_org_downloads.type
-                      equals  = download
+                      //field   = tx_org_downloads.type
+                      //equals  = download
+                      value         = download
+                      equals.field  = tx_org_downloads.type
                       negate  = 1
                     }
                     wrap = <tr class="ordering">|</tr>
