@@ -1,8 +1,5 @@
 3.1.7
   13-06-05
-  Feature
-  * #48901: Field configuration by constant editor
-
   Bugfix
   * #48871: Form Download and Ordering
             Effected files:
