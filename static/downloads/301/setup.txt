@@ -969,7 +969,9 @@ plugin.tx_browser_pi1 {
                   //field   = tx_org_downloads.type
                   //equals  = shipping
                   value         = shipping
-                  equals.field  = tx_org_downloads.type
+                  equals {
+                    field  = tx_org_downloads.type
+                  }
                   negate  = 1
                 }
                   // <span class="statistics-downloads">...</span>
@@ -1090,7 +1092,7 @@ plugin.tx_browser_pi1 {
                         // <fieldset><legend>X</legend><input ... /><input ... /><input ... />
                       20 = TEXT
                       20 {
-                        value = Donwload or Ordering
+                        value = Download or Ordering
                         lang {
                           de = Herunterladen oder Bestellen
                         }
@@ -1111,7 +1113,7 @@ plugin.tx_browser_pi1 {
                       wrap (
               <table class="csc-uploads">|</table>
 )
-                        // <tr> ... Donwload link line ... </tr>
+                        // <tr> ... Download link line ... </tr>
                       10 = COA
                       10 {
                         if {
@@ -1120,7 +1122,9 @@ plugin.tx_browser_pi1 {
                           //field   = tx_org_downloads.type
                           //equals  = shipping
                           value         = shipping
-                          equals.field  = tx_org_downloads.type
+                          equals {
+                            field  = tx_org_downloads.type
+                          }
                           negate  = 1
                         }
                         wrap = <tr class="download">|</tr>
@@ -1236,7 +1240,9 @@ plugin.tx_browser_pi1 {
                           //field   = tx_org_downloads.type
                           //equals  = download
                           value         = download
-                          equals.field  = tx_org_downloads.type
+                          equals {
+                            field  = tx_org_downloads.type
+                          }
                           negate  = 1
                         }
                         wrap = <tr class="ordering">|</tr>
@@ -1447,7 +1453,7 @@ plugin.tx_browser_pi1 {
                     // <fieldset><legend>X</legend><input ... /><input ... /><input ... />
                   20 = TEXT
                   20 {
-                    value = Donwload or Ordering
+                    value = Download or Ordering
                     lang {
                       de = Herunterladen oder Bestellen
                     }
@@ -1477,7 +1483,9 @@ plugin.tx_browser_pi1 {
                       //field   = tx_org_downloads.type
                       //equals  = shipping
                       value         = shipping
-                      equals.field  = tx_org_downloads.type
+                      equals {
+                        field  = tx_org_downloads.type
+                      }
                       negate  = 1
                     }
                     wrap = <tr class="download">|</tr>
@@ -1593,7 +1601,9 @@ plugin.tx_browser_pi1 {
                       //field   = tx_org_downloads.type
                       //equals  = download
                       value         = download
-                      equals.field  = tx_org_downloads.type
+                      equals {
+                        field  = tx_org_downloads.type
+                      }
                       negate  = 1
                     }
                     wrap = <tr class="ordering">|</tr>
