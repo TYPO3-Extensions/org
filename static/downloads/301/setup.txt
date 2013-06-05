@@ -1405,10 +1405,11 @@ plugin.tx_browser_pi1 {
               }
                 // 130207, dwildt, 1+
               field = tx_org_downloads.documents
-                // #48871, 130605, dwildt, 17+
               field >
+                // #48871, 130605, dwildt, 17+
               field = COA
               field {
+                  // Returns 'tx_org_downloads.thumbnail', if tx_org_downloads.thumbnail has values
                 10 = TEXT
                 10 {
                   value = tx_org_downloads.thumbnail
@@ -1418,6 +1419,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
+                  // Returns 'tx_org_downloads.documents', if tx_org_downloads.thumbnail hasn't any value
                 20 = TEXT
                 20 {
                   value = tx_org_downloads.documents
