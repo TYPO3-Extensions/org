@@ -1,3 +1,9 @@
+3.1.8
+  13-06-10
+  Feature
+  * #46062: BrowserMaps: Localosation of the form labels
+            Effected files:
+            * static/headquarters/501/setup.txt
 3.1.7
   13-06-05
   Bugfix
