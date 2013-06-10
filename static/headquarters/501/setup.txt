@@ -154,6 +154,9 @@ plugin.tx_browser_pi1 {
                   ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_HEADQUARTERS.TITLE###, ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###<br />
                   <small>###TX_ORG_DEPARTMENT.TITLE###</small>
                 </p>
+                <p>
+                  ###TX_ORG_HEADQUARTERSCAT.TITLE###
+                </p>
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
             </div> <!-- /listview -->
