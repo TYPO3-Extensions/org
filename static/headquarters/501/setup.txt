@@ -52,7 +52,6 @@ plugin.tx_browser_pi1 {
         showUid = headquartersUid
         select (
           tx_org_headquarters.title,
-          tx_org_headquarters.pid,
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
           tx_org_headquarters.mail_address,
