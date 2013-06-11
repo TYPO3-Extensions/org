@@ -269,6 +269,7 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.description,
 
           tx_org_headquarterscat.title,
+          tx_org_headquarterscat.title_lang_ol,
           tx_org_headquarterscat.icons,
 
           tx_org_department.uid,
@@ -788,6 +789,9 @@ plugin.tx_browser_pi1 {
               ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
               ###TX_ORG_HEADQUARTERS.DOCUMENTS###
               ###MAP###
+                <p>
+                  #46062: ###TX_ORG_HEADQUARTERSCAT.TITLE###
+                </p>
               <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
             </div>
 <!-- ###AREA_FOR_AJAX_LIST_01### end -->
