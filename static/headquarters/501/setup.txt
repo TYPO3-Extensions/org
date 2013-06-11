@@ -60,7 +60,6 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.mail_lat,
           tx_org_headquarters.mail_lon,
           tx_org_headquarterscat.title,
-          tx_org_headquarterscat.title_lang_ol,
           tx_org_headquarterscat.icons,        
           tx_org_headquarterscat.icon_offset_x,       
           tx_org_headquarterscat.icon_offset_y
@@ -266,7 +265,6 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.description,
 
           tx_org_headquarterscat.title,
-          tx_org_headquarterscat.title_lang_ol,
           tx_org_headquarterscat.icons,
 
           tx_org_department.uid,
