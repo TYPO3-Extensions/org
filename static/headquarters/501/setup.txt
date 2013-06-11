@@ -154,9 +154,6 @@ plugin.tx_browser_pi1 {
                   ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_HEADQUARTERS.TITLE###, ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###<br />
                   <small>###TX_ORG_DEPARTMENT.TITLE###</small>
                 </p>
-                <p>
-                  #46062: ###TX_ORG_HEADQUARTERSCAT.TITLE###
-                </p>
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
             </div> <!-- /listview -->
@@ -788,9 +785,6 @@ plugin.tx_browser_pi1 {
               ###MY_DEPARTMENT_UL_CLOSE###
               ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
               ###TX_ORG_HEADQUARTERS.DOCUMENTS###
-                <p>
-                  #46062: ###TX_ORG_HEADQUARTERSCAT.TITLE###
-                </p>
               ###MAP###
               <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
             </div>
