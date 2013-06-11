@@ -788,10 +788,10 @@ plugin.tx_browser_pi1 {
               ###MY_DEPARTMENT_UL_CLOSE###
               ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
               ###TX_ORG_HEADQUARTERS.DOCUMENTS###
-              ###MAP###
                 <p>
                   #46062: ###TX_ORG_HEADQUARTERSCAT.TITLE###
                 </p>
+              ###MAP###
               <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
             </div>
 <!-- ###AREA_FOR_AJAX_LIST_01### end -->
