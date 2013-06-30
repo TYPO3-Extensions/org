@@ -4,7 +4,7 @@
 
 #slideshowWrapper{
   position:relative;
-  width:719px;
+  width:768px;
   margin:auto;
 }
 #fssPrev{
@@ -19,7 +19,7 @@
 #fssNext{
   position:absolute;
   top:-8px;
-  left:719px;
+  left:768px;
   background:url(arrows.png) no-repeat;
   width:67px;
   height:143px;
@@ -52,7 +52,7 @@ ul#slideshow{
 }
 #fssList{
   list-style:none;
-  width:719px;
+  width:768px;
   margin:auto;
   padding:5px 0 0 45%;
   top: -23px;
