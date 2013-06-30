@@ -61,7 +61,7 @@ ul#slideshow{
 }
 #fssList li{
   display:inline;
-/*  padding-right:10px;*/
+  padding-right:4px;
 }
 #fssList li a {
   font-weight:bold;
