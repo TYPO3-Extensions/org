@@ -22,6 +22,9 @@
 .tx-browser-pi1 .listview-402 h1 {
   display:none;
 }
+.tx-browser-pi1 .listview-402 .ui-tabs-list {
+  padding:0;
+}
 
 .tx-browser-pi1 .returntolist {
   display:block;
