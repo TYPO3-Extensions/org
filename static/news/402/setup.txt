@@ -208,7 +208,7 @@ plugin.tx_browser_pi1 {
             <!--
               jQuery(document).ready(function(){
                 jQuery('#slideshow').fadeSlideShow({
-                  width: 719, // Weite der SlideShow
+                  width: 768, // Weite der SlideShow
                   height: 130, // Höhe der Slideshow
                   speed: 'slow', // Animationsgeschwindigkeit
                   interval: 6000, // Zeit zwischen Bildwechsel 1000 = 1 Sekunde
