@@ -13,10 +13,12 @@
   padding-bottom:1em;
   text-align:center;
 }
+.tx-browser-pi1 .browsebox-list-402 {
+  display:none;
+}
 .tx-browser-pi1 .backbutton {
   text-align:right;
 }
-
 .tx-browser-pi1 .returntolist {
   display:block;
   padding-bottom:1em;

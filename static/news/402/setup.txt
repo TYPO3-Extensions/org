@@ -203,6 +203,8 @@ plugin.tx_browser_pi1 {
           subparts {
             listview = TEXT
             listview {
+            listview = TEXT
+            listview {
               value (
             <script type="text/javascript">
             <!--
