@@ -52,16 +52,16 @@ ul#slideshow{
 }
 #fssList{
   list-style:none;
-  width:768px;
+/*  width:768px;*/
   margin:auto;
-  padding:5px 0 0 45%;
+  padding:2px 0 0 10px;
   top: -23px;
   position:relative;
   opacity:.6;
 }
 #fssList li{
   display:inline;
-  padding-right:10px;
+/*  padding-right:10px;*/
 }
 #fssList li a {
   font-weight:bold;
