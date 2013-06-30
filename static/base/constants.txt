@@ -20,15 +20,17 @@ plugin.org {
   pages.location =
   # cat=Organiser Pages/page/107; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser Pages/page/108; type=+int; label= staff:Uid of your staff page
+  # cat=Organiser Pages/page/108; type=+int; label= news:Uid of your news slider page
+  pages.newsSlider =
+  # cat=Organiser Pages/page/109; type=+int; label= staff:Uid of your staff page
   pages.staff =
-  # cat=Organiser Pages/page/109; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
+  # cat=Organiser Pages/page/110; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
   pages.shopping_cart =
-  # cat=Organiser Pages/page/110; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
+  # cat=Organiser Pages/page/111; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
   pages.shopping_cart_downloads =
-  # cat=Organiser Pages/page/111; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
+  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
-  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
+  # cat=Organiser Pages/page/113; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
   pages.terms_downloads =
 
   # cat=Organiser Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
@@ -45,7 +47,9 @@ plugin.org {
   sysfolder.location =
   # cat=Organiser Sysfolders/page/107; type=+int; label= news:Uid of the sysfolder with the news data
   sysfolder.news =
-  # cat=Organiser Sysfolders/page/108; type=+int; label= staff:Uid of the sysfolder with the staff data
+  # cat=Organiser Sysfolders/page/108; type=+int; label= news:Uid of the sysfolder with the news slider data
+  sysfolder.newsSlider =
+  # cat=Organiser Sysfolders/page/109; type=+int; label= staff:Uid of the sysfolder with the staff data
   sysfolder.staff =
 
   # cat=Organiser static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)

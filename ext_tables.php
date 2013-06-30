@@ -191,6 +191,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/211/',          '+Org: Kalender - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401/',              '+Org: Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: Nachrichten - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: Nachrichten - Slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personal');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
@@ -231,6 +232,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Locations - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401/',              '+Org: News');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: News - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Shopping cart for downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Shopping cart for tickets');
