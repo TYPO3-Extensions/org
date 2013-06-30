@@ -19,6 +19,10 @@
 .tx-browser-pi1 .backbutton {
   text-align:right;
 }
+.tx-browser-pi1 .listview-402 h1 {
+  display:none;
+}
+
 .tx-browser-pi1 .returntolist {
   display:block;
   padding-bottom:1em;

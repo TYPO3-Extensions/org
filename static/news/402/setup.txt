@@ -201,10 +201,10 @@ plugin.tx_browser_pi1 {
         htmlSnippets =
         htmlSnippets {
           subparts {
-            listview = TEXT
-            listview {
-            listview = TEXT
-            listview {
+            //listview = TEXT
+            //listview {
+            template_list = TEXT
+            template_list {
               value (
             <script type="text/javascript">
             <!--
