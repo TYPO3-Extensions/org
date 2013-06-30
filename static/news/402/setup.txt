@@ -7,7 +7,9 @@
   // plugin.tx_browser_pi1
   //    views
   //      402: +Org: Slider (News)
-
+  // page
+  //   includeCSS
+  //   includeJSFooter
 
 
   ////////////////////////////////////////
@@ -508,12 +510,10 @@ page {
 )
   }
   includeCSS {
-    organiser >
-    402_organiser = EXT:base_html5/res/template/ext/org/slider/402/default.css
+    fadeSlideShow = EXT:org/res/jss/fadeSlideShow/fadeSlideShow.css
   }
   includeJSFooter {
-    //fadeSlideShow = EXT:base_html5/res/template/jss/simpleFadeSlideShow_210/fadeSlideShow.js
-    fadeSlideShow = EXT:base_html5/res/template/ext/org/slider/402/fadeSlideShow.js
+    fadeSlideShow = EXT:org/res/jss/fadeSlideShow/fadeSlideShow.js
   }
 }
   // page
