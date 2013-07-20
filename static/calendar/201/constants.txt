@@ -1,0 +1,32 @@
+plugin.caddy {
+  db {
+    table = tx_org_cal
+    sku   = uid
+    min   = 
+    max   = 
+  }
+  getpost {
+    uid = tx_browser_pi1|showUid
+    qty = quantity
+  }
+  html {
+    bordercolor = #FF9B00
+  }
+  main {
+    dueDateFormat = %d. %b. %Y
+  }
+  pdf {
+    textColor {
+      address             = #333333
+      caddy               = #FF9B00
+      date                = #FF9B00
+      numberDeliveryorder = #FF9B00
+      numberInvoice       = #FF9B00
+      numberLine          = #333333
+      numberOrder         = #FF9B00
+      revocation          = #FF9B00
+      termOfCredit        = #333333
+      terms               = #FF9B00
+    }
+  }
+}
