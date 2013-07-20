@@ -6,7 +6,7 @@ plugin.caddy {
     max   = 
   }
   getpost {
-    uid = tx_browser_pi1|showUid
+    uid = tx_browser_pi1|calendarUid
     qty = quantity
   }
   html {
