@@ -4,59 +4,55 @@
   //
   // INDEX
 
-  // globals: page / SEO
+  // plugin.tx_caddy_pi1
   // plugin.tx_browser_pi1 - SEO
   // plugin.tx_browser_pi1
   // plugin.tx_linkhandler
   // page
-
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  //
   // globals: page / SEO
 
-  //    showUid
-  //    calendarUid
-  //    departmentUid
-  //    downloadsUid
-  //    downloadscatUid
-  //    eventUid
-  //    headquarterUid
-  //    locationUid
-  //    newsUid
-  //    staffUid
 
-[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
-  page {
-    config {
-      noPageTitle = 2
-    }
-    headerData {
-      20 = TEXT
-      20 {
-        data = register:browser_htmlTitleTag
-        ifEmpty {
-          field = title
-          noTrimWrap  = |TYPO3 Organiser: ||
-        }
-        wrap = <title>|</title>
-      }
-    }
-    meta {
-      description {
-        field >
-        data = register:browser_description
-      }
-      keywords {
-        field >
-        data = register:browser_keywords
-      }
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_caddy_pi1
+  
+plugin.tx_caddy_pi1 {
+  db {
+    sql = TEXT
+    sql {
+      value (
+        SELECT CONCAT(
+                '<strong>', tx_org_cal.title, '</strong><br />',
+                '###GP:TX_ORG_CAL.DATETIME###<br />', 
+                'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') as title,
+                tx_org_calentrance.value as gross, 
+                tx_org_tax.value as tax
+        FROM `tx_org_cal`
+        LEFT JOIN tx_org_cal_mm_tx_org_calentrance 
+        ON (
+          tx_org_cal_mm_tx_org_calentrance.uid_local = tx_org_cal.uid)
+        LEFT JOIN tx_org_calentrance 
+        ON (
+              tx_org_cal_mm_tx_org_calentrance.uid_foreign  = tx_org_calentrance.uid
+          AND tx_org_calentrance.uid                        = '###GP:TX_ORG_CALENTRANCE.UID###'
+          ###ENABLE_FIELDS:TX_ORG_CALENTRANCE###)
+        LEFT JOIN tx_org_tax 
+        ON (
+              tx_org_calentrance.tx_org_tax = tx_org_tax.uid
+          ###ENABLE_FIELDS:TX_ORG_TAX###)
+        WHERE tx_org_cal.uid                = '###GP:TX_ORG_CAL.UID###'
+          ###ENABLE_FIELDS:TX_ORG_CAL###
+)
     }
   }
-[global]
-  // globals: page / SEO
+  settings {
+    variant {
+      10 = tx_org_calentrance.uid
+    }
+  }
+}
+  // plugin.tx_caddy_pi1
 
 
 
@@ -308,3 +304,47 @@ page {
   )
 }
   // page
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // globals: page / SEO
+
+  //    showUid
+  //    calendarUid
+  //    departmentUid
+  //    downloadsUid
+  //    downloadscatUid
+  //    eventUid
+  //    headquarterUid
+  //    locationUid
+  //    newsUid
+  //    staffUid
+
+[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+  page {
+    config {
+      noPageTitle = 2
+    }
+    headerData {
+      20 = TEXT
+      20 {
+        data = register:browser_htmlTitleTag
+        ifEmpty {
+          field = title
+          noTrimWrap  = |TYPO3 Organiser: ||
+        }
+        wrap = <title>|</title>
+      }
+    }
+    meta {
+      description {
+        field >
+        data = register:browser_description
+      }
+      keywords {
+        field >
+        data = register:browser_keywords
+      }
+    }
+  }
+[global]
+  // globals: page / SEO
