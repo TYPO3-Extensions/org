@@ -4,7 +4,10 @@
   * #50236: Integration of caddy
             Effected files:
             * static
-              * calendar/201/constants.txt
+              * calendar
+                * 201/constants.txt
+              * downloads
+                * 301/constants.txt
 
 3.1.8
   13-06-30

@@ -4,105 +4,105 @@ plugin.tx_browser_pi1 {
 
 plugin.org {
 
-  # cat=Organiser Pages/page/100; type=+int; label= calendar:Uid of your calendar page
+  # cat=Organiser - Pages/page/100; type=+int; label= calendar:Uid of your calendar page
   pages.calendar =
-  # cat=Organiser Pages/page/101; type=+int; label= calendar with expired dates (archive):Uid of your calendar page with expired dates. It is the calendar archive.
+  # cat=Organiser - Pages/page/101; type=+int; label= calendar with expired dates (archive):Uid of your calendar page with expired dates. It is the calendar archive.
   pages.calendar_expired =
-  # cat=Organiser Pages/page/102; type=+int; label= department:Uid of your department page
+  # cat=Organiser - Pages/page/102; type=+int; label= department:Uid of your department page
   pages.department =
-  # cat=Organiser Pages/page/103; type=+int; label= downloads:Uid of your downloads page
+  # cat=Organiser - Pages/page/103; type=+int; label= downloads:Uid of your downloads page
   pages.downloads =
-  # cat=Organiser Pages/page/104; type=+int; label= event:Uid of your event page
+  # cat=Organiser - Pages/page/104; type=+int; label= event:Uid of your event page
   pages.event =
-  # cat=Organiser Pages/page/105; type=+int; label= headquarters:Uid of your headquarters page
+  # cat=Organiser - Pages/page/105; type=+int; label= headquarters:Uid of your headquarters page
   pages.headquarter =
-  # cat=Organiser Pages/page/106; type=+int; label= locations:Uid of your locations page
+  # cat=Organiser - Pages/page/106; type=+int; label= locations:Uid of your locations page
   pages.location =
-  # cat=Organiser Pages/page/107; type=+int; label= news:Uid of your news page
+  # cat=Organiser - Pages/page/107; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser Pages/page/108; type=+int; label= news:Uid of your news slider page
+  # cat=Organiser - Pages/page/108; type=+int; label= news:Uid of your news slider page
   pages.newsSlider =
-  # cat=Organiser Pages/page/109; type=+int; label= staff:Uid of your staff page
+  # cat=Organiser - Pages/page/109; type=+int; label= staff:Uid of your staff page
   pages.staff =
-  # cat=Organiser Pages/page/110; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
+  # cat=Organiser - Pages/page/110; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
   pages.shopping_cart =
-  # cat=Organiser Pages/page/111; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
+  # cat=Organiser - Pages/page/111; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
   pages.shopping_cart_downloads =
-  # cat=Organiser Pages/page/112; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
+  # cat=Organiser - Pages/page/112; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
-  # cat=Organiser Pages/page/113; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
+  # cat=Organiser - Pages/page/113; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
   pages.terms_downloads =
 
-  # cat=Organiser Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
+  # cat=Organiser - Sysfolders/page/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =
-  # cat=Organiser Sysfolders/page/102; type=+int; label= department:Uid of the sysfolder with the department data
+  # cat=Organiser - Sysfolders/page/102; type=+int; label= department:Uid of the sysfolder with the department data
   sysfolder.department =
-  # cat=Organiser Sysfolders/page/103; type=+int; label= downloads:Uid of the sysfolder with the downloads
+  # cat=Organiser - Sysfolders/page/103; type=+int; label= downloads:Uid of the sysfolder with the downloads
   sysfolder.downloads =
-  # cat=Organiser Sysfolders/page/104; type=+int; label= event:Uid of the sysfolder with the event data
+  # cat=Organiser - Sysfolders/page/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
-  # cat=Organiser Sysfolders/page/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
+  # cat=Organiser - Sysfolders/page/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
   sysfolder.headquarter =
-  # cat=Organiser Sysfolders/page/106; type=+int; label= locations:Uid of the sysfolder with the locations data
+  # cat=Organiser - Sysfolders/page/106; type=+int; label= locations:Uid of the sysfolder with the locations data
   sysfolder.location =
-  # cat=Organiser Sysfolders/page/107; type=+int; label= news:Uid of the sysfolder with the news data
+  # cat=Organiser - Sysfolders/page/107; type=+int; label= news:Uid of the sysfolder with the news data
   sysfolder.news =
-  # cat=Organiser Sysfolders/page/108; type=+int; label= news:Uid of the sysfolder with the news slider data
+  # cat=Organiser - Sysfolders/page/108; type=+int; label= news:Uid of the sysfolder with the news slider data
   sysfolder.newsSlider =
-  # cat=Organiser Sysfolders/page/109; type=+int; label= staff:Uid of the sysfolder with the staff data
+  # cat=Organiser - Sysfolders/page/109; type=+int; label= staff:Uid of the sysfolder with the staff data
   sysfolder.staff =
 
-  # cat=Organiser static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)
+  # cat=Organiser - static url/page/100; type=+int; label= [default] calendar:URL of your calendar (default language)
   url.default.calendar = schedule/
-  # cat=Organiser static url/page/101; type=+int; label= [default] downloads:URL of your downloads manager (default language)
+  # cat=Organiser - static url/page/101; type=+int; label= [default] downloads:URL of your downloads manager (default language)
   url.default.downloads = downloads/
-  # cat=Organiser static url/page/107; type=+int; label= [default] shopping cart tickets:URL of your shopping cart for tickets(default language)
+  # cat=Organiser - static url/page/107; type=+int; label= [default] shopping cart tickets:URL of your shopping cart for tickets(default language)
   url.default.shopping_cart = tickets/
-  # cat=Organiser static url/page/108; type=+int; label= [default] shopping cart downloads:URL of your shopping cart for downloads(default language)
+  # cat=Organiser - static url/page/108; type=+int; label= [default] shopping cart downloads:URL of your shopping cart for downloads(default language)
   url.default.shopping_cart_downloads = orders/
-  # cat=Organiser static url/page/109; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
+  # cat=Organiser - static url/page/109; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
   url.default.terms = tickets/terms/
-  # cat=Organiser static url/page/110; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
+  # cat=Organiser - static url/page/110; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
   url.default.terms_downloads = downloads/terms/
 
-  # cat=Organiser static url/page/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
+  # cat=Organiser - static url/page/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
   url.de.calendar = spielplan/
-  # cat=Organiser static url/page/201; type=+int; label= [de] Downloads:URL of your download manager (only if German is configured!)
+  # cat=Organiser - static url/page/201; type=+int; label= [de] Downloads:URL of your download manager (only if German is configured!)
   url.de.downloads = downloads/
-  # cat=Organiser static url/page/207; type=+int; label= [de] Warenkorb Eintrittskarten:URL of your shopping cart for tickets (only if German is configured!)
+  # cat=Organiser - static url/page/207; type=+int; label= [de] Warenkorb Eintrittskarten:URL of your shopping cart for tickets (only if German is configured!)
   url.de.shopping_cart = karten/
-  # cat=Organiser static url/page/208; type=+int; label= [de] Warenkorb Downloads:URL of your shopping cart for downloads (only if German is configured!)
+  # cat=Organiser - static url/page/208; type=+int; label= [de] Warenkorb Downloads:URL of your shopping cart for downloads (only if German is configured!)
   url.de.shopping_cart_downloads = bestellungen/
-  # cat=Organiser static url/page/209; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
+  # cat=Organiser - static url/page/209; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
   url.de.terms = karten/agb/
-  # cat=Organiser static url/page/210; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
+  # cat=Organiser - static url/page/210; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
   url.de.terms_downloads = downloads/agb/
 
-  # cat=Organiser Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
+  # cat=Organiser - Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
   powermail.noreply = no-reply@typo3-organiser.de
-  # cat=Organiser Shopping Cart//101; type=string; label= sender name:name of the sender
+  # cat=Organiser - Shopping Cart//101; type=string; label= sender name:name of the sender
   powermail.sender.name = Organiser ticket
-  # cat=Organiser Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
+  # cat=Organiser - Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
   powermail.sender.mail = ticket@typo3-organiser.de
-  # cat=Organiser Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
+  # cat=Organiser - Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
   powermail.sender.mail = ticket@typo3-organiser.de
-  # cat=Organiser Shopping Cart//103; type=+int; label= Uid of the order form for events:Uid of the content element with the powermail form for events. The page shopping cart for events contains it.
+  # cat=Organiser - Shopping Cart//103; type=+int; label= Uid of the order form for events:Uid of the content element with the powermail form for events. The page shopping cart for events contains it.
   tx_wtcart_pi1.powermailContentUid =
-  # cat=Organiser Shopping Cart//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page shopping cart for downloads contains it.
+  # cat=Organiser - Shopping Cart//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page shopping cart for downloads contains it.
   tx_wtcart_pi1.powermailContentUid_downloads =
 
-  # cat=Organiser Table Downloads//100; type=+int; label= table:lable of the downloads table. Example: tx_org_downloads
+  # cat=Organiser - Table Downloads//100; type=+int; label= table:lable of the downloads table. Example: tx_org_downloads
   table.downloads = tx_org_downloads
-  # cat=Organiser Table Downloads//200; type=+int; label= documents:field with uploaded files. Example: documents
+  # cat=Organiser - Table Downloads//200; type=+int; label= documents:field with uploaded files. Example: documents
   table.downloads.field.documents = documents
-  # cat=Organiser Table Downloads//201; type=+int; label= caption:field with the caption. Example: documentscaption
+  # cat=Organiser - Table Downloads//201; type=+int; label= caption:field with the caption. Example: documentscaption
   table.downloads.field.documentscaption = documentscaption
-  # cat=Organiser Table Downloads//202; type=+int; label= layout:field with layout. Example: documentslayout
+  # cat=Organiser - Table Downloads//202; type=+int; label= layout:field with layout. Example: documentslayout
   table.downloads.field.documentslayout = documentslayout
-  # cat=Organiser Table Downloads//203; type=+int; label= layout size:field with size layout. Example: documentssize
+  # cat=Organiser - Table Downloads//203; type=+int; label= layout size:field with size layout. Example: documentssize
   table.downloads.field.documentssize = documentssize
-  # cat=Organiser Table Downloads//204; type=+int; label= path:field with path. Example: documents_from_path
+  # cat=Organiser - Table Downloads//204; type=+int; label= path:field with path. Example: documents_from_path
   table.downloads.field.documents_from_path = documents_from_path
-  # cat=Organiser Table Downloads//300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
+  # cat=Organiser - Table Downloads//300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
   table.downloads.field.thumbnail = thumbnail  
 }
