@@ -5,9 +5,13 @@
             Effected files:
             * static
               * calendar
-                * 201/constants.txt
+                * 201
+                  * constants.txt
+                  * setup.txt
               * downloads
-                * 301/constants.txt
+                * 301
+                  * constants.txt
+                  * setup.txt
 
 3.1.8
   13-06-30
