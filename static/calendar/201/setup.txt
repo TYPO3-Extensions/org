@@ -44,6 +44,7 @@ plugin.tx_caddy_pi1 {
         WHERE tx_org_cal.uid                = '###GP:TX_ORG_CAL.UID###'
           ###ENABLE_FIELDS:TX_ORG_CAL###
 )
+      insertData = 1
     }
   }
   settings {
