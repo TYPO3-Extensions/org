@@ -4,9 +4,23 @@
   //
   // INDEX
 
+  // plugin.tx_caddy_pi1
   // plugin.tx_browser_pi1
   //    views
   //      301: +Org: Downloads
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_caddy_pi1
+  
+plugin.tx_caddy_pi1 {
+  db {
+    sql >
+  }
+}
+  // plugin.tx_caddy_pi1
 
 
 
