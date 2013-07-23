@@ -1,7 +1,6 @@
 plugin.caddy {
   db {
     table = tx_org_downloads
-    sku   = uid
     min   = 
     max   = 
   }

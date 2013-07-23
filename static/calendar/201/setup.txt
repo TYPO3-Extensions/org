@@ -17,15 +17,17 @@
   
 plugin.tx_caddy_pi1 {
   db {
+    sql >
     sql = TEXT
     sql {
       value (
-        SELECT CONCAT(
-                '<strong>', tx_org_cal.title, '</strong><br />',
-                '###GP:TX_ORG_CAL.DATETIME###<br />', 
-                'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') as title,
-                tx_org_calentrance.value as gross, 
-                tx_org_tax.value as tax
+        SELECT CAST('{GP:tx_org_cal|uid}' AS SIGNED)                                                AS puid,
+               CONCAT('<strong>', tx_org_cal.title, '</strong><br />',
+                      '###GP:TX_ORG_CAL.DATETIME###<br />', 
+                      'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') AS title,
+                tx_org_calentrance.value                                                            AS gross, 
+                tx_org_tax.value                                                                    AS tax,
+                CAST('{GP:tx_org_cal|uid}' AS SIGNED)                                               AS sku
         FROM `tx_org_cal`
         LEFT JOIN tx_org_cal_mm_tx_org_calentrance 
         ON (
