@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
     list {
       701 = +Org: Locations
       701 {
-        name    = Veranstaltungsorte
+        name    = +Org: Locations
         showUid = locationUid
         select (
           tx_org_location.title,

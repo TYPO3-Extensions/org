@@ -20,11 +20,11 @@ plugin.tx_browser_pi1 {
     list {
       101 = +Org: Staff
       101 {
+        name    = +Org: Staff
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
           selectBox_orderBy.display = 0
         }
-        name    = Personen
         showUid = staffUid
         select (
           fe_users.last_name,
