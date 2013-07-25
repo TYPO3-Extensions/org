@@ -118,6 +118,7 @@ switch($confArr['store_records'])
     $str_store_record_conf              = null;
     $str_marker_pid                     = null;
     $bool_full_wizardSupport_allTables  = true;
+    break;
   case('Multi grouped: record groups in different directories'):
     $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
     $bool_full_wizardSupport_allTables  = false;
