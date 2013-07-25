@@ -3,6 +3,7 @@
   Feature
   * #50445: Simplify PAGE_TSCONFIG_IDLIST and PAGE_TSCONFIG_ID
             Effected files:
+            * ext_conf_template.txt
             * ext_tables.php
             * tca.php
   * #50236: Integration of caddy
