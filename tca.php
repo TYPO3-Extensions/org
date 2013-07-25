@@ -114,28 +114,33 @@ if (strtolower(substr($confArr['full_wizardSupport'], 0, strlen('no'))) == 'no')
   // Store record configuration
 switch($confArr['store_records']) 
 {
-  case('5'):
-      // #50445, 130725, dwildt, +
-    $str_store_record_conf              = 'uid > 0';
-    $str_marker_pid                     = null;
+  case('Easy 1: all in the same directory'):                            // organiser < v3.x
+  case('Current folder'):
+    $str_store_record_conf              = 'pid=###CURRENT_PID###';
+    $str_marker_pid                     = '###CURRENT_PID###';
     $bool_full_wizardSupport_allTables  = true;
     break;
-  case('Multi grouped: record groups in different directories'):
-    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
-    $bool_full_wizardSupport_allTables  = false;
-    break;
-  case('Clear presented: each record group in one directory at most'):
-    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_ID###)';
-    $bool_full_wizardSupport_allTables  = true;
-    break;
-  case('Easy 2: same as 1 but with storage pid'):
+  case('Easy 2: same as 1 but with storage pid'):                       // organiser < v3.x
+  case('Folder with a storage pid'):
     $str_store_record_conf  = 'pid=###STORAGE_PID###';
     $str_marker_pid         = '###STORAGE_PID###';
     $bool_full_wizardSupport_allTables  = true;
-  case('Easy 1: all in the same directory'):
+  case('Clear presented: each record group in one directory at most'):  // organiser < v3.x
+  case('Folder group'):
+    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_ID###)';
+    $bool_full_wizardSupport_allTables  = true;
+    break;
+  case('Multi grouped: record groups in different directories'):        // organiser < v3.x
+  case('Folder multigroup'):
+    $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
+    $bool_full_wizardSupport_allTables  = false;
+    break;
+  case('Everywhere (recommended)'):
   default:
-    $str_store_record_conf  = 'pid=###CURRENT_PID###';
-    $str_marker_pid         = '###CURRENT_PID###';
+      // #50445, 130725, dwildt, +
+      // dummy for a proper sql query
+    $str_store_record_conf              = 'uid > 0';
+    $str_marker_pid                     = null;
     $bool_full_wizardSupport_allTables  = true;
 }
   // Store record configuration
