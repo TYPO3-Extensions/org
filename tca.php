@@ -115,7 +115,8 @@ if (strtolower(substr($confArr['full_wizardSupport'], 0, strlen('no'))) == 'no')
 switch($confArr['store_records']) 
 {
   case('5'):
-    $str_store_record_conf              = null;
+      // #50445, 130725, dwildt, +
+    $str_store_record_conf              = 'uid > 0';
     $str_marker_pid                     = null;
     $bool_full_wizardSupport_allTables  = true;
     break;
