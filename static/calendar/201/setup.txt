@@ -4,56 +4,9 @@
   //
   // INDEX
 
-  // plugin.tx_caddy_pi1
   // plugin.tx_browser_pi1
   //    views
   //      201: +Org: Calendar
-
-
-
-  ////////////////////////////////////////
-  //
-  // plugin.tx_caddy_pi1
-  
-plugin.tx_caddy_pi1 {
-  db {
-    sql >
-    sql = TEXT
-    sql {
-      value (
-        SELECT CAST('{GP:tx_org_cal|uid}' AS SIGNED)                                                AS puid,
-               CONCAT('<strong>', tx_org_cal.title, '</strong><br />',
-                      '###GP:TX_ORG_CAL.DATETIME###<br />', 
-                      'Karte ', tx_org_calentrance.title, ' ', tx_org_calentrance.value, ' &euro;') AS title,
-                tx_org_calentrance.value                                                            AS gross, 
-                tx_org_tax.value                                                                    AS tax,
-                CAST('{GP:tx_org_cal|uid}' AS SIGNED)                                               AS sku
-        FROM `tx_org_cal`
-        LEFT JOIN tx_org_cal_mm_tx_org_calentrance 
-        ON (
-          tx_org_cal_mm_tx_org_calentrance.uid_local = tx_org_cal.uid)
-        LEFT JOIN tx_org_calentrance 
-        ON (
-              tx_org_cal_mm_tx_org_calentrance.uid_foreign  = tx_org_calentrance.uid
-          AND tx_org_calentrance.uid                        = '###GP:TX_ORG_CALENTRANCE.UID###'
-          ###ENABLE_FIELDS:TX_ORG_CALENTRANCE###)
-        LEFT JOIN tx_org_tax 
-        ON (
-              tx_org_calentrance.tx_org_tax = tx_org_tax.uid
-          ###ENABLE_FIELDS:TX_ORG_TAX###)
-        WHERE tx_org_cal.uid                = '###GP:TX_ORG_CAL.UID###'
-          ###ENABLE_FIELDS:TX_ORG_CAL###
-)
-      insertData = 1
-    }
-  }
-  settings {
-    variant {
-      10 = tx_org_calentrance.uid
-    }
-  }
-}
-  // plugin.tx_caddy_pi1
 
 
 

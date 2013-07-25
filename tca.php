@@ -112,24 +112,29 @@ if (strtolower(substr($confArr['full_wizardSupport'], 0, strlen('no'))) == 'no')
   // Full wizard support
 
   // Store record configuration
-$bool_full_wizardSupport_allTables = true;
 switch($confArr['store_records']) 
 {
+  case('5'):
+    $str_store_record_conf              = null;
+    $str_marker_pid                     = null;
+    $bool_full_wizardSupport_allTables  = true;
   case('Multi grouped: record groups in different directories'):
     $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_IDLIST###)';
     $bool_full_wizardSupport_allTables  = false;
     break;
   case('Clear presented: each record group in one directory at most'):
     $str_store_record_conf              = 'pid IN (###PAGE_TSCONFIG_ID###)';
-  ##$bool_full_wizardSupport_allTables  = false;
+    $bool_full_wizardSupport_allTables  = true;
     break;
   case('Easy 2: same as 1 but with storage pid'):
-    $str_marker_pid         = '###STORAGE_PID###';
     $str_store_record_conf  = 'pid=###STORAGE_PID###';
+    $str_marker_pid         = '###STORAGE_PID###';
+    $bool_full_wizardSupport_allTables  = true;
   case('Easy 1: all in the same directory'):
   default:
-    $str_marker_pid         = '###CURRENT_PID###';
     $str_store_record_conf  = 'pid=###CURRENT_PID###';
+    $str_marker_pid         = '###CURRENT_PID###';
+    $bool_full_wizardSupport_allTables  = true;
 }
   // Store record configuration
   // Configuration by the extension manager
