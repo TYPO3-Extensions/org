@@ -20,8 +20,6 @@ plugin.org {
   pages.location =
   # cat=Organiser - Pages/page/107; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser - Pages/page/108; type=+int; label= news:Uid of your news slider page
-  pages.newsSlider =
   # cat=Organiser - Pages/page/109; type=+int; label= staff:Uid of your staff page
   pages.staff =
   # cat=Organiser - Pages/page/110; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
