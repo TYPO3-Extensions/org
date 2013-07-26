@@ -5,7 +5,7 @@ plugin.tx_caddy_pi1 {
     sql {
       value (
         SELECT CAST('{GP:tx_org_downloads|uid}' AS SIGNED)  AS puid,
-               CONCAT('<img src="{$myConst.host}typo3/gfx/flags/{GP:sys_language|flag}.gif" alt="{GP:tx_org_downloads|documents} ({GP:sys_language|title})" title="{GP:tx_org_downloads|documents} ({GP:sys_language|title})"/>',                      
+               CONCAT('<img src="{$config.baseURL}typo3/gfx/flags/{GP:sys_language|flag}.gif" alt="{GP:tx_org_downloads|documents} ({GP:sys_language|title})" title="{GP:tx_org_downloads|documents} ({GP:sys_language|title})"/>',                      
                       ' ',
                       '<strong>', 
                       tx_org_downloads.title, ' </strong>') AS title,
