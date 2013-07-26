@@ -287,8 +287,8 @@ plugin.tx_browser_pi1 {
                 }
                 30 = TEXT
                 30 {
-                  value   = more &raquo;
-                  lang.de = mehr &raquo;
+                  value   = Website &raquo;
+                  lang.de = Website &raquo;
                   typolink {
                     parameter = ###TX_ORG_CAL.CALURL###
                   }
