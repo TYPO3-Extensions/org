@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'category' => 'plugin',
 	'shy' => 0,
 	'version' => '3.2.0',
-	'dependencies' => 'browser,caddy,cps_tcatree,css_styled_content,linkhandler,static_info_tables',
+	'dependencies' => 'browser,caddy,cps_tcatree,css_styled_content,linkhandler',
 	'conflicts' => 'css_filelinks',
 	'priority' => '',
 	'loadOrder' => '',
@@ -39,7 +39,6 @@ $EM_CONF[$_EXTKEY] = array(
                         'cps_tcatree' => '',
 			'css_styled_content' => '',
 			'linkhandler' => '',
-			'static_info_tables' => '',
 		),
 		'conflicts' => array(
                         'css_filelinks' => '',

@@ -17,6 +17,8 @@
                 * 301
                   * constants.txt
                   * setup.txt
+  Improvements
+  * #i0001: Removing dependency of static_info_tables
 
 3.1.8
   13-06-30
