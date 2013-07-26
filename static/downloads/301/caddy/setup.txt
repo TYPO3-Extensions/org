@@ -22,7 +22,6 @@ plugin.tx_caddy_pi1 {
 
   // Ohne Flagge
 plugin.tx_caddy_pi1 {
-  db >
   db {
     sql >
     sql = TEXT
