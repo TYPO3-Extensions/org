@@ -332,7 +332,7 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
   //
   // Add default page and user TSconfig
 
-t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/' . $llStatic . '/page.txt">');
+t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/page.txt">');
   // Add default page and user TSconfig
 
 

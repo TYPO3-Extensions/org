@@ -12,8 +12,6 @@
   // mod.tx_linkhandler
 
 mod.tx_linkhandler {
-    // extension tt_news isn't installed
-  tt_news >
   tx_org_cal {
     label       = Org: Kalender
     listTables  = tx_org_cal
@@ -72,7 +70,6 @@ RTE.default.tx_linkhandler.tx_org_event         < mod.tx_linkhandler.tx_org_even
 RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
 RTE.default.tx_linkhandler.tx_org_location      < mod.tx_linkhandler.tx_org_location
 RTE.default.tx_linkhandler.tx_org_news          < mod.tx_linkhandler.tx_org_news
-RTE.default.tx_linkhandler.tt_news >
   // RTE.default.tx_linkhandler
 
   // LINKHANDLER

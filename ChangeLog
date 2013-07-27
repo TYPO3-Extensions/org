@@ -1,3 +1,15 @@
+3.3.0
+  13-07-27
+  Feature
+  * #50490: Simplify LinkHandlerConfiguration
+            * 01: tsConfig > de || default > page.txt is moved to tsConfig > page > tx_linkhandler > de || default
+            * 01: tt_news isn't removed any longer
+                  Effected files:
+                  * tsConfig
+                    * de
+                      * page.txt
+                    * default
+                      * page.txt
 3.2.0
   13-07-20
   Feature
