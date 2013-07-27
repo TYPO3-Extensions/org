@@ -5,11 +5,11 @@ if (!defined ('TYPO3_MODE'))
   die ('Access denied.');
 }
 
-  // Should tt_news included?
-$includeIt = $confArr['linkhandler.']['tt_news'];
+  // Should tt_news removed?
+$removeIt = $confArr['linkhandler.']['tt_news'];
 
-  // RETURN : tt_news should not include
-switch( $includeIt ) 
+  // Should tt_news removed
+switch( $removeIt ) 
 {
   case( 'Yes' ):
     // follow the workflow
