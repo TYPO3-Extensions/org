@@ -6,7 +6,7 @@ LLstatic = English
 external_linksBase=0
 
 
-   # cat=linkhandler/enable/932;          type=options[Yes,No (recommended)]; label=Remove tt_news: If full wizard support is enabled, main records will have all three icons for their category records: edit, add and list. This is best usability. But you have to store category records in the same directory like the main records. You have to rough it, if there are needs to store categories in other directories. This property has only an effect in case of store records [clear presented] or [multi grouped].
+   # cat=linkhandler/enable/932;          type=options[Yes,No (recommended)]; label=Remove tt_news: Remove the tab [tt_news] from the linkhandler, The removing is recommended, if tt_news isn't installed.
 linkhandler.tt_news = No (recommended)
   # cat=linkhandler/others/999;           type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 linkhandler.externalLinks=0
