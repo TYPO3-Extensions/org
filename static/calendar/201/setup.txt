@@ -323,8 +323,8 @@ plugin.tx_browser_pi1 {
                 }
                 30 = TEXT
                 30 {
-                  value   = more &raquo;
-                  lang.de = mehr &raquo;
+                  value   = details and tickets &raquo;
+                  lang.de = Details und Tickets &raquo;
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
                     additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
