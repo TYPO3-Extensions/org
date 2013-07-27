@@ -65,8 +65,9 @@ $confArr  = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
   // Language for labels of static templates and page tsConfig
 $llStatic = $confArr['LLstatic'];
-switch($llStatic) {
-  case($llStatic == 'German'):
+switch( $llStatic ) 
+{
+  case( 'German' ):
     $llStatic = 'de';
     break;
   default:
@@ -333,6 +334,16 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
   // Add default page and user TSconfig
 
 t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/page.txt">');
+$tt_news = $confArr['linkhandler.tt_news'];
+switch( $tt_news ) {
+  case( 'Yes' ):
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tt_news.txt">');
+    break;
+  case( 'No (recommended)' ):
+  default:
+      // Don't include tsConfig for linkhandler and tt_news
+    break;
+}
   // Add default page and user TSconfig
 
 
