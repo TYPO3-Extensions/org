@@ -28,7 +28,7 @@ $tsConfig = '
 mod.dwildt.test = 1
 mod.tx_linkhandler {
   tx_org_cal {
-    label       = Org: Kalender
+    label       = Kalender (org)
     listTables  = tx_org_cal
     %onlyPids%
   }
