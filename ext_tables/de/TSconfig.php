@@ -11,15 +11,15 @@ require_once( $path . 'tt_news.php' );
   // Dokumente
 require_once( $path . 'tx_org_downloads.php' );
   // Kalender
-require_once( $path . 'tx_org_location.php' );
+require_once( $path . 'tx_org_cal.php' );
   // Nachrichten
 require_once( $path . 'tx_org_news.php' );
   // Personal
 require_once( $path . 'fe_users.php' );
   // Standorte und Abteilungen
-require_once( $path . 'tx_org_cal.php' );
-  // Veranstaltungen
 require_once( $path . 'tx_org_headquarters.php' );
+  // Veranstaltungen
+require_once( $path . 'tx_org_location.php' );
   // Veranstaltungsorte
 require_once( $path . 'tx_org_event.php' );
 
