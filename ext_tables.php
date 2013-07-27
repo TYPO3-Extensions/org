@@ -335,6 +335,7 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
 
 t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/page.txt">');
 $tt_news = $confArr['linkhandler.']['tt_news'];
+var_dump( $confArr, $tt_news );
 switch( $tt_news ) {
   case( 'Yes' ):
     t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tt_news.txt">');
