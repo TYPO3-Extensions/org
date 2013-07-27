@@ -4,7 +4,7 @@ if (!defined ('TYPO3_MODE'))
   die ('Access denied.');
 }
 
-$path = PATH_typo3conf . 'ext/org//tsConfig/page/tx_linkhandler/de/';
+$path = PATH_typo3conf . 'ext/org/tsConfig/page/tx_linkhandler/de/';
 
   // ./. tt_news
 require_once( $path . 'tt_news.php' );

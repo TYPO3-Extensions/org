@@ -15,6 +15,7 @@ if (!defined ('TYPO3_MODE'))
   //    Localization support
   //    Store record configuration
   // Enables the Include Static Templates
+  // Add dynamic static files
   // Add pagetree icons
   // Add default page and user TSconfig
   // Methods for backend workflows
@@ -267,54 +268,17 @@ switch( true )
 }
   // Case $llStatic
   // Enables the Include Static Templates
-$ts = 'plugin.tx_linkhandler {
-  fe_users {
-    forceLink        = 0
-    useCacheHash     = 1
-    parameter        = {$plugin.org.pages.staff}
-    additionalParams = &tx_browser_pi1[staffUid]={field:uid}
-    additionalParams {
-      insertData = 1
-    } 
-  }
-  tx_org_cal < .fe_users
-  tx_org_cal {
-    parameter        = {$plugin.org.pages.calendar}
-    additionalParams = &tx_browser_pi1[calendarUid]={field:uid}
-  }
-  tx_org_department < .fe_users
-  tx_org_department {
-    parameter        = {$plugin.org.pages.department}
-    additionalParams = &tx_browser_pi1[departmentUid]={field:uid}
-  }
-  tx_org_downloads < .fe_users
-  tx_org_downloads {
-    parameter        = {$plugin.org.pages.downloads}
-    additionalParams = &tx_browser_pi1[downloadsUid]={field:uid}
-  }
-  tx_org_event < .fe_users
-  tx_org_event {
-    parameter        = {$plugin.org.pages.event}
-    additionalParams = &tx_browser_pi1[eventUid]={field:uid}
-  }
-  tx_org_headquarters < .fe_users
-  tx_org_headquarters {
-    parameter        = {$plugin.org.pages.headquarter}
-    additionalParams = &tx_browser_pi1[headquarterUid]={field:uid}
-  }
-  tx_org_location < .fe_users
-  tx_org_location {
-    parameter        = {$plugin.org.pages.location}
-    additionalParams = &tx_browser_pi1[locationUid]={field:uid}
-  }
-  tx_org_news < .fe_users
-  tx_org_news {
-    parameter        = {$plugin.org.pages.news}
-    additionalParams = &tx_browser_pi1[newsUid]={field:uid}
-  }
-}
-';
-t3lib_extMgm::addTypoScriptSetup( $ts ); 
+
+
+
+  /////////////////////////////////////////////////
+  //
+  // Add dynamic static files
+
+require_once( PATH_typo3conf . 'ext/org/ext_tables/default/typoscript.php' );
+  // Add dynamic static files
+
+
 
   ////////////////////////////////////////////////////////////////////////////
   //
