@@ -5,10 +5,10 @@ if (!defined ('TYPO3_MODE'))
   die ('Access denied.');
 }
 
-  // Should tx_org_cal included?
-$includeIt = $confArr['linkhandler.']['tx_org_cal'];
+  // Should fe_users included?
+$includeIt = $confArr['linkhandler.']['fe_users'];
 
-  // RETURN : tx_org_cal should not include
+  // RETURN : fe_users should not include
 switch( $includeIt ) 
 {
   case( 'No' ):
@@ -19,24 +19,24 @@ switch( $includeIt )
     // follow the workflow
     break;
 }
-  // RETURN : tx_org_cal should not include
+  // RETURN : fe_users should not include
 
 
   // Init tsConfig
 $tsConfig = '
 
 mod.tx_linkhandler {
-  tx_org_cal {
-    label       = Calendar (org)
-    listTables  = tx_org_cal
+  fe_users {
+    label       = Staff (org)
+    listTables  = fe_users
     %onlyPids%
   }
 }
 
-RTE.default.tx_linkhandler.tx_org_cal < mod.tx_linkhandler.tx_org_cal
+RTE.default.tx_linkhandler.fe_users < mod.tx_linkhandler.fe_users
 ';
 
-$onlyPids = $confArr['linkhandler.']['tx_org_cal.']['onlyPids'];
+$onlyPids = $confArr['linkhandler.']['fe_users.']['onlyPids'];
 
 switch( true )
 {
