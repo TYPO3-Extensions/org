@@ -165,7 +165,7 @@ plugin.tx_browser_pi1 {
   //
   // plugin.tx_linkhandler
 
-plugin.tx_linkhandler {
+plugin.XXX_tx_linkhandler {
   fe_users {
     forceLink        = 0
     useCacheHash     = 1
