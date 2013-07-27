@@ -27,16 +27,17 @@ switch( $table ) {
     break;
 }
 
-$table = $confArr['linkhandler.']['tx_org_cal'];
-switch( $table ) {
-  case( 'No' ):
-      // Don't include tsConfig for linkhandler and tx_org_cal
-    break;
-  case( 'Yes (recommended)' ):
-  default:
-    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_cal.txt">');
-    break;
-}
+require_once( PATH_typo3conf . 'ext/org//tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_cal.php' );
+//$table = $confArr['linkhandler.']['tx_org_cal'];
+//switch( $table ) {
+//  case( 'No' ):
+//      // Don't include tsConfig for linkhandler and tx_org_cal
+//    break;
+//  case( 'Yes (recommended)' ):
+//  default:
+//    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_cal.txt">');
+//    break;
+//}
 
 $table = $confArr['linkhandler.']['tx_org_downloads'];
 switch( $table ) {
