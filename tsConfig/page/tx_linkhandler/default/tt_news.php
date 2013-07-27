@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE'))
 }
 
   // Should tt_news included?
-$includeIt = $confArr['linkhandler.']['tt_news'];
+$removeIt = $confArr['linkhandler.']['tt_news'];
 
-  // RETURN : tt_news should not include
-switch( $includeIt ) 
+  // Should tt_news removed
+switch( $removeIt ) 
 {
   case( 'Yes' ):
     // follow the workflow

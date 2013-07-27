@@ -12,11 +12,11 @@ $includeIt = $confArr['linkhandler.']['tt_news'];
 switch( $includeIt ) 
 {
   case( 'Yes' ):
-    return;
+    // follow the workflow
     break;
   case( 'No (recommended)' ):
   default:
-    // follow the workflow
+    return;
     break;
 }
   // RETURN : tt_news should not include
