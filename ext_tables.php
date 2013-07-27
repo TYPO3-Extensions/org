@@ -339,6 +339,8 @@ $addPageTSConfig  = $prefix . $_EXTKEY . $appenddixPath . $llStatic;
 
 //t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/page.txt">');
 
+
+t3lib_extMgm::addPageTSConfig( 'mod.dwildt.test = 1' );
 $table = $confArr['linkhandler.']['tt_news'];
 switch( $table ) {
   case( 'Yes' ):
