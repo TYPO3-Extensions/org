@@ -13,7 +13,7 @@
 
 mod.tx_linkhandler {
   tx_org_location {
-    label       = Org: Locations
+    label       = Org: Veranstaltungsorte
     listTables  = tx_org_location
       // Please set the onlyPids in page TSconfig of your page and sysfolder
     // onlyPids    = 1
