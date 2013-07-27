@@ -333,17 +333,23 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
   //
   // Add default page and user TSconfig
 
-t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/page.txt">');
+$prefix           = '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:';
+$appenddixPath    = '/tsConfig/page/tx_linkhandler/';
+$addPageTSConfig  = $prefix . $_EXTKEY . $appenddixPath . $llStatic;
+
+//t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/page.txt">');
+
 $table = $confArr['linkhandler.']['tt_news'];
 switch( $table ) {
   case( 'Yes' ):
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tt_news.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tt_news.txt">');
     break;
   case( 'No (recommended)' ):
   default:
       // Don't include tsConfig for linkhandler and tt_news
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_cal'];
 switch( $table ) {
   case( 'No' ):
@@ -351,9 +357,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_cal.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_cal.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_downloads'];
 switch( $table ) {
   case( 'No' ):
@@ -361,9 +368,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_downloads.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_downloads.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_event'];
 switch( $table ) {
   case( 'No' ):
@@ -371,9 +379,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_event.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_event.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_headquarters'];
 switch( $table ) {
   case( 'No' ):
@@ -381,9 +390,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_headquarters.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_headquarters.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_location'];
 switch( $table ) {
   case( 'No' ):
@@ -391,9 +401,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_location.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_location.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['tx_org_news'];
 switch( $table ) {
   case( 'No' ):
@@ -401,9 +412,10 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_news.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/tx_org_news.txt">');
     break;
 }
+
 $table = $confArr['linkhandler.']['fe_users'];
 switch( $table ) {
   case( 'No' ):
@@ -411,7 +423,7 @@ switch( $table ) {
     break;
   case( 'Yes (recommended)' ):
   default:
-    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/fe_users.txt">');
+    t3lib_extMgm::addPageTSConfig( $addPageTSConfig . '/fe_users.txt">');
     break;
 }
   // Add default page and user TSconfig
