@@ -42,7 +42,7 @@ $onlyPids = $confArr['linkhandler.']['tx_org_cal.']['onlyPids'];
 
 switch( true )
 {
-  case( empty ( $onlyPids ) ):
+  case( ! empty ( $onlyPids ) ):
     $onlyPids = 'onlyPids    = ' . $onlyPids;
     break;
   case( empty ( $onlyPids ) ):
