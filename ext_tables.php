@@ -334,15 +334,84 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
   // Add default page and user TSconfig
 
 t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/page.txt">');
-$tt_news = $confArr['linkhandler.']['tt_news'];
-var_dump( $confArr, $tt_news );
-switch( $tt_news ) {
+$table = $confArr['linkhandler.']['tt_news'];
+switch( $table ) {
   case( 'Yes' ):
     t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tt_news.txt">');
     break;
   case( 'No (recommended)' ):
   default:
       // Don't include tsConfig for linkhandler and tt_news
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_cal'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_cal
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_cal.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_downloads'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_downloads
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_downloads.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_event'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_event
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_event.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_headquarters'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_headquarters
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_headquarters.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_location'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_location
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_location.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['tx_org_news'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and tx_org_news
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/tx_org_news.txt">');
+    break;
+}
+$table = $confArr['linkhandler.']['fe_users'];
+switch( $table ) {
+  case( 'No' ):
+      // Don't include tsConfig for linkhandler and fe_users
+    break;
+  case( 'Yes (recommended)' ):
+  default:
+    t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/tsConfig/page/tx_linkhandler/' . $llStatic . '/fe_users.txt">');
     break;
 }
   // Add default page and user TSconfig

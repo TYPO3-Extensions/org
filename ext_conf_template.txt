@@ -6,8 +6,22 @@ LLstatic = English
 external_linksBase=0
 
 
-   # cat=linkhandler/enable/932;          type=options[Yes,No (recommended)]; label=Remove tt_news: Remove the tab [tt_news] from the linkhandler, Yes is recommended, if tt_news isn't installed.
+  # cat=linkhandler/enable/200;          type=options[Yes,No (recommended)]; label=-tt_news: Remove the tab [News] from the linkhandler, Yes is recommended, if tt_news isn't installed.
 linkhandler.tt_news = No (recommended)
+  # cat=linkhandler/enable/300;          type=options[Yes (recommended),No]; label=+Calendar: Add the tab [Org: Calendar] to the the linkhandler.
+linkhandler.tx_org_cal = Yes (recommended)
+  # cat=linkhandler/enable/301;          type=options[Yes (recommended),No]; label=+Documents: Add the tab [Org: Documents] to the the linkhandler.
+linkhandler.tx_org_documents = Yes (recommended)
+  # cat=linkhandler/enable/302;          type=options[Yes (recommended),No]; label=+Events: Add the tab [Org: Events] to the the linkhandler.
+linkhandler.tx_org_event = Yes (recommended)
+  # cat=linkhandler/enable/303;          type=options[Yes (recommended),No]; label=+Headquarters & Departments: Add the tab [Org: Headquarters & Departments] to the the linkhandler.
+linkhandler.tx_org_headquarters = Yes (recommended)
+  # cat=linkhandler/enable/304;          type=options[Yes (recommended),No]; label=+Locations: Add the tab [Org: Locations] to the the linkhandler.
+linkhandler.tx_org_location = Yes (recommended)
+  # cat=linkhandler/enable/305;          type=options[Yes (recommended),No]; label=+News: Add the tab [Org: News] to the the linkhandler.
+linkhandler.tx_org_news = Yes (recommended)
+  # cat=linkhandler/enable/306;          type=options[Yes (recommended),No]; label=+Staff: Add the tab [Org: Staff] to the the linkhandler.
+linkhandler.fe_users = Yes (recommended)
   # cat=linkhandler/others/999;           type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 linkhandler.externalLinks=0
 

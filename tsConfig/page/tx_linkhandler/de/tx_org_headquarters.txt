@@ -1,0 +1,33 @@
+
+  /////////////////////////////////////
+  //
+  // LINKHANDLER
+  // - mod.tx_linkhandler
+  // - RTE.default.tx_linkhandler
+
+
+
+  /////////////////////////////////////
+  //
+  // mod.tx_linkhandler
+
+mod.tx_linkhandler {
+  tx_org_headquarters {
+    label       = Org: Standorte & Abteilungen
+    listTables  = tx_org_headquarters, tx_org_department
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
+    // onlyPids    = 1
+  }
+}
+  // mod.tx_linkhandler
+
+
+
+  /////////////////////////////////////
+  //
+  // RTE.default.tx_linkhandler
+
+RTE.default.tx_linkhandler.tx_org_headquarters  < mod.tx_linkhandler.tx_org_headquarters
+  // RTE.default.tx_linkhandler
+
+  // LINKHANDLER

@@ -1,0 +1,33 @@
+
+  /////////////////////////////////////
+  //
+  // LINKHANDLER
+  // - mod.tx_linkhandler
+  // - RTE.default.tx_linkhandler
+
+
+
+  /////////////////////////////////////
+  //
+  // mod.tx_linkhandler
+
+mod.tx_linkhandler {
+  tx_org_downloads {
+    label       = Org: Dokumente
+    listTables  = tx_org_downloads
+      // Please set the onlyPids in page TSconfig of your page and sysfolder
+    // onlyPids    = 1
+  }
+}
+  // mod.tx_linkhandler
+
+
+
+  /////////////////////////////////////
+  //
+  // RTE.default.tx_linkhandler
+
+RTE.default.tx_linkhandler.tx_org_downloads     < mod.tx_linkhandler.tx_org_downloads
+  // RTE.default.tx_linkhandler
+
+  // LINKHANDLER
