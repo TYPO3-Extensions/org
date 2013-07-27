@@ -31,7 +31,6 @@ mod.tx_linkhandler {
     label       = Org: Kalender
     listTables  = tx_org_cal
     %onlyPids%
-    onlyPids    = 1
   }
 }
 
