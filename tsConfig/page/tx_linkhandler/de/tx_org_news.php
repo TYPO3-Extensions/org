@@ -25,7 +25,6 @@ switch( $includeIt )
   // Init tsConfig
 $tsConfig = '
 
-mod.dwildt.test = 1
 mod.tx_linkhandler {
   tx_org_news {
     label       = Nachrichten (org)
