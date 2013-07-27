@@ -5,10 +5,10 @@ if (!defined ('TYPO3_MODE'))
   die ('Access denied.');
 }
 
-  // Should tx_org_cal included?
-$includeIt = $confArr['linkhandler.']['tx_org_cal'];
+  // Should tt_news included?
+$includeIt = $confArr['linkhandler.']['tt_news'];
 
-  // RETURN : tx_org_cal should not include
+  // RETURN : tt_news should not include
 switch( $includeIt ) 
 {
   case( 'Yes' ):
@@ -19,7 +19,7 @@ switch( $includeIt )
     return;
     break;
 }
-  // RETURN : tx_org_cal should not include
+  // RETURN : tt_news should not include
 
 
   // Init tsConfig
