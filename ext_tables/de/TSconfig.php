@@ -19,8 +19,8 @@ require_once( $path . 'fe_users.php' );
   // Standorte und Abteilungen
 require_once( $path . 'tx_org_headquarters.php' );
   // Veranstaltungen
-require_once( $path . 'tx_org_location.php' );
-  // Veranstaltungsorte
 require_once( $path . 'tx_org_event.php' );
+  // Veranstaltungsorte
+require_once( $path . 'tx_org_location.php' );
 
 ?>

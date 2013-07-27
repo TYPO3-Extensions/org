@@ -27,7 +27,7 @@ $tsConfig = '
 
 mod.tx_linkhandler {
   tx_org_downloads {
-    label       = Dokumente (org)
+    label       = Dokument (org)
     listTables  = tx_org_downloads
     %onlyPids%
   }

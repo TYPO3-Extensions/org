@@ -27,7 +27,7 @@ $tsConfig = '
 
 mod.tx_linkhandler {
   tx_org_news {
-    label       = Nachrichten (org)
+    label       = Nachricht (org)
     listTables  = tx_org_news
     %onlyPids%
   }
