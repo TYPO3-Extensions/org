@@ -6,7 +6,7 @@ LLstatic = English
 external_linksBase=0
 
 
-   # cat=linkhandler/enable/932;          type=options[Yes,No (recommended)]; label=Remove tt_news: Remove the tab [tt_news] from the linkhandler, The removing is recommended, if tt_news isn't installed.
+   # cat=linkhandler/enable/932;          type=options[Yes,No (recommended)]; label=Remove tt_news: Remove the tab [tt_news] from the linkhandler, Yes is recommended, if tt_news isn't installed.
 linkhandler.tt_news = No (recommended)
   # cat=linkhandler/others/999;           type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 linkhandler.externalLinks=0
