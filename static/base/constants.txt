@@ -133,6 +133,7 @@ plugin.tx_seodynamictag {
     description {
       appendix = This is a Demo of the Organiser - TYPO3 for the Lobby and Organisers. Install the Organiser with one mouse click!  
     }
+  }
 
   keywords {
     forcedList = TYPO3,Organiser,Lobby,Demo
