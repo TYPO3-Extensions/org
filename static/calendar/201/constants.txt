@@ -41,11 +41,12 @@ plugin.tx_seodynamictag {
   }
 
   default {
-    description = tx_org_cal.description is empty. Please maintain: Organiser Calender > [Search Engine Optimization] field: description 
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Calender. See tab [Search Engine] field [Description] 
   }
 
   keywords {
-    default = tx_org_cal.keywords are empty. Please maintain: Organiser Calender > [Search Engine Optimization] field: keywords 
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Calender. See tab [Search Engine] field [Keywords] 
+    moveToKeywords  = 0
   }
 }
   // plugin.tx_seodynamictag
