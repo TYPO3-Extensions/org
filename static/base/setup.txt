@@ -241,32 +241,32 @@ page {
   //    staffUid
 
 //[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
-[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
-  page {
-    config {
-      noPageTitle = 2
-    }
-    headerData {
-      20 = TEXT
-      20 {
-        data = register:browser_htmlTitleTag
-        ifEmpty {
-          field = title
-          noTrimWrap  = |TYPO3 Organiser: ||
-        }
-        wrap = <title>|</title>
-      }
-    }
-    meta {
-      description {
-        field >
-        data = register:browser_description
-      }
-      keywords {
-        field >
-        data = register:browser_keywords
-      }
-    }
-  }
-[global]
+//[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+//  page {
+//    config {
+//      noPageTitle = 2
+//    }
+//    headerData {
+//      20 = TEXT
+//      20 {
+//        data = register:browser_htmlTitleTag
+//        ifEmpty {
+//          field = title
+//          noTrimWrap  = |TYPO3 Organiser: ||
+//        }
+//        wrap = <title>|</title>
+//      }
+//    }
+//    meta {
+//      description {
+//        field >
+//        data = register:browser_description
+//      }
+//      keywords {
+//        field >
+//        data = register:browser_keywords
+//      }
+//    }
+//  }
+//[global]
   // globals: page / SEO
