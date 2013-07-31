@@ -1,6 +1,17 @@
-plugin.tx_browser_pi1 {
-  jQuery.plugin.jstree.tablefield_01 = tx_org_newscat.title
-}
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+
+  // plugin.org
+  // plugin.tx_seodynamictag_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.org
 
 plugin.org {
 
@@ -107,3 +118,24 @@ plugin.org {
   # cat=Organiser - Table Downloads//300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
   table.downloads.field.thumbnail = thumbnail  
 }
+  // plugin.org
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_seodynamictag
+
+plugin.tx_seodynamictag {
+
+  default {
+    author = Organiser - TYPO3 for Lobby and Organisers
+    description {
+      appendix = This is a Demo of the Organiser - TYPO3 for the Lobby and Organisers. Install the Organiser with one mouse click!  
+    }
+
+  keywords {
+    forcedList = TYPO3,Organiser,Lobby,Demo
+  }
+}
+  // plugin.tx_seodynamictag
