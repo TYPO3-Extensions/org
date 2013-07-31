@@ -50,7 +50,7 @@ plugin.tx_seodynamictag {
       description   = description
       keywords      = keywords 
       title         = title 
-      short         =  
+      short         = mail_city 
     }
   }
 
