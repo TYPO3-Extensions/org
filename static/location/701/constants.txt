@@ -3,7 +3,21 @@
   //
   // INDEX
 
-  // plugin.tx_seodynamictag
+  // plugin.tx_browser_pi1
+  // plugin.tx_seodynamictag_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = locationUid
+  }
+}
+  // plugin.tx_browser_pi1
 
 
 

@@ -13,7 +13,7 @@
 
  plugin.tx_browser_pi1 {
   map {
-    enabled = 0
+    enabled = 1
     field {
       linktoSingle    = tx_org_headquarters.uid
       latitude        = tx_org_headquarters.mail_lat
@@ -28,6 +28,9 @@
       categoryIcon  = uploads/tx_org/
     }
     width = 700
+  }
+  navigation {
+    showUid = headquartersUid
   }
 }
   // plugin.tx_browser_pi1

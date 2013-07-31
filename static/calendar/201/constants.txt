@@ -6,8 +6,6 @@
 
   // plugin.tx_browser_pi1
   // plugin.tx_seodynamictag_pi1
-  // Global condition for the list view
-  // Global condition for the single view
 
 
 
