@@ -4,7 +4,6 @@
   // INDEX
 
   // plugin.caddy
-  // plugin.tx_seodynamictag
 
 
 
@@ -27,48 +26,3 @@ plugin.caddy {
   }
 }
   // plugin.caddy
-
-
-
-  ////////////////////////////////////////
-  //
-  // plugin.tx_seodynamictag
-
-plugin.tx_seodynamictag {
-
-  canonical {
-    single {
-        // Only this parameter are allowed: 
-      additionalParams = &tx_org_cal[uid]={GP:tx_org_cal|uid}
-    }
-  }
-
-  condition {
-    single {
-        // Please replace xxx with the uid of the page with the news plugin for the single view
-        // Please use the Constant Editor
-      begin = globalVar = GP:tx_org_cal|uid > 0] && [globalVar = TSFE:id = xxx
-    }
-  }
-
-  database {
-    table = tx_org_cal
-    var.1 = tx_org_cal[uid]
-    field {
-      author        =  
-      description   = description
-      keywords      = keywords 
-      title         = title 
-      short         = subtitle 
-    }
-  }
-
-  default {
-    description = tx_org_cal.description is empty. Please maintain: Organiser Calender > [Search Engine Optimization] field: description 
-  }
-
-  keywords {
-    default = tx_org_cal.keywords are empty. Please maintain: Organiser Calender > [Search Engine Optimization] field: keywords 
-  }
-}
-  // plugin.tx_seodynamictag
