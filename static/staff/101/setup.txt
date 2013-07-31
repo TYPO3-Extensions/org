@@ -1,12 +1,13 @@
-
-
-  ////////////////////////////////////////
+  ////////////////////////////////////////////////
   //
   // INDEX
-
+  //
   // plugin.tx_browser_pi1
   //    views
   //      101: +Org: Staff
+  // plugin.tx_seodynamictag_pi1
+  // Global condition for the list view
+  // Global condition for the single view
 
 
 
@@ -521,6 +522,80 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////////////
+  //
+  // plugin.tx_seodynamictag_pi1
+
+plugin.tx_seodynamictag_pi1 {
+  page {
+    49442 {
+      20 {
+        //register    = tx_seodynamictag_author
+        query {
+          select    (
+            CONCAT(IFNULL(first_name, '')
+              , ' '
+              , IFNULL(last_name, '')) as value
+)
+        }
+      }
+      40 {
+        //register    = tx_seodynamictag_keywords
+        query {
+          select    (
+            CONCAT(IFNULL(first_name, '')
+              , ' '
+              , IFNULL(last_name, '')) as value
+)
+        }
+      }
+      50 {
+        //special     = title
+        query {
+          select    (
+            CONCAT(IFNULL(first_name, '')
+              , ' '
+              , IFNULL(last_name, '')) as value
+)
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_seodynamictag_pi1
+
+
+
+  ////////////////////////////////////////////////
+  //
+  // Global condition for the list view
+
+[{$plugin.tx_seodynamictag.condition.list.begin}]
+  {$plugin.tx_seodynamictag.page.tsProperty} {
+    {$plugin.tx_seodynamictag.page.object} < plugin.tx_seodynamictag_pi1.page.49442
+    {$plugin.tx_seodynamictag.page.object} {
+      10.path.typolink.additionalParams = {$plugin.tx_seodynamictag.canonical.list.additionalParams}
+    }
+  }
+[{$plugin.tx_seodynamictag.condition.list.end}]
+  // Global condition for the list view
+
+
+
+  ////////////////////////////////////////////////
+  //
+  // Global condition for the single view
+
+[{$plugin.tx_seodynamictag.condition.single.begin}]
+  {$plugin.tx_seodynamictag.page.tsProperty} {
+    {$plugin.tx_seodynamictag.page.object} < plugin.tx_seodynamictag_pi1.page.49442
+  }
+[{$plugin.tx_seodynamictag.condition.single.end}]
+  // Global condition for the single view
 
 
 

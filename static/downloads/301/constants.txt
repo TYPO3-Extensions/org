@@ -16,7 +16,7 @@ plugin.tx_seodynamictag {
   canonical {
     single {
         // Only this parameter are allowed: 
-      additionalParams = &tx_browser_pi1[departmentUid]={GP:tx_browser_pi1|departmentUid}
+      additionalParams = &tx_browser_pi1[downloadsUid]={GP:tx_browser_pi1|downloadsUid}
     }
   }
 
@@ -24,28 +24,28 @@ plugin.tx_seodynamictag {
     single {
         // Please replace xxx with the uid of the page with the news plugin for the single view
         // Please use the Constant Editor
-      begin = globalVar = GP:tx_browser_pi1|departmentUid > 0] && [globalVar = TSFE:id = xxx
+      begin = globalVar = GP:tx_browser_pi1|downloadsUid > 0] && [globalVar = TSFE:id = xxx
     }
   }
 
   database {
-    table = tx_org_department
-    var.1 = tx_browser_pi1[departmentUid]
+    table = tx_org_downloads
+    var.1 = tx_browser_pi1[downloadsUid]
     field {
       author        =  
       description   = description
       keywords      = keywords 
       title         = title 
-      short         =  
+      short         = subtitle 
     }
   }
 
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Departments. See tab [Search Engine] field [Description] 
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Description] 
   }
 
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Departments. See tab [Search Engine] field [Keywords] 
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Keywords] 
     moveToKeywords  = 0
   }
 }
