@@ -3,7 +3,24 @@
   //
   // INDEX
 
-  // plugin.tx_seodynamictag
+
+  // plugin.tx_browser_pi1
+  // plugin.tx_seodynamictag_pi1
+  // Global condition for the list view
+  // Global condition for the single view
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = calendarUid
+  }
+}
+  // plugin.tx_browser_pi1
 
 
 

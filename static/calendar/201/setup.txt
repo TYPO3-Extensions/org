@@ -23,7 +23,7 @@ plugin.tx_browser_pi1 {
       201 = +Org: Calendar
       201 {
         name    = +Org: Calendar
-        showUid = calendarUid
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
           selectBox_orderBy.display = 0
@@ -50,7 +50,7 @@ plugin.tx_browser_pi1 {
                 wrap      = <div class="weekday">|</div>
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
-                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                   useCacheHash = 1
                 }
               }
@@ -62,7 +62,7 @@ plugin.tx_browser_pi1 {
                 wrap      = <div class="day_of_month">|</div>
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
-                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                   useCacheHash = 1
                 }
               }
@@ -74,7 +74,7 @@ plugin.tx_browser_pi1 {
                 wrap      = <div class="month">|</div>
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
-                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                   useCacheHash = 1
                 }
               }
@@ -217,7 +217,7 @@ plugin.tx_browser_pi1 {
                   lang.de = Details und Tickets &raquo;
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                     useCacheHash = 1
                   }
                   noTrimWrap = | ||
@@ -327,7 +327,7 @@ plugin.tx_browser_pi1 {
                   lang.de = Details und Tickets &raquo;
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                     useCacheHash = 1
                   }
                   noTrimWrap = | ||
@@ -380,7 +380,7 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_CAL.TITLE###
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - linktosingle
-                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                   useCacheHash = 1
                 }
               }
@@ -403,7 +403,7 @@ plugin.tx_browser_pi1 {
                 value = ###TX_ORG_EVENT.TITLE###
                 typolink {
                   parameter         = {$plugin.org.pages.calendar} - linktosingle
-                  additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
                   useCacheHash = 1
                 }
               }
