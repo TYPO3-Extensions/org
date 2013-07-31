@@ -65,15 +65,11 @@ plugin.tx_seodynamictag {
   }
 
   default {
-    author      = Organiser - TYPO3 for Lobby and Organisers
     description = Description is empty! Please maintain the current record of the TYPO3 Organiser Calender. See tab [Search Engine] field [Description] 
-    description {
-      appendix = This is a Demo of the Organiser - TYPO3 for the Lobby and Organisers. Calendar modul. Install the Organiser with one mouse click!  
-    }
+  }
 
   keywords {
     default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Calender. See tab [Search Engine] field [Keywords] 
-    forcedList      = TYPO3,Organiser,Lobby,Demo
     moveToKeywords  = 0
   }
 }
