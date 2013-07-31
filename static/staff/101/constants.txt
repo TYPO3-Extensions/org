@@ -54,6 +54,7 @@ plugin.tx_seodynamictag {
       title         = See TypoScript > setup.txt
       short         = See TypoScript > setup.txt
     }
+    andWhere = deleted = 0 AND disable = 0
   }
 
   default {
