@@ -13,7 +13,7 @@
 
  plugin.tx_browser_pi1 {
   map {
-    enabled = 1
+    enabled = 0
     field {
       linktoSingle    = tx_org_headquarters.uid
       latitude        = tx_org_headquarters.mail_lat
