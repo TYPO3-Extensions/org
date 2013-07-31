@@ -5,9 +5,6 @@ LLstatic = English
   # cat=basic/others/999;                   type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 external_linksBase=0
 
-
-  # cat=linkhandler/enable/200;          type=options[Yes,No (recommended)]; label=-tt_news: Remove the tab [News] from the linkhandler. Yes is recommended, if tt_news isn't installed.
-linkhandler.tt_news = No (recommended)
   # cat=linkhandler/enable/300;          type=options[Yes (recommended),No]; label=+Calendar: Add the tab [Org: Calendar] to the the linkhandler.
 linkhandler.tx_org_cal = Yes (recommended)
   # cat=linkhandler/enable/301;          type=string; label=Calendar pids: CSV list of page id with the calendar folders. The pids are recommended for usability only. I.e: 1335, 1245

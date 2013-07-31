@@ -7,7 +7,6 @@ if (!defined ('TYPO3_MODE'))
 $path = PATH_typo3conf . 'ext/org/static/base/tx_linkhandler/';
 
 require_once( $path . 'fe_users.php' );
-require_once( $path . 'tt_news.php' );
 require_once( $path . 'tx_org_cal.php' );
 require_once( $path . 'tx_org_department.php' );
 require_once( $path . 'tx_org_downloads.php' );
