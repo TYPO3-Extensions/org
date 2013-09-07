@@ -1,0 +1,35 @@
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1.map {
+  aliases     >
+  controlling >
+  design      >
+  marker      >
+  enabled = 1
+  field {
+    linktoSingle  = tx_org_headquarters.uid
+    latitude      = tx_org_headquarters.mail_lat
+    longitude     = tx_org_headquarters.mail_lon
+    description   = tx_org_headquarters.title
+    category      = tx_org_headquarterscat.title
+    categoryIcon  = tx_org_headquarterscat.icons
+  }
+  path {
+    categoryIcon  = uploads/tx_org/
+  }
+  width = 700
+  navigation {
+    showUid = headquartersUid
+  }
+}
+  // plugin.tx_browser_pi1

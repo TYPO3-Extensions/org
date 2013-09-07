@@ -208,6 +208,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personal');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Standorte');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/downgrade/4.5.4/',      '+Org: Standorte +Downgrade v4.5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Veranstaltorte - Rand');
@@ -241,6 +242,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Headquarters');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/downgrade/4.5.4/',      '+Org: Headquarters +Downgrade v4.5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Locations');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Locations - margin');

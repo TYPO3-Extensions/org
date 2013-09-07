@@ -2,8 +2,8 @@
   //
   // INDEX
 
-  // plugin.tx_seodynamictag
   // plugin.tx_browser_pi1
+  // plugin.tx_seodynamictag
 
 
 
@@ -12,8 +12,19 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1.map {
+  aliases {
+    showUid {
+      markernavigation = headquartersUid
+    }
+  }
   controlling {
-    enabled = 1
+    enabled = Map
+  }
+  design {
+    path {
+      categoryIcon  = uploads/tx_org/
+    }
+    width = 700
   }
   marker {
     field {
@@ -27,18 +38,8 @@ plugin.tx_browser_pi1.map {
       categoryOffsetY   = tx_org_headquarterscat.icon_offset_y
     }
   }
-  design {
-    path {
-      categoryIcon  = uploads/tx_org/
-    }
-    width = 700
-  }
-  aliases {
-    showUid {
-      markernavigation = headquartersUid
-    }
-  }
-}  // plugin.tx_browser_pi1
+}
+  // plugin.tx_browser_pi1
 
 
 
