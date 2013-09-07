@@ -1,12 +1,22 @@
+3.3.2
+  13-09-07
+  Features
+  * #51830: Update for Browser 4.6
+            Effected files:
+            * static
+              * calendar
+                * 501
+                  * constants.txt
+
 3.3.1
-  13-07-30
+  13-07-31
   Feature
   * #i0003: Integration of seo_dynamic_tag
 
 3.3.0
   13-07-27
   Feature
-  * #50490: Simplify LinkHandlerConfiguration
+  * #50490: Simplify LinkHandlerConfiguration. Integration of linkhandlerconf.
             * 01: tsConfig > de || default > page.txt is moved to tsConfig > page > tx_linkhandler > de || default
             * 02: tt_news isn't removed any longer
                   Effected files:
