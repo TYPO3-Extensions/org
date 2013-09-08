@@ -4,39 +4,11 @@
   //
   // INDEX
 
-  // config
-  // page
   // plugin.tx_browser_pi1
   //    views
   //      501: +Org: Headquarters
 
 
-
-  /////////////////////////
-  //
-  // config
-
-config {
-  xhtml_cleaning >
-}
-  // config
-
-
-
-  /////////////////////////
-  //
-  // page
-
-page {
-  config {
-    xhtml_cleaning >
-  }
-}
-  // page
-
-
-
-  // plugin.tx_browser_pi1
 
   ////////////////////////////////////////
   //
