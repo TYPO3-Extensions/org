@@ -721,13 +721,6 @@ plugin.tx_browser_pi1 {
             marker {
               variables {
                 system {
-                  categoryIconMap {
-                    20 {
-                      stdWrap {
-                        listNum = 1
-                      }
-                    }
-                  }
                   description >
                   description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
                 }
