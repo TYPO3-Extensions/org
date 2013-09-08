@@ -96,19 +96,6 @@ plugin.tx_browser_pi1 {
           map < plugin.tx_browser_pi1.navigation.map
           map {
             marker {
-              XXX_addToCData {
-                system {
-                  mapLinkToSingle {
-                    10 {
-                      30 {
-                        10 {
-                          wrap = ,&tx_browser_pi1[headquartersUid]=|
-                        }
-                      }
-                    }
-                  }
-                }
-              }
               variables {
                 system {
                   description >
