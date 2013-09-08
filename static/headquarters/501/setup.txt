@@ -96,7 +96,7 @@ plugin.tx_browser_pi1 {
           map < plugin.tx_browser_pi1.navigation.map
           map {
             marker {
-              addToCData {
+              XXX_addToCData {
                 system {
                   mapLinkToSingle {
                     10 {
