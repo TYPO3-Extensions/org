@@ -15,7 +15,7 @@ plugin.tx_browser_pi1 {
   map {
     aliases {
       showUid {
-        markernavigation = headquartersUid
+        marker = headquartersUid
       }
     }
     controlling {
