@@ -195,6 +195,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/',   '+Org: +Downloads +Caddy');
+      // #i0004, 130914, dwildt, 1+
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag/',   '+Org: +Downloads +Caddy +Flags');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Kalender');
@@ -237,6 +239,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Department - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/',   '+Org: +Downloads +Caddy');
+      // #i0004, 130914, dwildt, 1+
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag',   '+Org: +Downloads +Caddy +Flaggen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
@@ -437,7 +441,8 @@ $TCA['fe_users']['columns']['lockToDomain']['exclude']  = 1;
 
   // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_downloads';
+$showRecordFieldList = 
+$showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_downloads';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
   // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 
