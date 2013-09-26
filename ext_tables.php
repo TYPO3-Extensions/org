@@ -231,6 +231,9 @@ switch( true )
   default:
       // English
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (obligate!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Caddy for downloads');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Caddy for tickets');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Caddy for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Calendar');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/caddy/',    '+Org: +Calendar +Caddy');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired/',  '+Org: +Calendar expired');
@@ -252,9 +255,6 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Caddy for downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Caddy for tickets');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Caddy for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
     switch( true )
