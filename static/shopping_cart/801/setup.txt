@@ -1,5 +1,5 @@
 
-  // 801: shopping cart main template for tx_org_cal
+  // 801: Caddy main template for tx_org_cal
 
 
 

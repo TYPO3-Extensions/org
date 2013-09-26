@@ -12,7 +12,12 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Organiser',
-	'description' => 'TYPO3 for the lobby and organisers. Install it with one click!',
+	'description' =>  'The Organiser is TYPO3 for the lobby and the organisers. ' .
+                          'The Organiser provides a lot of features for handle news, events, staff, headquarters, ' .
+                          'locations and a calendar. Sell your tickets with the integrated shop. ' .
+                          'Install the Organiser with one mouse click! ' .
+                          'Pick HTML templates and TypoScript configurations with the mouse. ' .
+                          'Organiser is an extension for organisers, distributors, associations, lobby and presenters.',
 	'category' => 'plugin',
 	'shy' => 0,
 	'version' => '3.3.3',

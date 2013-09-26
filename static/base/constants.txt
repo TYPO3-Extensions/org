@@ -36,9 +36,9 @@ plugin.org {
   pages.news =
   # cat=Organiser - Pages/page/109; type=+int; label= staff:Uid of your staff page
   pages.staff =
-  # cat=Organiser - Pages/page/110; type=+int; label= shopping cart (events):Uid of your shopping cart page for events
+  # cat=Organiser - Pages/page/110; type=+int; label= Caddy (events):Uid of your Caddy page for events
   pages.shopping_cart =
-  # cat=Organiser - Pages/page/111; type=+int; label= shopping cart (downloads):Uid of your shopping cart page for downloads
+  # cat=Organiser - Pages/page/111; type=+int; label= Caddy (downloads):Uid of your Caddy page for downloads
   pages.shopping_cart_downloads =
   # cat=Organiser - Pages/page/112; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
@@ -68,9 +68,9 @@ plugin.org {
   url.default.calendar = schedule/
   # cat=Organiser - static url/page/101; type=+int; label= [default] downloads:URL of your downloads manager (default language)
   url.default.downloads = downloads/
-  # cat=Organiser - static url/page/107; type=+int; label= [default] shopping cart tickets:URL of your shopping cart for tickets(default language)
+  # cat=Organiser - static url/page/107; type=+int; label= [default] Caddy tickets:URL of your Caddy for tickets(default language)
   url.default.shopping_cart = tickets/
-  # cat=Organiser - static url/page/108; type=+int; label= [default] shopping cart downloads:URL of your shopping cart for downloads(default language)
+  # cat=Organiser - static url/page/108; type=+int; label= [default] Caddy downloads:URL of your Caddy for downloads(default language)
   url.default.shopping_cart_downloads = orders/
   # cat=Organiser - static url/page/109; type=+int; label= [default] terms & conditions for events:URL of your terms and conditions for booking events (default language)
   url.default.terms = tickets/terms/
@@ -81,26 +81,26 @@ plugin.org {
   url.de.calendar = spielplan/
   # cat=Organiser - static url/page/201; type=+int; label= [de] Downloads:URL of your download manager (only if German is configured!)
   url.de.downloads = downloads/
-  # cat=Organiser - static url/page/207; type=+int; label= [de] Warenkorb Eintrittskarten:URL of your shopping cart for tickets (only if German is configured!)
+  # cat=Organiser - static url/page/207; type=+int; label= [de] Warenkorb Eintrittskarten:URL of your Caddy for tickets (only if German is configured!)
   url.de.shopping_cart = karten/
-  # cat=Organiser - static url/page/208; type=+int; label= [de] Warenkorb Downloads:URL of your shopping cart for downloads (only if German is configured!)
+  # cat=Organiser - static url/page/208; type=+int; label= [de] Warenkorb Downloads:URL of your Caddy for downloads (only if German is configured!)
   url.de.shopping_cart_downloads = bestellungen/
   # cat=Organiser - static url/page/209; type=+int; label= [de] AGB Karten:URL of your terms and conditions for booking events (only if German is configured!)
   url.de.terms = karten/agb/
   # cat=Organiser - static url/page/210; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
   url.de.terms_downloads = downloads/agb/
 
-  # cat=Organiser - Shopping Cart//100; type=string; label= no reply:e-mail, which shouldn't get any reply
+  # cat=Organiser - Caddy//100; type=string; label= no reply:e-mail, which shouldn't get any reply
   powermail.noreply = no-reply@typo3-organiser.de
-  # cat=Organiser - Shopping Cart//101; type=string; label= sender name:name of the sender
+  # cat=Organiser - Caddy//101; type=string; label= sender name:name of the sender
   powermail.sender.name = Organiser ticket
-  # cat=Organiser - Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
+  # cat=Organiser - Caddy//102; type=string; label= sender e-mail:e-mail of the sender
   powermail.sender.mail = ticket@typo3-organiser.de
-  # cat=Organiser - Shopping Cart//102; type=string; label= sender e-mail:e-mail of the sender
+  # cat=Organiser - Caddy//102; type=string; label= sender e-mail:e-mail of the sender
   powermail.sender.mail = ticket@typo3-organiser.de
-  # cat=Organiser - Shopping Cart//103; type=+int; label= Uid of the order form for events:Uid of the content element with the powermail form for events. The page shopping cart for events contains it.
+  # cat=Organiser - Caddy//103; type=+int; label= Uid of the order form for events:Uid of the content element with the powermail form for events. The page Caddy for events contains it.
   tx_wtcart_pi1.powermailContentUid =
-  # cat=Organiser - Shopping Cart//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page shopping cart for downloads contains it.
+  # cat=Organiser - Caddy//104; type=+int; label= Uid of the order form for downloads:Uid of the content element with the powermail form for ordering downloads. The page Caddy for downloads contains it.
   tx_wtcart_pi1.powermailContentUid_downloads =
 
   # cat=Organiser - Table Downloads//100; type=+int; label= table:lable of the downloads table. Example: tx_org_downloads

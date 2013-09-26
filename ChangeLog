@@ -1,11 +1,13 @@
 3.3.3
-  13-09-14
+  13-09-27
   Features
   * #i0004: template for caddy with flags
             Effected files:
             * static/downloads/301/caddy
               * wiFlags       ( new )
                 * setup.txt   ( new )
+  Improvements
+  * #i0005: shopping cart is replaced with caddy
 
 3.3.2
   13-09-07
