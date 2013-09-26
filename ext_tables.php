@@ -196,7 +196,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/',   '+Org: +Downloads +Caddy');
       // #i0004, 130914, dwildt, 1+
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag/',   '+Org: +Downloads +Caddy +Flags');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag/',   '+Org: +Downloads +Caddy +Flaggen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Kalender');
@@ -213,9 +213,6 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Veranstaltorte - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Warenkorb Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Warenkorb Tickets');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Warenkorb Tickets - Rand');
     switch( true )
     {
       case( $typo3Version < 4007000 ):
@@ -231,9 +228,6 @@ switch( true )
   default:
       // English
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (obligate!)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/821/',     '+Org: Caddy for downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/801/',     '+Org: Caddy for tickets');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/shopping_cart/811/',     '+Org: Caddy for tickets - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/',          '+Org: Calendar');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/caddy/',    '+Org: +Calendar +Caddy');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/calendar/201/expired/',  '+Org: +Calendar expired');
@@ -243,7 +237,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/',   '+Org: +Downloads +Caddy');
       // #i0004, 130914, dwildt, 1+
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag',   '+Org: +Downloads +Caddy +Flaggen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag',   '+Org: +Downloads +Caddy +Flags');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
