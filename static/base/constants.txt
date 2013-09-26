@@ -15,15 +15,6 @@
 
 plugin.org {
 
-  # cat=Organiser - Caddy//100; type=string; label= no reply:e-mail, which shouldn't get any reply
-  powermail.noreply = no-reply@typo3-organiser.de
-  # cat=Organiser - Caddy//101; type=string; label= sender name:name of the sender
-  powermail.sender.name = Organiser ticket
-  # cat=Organiser - Caddy//102; type=string; label= sender e-mail:e-mail of the sender
-  powermail.sender.mail = ticket@typo3-organiser.de
-  # cat=Organiser - Caddy//102; type=string; label= sender e-mail:e-mail of the sender
-  powermail.sender.mail = ticket@typo3-organiser.de
-
   # cat=Organiser - Host*//100;     type=string; label= host*:*Obligate! host with an ending slash. I.e: http://die-netzmacher.de/
   host =
 
