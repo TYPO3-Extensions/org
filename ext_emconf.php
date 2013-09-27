@@ -44,6 +44,7 @@ $EM_CONF[$_EXTKEY] = array(
                         'cps_tcatree' => '',
 			'css_styled_content' => '',
 			'linkhandlerconf' => '',
+			'typo3' => '4.5.0-6.1.99',
 		),
 		'conflicts' => array(
                         'css_filelinks' => '',
