@@ -2,6 +2,8 @@
   13-10-02
   Features
   * #52475: Improved configuration of links in e-mails
+            Constant plugin.org.host is removed in constants.txt
+            Constant $plugin.org.host is replaced by getIndpEnv:TYPO3_REQUEST_HOST in setup.txt
 
 3.3.4
   13-09-27
