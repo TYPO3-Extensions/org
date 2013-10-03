@@ -215,8 +215,9 @@ plugin.tx_browser_pi1 {
                 }
                 30 = TEXT
                 30 {
-                  value   = details and tickets &raquo;
-                  lang.de = Details und Tickets &raquo;
+                  //value   = details and tickets &raquo;
+                  //lang.de = Details und Tickets &raquo;
+                  data    = LLL:EXT:org/locallang_db.xml:details
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
                     additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
@@ -1113,6 +1114,7 @@ plugin.tx_browser_pi1 {
       single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
       single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
+      details         = XYZ
     }
     de {
       list_mode_201             = Veranstaltungen
@@ -1122,6 +1124,7 @@ plugin.tx_browser_pi1 {
       single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
       single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
+      details         = ABC
     }
   }
 }
