@@ -217,7 +217,7 @@ plugin.tx_browser_pi1 {
                 30 {
                   //value   = details and tickets &raquo;
                   //lang.de = Details und Tickets &raquo;
-                  data    = LLL:EXT:org/locallang_db.xml:details
+                  data    = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
                     additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
