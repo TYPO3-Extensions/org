@@ -1010,7 +1010,7 @@ plugin.tx_browser_pi1 {
 <!-- ###AREA_FOR_AJAX_LIST_01### end -->
             <!-- ###BACKBUTTON### begin -->
             <p class="backbutton">
-              ###MY_LISTVIEW_PAGE### | ###BUTTON###
+              ###BUTTON### | ###MY_LISTVIEW_PAGE###
             </p>
             <!-- ###BACKBUTTON### end -->
 <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
