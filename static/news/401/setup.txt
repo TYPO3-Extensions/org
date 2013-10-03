@@ -65,7 +65,7 @@ plugin.tx_browser_pi1 {
                   value     = ###TX_ORG_NEWS.TEASER_TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.news} - linktosingle
-                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_NEWS.UID###
                     useCacheHash = 1
                   }
                 }
@@ -75,7 +75,7 @@ plugin.tx_browser_pi1 {
                   value       = ###TX_ORG_NEWS.TITLE###
                   typolink {
                     parameter         = {$plugin.org.pages.news} - linktosingle
-                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_NEWS.UID###
                     useCacheHash = 1
                   }
                 }
@@ -166,7 +166,7 @@ plugin.tx_browser_pi1 {
                 noTrimWrap = | <span class="more">|</span>|
                 typolink {
                   parameter = {$plugin.org.pages.news} - linktosingle
-                  additionalParams = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                  additionalParams = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_NEWS.UID###
                   useCacheHash = 1
                 }
               }

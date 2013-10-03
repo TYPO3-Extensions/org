@@ -1,3 +1,14 @@
+3.3.6
+  13-10-03
+  Improvement
+  * #i0009: * tx_browser_pi1[newsUid] > tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]
+              Effected files:
+  * #i0008: * moved from 201/setup.txt to 201/caddy/setup.txt
+              * plugin.tx_browser_pi1.views.single.201.marker.my_form_begin
+              * plugin.tx_browser_pi1.views.single.201.marker.my_form_end
+              * plugin.tx_browser_pi1.views.single.201.tx_org_calentrance
+              Effected files:
+
 3.3.5
   13-10-02
   Features
