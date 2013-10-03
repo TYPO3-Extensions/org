@@ -375,27 +375,71 @@ plugin.tx_browser_pi1 {
             10 {
               key = ###TX_ORG_CAL.TYPE###
                 // 0 (direct)
-              default = TEXT
+              default = COA
               default {
-                value = ###TX_ORG_CAL.TITLE###
-                typolink {
-                  parameter         = {$plugin.org.pages.calendar} - linktosingle
-                  additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
-                  useCacheHash = 1
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.calendar} - linktosingle
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
+                    useCacheHash = 1
+                  }
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.calendar} - linktosingle
+                    additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
+                    useCacheHash = 1
+                  }
                 }
               }
-              calpage = TEXT
+              calpage = COA
               calpage {
-                value = ###TX_ORG_CAL.TITLE###
-                typolink {
-                  parameter = ###TX_ORG_CAL.CALPAGE###
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALPAGE###
+                  }
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALPAGE###
+                  }
                 }
               }
-              calurl = TEXT
+              calurl = COA
               calurl {
-                value = ###TX_ORG_CAL.TITLE###
-                typolink {
-                  parameter = ###TX_ORG_CAL.CALURL###
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALURL###
+                  }
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
+                  value       = ###TX_ORG_CAL.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_CAL.CALURL###
+                  }
                 }
               }
               tx_org_event = TEXT

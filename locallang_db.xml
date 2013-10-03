@@ -337,7 +337,7 @@
       <label index="tx_org_location.pubtrans_embeddedcode">Public Transport: Embedded Code</label>
       <label index="tx_org_news">News</label>
       <label index="tx_org_news.div_news">News</label>
-      <label index="tx_org_news.div_marginal">MarginalTeaser</label>
+      <label index="tx_org_news.div_marginal">Marginal</label>
       <label index="tx_org_news.div_teaser">Teaser</label>
       <label index="tx_org_news.div_newspage">Internal link</label>
       <label index="tx_org_news.div_newsurl">External link</label>
