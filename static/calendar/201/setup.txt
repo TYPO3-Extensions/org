@@ -92,8 +92,10 @@ plugin.tx_browser_pi1 {
         select (
           tx_org_cal.title,
           tx_org_cal.subtitle,
-          tx_org_cal.teaser_short,
           tx_org_cal.bodytext,
+          tx_org_cal.teaser_title,
+          tx_org_cal.teaser_subtitle,
+          tx_org_cal.teaser_short,
           tx_org_cal.datetime,
           tx_org_cal.type,
           tx_org_cal.calpage,
@@ -342,23 +344,56 @@ plugin.tx_browser_pi1 {
             10 {
               key = ###TX_ORG_CAL.TYPE###
                 // 0 (direct)
-              default = TEXT
+              default = COA
               default {
-                required  = 1
-                value     = ###TX_ORG_CAL.SUBTITLE###
-                wrap      = <div class="cal_subtitle cal_subtitle_default">|</div>
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_default">|</div>
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_default">|</div>
+                }
               }
               calpage = TEXT
               calpage {
-                required  = 1 my_datesheet
-                value     = ###TX_ORG_CAL.SUBTITLE###
-                wrap      = <div class="cal_subtitle cal_subtitle_page">|</div>
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_page">|</div>
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_page">|</div>
+                }
               }
-              calurl = TEXT
+              calurl = COA
               calurl {
-                required  = 1
-                value     = ###TX_ORG_CAL.SUBTITLE###
-                wrap      = <div class="cal_subtitle cal_subtitle_url">|</div>
+                10 = TEXT
+                10 {
+                  required    = 1
+                  if.isTrue   = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_url">|</div>
+                }
+                20 = TEXT
+                20 {
+                  required    = 1
+                  if.isFalse  = ###TX_ORG_CAL.TEASER_SUBTITLE###
+                  value       = ###TX_ORG_CAL.SUBTITLE###
+                  wrap        = <div class="cal_subtitle cal_subtitle_url">|</div>
+                }
               }
               tx_org_event = TEXT
               tx_org_event {
