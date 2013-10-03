@@ -1,5 +1,7 @@
 3.3.6
   13-10-03
+  Features
+  * #52518: Margin fields for Calender and News
   Improvement
   * #i0009: * tx_browser_pi1[newsUid] > tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]
               Effected files:

@@ -482,6 +482,7 @@ $TCA['tx_org_cal'] = array (
   'interface' => array (
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'.
                               'teaser_title,teaser_subtitle,teaser_short,'.
+                              'marginal_title,marginal_subtitle,marginal_short,'.
                               'tx_org_location,tx_org_calentrance,'.
                               'tx_org_headquarters'.
                               'tx_org_department'.
@@ -745,6 +746,24 @@ $TCA['tx_org_cal'] = array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.teaser_short',
+      'config'    => $conf_text_50_10,
+    ),
+    'marginal_title' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.marginal_title',
+      'config'    => $conf_input_30_trim,
+    ),
+    'marginal_subtitle' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.marginal_subtitle',
+      'config'    => $conf_input_30_trim,
+    ),
+    'marginal_short' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.marginal_short',
       'config'    => $conf_text_50_10,
     ),
     'tx_org_location' => array (
@@ -1212,6 +1231,7 @@ $TCA['tx_org_cal'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,' .
         'tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_marginal,    marginal_title,marginal_subtitle,marginal_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_company,     tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_department,  tx_org_department,'.
@@ -1232,6 +1252,7 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calpage,     calpage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_marginal,    marginal_title,marginal_subtitle,marginal_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
@@ -1244,6 +1265,7 @@ $TCA['tx_org_cal'] = array (
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calurl,     calurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_marginal,    marginal_title,marginal_subtitle,marginal_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
@@ -5122,6 +5144,8 @@ $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext,'.
+                              'teaser_title,teaser_subtitle,teaser_short'.
+                              'marginal_title,marginal_subtitle,marginal_short'.
                               'newspage,newsurl'.
                               'fe_user,'.
                               'tx_org_headquarters,'.
@@ -5130,8 +5154,8 @@ $TCA['tx_org_news'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,'.
                               'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'.
-                              'keywords,description,'.
-                              'teaser_title,teaser_subtitle,teaser_short',
+                              'keywords,description,'
+      ,
   ),
   'feInterface' => $TCA['tx_org_news']['feInterface'],
   'columns' => array (
@@ -5738,6 +5762,24 @@ $TCA['tx_org_news'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.teaser_short',
       'config'    => $conf_text_50_10,
     ),
+    'marginal_title' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.marginal_title',
+      'config'    => $conf_input_30_trim,
+    ),
+    'marginal_subtitle' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.marginal_subtitle',
+      'config'    => $conf_input_30_trim,
+    ),
+    'marginal_short' => array (
+      'exclude'   => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.marginal_short',
+      'config'    => $conf_text_50_10,
+    ),
   ),
   'types' => array (
     'news' => array ('showitem' =>
@@ -5745,6 +5787,7 @@ $TCA['tx_org_news'] = array (
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:date;datetime_archivedate,' .
           'tx_org_newscat,tx_org_newscat_uid_parent,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_marginal,   marginal_title;;;;6-6-6, marginal_subtitle, marginal_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
@@ -5767,6 +5810,7 @@ $TCA['tx_org_news'] = array (
           'tx_org_newscat,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newspage,   newspage,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_marginal,   marginal_title;;;;6-6-6, marginal_subtitle, marginal_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
@@ -5783,6 +5827,7 @@ $TCA['tx_org_news'] = array (
           'tx_org_newscat,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_newsurl,    newsurl,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_teaser,     teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_news.div_marginal,   marginal_title;;;;6-6-6, marginal_subtitle, marginal_short,'.
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
         '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,' .
