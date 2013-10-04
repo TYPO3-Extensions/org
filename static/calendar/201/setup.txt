@@ -115,7 +115,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_calendar
                   }
                 }
               }
@@ -135,7 +135,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_caltype.title
                   }
                 }
               }
@@ -157,7 +157,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_department
                   }
                 }
               }
@@ -217,7 +217,7 @@ plugin.tx_browser_pi1 {
                 30 {
                   //value   = details and tickets &raquo;
                   //lang.de = Details und Tickets &raquo;
-                  data    = LLL:EXT:org/locallang_db.xml:tca_phrase.location
+                  data    = LLL:EXT:org/locallang_db.xml:phrase_calLinkToSingle
                   typolink {
                     parameter         = {$plugin.org.pages.calendar} - linktosingle
                     additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
@@ -1038,7 +1038,7 @@ plugin.tx_browser_pi1 {
             wrap = <div class="cal_location">|</div>
             10 = TEXT
             10 {
-              data = LLL:EXT:org/locallang_db.xml:tca_phrase.location
+              data = LLL:EXT:org/locallang_db.xml:tca_phrase_location
               noTrimWrap = ||: |
             }
             11 = TEXT

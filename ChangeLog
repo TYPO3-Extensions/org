@@ -1,6 +1,7 @@
 3.3.6
   13-10-03
   Bugfix
+  * #52521: Improve locallang_db.xml: remove dots in keys
   * #52520: List view cal doesn't respect teaser values
   Improvement
   * #i0009: tx_browser_pi1[newsUid] > tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]

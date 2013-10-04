@@ -43,7 +43,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.fe_group
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_fe_group
                   }
                 }
               }
@@ -65,7 +65,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_department
                   }
                 }
               }
