@@ -115,7 +115,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_calendar
                   }
                 }
               }
@@ -135,7 +135,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_caltype.title
                   }
                 }
               }
@@ -157,7 +157,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_department
                   }
                 }
               }
@@ -1038,7 +1038,7 @@ plugin.tx_browser_pi1 {
             wrap = <div class="cal_location">|</div>
             10 = TEXT
             10 {
-              data = LLL:EXT:org/locallang_db.xml:tca_phrase.location
+              data = LLL:EXT:org/locallang_db.xml:tca_phrase_location
               noTrimWrap = ||: |
             }
             11 = TEXT
@@ -1114,7 +1114,7 @@ plugin.tx_browser_pi1 {
       single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
       single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
-      details         = XYZ
+      phrase_calLinkToSingle         = XYZ
     }
     de {
       list_mode_201             = Veranstaltungen
@@ -1124,7 +1124,7 @@ plugin.tx_browser_pi1 {
       single_mode_201_titleTag  = TYPO3 Organiser: ###TX_ORG_CAL.TITLE###
       single_mode_201_keywords  = ###TX_ORG_CAL.KEYWORDS######TX_ORG_EVENT.KEYWORDS###
       single_mode_201_summary   = ###TX_ORG_CAL.DESCRIPTION######TX_ORG_EVENT.DESCRIPTION###
-      details         = ABC
+      phrase_calLinkToSingle         = ABC
     }
   }
 }

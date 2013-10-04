@@ -36,7 +36,7 @@ plugin.tx_browser_pi1 {
             first_item {
               cObject {
                 20 {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar.expired
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase_calendar.expired
                 }
               }
             }
