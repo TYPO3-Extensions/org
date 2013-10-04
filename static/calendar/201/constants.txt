@@ -6,6 +6,7 @@
 
   // plugin.tx_browser_pi1
   // plugin.tx_seodynamictag_pi1
+  // myConst.org
 
 
 
@@ -72,3 +73,19 @@ plugin.tx_seodynamictag {
   }
 }
   // plugin.tx_seodynamictag
+
+
+
+  ////////////////////////////////////////
+  //
+  // myConst.org
+
+myConst.org {
+  phrases {
+    calLinkToSingle {
+      de = Mehr &raquo;
+      en = details &raquo;
+    }
+  }
+}
+  // myConst.org

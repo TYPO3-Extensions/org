@@ -4,7 +4,7 @@
   // INDEX
 
   // plugin.caddy
-
+  // myConst.org
 
 
   ////////////////////////////////////////
@@ -26,3 +26,19 @@ plugin.caddy {
   }
 }
   // plugin.caddy
+
+
+
+  ////////////////////////////////////////
+  //
+  // myConst.org
+
+myConst.org {
+  phrases {
+    calLinkToSingle {
+      de = Details und Tickets &raquo;
+      en = details and tickets &raquo;
+    }
+  }
+}
+  // myConst.org
