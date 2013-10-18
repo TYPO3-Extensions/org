@@ -83,7 +83,7 @@ plugin.tx_seodynamictag {
 myConst.org {
   phrases {
     calLinkToSingle {
-      de = Mehr &raquo;
+      de = mehr &raquo;
       en = details &raquo;
     }
   }

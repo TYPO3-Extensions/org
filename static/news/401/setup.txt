@@ -198,7 +198,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_period
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.period
                   }
                 }
               }
@@ -235,7 +235,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase_newscat
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.newscat
                   }
                 }
               }
