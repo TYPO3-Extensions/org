@@ -48,8 +48,8 @@ plugin.tx_browser_pi1 {
           deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
         }
         filter {
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_headquarterscat {
-            radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
