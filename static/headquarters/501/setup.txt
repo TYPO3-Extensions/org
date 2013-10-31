@@ -50,6 +50,7 @@ plugin.tx_browser_pi1 {
         }
         filter {
           tx_org_headquarterscat {
+            radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
               first_item {
@@ -73,7 +74,6 @@ plugin.tx_browser_pi1 {
               }
             }
           }
-          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
         }
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
