@@ -253,8 +253,14 @@
 }
 
 .tx-browser-pi1 div.radialsearch-within-radius {
-  background-color:green;
+  background:#D2FF99;
+  border-radius: .8em;
+  padding: .4em .4em .1em .8em;
 }
+
 .tx-browser-pi1 div.radialsearch-outside-radius {
-  opacity: 0.20;  
+  background:#CCC;
+  border-radius: .8em;
+  opacity: 0.4;  
+  padding: .4em .4em .1em .8em;
 }
