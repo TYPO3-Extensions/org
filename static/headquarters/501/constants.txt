@@ -3,6 +3,7 @@
   // INDEX
 
   // plugin.tx_browser_pi1
+  // plugin.tx_radialsearch_pi1
   // plugin.tx_seodynamictag
 
 
@@ -46,8 +47,27 @@ plugin.tx_browser_pi1 {
       }
     }
   }
+  radialsearch {
+    lat = tx_org_headquarters.mail_lat
+    lon = tx_org_headquarters.mail_lon
+  }
 }
   // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_radialsearch_pi1
+
+plugin.tx_radialsearch_pi1 {
+  css {
+    jquery {
+      path = 
+    }
+  }
+}
+  // plugin.tx_radialsearch_pi1
 
 
 

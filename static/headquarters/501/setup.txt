@@ -49,7 +49,6 @@ plugin.tx_browser_pi1 {
           deleted < plugin.tx_radialsearch.masterTemplates.linearDistance
         }
         filter {
-          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_headquarterscat {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
@@ -74,6 +73,7 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
         }
         navigation {
           map < plugin.tx_browser_pi1.navigation.map
