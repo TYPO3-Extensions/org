@@ -33,7 +33,6 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.mail_lon,
           tx_org_headquarters.crdate,
           tx_org_headquarters.deleted,
-          tx_org_headquarters.tstamp,
           tx_org_headquarterscat.title,
           tx_org_headquarterscat.icons,        
           tx_org_headquarterscat.icon_offset_x,       
@@ -46,7 +45,7 @@ plugin.tx_browser_pi1 {
             // placeholder: radialsearch HTML class depending on radius
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
             // placeholder: radialsearch linear distance
-          deleted < plugin.tx_radialsearch.masterTemplates.linearDistance
+          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
         }
         filter {
           tx_org_headquarterscat {
@@ -111,7 +110,6 @@ plugin.tx_browser_pi1 {
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
               <div class="record01###TX_ORG_HEADQUARTERS.CRDATE###">
                 ###TX_ORG_HEADQUARTERS.DELETED###
-                ###TX_ORG_HEADQUARTERS.TSTAMP###
                 <div class="image01">
                   ###TX_ORG_HEADQUARTERS.IMAGE###
                 </div>
