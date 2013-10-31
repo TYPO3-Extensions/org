@@ -34,7 +34,8 @@ plugin.tx_browser_pi1 {
           tx_org_headquarterscat.title,
           tx_org_headquarterscat.icons,        
           tx_org_headquarterscat.icon_offset_x,       
-          tx_org_headquarterscat.icon_offset_y
+          tx_org_headquarterscat.icon_offset_y,
+          tx_org_department.title
         )
         orderBy = tx_org_headquarters.title
         csvLinkToSingleView = tx_org_headquarters.title
