@@ -1,3 +1,10 @@
+3.4.0
+  13-10-31
+  Feature
+  * #53245: Radialsearch sample
+            Effected files:
+            * static/headquarters/501/setup.txt
+
 3.3.6
   13-10-03
   Bugfix

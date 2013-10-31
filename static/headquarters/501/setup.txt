@@ -31,6 +31,9 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.imageseo,
           tx_org_headquarters.mail_lat,
           tx_org_headquarters.mail_lon,
+          tx_org_headquarters.crdate,
+          tx_org_headquarters.deleted,
+          tx_org_headquarters.tstamp,
           tx_org_headquarterscat.title,
           tx_org_headquarterscat.icons,        
           tx_org_headquarterscat.icon_offset_x,       
@@ -39,7 +42,14 @@ plugin.tx_browser_pi1 {
         )
         orderBy = tx_org_headquarters.title
         csvLinkToSingleView = tx_org_headquarters.title
+        tx_org_headquarters {
+            // radialsearch HTML class depending on radius (placeholder)
+          crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
+            // radialsearch linear distance (placeholder)
+          deleted < plugin.tx_radialsearch.masterTemplates.linearDistance
+        }
         filter {
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_headquarterscat {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
@@ -88,6 +98,7 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###TX_ORG_HEADQUARTERSCAT.TITLE###
+                ###RADIALSEARCH###
               </div>
 )
             }
@@ -98,7 +109,9 @@ plugin.tx_browser_pi1 {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record01">
+              <div class="record01###TX_ORG_HEADQUARTERS.CRDATE###">
+                ###TX_ORG_HEADQUARTERS.DELETED###
+                ###TX_ORG_HEADQUARTERS.TSTAMP###
                 <div class="image01">
                   ###TX_ORG_HEADQUARTERS.IMAGE###
                 </div>
