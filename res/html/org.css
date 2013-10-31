@@ -251,3 +251,10 @@
    position: relative;
    z-index: 2;
 }
+
+.tx-browser-pi1 div.radialsearch-within-radius {
+  background-color:green;
+}
+.tx-browser-pi1 div.radialsearch-outside-radius {
+  opacity: 0.20;  
+}
