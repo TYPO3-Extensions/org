@@ -66,6 +66,11 @@ plugin.tx_radialsearch_pi1 {
       path = 
     }
   }
+  distance {
+    dec_point     = ,
+    thousands_sep = .
+  }
+
 }
   // plugin.tx_radialsearch_pi1
 
