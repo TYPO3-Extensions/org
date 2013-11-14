@@ -20,7 +20,7 @@ $EM_CONF[$_EXTKEY] = array(
                           'Organiser is an extension for organisers, distributors, associations, lobby and presenters.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '3.4.0',
+	'version' => '3.4.1',
 	'dependencies' => 'browser,caddy,cps_tcatree,css_styled_content,linkhandlerconf',
 	'conflicts' => 'css_filelinks',
 	'priority' => '',

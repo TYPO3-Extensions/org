@@ -273,7 +273,8 @@ switch( true )
   //
   // Add dynamic static files
 
-require_once( PATH_typo3conf . 'ext/org/ext_tables/default/typoscript.php' );
+  // #53649, 131114, dwildt, 1-
+//require_once( PATH_typo3conf . 'ext/org/ext_tables/default/typoscript.php' );
   // Add dynamic static files
 
 
