@@ -101,7 +101,7 @@ plugin.tx_seodynamictag {
     table = tx_org_headquarters
     var.1 = tx_browser_pi1[headquartersUid]
     field {
-      author        =  
+      //author        =  
       description   = description
       keywords      = keywords 
       title         = title 

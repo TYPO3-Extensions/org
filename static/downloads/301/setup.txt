@@ -176,7 +176,8 @@ plugin.tx_browser_pi1 {
         }
         tx_org_downloads {
             // thumbnail
-          thumbnail < tt_content.uploads.20
+          //thumbnail < plugin.tx_browser_pi1.tt_content.uploads.20
+          thumbnail < plugin.tx_browser_pi1.tt_content.uploads.20
           thumbnail {
             userFunc = tx_browser_cssstyledcontent->render_uploads
             userFunc {
@@ -734,7 +735,8 @@ plugin.tx_browser_pi1 {
               wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
             }
               // thumbnail
-            30 < tt_content.uploads.20
+            //30 < plugin.tx_browser_pi1.tt_content.uploads.20
+            30 < plugin.tx_browser_pi1.tt_content.uploads.20
             30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
@@ -1008,7 +1010,8 @@ plugin.tx_browser_pi1 {
               }
             }
               // File link and order form
-            50 < tt_content.uploads.20
+            //50 < plugin.tx_browser_pi1.tt_content.uploads.20
+            50 < plugin.tx_browser_pi1.tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {
@@ -1060,7 +1063,8 @@ plugin.tx_browser_pi1 {
                   value = ###TX_ORG_DOWNLOADS.UID###
                 }
                   // conf: Should be a modified copy of the parent configuration
-                conf < tt_content.uploads.20
+                //conf < plugin.tx_browser_pi1.tt_content.uploads.20
+                conf < plugin.tx_browser_pi1.tt_content.uploads.20
                 conf =
                 conf {
                   userFunc >
@@ -1137,11 +1141,10 @@ plugin.tx_browser_pi1 {
                           // File preview or application icon
                         20 = COA
                         20 {
-                          10 < tt_content.uploads.20.itemRendering.10
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.10
+                          10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.10
                           10 {
                             if {
-                              //isPositive.field >
-                              //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                               isPositive.field   = tx_org_downloads.documentslayout
                             }
                           }
@@ -1149,7 +1152,8 @@ plugin.tx_browser_pi1 {
                           // File name
                         30 = COA
                         30 {
-                          10 < tt_content.uploads.20.itemRendering.20.1
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
+                          10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
                           10 {
                             //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             if.isTrue.field   = tx_org_downloads.documents_display_label
@@ -1161,9 +1165,10 @@ plugin.tx_browser_pi1 {
                         40 = COA
                         40 {
                             // 130207, dwildt, 1-
-                          //10 < tt_content.uploads.20.itemRendering.20.2
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
                             // 130207, dwildt, 1+
-                          10 < tt_content.uploads.20.itemRendering.20
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20
+                          10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20
                           10 {
                             //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
                             if.isTrue.field = tx_org_downloads.documents_display_caption
@@ -1176,7 +1181,8 @@ plugin.tx_browser_pi1 {
                           10 = COA
                           10 {
                             wrap = <td class="csc-uploads-fileSize">|</td>
-                            10 < tt_content.uploads.20.itemRendering.30
+                            //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.30
+                            10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.30
                             10 {
                               if >
                               //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
@@ -1256,8 +1262,6 @@ plugin.tx_browser_pi1 {
                         20 = TEXT
                         20 {
                           if {
-                            //isPositive.field >
-                            //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                             isPositive.field   = tx_org_downloads.documentslayout
                           }
                           value = &nbsp;
@@ -1266,7 +1270,8 @@ plugin.tx_browser_pi1 {
                           // File name
                         30 = COA
                         30 {
-                          10 < tt_content.uploads.20.itemRendering.20.1
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
+                          10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
                           10 {
                             //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                             if.isTrue.field   = tx_org_downloads.documents_display_label
@@ -1278,9 +1283,10 @@ plugin.tx_browser_pi1 {
                         40 = COA
                         40 {
                             // 130209, dwildt, 1-
-                          //10 < tt_content.uploads.20.itemRendering.20.2
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
                             // 130209, dwildt, 1+
-                          10 < tt_content.uploads.20.itemRendering.20.2
+                          //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
+                          10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
                           10 {
                             if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
                             wrap        = <td class="csc-uploads-file-caption">|</td>
@@ -1401,25 +1407,6 @@ plugin.tx_browser_pi1 {
                     }
 
                   }
-                    // 130207
-                  //tableField = tx_org_downloads.documents
-                  //fields {
-                  //  caption   = ###TABLE.DOCUMENTSCAPTION###
-                  //  from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                  //    // #34988, 120318, dwildt, 1-
-                  //  //files     = ###TABLE.DOCUMENTS###
-                  //  // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
-                  //  //files {
-                  //  //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                  //  //}
-                  //    // #34988, 120318, dwildt, 4+
-                  //  files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                  //  files {
-                  //    override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                  //  }
-                  //    // #34988, 120318, dwildt, 4+
-                  //  layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-                  //}
                   stdWrap {
                     if.isTrue = ###TABLE.THUMBNAIL######TABLE.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
                   }
@@ -1499,11 +1486,10 @@ plugin.tx_browser_pi1 {
                       // File preview or application icon
                     20 = COA
                     20 {
-                      10 < tt_content.uploads.20.itemRendering.10
+                      //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.10
+                      10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.10
                       10 {
                         if {
-                          //isPositive.field >
-                          //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                           isPositive.field   = tx_org_downloads.documentslayout
                         }
                         wrap = <td class="csc-uploads-icon">|</td>
@@ -1512,7 +1498,8 @@ plugin.tx_browser_pi1 {
                       // File name
                     30 = COA
                     30 {
-                      10 < tt_content.uploads.20.itemRendering.20.1
+                      //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
+                      10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
                       10 {
                         //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                         if.isTrue.field   = tx_org_downloads.documents_display_label
@@ -1523,7 +1510,8 @@ plugin.tx_browser_pi1 {
                       // File description
                     40 = COA
                     40 {
-                      10 < tt_content.uploads.20.itemRendering.20.2
+                      //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
+                      10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
                       10 {
                         //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
                         if.isTrue.field = tx_org_downloads.documents_display_caption
@@ -1536,7 +1524,8 @@ plugin.tx_browser_pi1 {
                       10 = COA
                       10 {
                         wrap = <td class="csc-uploads-fileSize">|</td>
-                        10 < tt_content.uploads.20.itemRendering.30
+                        //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.30
+                        10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.30
                         10 {
                           if >
                           //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTSSIZE###
@@ -1618,8 +1607,6 @@ plugin.tx_browser_pi1 {
                     20 = TEXT
                     20 {
                       if {
-                        //isPositive.field >
-                        //isPositive = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
                         isPositive.field   = tx_org_downloads.documentslayout
                       }
                       value = &nbsp;
@@ -1628,7 +1615,8 @@ plugin.tx_browser_pi1 {
                       // File name
                     30 = COA
                     30 {
-                      10 < tt_content.uploads.20.itemRendering.20.1
+                      //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
+                      10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.1
                       10 {
                         //if.isTrue = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_LABEL###
                         if.isTrue.field   = tx_org_downloads.documents_display_label
@@ -1638,7 +1626,8 @@ plugin.tx_browser_pi1 {
                       // File description
                     40 = COA
                     40 {
-                      10 < tt_content.uploads.20.itemRendering.20.2
+                      //10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
+                      10 < plugin.tx_browser_pi1.tt_content.uploads.20.itemRendering.20.2
                       10 {
                         if.isTrue   = ###TX_ORG_DOWNLOADS.DOCUMENTS_DISPLAY_CAPTION###
                         wrap        = <td class="csc-uploads-file-caption">|</td>
@@ -1764,24 +1753,6 @@ plugin.tx_browser_pi1 {
               }
                 // 130207, dwildt, -
               //tableField = tx_org_downloads.documents
-                // 130207, dwildt, -
-              XXX_fields {
-                caption   = ###TX_ORG_DOWNLOADS.DOCUMENTSCAPTION###
-                from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-                  // #34988, 120318, dwildt, 1-
-                //files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                // Bugfix, 120117, dwildt: icon and size should referr to document not to thumbnail
-                //files {
-                //  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                //}
-                  // #34988, 120318, dwildt, 4+
-                files     = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-                files {
-                  override = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-                }
-                  // #34988, 120318, dwildt, 4+
-                layout    = ###TX_ORG_DOWNLOADS.DOCUMENTSLAYOUT###
-              }
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }

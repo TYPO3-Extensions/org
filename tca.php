@@ -8,7 +8,7 @@ if (!defined ('TYPO3_MODE'))
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // INDEX
   // -----
   // Configuration by the extension manager
@@ -36,7 +36,7 @@ if (!defined ('TYPO3_MODE'))
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Configuration by the extension manager
 
 $confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
@@ -77,7 +77,7 @@ if (strtolower(substr($confArr['TCA_simplify_topnews_sorting'], 0, strlen('no'))
   $bool_topnews_sorting = true;
 }
   // Simplify backend forms
-  
+
   // Relation fe_users to company
 switch ($confArr['TCA_fe_user_company'])
 {
@@ -112,7 +112,7 @@ if (strtolower(substr($confArr['full_wizardSupport'], 0, strlen('no'))) == 'no')
   // Full wizard support
 
   // Store record configuration
-switch($confArr['store_records']) 
+switch($confArr['store_records'])
 {
   case('Easy 1: all in the same directory'):                            // organiser < v3.x
   case('Current folder'):
@@ -149,9 +149,9 @@ switch($confArr['store_records'])
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // General Configuration
-  
+
   // JSopenParams for all wizards
   $JSopenParams     = 'height=680,width=800,status=0,menubar=0,scrollbars=1';
   // Rows of calendar select box
@@ -178,13 +178,13 @@ switch($confArr['store_records'])
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Wizard fe_users
 
   // Wizard for fe_users
   $arr_config_feuser = array (
-    'type'                => 'select', 
-    'size'                => $size_feuser, 
+    'type'                => 'select',
+    'size'                => $size_feuser,
     'suppress_icons'      => 1,
     'minitems'            => 0,
     'maxitems'            => 999,
@@ -236,7 +236,7 @@ switch($confArr['store_records'])
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // Other wizards and config drafts
 
   $arr_wizard_url = array (
@@ -265,7 +265,7 @@ switch($confArr['store_records'])
     'eval'    => 'datetime',
     'default' => mktime(date('H'),date('i'),0,date('m'),date('d'),date('Y')),
   );
-  
+
   $conf_datetimeend = $conf_datetime;
   unset($conf_datetimeend['default']);
 
@@ -276,8 +276,8 @@ switch($confArr['store_records'])
     'type'          => 'group',
     'internal_type' => 'file',
     'allowed'       => '',
-    'disallowed'    => 'php,php3', 
-    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'], 
+    'disallowed'    => 'php,php3',
+    'max_size'      => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
     'uploadfolder'  => 'uploads/tx_org',
     'show_thumbs'   => 1,
     'size'          => 10,
@@ -333,7 +333,7 @@ switch($confArr['store_records'])
     'size' => '30',
     'eval' => 'trim,required'
   );
-  
+
   $conf_input_80_trim = array (
     'type' => 'input',
     'size' => '80',
@@ -341,22 +341,22 @@ switch($confArr['store_records'])
   );
   $conf_text_30_05 = array (
     'type' => 'text',
-    'cols' => '30', 
+    'cols' => '30',
     'rows' => '5',
   );
   $conf_text_30_05_trimRequired = array (
     'type' => 'text',
-    'cols' => '30', 
+    'cols' => '30',
     'rows' => '5',
     'eval' => 'trim,required'
   );
-  
+
   $conf_text_50_10 = array (
     'type' => 'text',
-    'cols' => '50', 
+    'cols' => '50',
     'rows' => '10',
   );
-  
+
   $conf_text_rte = array (
     'type' => 'text',
     'cols' => '30',
@@ -529,12 +529,12 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type',
       'config'    => array (
-        'type'    => 'select', 
+        'type'    => 'select',
         'items'   => array (
           '0' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.direct',
             '1' => '0',
-            '2' => 'EXT:org/ext_icon/cal.gif',
+            '2' => 'EXT:org/ext_icon/caldirect.gif',
           ),
           'calpage' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calpage',
@@ -621,8 +621,8 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_caltype',
       'config' => array (
-        'type' => 'select', 
-        'size' => 1, 
+        'type' => 'select',
+        'size' => 1,
         'minitems' => 0,
         'maxitems' => 1,
         'items' => array (
@@ -681,7 +681,7 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_event',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_event,
         'minitems'            => 0,
         'maxitems'            => 1,
@@ -771,7 +771,7 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_location',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_location,
         'minitems'            => 0,
         'maxitems'            => 1,
@@ -825,8 +825,8 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_calentrance',
       'config'    => array (
-        'type' => 'select', 
-        'size' => 10, 
+        'type' => 'select',
+        'size' => 10,
         'minitems' => 0,
         'maxitems' => 999,
         'MM'                  => 'tx_org_cal_mm_tx_org_calentrance',
@@ -872,7 +872,7 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_headquarters',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_headquarters,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -922,7 +922,7 @@ $TCA['tx_org_cal'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_department',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_department,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -1367,7 +1367,7 @@ $TCA['tx_org_calentrance'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_calentrance.value',
       'config' => array (
-        'type' => 'input',  
+        'type' => 'input',
         'size' => '7',
         'max'  => '7',
         'eval' => 'required,double2',
@@ -1432,8 +1432,8 @@ $TCA['tx_org_caltype'] = array (
       'exclude' => $bool_exclude_default,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_caltype.tx_org_cal',
       'config'  => array (
-        'type'                => 'select', 
-        'size'                => $size_calendar, 
+        'type'                => 'select',
+        'size'                => $size_calendar,
         'minitems'            => 0,
         'maxitems'            => 999,
         'MM'                  => 'tx_org_cal_mm_tx_org_caltype',
@@ -1562,8 +1562,8 @@ $TCA['tx_org_department'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.tx_org_departmentcat',
       'config'    => array (
-        'type' => 'select', 
-        'size' => 10, 
+        'type' => 'select',
+        'size' => 10,
         'minitems' => 0,
         'maxitems' => 1,
         'MM'                  => 'tx_org_department_mm_tx_org_departmentcat',
@@ -1609,7 +1609,7 @@ $TCA['tx_org_department'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.tx_org_headquarters',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_department,
         'minitems'            => 0,
         'maxitems'            => 1,
@@ -1663,7 +1663,7 @@ $TCA['tx_org_department'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.fe_users',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_feuser,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -1678,7 +1678,7 @@ $TCA['tx_org_department'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_department.tx_org_cal',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_calendar,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -1800,7 +1800,7 @@ $TCA['tx_org_department'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_news,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -2081,7 +2081,7 @@ $TCA['tx_org_department'] = array (
     ),
   ),
   'types' => array (
-    '0' => array ('showitem' =>  
+    '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_department, title;;1;;1-1-1,tx_org_departmentcat,tx_org_headquarters,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_contact,    manager,telephone,fax,email,url,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_department.div_staff,      fe_users;;;;3-3-3,'.
@@ -2158,9 +2158,9 @@ if(!$bool_full_wizardSupport_allTables)
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_departmentcat
-  
+
 $TCA['tx_org_departmentcat'] = array (
   'ctrl' => $TCA['tx_org_departmentcat']['ctrl'],
   'interface' => array (
@@ -2591,7 +2591,7 @@ $TCA['tx_org_downloads'] = array (
         ),
         'default' => 'ts',
       ),
-    ),      
+    ),
     'tx_flipit_pagelist' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_pagelist',
@@ -2602,7 +2602,7 @@ $TCA['tx_org_downloads'] = array (
         'checkbox'  => '',
         'eval'      => 'trim',
       ),
-    ),      
+    ),
     'tx_flipit_updateswfxml' => array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_updateswfxml',
@@ -2839,12 +2839,12 @@ $TCA['tx_org_downloads'] = array (
     'tx_flipit_files' => array (
       'showitem' => 'tx_flipit_updateswfxml;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_updateswfxml, --linebreak--,' .
                     'tx_flipit_xml_file;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_xml_file, --linebreak--,' .
-                    'tx_flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_swf_files', 
+                    'tx_flipit_swf_files;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_swf_files',
       'canNotCollapse' => 1,
     ),
     'tx_flipit_quality' => array (
       'showitem' => 'tx_flipit_quality;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_quality,' .
-                    'tx_flipit_pagelist;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_pagelist', 
+                    'tx_flipit_pagelist;LLL:EXT:org/locallang_db.xml:tx_org_downloads.tx_flipit_pagelist',
       'canNotCollapse' => 1,
     ),
     'image_accessibility' => array (
@@ -3344,7 +3344,7 @@ $TCA['tx_org_downloadsmedia'] = array (
   //
   // tx_org_event
 
-  // Don't display relations to feuser by default 
+  // Don't display relations to feuser by default
 $bool_exclude_feuser = true;
 
 $TCA['tx_org_event'] = array (
@@ -3440,7 +3440,7 @@ $TCA['tx_org_event'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_event.tx_org_cal',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_calendar,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -3538,7 +3538,7 @@ $TCA['tx_org_event'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_news,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -3837,7 +3837,7 @@ $TCA['tx_org_event'] = array (
     ),
   ),
   'types' => array (
-    '0' => array ('showitem' =>  
+    '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_event,     title;;;;1-1-1,subtitle,producer,length,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_teaser,    teaser_title,teaser_subtitle,teaser_short,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_calendar,  tx_org_cal,'.
@@ -3902,14 +3902,14 @@ if(!$bool_full_wizardSupport_allTables)
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_headquarters
-  
+
   // tx_org_headquarters
 $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
-  
+
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
@@ -3964,8 +3964,8 @@ $TCA['tx_org_headquarters'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.tx_org_headquarterscat',
       'config'    => array (
-        'type' => 'select', 
-        'size' => 10, 
+        'type' => 'select',
+        'size' => 10,
         'minitems' => 0,
         'maxitems' => 99,
         'MM'                  => 'tx_org_headquarters_mm_tx_org_headquarterscat',
@@ -4107,7 +4107,7 @@ $TCA['tx_org_headquarters'] = array (
       'exclude' => $bool_exclude_tx_org_department,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.tx_org_department',
       'config'  => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_department,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -4423,7 +4423,7 @@ $TCA['tx_org_headquarters'] = array (
     ),
   ),
   'types' => array (
-    '0' => array ('showitem' =>  
+    '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_contact,      telephone,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_department,   tx_org_department,'.
@@ -4498,9 +4498,9 @@ if(!$bool_full_wizardSupport_allTables)
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_headquarterscat
-  
+
 $TCA['tx_org_headquarterscat'] = array (
   'ctrl' => $TCA['tx_org_headquarterscat']['ctrl'],
   'interface' => array (
@@ -4550,10 +4550,10 @@ $TCA['tx_org_headquarterscat'] = array (
     'hidden'    => $conf_hidden,
   ),
   'types' => array (
-    '0' => array ('showitem' =>  
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,' . 
+    '0' => array ('showitem' =>
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,' .
         'title;;1;;1-1-1,icons,icon_offset_x,icon_offset_y,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control,' . 
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control,' .
         'hidden'
     ),
   ),
@@ -4566,14 +4566,14 @@ $TCA['tx_org_headquarterscat'] = array (
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_location
-  
+
   // tx_org_location
 $TCA['tx_org_location'] = array (
   'ctrl' => $TCA['tx_org_location']['ctrl'],
   'interface' => array (
-  
+
     'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,url,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,'.
                               'telephone,ticket_telephone,ticket_url,fax,email,'.
                               'tx_org_cal,'.
@@ -4711,7 +4711,7 @@ $TCA['tx_org_location'] = array (
       'l10n_mode'   => 'exclude',
       'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_location.tx_org_cal',
       'config'      => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_calendar,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -5074,7 +5074,7 @@ $TCA['tx_org_location'] = array (
     ),
   ),
   'types' => array (
-    '0' => array ('showitem' =>  
+    '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_location,     title,url,mail_address;;;;2-2-2,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_contact,      telephone,ticket_telephone,ticket_url,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_location.div_calendar,     tx_org_cal,'.
@@ -5137,9 +5137,9 @@ if(!$bool_full_wizardSupport_allTables)
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_news
-  
+
 $TCA['tx_org_news'] = array (
   'ctrl' => $TCA['tx_org_news']['ctrl'],
   'interface' => array (
@@ -5195,7 +5195,7 @@ $TCA['tx_org_news'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type',
       'config'    => array (
-        'type'    => 'select', 
+        'type'    => 'select',
         'items'   => array (
           'news' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.news',
@@ -5343,7 +5343,7 @@ $TCA['tx_org_news'] = array (
 //      'l10n_mode'   => 'exclude',
       'label'       => 'LLL:EXT:org/locallang_db.xml:tx_org_news.fe_user',
       'config'      => array (
-        'type'      => 'select', 
+        'type'      => 'select',
         'size'      => $size_news,
         'minitems'  => 0,
         'maxitems'  => 1,
@@ -5365,7 +5365,7 @@ $TCA['tx_org_news'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.tx_org_company',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_headquarters,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -5415,7 +5415,7 @@ $TCA['tx_org_news'] = array (
       'l10n_mode' => 'exclude',
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_news.tx_org_department',
       'config'    => array (
-        'type'                => 'select', 
+        'type'                => 'select',
         'size'                => $size_department,
         'minitems'            => 0,
         'maxitems'            => 999,
@@ -5909,9 +5909,9 @@ if(!$bool_full_wizardSupport_allTables)
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // 
+  //
   // tx_org_newscat
-  
+
 $TCA['tx_org_newscat'] = array (
   'ctrl' => $TCA['tx_org_newscat']['ctrl'],
   'interface' => array (
@@ -6006,7 +6006,7 @@ $TCA['tx_org_tax'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_tax.value',
       'config' => array (
-        'type' => 'input',  
+        'type' => 'input',
         'size' => '5',
         'max'  => '5',
         'eval' => 'required,double2',

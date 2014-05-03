@@ -46,7 +46,7 @@ plugin.tx_seodynamictag {
     table = tx_org_news
     var.1 = tx_browser_pi1[newsUid]
     field {
-      author        =  
+      //author        =  
       description   = description
       keywords      = keywords 
       title         = title 

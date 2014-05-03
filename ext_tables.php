@@ -36,7 +36,7 @@ $version = $version + ( ( int ) $bugfix ) * 1;
 $typo3Version = $version;
   // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
 
-if( $typo3Version < 3000000 ) 
+if( $typo3Version < 3000000 )
 {
   $prompt = '<h1>ERROR</h1>
     <h2>Unproper TYPO3 version</h2>
@@ -56,7 +56,7 @@ if( $typo3Version < 3000000 )
 }
   // Set TYPO3 version
 
-    
+
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
@@ -66,7 +66,7 @@ $confArr  = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
   // Language for labels of static templates and page tsConfig
 $llStatic = $confArr['LLstatic'];
-switch( $llStatic ) 
+switch( $llStatic )
 {
   case( 'German' ):
     $llStatic = 'de';
@@ -118,7 +118,7 @@ switch ($confArr['TCA_fe_user_company'])
   // Relation fe_users to company
 
   // Store record configuration
-switch($confArr['store_records']) 
+switch($confArr['store_records'])
 {
   case('Easy 1: all in the same directory'):                            // organiser < v3.x
   case('Current folder'):
@@ -185,7 +185,7 @@ switch($confArr['store_fe_groups'])
   // Enables the Include Static Templates
 
   // Case $llStatic
-switch( true ) 
+switch( true )
 {
   case($llStatic == 'de'):
       // German
@@ -194,6 +194,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Abteilung - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! +TYPO3 < 4.7');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/6.x/',  '+Org: +Downloads Flip it! +TYPO3 >= 6.x');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/',   '+Org: +Downloads +Caddy');
       // #i0004, 130914, dwildt, 1+
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag/',   '+Org: +Downloads +Caddy +Flaggen');
@@ -239,6 +241,8 @@ switch( true )
       // #i0004, 130914, dwildt, 1+
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/caddy/wiFlag',   '+Org: +Downloads +Caddy +Flags');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! +TYPO3 < 4.7');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/6.x/',  '+Org: +Downloads Flip it! +TYPO3 >= 6.x');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/311/',         '+Org: Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Headquarters');
@@ -436,7 +440,7 @@ $TCA['fe_users']['columns']['lockToDomain']['exclude']  = 1;
 
   // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = 
+$showRecordFieldList =
 $showRecordFieldList.',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_downloads';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
   // Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
@@ -917,7 +921,7 @@ $TCA['tx_org_cal'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
-      '0'             => '../typo3conf/ext/org/ext_icon/cal.gif',
+      '0'             => '../typo3conf/ext/org/ext_icon/caldirect.gif',
       'calpage'       => '../typo3conf/ext/org/ext_icon/calpage.gif',
       'calurl'        => '../typo3conf/ext/org/ext_icon/calurl.gif',
       'tx_org_event'  => '../typo3conf/ext/org/ext_icon/event.gif',
@@ -1086,7 +1090,7 @@ if( ! $bool_exclude_tx_org_company )
   $TCA['tx_org_headquarters']['ctrl']['title'] = 'LLL:EXT:org/locallang_db.xml:tx_org_company';
 }
   // headquarters //////////////////////////////////////////////////////////////////
-  // 
+  //
   // headquarterscat ////////////////////////////////////////////////////////////////////
 $TCA['tx_org_headquarterscat'] = array (
   'ctrl' => array (
@@ -1238,7 +1242,7 @@ $TCA['tx_org_downloadsmedia'] = array (
     'dividers2tabs'     => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
-    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/downloadmedia.gif',
+    'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/download.gif',
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(

@@ -5,31 +5,31 @@ LLstatic = English
   # cat=basic/others/999;                   type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 external_linksBase=0
 
-  # cat=linkhandler/enable/300;          type=options[Yes (recommended),No]; label=+Calendar: Add the tab [Org: Calendar] to the the linkhandler.
+  # cat=linkhandler/enable/300;          type=options[Yes (recommended),No]; label=+Calendar: Add the tab [Org: Calendar] to the linkhandler.
 linkhandler.tx_org_cal = Yes (recommended)
   # cat=linkhandler/enable/301;          type=string; label=Calendar pids: CSV list of page id with the calendar folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_cal.onlyPids = 
-  # cat=linkhandler/enable/302;          type=options[Yes (recommended),No]; label=+Documents: Add the tab [Org: Documents] to the the linkhandler.
+  # cat=linkhandler/enable/302;          type=options[Yes (recommended),No]; label=+Documents: Add the tab [Org: Documents] to the linkhandler.
 linkhandler.tx_org_downloads = Yes (recommended)
   # cat=linkhandler/enable/303;          type=string; label=Document pids: CSV list of page id with the document folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_downloads.onlyPids = 
-  # cat=linkhandler/enable/304;          type=options[Yes (recommended),No]; label=+Events: Add the tab [Org: Events] to the the linkhandler.
+  # cat=linkhandler/enable/304;          type=options[Yes (recommended),No]; label=+Events: Add the tab [Org: Events] to the linkhandler.
 linkhandler.tx_org_event = Yes (recommended)
   # cat=linkhandler/enable/305;          type=string; label=Event pids: CSV list of page id with the event folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_event.onlyPids = 
-  # cat=linkhandler/enable/306;          type=options[Yes (recommended),No]; label=+Headquarters & Departments: Add the tab [Org: Headquarters & Departments] to the the linkhandler.
+  # cat=linkhandler/enable/306;          type=options[Yes (recommended),No]; label=+Headquarters & Departments: Add the tab [Org: Headquarters & Departments] to the linkhandler.
 linkhandler.tx_org_headquarters = Yes (recommended)
   # cat=linkhandler/enable/307;          type=string; label=Headquarters & Departments pids: CSV list of page id with the headquarters & departments folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_headquarters.onlyPids = 
-  # cat=linkhandler/enable/308;          type=options[Yes (recommended),No]; label=+Locations: Add the tab [Org: Locations] to the the linkhandler.
+  # cat=linkhandler/enable/308;          type=options[Yes (recommended),No]; label=+Locations: Add the tab [Org: Locations] to the linkhandler.
 linkhandler.tx_org_location = Yes (recommended)
   # cat=linkhandler/enable/309;          type=string; label=Location pids: CSV list of page id with the locations folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_location.onlyPids = 
-  # cat=linkhandler/enable/310;          type=options[Yes (recommended),No]; label=+News: Add the tab [Org: News] to the the linkhandler.
+  # cat=linkhandler/enable/310;          type=options[Yes (recommended),No]; label=+News: Add the tab [Org: News] to the linkhandler.
 linkhandler.tx_org_news = Yes (recommended)
   # cat=linkhandler/enable/311;          type=string; label=News pids: CSV list of page id with the news folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_news.onlyPids = 
-  # cat=linkhandler/enable/312;          type=options[Yes (recommended),No]; label=+Staff: Add the tab [Org: Staff] to the the linkhandler.
+  # cat=linkhandler/enable/312;          type=options[Yes (recommended),No]; label=+Staff: Add the tab [Org: Staff] to the linkhandler.
 linkhandler.fe_users = Yes (recommended)
   # cat=linkhandler/enable/313;          type=string; label=Staff pids: CSV list of page id with the staff folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.fe_users.onlyPids = 

@@ -257,7 +257,7 @@ plugin.tx_browser_pi1 {
               wrap      = <h2 class="headquarters_documents">|</h2>
             }
               // documents
-            20 < tt_content.uploads.20
+            20 < plugin.tx_browser_pi1.tt_content.uploads.20
             20 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
               userFunc {

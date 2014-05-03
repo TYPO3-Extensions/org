@@ -29,7 +29,7 @@ plugin.tx_seodynamictag {
 
   canonical {
     single {
-        // Only this parameter are allowed: 
+        // Only this parameter are allowed:
       additionalParams = &tx_browser_pi1[downloadsUid]={GP:tx_browser_pi1|downloadsUid}
     }
   }
@@ -46,20 +46,20 @@ plugin.tx_seodynamictag {
     table = tx_org_downloads
     var.1 = tx_browser_pi1[downloadsUid]
     field {
-      author        =  
+      //author        = "Author is empty: Please use the TypoScript Constant Editor maintain "
       description   = description
-      keywords      = keywords 
-      title         = title 
-      short         = subtitle 
+      keywords      = keywords
+      title         = title
+      short         = subtitle
     }
   }
 
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Description] 
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Description]
   }
 
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Keywords] 
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Downloads. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }
 }
