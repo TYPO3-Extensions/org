@@ -1,3 +1,23 @@
+4.1.0
+  14-05-16
+  Feature
+  * #58885: Hierarchic headquarters categories
+            * New fields:
+              * tx_org_headquarterscat.uid_parent
+            * Effected files:
+              * ext_tables.php
+              * ext_tables.sql
+              * locallang_db.xml
+              * tca.php
+  * #58884:	Hierarchic companies (backend only)
+            * New fields:
+              * tx_org_headquarters.uid_parent
+            * Effected files:
+              * ext_tables.php
+              * ext_tables.sql
+              * locallang_db.xml
+              * tca.php
+
 4.0.0
   14-04-29
   Feature

@@ -145,7 +145,7 @@ CREATE TABLE tx_org_cal (
   fe_group int(11) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -170,7 +170,7 @@ CREATE TABLE tx_org_calentrance (
   starttime int(11) DEFAULT '0' NOT NULL,
   endtime int(11) DEFAULT '0' NOT NULL,
   fe_group varchar(100) DEFAULT '0' NOT NULL,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -191,7 +191,7 @@ CREATE TABLE tx_org_caltype (
   title_lang_ol tinytext,
   tx_org_cal tinytext,
   hidden tinyint(4) DEFAULT '0' NOT NULL,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -296,7 +296,7 @@ CREATE TABLE tx_org_department (
   fe_group int(11) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -591,7 +591,7 @@ CREATE TABLE tx_org_event (
   fe_group int(11) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -634,6 +634,7 @@ CREATE TABLE tx_org_event_mm_tx_org_news (
 CREATE TABLE tx_org_headquarters (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
   pid int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_parent int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) unsigned DEFAULT '0' NOT NULL,
   crdate int(11) unsigned DEFAULT '0' NOT NULL,
   cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
@@ -661,7 +662,7 @@ CREATE TABLE tx_org_headquarters (
   fax tinytext NOT NULL,
   email tinytext NOT NULL,
   pubtrans_stop mediumtext NOT NULL,
-  pubtrans_url tinytext NOT NULL,  
+  pubtrans_url tinytext NOT NULL,
   pubtrans_embeddedcode text,
   image text,
   imagecaption text,
@@ -690,7 +691,7 @@ CREATE TABLE tx_org_headquarters (
   fe_group int(11) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -777,6 +778,7 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_news (
 CREATE TABLE tx_org_headquarterscat (
   uid int(11) NOT NULL auto_increment,
   pid int(11) DEFAULT '0' NOT NULL,
+  uid_parent int(11) DEFAULT '0' NOT NULL,
   tstamp int(11) DEFAULT '0' NOT NULL,
   crdate int(11) DEFAULT '0' NOT NULL,
   cruser_id int(11) DEFAULT '0' NOT NULL,
@@ -827,7 +829,7 @@ CREATE TABLE tx_org_location (
   email tinytext NOT NULL,
   tx_org_cal tinytext NOT NULL,
   pubtrans_stop mediumtext NOT NULL,
-  pubtrans_url tinytext NOT NULL,  
+  pubtrans_url tinytext NOT NULL,
   pubtrans_embeddedcode text,
   citymap_url tinytext NOT NULL,
   citymap_embeddedcode text,
@@ -858,7 +860,7 @@ CREATE TABLE tx_org_location (
   fe_group int(11) DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -930,7 +932,7 @@ CREATE TABLE tx_org_news (
   documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
   keywords text,
   description text,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );
@@ -993,7 +995,7 @@ CREATE TABLE tx_org_tax (
   hidden tinyint(4) DEFAULT '0' NOT NULL,
   starttime int(11) DEFAULT '0' NOT NULL,
   endtime int(11) DEFAULT '0' NOT NULL,
-  
+
   PRIMARY KEY (uid),
   KEY parent (pid)
 );

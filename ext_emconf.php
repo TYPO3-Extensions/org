@@ -12,15 +12,16 @@
 
 $EM_CONF[$_EXTKEY] = array(
   'title' => 'Organiser',
-  'description' => 'This is the installer for the Organiser, TYPO3 for the lobby and the organisers. '
-  . 'The Organiser provides a lot of features for handle news, events, staff, headquarters, '
-  . 'locations and a calendar. Sell your tickets with the integrated shop. '
+  'description' => 'TYPO3 Organiser, TYPO3 for the lobby and the organisers. '
+  . 'See: http://typo3-organiser.de/ '
+  . 'Manual: http://typo3-organiser.de/typo3conf/ext/org/doc/manual.pdf '
+  . 'The Organiser provides a lot of features for handle a simple calendar, companies, events, locations, news and  staff. '
+  . 'Sell your tickets with the integrated shop. '
   . 'The installer enables you to install the Organiser with one mouse click! Sample data is included.'
-  . 'See: http://typo3-organiser.de/'
   ,
   'category' => 'plugin',
   'shy' => 0,
-  'version' => '4.0.0',
+  'version' => '4.1.0',
   'dependencies' => 'browser,caddy,cps_tcatree,css_styled_content,linkhandlerconf',
   'conflicts' => 'css_filelinks',
   'priority' => '',

@@ -826,6 +826,7 @@ $TCA['sys_template']['columns']['include_static_file']['config']['size']        
   // location
   // headquarters
   // headquarterscat
+  // headquartersheadquarters
   // department
   // departmentcat
   // doc
@@ -1083,6 +1084,8 @@ $TCA['tx_org_headquarters'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif',
+      // #58884, 140516, dwildt, 1+
+    'treeParentField'   => 'uid_parent',
   ),
 );
 if( ! $bool_exclude_tx_org_company )
@@ -1108,6 +1111,8 @@ $TCA['tx_org_headquarterscat'] = array (
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarterscat.gif',
+      // #58885, 140516, dwildt, 1+
+    'treeParentField'   => 'uid_parent',
   )
 );
   // headquarterscat ////////////////////////////////////////////////////////////////////

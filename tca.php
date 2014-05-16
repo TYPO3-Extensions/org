@@ -3910,7 +3910,7 @@ $TCA['tx_org_headquarters'] = array (
   'ctrl' => $TCA['tx_org_headquarters']['ctrl'],
   'interface' => array (
 
-    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
+    'showRecordFieldList' =>  'sys_language_uid,l10n_parent,l10n_diffsource,title,uid_parent,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox,postbox_postcode,postbox_city,'.
                               'telephone,fax,email,'.
                               'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'.
                               'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
@@ -3959,6 +3959,24 @@ $TCA['tx_org_headquarters'] = array (
       'label'     => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.title',
       'config'    => $conf_input_30_trimRequired,
     ),
+    'uid_parent' => array (
+      'exclude'   => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarters.uid_parent',
+      'config'    => array (
+        'type'          => 'select',
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_org_headquarters',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+        'size'          => 1,
+        'minitems'      => 0,
+        'maxitems'      => 2,
+        'trueMaxItems'  => 1,
+      ),
+    ),
     'tx_org_headquarterscat' => array (
       'exclude'   => $bool_exclude_default,
       'l10n_mode' => 'exclude',
@@ -3970,6 +3988,13 @@ $TCA['tx_org_headquarters'] = array (
         'maxitems' => 99,
         'MM'                  => 'tx_org_headquarters_mm_tx_org_headquarterscat',
         'foreign_table'       => 'tx_org_headquarterscat',
+        // #58885, 140516, dwildt, 6+
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
         'foreign_table_where' => 'AND tx_org_headquarterscat.' . $str_store_record_conf . ' AND tx_org_headquarterscat.deleted = 0 AND tx_org_headquarterscat.hidden = 0 ORDER BY tx_org_headquarterscat.sorting',
         'wizards' => array (
           '_PADDING'  => 2,
@@ -4424,7 +4449,7 @@ $TCA['tx_org_headquarters'] = array (
   ),
   'types' => array (
     '0' => array ('showitem' =>
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_headquarters, title,uid_parent,tx_org_headquarterscat,mail_address,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_contact,      telephone,fax,email,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_department,   tx_org_department,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarters.div_pubtrans,     pubtrans_stop;;;richtext[]:rte_transform[mode=ts];4-4-4,pubtrans_url,pubtrans_embeddedcode,'.
@@ -4504,7 +4529,7 @@ if(!$bool_full_wizardSupport_allTables)
 $TCA['tx_org_headquarterscat'] = array (
   'ctrl' => $TCA['tx_org_headquarterscat']['ctrl'],
   'interface' => array (
-    'showRecordFieldList' =>  'title,title_lang_ol,icons,icon_offset_x,icon_offset_y,'.
+    'showRecordFieldList' =>  'title,title_lang_ol,uid_parent,icons,icon_offset_x,icon_offset_y,'.
                               'hidden,'.
                               'image,imagecaption,imageseo',
   ),
@@ -4518,6 +4543,24 @@ $TCA['tx_org_headquarterscat'] = array (
       'exclude' => 0,
       'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.title_lang_ol',
       'config'  => $conf_input_30_trim,
+    ),
+    'uid_parent' => array (
+      'exclude'   => 0,
+      'label'   => 'LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.uid_parent',
+      'config'    => array (
+        'type'          => 'select',
+        'form_type'     => 'user',
+        'userFunc'      => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_org_headquarterscat',
+        'treeView'      => 1,
+        'expandable'    => 1,
+        'expandFirst'   => 0,
+        'expandAll'     => 0,
+        'size'          => 1,
+        'minitems'      => 0,
+        'maxitems'      => 2,
+        'trueMaxItems'  => 1,
+      ),
     ),
     'icons' => array (
       'exclude'   => $bool_exclude_default,
@@ -4552,7 +4595,7 @@ $TCA['tx_org_headquarterscat'] = array (
   'types' => array (
     '0' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_cat,' .
-        'title;;1;;1-1-1,icons,icon_offset_x,icon_offset_y,'.
+        'title;;1;;1-1-1,uid_parent,icons,icon_offset_x,icon_offset_y,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_headquarterscat.div_control,' .
         'hidden'
     ),

@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       501 = +Org: Headquarters
@@ -34,8 +34,8 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.crdate,
           tx_org_headquarters.deleted,
           tx_org_headquarterscat.title,
-          tx_org_headquarterscat.icons,        
-          tx_org_headquarterscat.icon_offset_x,       
+          tx_org_headquarterscat.icons,
+          tx_org_headquarterscat.icon_offset_x,
           tx_org_headquarterscat.icon_offset_y,
           tx_org_department.title
         )
@@ -50,8 +50,17 @@ plugin.tx_browser_pi1 {
         filter {
           radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_headquarterscat {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            // #58885, 140516, dwildt, 1-
+            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            // #58885, 140516, dwildt, 1+
+            title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              // #58885, 140516, dwildt, 5+
+              treeview {
+                enabled {
+                  value = 1
+                }
+              }
               first_item {
                 cObject {
                   20 {
@@ -61,7 +70,10 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <span class="selectbox">|</span>
+              // #58885, 140516, dwildt, 1-
+              //wrap = <span class="selectbox">|</span>
+              // #58885, 140516, dwildt, 1+
+              wrap = <div class="category_menu category_menu_treeview">|</div>
               wrap {
                 item {
                   cObject {
@@ -96,8 +108,8 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
-                ###TX_ORG_HEADQUARTERSCAT.TITLE###
                 ###RADIALSEARCH###
+                ###TX_ORG_HEADQUARTERSCAT.TITLE###
               </div>
 )
             }
@@ -206,7 +218,7 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.documents,
           tx_org_headquarters.documentslayout,
           tx_org_headquarters.documentscaption,
-          tx_org_headquarters.documentssize, 
+          tx_org_headquarters.documentssize,
 
           tx_org_headquarters.image,
           tx_org_headquarters.imagecaption,
@@ -236,7 +248,7 @@ plugin.tx_browser_pi1 {
         )
         orderBy {
           tx_org_department (
-            SELECT    tx_org_department.uid   AS 'uid', 
+            SELECT    tx_org_department.uid   AS 'uid',
                       tx_org_department.title AS 'title'
             FROM      tx_org_department,
                       tx_org_headquarters_mm_tx_org_department
@@ -579,7 +591,7 @@ plugin.tx_browser_pi1 {
                     cObject {
                       key = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
                       key {
-                        field > 
+                        field >
                       }
                     }
                   }
@@ -760,7 +772,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_501             = Headquarters
