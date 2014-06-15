@@ -88,7 +88,12 @@ $TCA['tx_org_headquarters'] = array(
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'foreign_table' => 'tx_org_headquarters',
-        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        // 140615, dwildt, 1-
+        // Zeigt in 4.6 keine Datensaetze an
+        //'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        // 140615, dwildt, 1+
+        // Zeigt in 4.6 Datensaetze an
+        'foreign_table_where' => 'AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'treeView' => 1,
         'expandable' => 1,
         'expandFirst' => 0,
