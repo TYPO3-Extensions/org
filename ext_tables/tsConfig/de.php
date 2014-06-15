@@ -6,16 +6,22 @@ if (!defined ('TYPO3_MODE'))
 
 $path = PATH_typo3conf . 'ext/org/tsConfig/page/tx_linkhandler/de/';
 
+  // Dienstleistungen
+require_once( $path . 'tx_org_service.php' );
   // Dokumente
 require_once( $path . 'tx_org_downloads.php' );
+  // FE users
+require_once( $path . 'fe_users.php' );
+  // Firmen
+require_once( $path . 'tx_org_headquarters.php' );
   // Kalender
 require_once( $path . 'tx_org_cal.php' );
   // Nachrichten
 require_once( $path . 'tx_org_news.php' );
   // Personal
-require_once( $path . 'fe_users.php' );
-  // Standorte und Abteilungen
-require_once( $path . 'tx_org_headquarters.php' );
+require_once( $path . 'tx_org_staff.php' );
+  // Stellenangebote
+require_once( $path . 'tx_org_job.php' );
   // Veranstaltungen
 require_once( $path . 'tx_org_event.php' );
   // Veranstaltungsorte

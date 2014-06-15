@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'org'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="tx_org_event">Event</label>
+      <label index="tx_org_event.div_calendar">Calendar</label>
+      <label index="tx_org_event.div_control">Controlling</label>
+      <label index="tx_org_event.div_doc">Documents <![CDATA[&]]> News</label>
+      <label index="tx_org_event.div_embedded">Embedded Code</label>
+      <label index="tx_org_event.div_event">Event</label>
+      <label index="tx_org_event.div_eventcat">Category</label>
+      <label index="tx_org_event.div_headquarters">Company</label>
+      <label index="tx_org_event.div_media">Media</label>
+      <label index="tx_org_event.div_seo">Search Engines</label>
+      <label index="tx_org_event.div_staff">Staff</label>
+      <label index="tx_org_event.div_teaser">Teaser</label>
+      <label index="tx_org_event.title">Title of the event</label>
+      <label index="tx_org_event.subtitle">Subheader</label>
+      <label index="tx_org_event.producer">Producer</label>
+      <label index="tx_org_event.length">Length of Time</label>
+      <label index="tx_org_event.bodytext">Bodytext</label>
+      <label index="tx_org_event.teaser_title">Title of the event (in list views)</label>
+      <label index="tx_org_event.teaser_subtitle">Subheader (in list views)</label>
+      <label index="tx_org_event.teaser_short">Short (in list views)</label>
+      <label index="tx_org_event.documents">Documents</label>
+      <label index="tx_org_event.tx_org_cal">Calendar</label>
+      <label index="tx_org_event.tx_org_eventcat">Category</label>
+      <label index="tx_org_event.tx_org_headquarters">Companies</label>
+      <label index="tx_org_event.tx_org_news">News</label>
+      <label index="tx_org_event.tx_org_staff">Staff</label>
+      <label index="tx_org_eventcat">Event: Category</label>
+      <label index="tx_org_eventcat.div_category">Category</label>
+      <label index="tx_org_eventcat.div_control">Controlling</label>
+      <label index="tx_org_eventcat.title">Category</label>
+      <label index="tx_org_eventcat.title_lang_ol">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
+      <label index="tx_org_eventcat.uid_parent">Superior category</label>
+      <label index="wizard.tx_org_event.add">Add a new event</label>
+      <label index="wizard.tx_org_event.edit">Edit the selected event</label>
+      <label index="wizard.tx_org_event.list">Display the event table</label>
+      <label index="wizard.tx_org_eventcat.add">Add a new category</label>
+      <label index="wizard.tx_org_eventcat.edit"> Edit the current category</label>
+      <label index="wizard.tx_org_eventcat.list">Display the category table</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="tx_org_event">Veranstaltung</label>
+      <label index="tx_org_event.div_calendar">Kalender</label>
+      <label index="tx_org_event.div_control">Steuerung</label>
+      <label index="tx_org_event.div_doc">Dokumente <![CDATA[&]]> News</label>
+      <label index="tx_org_event.div_embedded">Eingebundener Code</label>
+      <label index="tx_org_event.div_event">Veranstaltung</label>
+      <label index="tx_org_event.div_eventcat">Kategorie</label>
+      <label index="tx_org_event.div_headquarters">Firma</label>
+      <label index="tx_org_event.div_media">Medien</label>
+      <label index="tx_org_event.div_seo">Suchmaschinen</label>
+      <label index="tx_org_event.div_staff">Personal</label>
+      <label index="tx_org_event.div_teaser">Kurztitel</label>
+      <label index="tx_org_event.title">Name der Veranstaltung</label>
+      <label index="tx_org_event.subtitle">Untertitel / Dachzeile</label>
+      <label index="tx_org_event.length">Dauer</label>
+      <label index="tx_org_event.bodytext">Text</label>
+      <label index="tx_org_event.teaser_title">Bezeichnung der Produktion (in Listen-Ansichten)</label>
+      <label index="tx_org_event.teaser_subtitle">Untertitel / Dachzeile (in Listen-Ansichten)</label>
+      <label index="tx_org_event.teaser_short">Kurztext (in Listen-Ansichten)</label>
+      <label index="tx_org_event.tx_org_cal">Kalendereinträge</label>
+      <label index="tx_org_event.tx_org_eventcat">Kategorie</label>
+      <label index="tx_org_event.tx_org_headquarters">Firma</label>
+      <label index="tx_org_event.tx_org_news">Nachrichten</label>
+      <label index="tx_org_event.tx_org_staff">Personal</label>
+      <label index="tx_org_event.documents">Dokumente</label>
+      <label index="tx_org_eventcat">Veranstaltung: Kategorie</label>
+      <label index="tx_org_eventcat.div_category">Kategorie</label>
+      <label index="tx_org_eventcat.div_control">Steuerung</label>
+      <label index="tx_org_eventcat.title">Kategorie</label>
+      <label index="tx_org_eventcat.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tx_org_eventcat.uid_parent"><![CDATA[Ü]]>bergeordnete Kategorie</label>
+      <label index="wizard.tx_org_event.add">Neue Veranstaltung hinzuf<![CDATA[ü]]>gen</label>
+      <label index="wizard.tx_org_event.edit">Markierte Veranstaltung bearbeiten</label>
+      <label index="wizard.tx_org_event.list">Tabelle mit Veranstaltungen anzeigen</label>
+      <label index="wizard.tx_org_eventcat.add">Neue Kategorie erstellen</label>
+      <label index="wizard.tx_org_eventcat.edit">Markierte Kategorie bearbeiten</label>
+      <label index="wizard.tx_org_eventcat.list">Tabelle mit Kategorien anzeigen</label>
+    </languageKey>
+  </data>
+</T3locallang>

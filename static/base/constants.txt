@@ -25,12 +25,18 @@ plugin.org {
   pages.downloads =
   # cat=Organiser - Pages/page/104; type=+int; label= event:Uid of your event page
   pages.event =
+  # cat=Organiser - Pages/page/105; type=+int; label= fe_users:Uid of your fe_users page
+  pages.fe_users =
   # cat=Organiser - Pages/page/105; type=+int; label= headquarters:Uid of your headquarters page
   pages.headquarter =
+  # cat=Organiser - Pages/page/105; type=+int; label= jobs:Uid of your jobs page
+  pages.job =
   # cat=Organiser - Pages/page/106; type=+int; label= locations:Uid of your locations page
   pages.location =
   # cat=Organiser - Pages/page/107; type=+int; label= news:Uid of your news page
   pages.news =
+  # cat=Organiser - Pages/page/105; type=+int; label= services:Uid of your services page
+  pages.service =
   # cat=Organiser - Pages/page/109; type=+int; label= staff:Uid of your staff page
   pages.staff =
   # cat=Organiser - Pages/page/110; type=+int; label= Caddy (events):Uid of your Caddy page for events
@@ -50,14 +56,20 @@ plugin.org {
   sysfolder.downloads =
   # cat=Organiser - Sysfolders/page/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
+  # cat=Organiser - Sysfolders/page/105; type=+int; label= fe_users:Uid of the sysfolder with the fe_users data
+  sysfolder.fe_users =
   # cat=Organiser - Sysfolders/page/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
   sysfolder.headquarter =
+  # cat=Organiser - Sysfolders/page/105; type=+int; label= jobs:Uid of the sysfolder with the jobs data
+  sysfolder.job =
   # cat=Organiser - Sysfolders/page/106; type=+int; label= locations:Uid of the sysfolder with the locations data
   sysfolder.location =
   # cat=Organiser - Sysfolders/page/107; type=+int; label= news:Uid of the sysfolder with the news data
   sysfolder.news =
   # cat=Organiser - Sysfolders/page/108; type=+int; label= news:Uid of the sysfolder with the news slider data
   sysfolder.newsSlider =
+  # cat=Organiser - Sysfolders/page/105; type=+int; label= services:Uid of the sysfolder with the services data
+  sysfolder.service =
   # cat=Organiser - Sysfolders/page/109; type=+int; label= staff:Uid of the sysfolder with the staff data
   sysfolder.staff =
 
@@ -100,7 +112,7 @@ plugin.org {
   # cat=Organiser - Table Downloads//204; type=+int; label= path:field with path. Example: documents_from_path
   table.downloads.field.documents_from_path = documents_from_path
   # cat=Organiser - Table Downloads//300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
-  table.downloads.field.thumbnail = thumbnail  
+  table.downloads.field.thumbnail = thumbnail
 }
   // plugin.org
 
@@ -115,7 +127,7 @@ plugin.tx_seodynamictag {
   default {
     author = Organiser - TYPO3 for Lobby and Organisers
     description {
-      appendix = This is a Demo of the Organiser - TYPO3 for the Lobby and Organisers. Install the Organiser with one mouse click!  
+      appendix = This is a Demo of the Organiser - TYPO3 for the Lobby and Organisers. Install the Organiser with one mouse click!
     }
   }
 

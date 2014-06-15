@@ -127,7 +127,7 @@ class tx_org_extmanager
 
 
 /**
- * promptVersionPrompt(): 
+ * promptVersionPrompt():
  *
  * @return  string    message wrapped in HTML
  * @version 2.2.0
@@ -144,7 +144,7 @@ class tx_org_extmanager
     $str_prompt = null;
 
     $this->set_typo3Version( );
-    
+
     switch( true )
     {
       case( $this->typo3Version < 4007000 ):
@@ -157,40 +157,55 @@ class tx_org_extmanager
           </div>
           ';
         break;
-      case( $this->typo3Version >= 4007999 ):
-          // Greater than 4.7
-        $str_prompt = $str_prompt.'
-          <div class="typo3-message message-warning">
-            <div class="message-body">
-              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47greater'). '
-            </div>
-          </div>
-          ';
-        break;
-      default:
-          // Equal to 4.7
+      case( $this->typo3Version < 6000000 ):
+          // 4.7
         $str_prompt = $str_prompt.'
           <div class="typo3-message message-ok">
             <div class="message-body">
               ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47equal'). '
             </div>
           </div>
+          ';
+        break;
+      case( $this->typo3Version < 6001000 ):
+          // 6.0
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-ok">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt60equal'). '
+            </div>
+          </div>
+          ';
+        break;
+      case( $this->typo3Version < 6002000 ):
+          // 6.1
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-ok">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt61equal'). '
+            </div>
+          </div>
+          ';
+        break;
+      default:
+          // Greater than 6.1
+        $str_prompt = $str_prompt.'
           <div class="typo3-message message-warning">
             <div class="message-body">
-              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt47equalCSC'). '
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt61greater'). '
             </div>
           </div>
           ';
         break;
     }
-        
+
     return $str_prompt;
   }
-  
-  
-  
+
+
+
 /**
- * set_typo3Version(): 
+ * set_typo3Version():
  *
  * @return  void
  * @version 2.2.0
@@ -205,7 +220,7 @@ class tx_org_extmanager
       return;
     }
       // RETURN : typo3Version is set
-    
+
       // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
     list( $main, $sub, $bugfix ) = explode( '.', TYPO3_version );
     $version = ( ( int ) $main ) * 1000000;
@@ -214,7 +229,7 @@ class tx_org_extmanager
     $this->typo3Version = $version;
       // Set TYPO3 version as integer (sample: 4.7.7 -> 4007007)
 
-    if( $this->typo3Version < 3000000 ) 
+    if( $this->typo3Version < 3000000 )
     {
       $prompt = '<h1>ERROR</h1>
         <h2>Unproper TYPO3 version</h2>

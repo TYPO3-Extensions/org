@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       701 = +Org: Locations
@@ -104,7 +104,7 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All Locations &raquo;
-            lang.de = Alle Veranstaltungsorte &raquo; 
+            lang.de = Alle Veranstaltungsorte &raquo;
             typolink {
               parameter = {$plugin.org.pages.location}
               title {
@@ -139,7 +139,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.documents,
           tx_org_location.documentslayout,
           tx_org_location.documentscaption,
-          tx_org_location.documentssize, 
+          tx_org_location.documentssize,
 
           tx_org_location.image,
           tx_org_location.imagecaption,
@@ -165,7 +165,7 @@ plugin.tx_browser_pi1 {
         )
         orderBy {
           tx_org_cal (
-            SELECT    tx_org_cal.uid      AS 'uid', 
+            SELECT    tx_org_cal.uid      AS 'uid',
                       tx_org_cal.datetime AS 'datetime',
                       tx_org_cal.title    AS 'title'
             FROM      tx_org_cal,
@@ -187,13 +187,18 @@ plugin.tx_browser_pi1 {
               strftime = %a, %d. %b %Y, %H:%M Uhr
               typolink {
                 parameter = {$plugin.org.pages.calendar}
-                additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                // #59579, 140614, dwildt
+                //additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                additionalParams {
+                  wrap  = &tx_browser_pi1[calendarUid]=|
+                  field = tx_org_cal.uid
+                }
                 useCacheHash = 1
               }
             }
             11 = TEXT
             11 {
-              value = &ndash; 
+              value = &ndash;
               noTrimWrap = | | |
             }
             12 = TEXT
@@ -517,7 +522,7 @@ plugin.tx_browser_pi1 {
                     cObject {
                       key = ###TX_ORG_LOCATION.IMAGEORIENT###
                       key {
-                        field > 
+                        field >
                       }
                     }
                   }
@@ -667,7 +672,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_701             = Locations

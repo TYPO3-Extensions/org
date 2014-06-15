@@ -1,3 +1,71 @@
+5.0.1
+  14-06-12
+  Major-Features
+ 	* #59362: Services
+  Improvement
+  * #i0010: tx_org_job: note is removed
+  Bugfix
+  * #i0011: tx_org_job: TCA for dateofoffer
+
+5.0.0
+  14-06-12
+  Major-Features
+	* #59361: Jobs
+            Effected files:
+            * ext_tables.sql
+              * tx_org_job
+              * tx_org_jobcat
+              * tx_org_mm_all
+              * tx_org_jobsector
+	* #59360: Contacts
+  Features
+  * #59461: TCA Search Fields
+  * #59457 	Georeferenced data for locations automatically
+	* #59456  Georeferenced data for headquarters automatically
+  Improvement
+  * #59377: Extension Manager Form: CSS
+  * #59373: Consolidate file structure
+            Effected files:
+            * ext_tables
+              * backendWorkflows.php
+              * extensionManager.php
+              * includeStaticTemplates.php
+              * pageTreeIcons.php
+              * t3version.php
+              * tca
+                * fe_groups.php
+                * fe_users.php
+                * tx_org_cal.php
+                * tx_org_doc.php
+                * tx_org_event.php
+                * tx_org_headquarters.php
+                * tx_org_job.php
+                * tx_org_location.php
+                * tx_org_news.php
+                * tx_org_tax.php
+              * tca.php
+              * tsConfig
+                * de.php
+                * default.php
+              * tsConfig.php
+            * ext_tables.php
+            * locallang_db.xml
+            * tca
+              * defaultValues.php
+              * extensionManager.php
+              * locallang
+                * tx_org_cal.xml
+                * tx_org_job.xml
+              * tx_org_cal.php
+              * tx_org_downloads.php
+              * tx_org_event.php
+              * tx_org_headquarters.php
+              * tx_org_job.php
+              * tx_org_location.php
+              * tx_org_news.php
+              * tx_org_tax.php
+            tca.php
+
 4.1.0
   14-05-16
   Feature

@@ -9,7 +9,7 @@ if (!defined ('TYPO3_MODE'))
 $includeIt = $confArr['linkhandler.']['fe_users'];
 
   // RETURN : fe_users should not include
-switch( $includeIt ) 
+switch( $includeIt )
 {
   case( 'No' ):
     return;
@@ -27,7 +27,7 @@ $tsConfig = '
 
 mod.tx_linkhandler {
   fe_users {
-    label       = Personal (org)
+    label       = FE user (org)
     listTables  = fe_users
     %onlyPids%
   }
@@ -46,7 +46,7 @@ switch( true )
   case( empty ( $onlyPids ) ):
   default;
     $onlyPids = null;
-    break;  
+    break;
 }
 
 $tsConfig = str_replace( '%onlyPids%', $onlyPids, $tsConfig );

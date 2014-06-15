@@ -9,7 +9,7 @@ if (!defined ('TYPO3_MODE'))
 $includeIt = $confArr['linkhandler.']['tx_org_headquarters'];
 
   // RETURN : tx_org_headquarters should not include
-switch( $includeIt ) 
+switch( $includeIt )
 {
   case( 'No' ):
     return;
@@ -27,7 +27,7 @@ $tsConfig = '
 
 mod.tx_linkhandler {
   tx_org_headquarters {
-    label       = Standorte & Abteilungen (org)
+    label       = Firmen (org)
     listTables  = tx_org_headquarters,tx_org_department
     %onlyPids%
   }
@@ -46,7 +46,7 @@ switch( true )
   case( empty ( $onlyPids ) ):
   default;
     $onlyPids = null;
-    break;  
+    break;
 }
 
 $tsConfig = str_replace( '%onlyPids%', $onlyPids, $tsConfig );

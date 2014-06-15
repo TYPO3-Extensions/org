@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'org'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="tx_org_department">Departments [DEPRECATED!]</label>
+      <label index="tx_org_department.div_calendar">Events</label>
+      <label index="tx_org_department.div_contact">Contact Details</label>
+      <label index="tx_org_department.div_control">Controlling</label>
+      <label index="tx_org_department.div_department">Department</label>
+      <label index="tx_org_department.div_doc">Documents <![CDATA[&]]> News</label>
+      <label index="tx_org_department.div_embedded">Embedded Code</label>
+      <label index="tx_org_department.div_event">Event</label>
+      <label index="tx_org_department.div_media">Media</label>
+      <label index="tx_org_department.div_news">News</label>
+      <label index="tx_org_department.div_seo">Search Engines</label>
+      <label index="tx_org_department.div_staff">Staff</label>
+      <label index="tx_org_department.title">Department</label>
+      <label index="tx_org_department.shortcut">Department Shortcut</label>
+      <label index="tx_org_department.tx_org_departmentcat">Group</label>
+      <label index="tx_org_department.tx_org_headquarters">Headquarter</label>
+      <label index="tx_org_department.manager">Manager</label>
+      <label index="tx_org_department.telephone">Telephone</label>
+      <label index="tx_org_department.fax">Fax</label>
+      <label index="tx_org_department.email">E-mail</label>
+      <label index="tx_org_department.url">URL</label>
+      <label index="tx_org_department.fe_users">Staff</label>
+      <label index="tx_org_department.tx_org_cal">Events</label>
+      <label index="tx_org_departmentcat">Department: Groups</label>
+      <label index="tx_org_departmentcat.div_cat">Group</label>
+      <label index="tx_org_departmentcat.div_control">Controlling</label>
+      <label index="tx_org_departmentcat.title">Department: Group</label>
+      <label index="tx_org_departmentcat.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
+      <label index="tx_org_departmentcat.note">Note (internal)</label>
+      <label index="wizard.tx_org_department.add">Add a new department unit</label>
+      <label index="wizard.tx_org_department.edit">Edit the selected department unit</label>
+      <label index="wizard.tx_org_department.list">Display the department table</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="tx_org_department">Abteilung [VERALTET!]</label>
+      <label index="tx_org_department.div_department">Abteilung</label>
+      <label index="tx_org_department.div_contact">Kontaktdaten</label>
+      <label index="tx_org_department.div_staff">Personal</label>
+      <label index="tx_org_department.div_calendar">Veranstaltungen</label>
+      <label index="tx_org_department.div_media">Medien</label>
+      <label index="tx_org_department.div_news">Nachrichten</label>
+      <label index="tx_org_department.div_embedded">Eingebundener Code</label>
+      <label index="tx_org_department.div_control">Steuerung</label>
+      <label index="tx_org_department.div_seo">Suchmaschinen</label>
+      <label index="tx_org_department.title">Bezeichnung der Abteilung</label>
+      <label index="tx_org_department.shortcut">Kurzer Bezeichnung (optional)</label>
+      <label index="tx_org_department.tx_org_departmentcat"><![CDATA[Ü]]>bergeordnete Gruppe</label>
+      <label index="tx_org_department.tx_org_headquarters">Die Abteilung gehört zur Firma</label>
+      <label index="tx_org_department.manager">Manager (Leiter)</label>
+      <label index="tx_org_department.telephone">Telefon</label>
+      <label index="tx_org_department.fax">Fax</label>
+      <label index="tx_org_department.email">E-Mail</label>
+      <label index="tx_org_department.url">URL</label>
+      <label index="tx_org_department.fe_users">Personal</label>
+      <label index="tx_org_department.tx_org_cal">Veranstaltungen</label>
+      <label index="tx_org_department.fe_group">Frontend Benutzergruppe</label>
+      <label index="tx_org_departmentcat">Abteilung: Gruppen</label>
+      <label index="tx_org_departmentcat.div_cat">Gruppe</label>
+      <label index="tx_org_departmentcat.div_control">Steuerung</label>
+      <label index="tx_org_departmentcat.title">Abteilung-Gruppe</label>
+      <label index="tx_org_departmentcat.title_lang_ol"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tx_org_departmentcat.note">Bemerkung (intern)</label>
+      <label index="wizard.tx_org_department.add">Neue Abteilung erstellen</label>
+      <label index="wizard.tx_org_department.edit">Markierte Abteilung bearbeiten</label>
+      <label index="wizard.tx_org_department.list">Tabelle mit Abteilung anzeigen</label>
+    </languageKey>
+  </data>
+</T3locallang>

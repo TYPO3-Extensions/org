@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'org'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="fe_users">Staff</label>
+      <label index="fe_users.div_tx_org_company">Company</label>
+      <label index="fe_users.div_tx_org_department">Department</label>
+      <label index="fe_users.div_tx_org_downloads">Documents</label>
+      <label index="fe_users.div_tx_org_news">News</label>
+      <label index="fe_users.tx_org_headquarters">Company</label>
+      <label index="fe_users.tx_org_department">Department</label>
+      <label index="fe_users.tx_org_vita">Vita</label>
+      <label index="wizard.fe_user.add">Add a new staff</label>
+      <label index="wizard.fe_user.edit"> Edit the current person</label>
+      <label index="wizard.fe_user.list">Display the staff table</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="fe_users">Personal</label>
+      <label index="fe_users.div_tx_org_company">Firma</label>
+      <label index="fe_users.div_tx_org_department">Abteilung</label>
+      <label index="fe_users.div_tx_org_downloads">Dokumente</label>
+      <label index="fe_users.div_tx_org_news">Nachrichten</label>
+      <label index="fe_users.tx_org_headquarters">Firma</label>
+      <label index="fe_users.tx_org_department">Abteilung</label>
+      <label index="fe_users.tx_org_vita">Vita</label>
+      <label index="wizard.fe_user.add">Neue Person erstellen</label>
+      <label index="wizard.fe_user.edit">Daten der ausgew<![CDATA[ä]]>hlten Person bearbeiten</label>
+      <label index="wizard.fe_user.list">Personal-Tabelle anzeigen</label>
+    </languageKey>
+  </data>
+</T3locallang>

@@ -8,36 +8,36 @@
     <languageKey index="default" type="array">
       <label index="promptExternalLinksBody"><![CDATA[
         <div style="float:right;padding-left:1em;">
-          <a href="http://die-netzmacher.de/" 
+          <a href="http://die-netzmacher.de/"
             alt="Die Netzmacher - Internet ist Handwerk"
             title="Die Netzmacher - Internet ist Handwerk"
             target="_blank">
-            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher.de_200px.gif" 
-              width="200" 
-              height="80" 
+            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher.de_200px.gif"
+              width="200"
+              height="80"
               alt="Die Netzmacher - Internet ist Handwerk" /></a>
         </div>
-        <ul style="list-style:outside;">
+        <ul style="list-style:inside;">
           <li>
             Organiser website<br />
-            <a href="http://typo3-organiser.de/" 
-              style="text-decoration:underline;"
+            <a href="http://typo3-organiser.de/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="TYPO3-Organiser - news, events, staff, tickets online"
               title="TYPO3-Organiser - news, events, staff, tickets online"
               target="_blank">typo3-organiser.de</a>
           </li>
           <li>
             Organiser forum<br />
-            <a href="http://typo3-organiser.de/forum/" 
-              style="text-decoration:underline;"
+            <a href="http://typo3-organiser.de/forum/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="TYPO3-Organiser - Forum"
               title="TYPO3-Organiser - Forum"
               target="_blank">typo3-organiser.de/forum</a>
           </li>
           <li>
             Organiser developer<br />
-            <a href="http://die-netzmacher.de/" 
-              style="text-decoration:underline;"
+            <a href="http://die-netzmacher.de/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="Die Netzmacher - Internet ist Handwerk"
               title="Die Netzmacher - Internet ist Handwerk"
               target="_blank">die-netzmacher.de</a>
@@ -49,36 +49,36 @@
         </p>
         <p style="padding:0 0 1em 0;">
           You like to subsidise the TYPO3 Organiser?
-          <a href="http://typo3-organiser.de/sponsoring/" 
-            style="text-decoration:underline;"
+          <a href="http://typo3-organiser.de/sponsoring/"
+            style="background:none;border:none;float:none;text-decoration:underline;"
             alt="Your logo with your URL. 120 x 90 pixel."
             title="Your logo with your URL. 120 x 90 pixel."
             target="_blank">
             Further information</a>.
         </p>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Your logo with your URL. 120 x 90 pixel."
           title="Your logo with your URL. 120 x 90 pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-blue.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-blue.gif"
+            width="120"
+            height="90"
             alt="Your logo with your URL. 120 x 90 pixel." /></a>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Your logo with your URL. 120 x 90 pixel."
           title="Your logo with your URL. 120 x 90 pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif"
+            width="120"
+            height="90"
             alt="Your logo with your URL. 120 x 90 pixel." /></a>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Your logo with your URL. 120 x 90 pixel."
           title="Your logo with your URL. 120 x 90 pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif"
+            width="120"
+            height="90"
             alt="Your logo with your URL. 120 x 90 pixel." /></a>
       ]]></label>
       <label index="promptGeneralInfo"><![CDATA[
@@ -90,15 +90,30 @@
         <br />
         Have fun!
       ]]></label>
+      <label index="promptVersionPrompt47smaller"><![CDATA[
+        Your TYPO3 version is smaller than 4.7
+        <br />
+        <br />
+        <ol style="list-style:outside;">
+          <li>
+            Please add the static template '+Org: Basis for TYPO3 < 4.7' to your TypoScript template.
+          </li>
+          <li>
+            Place this template below (after) all other Organiser templates!
+          </li>
+        </ol>
+      ]]></label>
       <label index="promptVersionPrompt47equal"><![CDATA[
         Best case: your TYPO3 version is 4.7.
       ]]></label>
-      <label index="promptVersionPrompt47equalCSC"><![CDATA[
-        If you are using a version of CSS styled content smaller than 4.7,
-        please add the static template '+Org: Basis for TYPO3 < 4.7' to your TypoScript template.
+      <label index="promptVersionPrompt60equal"><![CDATA[
+        Your TYPO3 version is 6.0. The Organiser isn't tested in this version but should run without any bug.
       ]]></label>
-      <label index="promptVersionPrompt47greater"><![CDATA[
-        Your TYPO3 version is greater than 4.7.<br />
+      <label index="promptVersionPrompt61equal"><![CDATA[
+        Best case: your TYPO3 version is 6.1.
+      ]]></label>
+      <label index="promptVersionPrompt61greater"><![CDATA[
+        Your TYPO3 version is greater than 6.1.<br />
         The Organiser isn't tested for the current TYPO3 version.
         <br />
         <br />
@@ -110,20 +125,7 @@
             Remove the CSS Styled Content from the TypoScript template of your root page.
           </li>
           <li>
-            Include the CSS Styled Content 4.7.
-          </li>
-        </ol>
-      ]]></label>
-      <label index="promptVersionPrompt47smaller"><![CDATA[
-        Your TYPO3 version is smaller than 4.7
-        <br />
-        <br />
-        <ol style="list-style:outside;">
-          <li>
-            Please add the static template '+Org: Basis for TYPO3 < 4.7' to your TypoScript template.
-          </li>
-          <li>
-            Place this template below (after) all other Organiser templates! 
+            Include the CSS Styled Content 6.1.
           </li>
         </ol>
       ]]></label>
@@ -133,36 +135,36 @@
     <languageKey index="de" type="array">
       <label index="promptExternalLinksBody"><![CDATA[
         <div style="float:right;padding-left:1em;">
-          <a href="http://die-netzmacher.de/" 
+          <a href="http://die-netzmacher.de/"
             alt="Die Netzmacher - Internet ist Handwerk"
             title="Die Netzmacher - Internet ist Handwerk"
             target="_blank">
-            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher.de_200px.gif" 
-              width="200" 
-              height="80" 
+            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher.de_200px.gif"
+              width="200"
+              height="80"
               alt="Die Netzmacher - Internet ist Handwerk" /></a>
         </div>
-        <ul style="list-style:outside;">
+        <ul style="list-style:inside;">
           <li>
             Organiser Homepage<br />
-            <a href="http://typo3-organiser.de/" 
-              style="text-decoration:underline;"
+            <a href="http://typo3-organiser.de/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personal, Online-Tickets"
               title="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personal, Online-Tickets"
               target="_blank">typo3-organiser.de</a>
           </li>
           <li>
             Organiser Forum<br />
-            <a href="http://typo3-organiser.de/forum/" 
-              style="text-decoration:underline;"
+            <a href="http://typo3-organiser.de/forum/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="TYPO3-Organiser - Forum"
               title="TYPO3-Organiser - Forum"
               target="_blank">typo3-organiser.de/forum</a>
           </li>
           <li>
             Organiser Entwickler<br />
-            <a href="http://die-netzmacher.de/" 
-              style="text-decoration:underline;"
+            <a href="http://die-netzmacher.de/"
+              style="background:none;border:none;float:none;text-decoration:underline;"
               alt="Die Netzmacher - Internet ist Handwerk"
               title="Die Netzmacher - Internet ist Handwerk"
               target="_blank">die-netzmacher.de</a>
@@ -173,36 +175,36 @@
         </p>
         <p style="padding:0 0 1em 0;">
           Du m&ouml;chtest den TYPO3 Organiser finanziell unterst&uuml;tzen?
-          <a href="http://typo3-organiser.de/sponsoring/" 
-            style="text-decoration:underline;"
+          <a href="http://typo3-organiser.de/sponsoring/"
+            style="background:none;border:none;float:none;text-decoration:underline;"
             alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
             title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
             target="_blank">
             Mehr Informationen</a>.
         </p>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-blue.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-blue.gif"
+            width="120"
+            height="90"
             alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif"
+            width="120"
+            height="90"
             alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
-        <a href="http://typo3-organiser.de/sponsoring/" 
+        <a href="http://typo3-organiser.de/sponsoring/"
           alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
           target="_blank">
-          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif" 
-            width="120" 
-            height="90" 
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif"
+            width="120"
+            height="90"
             alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
       ]]></label>
       <label index="promptGeneralInfo"><![CDATA[
@@ -214,15 +216,30 @@
         <br />
         Viele Spa&szlig;!
       ]]></label>
+      <label index="promptVersionPrompt47smaller"><![CDATA[
+        Deine TYPO3 Version ist niedriger als 4.7
+        <br />
+        <br />
+        <ol style="list-style:outside;">
+          <li>
+            Binde bitte das Static Template '+Org: Basis fuer TYPO3 < 4.7' in Dein TypoScript-Template ein.
+          </li>
+          <li>
+            Positioniere das Template unter (nach) allen anderen Organiser-Templates!
+          </li>
+        </ol>
+      ]]></label>
       <label index="promptVersionPrompt47equal"><![CDATA[
         Optimal: Deine TYPO3 Version ist 4.7.
       ]]></label>
-      <label index="promptVersionPrompt47equalCSC"><![CDATA[
-        Wenn Du eine Version von CSS Styled Content benutzt, die niedriger als 4.7 ist,
-        binde bitte das Static Template '+Org: Basis fuer TYPO3 < 4.7' in Deine TypoScript Template ein.
+      <label index="promptVersionPrompt60equal"><![CDATA[
+        Deine TYPO3 Version ist 6.0. Der Organiser ist in dieser Version nicht getestet, sollte aber ohne Probleme funktionieren.
       ]]></label>
-      <label index="promptVersionPrompt47greater"><![CDATA[
-        Deine TYPO3 Version ist is h&ouml;her als 4.7.<br />
+      <label index="promptVersionPrompt61equal"><![CDATA[
+        Optimal: Deine TYPO3 Version ist 6.1.
+      ]]></label>
+      <label index="promptVersionPrompt61greater"><![CDATA[
+        Deine TYPO3 Version ist is h&ouml;her als 6.1.<br />
         Der Organiser ist f&uuml;r die aktuelle TYPO3 Version nicht getestet.
         <br />
         <br />
@@ -234,20 +251,7 @@
             Entferne CSS Styled Content aus dem TypoScript-Template Deiner Root-Seite.
           </li>
           <li>
-            Binde CSS Styled Content 4.7 ein.
-          </li>
-        </ol>
-      ]]></label>
-      <label index="promptVersionPrompt47smaller"><![CDATA[
-        Deine TYPO3 Version ist niedriger als 4.7
-        <br />
-        <br />
-        <ol style="list-style:outside;">
-          <li>
-            Binde bitte das Static Template '+Org: Basis fuer TYPO3 < 4.7' in Dein TypoScript-Template ein.
-          </li>
-          <li>
-            Positioniere das Template unter (nach) allen anderen Organiser-Templates! 
+            Binde CSS Styled Content 6.1 ein.
           </li>
         </ol>
       ]]></label>

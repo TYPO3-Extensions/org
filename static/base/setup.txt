@@ -124,7 +124,7 @@ plugin.tx_browser_pi1 {
       allowTags = {$styles.content.links.allowTags},table,td,tr,small,iframe,option,form,legend,fieldset,input,button
       externalBlocks {
         comment (
-          div > 
+          div >
           Denn div soll nicht automatisch mit </div> ergaenzt werden.
           Siehe 301: Repertoire - tx_org_cal.datetime
         )
@@ -134,7 +134,7 @@ plugin.tx_browser_pi1 {
   }
 
   displayList.selectBox_orderBy.selectbox.wrap.item.stdWrap.htmlSpecialChars = 0
-  
+
   document_stdWrap.stdWrap.noTrimWrap = |<li>|</li> |
 
   marker {
@@ -145,7 +145,7 @@ plugin.tx_browser_pi1 {
       noTrimWrap  = |<a href="javascript:history.back()">&laquo; |</a>|
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       label_sword_default       = Search Word
@@ -170,11 +170,11 @@ plugin.tx_linkhandler {
   fe_users {
     forceLink        = 0
     useCacheHash     = 1
-    parameter        = {$plugin.org.pages.staff}
-    additionalParams = &tx_browser_pi1[staffUid]={field:uid}
+    parameter        = {$plugin.org.pages.fe_users}
+    additionalParams = &tx_browser_pi1[feusersUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_cal {
     forceLink        = 0
@@ -183,7 +183,7 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[calendarUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_department {
     forceLink        = 0
@@ -192,7 +192,7 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[departmentUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_downloads {
     forceLink        = 0
@@ -201,7 +201,7 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[downloadsUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_event {
     forceLink        = 0
@@ -210,7 +210,7 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[eventUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_headquarters {
     forceLink        = 0
@@ -219,7 +219,16 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[headquarterUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
+  }
+  tx_org_job {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.job}
+    additionalParams = &tx_browser_pi1[jobUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
   }
   tx_org_location {
     forceLink        = 0
@@ -228,7 +237,7 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[locationUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
   tx_org_news {
     forceLink        = 0
@@ -237,7 +246,25 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[newsUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
+  }
+  tx_org_service {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.service}
+    additionalParams = &tx_browser_pi1[serviceUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_staff {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.staff}
+    additionalParams = &tx_browser_pi1[staffUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
   }
 }
   // #53649, 131114, dwildt, +
