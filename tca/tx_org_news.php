@@ -72,14 +72,14 @@ $TCA[ 'tx_org_news' ] = array(
     'type' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.type',
+      'label' => 'LLL:EXT:org/locallang_db.xml:type',
       'config' => array(
         'type' => 'select',
         'items' => array(
           '0' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
-            '1' => '0',
-            '2' => 'EXT:org/ext_icon/caldirect.gif',
+            '1' => 'record',
+            '2' => 'EXT:org/ext_icon/news.gif',
           ),
           'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_page',

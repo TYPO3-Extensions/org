@@ -3,7 +3,7 @@ plugin.tx_browser_pi1 {
   XXXadvanced {
     sql {
       devider {
-        tx_org_servicecat {
+        tx_org_newscat {
           title {
             display = TEXT
             display {
@@ -26,17 +26,17 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      593621 = +Org: Services
-      593621 {
-        name    = +Org: Services
-        showUid = serviceUid
+      401 = +Org: News
+      401 {
+        name    = +Org: News
+        showUid = newsUid
       }
     }
     single {
-      593621 = +Org: Services
+      401 = +Org: News
     }
   }
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/service/593621/tx_browser_pi1/list/_setup.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/service/593621/tx_browser_pi1/single/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/news/401/tx_browser_pi1/list/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/news/401/tx_browser_pi1/single/_setup.txt">

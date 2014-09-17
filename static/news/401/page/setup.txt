@@ -5,6 +5,6 @@ page {
 )
   }
   includeCSS {
-    orgServiceFoundation = EXT:org/res/css/service/foundation.css
+    orgNewsFoundation = EXT:org/res/css/news/foundation.css
   }
 }
