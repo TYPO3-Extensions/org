@@ -28,7 +28,7 @@
       <label index="fe_users.tx_org_department">Abteilung</label>
       <label index="fe_users.tx_org_vita">Vita</label>
       <label index="wizard.fe_user.add">Neue Person erstellen</label>
-      <label index="wizard.fe_user.edit">Daten der ausgew<![CDATA[ä]]>hlten Person bearbeiten</label>
+      <label index="wizard.fe_user.edit">Daten der ausgewählten Person bearbeiten</label>
       <label index="wizard.fe_user.list">Personal-Tabelle anzeigen</label>
     </languageKey>
   </data>

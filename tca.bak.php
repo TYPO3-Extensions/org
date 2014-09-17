@@ -532,19 +532,19 @@ $TCA['tx_org_cal'] = array (
         'type'    => 'select',
         'items'   => array (
           '0' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.direct',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.record',
             '1' => '0',
             '2' => 'EXT:org/ext_icon/caldirect.gif',
           ),
           'calpage' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calpage',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.page',
             '1' => 'calpage',
-            '2' => 'EXT:org/ext_icon/calpage.gif',
+            '2' => 'EXT:org/ext_icon/page.gif',
           ),
           'calurl' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.calurl',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.url',
             '1' => 'calurl',
-            '2' => 'EXT:org/ext_icon/calurl.gif',
+            '2' => 'EXT:org/ext_icon/url.gif',
           ),
           'tx_org_event' => array (
             '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_cal.type.tx_org_event',
@@ -5241,19 +5241,19 @@ $TCA['tx_org_news'] = array (
         'type'    => 'select',
         'items'   => array (
           'news' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.news',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.record',
             '1' => 'news',
             '2' => 'EXT:org/ext_icon/news.gif',
           ),
           'newspage' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newspage',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.page',
             '1' => 'newspage',
-            '2' => 'EXT:org/ext_icon/newspage.gif',
+            '2' => 'EXT:org/ext_icon/page.gif',
           ),
           'newsurl' => array (
-            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.newsurl',
+            '0' => 'LLL:EXT:org/locallang_db.xml:tx_org_news.type.url',
             '1' => 'newsurl',
-            '2' => 'EXT:org/ext_icon/newsurl.gif',
+            '2' => 'EXT:org/ext_icon/url.gif',
           ),
         ),
         'default' => 'news',

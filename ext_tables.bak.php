@@ -863,8 +863,8 @@ $TCA['tx_org_news'] = array (
     'typeicon_column'   => 'type',
     'typeicons'         => array(
       'news'      => '../typo3conf/ext/org/ext_icon/news.gif',
-      'newspage'  => '../typo3conf/ext/org/ext_icon/newspage.gif',
-      'newsurl'   => '../typo3conf/ext/org/ext_icon/newsurl.gif',
+      'newspage'  => '../typo3conf/ext/org/ext_icon/page.gif',
+      'newsurl'   => '../typo3conf/ext/org/ext_icon/url.gif',
     ),
   ),
 );
@@ -923,8 +923,8 @@ $TCA['tx_org_cal'] = array (
     'typeicon_column'   => 'type',
     'typeicons'         => array(
       '0'             => '../typo3conf/ext/org/ext_icon/caldirect.gif',
-      'calpage'       => '../typo3conf/ext/org/ext_icon/calpage.gif',
-      'calurl'        => '../typo3conf/ext/org/ext_icon/calurl.gif',
+      'calpage'       => '../typo3conf/ext/org/ext_icon/page.gif',
+      'calurl'        => '../typo3conf/ext/org/ext_icon/url.gif',
       'tx_org_event'  => '../typo3conf/ext/org/ext_icon/event.gif',
     ),
   ),

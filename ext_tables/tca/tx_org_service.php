@@ -36,7 +36,15 @@ $TCA['tx_org_service'] = array(
     'dividers2tabs' => TRUE,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/service.gif',
-    'type' => 'type',
+    'thumbnail'         => 'image',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'record'  => '../typo3conf/ext/org/ext_icon/service.gif',
+      'page'    => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'     => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'  => '../typo3conf/ext/org/ext_icon/notype.gif',
+    ),
     'searchFields' => ''
     . 'title,reference_number,,short,description,specification,'
     . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
@@ -93,6 +101,7 @@ $TCA['tx_org_servicecat'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/service.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'
@@ -115,6 +124,7 @@ $TCA['tx_org_servicesector'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/service.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'
@@ -137,6 +147,7 @@ $TCA['tx_org_servicetargetgroup'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/service.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'

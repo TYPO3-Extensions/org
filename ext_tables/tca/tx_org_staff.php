@@ -15,8 +15,8 @@ if (!defined('TYPO3_MODE'))
 $TCA['tx_org_staff'] = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff',
-    'label' => 'title',
-    'label_alt'         => 'tx_org_headquarters',
+    'label' => 'name_last',
+    'label_alt'         => 'name_first,tx_org_headquarters',
     'label_alt_force'   => true,
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -24,7 +24,7 @@ $TCA['tx_org_staff'] = array(
     'languageField' => 'sys_language_uid',
     'transOrigPointerField' => 'l10n_parent',
     'transOrigDiffSourceField' => 'l10n_diffsource',
-    'default_sortby' => 'ORDER BY title, name_last, name_first',
+    'default_sortby' => 'ORDER BY name_last, name_first, title',
     'delete' => 'deleted',
     'enablecolumns' => array(
       'disabled' => 'hidden',
@@ -33,8 +33,16 @@ $TCA['tx_org_staff'] = array(
     ),
     'dividers2tabs' => TRUE,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'thumbnail'         => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/staff.gif',
-    'type' => 'type',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'record'  => '../typo3conf/ext/org/ext_icon/staff.gif',
+      'page'    => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'     => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'  => '../typo3conf/ext/org/ext_icon/notype.gif',
+    ),
     'searchFields' => ''
     . 'title,reference_number,,short,description,specification,'
     . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'

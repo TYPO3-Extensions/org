@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       401 = +Org: News
@@ -50,6 +50,12 @@ plugin.tx_browser_pi1 {
         )
         csvLinkToSingleView = tx_org_news.title
         tx_org_news {
+            // image
+          image = COA
+          image {
+            10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+            wrap = <div style="float:left;padding:0 1em 1em 0;">|</div>
+          }
           title = COA
           title {
               // news, newspage, newsurl
@@ -303,7 +309,7 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All News &raquo;
-            lang.de = Alle Nachrichten &raquo; 
+            lang.de = Alle Nachrichten &raquo;
             typolink {
               parameter = {$plugin.org.pages.news}
               title {
@@ -330,7 +336,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.documents,
           tx_org_news.documentslayout,
           tx_org_news.documentscaption,
-          tx_org_news.documentssize, 
+          tx_org_news.documentssize,
 
           tx_org_news.image,
           tx_org_news.imagecaption,
@@ -471,7 +477,7 @@ plugin.tx_browser_pi1 {
                     cObject {
                       key = ###TX_ORG_NEWS.IMAGEORIENT###
                       key {
-                        field > 
+                        field >
                       }
                     }
                   }
@@ -632,7 +638,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_401             = News

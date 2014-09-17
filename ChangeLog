@@ -1,3 +1,156 @@
+6.0.0
+  14-09-17
+  Major Features
+  * #61696: Improve templates
+  * #61248: Compatibility with TYPO3 CMS 6.2.x
+  * #61661: Extension Initialisation
+
+5.0.15
+  14-07-24
+  Feature
+  * #60527: tx_org_job:
+            * newsletter template / view
+  * #i0026: tx_org_job:
+            * new field: newsletter
+
+5.0.14
+  14-07-22
+  Feature
+  * #i0025: Configuration for the job application form (powermail). See:
+            * constants
+              * plugin.org.tx_org_jobs.contractoremail
+              * plugin.tx_powermail.settings.uploadSize
+            * setup
+              * config.linkVars
+              * lib.tx_org_job.powermail
+
+5.0.13
+  14-07-21
+  Feature
+  * #i0024: SEO fields enabled for search: tx_org_job and tx_org_service got seo fields in the select for list views.
+
+5.0.12
+  14-07-18
+  Feature
+  * #i0023: CSS foundation job and service
+
+5.0.11
+  14-07-07
+  Feature
+  * #i0022: Jobs details view
+
+5.0.10
+  14-07-07
+  Feature
+  * #60142: New type: nolink
+            tx_org_cal
+            tx_org_headquarters
+            tx_org_jobs
+            tx_org_location
+            tx_org_news
+            tx_org_staff
+            tx_org_service
+
+5.0.9
+  14-07-07
+  Feature
+  * #i0021: Adaptings for the 2nd and 3rd image and url template of the Browser - TYPO3 without PHP (5.0.5)
+
+5.0.8
+  14-07-06
+  Improvements
+  * #i0020: job and service got radialserach distance and radialsearch class
+
+5.0.7
+  14-07-05
+  Feature
+  * #i0019: Got fields for icons:
+            * tx_org_jobcat
+            * tx_org_jobsector
+            * tx_org_jobworkinghours
+  Improvements
+  * #59361: Jobs Typoscript listview
+
+5.0.6
+  14-07-04
+  Feature
+  * #i0018: Adapting template tx_org_service for Browser - TYPO3 without PHP (5.0.3)
+
+5.0.5
+  14-07-04
+  Feature
+  * #i0017: Adapting template tx_org_service for Browser - TYPO3 without PHP (5.0.1)
+
+5.0.4
+  14-07-01
+  Feature
+  * #i0016: Got backend thumbnails:
+            * tx_org_job
+            * tx_org_service
+            * tx_org_staff
+
+5.0.3
+  14-07-01
+  Improvements
+  * #i0015: ext_tables.sql
+            * NOT NULL without defualt value is removed
+  * #i0014: tx_org_staff: TCA
+            title: obligate
+            name_first: required
+            name_last: required
+  Bugfix
+  * #i0013: tx_org_staff: TCA default_sortby
+
+5.0.2
+  14-06-26
+  Improvements
+  * #i0012: tx_org_cal
+            * types (updated)
+            tx_org_headquarters
+            * New fields
+              * bodytext
+              * marginal_title
+              * marginal_short
+              * teaser_title
+              * teaser_short
+            * types (new)
+              * record
+              * page
+              * url
+            tx_org_jobs
+            * New fields
+              * mail_address
+            * Removed fields
+              * short
+            * types (new)
+              * record
+              * page
+              * url
+            tx_org_location
+            * types (new)
+              * record
+              * page
+              * url
+            tx_org_news
+            * types (updated)
+            tx_org_staff
+            * types (new)
+              * record
+              * page
+              * url
+            tx_org_service
+            * New fields
+              * mail_address
+            * Removed fields
+              * applicationaddress
+              * specifikation
+              * onlineapllication
+              * short
+            * types (new)
+              * record
+              * page
+              * url
+
 5.0.1
   14-06-12
   Major-Features
@@ -5,7 +158,7 @@
   Improvement
   * #i0010: tx_org_job: note is removed
   Bugfix
-  * #i0011: tx_org_job: TCA for dateofoffer
+  * #i0011: tx_org_job: TCA for dateofentry
 
 5.0.0
   14-06-12

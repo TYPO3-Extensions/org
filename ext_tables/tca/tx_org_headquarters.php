@@ -40,6 +40,14 @@ $TCA['tx_org_headquarters'] = array(
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/headquarters.gif',
     // #58884, 140516, dwildt, 1+
     'treeParentField' => 'uid_parent',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'record'  => '../typo3conf/ext/org/ext_icon/headquarters.gif',
+      'page'    => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'     => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'  => '../typo3conf/ext/org/ext_icon/notype.gif',
+    ),
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,'
     . 'title,uid_parent,tx_org_headquarterscat,'
@@ -94,7 +102,8 @@ $TCA['tx_org_headquarterscat'] = array(
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
-    'sortby' => 'sorting',
+    'default_sortby' => 'ORDER BY title',
+    //'sortby' => 'sorting',
     'delete' => 'deleted',
     'enablecolumns' => array(
       'disabled' => 'hidden',
@@ -102,7 +111,7 @@ $TCA['tx_org_headquarterscat'] = array(
     'hideAtCopy' => false,
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
-    'thumbnail' => 'image',
+    'thumbnail' => 'icons',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/headquarterscat.gif',
     // #58885, 140516, dwildt, 1+
     'treeParentField' => 'uid_parent',

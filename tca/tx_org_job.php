@@ -10,12 +10,13 @@ $TCA['tx_org_job'] = array(
   'ctrl' => $TCA['tx_org_job']['ctrl'],
   'interface' => array(
     'showRecordFieldList' => ''
-    . 'type,'
-    . 'title,reference_number,quantity,dateofoffer,short,description,specification,'
-    . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
+    . 'type,page,url,'
+    . 'title,reference_number,quantity,dateofentry,description,specification,'
+    . 'mail_address,mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
     . 'applicationaddress,onlineapplication,'
+    . 'newsletter,'
     . 'tx_org_headquarters,'
     . 'tx_org_staff,'
     . 'tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
@@ -60,20 +61,69 @@ $TCA['tx_org_job'] = array(
     'type' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.type',
+      'label' => 'LLL:EXT:org/locallang_db.xml:type',
       'config' => array(
         'type' => 'select',
         'items' => array(
-          'default' => array(
-            '0' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.type_default',
-            '1' => 'default',
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+            '2' => 'EXT:org/ext_icon/job.gif',
           ),
-          'individualaddress' => array(
-            '0' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.type_individualaddress',
-            '1' => 'individualaddress',
+          'page' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '1' => 'page',
+            '2' => 'EXT:org/ext_icon/page.gif',
+          ),
+          'url' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '1' => 'url',
+            '2' => 'EXT:org/ext_icon/url.gif',
+          ),
+          'notype' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '1' => 'notype',
+            '2' => 'EXT:org/ext_icon/notype.gif',
           ),
         ),
-        'default' => 'default',
+        'default' => 'record',
+      ),
+    ),
+    'page' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:page',
+      'config' => array(
+        'type' => 'group',
+        'internal_type' => 'db',
+        'allowed' => 'pages',
+        'size' => '1',
+        'maxitems' => '1',
+        'minitems' => '1',
+        'show_thumbs' => '1'
+      ),
+    ),
+    'url' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'config' => array(
+        'type' => 'input',
+        'size' => '80',
+        'max' => '256',
+        'checkbox' => '',
+        'eval' => 'trim,required',
+        'wizards' => array(
+          '_PADDING' => '2',
+          'link' => array(
+            'type' => 'popup',
+            'title' => 'Link',
+            'icon' => 'link_popup.gif',
+            'script' => 'browse_links.php?mode=wizard',
+            'JSopenParams' => $JSopenParams,
+          ),
+        ),
+        'softref' => 'typolink',
       ),
     ),
     'title' => array(
@@ -84,15 +134,6 @@ $TCA['tx_org_job'] = array(
         'type' => 'input',
         'size' => '30',
         'eval' => 'required',
-      )
-    ),
-    'short' => array(
-      'exclude' => 0,
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.short',
-      'config' => array(
-        'type' => 'text',
-        'cols' => '30',
-        'rows' => '5',
       )
     ),
     'reference_number' => array(
@@ -115,16 +156,16 @@ $TCA['tx_org_job'] = array(
         'default' => '1'
       )
     ),
-    'dateofoffer' => array(
+    'dateofentry' => array(
       'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.dateofoffer',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.dateofentry',
       'config' => array(
         'type' => 'input',
         'size' => '8',
         'max' => '20',
         'eval' => 'date',
         'checkbox' => '0',
-        'default' => '0',
+        'default' => mktime(date('H'), date('i'), 0, date('m'), date('d'), date('Y')),
         'range' => array(
           'upper' => mktime(3, 14, 7, 1, 19, 2038),
           'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
@@ -170,6 +211,12 @@ $TCA['tx_org_job'] = array(
           ),
         ),
       )
+    ),
+    'mail_address' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.mail_address',
+      'config' => $conf_text_30_05,
     ),
     'mail_street' => array(
       'exclude' => $bool_exclude_default,
@@ -270,24 +317,8 @@ $TCA['tx_org_job'] = array(
     ),
     'applicationaddress' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'prefixLangTitle',
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.applicationaddress',
-      'config' => array(
-        'type' => 'text',
-        'cols' => '30',
-        'rows' => '5',
-        'wizards' => array(
-          '_PADDING' => 2,
-          'RTE' => array(
-            'notNewRecords' => 1,
-            'RTEonly' => 1,
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.rte.fullscreen',
-            'icon' => 'wizard_rte2.gif',
-            'script' => 'wizard_rte.php',
-          ),
-        ),
-      ),
+      'config' => $conf_input_30_trim,
     ),
     'onlineapplication' => array(
       'exclude' => $bool_exclude_default,
@@ -296,6 +327,14 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'check'
       ),
+    ),
+    'newsletter' => array(
+      'exclude' => 1,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.newsletter',
+      'config' => array(
+        'type' => 'check',
+        'default' => '1'
+      )
     ),
     'tx_org_jobcat' => array(
       'l10n_mode' => 'exclude',
@@ -866,21 +905,29 @@ $TCA['tx_org_job'] = array(
     ),
   ),
   'types' => array(
-    'default' => array(
+    'noitem' => array(
+      'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
+    ),
+    'record' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_job, '
       . '  type,'
-      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_title;title, '
+      . '  title,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
       . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_mail, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_maillatlon;maillatlon, '
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_teaser,'
       . '  teaser_title,teaser_short,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_marginal,'
       . '  marginal_title,marginal_short,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_application,'
-      . '  applicationaddress;;;richtext[]:rte_transform[mode=ts],onlineapplication,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_categories,'
-      . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
+      . '  applicationaddress,onlineapplication,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_newsletter,'
+      . '  newsletter,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_staff,'
@@ -900,24 +947,21 @@ $TCA['tx_org_job'] = array(
       . '  seo_keywords, seo_description,'
     ,
     ),
-    'individualaddress' => array(
+    'page' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_job, '
-      . '  type,'
-      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_title;title, '
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
+      . '  title,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
-      . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_mail, '
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_maillatlon;maillatlon, '
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_teaser,'
       . '  teaser_title,teaser_short,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_marginal,'
-      . '  marginal_title,marginal_short,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_application,'
-      . '  applicationaddress,onlineapplication,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_categories,'
-      . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_newsletter,'
+      . '  newsletter,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_staff,'
@@ -928,13 +972,37 @@ $TCA['tx_org_job'] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
-      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_control,'
       . '  hidden;;control;;,fe_group,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_seo,'
-      . '  seo_keywords, seo_description,'
+    ,
+    ),
+    'url' => array(
+      'showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_job, '
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
+      . '  title,'
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_mail, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.palette_maillatlon;maillatlon, '
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_teaser,'
+      . '  teaser_title,teaser_short,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_newsletter,'
+      . '  newsletter,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_company,'
+      . '  tx_org_headquarters,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_staff,'
+      . '  tx_org_staff,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.div_control,'
+      . '  hidden;;control;;,fe_group,'
     ,
     ),
   ),
@@ -975,6 +1043,7 @@ $TCA['tx_org_job'] = array(
     ),
     'mailaddress' => array(
       'showitem' => ''
+      . 'mail_address;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.mail_address,--linebreak--,'
       . 'mail_street;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.mail_street,--linebreak--,'
       . 'mail_zip;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.mail_zip,'
       . 'mail_city;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.mail_city,--linebreak--,'
@@ -993,34 +1062,46 @@ $TCA['tx_org_job'] = array(
       'showitem' => ''
       . 'reference_number;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.reference_number,'
       . 'quantity;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.quantity,'
-      . 'dateofoffer;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.dateofoffer'
+      . 'dateofentry;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.dateofentry'
       ,
       'canNotCollapse' => 1,
     ),
-    'title' => array(
+//    'title' => array(
+//      'showitem' => ''
+//      . 'title;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.title,'
+//      . 'short;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.short',
+//      'canNotCollapse' => 1,
+//    ),
+    'typepage' => array(
       'showitem' => ''
-      . 'title;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.title,'
-      . 'short;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_job.short',
+      . 'type;LLL:EXT:org/locallang_db.xml:type,'
+      . 'page;LLL:EXT:org/locallang_db.xml:page'
+      ,
+      'canNotCollapse' => 1,
+    ),
+    'typeurl' => array(
+      'showitem' => ''
+      . 'type;LLL:EXT:org/locallang_db.xml:type,'
+      . 'url;LLL:EXT:org/locallang_db.xml:url'
+      ,
       'canNotCollapse' => 1,
     ),
   )
 );
 
+$TCA[ 'tx_org_job' ][ 'types' ][ 'notype' ] = $TCA[ 'tx_org_job' ][ 'types' ][ 'record' ];
+
 $TCA['tx_org_jobcat'] = array(
   'ctrl' => $TCA['tx_org_jobcat']['ctrl'],
   'interface' => array(
-    'showRecordFieldList' => 'hidden,title,title_lang_ol,uid_parent,'
+    'showRecordFieldList' => ''
+    . 'title,title_lang_ol,uid_parent,'
+    . 'icons,icon_offset_x,icon_offset_y,'
+    . 'hidden,'
+  ,
   ),
   'feInterface' => $TCA['tx_org_jobcat']['feInterface'],
   'columns' => array(
-    'hidden' => array(
-      'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-      'config' => array(
-        'type' => 'check',
-        'default' => '0'
-      )
-    ),
     'title' => array(
       'exclude' => 0,
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.title',
@@ -1057,13 +1138,53 @@ $TCA['tx_org_jobcat'] = array(
         'trueMaxItems' => 1,
       ),
     ),
+    'icons' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.icons',
+      'config' => $conf_file_image,
+    ),
+    'icon_offset_x' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.icon_offset_x',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'icon_offset_y' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.icon_offset_y',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'hidden' => array(
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+      'config' => array(
+        'type' => 'check',
+        'default' => '0'
+      )
+    ),
   ),
   'types' => array(
     '0' => array(
-      'showitem' =>
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.div_category, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.div_control, hidden'
-      . ''
+      'showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.div_category,'
+      . '  title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.div_icons,'
+      . '  icons,icon_offset_x,icon_offset_y,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobcat.div_control,'
+      . '  hidden'
+    ,
     ),
   ),
   'palettes' => array(
@@ -1074,18 +1195,14 @@ $TCA['tx_org_jobcat'] = array(
 $TCA['tx_org_jobsector'] = array(
   'ctrl' => $TCA['tx_org_jobsector']['ctrl'],
   'interface' => array(
-    'showRecordFieldList' => 'hidden,title,title_lang_ol,uid_parent,'
+    'showRecordFieldList' => ''
+    . 'title,title_lang_ol,uid_parent,'
+    . 'icons,icon_offset_x,icon_offset_y,'
+    . 'hidden,'
+  ,
   ),
   'feInterface' => $TCA['tx_org_jobsector']['feInterface'],
   'columns' => array(
-    'hidden' => array(
-      'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-      'config' => array(
-        'type' => 'check',
-        'default' => '0'
-      )
-    ),
     'title' => array(
       'exclude' => 0,
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.title',
@@ -1122,13 +1239,53 @@ $TCA['tx_org_jobsector'] = array(
         'trueMaxItems' => 1,
       ),
     ),
+    'icons' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.icons',
+      'config' => $conf_file_image,
+    ),
+    'icon_offset_x' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.icon_offset_x',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'icon_offset_y' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.icon_offset_y',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'hidden' => array(
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+      'config' => array(
+        'type' => 'check',
+        'default' => '0'
+      )
+    ),
   ),
   'types' => array(
     '0' => array(
-      'showitem' =>
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.div_sector, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.div_control, hidden'
-      . ''
+      'showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.div_sector,'
+      . '  title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.div_icons,'
+      . '  icons,icon_offset_x,icon_offset_y,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobsector.div_control,'
+      . '  hidden'
+    ,
     ),
   ),
   'palettes' => array(
@@ -1139,18 +1296,14 @@ $TCA['tx_org_jobsector'] = array(
 $TCA['tx_org_jobworkinghours'] = array(
   'ctrl' => $TCA['tx_org_jobworkinghours']['ctrl'],
   'interface' => array(
-    'showRecordFieldList' => 'hidden,title,title_lang_ol,uid_parent,'
+    'showRecordFieldList' => ''
+    . 'title,title_lang_ol,uid_parent,'
+    . 'icons,icon_offset_x,icon_offset_y,'
+    . 'hidden,'
+  ,
   ),
   'feInterface' => $TCA['tx_org_jobworkinghours']['feInterface'],
   'columns' => array(
-    'hidden' => array(
-      'exclude' => 1,
-      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-      'config' => array(
-        'type' => 'check',
-        'default' => '0'
-      )
-    ),
     'title' => array(
       'exclude' => 0,
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.title',
@@ -1187,13 +1340,53 @@ $TCA['tx_org_jobworkinghours'] = array(
         'trueMaxItems' => 1,
       ),
     ),
+    'icons' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.icons',
+      'config' => $conf_file_image,
+    ),
+    'icon_offset_x' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.icon_offset_x',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'icon_offset_y' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.icon_offset_y',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'hidden' => array(
+      'exclude' => 1,
+      'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+      'config' => array(
+        'type' => 'check',
+        'default' => '0'
+      )
+    ),
   ),
   'types' => array(
     '0' => array(
-      'showitem' =>
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.div_workinghours, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.div_control, hidden'
-      . ''
+      'showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.div_category,'
+      . '  title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.div_icons,'
+      . '  icons,icon_offset_x,icon_offset_y,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_job.xml:tx_org_jobworkinghours.div_control,'
+      . '  hidden'
+    ,
     ),
   ),
   'palettes' => array(

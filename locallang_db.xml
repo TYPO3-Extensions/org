@@ -18,6 +18,9 @@
       <label index="filter_phrase.docmedia">Media</label>
       <label index="filter_phrase.fe_group">Groups</label>
       <label index="filter_phrase.headquarters">Headquarters</label>
+      <label index="filter_phrase.jobcat">Categories</label>
+      <label index="filter_phrase.jobsector">Sectors</label>
+      <label index="filter_phrase.jobworkinghours">Working Hours</label>
       <label index="filter_phrase.newscat">Categories</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
@@ -25,6 +28,9 @@
       <label index="filter_phrase.period_all_months">All months</label>
       <label index="filter_phrase.schedule">Playing schedule</label>
       <label index="filter_phrase.schedule.expired">Playing schedule (expired)</label>
+      <label index="filter_phrase.servicecat">Category</label>
+      <label index="filter_phrase.servicesector">Sector</label>
+      <label index="filter_phrase.servicetargetgroup">Target group</label>
       <label index="palette.appearance">Appearance</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.documentscaption">Description</label>
@@ -40,6 +46,10 @@
       <label index="palette.thumbnail_size">Size of the thumbnail</label>
       <label index="palette.type_documents_download">Document for download</label>
       <label index="palette.type_documents_shipping">Preview of the document</label>
+      <label index="palette_typerecord">Link to the detail view</label>
+      <label index="palette_typepage">Link to an internal page</label>
+      <label index="palette_typeurl">Link to an external website</label>
+      <label index="page">Internal page</label>
       <label index="phrase_calLinkToSingle"><![CDATA[Details and tickets &raquo;]]></label>
       <label index="tca_phrase.color">Colour</label>
       <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
@@ -57,7 +67,7 @@
       <label index="tca_phrase.imagecaption">Captions (one line per image)</label>
       <label index="tca_phrase.imageseo">Label for Search Engines (one line per image)</label>
       <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
-      <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
+      <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
       <label index="tca_phrase.image_settings.cat">Settings</label>
       <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
@@ -69,6 +79,15 @@
       <label index="tca_phrase.statistics_downloads_by_visits">Downloads (depending on visits)</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
       <label index="tca_phrase.statistics_visits">Visits</label>
+      <label index="type">Automatic link to ...</label>
+      <label index="type_notype">to nothing (record is in list view available only)</label>
+      <label index="type_record">the detail view (default)</label>
+      <label index="type_recorddeprecated">DEPRECATED! Move to detail view!</label>
+      <label index="type_page">an internal page</label>
+      <label index="type_pagedeprecated">DEPRECATED! Move to internal page!</label>
+      <label index="type_url">an external website</label>
+      <label index="type_urldeprecated">DEPRECATED! Move to external website!</label>
+      <label index="url">External website</label>
       <label index="wizard.rte.fullscreen">Big size for the form</label>
     </languageKey>
     <languageKey index="de" type="array">
@@ -81,9 +100,12 @@
       <label index="filter_phrase.company">Firma</label>
       <label index="filter_phrase.department">Abteilungen</label>
       <label index="filter_phrase.doccat">Rubriken</label>
-      <label index="filter_phrase.docmedia">Datentr<![CDATA[ä]]>ger</label>
+      <label index="filter_phrase.docmedia">Datenträger</label>
       <label index="filter_phrase.fe_group">Gruppen</label>
       <label index="filter_phrase.headquarters">Firma</label>
+      <label index="filter_phrase.jobcat">Kategorie</label>
+      <label index="filter_phrase.jobsector">Branche</label>
+      <label index="filter_phrase.jobworkinghours">Arbeitszeit</label>
       <label index="filter_phrase.newscat">Rubriken</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
@@ -91,6 +113,9 @@
       <label index="filter_phrase.period_all_months">Alle Monate</label>
       <label index="filter_phrase.schedule">Spielplan</label>
       <label index="filter_phrase.schedule.expired">Spielplan (Archiv)</label>
+      <label index="filter_phrase.servicecat">Kategorie</label>
+      <label index="filter_phrase.servicesector">Branche</label>
+      <label index="filter_phrase.servicetargetgroup">Zielgruppe</label>
       <label index="palette.appearance">Design</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="palette.documentscaption">Kurzbeschreibung</label>
@@ -101,12 +126,17 @@
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.link">Download-Link</label>
       <label index="palette.statistics">Statistik</label>
-      <label index="palette.linkicon_size">Gr<![CDATA[öß]]>e im Fall eines Links mit Vorschau-Bild</label>
-      <label index="palette.thumbnail_size">Gr<![CDATA[öß]]>e für das Vorschau-Bild</label>
-      <label index="palette.type_documents_download">Dokument f<![CDATA[ü]]>r Download</label>
+      <label index="palette.linkicon_size">Größe im Fall eines Links mit Vorschau-Bild</label>
+      <label index="palette.thumbnail_size">Größe für das Vorschau-Bild</label>
+      <label index="palette.type_documents_download">Dokument für Download</label>
+      <label index="page">Interne Seite</label>
+      <label index="palette_typerecord">Link auf die Detailansicht</label>
+      <label index="palette_typepage">Link auf eine interne Seite</label>
+      <label index="palette_typeurl">Link auf eine externe Website</label>
+      <label index="type_record">die Detailansicht (Standard)</label>
       <label index="phrase_calLinkToSingle"><![CDATA[Details und Tickets &raquo;]]></label>
       <label index="tca_phrase.color">Farbe</label>
-      <label index="tca_phrase.description">Beschreibung f<![CDATA[ü]]>r Suchmaschinen (bis etwa 200 Zeichen)</label>
+      <label index="tca_phrase.description">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label>
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Beschriftung (eine Zeile pro Datei)</label>
@@ -119,21 +149,30 @@
       <label index="tca_phrase.embeddedcode">Eingebetteter Code</label>
       <label index="tca_phrase.image">Bilder</label>
       <label index="tca_phrase.imagecaption">Unterschriften (eine Zeile pro Datei)</label>
-      <label index="tca_phrase.imageseo">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen (eine Zeile pro Datei)</label>
-      <label index="tca_phrase.imageseo.oneline">Bezeichnung f<![CDATA[ü]]>r Suchmaschinen</label>
-      <label index="tca_phrase.imageseo_lang_ol.oneline"><![CDATA[Ü]]>bersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tca_phrase.imageseo">Bezeichnung für Suchmaschinen (eine Zeile pro Datei)</label>
+      <label index="tca_phrase.imageseo.oneline">Bezeichnung für Suchmaschinen</label>
+      <label index="tca_phrase.imageseo_lang_ol.oneline">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
       <label index="tca_phrase.image_settings.cat">Einstellungen</label>
-      <label index="tca_phrase.keywords">Stichworte f<![CDATA[ü]]>r Suchmaschinen (drei bis f<![CDATA[ü]]>nf, mit Komma trennen)</label>
+      <label index="tca_phrase.keywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>
-      <label index="tca_phrase.pages">F<![CDATA[ü]]>r entsprechende Plugins: zeige auf Seiten</label>
-      <label index="tca_phrase.print">Bilder (in Druckqualit<![CDATA[ä]]>t)</label>
+      <label index="tca_phrase.pages">Für entsprechende Plugins: zeige auf Seiten</label>
+      <label index="tca_phrase.print">Bilder (in Druckqualität)</label>
       <label index="tca_phrase.statistics_downloads">Downloads</label>
-      <label index="tca_phrase.statistics_downloads_by_visits">Downloads (in Abh<![CDATA[ä]]>ngigkeit von Besuchen)</label>
+      <label index="tca_phrase.statistics_downloads_by_visits">Downloads (in Abhängigkeit von Besuchen)</label>
       <label index="tca_phrase.statistics_hits">Aufrufe</label>
       <label index="tca_phrase.statistics_visits">Besuche</label>
-      <label index="wizard.rte.fullscreen">Gr<![CDATA[öß]]>eres Formular</label>
+      <label index="type">Automatischer Link auf ...</label>
+      <label index="type_notype">auf nichts (Datensatz ist nur in der Listenansicht verfügbar)</label>
+      <label index="type_record">die Detailansicht (Standard)</label>
+      <label index="type_recorddeprecated">VERALTET! Wechsel auf die Detailansicht!</label>
+      <label index="type_page">eine interne Seite</label>
+      <label index="type_pagedeprecated">VERALTET! Wechsel auf interne Seite!</label>
+      <label index="type_url">eine externe Website</label>
+      <label index="type_urldeprecated">VERALTET! Wechsel auf externe Website!</label>
+      <label index="url">Externe Website</label>
+      <label index="wizard.rte.fullscreen">Größeres Formular</label>
     </languageKey>
   </data>
 </T3locallang>

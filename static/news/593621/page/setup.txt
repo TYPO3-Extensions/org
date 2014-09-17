@@ -1,0 +1,10 @@
+page {
+  config {
+  headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  }
+  includeCSS {
+    orgServiceFoundation = EXT:org/res/css/service/foundation.css
+  }
+}

@@ -1,16 +1,14 @@
 <?php
 
-if (!defined('TYPO3_MODE'))
+if ( !defined( 'TYPO3_MODE' ) )
 {
-  die('Access denied.');
+  die( 'Access denied.' );
 }
 
 //if ($extManagerTableDisable_tx_org_cal)
 //{
 //  return;
 //}
-
-
 ////////////////////////////////////////////////////////////////////////////
 //
 // INDEX
@@ -19,7 +17,7 @@ if (!defined('TYPO3_MODE'))
 // caltype
 // calentrance
 // cal /////////////////////////////////////////////////////////////////////
-$TCA['tx_org_cal'] = array(
+$TCA[ 'tx_org_cal' ] = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal',
     'label' => 'datetime',
@@ -41,15 +39,18 @@ $TCA['tx_org_cal'] = array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/cal.gif',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/cal.gif',
     'type' => 'type',
     'typeicon_column' => 'type',
     'typeicons' => array(
       '0' => '../typo3conf/ext/org/ext_icon/caldirect.gif',
-      'calpage' => '../typo3conf/ext/org/ext_icon/calpage.gif',
-      'calurl' => '../typo3conf/ext/org/ext_icon/calurl.gif',
+      'page' => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url' => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype' => '../typo3conf/ext/org/ext_icon/notype.gif',
+      'calpage' => '../typo3conf/ext/org/ext_icon/page.gif',
+      'calurl' => '../typo3conf/ext/org/ext_icon/url.gif',
       'tx_org_event' => '../typo3conf/ext/org/ext_icon/event.gif',
     ),
     'searchFields' => ''
@@ -67,7 +68,7 @@ $TCA['tx_org_cal'] = array(
 );
 // cal /////////////////////////////////////////////////////////////////////
 // caltype ///////////////////////////////////////////////////////////////////
-$TCA['tx_org_caltype'] = array(
+$TCA[ 'tx_org_caltype' ] = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_caltype',
     'label' => 'title',
@@ -81,9 +82,9 @@ $TCA['tx_org_caltype'] = array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/caltype.gif',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/caltype.gif',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol,'
@@ -94,7 +95,7 @@ $TCA['tx_org_caltype'] = array(
 );
 // caltype ///////////////////////////////////////////////////////////////////
 // calentrance //////////////////////////////////////////////////////////////////
-$TCA['tx_org_calentrance'] = array(
+$TCA[ 'tx_org_calentrance' ] = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_calentrance',
     'label' => 'title',
@@ -113,9 +114,9 @@ $TCA['tx_org_calentrance'] = array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/calentrance.gif',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'ext_icon/calentrance.gif',
     'searchFields' => ''
     . 'title,title_lang_ol,value,tx_org_tax,'
     . 'hidden,starttime,endtime,fe_group'

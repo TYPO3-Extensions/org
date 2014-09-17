@@ -42,9 +42,13 @@ $TCA['tx_org_news'] = array (
     'type'              => 'type',
     'typeicon_column'   => 'type',
     'typeicons'         => array(
+      'record'    => '../typo3conf/ext/org/ext_icon/news.gif',
+      'page'      => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'       => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'    => '../typo3conf/ext/org/ext_icon/notype.gif',
       'news'      => '../typo3conf/ext/org/ext_icon/news.gif',
-      'newspage'  => '../typo3conf/ext/org/ext_icon/newspage.gif',
-      'newsurl'   => '../typo3conf/ext/org/ext_icon/newsurl.gif',
+      'newspage'  => '../typo3conf/ext/org/ext_icon/page.gif',
+      'newsurl'   => '../typo3conf/ext/org/ext_icon/url.gif',
     ),
     'searchFields' => 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext,' .
     'teaser_title,teaser_subtitle,teaser_short' .

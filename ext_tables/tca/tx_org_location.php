@@ -28,6 +28,14 @@ $TCA['tx_org_location'] = array(
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/location.gif',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'record'  => '../typo3conf/ext/org/ext_icon/location.gif',
+      'page'      => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'       => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'    => '../typo3conf/ext/org/ext_icon/notype.gif',
+    ),
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,title,url,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,' .

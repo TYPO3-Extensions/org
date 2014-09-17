@@ -15,6 +15,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/base/',                  'Org: Basis (immer einbinden!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/601/',        '+Org: Abteilung');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/department/611/',        '+Org: Abteilung - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/service/593621/',        '+Org: Dienstleistungen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/',         '+Org: Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/',  '+Org: +Downloads Flip it!');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/301/flipit/typo3/4.6/',  '+Org: +Downloads Flip it! +TYPO3 < 4.7');
@@ -36,6 +37,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/job/593611/',            '+Org: Stellenangebote');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/job/60527/',             '+Org: Stellenangebote - Newsletter');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Veranstaltorte - Rand');
     switch( true )
@@ -70,12 +73,15 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/downloads/302/',         '+Org: Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Headquarters');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Headquarters - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/job/593611/',            '+Org: Jobs');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/job/60527/',             '+Org: Jobs - newsletter');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Locations');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/711/',          '+Org: Locations - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/401/',              '+Org: News');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/service/593621/',        '+Org: Service');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
     switch( true )

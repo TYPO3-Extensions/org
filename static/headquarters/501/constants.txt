@@ -63,7 +63,7 @@ plugin.tx_browser_pi1 {
 plugin.tx_radialsearch_pi1 {
   css {
     jquery {
-      path = 
+      path =
     }
   }
   distance {
@@ -84,7 +84,7 @@ plugin.tx_seodynamictag {
 
   canonical {
     single {
-        // Only this parameter are allowed: 
+        // Only this parameter are allowed:
       additionalParams = &tx_browser_pi1[headquartersUid]={GP:tx_browser_pi1|headquartersUid}
     }
   }
@@ -101,20 +101,20 @@ plugin.tx_seodynamictag {
     table = tx_org_headquarters
     var.1 = tx_browser_pi1[headquartersUid]
     field {
-      //author        =  
+      //author        =
       description   = description
-      keywords      = keywords 
-      title         = title 
-      short         = mail_city 
+      keywords      = keywords
+      title         = title
+      short         = mail_city
     }
   }
 
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Description] 
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Description]
   }
 
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Keywords] 
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }
 }

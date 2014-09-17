@@ -35,8 +35,16 @@ $TCA['tx_org_job'] = array(
     ),
     'dividers2tabs' => TRUE,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'thumbnail'         => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/job.gif',
-    'type' => 'type',
+    'type'              => 'type',
+    'typeicon_column'   => 'type',
+    'typeicons'         => array(
+      'record'  => '../typo3conf/ext/org/ext_icon/job.gif',
+      'page'    => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'     => '../typo3conf/ext/org/ext_icon/url.gif',
+      'notype'  => '../typo3conf/ext/org/ext_icon/notype.gif',
+    ),
     'searchFields' => ''
     . 'title,reference_number,,short,description,specification,'
     . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
@@ -93,6 +101,7 @@ $TCA['tx_org_jobcat'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/job.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'
@@ -115,6 +124,7 @@ $TCA['tx_org_jobsector'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/job.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'
@@ -137,6 +147,7 @@ $TCA['tx_org_jobworkinghours'] = array(
     'dividers2tabs' => true,
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon/job.gif',
+    'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol'

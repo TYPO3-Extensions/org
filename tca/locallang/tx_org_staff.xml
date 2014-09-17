@@ -26,6 +26,7 @@
       <label index="tx_org_staff.contact_fax">Fax</label>
       <label index="tx_org_staff.contact_phone">Phone</label>
       <label index="tx_org_staff.contact_skype">Skype</label>
+      <label index="tx_org_staff.department">Department/function</label>
       <label index="tx_org_staff.gender">Gender</label>
       <label index="tx_org_staff.gender_female">female</label>
       <label index="tx_org_staff.gender_male">male</label>
@@ -73,6 +74,7 @@
       <label index="tx_org_staff.contact_fax">Fax</label>
       <label index="tx_org_staff.contact_phone">Telefon</label>
       <label index="tx_org_staff.contact_skype">Skype</label>
+      <label index="tx_org_staff.department">Abteilung/Funktion</label>
       <label index="tx_org_staff.gender">Geschlecht</label>
       <label index="tx_org_staff.gender_female">weiblich</label>
       <label index="tx_org_staff.gender_male">männlich</label>
@@ -94,7 +96,7 @@
       <label index="tx_org_staffgroup.div_control">Steuerung</label>
       <label index="tx_org_staffgroup.title">Gruppe</label>
       <label index="tx_org_staffgroup.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
-      <label index="tx_org_staffgroup.uid_parent"><![CDATA[Ü]]>bergeordnete Gruppe</label>
+      <label index="tx_org_staffgroup.uid_parent">Übergeordnete Gruppe</label>
       <label index="wizard.tx_org_staffgroup.add">Neue Gruppe erstellen</label>
       <label index="wizard.tx_org_staffgroup.edit">Markierte Gruppe bearbeiten</label>
       <label index="wizard.tx_org_staffgroup.list">Tabelle mit Gruppen anzeigen</label>

@@ -53,29 +53,29 @@
 
 
 #
-# Table structure for table fe_users
+# fe_users
 #
 CREATE TABLE fe_users (
   tx_org_downloads tinytext,
   tx_org_news tinytext,
   tx_org_headquarters tinytext,
   tx_org_department tinytext,
-  tx_org_vita mediumtext NOT NULL,
+  tx_org_vita mediumtext ,
   tx_org_imagecaption text,
-  tx_org_imageseo text
+  tx_org_imageseo tinytext
 );
 
 
 
 #
-# Table structure for table fe_users_mm_tx_org_downloads
+# fe_users_mm_tx_org_downloads
 #
 CREATE TABLE fe_users_mm_tx_org_downloads (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -83,14 +83,14 @@ CREATE TABLE fe_users_mm_tx_org_downloads (
 
 
 #
-# Table structure for table fe_users_mm_tx_org_news
+# fe_users_mm_tx_org_news
 #
 CREATE TABLE fe_users_mm_tx_org_news (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -98,41 +98,36 @@ CREATE TABLE fe_users_mm_tx_org_news (
 
 
 #
-# Table structure for table tx_org_cal
+# tx_org_cal
 #
 CREATE TABLE tx_org_cal (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   type tinytext,
   tx_org_event tinytext,
   title tinytext,
   subtitle tinytext,
-  datetime int(11) unsigned DEFAULT '0' NOT NULL,
-  datetimeend int(11) unsigned DEFAULT '0' NOT NULL,
+  datetime int(11) unsigned NOT NULL DEFAULT '0',
+  datetimeend int(11) unsigned NOT NULL DEFAULT '0',
   tx_org_caltype tinytext,
-  bodytext mediumtext NOT NULL,
-  teaser_title tinytext,
-  teaser_subtitle tinytext,
-  teaser_short mediumtext,
-  marginal_title tinytext,
-  marginal_subtitle tinytext,
-  marginal_short text,
+  bodytext mediumtext ,
   calpage tinytext,
   calurl tinytext,
-  tx_org_location tinytext,
-  tx_org_calentrance tinytext,
-  tx_org_headquarters tinytext,
-  tx_org_department tinytext NOT NULL,
+  description text,
+  embeddedcode text,
+  endtime int(11) NOT NULL DEFAULT '0',
+  fe_group int(11) NOT NULL DEFAULT '0',
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -146,17 +141,22 @@ CREATE TABLE tx_org_cal (
   image_effects tinyint(3) unsigned NOT NULL default '0',
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
-  embeddedcode text,
+  keywords text,
+  marginal_title tinytext,
+  marginal_subtitle tinytext,
+  marginal_short text,
+  pages tinytext,
   print text,
   printcaption text,
-  printseo text,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  pages tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
-  keywords text,
-  description text,
+  printseo tinytext,
+  starttime int(11) NOT NULL DEFAULT '0',
+  teaser_title tinytext,
+  teaser_subtitle tinytext,
+  teaser_short mediumtext,
+  tx_org_location tinytext,
+  tx_org_calentrance tinytext,
+  tx_org_headquarters tinytext,
+  tx_org_department tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -165,23 +165,23 @@ CREATE TABLE tx_org_cal (
 
 
 #
-# Table structure for table tx_org_calentrance
+# tx_org_calentrance
 #
 CREATE TABLE tx_org_calentrance (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
   title_lang_ol tinytext,
   value tinytext,
   tx_org_tax tinytext,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  fe_group varchar(100) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
+  fe_group varchar(100) NOT NULL DEFAULT '0',
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -190,20 +190,20 @@ CREATE TABLE tx_org_calentrance (
 
 
 #
-# Table structure for table tx_org_caltype
+# tx_org_caltype
 #
 CREATE TABLE tx_org_caltype (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
   title_lang_ol tinytext,
   tx_org_cal tinytext,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) NOT NULL DEFAULT '0',
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -212,14 +212,14 @@ CREATE TABLE tx_org_caltype (
 
 
 #
-# Table structure for table tx_org_cal_mm_tx_org_calentrance
+# tx_org_cal_mm_tx_org_calentrance
 #
 CREATE TABLE tx_org_cal_mm_tx_org_calentrance (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -227,14 +227,14 @@ CREATE TABLE tx_org_cal_mm_tx_org_calentrance (
 
 
 #
-# Table structure for table tx_org_cal_mm_tx_org_caltype
+# tx_org_cal_mm_tx_org_caltype
 #
 CREATE TABLE tx_org_cal_mm_tx_org_caltype (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -242,14 +242,14 @@ CREATE TABLE tx_org_cal_mm_tx_org_caltype (
 
 
 #
-# Table structure for table tx_org_cal_mm_tx_org_location
+# tx_org_cal_mm_tx_org_location
 #
 CREATE TABLE tx_org_cal_mm_tx_org_location (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -257,39 +257,39 @@ CREATE TABLE tx_org_cal_mm_tx_org_location (
 
 
 #
-# Table structure for table tx_org_department
+# tx_org_department
 #
 CREATE TABLE tx_org_department (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  sorting int(10) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  sorting int(10) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
   shortcut tinytext,
   tx_org_departmentcat tinytext,
-  tx_org_headquarters int(11) unsigned DEFAULT '0' NOT NULL,
+  tx_org_headquarters int(11) unsigned NOT NULL DEFAULT '0',
   manager tinytext,
-  telephone tinytext NOT NULL,
-  fax tinytext NOT NULL,
-  email tinytext NOT NULL,
-  url tinytext NOT NULL,
+  telephone tinytext,
+  fax tinytext,
+  email tinytext,
+  url tinytext,
   fe_users tinytext,
   tx_org_cal text,
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
   tx_org_news text,
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -304,9 +304,9 @@ CREATE TABLE tx_org_department (
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
   embeddedcode text,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   pages tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  fe_group int(11) NOT NULL DEFAULT '0',
   keywords text,
   description text,
 
@@ -317,14 +317,14 @@ CREATE TABLE tx_org_department (
 
 
 #
-# Table structure for table tx_org_department_mm_tx_org_cal
+# tx_org_department_mm_tx_org_cal
 #
 CREATE TABLE tx_org_department_mm_tx_org_cal (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -332,13 +332,13 @@ CREATE TABLE tx_org_department_mm_tx_org_cal (
 
 
 #
-# Table structure for table tx_org_department_mm_tx_org_departmentcat
+# tx_org_department_mm_tx_org_departmentcat
 #
 CREATE TABLE tx_org_department_mm_tx_org_departmentcat (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -346,14 +346,14 @@ CREATE TABLE tx_org_department_mm_tx_org_departmentcat (
 
 
 #
-# Table structure for table tx_org_department_mm_tx_org_news
+# tx_org_department_mm_tx_org_news
 #
 CREATE TABLE tx_org_department_mm_tx_org_news (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -361,14 +361,14 @@ CREATE TABLE tx_org_department_mm_tx_org_news (
 
 
 #
-# Table structure for table tx_org_department_mm_fe_users
+# tx_org_department_mm_fe_users
 #
 CREATE TABLE tx_org_department_mm_fe_users (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -376,18 +376,18 @@ CREATE TABLE tx_org_department_mm_fe_users (
 
 
 #
-# Table structure for table tx_org_departmentcat
+# tx_org_departmentcat
 #
 CREATE TABLE tx_org_departmentcat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sorting int(10) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  title tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sorting int(10) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
   title_lang_ol tinytext,
 
   PRIMARY KEY (uid),
@@ -397,23 +397,23 @@ CREATE TABLE tx_org_departmentcat (
 
 
 #
-# Table structure for table tx_org_downloads
+# tx_org_downloads
 #
 CREATE TABLE tx_org_downloads (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) NOT NULL DEFAULT '0',
   type tinytext,
   title tinytext,
   subtitle tinytext,
-  datetime int(11) unsigned DEFAULT '0' NOT NULL,
-  bodytext mediumtext NOT NULL,
+  datetime int(11) unsigned NOT NULL DEFAULT '0',
+  bodytext mediumtext ,
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short text,
@@ -421,26 +421,26 @@ CREATE TABLE tx_org_downloads (
   documents text,
   documents_from_path tinytext,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documents_display_label tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documents_display_caption tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documents_display_label tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documents_display_caption tinyint(4) unsigned NOT NULL DEFAULT '0',
   linkicon_height tinytext,
   linkicon_width tinytext,
   thumbnail text,
   thumbnail_height tinytext,
   thumbnail_width tinytext,
-  fe_user tinytext NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  fe_group varchar(100) DEFAULT '0' NOT NULL,
+  fe_user tinytext,
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
+  fe_group varchar(100) NOT NULL DEFAULT '0',
   keywords text,
   description text,
-  statistics_hits int(11) DEFAULT '0' NOT NULL,
-  statistics_visits int(11) DEFAULT '0' NOT NULL,
-  statistics_downloads int(11) DEFAULT '0' NOT NULL,
-  statistics_downloads_by_visits int(11) DEFAULT '0' NOT NULL,
+  statistics_hits int(11) NOT NULL DEFAULT '0',
+  statistics_visits int(11) NOT NULL DEFAULT '0',
+  statistics_downloads int(11) NOT NULL DEFAULT '0',
+  statistics_downloads_by_visits int(11) NOT NULL DEFAULT '0',
   tx_flipit_evaluate tinytext,
   tx_flipit_fancybox tinytext,
   tx_flipit_layout tinytext,
@@ -460,13 +460,13 @@ CREATE TABLE tx_org_downloads (
 
 
 #
-# Table structure for table tx_org_downloads_mm_tx_org_downloadscat
+# tx_org_downloads_mm_tx_org_downloadscat
 #
 CREATE TABLE tx_org_downloads_mm_tx_org_downloadscat (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -474,13 +474,13 @@ CREATE TABLE tx_org_downloads_mm_tx_org_downloadscat (
 
 
 #
-# Table structure for table tx_org_downloads_mm_tx_org_downloadsmedia
+# tx_org_downloads_mm_tx_org_downloadsmedia
 #
 CREATE TABLE tx_org_downloads_mm_tx_org_downloadsmedia (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -488,25 +488,25 @@ CREATE TABLE tx_org_downloads_mm_tx_org_downloadsmedia (
 
 
 #
-# Table structure for table tx_org_downloadscat
+# tx_org_downloadscat
 #
 CREATE TABLE tx_org_downloadscat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sorting int(10) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  type tinytext NOT NULL,
-  title tinytext NOT NULL,
-  title_lang_ol tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sorting int(10) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  type tinytext,
+  title tinytext,
+  title_lang_ol tinytext,
   text text,
   text_lang_ol text,
-  color tinytext NOT NULL,
+  color tinytext,
   image text,
-  imageseo text,
+  imageseo tinytext,
   imageseo_lang_ol text,
   imageheight tinytext,
   imagewidth tinytext,
@@ -521,25 +521,25 @@ CREATE TABLE tx_org_downloadscat (
 
 
 #
-# Table structure for table tx_org_downloadsmedia
+# tx_org_downloadsmedia
 #
 CREATE TABLE tx_org_downloadsmedia (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sorting int(10) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  type tinytext NOT NULL,
-  title tinytext NOT NULL,
-  title_lang_ol tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sorting int(10) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  type tinytext,
+  title tinytext,
+  title_lang_ol tinytext,
   text text,
   text_lang_ol text,
-  color tinytext NOT NULL,
+  color tinytext,
   image text,
-  imageseo text,
+  imageseo tinytext,
   imageseo_lang_ol text,
   imageheight tinytext,
   imagewidth tinytext,
@@ -554,33 +554,33 @@ CREATE TABLE tx_org_downloadsmedia (
 
 
 #
-# Table structure for table tx_org_event
+# tx_org_event
 #
 CREATE TABLE tx_org_event (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
   subtitle tinytext,
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short mediumtext,
-  bodytext mediumtext NOT NULL,
+  bodytext mediumtext ,
   length tinytext,
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -597,10 +597,10 @@ CREATE TABLE tx_org_event (
   embeddedcode text,
   print text,
   printcaption text,
-  printseo text,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  printseo tinytext,
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   pages tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  fe_group int(11) NOT NULL DEFAULT '0',
   keywords text,
   description text,
   tx_org_cal tinytext,
@@ -620,13 +620,13 @@ CREATE TABLE tx_org_event (
 #
 CREATE TABLE tx_org_eventcat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
   title tinytext,
   title_lang_ol tinytext,
 
@@ -636,14 +636,14 @@ CREATE TABLE tx_org_eventcat (
 
 
 #
-# Table structure for table tx_org_event_mm_tx_org_cal
+# tx_org_event_mm_tx_org_cal
 #
 CREATE TABLE tx_org_event_mm_tx_org_cal (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -651,14 +651,14 @@ CREATE TABLE tx_org_event_mm_tx_org_cal (
 
 
 #
-# Table structure for table tx_org_event_mm_tx_org_news
+# tx_org_event_mm_tx_org_news
 #
 CREATE TABLE tx_org_event_mm_tx_org_news (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -666,37 +666,38 @@ CREATE TABLE tx_org_event_mm_tx_org_news (
 
 
 #
-# Table structure for table tx_org_headquarters
+# tx_org_headquarters
 #
 CREATE TABLE tx_org_headquarters (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
+  bodytext text,
   description text,
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  email tinytext NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  email tinytext,
   embeddedcode text,
-  fax tinytext NOT NULL,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  fax tinytext,
+  fe_group int(11) NOT NULL DEFAULT '0',
   fe_users tinytext,
   geoupdateprompt text,
-  geoupdateforbidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  geoupdateforbidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -711,24 +712,29 @@ CREATE TABLE tx_org_headquarters (
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
   keywords text,
-  mail_address text NOT NULL,
-  mail_postcode tinytext NOT NULL,
-  mail_city tinytext NOT NULL,
-  mail_country tinytext NOT NULL,
-  mail_lat text NOT NULL,
-  mail_lon text NOT NULL,
-  mail_street text NOT NULL,
-  mail_url text NOT NULL,
-  mail_zip tinytext NOT NULL,
+  mail_address text ,
+  mail_postcode tinytext,
+  mail_city tinytext,
+  mail_country tinytext,
+  mail_lat text ,
+  mail_lon text ,
+  mail_street text ,
+  mail_url text ,
+  mail_zip tinytext,
   mail_embeddedcode text,
+  marginal_title tinytext,
+  marginal_short text,
+  page tinytext,
   pages tinytext,
-  postbox_city tinytext NOT NULL,
-  postbox_postbox text NOT NULL,
-  postbox_postcode tinytext NOT NULL,
+  postbox_city tinytext,
+  postbox_postbox text ,
+  postbox_postcode tinytext,
   pubtrans_embeddedcode text,
-  pubtrans_stop mediumtext NOT NULL,
-  pubtrans_url tinytext NOT NULL,
-  telephone tinytext NOT NULL,
+  pubtrans_stop mediumtext ,
+  pubtrans_url tinytext,
+  teaser_title tinytext,
+  teaser_short text,
+  telephone tinytext,
   title tinytext,
   tx_org_department tinytext,
   tx_org_event tinytext,
@@ -737,7 +743,8 @@ CREATE TABLE tx_org_headquarters (
   tx_org_location tinytext,
   tx_org_service tinytext,
   tx_org_staff tinytext,
-  url tinytext NOT NULL,
+  type tinytext,
+  url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -746,14 +753,14 @@ CREATE TABLE tx_org_headquarters (
 
 
 #
-# Table structure for table tx_org_headquarters_mm_fe_users
+# tx_org_headquarters_mm_fe_users
 #
 CREATE TABLE tx_org_headquarters_mm_fe_users (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -761,14 +768,14 @@ CREATE TABLE tx_org_headquarters_mm_fe_users (
 
 
 #
-# Table structure for table tx_org_headquarters_mm_tx_org_cal
+# tx_org_headquarters_mm_tx_org_cal
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_cal (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -776,14 +783,14 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_cal (
 
 
 #
-# Table structure for table tx_org_headquarters_mm_tx_org_department
+# tx_org_headquarters_mm_tx_org_department
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_department (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -791,13 +798,13 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_department (
 
 
 #
-# Table structure for table tx_org_headquarters_mm_tx_org_headquarterscat
+# tx_org_headquarters_mm_tx_org_headquarterscat
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_headquarterscat (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -805,14 +812,14 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_headquarterscat (
 
 
 #
-# Table structure for table tx_org_headquarters_mm_tx_org_news
+# tx_org_headquarters_mm_tx_org_news
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_news (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -820,22 +827,22 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_news (
 
 
 #
-# Table structure for table tx_org_headquarterscat
+# tx_org_headquarterscat
 #
 CREATE TABLE tx_org_headquarterscat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sorting int(10) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  title tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sorting int(10) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
   title_lang_ol tinytext,
   icons text,
-  icon_offset_x int(11) DEFAULT '0' NOT NULL,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
   icon_offset_y int(11) DEFAULT '0' NOT NULL
 
   PRIMARY KEY (uid),
@@ -850,32 +857,32 @@ CREATE TABLE tx_org_headquarterscat (
 #
 CREATE TABLE tx_org_job (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
   applicationaddress tinytext,
-  dateofoffer int(11) DEFAULT '0' NOT NULL,
+  dateofentry int(11) NOT NULL DEFAULT '0',
   description text,
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  fe_group int(11) NOT NULL DEFAULT '0',
   fe_user tinytext,
   geoupdateprompt text,
-  geoupdateforbidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  geoupdateforbidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -890,20 +897,22 @@ CREATE TABLE tx_org_job (
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
   location tinytext,
-  mail_city tinytext NOT NULL,
-  mail_country tinytext NOT NULL,
-  mail_lat text NOT NULL,
-  mail_lon text NOT NULL,
-  mail_street text NOT NULL,
-  mail_zip tinytext NOT NULL,
+  mail_address tinytext,
+  mail_city tinytext,
+  mail_country tinytext,
+  mail_lat text ,
+  mail_lon text ,
+  mail_street text ,
+  mail_zip tinytext,
   marginal_title tinytext,
   marginal_short text,
+  newsletter tinyint(4) NOT NULL DEFAULT '1',
   onlineapplication tinyint(3) unsigned NOT NULL default '0',
+  page tinytext,
   quantity tinytext,
   reference_number tinytext,
   seo_description text,
   seo_keywords text,
-  short text,
   specification text,
   teaser_title tinytext,
   teaser_short text,
@@ -915,6 +924,7 @@ CREATE TABLE tx_org_job (
   tx_org_jobworkinghours tinytext,
   tx_org_staff tinytext,
   type tinytext,
+  url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -927,13 +937,16 @@ CREATE TABLE tx_org_job (
 #
 CREATE TABLE tx_org_jobcat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -949,13 +962,16 @@ CREATE TABLE tx_org_jobcat (
 #
 CREATE TABLE tx_org_jobsector (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -971,13 +987,16 @@ CREATE TABLE tx_org_jobsector (
 #
 CREATE TABLE tx_org_jobworkinghours (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -989,46 +1008,45 @@ CREATE TABLE tx_org_jobworkinghours (
 
 
 #
-# Table structure for table tx_org_location
+# tx_org_location
 #
 CREATE TABLE tx_org_location (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
-  url text NOT NULL,
   geoupdateprompt text,
-  geoupdateforbidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  mail_address text NOT NULL,
-  mail_postcode tinytext NOT NULL,
-  mail_city tinytext NOT NULL,
-  mail_country tinytext NOT NULL,
-  mail_lat text NOT NULL,
-  mail_lon text NOT NULL,
-  mail_url text NOT NULL,
+  geoupdateforbidden tinyint(4) unsigned NOT NULL DEFAULT '0',
+  mail_address text ,
+  mail_postcode tinytext,
+  mail_city tinytext,
+  mail_country tinytext,
+  mail_lat text ,
+  mail_lon text ,
+  mail_url text ,
   mail_embeddedcode text,
-  mail_street text NOT NULL,
-  mail_zip tinytext NOT NULL,
-  telephone tinytext NOT NULL,
-  ticket_telephone tinytext NOT NULL,
-  ticket_url tinytext NOT NULL,
-  fax tinytext NOT NULL,
-  email tinytext NOT NULL,
-  pubtrans_stop mediumtext NOT NULL,
-  pubtrans_url tinytext NOT NULL,
+  mail_street text ,
+  mail_zip tinytext,
+  telephone tinytext,
+  ticket_telephone tinytext,
+  ticket_url tinytext,
+  fax tinytext,
+  email tinytext,
+  pubtrans_stop mediumtext ,
+  pubtrans_url tinytext,
   pubtrans_embeddedcode text,
-  citymap_url tinytext NOT NULL,
+  citymap_url tinytext,
   citymap_embeddedcode text,
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -1046,16 +1064,19 @@ CREATE TABLE tx_org_location (
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
+  page tinytext,
   pages tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  fe_group int(11) NOT NULL DEFAULT '0',
   keywords text,
   description text,
-  tx_org_cal tinytext NOT NULL,
+  tx_org_cal tinytext,
   tx_org_headquarters tinytext,
   tx_org_staff tinytext,
+  type tinytext,
+  url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -1064,25 +1085,25 @@ CREATE TABLE tx_org_location (
 
 
 #
-# Table structure for table tx_org_news
+# tx_org_news
 #
 # #32223 Category tree, 111130, dwildt+, tx_org_newscat_parent_uid
 CREATE TABLE tx_org_news (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) NOT NULL DEFAULT '0',
   type tinytext,
   title tinytext,
   subtitle tinytext,
-  datetime int(11) unsigned DEFAULT '0' NOT NULL,
-  archivedate int(11) unsigned DEFAULT '0' NOT NULL,
-  bodytext mediumtext NOT NULL,
+  datetime int(11) unsigned NOT NULL DEFAULT '0',
+  archivedate int(11) unsigned NOT NULL DEFAULT '0',
+  bodytext mediumtext ,
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short text,
@@ -1091,17 +1112,17 @@ CREATE TABLE tx_org_news (
   marginal_short text,
   newspage tinytext,
   newsurl tinytext,
-  fe_user tinytext NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  topnews tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  topnews_sorting tinyint(4) unsigned DEFAULT '1' NOT NULL,
+  fe_user tinytext,
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  topnews tinyint(4) unsigned NOT NULL DEFAULT '0',
+  topnews_sorting tinyint(4) unsigned NOT NULL DEFAULT '1',
   pages tinytext,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  fe_group varchar(100) DEFAULT '0' NOT NULL,
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
+  fe_group varchar(100) NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -1119,15 +1140,15 @@ CREATE TABLE tx_org_news (
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
   keywords text,
   description text,
-  tx_org_department tinytext NOT NULL,
-  tx_org_event tinytext NOT NULL,
+  tx_org_department tinytext,
+  tx_org_event tinytext,
   tx_org_headquarters tinytext,
   tx_org_newscat tinytext,
-  tx_org_newscat_uid_parent int(11) DEFAULT '0' NOT NULL,
+  tx_org_newscat_uid_parent int(11) NOT NULL DEFAULT '0',
   tx_org_staff tinytext,
 
   PRIMARY KEY (uid),
@@ -1137,13 +1158,13 @@ CREATE TABLE tx_org_news (
 
 
 #
-# Table structure for table tx_org_news_mm_tx_org_newscat
+# tx_org_news_mm_tx_org_newscat
 #
 CREATE TABLE tx_org_news_mm_tx_org_newscat (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  tablenames varchar(30) NOT NULL DEFAULT '',
+  sorting int(11) unsigned NOT NULL DEFAULT '0',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );
@@ -1151,23 +1172,23 @@ CREATE TABLE tx_org_news_mm_tx_org_newscat (
 
 
 #
-# Table structure for table tx_org_newscat
+# tx_org_newscat
 #
 # #32223 Category tree, 111130, dwildt+, uid_parent
 CREATE TABLE tx_org_newscat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  title tinytext NOT NULL,
-  title_lang_ol tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
+  title_lang_ol tinytext,
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -1181,30 +1202,29 @@ CREATE TABLE tx_org_newscat (
 #
 CREATE TABLE tx_org_service (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  applicationaddress tinytext,
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
   description text,
   documents_from_path tinytext,
   documents text,
   documentscaption tinytext,
-  documentslayout tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  documentssize tinyint(4) unsigned DEFAULT '0' NOT NULL,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
+  documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  fe_group int(11) NOT NULL DEFAULT '0',
   geoupdateprompt text,
-  geoupdateforbidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  geoupdateforbidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -1219,20 +1239,19 @@ CREATE TABLE tx_org_service (
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
   location tinytext,
-  mail_city tinytext NOT NULL,
-  mail_country tinytext NOT NULL,
-  mail_lat text NOT NULL,
-  mail_lon text NOT NULL,
-  mail_street text NOT NULL,
-  mail_zip tinytext NOT NULL,
+  mail_address tinytext,
+  mail_city tinytext,
+  mail_country tinytext,
+  mail_lat text ,
+  mail_lon text ,
+  mail_street text ,
+  mail_zip tinytext,
   marginal_title tinytext,
   marginal_short text,
-  onlineapplication tinyint(3) unsigned NOT NULL default '0',
+  page tinytext,
   reference_number tinytext,
   seo_description text,
   seo_keywords text,
-  short text,
-  specification text,
   teaser_title tinytext,
   teaser_short text,
   thirdparty_id tinytext,
@@ -1243,6 +1262,7 @@ CREATE TABLE tx_org_service (
   tx_org_servicetargetgroup tinytext,
   tx_org_staff tinytext,
   type tinytext,
+  url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -1255,13 +1275,16 @@ CREATE TABLE tx_org_service (
 #
 CREATE TABLE tx_org_servicecat (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -1277,13 +1300,16 @@ CREATE TABLE tx_org_servicecat (
 #
 CREATE TABLE tx_org_servicesector (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -1299,13 +1325,16 @@ CREATE TABLE tx_org_servicesector (
 #
 CREATE TABLE tx_org_servicetargetgroup (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
   title tinytext,
   title_lang_ol tinytext,
   thirdparty_id tinytext,
@@ -1320,28 +1349,29 @@ CREATE TABLE tx_org_servicetargetgroup (
 #
 CREATE TABLE tx_org_staff (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  sys_language_uid int(11) DEFAULT '0' NOT NULL,
-  l10n_parent int(11) DEFAULT '0' NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sys_language_uid int(11) NOT NULL DEFAULT '0',
+  l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
-  birthday int(11) DEFAULT '0' NOT NULL,
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
+  birthday int(11) NOT NULL DEFAULT '0',
   bodytext text,
   contact_email tinytext,
   contact_fax tinytext,
   contact_phone tinytext,
   contact_skype tinytext,
-  fe_group int(11) DEFAULT '0' NOT NULL,
+  fe_group int(11) NOT NULL DEFAULT '0',
+  department tinytext,
   gender tinytext,
   image text,
   imagecaption text,
-  imageseo text,
+  imageseo tinytext,
   imageheight tinytext,
   imagewidth tinytext,
   imageorient tinyint(4) unsigned NOT NULL default '0',
@@ -1356,11 +1386,12 @@ CREATE TABLE tx_org_staff (
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
   name_first tinytext,
-  title tinytext,
   name_last tinytext,
+  page tinytext,
   seo_description text,
   seo_keywords text,
   thirdparty_id tinytext,
+  title tinytext,
   tx_org_downloads tinytext,
   tx_org_event tinytext,
   tx_org_headquarters tinytext,
@@ -1369,6 +1400,8 @@ CREATE TABLE tx_org_staff (
   tx_org_news tinytext,
   tx_org_service tinytext,
   tx_org_staffgroup tinytext,
+  type tinytext,
+  url tinytext,
   vita text,
 
   PRIMARY KEY (uid),
@@ -1382,15 +1415,15 @@ CREATE TABLE tx_org_staff (
 #
 CREATE TABLE tx_org_staffgroup (
   uid int(11) NOT NULL auto_increment,
-  pid int(11) DEFAULT '0' NOT NULL,
-  uid_parent int(11) DEFAULT '0' NOT NULL,
-  tstamp int(11) DEFAULT '0' NOT NULL,
-  crdate int(11) DEFAULT '0' NOT NULL,
-  cruser_id int(11) DEFAULT '0' NOT NULL,
-  deleted tinyint(4) DEFAULT '0' NOT NULL,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  title tinytext NOT NULL,
-  title_lang_ol tinytext NOT NULL,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
+  title_lang_ol tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -1400,21 +1433,21 @@ CREATE TABLE tx_org_staffgroup (
 
 
 #
-# Table structure for table tx_org_tax'
+# tx_org_tax'
 #
 CREATE TABLE tx_org_tax (
   uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
-  pid int(11) unsigned DEFAULT '0' NOT NULL,
-  tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-  crdate int(11) unsigned DEFAULT '0' NOT NULL,
-  cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-  deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  pid int(11) unsigned NOT NULL DEFAULT '0',
+  tstamp int(11) unsigned NOT NULL DEFAULT '0',
+  crdate int(11) unsigned NOT NULL DEFAULT '0',
+  cruser_id int(11) unsigned NOT NULL DEFAULT '0',
+  deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
   title_lang_ol tinytext,
   value tinytext,
-  hidden tinyint(4) DEFAULT '0' NOT NULL,
-  starttime int(11) DEFAULT '0' NOT NULL,
-  endtime int(11) DEFAULT '0' NOT NULL,
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  starttime int(11) NOT NULL DEFAULT '0',
+  endtime int(11) NOT NULL DEFAULT '0',
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -1426,12 +1459,12 @@ CREATE TABLE tx_org_tax (
 # tx_org_mm_all
 #
 CREATE TABLE tx_org_mm_all (
-  uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-  uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-  sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-  table_local varchar(100) DEFAULT '' NOT NULL,
-  table_foreign varchar(100) DEFAULT '' NOT NULL,
+  uid_local int(11) unsigned NOT NULL DEFAULT '0',
+  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  sorting         int(11) unsigned NOT NULL DEFAULT '0',
+  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
+  table_local varchar(100) NOT NULL DEFAULT '',
+  table_foreign varchar(100) NOT NULL DEFAULT '',
   KEY uid_local (uid_local),
   KEY uid_foreign (uid_foreign)
 );

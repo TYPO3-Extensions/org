@@ -1,0 +1,117 @@
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  // plugin.tx_seodynamictag_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = newsUid
+  }
+  templates {
+    listview {
+      header {
+        0 {
+          crop {
+            #list    =
+            #single  =
+          }
+          list    = tx_org_service.teaser_title
+          single  = tx_org_service.title
+        }
+        1 {
+          crop {
+            #list    =
+            #single  =
+          }
+          list    = tx_org_service.mail_city
+          #single  =
+        }
+      }
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_service_300x200.gif
+          file      = tx_org_news.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_image.imageseo
+          #width     =
+        }
+      }
+      text {
+        crop {
+          #list    =
+          #single  =
+        }
+        list    = tx_org_service.teaser_short
+        single  = tx_org_service.description
+      }
+      url {
+        0 {
+          key       = tx_org_service.type
+          page      = tx_org_service.page
+          record    = tx_org_service.uid
+          showUid   = serviceUid
+          #singlePid =
+          url       = tx_org_service.url
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_seodynamictag
+
+plugin.tx_seodynamictag {
+
+  canonical {
+    single {
+        // Only this parameter are allowed:
+      additionalParams = &tx_browser_pi1[newsUid]={GP:tx_browser_pi1|newsUid}
+    }
+  }
+
+  condition {
+    single {
+        // Please replace xxx with the uid of the page with the news plugin for the single view
+        // Please use the Constant Editor
+      begin = globalVar = GP:tx_browser_pi1|newsUid > 0] && [globalVar = TSFE:id = xxx
+    }
+  }
+
+  database {
+    table = tx_org_news
+    var.1 = tx_browser_pi1[newsUid]
+    field {
+      //author        =
+      description   = description
+      keywords      = keywords
+      title         = title
+      short         = subtitle
+    }
+  }
+
+  default {
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Description]
+  }
+
+  keywords {
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Keywords]
+    moveToKeywords  = 0
+  }
+}
+  // plugin.tx_seodynamictag

@@ -70,27 +70,45 @@ plugin.tx_browser_pi1 {
             dataWrap        = &tx_browser_pi1[eventUid]={GPvar:tx_browser_pi1|eventUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|eventUid
           }
-            // headquarterUid
+            // feuserUid
           60 = TEXT
           60 {
+            dataWrap        = &tx_browser_pi1[feuserUid]={GPvar:tx_browser_pi1|feuserUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|feuserUid
+          }
+            // headquarterUid
+          70 = TEXT
+          70 {
             dataWrap        = &tx_browser_pi1[headquarterUid]={GPvar:tx_browser_pi1|headquarterUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|headquarterUid
           }
+            // jobUid
+          80 = TEXT
+          80 {
+            dataWrap        = &tx_browser_pi1[jobUid]={GPvar:tx_browser_pi1|jobUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|jobUid
+          }
             // locationUid
-          70 = TEXT
-          70 {
+          90 = TEXT
+          90 {
             dataWrap        = &tx_browser_pi1[locationUid]={GPvar:tx_browser_pi1|locationUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|locationUid
           }
             // newsUid
-          80 = TEXT
-          80 {
+          100 = TEXT
+          100 {
             dataWrap        = &tx_browser_pi1[newsUid]={GPvar:tx_browser_pi1|newsUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|newsUid
           }
+            // serviceUid
+          110 = TEXT
+          110 {
+            dataWrap        = &tx_browser_pi1[serviceUid]={GPvar:tx_browser_pi1|serviceUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|serviceUid
+          }
             // staffUid
-          90 = TEXT
-          90 {
+          120 = TEXT
+          120 {
             dataWrap        = &tx_browser_pi1[staffUid]={GPvar:tx_browser_pi1|staffUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|staffUid
           }
@@ -113,7 +131,8 @@ plugin.tx_browser_pi1 {
         }
       }
     }
-    pageBrowser.showResultCount = 0
+    // browser #i0071, 140717, dwildt, 1-
+    //pageBrowser.showResultCount = 0
   }
 
   general_stdWrap {

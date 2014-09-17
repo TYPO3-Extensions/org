@@ -9,7 +9,9 @@ $TCA['tx_org_location'] = array(
   'ctrl' => $TCA['tx_org_location']['ctrl'],
   'interface' => array(
     'showRecordFieldList' => ''
-    . 'sys_language_uid,l10n_parent,l10n_diffsource,title,url,'
+    . 'sys_language_uid,l10n_parent,l10n_diffsource,'
+    . 'type,page,url,'
+    . 'title,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
     . 'telephone,ticket_telephone,ticket_url,fax,email,'
     . 'tx_org_cal,'
@@ -54,6 +56,74 @@ $TCA['tx_org_location'] = array(
     'l10n_diffsource' => array(
       'config' => array(
         'type' => 'passthrough'
+      ),
+    ),
+    'type' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:type',
+      'config' => array(
+        'type' => 'select',
+        'items' => array(
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+            '2' => 'EXT:org/ext_icon/location.gif',
+          ),
+          'page' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '1' => 'page',
+            '2' => 'EXT:org/ext_icon/page.gif',
+          ),
+          'url' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '1' => 'url',
+            '2' => 'EXT:org/ext_icon/url.gif',
+          ),
+          'notype' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '1' => 'notype',
+            '2' => 'EXT:org/ext_icon/notype.gif',
+          ),
+        ),
+        'default' => 'record',
+      ),
+    ),
+    'page' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:page',
+      'config' => array(
+        'type' => 'group',
+        'internal_type' => 'db',
+        'allowed' => 'pages',
+        'size' => '1',
+        'maxitems' => '1',
+        'minitems' => '1',
+        'show_thumbs' => '1'
+      ),
+    ),
+    'url' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'config' => array(
+        'type' => 'input',
+        'size' => '80',
+        'max' => '256',
+        'checkbox' => '',
+        'eval' => 'trim,required',
+        'wizards' => array(
+          '_PADDING' => '2',
+          'link' => array(
+            'type' => 'popup',
+            'title' => 'Link',
+            'icon' => 'link_popup.gif',
+            'script' => 'browse_links.php?mode=wizard',
+            'JSopenParams' => $JSopenParams,
+          ),
+        ),
+        'softref' => 'typolink',
       ),
     ),
     'title' => array(
@@ -127,12 +197,12 @@ $TCA['tx_org_location'] = array(
     ),
     'geoupdateprompt' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_location.geoupdateprompt',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.geoupdateprompt',
       'config' => $conf_text_50_10,
     ),
     'geoupdateforbidden' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_location.geoupdateforbidden',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.geoupdateforbidden',
       'config' => array(
         'type' => 'check',
         'default' => '0'
@@ -599,9 +669,13 @@ $TCA['tx_org_location'] = array(
     ),
   ),
   'types' => array(
-    '0' => array('showitem' => ''
+    'noitem' => array(
+      'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
+    ),
+    'record' => array('showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_location, '
-      . '  title,url,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typerecord;typerecord,'
+      . '  title,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_mail, '
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
@@ -630,6 +704,54 @@ $TCA['tx_org_location'] = array(
       . '  hidden,pages,fe_group,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_seo,'
       . '  keywords, description,'
+    ,
+    ),
+    'page' => array('showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_location, '
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
+      . '  title,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_mail, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
+      . '  mail_url,mail_embeddedcode,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_calendar,'
+      . '  tx_org_cal,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_headquarters,'
+      . '  tx_org_headquarters,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_staff,'
+      . '  tx_org_staff,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_control,'
+      . '  hidden,pages,fe_group,'
+    ,
+    ),
+    'url' => array('showitem' => ''
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_location, '
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
+      . '  title,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_mail, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
+      . '  mail_url,mail_embeddedcode,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_calendar,'
+      . '  tx_org_cal,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_headquarters,'
+      . '  tx_org_headquarters,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_staff,'
+      . '  tx_org_staff,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.div_control,'
+      . '  hidden,pages,fe_group,'
     ,
     ),
   ),
@@ -682,8 +804,31 @@ $TCA['tx_org_location'] = array(
       . 'mail_lon;LLL:EXT:org/tca/locallang/tx_org_location.xml:tx_org_location.mail_lon,',
       'canNotCollapse' => 1,
     ),
+    'typerecord' => array(
+      'showitem' => ''
+      . 'type;LLL:EXT:org/locallang_db.xml:type,'
+      . 'url;LLL:EXT:org/locallang_db.xml:url'
+      ,
+      'canNotCollapse' => 1,
+    ),
+    'typepage' => array(
+      'showitem' => ''
+      . 'type;LLL:EXT:org/locallang_db.xml:type,'
+      . 'page;LLL:EXT:org/locallang_db.xml:page'
+      ,
+      'canNotCollapse' => 1,
+    ),
+    'typeurl' => array(
+      'showitem' => ''
+      . 'type;LLL:EXT:org/locallang_db.xml:type,'
+      . 'url;LLL:EXT:org/locallang_db.xml:url'
+      ,
+      'canNotCollapse' => 1,
+    ),
   ),
 );
+
+$TCA[ 'tx_org_location' ][ 'types' ][ 'notype' ] = $TCA[ 'tx_org_location' ][ 'types' ][ 'record' ];
 
 if (!$bool_full_wizardSupport_allTables)
 {
