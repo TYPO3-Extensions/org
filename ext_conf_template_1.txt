@@ -5,15 +5,15 @@ basic.LLstatic = English
   # cat=basic//999;                type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 basic.externalLinks=0
 
-  # cat=downgrade//100;            type=boolean; label= Enable table fe_users:Use the table fe_users instead of the table tx_org_staff. Needed for Organiser version 4. The use of fe_users is deprecated and won't supported from Organiser version 7!
+  # cat=downgrade//100;            type=boolean; label= Enable table fe_users:Use the table fe_users instead of the table tx_org_staff. Needed for Organiser version 4. The use of fe_users is deprecated and won't supported from Organiser version 6!
 downgrade.enable.fe_users = 0
-  # cat=downgrade//101;            type=boolean; label= Enable table departments:Use the table tx_org_department. Needed for Organiser version 4. Effected tables are: calendar, headquarters and news. The use of departments (tx_org_department) is deprecated and won't supported from Organiser version 7!
+  # cat=downgrade//101;            type=boolean; label= Enable table departments:Use the table tx_org_department. Needed for Organiser version 4. Effected tables are: calendar, headquarters and news. The use of departments (tx_org_department) is deprecated and won't supported from Organiser version 6!
 downgrade.enable.tx_org_department = 0
-  # cat=downgrade//200;            type=boolean; label= Enable field embedded code:Enable the field embedded code. Needed for Organiser version 4. The use of the field embedded code is deprecated and won't supported from Organiser version 7!
+  # cat=downgrade//200;            type=boolean; label= Enable field embedded code:Enable the field embedded code. Needed for Organiser version 4. The use of the field embedded code is deprecated and won't supported from Organiser version 6!
 downgrade.enable.embeddedcode = 0
-  # cat=downgrade//201;            type=boolean; label= Enable field images for printing:Enable the field images for printing. Needed for Organiser version 4. The use of all fields in context of images for printing is deprecated and won't supported from Organiser version 7!
+  # cat=downgrade//201;            type=boolean; label= Enable field images for printing:Enable the field images for printing. Needed for Organiser version 4. The use of all fields in context of images for printing is deprecated and won't supported from Organiser version 6!
 downgrade.enable.print = 0
-  # cat=downgrade//202;            type=boolean; label= Enable field public transport:Enable the fields for public transport. Needed for Organiser version 4. The use of the fields for public transport is deprecated and won't supported from Organiser version 7!
+  # cat=downgrade//202;            type=boolean; label= Enable field public transport:Enable the fields for public transport. Needed for Organiser version 4. The use of the fields for public transport is deprecated and won't supported from Organiser version 6!
 downgrade.enable.pubtrans = 0
   # cat=downgrade//999;            type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 downgrade.externalLinks=0

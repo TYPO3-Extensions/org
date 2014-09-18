@@ -47,13 +47,13 @@ $TCA['tx_org_news'] = array (
       'url'       => '../typo3conf/ext/org/ext_icon/url.gif',
       'notype'    => '../typo3conf/ext/org/ext_icon/notype.gif',
       'news'      => '../typo3conf/ext/org/ext_icon/news.gif',
-      'newspage'  => '../typo3conf/ext/org/ext_icon/page.gif',
-      'newsurl'   => '../typo3conf/ext/org/ext_icon/url.gif',
+      'page'  => '../typo3conf/ext/org/ext_icon/page.gif',
+      'url'   => '../typo3conf/ext/org/ext_icon/url.gif',
     ),
     'searchFields' => 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext,' .
     'teaser_title,teaser_subtitle,teaser_short' .
     'marginal_title,marginal_subtitle,marginal_short' .
-    'newspage,newsurl' .
+    'page,url' .
     'fe_user,' .
     'tx_org_headquarters,' .
     'tx_org_department,' .

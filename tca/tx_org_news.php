@@ -24,7 +24,7 @@ $TCA[ 'tx_org_news' ] = array(
     . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,tx_org_newscat,tx_org_newscat_uid_parent,bodytext,'
     . 'teaser_title,teaser_subtitle,teaser_short'
     . 'marginal_title,marginal_subtitle,marginal_short'
-    . 'newspage,newsurl'
+    . 'page,url'
     . 'fe_user,'
     . 'tx_org_headquarters,'
     . 'tx_org_department,'
@@ -101,14 +101,14 @@ $TCA[ 'tx_org_news' ] = array(
             '1' => 'news',
             '2' => 'EXT:org/ext_icon/news.gif',
           ),
-          'newspage' => array(
+          'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
-            '1' => 'newspage',
+            '1' => 'page',
             '2' => 'EXT:org/ext_icon/page.gif',
           ),
-          'newsurl' => array(
+          'url' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
-            '1' => 'newsurl',
+            '1' => 'url',
             '2' => 'EXT:org/ext_icon/url.gif',
           ),
         ),
@@ -199,10 +199,10 @@ $TCA[ 'tx_org_news' ] = array(
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.bodytext',
       'config' => $conf_text_rte,
     ),
-    'newspage' => array(
+    'page' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.newspage',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.page',
       'config' => array(
         'type' => 'group',
         'internal_type' => 'db',
@@ -213,10 +213,10 @@ $TCA[ 'tx_org_news' ] = array(
         'show_thumbs' => '1'
       ),
     ),
-    'newsurl' => array(
+    'url' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.newsurl',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.url',
       'config' => array(
         'type' => 'input',
         'size' => '80',
@@ -374,11 +374,11 @@ $TCA[ 'tx_org_news' ] = array(
         ),
         'MM' => 'tx_org_mm_all',
         "MM_match_fields" => array(
-          'table_local' => 'tx_org_newstx_org_downloads',
+          'table_local' => 'tx_org_news',
           'table_foreign' => 'tx_org_staff'
         ),
         "MM_insert_fields" => array(
-          'table_local' => 'tx_org_newstx_org_downloads',
+          'table_local' => 'tx_org_news',
           'table_foreign' => 'tx_org_staff'
         ),
         'foreign_table' => 'tx_org_staff',
@@ -818,7 +818,7 @@ $TCA[ 'tx_org_news' ] = array(
       . '  keywords;;;;7-7-7, description,'
     ,
     ),
-    'newspage' => array( 'showitem' => ''
+    'page' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_news,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.palette_typepage;typepage,'
       . '  title;;;;1-1-1,subtitle,'
@@ -838,7 +838,7 @@ $TCA[ 'tx_org_news' ] = array(
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department, tx_org_department,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,' .
       '' ),
-    'newsurl' => array( 'showitem' => ''
+    'url' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_news,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.palette_typeurl;typeurl,'
       . '  title;;;;1-1-1,subtitle,'
@@ -910,14 +910,14 @@ $TCA[ 'tx_org_news' ] = array(
     'typepage' => array(
       'showitem' => ''
       . 'type;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.type,'
-      . 'newspage;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.newspage'
+      . 'page;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.page'
       ,
       'canNotCollapse' => 1,
     ),
     'typeurl' => array(
       'showitem' => ''
       . 'type;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.type,'
-      . 'newsurl;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.newsurl'
+      . 'url;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.url'
       ,
       'canNotCollapse' => 1,
     ),
