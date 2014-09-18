@@ -1,0 +1,11 @@
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      60527 {
+        select (
+          tx_org_job.title
+        )
+      }
+    }
+  }
+}
