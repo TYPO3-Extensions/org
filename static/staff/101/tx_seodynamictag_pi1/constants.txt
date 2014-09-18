@@ -13,7 +13,7 @@ plugin.tx_seodynamictag {
     }
   }
   database {
-    table = tx_org_news
+    table = tx_org_staff
     var.1 = tx_browser_pi1[newsUid]
     field {
       //author        =
@@ -24,10 +24,10 @@ plugin.tx_seodynamictag {
     }
   }
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Description]
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Staff. See tab [Search Engine] field [Description]
   }
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Keywords]
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Staff. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }
 }

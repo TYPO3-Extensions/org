@@ -823,7 +823,7 @@ $TCA[ 'tx_org_staff' ] = array(
       . '  type,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
-      . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;;richtext[]:rte_transform[mode=ts];,'
+      . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;;richtext[]:rte_transform[mode=ts],'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_contact, '

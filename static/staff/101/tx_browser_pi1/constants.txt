@@ -2,7 +2,7 @@ plugin.tx_browser_pi1 {
   jQuery {
     plugin {
       jstree {
-        tablefield_01 = tx_org_newscat.title
+        tablefield_01 = tx_org_staffgroup.title
       }
     }
   }
@@ -18,45 +18,45 @@ plugin.tx_browser_pi1 {
             #list    =
             #single  =
           }
-          list    = tx_org_news.teaser_title
-          single  = tx_org_news.title
+          list    = tx_org_staff.title
+          single  = tx_org_staff.title
         }
         1 {
           crop {
             #list    =
             #single  =
           }
-          list    = tx_org_news.mail_city
+          list    = tx_org_staff.mail_city
           #single  =
         }
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
-          file      = tx_org_news.image
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
           #height    =
           #listNum   =
           path      = uploads/tx_org/
-          seo       = tx_org_news.imageseo
+          seo       = tx_org_staff.imageseo
           #width     =
         }
       }
       text {
         crop {
-          #list    =
+          list    = 300
           #single  =
         }
-        list    = tx_org_news.teaser_short
-        single  = tx_org_news.seo_description
+        list    = tx_org_staff.bodytext // tx_org_staff.vita
+        single  = tx_org_staff.bodytext
       }
       url {
         0 {
-          key       = tx_org_news.type
-          page      = tx_org_news.page
-          record    = tx_org_news.uid
+          key       = tx_org_staff.type
+          page      = tx_org_staff.page
+          record    = tx_org_staff.uid
           showUid   = newsUid
           #singlePid =
-          url       = tx_org_news.url
+          url       = tx_org_staff.url
         }
       }
     }

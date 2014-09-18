@@ -1,8 +1,8 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      401 {
-        tx_org_news {
+      101 {
+        tx_org_staff {
             // image, header, text
           title = COA
           title {

@@ -1,9 +1,9 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      401 {
+      101 {
         filter {
-          tx_org_newscat {
+          tx_org_staffgroup {
               // #43641, dwildt, 1-, 1+
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
