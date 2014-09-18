@@ -1,0 +1,36 @@
+button a {
+  color:white;
+}
+
+.top-bar input[type="text"] {
+  height:auto;
+  padding-top: 0.38rem;
+  padding-bottom: 0.38rem;
+}
+
+.mapview label {
+  line-height:1em;
+}
+.mapview label input[type="file"],
+.mapview label input[type="checkbox"],
+.mapview label input[type="radio"],
+.mapview label select {
+    margin-bottom: 0px;
+}
+.tx-browser-pi1 .category_menu_treeview {
+  float: none;
+  margin-bottom:1rem;
+  padding-right: 0;
+  width: 100%;
+}
+
+#tx-browser-pi1-jstree-01,
+#tx-browser-pi1-jstree-02,
+#tx-browser-pi1-jstree-03,
+#tx-browser-pi1-jstree-04,
+#tx-browser-pi1-jstree-05
+{
+  border-radius: 0;
+  position: relative;
+  top: 0;
+}
