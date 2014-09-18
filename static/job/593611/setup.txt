@@ -1,0 +1,4 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/593611/config/linkVars.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/593611/lib/tx_org_job.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/593611/plugin/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/593611/page/setup.txt">
