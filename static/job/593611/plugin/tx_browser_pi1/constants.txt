@@ -1,0 +1,148 @@
+//plugin.tx_browser_pi1.map.controlling.enabled = Map
+
+plugin.tx_browser_pi1 {
+  jQuery {
+    plugin {
+      jstree {
+        tablefield_01 = tx_org_jobcat.title
+        tablefield_02 = tx_org_jobsector.title
+        tablefield_03 = tx_org_jobworkinghours.title
+        tablefield_04 = tx_org_headquarters.title
+      }
+    }
+  }
+  map {
+    aliases {
+      showUid {
+        marker = jobUid
+      }
+    }
+    controlling {
+      enabled = Map
+      provider = GoogleMaps
+    }
+    design {
+      path {
+        categoryIcon  = uploads/tx_org/
+      }
+      height  = 210
+      width   = 637
+    }
+    icon {
+      listNum {
+        categoryIconMap       = 0
+        categoryIconMapSingle = 0
+      }
+    }
+    marker {
+      field {
+        linktoSingle      = tx_org_job.uid
+        latitude          = tx_org_job.mail_lat
+        longitude         = tx_org_job.mail_lon
+        description       = tx_org_job.title
+        category          = tx_org_jobcat.title
+        categoryIcon      = tx_org_jobcat.icons
+        categoryOffsetX   = tx_org_jobcat.icon_offset_x
+        categoryOffsetY   = tx_org_jobcat.icon_offset_y
+      }
+    }
+    popup {
+      image {
+        width = 60m
+      }
+    }
+  }
+  navigation {
+    showUid = jobUid
+  }
+  radialsearch {
+    lat         = tx_org_job.mail_lat
+    lon         = tx_org_job.mail_lon
+    #searchmode  = Within the radius only
+  }
+
+  templates {
+    listview {
+      header {
+        0 {
+          crop {
+            #list    =
+            #single  =
+          }
+          list    = tx_org_job.teaser_title
+          single  = tx_org_job.title
+        }
+      }
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_job_300x200.gif
+          file      = tx_org_headquarters.image // tx_org_job.image
+          height    = 70c
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo // tx_org_job.imageseo
+          width     = 120m
+        }
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
+          height    = 70c
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_staff.imageseo // tx_org_staff.title // tx_org_job.teaser_title // tx_org_job.title
+          width     = 70c
+        }
+        2 {
+          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
+          file      = tx_org_headquarters.image
+          height    = 80
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo // tx_org_headquarters.title // tx_org_job.teaser_title // tx_org_job.title
+          width     = 120m
+        }
+      }
+      text {
+        crop {
+          #list    =
+          #single  =
+        }
+        list    = tx_org_job.teaser_short
+        single  = tx_org_job.description
+      }
+      url {
+        0 {
+          key       = tx_org_job.type
+          page      = tx_org_job.page
+          record    = tx_org_job.uid
+          showUid   = jobUid
+          #singlePid =
+          url       = tx_org_job.url
+        }
+        1 {
+          key       = tx_org_staff.type
+          page      = tx_org_staff.page
+          record    = tx_org_staff.uid
+          showUid   = staffUid
+          #singlePid =
+          url       = tx_org_staff.url
+        }
+        2 {
+          key       = tx_org_headquarters.type
+          page      = tx_org_headquarters.page
+          record    = tx_org_headquarters.uid
+          showUid   = headquartersUid
+          #singlePid =
+          url       = tx_org_headquarters.url
+        }
+      }
+    }
+  }
+}
+
+[globalVar = GP:tx_browser_pi1|jobUid > 0]
+  plugin.tx_browser_pi1.map.zoomLevel.mode = fixed
+  plugin.tx_browser_pi1.map.zoomLevel.start = 10
+  plugin.tx_browser_pi1.map.design.width = 303
+  plugin.tx_browser_pi1.map.design.height = 150
+[global]
