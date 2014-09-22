@@ -13,9 +13,9 @@ $TCA[ 'tx_org_staff' ] = array(
     . 'type,page,url,'
     . 'title,'
     . 'name_first,name_last,birthday,gender,'
-    . 'bodytext,vita,'
+    . 'bodytext,cols,vita,pi_flexform,'
     . 'tx_org_staffgroup,'
-    . 'contact_email,contact_fax,contact_phone,contact_skype,'
+    . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'tx_org_downloads,'
     . 'tx_org_headquarters,department'
@@ -216,7 +216,7 @@ $TCA[ 'tx_org_staff' ] = array(
         ),
       )
     ),
-    'vita' => array(
+    'vitaBAK' => array(
       'exclude' => 0,
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.vita',
       'config' => array(
@@ -233,6 +233,19 @@ $TCA[ 'tx_org_staff' ] = array(
             'icon' => 'wizard_rte2.gif',
             'script' => 'wizard_rte.php',
           ),
+        ),
+      )
+    ),
+    'vita' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.vita',
+      'config' => array(
+        'type' => 'text',
+        'cols' => '30',
+        'rows' => '5',
+        'wizards' => array(
+          '_PADDING' => 2,
+          'table' => $TCA['tt_content']['columns']['bodytext']['config']['wizards']['table'],
         ),
       )
     ),
@@ -322,6 +335,29 @@ $TCA[ 'tx_org_staff' ] = array(
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.contact_skype',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
+    ),
+    'contact_url' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'config' => array(
+        'type' => 'input',
+        'size' => '80',
+        'max' => '256',
+        'checkbox' => '',
+        'eval' => 'trim',
+        'wizards' => array(
+          '_PADDING' => '2',
+          'link' => array(
+            'type' => 'popup',
+            'title' => 'Link',
+            'icon' => 'link_popup.gif',
+            'script' => 'browse_links.php?mode=wizard',
+            'JSopenParams' => $JSopenParams,
+          ),
+        ),
+        'softref' => 'typolink',
+      ),
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,
@@ -823,11 +859,11 @@ $TCA[ 'tx_org_staff' ] = array(
       . '  type,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
-      . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;;richtext[]:rte_transform[mode=ts],'
+      . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;9;nowrap:wizards[table],'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
-      . '  contact_email,contact_fax,contact_phone,contact_skype,'
+      . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -863,7 +899,7 @@ $TCA[ 'tx_org_staff' ] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
-      . '  contact_email,contact_fax,contact_phone,contact_skype,'
+      . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -885,7 +921,7 @@ $TCA[ 'tx_org_staff' ] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
-      . '  contact_email,contact_fax,contact_phone,contact_skype,'
+      . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -957,6 +993,13 @@ $TCA[ 'tx_org_staff' ] = array(
   )
 );
 
+$TCA['tx_org_staff']['columns']['cols'] = $TCA['tt_content']['columns']['cols'];
+$TCA['tx_org_staff']['columns']['pi_flexform'] = $TCA['tt_content']['columns']['pi_flexform'];
+unset($TCA['tx_org_staff']['columns']['pi_flexform']['config']['ds']);
+unset($TCA['tx_org_staff']['columns']['pi_flexform']['config']['ds_pointerField']);
+unset($TCA['tx_org_staff']['columns']['pi_flexform']['config']['search']);
+$TCA['tx_org_staff']['columns']['pi_flexform']['config']['ds']['default'] = 'FILE:EXT:css_styled_content/flexform_ds.xml';
+$TCA['tx_org_staff']['columns']['pi_flexform']['config']['ds_pointerField'] = 'title';
 $TCA[ 'tx_org_staff' ][ 'types' ][ 'notype' ] = $TCA[ 'tx_org_staff' ][ 'types' ][ 'record' ];
 
 $TCA[ 'tx_org_staffgroup' ] = array(

@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
       101 = +Org: Staff
       101 {
         name    = +Org: Staff
-        showUid = newsUid
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {
@@ -38,5 +38,5 @@ plugin.tx_browser_pi1 {
   }
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/list/_setup.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/single/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/single/_setup.ts">

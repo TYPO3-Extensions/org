@@ -101,14 +101,14 @@ $TCA[ 'tx_org_news' ] = array(
             '1' => 'news',
             '2' => 'EXT:org/ext_icon/news.gif',
           ),
-          'page' => array(
+          'newspage' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
-            '1' => 'page',
+            '1' => 'newspage',
             '2' => 'EXT:org/ext_icon/page.gif',
           ),
-          'url' => array(
+          'newsurl' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
-            '1' => 'url',
+            '1' => 'newsurl',
             '2' => 'EXT:org/ext_icon/url.gif',
           ),
         ),
@@ -148,7 +148,15 @@ $TCA[ 'tx_org_news' ] = array(
         'size' => 10,
         'minitems' => 0,
         'maxitems' => 99,
-        'MM' => 'tx_org_news_mm_tx_org_newscat',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_newscat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_newscat'
+        ),
         'foreign_table' => 'tx_org_newscat',
 //        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
         'form_type' => 'user',
@@ -267,45 +275,19 @@ $TCA[ 'tx_org_news' ] = array(
         'size' => $size_headquarters,
         'minitems' => 0,
         'maxitems' => 999,
-        'MM' => 'tx_org_headquarters_mm_tx_org_news',
-        'MM_opposite_field' => 'tx_org_news',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_headquarters'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_headquarters'
+        ),
         'foreign_table' => 'tx_org_headquarters',
         'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_headquarters.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_headquarters',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_headquarters.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_headquarters',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_headquarters.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
-          ),
-        ),
       ),
     ),
     'tx_org_department' => array(
@@ -357,21 +339,14 @@ $TCA[ 'tx_org_news' ] = array(
       ),
     ),
     'tx_org_staff' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.tx_org_staff',
       'config' => array(
         'type' => 'select',
-        'size' => 20,
+        'size' => $size_headquarters,
         'minitems' => 0,
-        'maxitems' => 99,
-        'items' => array(
-          '0' => array(
-            '0' => '',
-            '1' => '',
-          ),
-        ),
+        'maxitems' => 999,
         'MM' => 'tx_org_mm_all',
         "MM_match_fields" => array(
           'table_local' => 'tx_org_news',
@@ -385,7 +360,7 @@ $TCA[ 'tx_org_news' ] = array(
         'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
     ),
     'hidden' => $conf_hidden,
     'topnews' => $conf_topnews,

@@ -12,9 +12,6 @@ plugin.tx_browser_pi1 {
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                 <div class="main columns small-###FDTMPLTABLESINGLECOLLEFTSMALL### medium-###FDTMPLTABLESINGLECOLLEFTMEDIUM### large-###FDTMPLTABLESINGLECOLLEFTLARGE###">
                   ###RECORD_BROWSER###
-                  <div class="socialbookmarks">
-                    ###SOCIALMEDIA_BOOKMARKS###
-                  </div>
                   ###TX_ORG_STAFF.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
@@ -25,7 +22,8 @@ plugin.tx_browser_pi1 {
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                 </div>
                 <div class="margin columns small-###FDTMPLTABLESINGLECOLRIGHTSMALL### medium-###FDTMPLTABLESINGLECOLRIGHTMEDIUM### large-###FDTMPLTABLESINGLECOLRIGHTLARGE###">
-                  ###TX_ORG_NEWS.UID###
+                  ###TX_ORG_STAFF.CONTACT_EMAIL###
+                  ###TX_ORG_STAFF.CRDATE###
                   ###TX_ORG_HEADQUARTERS.UID###
                 </div>
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->

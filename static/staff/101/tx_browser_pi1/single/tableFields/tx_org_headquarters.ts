@@ -16,33 +16,34 @@ plugin.tx_browser_pi1 {
                 field = tx_org_headquarters.uid
               }
             }
-            wrap = <div class="row tx_org_headquarters">|</div><!-- row tx_org_headquarters -->
               // column: vcard
             10 = COA
             10 {
-              wrap = <div class="columns large-12">|</div><!-- columns large-12 -->
                 // column: image, header, title, steet, zip city, url
               10 = COA
               10 {
-                wrap = <ul class="vcard">|</ul><!-- vcard -->
+                wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
                   // image, header
                 10 = COA
                 10 {
                   wrap = <li class="header">|</li>
                     // image
-                  10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
+                  10 = COA
                   10 {
-                    wrap = <div class="image" style="float:right;">|</div>
+                      // image
+                    10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
+                    wrap = <div class="show-for-large-up image" style="float:right;">|</div>
                   }
                     // title, if title (name)
                   20 = TEXT
                   20 {
-                    value = Contractor
+                    value = Company
                     lang {
-                      de = Anbieter
-                      en = Contractor
+                      de = Firma
+                      en = Company
                     }
                   }
+                  XXX20 >
                 }
                   // title
                 20 = TEXT
@@ -50,6 +51,32 @@ plugin.tx_browser_pi1 {
                   field = tx_org_headquarters.title
                   wrap = <li class="fn">|</li>
                   required = 1
+                }
+                20 >
+                20 = CASE
+                20 {
+                  key {
+                    field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
+                  }
+                  default = TEXT
+                  default {
+                    field = tx_org_headquarters.title
+                    noTrimWrap = |<li class="fn"> | &raquo;</li>|
+                    required = 1
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
+                  }
+                  notype = TEXT
+                  notype {
+                    noTrimWrap = |<li class="fn"> | </li>|
+                  }
+                  page < .default
+                  page {
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
+                  }
+                  url < .page
+                  url {
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
+                  }
                 }
                   // street
                 30 = TEXT
@@ -113,6 +140,7 @@ plugin.tx_browser_pi1 {
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
                   }
                 }
+                40 >
               }
             }
           }

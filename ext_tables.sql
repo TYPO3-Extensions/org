@@ -30,8 +30,6 @@
 # tx_org_headquarters_mm_fe_users
 # tx_org_headquarters_mm_tx_org_cal
 # tx_org_headquarters_mm_tx_org_department
-# tx_org_headquarters_mm_tx_org_headquarterscat
-# tx_org_headquarters_mm_tx_org_news
 # tx_org_headquarterscat
 # tx_org_job
 # tx_org_jobcat
@@ -39,7 +37,6 @@
 # tx_org_jobworkinghours
 # tx_org_location
 # tx_org_news
-# tx_org_news_mm_tx_org_newscat
 # tx_org_newscat
 # tx_org_service
 # tx_org_servicecat
@@ -741,6 +738,7 @@ CREATE TABLE tx_org_headquarters (
   tx_org_headquarterscat tinytext,
   tx_org_job tinytext,
   tx_org_location tinytext,
+  tx_org_news tinytext,
   tx_org_service tinytext,
   tx_org_staff tinytext,
   type tinytext,
@@ -786,35 +784,6 @@ CREATE TABLE tx_org_headquarters_mm_tx_org_cal (
 # tx_org_headquarters_mm_tx_org_department
 #
 CREATE TABLE tx_org_headquarters_mm_tx_org_department (
-  uid_local int(11) unsigned NOT NULL DEFAULT '0',
-  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  tablenames varchar(30) NOT NULL DEFAULT '',
-  sorting         int(11) unsigned NOT NULL DEFAULT '0',
-  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-
-
-#
-# tx_org_headquarters_mm_tx_org_headquarterscat
-#
-CREATE TABLE tx_org_headquarters_mm_tx_org_headquarterscat (
-  uid_local int(11) unsigned NOT NULL DEFAULT '0',
-  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  tablenames varchar(30) NOT NULL DEFAULT '',
-  sorting int(11) unsigned NOT NULL DEFAULT '0',
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-
-
-#
-# tx_org_headquarters_mm_tx_org_news
-#
-CREATE TABLE tx_org_headquarters_mm_tx_org_news (
   uid_local int(11) unsigned NOT NULL DEFAULT '0',
   uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
   tablenames varchar(30) NOT NULL DEFAULT '',
@@ -1158,20 +1127,6 @@ CREATE TABLE tx_org_news (
 
 
 #
-# tx_org_news_mm_tx_org_newscat
-#
-CREATE TABLE tx_org_news_mm_tx_org_newscat (
-  uid_local int(11) unsigned NOT NULL DEFAULT '0',
-  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  tablenames varchar(30) NOT NULL DEFAULT '',
-  sorting int(11) unsigned NOT NULL DEFAULT '0',
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-
-
-#
 # tx_org_newscat
 #
 # #32223 Category tree, 111130, dwildt+, uid_parent
@@ -1362,32 +1317,34 @@ CREATE TABLE tx_org_staff (
   endtime int(11) NOT NULL DEFAULT '0',
   birthday int(11) NOT NULL DEFAULT '0',
   bodytext text,
+  cols int(11) DEFAULT '0' NOT NULL,
   contact_email tinytext,
   contact_fax tinytext,
   contact_phone tinytext,
   contact_skype tinytext,
+  contact_url tinytext,
   fe_group int(11) NOT NULL DEFAULT '0',
   department tinytext,
   gender tinytext,
   image text,
-  imagecaption text,
-  imageseo tinytext,
-  imageheight tinytext,
-  imagewidth tinytext,
-  imageorient tinyint(4) unsigned NOT NULL default '0',
-  imagecaption text,
-  imagecols tinyint(4) unsigned NOT NULL default '0',
   imageborder tinyint(4) unsigned NOT NULL default '0',
+  imagecaption text,
   imagecaption_position varchar(12) default '',
-  image_link text,
-  image_zoom tinyint(3) unsigned NOT NULL default '0',
-  image_noRows tinyint(3) unsigned NOT NULL default '0',
-  image_effects tinyint(3) unsigned NOT NULL default '0',
+  imagecols tinyint(4) unsigned NOT NULL default '0',
+  imageheight tinytext,
+  imageorient tinyint(4) unsigned NOT NULL default '0',
+  imageseo tinytext,
+  imagewidth tinytext,
   image_compression tinyint(3) unsigned NOT NULL default '0',
+  image_effects tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
+  image_link text,
+  image_noRows tinyint(3) unsigned NOT NULL default '0',
+  image_zoom tinyint(3) unsigned NOT NULL default '0',
   name_first tinytext,
   name_last tinytext,
   page tinytext,
+  pi_flexform mediumtext,
   seo_description text,
   seo_keywords text,
   thirdparty_id tinytext,

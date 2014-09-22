@@ -14,40 +14,40 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_news.teaser_title
-          single  = tx_org_news.title
+          #crop =
+          list  = tx_org_news.teaser_title // tx_org_news.title
+          #tag  =
         }
         1 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_news.mail_city
-          #single  =
+          crop = 30|...|1
+          list = tx_org_news.subtitle // tx_org_news.teaser_subtitle
+          tag  = h3
         }
       }
       image {
         0 {
           default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
           file      = tx_org_news.image
-          #height    =
+          height    = 160c
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_news.imageseo
-          #width     =
+          width     = 160c
+        }
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_staff.title // tx_org_staff.imageseo // tx_org_news.title
+          #width     = 160c
         }
       }
       text {
-        crop {
-          #list    =
-          #single  =
-        }
-        list    = tx_org_news.teaser_short
-        single  = tx_org_news.seo_description
+          crop = 100|...|1
+          list = tx_org_news.teaser_short // tx_org_news.bodytext
+          tag  = p
       }
       url {
         0 {
@@ -57,6 +57,22 @@ plugin.tx_browser_pi1 {
           showUid   = newsUid
           #singlePid =
           url       = tx_org_news.url
+        }
+        1 {
+          key       = tx_org_staff.type
+          page      = tx_org_staff.page
+          record    = tx_org_staff.uid
+          showUid   = staffUid
+          #singlePid =
+          url       = tx_org_staff.url
+        }
+        2 {
+          key       = type
+          page      = page
+          record    = uid
+          showUid   = headquartersUid
+          #singlePid =
+          url       = url
         }
       }
     }

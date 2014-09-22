@@ -30,6 +30,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     . 'telephone,fax,email,url,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
+    . 'tx_org_news,'
     . 'tx_org_staff,'
     . 'tx_org_service,'
     . 'tx_org_job,'
@@ -184,7 +185,15 @@ $TCA[ 'tx_org_headquarters' ] = array(
         'size' => 10,
         'minitems' => 0,
         'maxitems' => 99,
-        'MM' => 'tx_org_headquarters_mm_tx_org_headquarterscat',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_headquarterscat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_headquarterscat'
+        ),
         'foreign_table' => 'tx_org_headquarterscat',
         // #58885, 140516, dwildt, 6+
         'form_type' => 'user',
@@ -194,39 +203,6 @@ $TCA[ 'tx_org_headquarters' ] = array(
         'expandFirst' => 0,
         'expandAll' => 0,
         'foreign_table_where' => 'AND tx_org_headquarterscat.' . $str_store_record_conf . ' AND tx_org_headquarterscat.deleted = 0 AND tx_org_headquarterscat.hidden = 0 ORDER BY tx_org_headquarterscat.title',
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_headquarterscat.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_headquarterscat',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_headquarterscat.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_headquarterscat',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_headquarterscat.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
-          ),
-        ),
       ),
     ),
     'bodytext' => array(
@@ -382,6 +358,32 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'prefixLangTitle',
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.marginal_short',
       'config' => $conf_text_50_10,
+    ),
+    'tx_org_news' => array(
+      'l10n_mode' => 'exclude',
+      'exclude' => 0,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_news',
+      'config' => array(
+        'type' => 'select',
+        'size' => $size_headquarters,
+        'minitems' => 0,
+        'maxitems' => 999,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_headquarters',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_headquarters'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_news',
+          'table_foreign' => 'tx_org_headquarters'
+        ),
+        'foreign_table' => 'tx_org_news',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY datetime DESC, title',
+        'selectedListStyle' => $listStyleWidth,
+        'itemListStyle' => $listStyleWidth,
+      )
     ),
     'tx_org_service' => array(
       'l10n_mode' => 'exclude',
@@ -863,6 +865,8 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
       . '  telephone,fax,email,url,'
+      . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_news,'
+      . '  tx_org_news,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'

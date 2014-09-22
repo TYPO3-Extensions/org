@@ -20,7 +20,7 @@ plugin.tx_seodynamictag {
       description   = seo_description
       keywords      = seo_keywords
       title         = title
-      short         = subtitle
+      short         = name_last
     }
   }
   default {

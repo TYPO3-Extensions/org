@@ -94,15 +94,6 @@
   width:2em;
 }
 
-.tx-browser-pi1 .listview .image01 {
-  float:left;
-  padding:0 1em 0 0;
-  width:80px;
-}
-.tx-browser-pi1 .listview-content p {
-  margin-left:7.6em;
-}
-
 .tx-browser-pi1 .searchbox {
   padding-bottom:1em;
 }
@@ -261,6 +252,17 @@
 .tx-browser-pi1 div.radialsearch-outside-radius {
   background:#CCC;
   border-radius: .8em;
-  opacity: 0.4;  
+  opacity: 0.4;
   padding: .4em .4em .1em .8em;
 }
+
+
+/* foundation */
+ul.vcard {
+  width:100%;
+}
+ul.vcard li.circle {
+  display:list-item;
+  list-style-position:inside;
+}
+/* foundation */

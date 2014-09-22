@@ -1,3 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/single/tableFields/tx_org_staff.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/single/tableFields/tx_org_headquarters.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/staff/101/tx_browser_pi1/single/tableFields/tx_org_news.txt">

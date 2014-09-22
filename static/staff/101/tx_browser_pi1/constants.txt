@@ -7,7 +7,7 @@ plugin.tx_browser_pi1 {
     }
   }
   navigation {
-    showUid = newsUid
+    showUid = staffUid
   }
 
   templates {
@@ -34,10 +34,28 @@ plugin.tx_browser_pi1 {
         0 {
           default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
           file      = tx_org_staff.image
-          #height    =
+          height    = 120c
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_staff.imageseo
+          width     = 97c
+        }
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
+          file      = tx_org_news.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_news.imageseo
+          #width     =
+        }
+        2 {
+          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
+          file      = tx_org_headquarters.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo
           #width     =
         }
       }
@@ -54,9 +72,39 @@ plugin.tx_browser_pi1 {
           key       = tx_org_staff.type
           page      = tx_org_staff.page
           record    = tx_org_staff.uid
-          showUid   = newsUid
+          showUid   = staffUid
           #singlePid =
           url       = tx_org_staff.url
+        }
+        1 {
+          key       = type
+          page      = page
+          record    = uid
+          showUid   = newsUid
+          #singlePid =
+          url       = url
+        }
+        2 {
+          key       = tx_org_headquarters.type
+          page      = tx_org_headquarters.page
+          record    = tx_org_headquarters.uid
+          showUid   = headquartersUid
+          #singlePid =
+          url       = tx_org_headquarters.url
+        }
+      }
+    }
+    singleview {
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
+          #height    =
+          #layoutKey = picture
+          #listNum   =
+          path      = uploads/tx_org/
+          #seo       = tx_org_staff.imageseo
+          #width     =
         }
       }
     }

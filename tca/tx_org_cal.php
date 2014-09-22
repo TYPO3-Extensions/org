@@ -76,7 +76,7 @@ $TCA[ 'tx_org_cal' ] = array(
         'items' => array(
           '0' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
-            '1' => '0',
+            '1' => 'record',
             '2' => 'EXT:org/ext_icon/caldirect.gif',
           ),
           'page' => array(
@@ -790,7 +790,7 @@ $TCA[ 'tx_org_cal' ] = array(
     ),
   ),
   'types' => array(
-    '0' => array( 'showitem' => ''
+    'record' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  type,'
       . '  title,subtitle,'

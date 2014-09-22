@@ -10,11 +10,8 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="main columns small-###FDTMPLTABLESINGLECOLLEFTSMALL### medium-###FDTMPLTABLESINGLECOLLEFTMEDIUM### large-###FDTMPLTABLESINGLECOLLEFTLARGE###">
+                <div class="main columns small-12 medium-12 large-8">
                   ###RECORD_BROWSER###
-                  <div class="socialbookmarks">
-                    ###SOCIALMEDIA_BOOKMARKS###
-                  </div>
                   ###TX_ORG_NEWS.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
@@ -24,9 +21,10 @@ plugin.tx_browser_pi1 {
                   <!-- ###BACKBUTTON### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                 </div>
-                <div class="margin columns small-###FDTMPLTABLESINGLECOLRIGHTSMALL### medium-###FDTMPLTABLESINGLECOLRIGHTMEDIUM### large-###FDTMPLTABLESINGLECOLRIGHTLARGE###">
+                <div class="margin columns show-for-large-up small-12 medium-12 large-4">
                   ###TX_ORG_STAFF.UID###
-                  ###TX_ORG_HEADQUARTERS.UID###
+                  ###TX_ORG_NEWS.CRDATE###
+                  ###TX_ORG_NEWS.DELETED###
                 </div>
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                 <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->

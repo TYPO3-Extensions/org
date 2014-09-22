@@ -21,6 +21,7 @@
       <label index="tx_org_headquarters.div_mail">Address, postbox</label>
       <label index="tx_org_headquarters.div_marginal">Marginal</label>
       <label index="tx_org_headquarters.div_media">Media</label>
+      <label index="tx_org_headquarters.div_news">News</label>
       <label index="tx_org_headquarters.div_pubtrans">Public Transport</label>
       <label index="tx_org_headquarters.div_seo">Search Engines</label>
       <label index="tx_org_headquarters.div_service">Service</label>
@@ -63,6 +64,7 @@
       <label index="tx_org_headquarters.tx_org_headquarterscat">Category</label>
       <label index="tx_org_headquarters.tx_org_job">Jobs</label>
       <label index="tx_org_headquarters.tx_org_location">Locations</label>
+      <label index="tx_org_headquarters.tx_org_news">News</label>
       <label index="tx_org_headquarters.tx_org_service">Services</label>
       <label index="tx_org_headquarters.tx_org_staff">Staff</label>
       <label index="tx_org_headquarters.uid_parent">Superior company</label>
@@ -97,6 +99,7 @@
       <label index="tx_org_headquarters.div_mail">Adresse, Postfach</label>
       <label index="tx_org_headquarters.div_marginal">Randspalte</label>
       <label index="tx_org_headquarters.div_media">Medien</label>
+      <label index="tx_org_headquarters.div_news">Nachrichten</label>
       <label index="tx_org_headquarters.div_pubtrans">ÖPNV</label>
       <label index="tx_org_headquarters.div_seo">Suchmaschinen</label>
       <label index="tx_org_headquarters.div_service">Dienstleistung</label>
@@ -138,6 +141,7 @@
       <label index="tx_org_headquarters.tx_org_headquarterscat">Übergeordnete Kategorie</label>
       <label index="tx_org_headquarters.tx_org_job">Stellenangebote</label>
       <label index="tx_org_headquarters.tx_org_location">Veranstaltungsorte</label>
+      <label index="tx_org_headquarters.tx_org_news">Nachrichten</label>
       <label index="tx_org_headquarters.tx_org_service">Dienstleistung</label>
       <label index="tx_org_headquarters.tx_org_staff">Personal</label>
       <label index="tx_org_headquarters.uid_parent">Übergeordnete Firma</label>
