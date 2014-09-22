@@ -1,0 +1,806 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      501: +Org: Headquarters
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+
+  views {
+    list {
+      501 = +Org: Headquarters
+      501 {
+        name    = +Org: Headquarters
+        showUid = headquartersUid
+        select (
+          tx_org_headquarters.title,
+          tx_org_headquarters.mail_postcode,
+          tx_org_headquarters.mail_city,
+          tx_org_headquarters.mail_address,
+          tx_org_headquarters.image,
+          tx_org_headquarters.imageseo,
+          tx_org_headquarters.mail_lat,
+          tx_org_headquarters.mail_lon,
+          tx_org_headquarters.crdate,
+          tx_org_headquarters.deleted,
+          tx_org_headquarterscat.title,
+          tx_org_headquarterscat.icons,
+          tx_org_headquarterscat.icon_offset_x,
+          tx_org_headquarterscat.icon_offset_y,
+          tx_org_department.title
+        )
+        orderBy = tx_org_headquarters.title
+        csvLinkToSingleView = tx_org_headquarters.title
+        tx_org_headquarters {
+            // placeholder: radialsearch HTML class depending on radius
+          crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
+            // placeholder: radialsearch linear distance
+          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
+        }
+        filter {
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
+          tx_org_headquarterscat {
+            // #58885, 140516, dwildt, 1-
+            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            // #58885, 140516, dwildt, 1+
+            title < plugin.tx_browser_pi1.displayList.master_templates.treeview
+            title {
+              // #58885, 140516, dwildt, 5+
+              treeview {
+                enabled {
+                  value = 1
+                }
+              }
+              first_item {
+                cObject {
+                  20 {
+                    data >
+                    value   = All Groups
+                    lang.de = Alle Gruppen
+                  }
+                }
+              }
+              // #58885, 140516, dwildt, 1-
+              //wrap = <span class="selectbox">|</span>
+              // #58885, 140516, dwildt, 1+
+              wrap = <div class="category_menu category_menu_treeview">|</div>
+              wrap {
+                item {
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              variables {
+                system {
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          marker {
+            filter = TEXT
+            filter {
+              value (
+              <div class="filter">
+                ###RADIALSEARCH###
+                ###TX_ORG_HEADQUARTERSCAT.TITLE###
+              </div>
+)
+            }
+          }
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01###TX_ORG_HEADQUARTERS.CRDATE###">
+                ###TX_ORG_HEADQUARTERS.DELETED###
+                <div class="image01">
+                  ###TX_ORG_HEADQUARTERS.IMAGE###
+                </div>
+                <p>
+                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_HEADQUARTERS.TITLE###, ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###<br />
+                  <small>###TX_ORG_DEPARTMENT.TITLE###</small>
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+            </div> <!-- /listview -->
+)
+            }
+          }
+        }
+      }
+    }
+    single {
+      501 = +Org: Headquarters
+      501 {
+        general_stdWrap {
+          parseFunc {
+            nonTypoTagStdWrap {
+              encapsLines {
+                addAttributes {
+                    // Get rid of class=bodytext
+                  P >
+                }
+                  // Get rid of default <p>-tag
+                nonWrappedTag >
+              }
+            }
+          }
+        }
+        advanced < plugin.tx_browser_pi1.advanced
+        advanced.sql.devider.childrenRecords >
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_department_ul_close = TEXT
+          my_department_ul_close {
+            value = </ul>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+          }
+          my_department_ul_open = TEXT
+          my_department_ul_open {
+            value = <ul>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Headquarters &raquo;
+            lang.de = Alle Standorte &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.headquarter}
+              title {
+                value = All Headquarters
+                lang.de = Alle Standorte
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Headquarter
+            lang.de = Standort / Geb&auml;ude
+            wrap    = <div class="header01">|</div>
+          }
+          my_phrase_departments = TEXT
+          my_phrase_departments {
+            value   = Departments
+            lang.de = Verwaltungen und Abteilungen
+            wrap    = <h3>|</h3>
+            if.isTrue = ###TX_ORG_DEPARTMENT.TITLE###
+          }
+        }
+        select (
+          tx_org_headquarters.title,
+          tx_org_headquarters.mail_postcode,
+          tx_org_headquarters.mail_city,
+          tx_org_headquarters.mail_address,
+          tx_org_headquarters.mail_url,
+          tx_org_headquarters.mail_embeddedcode,
+          tx_org_headquarters.mail_lat,
+          tx_org_headquarters.mail_lon,
+          tx_org_headquarters.postbox_postbox,
+          tx_org_headquarters.postbox_postcode,
+          tx_org_headquarters.postbox_city,
+          tx_org_headquarters.telephone,
+          tx_org_headquarters.fax,
+          tx_org_headquarters.email,
+          tx_org_headquarters.pubtrans_stop,
+          tx_org_headquarters.pubtrans_url,
+          tx_org_headquarters.pubtrans_embeddedcode,
+
+          tx_org_headquarters.documents_from_path,
+          tx_org_headquarters.documents,
+          tx_org_headquarters.documentslayout,
+          tx_org_headquarters.documentscaption,
+          tx_org_headquarters.documentssize,
+
+          tx_org_headquarters.image,
+          tx_org_headquarters.imagecaption,
+          tx_org_headquarters.imageseo,
+          tx_org_headquarters.imagewidth,
+          tx_org_headquarters.imageheight,
+          tx_org_headquarters.imageorient,
+          tx_org_headquarters.imagecols,
+          tx_org_headquarters.imageborder,
+          tx_org_headquarters.image_frames,
+          tx_org_headquarters.image_link,
+          tx_org_headquarters.image_zoom,
+          tx_org_headquarters.image_noRows,
+          tx_org_headquarters.image_effects,
+          tx_org_headquarters.image_compression,
+
+          tx_org_headquarters.embeddedcode,
+          tx_org_headquarters.documents,
+          tx_org_headquarters.keywords,
+          tx_org_headquarters.description,
+
+          tx_org_headquarterscat.title,
+          tx_org_headquarterscat.icons,
+
+          tx_org_department.uid,
+          tx_org_department.title
+        )
+        orderBy {
+          tx_org_department (
+            SELECT    tx_org_department.uid   AS 'uid',
+                      tx_org_department.title AS 'title'
+            FROM      tx_org_department,
+                      tx_org_headquarters_mm_tx_org_department
+            WHERE     tx_org_headquarters_mm_tx_org_department.uid_local    = ###UID_LOCAL###
+            AND       tx_org_headquarters_mm_tx_org_department.uid_foreign  = tx_org_department.uid
+            ORDER BY  tx_org_headquarters_mm_tx_org_department.sorting
+)
+        }
+        tx_org_headquarters {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTS######TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="headquarters_documents">|</h2>
+            }
+              // documents
+            20 < plugin.tx_browser_pi1.tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Enable the DRS (you need devlog)
+                drs = TEXT
+                drs {
+                  value = 0
+                }
+              }
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_HEADQUARTERS.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_headquarters.documents
+              fields {
+                from_path = ###TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_HEADQUARTERS.DOCUMENTS###
+                caption   = ###TX_ORG_HEADQUARTERS.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_HEADQUARTERS.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_HEADQUARTERS.DOCUMENTS######TX_ORG_HEADQUARTERS.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
+// 4.1.4, 2-
+//          mail_embeddedcode = COA
+//          mail_embeddedcode {
+// 4.1.4, 2+
+          XXX_mail_embeddedcode = COA
+          XXX_mail_embeddedcode {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
+              }
+              value   = City Map
+              lang.de = Stadtplan
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
+              }
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
+              }
+              20 = TEXT
+              20 {
+                value = <p>&nbsp;</p>
+              }
+            }
+          }
+          mail_postcode = COA
+          mail_postcode {
+            if {
+              isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+            }
+              // postcode/zip, city, address
+            20 = COA
+            20 {
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+                }
+                value = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+                }
+                value = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+                noTrimWrap = || |
+              }
+              12 = TEXT
+              12 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY###
+                }
+                value = <br />
+              }
+              20 = TEXT
+              20 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                }
+                value = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                noTrimWrap = || |
+              }
+            }
+          }
+          postbox_postbox = COA
+          postbox_postbox {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTCODE######TX_ORG_HEADQUARTERS.POSTBOX_CITY######TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+              }
+              value   = Postbox
+              lang.de = Postfach
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTCODE######TX_ORG_HEADQUARTERS.POSTBOX_CITY######TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTCODE###
+                }
+                value = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTCODE###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.POSTBOX_CITY###
+                }
+                value = ###TX_ORG_HEADQUARTERS.POSTBOX_CITY###
+                noTrimWrap = ||, |
+              }
+              12 = TEXT
+              12 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+                }
+                value = ###TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+                noTrimWrap = || |
+              }
+            }
+          }
+          pubtrans_stop = COA
+          pubtrans_stop {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP######TX_ORG_HEADQUARTERS.PUBTRANS_URL###
+              }
+              value   = Public Transport
+              lang.de = &Ouml;ffentlicher Nahverkehr (&Ouml;PNV)
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP######TX_ORG_HEADQUARTERS.PUBTRANS_URL###
+              }
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP###
+                }
+                value = ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.PUBTRANS_URL###
+                }
+                value = Public Transport Stop
+                lang.de = Haltestelle
+                wrap = <p>|</p>
+                typolink {
+                  parameter = ###TX_ORG_HEADQUARTERS.PUBTRANS_URL###
+                }
+              }
+            }
+          }
+          telephone = COA
+          telephone {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.TELEPHONE######TX_ORG_HEADQUARTERS.FAX######TX_ORG_HEADQUARTERS.EMAIL###
+              }
+              value   = Contact Details
+              lang.de = Kontakt
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_HEADQUARTERS.TELEPHONE######TX_ORG_HEADQUARTERS.FAX######TX_ORG_HEADQUARTERS.EMAIL###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.TELEPHONE###
+                }
+                value = phone
+                lang.de = Tel.:
+                noTrimWrap = || ###TX_ORG_HEADQUARTERS.TELEPHONE###<br />|
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.FAX###
+                }
+                value = fax
+                lang.de = Fax:
+                noTrimWrap = || ###TX_ORG_HEADQUARTERS.FAX###<br />|
+              }
+              20 = TEXT
+              20 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.EMAIL###
+                }
+                value = e-mail
+                lang.de = E-Mail:
+                noTrimWrap = || |
+              }
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###TX_ORG_HEADQUARTERS.EMAIL###
+                }
+                typolink {
+                  parameter = ###TX_ORG_HEADQUARTERS.EMAIL###
+                }
+                wrap = |<br />
+              }
+            }
+          }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_HEADQUARTERS.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_HEADQUARTERS.IMAGEWIDTH###
+                height  = ###TX_ORG_HEADQUARTERS.IMAGEHEIGHT###
+              }
+                // #43922, dwildt, 4-
+              //altText.field                 >
+              //altText                       = ###TX_ORG_HEADQUARTERS.IMAGESEO###
+              //titleText.field               >
+              //titleText                     = ###TX_ORG_HEADQUARTERS.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_HEADQUARTERS.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_HEADQUARTERS.IMAGE_LINK###
+                  // #43936
+                enable                      = ###TX_ORG_HEADQUARTERS.IMAGE_ZOOM###
+                enable {
+                  field >
+                  ifEmpty {
+                    typolink {
+                      parameter = ###TX_ORG_HEADQUARTERS.IMAGE_LINK###
+                      parameter {
+                        field  >
+                      }
+                    }
+                  }
+                }
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_HEADQUARTERS.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_HEADQUARTERS.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_HEADQUARTERS.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_HEADQUARTERS.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_HEADQUARTERS.IMAGEBORDER###
+              // #43912, 121211, dwildt
+            caption.1.1.field         >
+            caption.1.1.value         = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_HEADQUARTERS.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
+              //default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // #43936
+            rendering {
+              singleNoCaption {
+                allStdWrap {
+                  innerWrap {
+                    cObject {
+                      key = ###TX_ORG_HEADQUARTERS.IMAGEORIENT###
+                      key {
+                        field >
+                      }
+                    }
+                  }
+                }
+                fallbackRendering {
+                  10 {
+                    if {
+                      isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  20 {
+                    if {
+                      isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  40 {
+                    if {
+                      isFalse = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                      isFalse {
+                        field >
+                      }
+                    }
+                  }
+                }
+              }
+              noCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              singleCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              splitCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              globalCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_HEADQUARTERS.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+            }
+              // title, mail
+            text = COA
+            text {
+              required  = 1
+                // #43970
+              wrap      =  <div class="csc-textpic-text"> | </div>
+                // title
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_HEADQUARTERS.TITLE###
+                wrap      = <h1 class="headquarters_title">|</h1>
+              }
+                // mail
+              20 = TEXT
+              20 {
+                if.isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY######TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                value     = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE### ###TX_ORG_HEADQUARTERS.MAIL_CITY###, ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                wrap      = <p class="headquarters_address">|</p>
+              }
+            }
+          }
+        }
+        tx_org_department {
+          title = TEXT
+          title {
+            required = 1
+            value = ###TX_ORG_DEPARTMENT.TITLE###
+            wrap  = <li>|</li>
+            typolink {
+              parameter = {$plugin.org.pages.department}
+              parameter {
+                insertData = 1
+              }
+              additionalParams = &tx_browser_pi1[departmentUid]=###TX_ORG_DEPARTMENT.UID###
+              useCacheHash = 1
+            }
+          }
+        }
+        navigation {
+          map < plugin.tx_browser_pi1.navigation.map
+          map {
+            marker {
+              variables {
+                system {
+                  description >
+                  description < plugin.tx_browser_pi1.displayList.master_templates.map.descriptionWiLinkToSingle
+                }
+              }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_HEADQUARTERS.TITLE###
+
+              ###TX_ORG_HEADQUARTERS.POSTBOX_POSTBOX###
+              ###TX_ORG_HEADQUARTERS.TELEPHONE###
+              ###TX_ORG_HEADQUARTERS.PUBTRANS_STOP###
+              ###MY_PHRASE_DEPARTMENTS###
+              ###MY_DEPARTMENT_UL_OPEN###
+              ###TX_ORG_DEPARTMENT.TITLE###
+              ###MY_DEPARTMENT_UL_CLOSE###
+              ###XXX_4.1.4_TX_ORG_HEADQUARTERS.MAIL_EMBEDDEDCODE###
+              ###TX_ORG_HEADQUARTERS.DOCUMENTS###
+              ###MAP###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  _LOCAL_LANG {
+    default {
+      list_mode_501             = Headquarters
+      list_mode_501_titleTag    = TYPO3 Organiser: Headquarters
+      list_mode_501_keywords    = TYPO3, Organiser, Headquarters
+      list_mode_501_summary     = TYPO3 Organiser: Headquarters
+      single_mode_501_titleTag  = TYPO3 Organiser - Headquarter: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_keywords  = ###TX_ORG_HEADQUARTERS.KEYWORDS###
+      single_mode_501_summary   = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
+    }
+    de {
+      list_mode_501             = Hauptverwaltung
+      list_mode_501_titleTag    = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      list_mode_501_keywords    = TYPO3, Organiser, Standorte, Hauptverwaltung, Verwaltungsgebäude
+      list_mode_501_summary     = TYPO3 Organiser: Standorte, Hauptverwaltung und Verwaltungsgebäude
+      single_mode_501_titleTag  = TYPO3 Organiser - Standort: ###TX_ORG_HEADQUARTERS.TITLE###
+      single_mode_501_keywords  = ###TX_ORG_HEADQUARTERS.KEYWORDS###
+      single_mode_501_summary   = ###TX_ORG_HEADQUARTERS.DESCRIPTION###
+    }
+  }
+}
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment
