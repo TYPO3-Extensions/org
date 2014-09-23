@@ -40,7 +40,6 @@
       <label index="tx_org_cal.tx_org_location">Location</label>
       <label index="tx_org_cal.tx_org_calentrance">Entrance Fee</label>
       <label index="tx_org_cal.tx_org_headquarters">Company</label>
-      <label index="tx_org_cal.tx_org_department">Departments</label>
       <label index="tx_org_cal.documents">Documents</label>
       <label index="tx_org_calentrance">Calendar: Entrance Fees</label>
       <label index="tx_org_calentrance.div_calentrance">Entrance Fee</label>
@@ -50,11 +49,15 @@
       <label index="tx_org_calentrance.value">Entrance (EUR)</label>
       <label index="tx_org_calentrance.tx_org_tax">Tax rate</label>
       <label index="tx_org_calentrance.note">Note (internal)</label>
-      <label index="tx_org_caltype">Calendar: Categories</label>
-      <label index="tx_org_caltype.div_caltype">Category</label>
+      <label index="tx_org_caltype">Calendar: Subjects</label>
+      <label index="tx_org_caltype.div_caltype">Subject</label>
       <label index="tx_org_caltype.div_calendar">Calendar</label>
       <label index="tx_org_caltype.div_control">Controlling</label>
-      <label index="tx_org_caltype.title">Category label</label>
+      <label index="tx_org_caltype.div_icons">Icons</label>
+      <label index="tx_org_caltype.icons">Icons (1st: default. 2nd: big size)</label>
+      <label index="tx_org_caltype.icon_offset_x">X-offset of the icon in a map</label>
+      <label index="tx_org_caltype.icon_offset_y">Y-offset of the icon in a map</label>
+      <label index="tx_org_caltype.title">Subject label</label>
       <label index="tx_org_caltype.title_lang_ol">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tx_org_caltype.note">Note (internal)</label>
       <label index="tx_org_caltype.tx_org_cal">Calendar</label>
@@ -89,7 +92,7 @@
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.datetime">Beginn der Veranstaltung</label>
       <label index="tx_org_cal.datetimeend">Ende der Veranstaltung</label>
-      <label index="tx_org_cal.tx_org_caltype">Kategorie der Veranstaltung</label>
+      <label index="tx_org_cal.tx_org_caltype">Thema der Veranstaltung</label>
       <label index="tx_org_cal.bodytext">Text</label>
       <label index="tx_org_cal.marginal_title">Bezeichnung im Kalender (in Randspalten)</label>
       <label index="tx_org_cal.marginal_subtitle">Untertitel / Dachzeile (in Randspalten)</label>
@@ -100,7 +103,6 @@
       <label index="tx_org_cal.tx_org_location">Veranstaltungsort</label>
       <label index="tx_org_cal.tx_org_calentrance">Eintritt</label>
       <label index="tx_org_cal.tx_org_headquarters">Company</label>
-      <label index="tx_org_cal.tx_org_department">Abteilung</label>
       <label index="tx_org_cal.documents">Dokumente</label>
       <label index="tx_org_calentrance">Kalender: Eintritt</label>
       <label index="tx_org_calentrance.div_calentrance">Eintritt</label>
@@ -110,20 +112,24 @@
       <label index="tx_org_calentrance.value">Eintritt (EUR)</label>
       <label index="tx_org_calentrance.tx_org_tax">Mehrwertsteuer-Satz</label>
       <label index="tx_org_calentrance.note">Bemerkung (intern)</label>
-      <label index="tx_org_caltype">Kalender: Kategorien</label>
-      <label index="tx_org_caltype.div_caltype">Kategorie</label>
+      <label index="tx_org_caltype">Kalender: Themen</label>
+      <label index="tx_org_caltype.div_caltype">Thema</label>
       <label index="tx_org_caltype.div_calendar">Kalender</label>
       <label index="tx_org_caltype.div_control">Steuerung</label>
-      <label index="tx_org_caltype.title">Bezeichnung der Kategorie</label>
+      <label index="tx_org_caltype.div_icons">Piktogramme</label>
+      <label index="tx_org_caltype.icons">Piktogramm (1.: Standard. 2.: Großes Format)</label>
+      <label index="tx_org_caltype.icon_offset_x">X-Offset des Piktogramms in einer Karte</label>
+      <label index="tx_org_caltype.icon_offset_y">Y-Offset des Piktogramms in einer Karte</label>
+      <label index="tx_org_caltype.title">Bezeichnung des Themas</label>
       <label index="tx_org_caltype.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_caltype.note">Bemerkung (intern)</label>
       <label index="tx_org_caltype.tx_org_cal">Kalender</label>
       <label index="wizard.tx_org_cal.add">Neuen Kalendereintrag erstellen</label>
       <label index="wizard.tx_org_cal.edit">Kalendereintrag bearbeiten</label>
       <label index="wizard.tx_org_cal.list">Tabelle mit Kalendereinträgen anzeigen</label>
-      <label index="wizard.tx_org_caltype.add">Neue Kategorie erstellen</label>
-      <label index="wizard.tx_org_caltype.edit">Markierte Kategorie bearbeiten</label>
-      <label index="wizard.tx_org_caltype.list">Tabelle mit Kategorien anzeigen</label>
+      <label index="wizard.tx_org_caltype.add">Neues Thema erstellen</label>
+      <label index="wizard.tx_org_caltype.edit">Markiertes Thema bearbeiten</label>
+      <label index="wizard.tx_org_caltype.list">Tabelle mit Themen anzeigen</label>
     </languageKey>
   </data>
 </T3locallang>

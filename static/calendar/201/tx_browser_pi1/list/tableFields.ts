@@ -23,6 +23,32 @@ plugin.tx_browser_pi1 {
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
               20 {
                 tx_org_event < .default
+                tx_org_event {
+                  typolink {
+                    parameter {
+                      cObject {
+                        10 {
+                          10 {
+                            if {
+                              isTrue = {$plugin.org.pages.event}
+                            }
+                            value = {$plugin.org.pages.event}
+                          }
+                          20 {
+                            if {
+                              isFalse = {$plugin.org.pages.event}
+                            }
+                            value = {$plugin.org.pages.event}
+                          }
+                        }
+                      }
+                    }
+                    additionalParams {
+                      field = tx_org_event.uid
+                      wrap  = &tx_browser_pi1[eventUid]=|
+                    }
+                  }
+                }
               }
                 // tx_org_caltype.title
               30 = COA
@@ -36,7 +62,7 @@ plugin.tx_browser_pi1 {
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.headquarterscat
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
                   noTrimWrap = ||: |
                 }
                 20 = TEXT
@@ -44,34 +70,9 @@ plugin.tx_browser_pi1 {
                   field = tx_org_caltype.title
                 }
               }
-                // mail_postcode, mail_city
-              40 = COA
+              40 = TEXT
               40 {
-                wrap = <div class="subline">|</div>
-                  // mail_postcode
-                10 = TEXT
-                10 {
-                  if {
-                    isTrue {
-                      field = tx_org_cal.mail_postcode
-                    }
-                  }
-                  field = tx_org_cal.mail_postcode
-                  noTrimWrap = || |
-                }
-                  // mail_city
-                20 = TEXT
-                20 {
-                  if {
-                    isTrue {
-                      field = tx_org_cal.mail_city
-                    }
-                  }
-                  field = tx_org_cal.mail_city
-                  noTrimWrap = || |
-                }
-                  // link to the single view (record), internal page, external URL or no link (empty value)
-                30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0
+                field = tx_org_location.mail_lat
               }
               wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }
@@ -98,28 +99,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                   wrap = <ul class="vcard datesheet">|</ul><!-- vcard -->
-                  //wrap = <div class="my_datesheet">|</div>
                     // name of weekday
-                  10 = TEXT
-                  10 {
-                    field = tx_org_cal.datetime
-                    strftime  = %a
-                    //wrap      = <div class="weekday">|</div>
-                    wrap = <li class="weekday">|</li>
-                    typolink {
-                      parameter         = {$plugin.org.pages.calendar} - "linktosingle invert"
-                      //additionalParams  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=###TX_ORG_CAL.UID###
-                      additionalParams {
-                        cObject = TEXT
-                        cObject {
-                          field = tx_org_cal.uid
-                          wrap  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=|
-                        }
-                      }
-                      useCacheHash = 1
-                    }
-                  }
-                  10 >
                   10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0
                   10 {
                     default {
@@ -142,6 +122,33 @@ plugin.tx_browser_pi1 {
                       field = tx_org_cal.datetime
                       strftime  = %a
                       wrap = <li class="weekday">|</li>
+                    }
+                    tx_org_event < .default
+                    tx_org_event {
+                      typolink {
+                        parameter {
+                          cObject {
+                            10 {
+                              10 {
+                                if {
+                                  isTrue = {$plugin.org.pages.event}
+                                }
+                                value = {$plugin.org.pages.event}
+                              }
+                              20 {
+                                if {
+                                  isFalse = {$plugin.org.pages.event}
+                                }
+                                value = {$plugin.org.pages.event}
+                              }
+                            }
+                          }
+                        }
+                        additionalParams {
+                          field = tx_org_event.uid
+                          wrap  = &tx_browser_pi1[eventUid]=|
+                        }
+                      }
                     }
                     url {
                       value >
@@ -166,6 +173,10 @@ plugin.tx_browser_pi1 {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
                     }
+                    tx_org_event {
+                      strftime  = %d
+                      wrap      = <li class="day_of_month">|</li>
+                    }
                     url {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
@@ -183,6 +194,10 @@ plugin.tx_browser_pi1 {
                       wrap      = <li class="month">|</li>
                     }
                     page {
+                      strftime  = %b %y
+                      wrap      = <li class="month">|</li>
+                    }
+                    tx_org_event {
                       strftime  = %b %y
                       wrap      = <li class="month">|</li>
                     }
@@ -209,3 +224,4 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+

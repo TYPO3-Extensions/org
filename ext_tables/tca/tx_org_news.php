@@ -56,7 +56,6 @@ $TCA['tx_org_news'] = array (
     'page,url' .
     'fe_user,' .
     'tx_org_headquarters,' .
-    'tx_org_department,' .
     'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,' .

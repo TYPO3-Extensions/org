@@ -41,7 +41,6 @@
       <label index="tx_org_news.topnews.2">Medium Priority</label>
       <label index="tx_org_news.topnews.1">Low Priority</label>
       <label index="tx_org_news.topnews.0">Standard</label>
-      <label index="tx_org_news.tx_org_department">Department</label>
       <label index="tx_org_news.tx_org_headquarters">Company</label>
       <label index="tx_org_news.tx_org_newscat">Category</label>
       <label index="tx_org_news.tx_org_newscat_uid_parent">Category</label>
@@ -98,7 +97,6 @@
       <label index="tx_org_news.page">Link zu interner Seite</label>
       <label index="tx_org_news.url">Link zu externer Seite</label>
       <label index="tx_org_news.fe_user">Autor</label>
-      <label index="tx_org_news.tx_org_department">Abteilung</label>
       <label index="tx_org_news.tx_org_headquarters">Firma</label>
       <label index="tx_org_news.tx_org_newscat">Kategory</label>
       <label index="tx_org_news.tx_org_newscat_uid_parent">Kategorie</label>

@@ -15,9 +15,9 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   general_stdWrap >
-  
+
   views {
     list {
       111 = +Org: People (margin)
@@ -65,9 +65,8 @@ plugin.tx_browser_pi1 {
           fe_users.last_name,
           fe_users.first_name,
           fe_users.image,
-          fe_groups.title,
-          tx_org_department.title
-        )
+          fe_groups.title
+)
         random = 1
         csvLinkToSingleView = fe_users.last_name, fe_users.first_name
           // marker and subparts will replaced in the HTML template before data handling

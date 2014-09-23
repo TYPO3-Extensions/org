@@ -44,11 +44,11 @@ $TCA['fe_users']['columns']['endtime']['exclude'] = $bool_time_control;
 $TCA['fe_users']['columns']['TSconfig']['exclude'] = 1;
 $TCA['fe_users']['columns']['lockToDomain']['exclude'] = 1;
 // Don't exclude any field by default'
-// Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
+// Add fields tx_org_news, tx_org_headquarters, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 $showRecordFieldList = $TCA['fe_users']['interface']['showRecordFieldList'];
-$showRecordFieldList = $showRecordFieldList . ',tx_org_news,tx_org_headquarters,tx_org_department,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_downloads';
+$showRecordFieldList = $showRecordFieldList . ',tx_org_news,tx_org_headquarters,tx_org_imagecaption,tx_org_imageseo,tx_org_vita,tx_org_downloads';
 $TCA['fe_users']['interface']['showRecordFieldList'] = $showRecordFieldList;
-// Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
+// Add fields tx_org_news, tx_org_headquarters,  tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 
 $TCA['fe_users']['columns']['www']['config'] = array(
   'type' => 'input',
@@ -68,7 +68,7 @@ $TCA['fe_users']['columns']['www']['config'] = array(
   ),
   'softref' => 'typolink',
 );
-// Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
+// Add fields tx_org_news, tx_org_headquarters, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 $TCA['fe_users']['columns']['tx_org_news'] = array(
   'exclude' => 0,
   'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
@@ -154,57 +154,6 @@ $TCA['fe_users']['columns']['tx_org_headquarters'] = array(
         'icon' => 'list.gif',
         'params' => array(
           'table' => 'tx_org_headquarters',
-          'pid' => '###CURRENT_PID###',
-        ),
-        'script' => 'wizard_list.php',
-      ),
-      'edit' => array(
-        'type' => 'popup',
-        'title' => 'LLL:EXT:org/locallang_db.xml:wizard.org.edit',
-        'script' => 'wizard_edit.php',
-        'popup_onlyOpenIfSelected' => 1,
-        'icon' => 'edit2.gif',
-        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-      ),
-    ),
-  ),
-);
-
-$TCA['fe_users']['columns']['tx_org_department'] = array(
-  'exclude' => $bool_exclude_fe_user_tx_org_department,
-  'label' => 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.tx_org_department',
-  'config' => array(
-    'type' => 'select',
-    'size' => 20,
-    'minitems' => 0,
-    'maxitems' => 999,
-    'MM' => 'tx_org_department_mm_fe_users',
-    'MM_opposite_field' => 'fe_users',
-    'foreign_table' => 'tx_org_department',
-    'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' ' .
-    'AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 ' .
-    'AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ' .
-    'ORDER BY tx_org_department.sorting',
-    'wizards' => array(
-      '_PADDING' => 2,
-      '_VERTICAL' => 0,
-      'add' => array(
-        'type' => 'script',
-        'title' => 'LLL:EXT:org/locallang_db.xml:wizard.org.add',
-        'icon' => 'add.gif',
-        'params' => array(
-          'table' => 'tx_org_department',
-          'pid' => '###CURRENT_PID###',
-          'setValue' => 'prepend'
-        ),
-        'script' => 'wizard_add.php',
-      ),
-      'list' => array(
-        'type' => 'script',
-        'title' => 'LLL:EXT:org/locallang_db.xml:wizard.org.list',
-        'icon' => 'list.gif',
-        'params' => array(
-          'table' => 'tx_org_department',
           'pid' => '###CURRENT_PID###',
         ),
         'script' => 'wizard_list.php',
@@ -312,7 +261,7 @@ $TCA['fe_users']['columns']['tx_org_downloads'] = array(
     ),
   ),
 );
-// Add fields tx_org_news, tx_org_headquarters, tx_org_department, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
+// Add fields tx_org_news, tx_org_headquarters, tx_org_imagecaption, tx_org_imageseo, tx_org_vita, tx_org_downloads
 // Insert div [org] at position $int_div_position
 $str_showitem = $TCA['fe_users']['types']['0']['showitem'];
 $arr_showitem = explode('--div--;', $str_showitem);
@@ -329,10 +278,9 @@ foreach ($arr_showitem as $key => $value)
       break;
     case($key == $int_div_position):
       $arr_new_showitem[$key] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_company, tx_org_headquarters,';
-      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_department, tx_org_department,';
-      $arr_new_showitem[$key + 2] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_news, tx_org_news,';
-      $arr_new_showitem[$key + 3] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_downloads, tx_org_downloads,';
-      $arr_new_showitem[$key + 4] = $value;
+      $arr_new_showitem[$key + 1] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_news, tx_org_news,';
+      $arr_new_showitem[$key + 2] = 'LLL:EXT:org/tca/locallang/fe_users.xml:fe_users.div_tx_org_downloads, tx_org_downloads,';
+      $arr_new_showitem[$key + 3] = $value;
       break;
     case($key > $int_div_position):
       $arr_new_showitem[$key + 4] = $value;
@@ -346,8 +294,6 @@ if ($bool_wizards_wo_add_and_list)
 {
   unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_headquarters']['config']['wizards']['list']);
-  unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['add']);
-  unset($TCA['fe_users']['columns']['tx_org_department']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_downloads']['config']['wizards']['add']);
   unset($TCA['fe_users']['columns']['tx_org_downloads']['config']['wizards']['list']);
   unset($TCA['fe_users']['columns']['tx_org_news']['config']['wizards']['add']);

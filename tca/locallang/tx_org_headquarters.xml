@@ -59,7 +59,6 @@
       <label index="tx_org_headquarters.teaser_short">Short (in list views)</label>
       <label index="tx_org_headquarters.telephone">Telephone</label>
       <label index="tx_org_headquarters.title">Company</label>
-      <label index="tx_org_headquarters.tx_org_department">Department [DEPRECATED!]</label>
       <label index="tx_org_headquarters.tx_org_event">Events</label>
       <label index="tx_org_headquarters.tx_org_headquarterscat">Business segment</label>
       <label index="tx_org_headquarters.tx_org_job">Jobs</label>
@@ -136,7 +135,6 @@
       <label index="tx_org_headquarters.teaser_short">Text (in Listen-Ansichten)</label>
       <label index="tx_org_headquarters.telephone">Telefon</label>
       <label index="tx_org_headquarters.title">Firma</label>
-      <label index="tx_org_headquarters.tx_org_department">Abteilung [VERALTET!]</label>
       <label index="tx_org_headquarters.tx_org_event">Veranstaltungen</label>
       <label index="tx_org_headquarters.tx_org_headquarterscat">Übergeordnetes Geschäftsfeld</label>
       <label index="tx_org_headquarters.tx_org_job">Stellenangebote</label>

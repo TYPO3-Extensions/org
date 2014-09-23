@@ -58,7 +58,6 @@ $TCA['tx_org_headquarters'] = array(
     'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,' .
-    'tx_org_department,' .
     'hidden,pages,fe_group,' .
     'keywords,description',
     'tx_browser' => array(

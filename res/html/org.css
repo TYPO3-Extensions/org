@@ -78,17 +78,17 @@
 /* #61819, 140923, dwildt, + .datesheet_expired*/
 .tx-browser-pi1 .datesheet_expired {
   background-color: #FFF;
-  border-color: #F79210;
+  border-color: #000;
 }
 .tx-browser-pi1 .datesheet_expired a,
 .tx-browser-pi1 .datesheet_expired a:link,
 .tx-browser-pi1 .datesheet_expired a:visited {
-  color:#F79210;
+  color:#000;
 }
 .tx-browser-pi1 .datesheet_expired a:active,
 .tx-browser-pi1 .datesheet_expired a:focus,
 .tx-browser-pi1 .datesheet_expired a:hover {
-  color:#008CBA;
+  color:#F79210;
 }
 
 .tx-browser-pi1 .cal_datetime {

@@ -59,7 +59,6 @@ $TCA[ 'tx_org_cal' ] = array(
     'marginal_title,marginal_subtitle,marginal_short,' .
     'tx_org_location,tx_org_calentrance,' .
     'tx_org_headquarters' .
-    'tx_org_department' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,print,printcaption,printseo,' .
     'hidden,starttime,endtime,pages,fe_group,' .

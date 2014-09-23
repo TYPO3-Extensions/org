@@ -28,7 +28,7 @@ $tsConfig = '
 mod.tx_linkhandler {
   tx_org_headquarters {
     label       = Companies (org)
-    listTables  = tx_org_headquarters,tx_org_department
+    listTables  = tx_org_headquarters
     %onlyPids%
   }
 }

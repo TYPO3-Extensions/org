@@ -8,6 +8,5 @@ if (!defined('TYPO3_MODE'))
 $confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
 $extManagerDowngradeEnable_fe_users = $confArr['downgrade.']['enable.']['fe_users'];
-$extManagerDowngradeEnable_tx_org_department = $confArr['downgrade.']['enable.']['tx_org_department'];
 
 ?>

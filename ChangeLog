@@ -1,6 +1,7 @@
 6.0.0
   14-09-22
   Major Features
+  * #61827: tx_org_caltype: +icons
   * #61826: + Events
   * #61819: Improve cal (foundation, TypoScript)
   * #61793: Improve Companies (Headquarters: Foundation, TypoScript)
@@ -11,6 +12,9 @@
             * tx_org_news.newsurl     -> tx_org_news.url
   * #61248: Compatibility with TYPO3 CMS 6.2.x
   * #61661: Extension Initialisation
+  Improvements
+  * #i0027: tx_org_departments is removed
+
 
 5.0.15
   14-07-24

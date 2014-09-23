@@ -9,6 +9,7 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
+                ###RADIALSEARCH###
                 ###TX_ORG_CAL.DATETIME###
                 ###TX_ORG_CALTYPE.TITLE###
               </div>

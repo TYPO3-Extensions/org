@@ -11,7 +11,6 @@ require_once( PATH_typo3conf . 'ext/org/tca/extensionManager/simplifyer.php' );
 require_once( PATH_typo3conf . 'ext/org/tca/defaultValues.php' );
 // TCA for tables
 require_once( PATH_typo3conf . 'ext/org/tca/tx_org_cal.php' );
-require_once( PATH_typo3conf . 'ext/org/tca/tx_org_department.php' );
 require_once( PATH_typo3conf . 'ext/org/tca/tx_org_downloads.php' );
 require_once( PATH_typo3conf . 'ext/org/tca/tx_org_event.php' );
 require_once( PATH_typo3conf . 'ext/org/tca/tx_org_headquarters.php' );

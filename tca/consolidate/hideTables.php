@@ -7,7 +7,6 @@ if (!defined('TYPO3_MODE'))
 
 $arrOrgTables = array(
   'tx_org_cal',
-  'tx_org_department',
   'tx_org_downloads',
   'tx_org_event',
   'tx_org_headquarters',

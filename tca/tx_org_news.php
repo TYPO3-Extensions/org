@@ -27,7 +27,6 @@ $TCA[ 'tx_org_news' ] = array(
     . 'page,url'
     . 'fe_user,'
     . 'tx_org_headquarters,'
-    . 'tx_org_department,'
     . 'tx_org_staff,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
@@ -288,54 +287,6 @@ $TCA[ 'tx_org_news' ] = array(
         'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      ),
-    ),
-    'tx_org_department' => array(
-      'exclude' => $bool_exclude_tx_org_department,
-      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.tx_org_department',
-      'config' => array(
-        'type' => 'select',
-        'size' => $size_department,
-        'minitems' => 0,
-        'maxitems' => 999,
-        'MM' => 'tx_org_department_mm_tx_org_news',
-        'MM_opposite_field' => 'tx_org_news',
-        'foreign_table' => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.title',
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_department.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_department',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_department.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_department',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_department.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
-          ),
-        ),
       ),
     ),
     'tx_org_staff' => array(
@@ -711,8 +662,6 @@ $TCA[ 'tx_org_news' ] = array(
       . '  embeddedcode,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,'
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department,'
-      . '  tx_org_department,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_staff,'
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,'
@@ -738,7 +687,6 @@ $TCA[ 'tx_org_news' ] = array(
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,    tx_org_headquarters,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department, tx_org_department,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,' .
       '' ),
     'url' => array( 'showitem' => ''
@@ -758,7 +706,6 @@ $TCA[ 'tx_org_news' ] = array(
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,    tx_org_headquarters,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department, tx_org_department,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,' .
       '' ),
     'news' => array( 'showitem' => ''
@@ -783,8 +730,6 @@ $TCA[ 'tx_org_news' ] = array(
       . '  embeddedcode,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,'
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department,'
-      . '  tx_org_department,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_staff,'
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,'
@@ -810,7 +755,6 @@ $TCA[ 'tx_org_news' ] = array(
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,    tx_org_headquarters,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department, tx_org_department,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,' .
       '' ),
     'url' => array( 'showitem' => ''
@@ -830,7 +774,6 @@ $TCA[ 'tx_org_news' ] = array(
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_company,    tx_org_headquarters,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_department, tx_org_department,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,    sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews,pages, fe_group,' .
       '' ),
   ),
@@ -914,11 +857,6 @@ if ( !$bool_full_wizardSupport_catTables )
 {
   unset( $TCA[ 'tx_org_news' ][ 'columns' ][ 'tx_org_newscat' ][ 'config' ][ 'wizards' ][ 'add' ] );
   unset( $TCA[ 'tx_org_news' ][ 'columns' ][ 'tx_org_newscat' ][ 'config' ][ 'wizards' ][ 'list' ] );
-}
-if ( !$bool_full_wizardSupport_allTables )
-{
-  unset( $TCA[ 'tx_org_news' ][ 'columns' ][ 'tx_org_department' ][ 'config' ][ 'wizards' ][ 'add' ] );
-  unset( $TCA[ 'tx_org_news' ][ 'columns' ][ 'tx_org_department' ][ 'config' ][ 'wizards' ][ 'list' ] );
 }
 //
 // tx_org_news

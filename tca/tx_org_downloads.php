@@ -774,11 +774,6 @@ if (!$bool_full_wizardSupport_catTables)
   unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['add']);
   unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['list']);
 }
-if (!$bool_full_wizardSupport_allTables)
-{
-  unset($TCA['tx_org_downloads']['columns']['tx_org_department']['config']['wizards']['add']);
-  unset($TCA['tx_org_downloads']['columns']['tx_org_department']['config']['wizards']['list']);
-}
 
 //
 // tx_org_downloads

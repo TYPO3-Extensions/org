@@ -40,7 +40,6 @@ $TCA[ 'tx_org_headquarters' ] = array(
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'embeddedcode,'
-    . 'tx_org_department,'
     . 'hidden,pages,fe_group,'
     . 'keywords,description'
   ,
@@ -526,52 +525,6 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'exclude' => $bool_exclude_default,
       'config' => $conf_text_50_10,
     ),
-    'tx_org_department' => array(
-      'exclude' => $bool_exclude_tx_org_department,
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_department',
-      'config' => array(
-        'type' => 'select',
-        'size' => $size_department,
-        'minitems' => 0,
-        'maxitems' => 999,
-        'MM' => 'tx_org_headquarters_mm_tx_org_department',
-        'foreign_table' => 'tx_org_department',
-        'foreign_table_where' => 'AND tx_org_department.' . $str_store_record_conf . ' AND tx_org_department.deleted = 0 AND tx_org_department.hidden = 0 AND tx_org_department.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_department.sorting',
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_department.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_department',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_department.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_department',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:wizard.tx_org_department.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
-          ),
-        ),
-      ),
-    ),
     'image' => array(
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
@@ -877,8 +830,6 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  tx_org_event,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_location,'
       . '  tx_org_location,'
-      . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_department,'
-      . '  tx_org_department,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_pubtrans,'
       . '  pubtrans_stop;;;richtext[]:rte_transform[mode=ts],pubtrans_url,pubtrans_embeddedcode,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
@@ -1025,11 +976,6 @@ if ( !$bool_exclude_tx_org_company )
           'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters', 'LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_company', $showitem
   );
   $TCA[ 'tx_org_headquarters' ][ 'types' ][ '0' ][ 'showitem' ] = $showitem;
-}
-if ( !$bool_full_wizardSupport_allTables )
-{
-  unset( $TCA[ 'tx_org_headquarters' ][ 'columns' ][ 'tx_org_department' ][ 'config' ][ 'wizards' ][ 'add' ] );
-  unset( $TCA[ 'tx_org_headquarters' ][ 'columns' ][ 'tx_org_department' ][ 'config' ][ 'wizards' ][ 'list' ] );
 }
 
 // tx_org_headquarters

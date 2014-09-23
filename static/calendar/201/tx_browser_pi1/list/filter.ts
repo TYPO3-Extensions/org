@@ -3,7 +3,7 @@ plugin.tx_browser_pi1 {
     list {
       201 {
         filter {
-          //radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
+          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_caltype {
               // #43641, dwildt, 1-, 1+
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox

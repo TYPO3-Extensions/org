@@ -15,9 +15,9 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   general_stdWrap >
-  
+
   views {
     list {
       201 = +Org: Calendar
@@ -34,7 +34,7 @@ plugin.tx_browser_pi1 {
           my_datesheet = COA
           my_datesheet {
             if.isTrue = ###TX_ORG_CAL.DATETIME###
-              // 10: date isn't expired 
+              // 10: date isn't expired
             10 = COA
             10 {
               if {
@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-              // 20: date is expired 
+              // 20: date is expired
             20 < .10
             20 {
               if {
@@ -136,28 +136,6 @@ plugin.tx_browser_pi1 {
                 cObject {
                   20 {
                     data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
-                  }
-                }
-              }
-              wrap = <span class="selectbox">|</span>
-              wrap {
-                item {
-                  cObject {
-                    20 {
-                      crop = 30 | ... | 1
-                    }
-                  }
-                }
-              }
-            }
-          }
-          tx_org_department {
-            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title {
-              first_item {
-                cObject {
-                  20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.department
                   }
                 }
               }
@@ -546,7 +524,7 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All Events &raquo;
-            lang.de = Alle Veranstaltungen &raquo; 
+            lang.de = Alle Veranstaltungen &raquo;
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
@@ -558,7 +536,7 @@ plugin.tx_browser_pi1 {
           my_datesheet = COA
           my_datesheet {
             if.isTrue = ###TX_ORG_CAL.DATETIME###
-              // 10: date isn't expired 
+              // 10: date isn't expired
             10 = COA
             10 {
               if {
@@ -588,7 +566,7 @@ plugin.tx_browser_pi1 {
                 wrap      = <div class="month">|</div>
               }
             }
-              // 20: date is expired 
+              // 20: date is expired
             20 < .10
             20 {
               if {
@@ -640,7 +618,7 @@ plugin.tx_browser_pi1 {
           tx_org_event.documents,
           tx_org_event.documentslayout,
           tx_org_event.documentscaption,
-          tx_org_event.documentssize, 
+          tx_org_event.documentssize,
 
           tx_org_event.image,
           tx_org_event.imagecaption,
@@ -750,7 +728,7 @@ plugin.tx_browser_pi1 {
                       cObject {
                         key = ###TX_ORG_CAL.IMAGEORIENT###
                         key {
-                          field > 
+                          field >
                         }
                       }
                     }
@@ -978,7 +956,7 @@ plugin.tx_browser_pi1 {
             default = TEXT
             default {
                 // tx_org_cal hasn't any document
-              value = 
+              value =
             }
               // event
             tx_org_event = COA
@@ -1103,7 +1081,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_201             = Events

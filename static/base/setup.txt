@@ -204,15 +204,6 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  tx_org_department {
-    forceLink        = 0
-    useCacheHash     = 1
-    parameter        = {$plugin.org.pages.department}
-    additionalParams = &tx_browser_pi1[departmentUid]={field:uid}
-    additionalParams {
-      insertData = 1
-    }
-  }
   tx_org_downloads {
     forceLink        = 0
     useCacheHash     = 1

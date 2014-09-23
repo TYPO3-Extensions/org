@@ -6,10 +6,54 @@ plugin.tx_browser_pi1 {
       }
     }
   }
+  map {
+    aliases {
+      showUid {
+        marker = calendarUid
+      }
+    }
+    controlling {
+      enabled = Map
+      provider = GoogleMaps
+    }
+    design {
+      path {
+        categoryIcon  = uploads/tx_org/
+      }
+      height  = 210
+      width   = 720
+    }
+    icon {
+      listNum {
+        categoryIconMap       = 0
+        categoryIconMapSingle = 0
+      }
+    }
+    marker {
+      field {
+        linktoSingle      = tx_org_cal.uid
+        latitude          = tx_org_location.mail_lat
+        longitude         = tx_org_location.mail_lon
+        description       = tx_org_cal.title
+        category          = tx_org_caltype.title
+        categoryIcon      = tx_org_caltype.icons
+        categoryOffsetX   = tx_org_caltype.icon_offset_x
+        categoryOffsetY   = tx_org_caltype.icon_offset_y
+      }
+    }
+    popup {
+      image {
+        width = 60m
+      }
+    }
+  }
   navigation {
     showUid = calendarUid
   }
-
+  radialsearch {
+    lat = tx_org_location.mail_lat
+    lon = tx_org_location.mail_lon
+  }
   templates {
     listview {
       header {

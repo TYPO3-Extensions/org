@@ -7,7 +7,6 @@ if (!defined('TYPO3_MODE'))
 
 $arrOrgTables = array(
   'tx_org_cal',
-  'tx_org_department',
   'tx_org_downloads',
   'tx_org_event',
   'tx_org_headquarters',
@@ -65,18 +64,6 @@ function remove_fields_pubtrans($confArr, $showitem)
   return $showitem;
 }
 
-/* Remove tx_org_department */
-
-function remove_table_tx_org_department($confArr, $showitem)
-{
-  if ($confArr['downgrade.']['enable.']['tx_org_department'])
-  {
-    return $showitem;
-  }
-  $showitem = str_replace('tx_org_department,', null, $showitem);
-  return $showitem;
-}
-
 /* Replace tx_org_staff with fe_users */
 
 function replace_table_tx_org_staff($confArr, $showitem, $orgTable)
@@ -110,7 +97,6 @@ foreach ($arrOrgTables as $orgTable)
     $showitem = remove_fields_embeddedcode($confArr, $showitem);
     $showitem = remove_fields_print($confArr, $showitem);
     $showitem = remove_fields_pubtrans($confArr, $showitem);
-    $showitem = remove_table_tx_org_department($confArr, $showitem);
     $showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
     $TCA[$orgTable]['palettes'][$palette]['showitem'] = $showitem;
   } // LOOP all palettes of the current table
@@ -122,7 +108,6 @@ foreach ($arrOrgTables as $orgTable)
     $showitem = remove_fields_embeddedcode($confArr, $showitem);
     $showitem = remove_fields_print($confArr, $showitem);
     $showitem = remove_fields_pubtrans($confArr, $showitem);
-    $showitem = remove_table_tx_org_department($confArr, $showitem);
     $showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
     $TCA[$orgTable]['types'][$type]['showitem'] = $showitem;
   } // LOOP all types of the current table

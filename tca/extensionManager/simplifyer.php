@@ -57,21 +57,15 @@ switch ($confArr['simplifyer.']['fe_user_company'])
   case('Big'):
     $bool_exclude_fe_user_company = true;
     $bool_exclude_fe_user_tx_org_company = true;
-    $bool_exclude_fe_user_tx_org_department = false;
     $bool_exclude_tx_org_company = false;
     $bool_exclude_tx_org_company_fe_users = true;
-    $bool_exclude_tx_org_department = false;
-    $bool_exclude_tx_org_department_fe_users = false;
     break;
   case('Small (recommended)'):
   default :
     $bool_exclude_fe_user_company = true;
     $bool_exclude_fe_user_tx_org_company = false;
-    $bool_exclude_fe_user_tx_org_department = true;
     $bool_exclude_tx_org_company = false;
     $bool_exclude_tx_org_company_fe_users = false;
-    $bool_exclude_tx_org_department = true;
-    $bool_exclude_tx_org_department_fe_users = true;
   default:
 }
 // Relation fe_users to company
