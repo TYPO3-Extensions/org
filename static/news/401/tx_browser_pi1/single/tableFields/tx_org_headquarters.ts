@@ -23,10 +23,10 @@ plugin.tx_browser_pi1 {
                 // header
               10 = TEXT
               10 {
-                value = Related companies
+                value = Companies
                 lang {
-                  de = Themenverwandte Firmen
-                  en = Related companies
+                  de = Firmen
+                  en = Companies
                 }
                 wrap = <li class="header">|</li>
               }
@@ -55,16 +55,19 @@ plugin.tx_browser_pi1 {
                   default = TEXT
                   default {
                     field = title
-                    crop = 25 | ... | 1
-                    noTrimWrap = |<li class="url circle">| &raquo;</li>|
+                    crop = 25 | ... &raquo; | 1
+                    wrap = <li class="url circle">|</li>
+                    stdWrap {
+                      noTrimWrap = || &raquo;|
+                    }
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
                   }
                     // no link
                   notype = TEXT
                   notype {
-                    field = title
-                    crop = 25 | ... | 1
-                    noTrimWrap = |<li class="url circle">|</li>|
+                    field   = title
+                    crop    = 25 | ... | 1
+                    stdWrap >
                   }
                     // link to internal page
                   page < .default

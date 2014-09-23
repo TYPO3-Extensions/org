@@ -6,7 +6,7 @@
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
-      <label index="fe_users">Staff</label>
+      <label index="fe_users">People</label>
       <label index="fe_users.div_tx_org_company">Company</label>
       <label index="fe_users.div_tx_org_department">Department</label>
       <label index="fe_users.div_tx_org_downloads">Documents</label>
@@ -14,12 +14,12 @@
       <label index="fe_users.tx_org_headquarters">Company</label>
       <label index="fe_users.tx_org_department">Department</label>
       <label index="fe_users.tx_org_vita">Vita</label>
-      <label index="wizard.fe_user.add">Add a new staff</label>
+      <label index="wizard.fe_user.add">Add a new people</label>
       <label index="wizard.fe_user.edit"> Edit the current person</label>
-      <label index="wizard.fe_user.list">Display the staff table</label>
+      <label index="wizard.fe_user.list">Display the people table</label>
     </languageKey>
     <languageKey index="de" type="array">
-      <label index="fe_users">Personal</label>
+      <label index="fe_users">Personen</label>
       <label index="fe_users.div_tx_org_company">Firma</label>
       <label index="fe_users.div_tx_org_department">Abteilung</label>
       <label index="fe_users.div_tx_org_downloads">Dokumente</label>
@@ -29,7 +29,7 @@
       <label index="fe_users.tx_org_vita">Vita</label>
       <label index="wizard.fe_user.add">Neue Person erstellen</label>
       <label index="wizard.fe_user.edit">Daten der ausgewählten Person bearbeiten</label>
-      <label index="wizard.fe_user.list">Personal-Tabelle anzeigen</label>
+      <label index="wizard.fe_user.list">Personen-Tabelle anzeigen</label>
     </languageKey>
   </data>
 </T3locallang>

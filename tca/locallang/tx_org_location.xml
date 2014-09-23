@@ -17,7 +17,7 @@
       <label index="tx_org_location.div_media">Media</label>
       <label index="tx_org_location.div_pubtrans">Public Transport</label>
       <label index="tx_org_location.div_seo">Search Engines</label>
-      <label index="tx_org_location.div_staff">Staff</label>
+      <label index="tx_org_location.div_staff">People</label>
       <label index="tx_org_location.palette_mailaddress">Address</label>
       <label index="tx_org_location.palette_maillatlon">Geo reference</label>
       <label index="tx_org_location.title">Label of the Location</label>
@@ -43,7 +43,7 @@
       <label index="tx_org_location.pubtrans_embeddedcode">Public Transport: Embedded Code</label>
       <label index="tx_org_location.tx_org_cal">Events</label>
       <label index="tx_org_location.tx_org_headquarters">Companies</label>
-      <label index="tx_org_location.tx_org_staff">Staff</label>
+      <label index="tx_org_location.tx_org_staff">People</label>
       <label index="wizard.tx_org_location.add">Neuen Veranstaltungsort erstellen</label>
       <label index="wizard.tx_org_location.edit">Markierten Veranstaltungsort bearbeiten</label>
       <label index="wizard.tx_org_location.list">Tabelle mit Veranstaltungsorten anzeigen</label>
@@ -61,7 +61,7 @@
       <label index="tx_org_location.div_media">Medien</label>
       <label index="tx_org_location.div_pubtrans">ÖPNV</label>
       <label index="tx_org_location.div_seo">Suchmaschinen</label>
-      <label index="tx_org_location.div_staff">Personal</label>
+      <label index="tx_org_location.div_staff">Personen</label>
       <label index="tx_org_location.palette_mailaddress">Adresse</label>
       <label index="tx_org_location.palette_maillatlon">Geo-Referenzierung</label>
       <label index="tx_org_location.title">Bezeichnung des Veranstaltungsorts</label>
@@ -90,7 +90,7 @@
       <label index="tx_org_location.ticket_url">Karten Online</label>
       <label index="tx_org_location.tx_org_cal">Veranstaltungen</label>
       <label index="tx_org_location.tx_org_headquarters">Firmen</label>
-      <label index="tx_org_location.tx_org_staff">Personal</label>
+      <label index="tx_org_location.tx_org_staff">Personen</label>
       <label index="tx_org_location.url">Website des Veranstaltungsortes</label>
       <label index="wizard.tx_org_location.add">Neuen Veranstaltungsort erstellen</label>
       <label index="wizard.tx_org_location.edit">Markierten Veranstaltungsort bearbeiten</label>

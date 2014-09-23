@@ -27,7 +27,7 @@ $tsConfig = '
 
 mod.tx_linkhandler {
   tx_org_staff {
-    label       = Personal (org)
+    label       = Personen (org)
     listTables  = tx_org_staff
     %onlyPids%
   }

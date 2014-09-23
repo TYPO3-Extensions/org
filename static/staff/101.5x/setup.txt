@@ -4,7 +4,7 @@
   //
   // plugin.tx_browser_pi1
   //    views
-  //      101: +Org: Staff
+  //      101: +Org: People
   // plugin.tx_seodynamictag_pi1
   // Global condition for the list view
   // Global condition for the single view
@@ -19,9 +19,9 @@ plugin.tx_browser_pi1 {
   
   views {
     list {
-      101 = +Org: Staff
+      101 = +Org: People
       101 {
-        name    = +Org: Staff
+        name    = +Org: People
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
           selectBox_orderBy.display = 0
@@ -121,7 +121,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      101 = +Org: Staff
+      101 = +Org: People
       101 {
         displaySingle < plugin.tx_browser_pi1.displaySingle
         displaySingle {
@@ -133,19 +133,19 @@ plugin.tx_browser_pi1 {
         marker {
           my_listview_page = TEXT
           my_listview_page {
-            value = All Staff &raquo;
+            value = All People &raquo;
             lang.de = Personen-Datenbanken &raquo; 
             typolink {
-              parameter = {$plugin.org.pages.staff}
+              parameter = {$plugin.org.pages.people}
               title {
-                value = All Staff
+                value = All People
                 lang.de = Personen-Datenbank
               }
             }
           }
           my_singleview_title = TEXT
           my_singleview_title {
-            value   = Staff
+            value   = People
             lang.de = Person
             wrap    = <div class="header01">|</div>
           }
@@ -503,10 +503,10 @@ plugin.tx_browser_pi1 {
   
   _LOCAL_LANG {
     default {
-      list_mode_101               = Staff
-      list_mode_101_titleTag      = TYPO3 Organiser: Staff
-      list_mode_101_keywords      = TYPO3, Organiser, Staff
-      list_mode_101_summary       = TYPO3 Organiser: Staff
+      list_mode_101               = People
+      list_mode_101_titleTag      = TYPO3 Organiser: People
+      list_mode_101_keywords      = TYPO3, Organiser, People
+      list_mode_101_summary       = TYPO3 Organiser: People
       single_mode_101_titleTag    = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
       single_mode_101_keywords    = TYPO3, Organiser, ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###
       single_mode_101_summary     = TYPO3 Organiser: ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###

@@ -6,10 +6,10 @@
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
-      <label index="fe_groups">Staff: Groups</label>
+      <label index="fe_groups">People: Groups</label>
     </languageKey>
     <languageKey index="de" type="array">
-      <label index="fe_groups">Personal: Gruppen</label>
+      <label index="fe_groups">Personen: Gruppen</label>
     </languageKey>
   </data>
 </T3locallang>

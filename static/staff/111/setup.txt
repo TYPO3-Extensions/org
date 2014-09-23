@@ -6,7 +6,7 @@
 
   // plugin.tx_browser_pi1
   //    views
-  //      111: +Org: Staff - margin / random (no cache)
+  //      111: +Org: People - margin / random (no cache)
 
 
 
@@ -20,9 +20,9 @@ plugin.tx_browser_pi1 {
   
   views {
     list {
-      111 = +Org: Staff (margin)
+      111 = +Org: People (margin)
       111 {
-        name    = staff - margin (don't cache!)
+        name    = people - margin (don't cache!)
         showUid = staffUid
         displayList < plugin.tx_browser_pi1.displayList
         displayList {
@@ -37,25 +37,25 @@ plugin.tx_browser_pi1 {
         marker {
           my_listview_title {
             wrap = <h3><span>|</span></h3>
-            value = Staff
+            value = People
             lang.de = Personen
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                value = Staff
+                value = People
                 lang.de = Personen-Datenbank
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
-            value = Staff database &raquo;
+            value = People database &raquo;
             lang.de = Personen-Datenbank &raquo;
             wrap = <p>|</p>
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                value = staff database
+                value = people database
                 lang.de = Personen-Datenbank
               }
             }
@@ -98,7 +98,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      111 = +Org: Staff (margin)
+      111 = +Org: People (margin)
       111 {
         comment = This plugin should not used in the single view!
         template < plugin.tx_browser_pi1.template

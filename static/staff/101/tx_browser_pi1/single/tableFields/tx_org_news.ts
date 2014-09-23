@@ -55,16 +55,19 @@ plugin.tx_browser_pi1 {
                   default = TEXT
                   default {
                     field = marginal_title // teaser_title // title
-                    crop = 25 | ... | 1
-                    noTrimWrap = |<li class="url circle">| &raquo;</li>|
+                    crop = 24 | ... &raquo; | 1
+                    wrap = <li class="url circle">|</li>
+                    stdWrap {
+                      noTrimWrap = || &raquo;|
+                    }
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.default
                   }
                     // no link
                   notype = TEXT
                   notype {
-                    field = title
-                    crop = 25 | ... | 1
-                    noTrimWrap = |<li class="url">|</li>|
+                    field   = title
+                    crop    = 24 | ... | 1
+                    stdWrap >
                   }
                     // link to internal page
                   page < .default

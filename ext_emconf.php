@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array(
   . 'See: http://typo3-organiser.de/ '
   . 'Manual: http://typo3-organiser.de/typo3conf/ext/org/doc/manual.pdf '
   . 'The Organiser provides a lot of features for handle a simple calendar, companies, contacts, '
-  . 'events, jobs, locations, news, services and staff. '
+  . 'events, jobs, locations, news, services and people. '
   . 'Sell your tickets with the integrated shop. '
   . 'The installer enables you to install the Organiser with one mouse click! Sample data is included.'
   ,
@@ -44,8 +44,9 @@ $EM_CONF[$_EXTKEY] = array(
       'browser' => '',
       'caddy' => '',
       'cps_devlib' => '',
-      'cps_tcatree' => '',
+      'cps_tcatree' => '0.4.2-',
       'css_styled_content' => '',
+      'linkhandler' => '1.1.0-',
       'typo3' => '4.5.0-6.2.99',
     ),
     'conflicts' => array(

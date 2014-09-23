@@ -33,8 +33,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: Nachrichten - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: Nachrichten - Slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: Nachrichten (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personal');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personen - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/job/593611/',            '+Org: Stellenangebote');
@@ -82,8 +82,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/service/593621/',        '+Org: Service');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: People');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: People - margin (don\'t cache!)');
     switch( true )
     {
       case( $typo3Version < 4007000 ):

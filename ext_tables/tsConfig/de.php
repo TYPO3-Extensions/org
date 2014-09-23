@@ -18,7 +18,7 @@ require_once( $path . 'tx_org_headquarters.php' );
 require_once( $path . 'tx_org_cal.php' );
   // Nachrichten
 require_once( $path . 'tx_org_news.php' );
-  // Personal
+  // Personen
 require_once( $path . 'tx_org_staff.php' );
   // Stellenangebote
 require_once( $path . 'tx_org_job.php' );

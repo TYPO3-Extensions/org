@@ -24,7 +24,7 @@ require_once( $path . 'tx_org_location.php' );
 require_once( $path . 'tx_org_news.php' );
   // Services
 require_once( $path . 'tx_org_service.php' );
-  // Staff
+  // People
 require_once( $path . 'tx_org_staff.php' );
 
 ?>

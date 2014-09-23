@@ -209,8 +209,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: Nachrichten - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: Nachrichten - Slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: Nachrichten (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personal');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personal - Rand (nicht cachen!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Personen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Personen - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/501/',      '+Org: Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/headquarters/511/',      '+Org: Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/location/701/',          '+Org: Veranstaltungsorte');
@@ -253,8 +253,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/411/',              '+Org: News - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/402/',              '+Org: News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'static/news/499/',              '+Org: News (RSS)');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: Staff');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: Staff - margin (don\'t cache!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/101/',             '+Org: People');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'static/staff/111/',             '+Org: People - margin (don\'t cache!)');
     switch( true )
     {
       case( $typo3Version < 4007000 ):
@@ -300,7 +300,7 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Nachrichten', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
-       array('Org: Personal', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
+       array('Org: Personen', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: Standorte', 'org_headq', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/headquarters.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
@@ -325,7 +325,7 @@ switch(true) {
     $TCA['pages']['columns']['module']['config']['items'][] =
        array('Org: News', 'org_news', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/news.gif');
     $TCA['pages']['columns']['module']['config']['items'][] =
-       array('Org: Staff', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
+       array('Org: People', 'org_staff', t3lib_extMgm::extRelPath($_EXTKEY).'ext_icon/staff.gif');
 }
   // Case $llStatic
 

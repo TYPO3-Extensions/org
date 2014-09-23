@@ -13,7 +13,7 @@
       <label index="tx_org_service.div_marginal">Marginal</label>
       <label index="tx_org_service.div_seo">Search Engines</label>
       <label index="tx_org_service.div_service">Service</label>
-      <label index="tx_org_service.div_staff">Staff</label>
+      <label index="tx_org_service.div_staff">People</label>
       <label index="tx_org_service.div_teaser">Teaser</label>
       <label index="tx_org_service.palette_mailaddress">Address</label>
       <label index="tx_org_service.palette_maillatlon">Geo reference</label>
@@ -45,7 +45,7 @@
       <label index="tx_org_service.tx_org_servicecat">Category</label>
       <label index="tx_org_service.tx_org_servicesector">Sector</label>
       <label index="tx_org_service.tx_org_servicetargetgroup">Working hours</label>
-      <label index="tx_org_service.tx_org_staff">Staff</label>
+      <label index="tx_org_service.tx_org_staff">People</label>
       <label index="tx_org_servicecat">Service: Category</label>
       <label index="tx_org_servicecat.div_category">Category</label>
       <label index="tx_org_servicecat.div_control">Controlling</label>
@@ -94,7 +94,7 @@
       <label index="tx_org_service.div_marginal">Randspalte</label>
       <label index="tx_org_service.div_seo">Suchmaschinen</label>
       <label index="tx_org_service.div_service">Dienstleistung</label>
-      <label index="tx_org_service.div_staff">Personal</label>
+      <label index="tx_org_service.div_staff">Personen</label>
       <label index="tx_org_service.div_teaser">Listenansicht</label>
       <label index="tx_org_service.palette_mailaddress">Adresse</label>
       <label index="tx_org_service.palette_maillatlon">Geo-Referenzierung</label>
@@ -125,7 +125,7 @@
       <label index="tx_org_service.tx_org_servicecat">Kategorie</label>
       <label index="tx_org_service.tx_org_servicesector">Branche</label>
       <label index="tx_org_service.tx_org_servicetargetgroup">Zielgruppe</label>
-      <label index="tx_org_service.tx_org_staff">Personal</label>
+      <label index="tx_org_service.tx_org_staff">Personen</label>
       <label index="tx_org_servicecat">Dienstleistung: Kategorie</label>
       <label index="tx_org_servicecat.div_category">Kategorie</label>
       <label index="tx_org_servicecat.div_control">Steuerung</label>

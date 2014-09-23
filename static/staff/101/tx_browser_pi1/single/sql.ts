@@ -5,8 +5,8 @@ plugin.tx_browser_pi1 {
         select (
           tx_org_staff.title,
           tx_org_staff.crdate,
+          tx_org_staff.deleted,
           tx_org_staff.bodytext,
-          tx_org_staff.title,
           tx_org_staff.contact_email,
           tx_org_staff.contact_fax,
           tx_org_staff.contact_phone,
@@ -36,6 +36,7 @@ plugin.tx_browser_pi1 {
           tx_org_staff.url,
           tx_org_staff.vita,
           tx_org_staffgroup.title,
+          tx_org_staffgroup.uid,
           tx_org_headquarters.title,
           tx_org_headquarters.mail_city,
           tx_org_headquarters.mail_street,

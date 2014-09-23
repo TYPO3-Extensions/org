@@ -18,10 +18,11 @@
       <label index="filter_phrase.docmedia">Media</label>
       <label index="filter_phrase.fe_group">Groups</label>
       <label index="filter_phrase.headquarters">Headquarters</label>
+      <label index="filter_phrase.headquarterscat">Business segments</label>
       <label index="filter_phrase.jobcat">Categories</label>
       <label index="filter_phrase.jobsector">Sectors</label>
       <label index="filter_phrase.jobworkinghours">Working Hours</label>
-      <label index="filter_phrase.newscat">Categories</label>
+      <label index="filter_phrase.newscat">Subjects</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
       <label index="filter_phrase.period">Period</label>
@@ -31,6 +32,8 @@
       <label index="filter_phrase.servicecat">Category</label>
       <label index="filter_phrase.servicesector">Sector</label>
       <label index="filter_phrase.servicetargetgroup">Target group</label>
+      <label index="filter_phrase.staff">People</label>
+      <label index="filter_phrase.staffgroup">Field of activities</label>
       <label index="palette.appearance">Appearance</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.documentscaption">Description</label>
@@ -103,10 +106,11 @@
       <label index="filter_phrase.docmedia">Datenträger</label>
       <label index="filter_phrase.fe_group">Gruppen</label>
       <label index="filter_phrase.headquarters">Firma</label>
+      <label index="filter_phrase.headquarterscat">Geschäftsfelder</label>
       <label index="filter_phrase.jobcat">Kategorie</label>
       <label index="filter_phrase.jobsector">Branche</label>
       <label index="filter_phrase.jobworkinghours">Arbeitszeit</label>
-      <label index="filter_phrase.newscat">Rubriken</label>
+      <label index="filter_phrase.newscat">Themen</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
       <label index="filter_phrase.period">Zeitraum</label>
@@ -116,6 +120,8 @@
       <label index="filter_phrase.servicecat">Kategorie</label>
       <label index="filter_phrase.servicesector">Branche</label>
       <label index="filter_phrase.servicetargetgroup">Zielgruppe</label>
+      <label index="filter_phrase.staff">Personen</label>
+      <label index="filter_phrase.staffgroup">Tätigkeitsfelder</label>
       <label index="palette.appearance">Design</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="palette.documentscaption">Kurzbeschreibung</label>

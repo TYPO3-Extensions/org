@@ -5,10 +5,10 @@ plugin.tx_browser_pi1 {
           // 140706: empty statement: for proper comments only
         tx_org_staff {
         }
-          // title: image, header, bodytext, vita, groups
+          // title: image, header, bodytext, vita
         tx_org_staff =
         tx_org_staff {
-            // image, header, bodytext, vita, groups
+            // image, header, bodytext, vita
           title = COA
           title {
               // socialmedia_bookmarks
@@ -43,14 +43,6 @@ plugin.tx_browser_pi1 {
               }
             }
               // vita
-            40 = TEXT
-            40 {
-              field = tx_org_staff.vita
-              stdWrap {
-                parseFunc < lib.parseFunc_RTE
-              }
-            }
-            40 >
             40 < tt_content.table.20
             40 {
               userFunc = tx_browser_cssstyledcontent->render_table
@@ -69,67 +61,8 @@ plugin.tx_browser_pi1 {
                 prefixComment >
               }
             }
-              // tx_org_staffgroup.title
-            90 = COA
-            90 {
-                // Marginal news box: header, items
-              10 = COA
-              10 {
-                  // header
-                10 = TEXT
-                10 {
-                  value = Groups
-                  lang {
-                    de = Gruppen
-                    en = Groups
-                  }
-                  noTrimWrap = |<span class="header">|:</span> |
-                }
-                  // items: tx_org_staffgroup.title croped and linked
-                20 = CONTENT
-                20 {
-                  table = tx_org_staffgroup
-                  select {
-                    pidInList = {$plugin.org.sysfolder.staff}
-                    //selectFields = tx_org_staffgroup.title
-                    join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staffgroup.uid
-                    where {
-                      field = tx_org_staff.uid
-                      noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_staff' AND tx_org_mm_all.table_foreign = 'tx_org_staffgroup'|
-                    }
-                    orderBy = tx_org_staffgroup.title
-                    max = 3
-                  }
-                    // tx_org_staffgroup.title
-                  renderObj = TEXT
-                  renderObj {
-                    field = title
-                    wrap = |###POINT###
-                  }
-                  stdWrap {
-                    split {
-                      token = ###POINT###
-                      cObjNum = 1 |*| 1 |*| 2 || 2
-                      1.current = 1
-                      1.noTrimWrap = ||, |
-                      2.current = 1
-                      2.noTrimWrap = |||
-                    }
-                  }
-                }
-              }
-                // if is true tx_org_staffgroup.uid
-              if =
-              if {
-                isTrue {
-                  field = tx_org_staffgroup.uid
-                }
-              }
-                // div box
-              wrap = <div class="show-for-large-up tx_org_staffgroup">|</div>
-            }
           }
-            // staff marginal box: header, content
+            // people marginal box: contact
           contact_email = COA
           contact_email {
             if {
@@ -144,7 +77,7 @@ plugin.tx_browser_pi1 {
               10 = COA
               10 {
                 wrap = <ul class="vcard tx_org_staff">|</ul><!-- vcard -->
-                  // image, header
+                  // header
                 10 = COA
                 10 {
                   wrap = <li class="header">|</li>
@@ -158,7 +91,6 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                10 >
                   // name (linked)
                 20 = CASE
                 20 {

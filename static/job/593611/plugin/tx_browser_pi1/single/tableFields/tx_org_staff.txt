@@ -5,7 +5,7 @@ plugin.tx_browser_pi1 {
           // 140706: empty statement: for proper comments only
         tx_org_staff {
         }
-          // uid: object for the staff marginal box
+          // uid: object for the people marginal box
         tx_org_staff =
         tx_org_staff {
             // row: vcard

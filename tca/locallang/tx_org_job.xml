@@ -16,7 +16,7 @@
       <label index="tx_org_job.div_newsletter">Newsletter</label>
       <label index="tx_org_job.div_note">Note</label>
       <label index="tx_org_job.div_seo">Search Engines</label>
-      <label index="tx_org_job.div_staff">Staff</label>
+      <label index="tx_org_job.div_staff">People</label>
       <label index="tx_org_job.div_teaser">Teaser</label>
       <label index="tx_org_job.palette_mailaddress">Address</label>
       <label index="tx_org_job.palette_maillatlon">Geo reference</label>
@@ -59,7 +59,7 @@
       <label index="tx_org_job.tx_org_jobcat">Activity</label>
       <label index="tx_org_job.tx_org_jobsector">Sector</label>
       <label index="tx_org_job.tx_org_jobworkinghours">Working hours</label>
-      <label index="tx_org_job.tx_org_staff">Staff</label>
+      <label index="tx_org_job.tx_org_staff">People</label>
       <label index="tx_org_job.type">Type</label>
       <label index="tx_org_jobcat">Job: Activity</label>
       <label index="tx_org_jobcat.div_category">Activity</label>
@@ -112,7 +112,7 @@
       <label index="tx_org_job.div_newsletter">Newsletter</label>
       <label index="tx_org_job.div_note">Bemerkung</label>
       <label index="tx_org_job.div_seo">Suchmaschinen</label>
-      <label index="tx_org_job.div_staff">Personal</label>
+      <label index="tx_org_job.div_staff">Personen</label>
       <label index="tx_org_job.div_teaser">Listenansicht</label>
       <label index="tx_org_job.palette_mailaddress">Adresse</label>
       <label index="tx_org_job.palette_maillatlon">Geo-Referenzierung</label>
@@ -155,7 +155,7 @@
       <label index="tx_org_job.tx_org_jobcat">Tätigkeit</label>
       <label index="tx_org_job.tx_org_jobsector">Branche</label>
       <label index="tx_org_job.tx_org_jobworkinghours">Arbeitszeit</label>
-      <label index="tx_org_job.tx_org_staff">Personal</label>
+      <label index="tx_org_job.tx_org_staff">Personen</label>
       <label index="tx_org_job.type">Typ</label>
       <label index="tx_org_jobcat">Stellenangebot: Tätigkeit</label>
       <label index="tx_org_jobcat.div_category">Tätigkeit</label>

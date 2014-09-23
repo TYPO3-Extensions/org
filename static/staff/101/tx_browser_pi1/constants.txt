@@ -52,11 +52,10 @@ plugin.tx_browser_pi1 {
         2 {
           default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
           file      = tx_org_headquarters.image
-          #height    =
-          #listNum   =
+          height    = 400
           path      = uploads/tx_org/
           seo       = tx_org_headquarters.imageseo
-          #width     =
+          width     = 277m
         }
       }
       text {

@@ -19,7 +19,7 @@
       <label index="tx_org_news.div_control">Controlling</label>
       <label index="tx_org_news.div_media">Media</label>
       <label index="tx_org_news.div_seo">Search Engines</label>
-      <label index="tx_org_news.div_staff">Staff</label>
+      <label index="tx_org_news.div_staff">People</label>
       <label index="tx_org_news.palette_typepage">Link to an internal page</label>
       <label index="tx_org_news.palette_typeurl">Link to an external website</label>
       <label index="tx_org_news.title">Header</label>
@@ -75,7 +75,7 @@
       <label index="tx_org_news.div_page">Interne Seite</label>
       <label index="tx_org_news.div_url">Externe Website</label>
       <label index="tx_org_news.div_seo">Suchmaschinen</label>
-      <label index="tx_org_news.div_staff">Personal</label>
+      <label index="tx_org_news.div_staff">Personen</label>
       <label index="tx_org_news.div_teaser">Listenansicht</label>
       <label index="tx_org_news.palette_typepage">Link auf interne Seite</label>
       <label index="tx_org_news.palette_typeurl">Link auf externe Website</label>
@@ -105,7 +105,7 @@
       <label index="tx_org_news.tx_org_staff">Autor</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
       <label index="tx_org_news.tx_org_newscat">Kategorie</label>
-      <label index="tx_org_news.tx_org_staff">Personal</label>
+      <label index="tx_org_news.tx_org_staff">Personen</label>
       <label index="tx_org_newscat">Nachricht: Kategorien</label>
       <label index="tx_org_newscat.div_cat">Kategorie</label>
       <label index="tx_org_newscat.div_control">Steuerung</label>

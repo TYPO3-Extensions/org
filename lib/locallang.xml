@@ -22,8 +22,8 @@
             Organiser website<br />
             <a href="http://typo3-organiser.de/"
               style="background:none;border:none;float:none;text-decoration:underline;"
-              alt="TYPO3-Organiser - news, events, staff, tickets online"
-              title="TYPO3-Organiser - news, events, staff, tickets online"
+              alt="TYPO3-Organiser - news, events, people, tickets online"
+              title="TYPO3-Organiser - news, events, people, tickets online"
               target="_blank">typo3-organiser.de</a>
           </li>
           <li>
@@ -111,8 +111,11 @@
       <label index="promptVersionPrompt61equal"><![CDATA[
         Best case: your TYPO3 version is 6.1.
       ]]></label>
-      <label index="promptVersionPrompt61greater"><![CDATA[
-        Your TYPO3 version is greater than 6.1.<br />
+      <label index="promptVersionPrompt62equal"><![CDATA[
+        Best case: your TYPO3 version is 6.2.
+      ]]></label>
+      <label index="promptVersionPrompt62greater"><![CDATA[
+        Your TYPO3 version is greater than 6.2.<br />
         The Organiser isn't tested for the current TYPO3 version.
         <br />
         <br />
@@ -124,7 +127,7 @@
             Remove the CSS Styled Content from the TypoScript template of your root page.
           </li>
           <li>
-            Include the CSS Styled Content 6.1.
+            Include the CSS Styled Content 6.2.
           </li>
         </ol>
       ]]></label>
@@ -148,8 +151,8 @@
             Organiser Homepage<br />
             <a href="http://typo3-organiser.de/"
               style="background:none;border:none;float:none;text-decoration:underline;"
-              alt="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personal, Online-Tickets"
-              title="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personal, Online-Tickets"
+              alt="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personen, Online-Tickets"
+              title="TYPO3-Organiser - Nachrichten, Veranstaltungen, Personen, Online-Tickets"
               target="_blank">typo3-organiser.de</a>
           </li>
           <li>
@@ -237,8 +240,11 @@
       <label index="promptVersionPrompt61equal"><![CDATA[
         Optimal: Deine TYPO3 Version ist 6.1.
       ]]></label>
-      <label index="promptVersionPrompt61greater"><![CDATA[
-        Deine TYPO3 Version ist is h&ouml;her als 6.1.<br />
+      <label index="promptVersionPrompt62equal"><![CDATA[
+        Optimal: Deine TYPO3 Version ist 6.2.
+      ]]></label>
+      <label index="promptVersionPrompt62greater"><![CDATA[
+        Deine TYPO3 Version ist h&ouml;her als 6.2.<br />
         Der Organiser ist f&uuml;r die aktuelle TYPO3 Version nicht getestet.
         <br />
         <br />
@@ -250,7 +256,7 @@
             Entferne CSS Styled Content aus dem TypoScript-Template Deiner Root-Seite.
           </li>
           <li>
-            Binde CSS Styled Content 6.1 ein.
+            Binde CSS Styled Content 6.2 ein.
           </li>
         </ol>
       ]]></label>

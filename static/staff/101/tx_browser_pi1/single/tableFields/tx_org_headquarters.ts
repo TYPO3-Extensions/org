@@ -23,9 +23,16 @@ plugin.tx_browser_pi1 {
               10 = COA
               10 {
                 wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
-                  // image, header
+                  // image
                 10 = COA
                 10 {
+                    // image
+                  10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
+                  wrap = <li class="show-for-large-up image">|</li>
+                }
+                  // image, header
+                11 = COA
+                11 {
                   wrap = <li class="header">|</li>
                     // image
                   10 = COA
@@ -34,6 +41,7 @@ plugin.tx_browser_pi1 {
                     10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
                     wrap = <div class="show-for-large-up image" style="float:right;">|</div>
                   }
+                  10 >
                     // title, if title (name)
                   20 = TEXT
                   20 {
@@ -43,7 +51,6 @@ plugin.tx_browser_pi1 {
                       en = Company
                     }
                   }
-                  XXX20 >
                 }
                   // title
                 20 = TEXT
@@ -61,13 +68,16 @@ plugin.tx_browser_pi1 {
                   default = TEXT
                   default {
                     field = tx_org_headquarters.title
-                    noTrimWrap = |<li class="fn"> | &raquo;</li>|
+                    wrap  = <li class="fn">|</li>
                     required = 1
+                    stdWrap {
+                      noTrimWrap = || &raquo;|
+                    }
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
                   }
                   notype = TEXT
                   notype {
-                    noTrimWrap = |<li class="fn"> | </li>|
+                    stdWrap >
                   }
                   page < .default
                   page {
@@ -107,40 +117,6 @@ plugin.tx_browser_pi1 {
                     required = 1
                   }
                 }
-                  // url
-                40 = CASE
-                40 {
-                  key {
-                    field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
-                  }
-                  default = TEXT
-                  default {
-                    value = Contractor details &raquo;
-                    lang {
-                      de = Zum Anbieter &raquo;
-                      en = Contractor details &raquo;
-                    }
-                    noTrimWrap = | ||
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
-                    wrap = <li class="url">|</li>
-                  }
-                  notype = TEXT
-                  notype {
-                    value =
-                    wrap = |
-                  }
-                  page < .default
-                  page {
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
-                  }
-                  url < .page
-                  url {
-                    value >
-                    field = {$plugin.tx_browser_pi1.templates.listview.url.2.url}
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
-                  }
-                }
-                40 >
               }
             }
           }

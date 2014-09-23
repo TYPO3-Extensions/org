@@ -39,7 +39,7 @@ hide.tables.tx_org_location = 0
 hide.tables.tx_org_news = 0
   # cat=hide tables//108;            type=boolean; label= Service:Hide the table service (tx_org_service), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_service = 0
-  # cat=hide tables//109;            type=boolean; label= Staff:Hide the table staff (tx_org_staff), if you don't need it. It will simplify your backend forms.
+  # cat=hide tables//109;            type=boolean; label= People:Hide the table people (tx_org_staff), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_staff = 0
   # cat=hide tables//110;            type=boolean; label= Tax:Hide the table tax (tx_org_tax), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_tax = 0
@@ -82,9 +82,9 @@ linkhandler.tx_org_news.onlyPids =
 linkhandler.tx_org_services = Yes (recommended)
   # cat=linkhandler//317;          type=string; label=Service pids: CSV list of page id with the services folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_services.onlyPids =
-  # cat=linkhandler//318;          type=options[Yes (recommended),No]; label=+Staff: Add the tab [Org: Staff] to the linkhandler.
+  # cat=linkhandler//318;          type=options[Yes (recommended),No]; label=+People: Add the tab [Org: People] to the linkhandler.
 linkhandler.tx_org_staff = Yes (recommended)
-  # cat=linkhandler//319;          type=string; label=Staff pids: CSV list of page id with the staff folders. The pids are recommended for usability only. I.e: 1335, 1245
+  # cat=linkhandler//319;          type=string; label=People pids: CSV list of page id with the people folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_staff.onlyPids =
   # cat=linkhandler//999;           type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 linkhandler.externalLinks=0

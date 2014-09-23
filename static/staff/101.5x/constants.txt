@@ -58,11 +58,11 @@ plugin.tx_seodynamictag {
   }
 
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Staff. See tab [Search Engine] field [Description]
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser People. See tab [Search Engine] field [Description]
   }
 
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Staff. See tab [Search Engine] field [Keywords]
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser People. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }
 }

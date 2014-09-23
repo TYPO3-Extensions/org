@@ -99,10 +99,12 @@
 }
 
 .tx-browser-pi1 .listview-content {
-  padding:.6em;
+  /*foundation, 140922, dwildt, 1-*/
+  /*padding:.6em;*/
 }
 .tx-browser-pi1 .singleview-content {
-  padding:1em;
+  /*foundation, 140922, dwildt, 1-*/
+  /*padding:1em;*/
 }
 
 .tx-browser-pi1 .singleview li.csc-textpic-image {
@@ -243,17 +245,17 @@
    z-index: 2;
 }
 
-.tx-browser-pi1 div.radialsearch-within-radius {
+/*.tx-browser-pi1 div.radialsearch-within-radius {
   background:#D2FF99;
   border-radius: .8em;
   padding: .4em .4em .1em .8em;
-}
+}*/
 
 .tx-browser-pi1 div.radialsearch-outside-radius {
-  background:#CCC;
-  border-radius: .8em;
+/*  background:#CCC;
+  border-radius: .8em;*/
   opacity: 0.4;
-  padding: .4em .4em .1em .8em;
+/*  padding: .4em .4em .1em .8em;*/
 }
 
 

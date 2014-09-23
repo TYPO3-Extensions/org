@@ -187,12 +187,22 @@ class tx_org_extmanager
           </div>
           ';
         break;
+      case( $this->typo3Version < 6003000 ):
+          // 6.3
+        $str_prompt = $str_prompt.'
+          <div class="typo3-message message-ok">
+            <div class="message-body">
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt62equal'). '
+            </div>
+          </div>
+          ';
+        break;
       default:
-          // Greater than 6.1
+          // Greater than 6.2
         $str_prompt = $str_prompt.'
           <div class="typo3-message message-warning">
             <div class="message-body">
-              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt61greater'). '
+              ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/locallang.xml:promptVersionPrompt62greater'). '
             </div>
           </div>
           ';

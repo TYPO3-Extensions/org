@@ -16,7 +16,7 @@
       <label index="tx_org_event.div_headquarters">Company</label>
       <label index="tx_org_event.div_media">Media</label>
       <label index="tx_org_event.div_seo">Search Engines</label>
-      <label index="tx_org_event.div_staff">Staff</label>
+      <label index="tx_org_event.div_staff">People</label>
       <label index="tx_org_event.div_teaser">Teaser</label>
       <label index="tx_org_event.title">Title of the event</label>
       <label index="tx_org_event.subtitle">Subheader</label>
@@ -31,7 +31,7 @@
       <label index="tx_org_event.tx_org_eventcat">Category</label>
       <label index="tx_org_event.tx_org_headquarters">Companies</label>
       <label index="tx_org_event.tx_org_news">News</label>
-      <label index="tx_org_event.tx_org_staff">Staff</label>
+      <label index="tx_org_event.tx_org_staff">People</label>
       <label index="tx_org_eventcat">Event: Category</label>
       <label index="tx_org_eventcat.div_category">Category</label>
       <label index="tx_org_eventcat.div_control">Controlling</label>
@@ -56,7 +56,7 @@
       <label index="tx_org_event.div_headquarters">Firma</label>
       <label index="tx_org_event.div_media">Medien</label>
       <label index="tx_org_event.div_seo">Suchmaschinen</label>
-      <label index="tx_org_event.div_staff">Personal</label>
+      <label index="tx_org_event.div_staff">Personen</label>
       <label index="tx_org_event.div_teaser">Kurztitel</label>
       <label index="tx_org_event.title">Name der Veranstaltung</label>
       <label index="tx_org_event.subtitle">Untertitel / Dachzeile</label>
@@ -69,7 +69,7 @@
       <label index="tx_org_event.tx_org_eventcat">Kategorie</label>
       <label index="tx_org_event.tx_org_headquarters">Firma</label>
       <label index="tx_org_event.tx_org_news">Nachrichten</label>
-      <label index="tx_org_event.tx_org_staff">Personal</label>
+      <label index="tx_org_event.tx_org_staff">Personen</label>
       <label index="tx_org_event.documents">Dokumente</label>
       <label index="tx_org_eventcat">Veranstaltung: Kategorie</label>
       <label index="tx_org_eventcat.div_category">Kategorie</label>

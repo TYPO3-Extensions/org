@@ -17,7 +17,7 @@
       <label index="tx_org_department.div_media">Media</label>
       <label index="tx_org_department.div_news">News</label>
       <label index="tx_org_department.div_seo">Search Engines</label>
-      <label index="tx_org_department.div_staff">Staff</label>
+      <label index="tx_org_department.div_staff">People</label>
       <label index="tx_org_department.title">Department</label>
       <label index="tx_org_department.shortcut">Department Shortcut</label>
       <label index="tx_org_department.tx_org_departmentcat">Group</label>
@@ -27,7 +27,7 @@
       <label index="tx_org_department.fax">Fax</label>
       <label index="tx_org_department.email">E-mail</label>
       <label index="tx_org_department.url">URL</label>
-      <label index="tx_org_department.fe_users">Staff</label>
+      <label index="tx_org_department.fe_users">People</label>
       <label index="tx_org_department.tx_org_cal">Events</label>
       <label index="tx_org_departmentcat">Department: Groups</label>
       <label index="tx_org_departmentcat.div_cat">Group</label>
@@ -43,7 +43,7 @@
       <label index="tx_org_department">Abteilung [VERALTET!]</label>
       <label index="tx_org_department.div_department">Abteilung</label>
       <label index="tx_org_department.div_contact">Kontaktdaten</label>
-      <label index="tx_org_department.div_staff">Personal</label>
+      <label index="tx_org_department.div_staff">Personen</label>
       <label index="tx_org_department.div_calendar">Veranstaltungen</label>
       <label index="tx_org_department.div_media">Medien</label>
       <label index="tx_org_department.div_news">Nachrichten</label>
@@ -59,7 +59,7 @@
       <label index="tx_org_department.fax">Fax</label>
       <label index="tx_org_department.email">E-Mail</label>
       <label index="tx_org_department.url">URL</label>
-      <label index="tx_org_department.fe_users">Personal</label>
+      <label index="tx_org_department.fe_users">Personen</label>
       <label index="tx_org_department.tx_org_cal">Veranstaltungen</label>
       <label index="tx_org_department.fe_group">Frontend Benutzergruppe</label>
       <label index="tx_org_departmentcat">Abteilung: Gruppen</label>

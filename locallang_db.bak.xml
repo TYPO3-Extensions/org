@@ -69,7 +69,7 @@
       <label index="tca_phrase.statistics_downloads_by_visits">Downloads (depending on visits)</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
       <label index="tca_phrase.statistics_visits">Visits</label>
-      <label index="fe_users">Staff</label>
+      <label index="fe_users">People</label>
       <label index="fe_users.div_tx_org_company">Company</label>
       <label index="fe_users.div_tx_org_department">Department</label>
       <label index="fe_users.div_tx_org_downloads">Documents</label>
@@ -77,7 +77,7 @@
       <label index="fe_users.tx_org_headquarters">Company</label>
       <label index="fe_users.tx_org_department">Department</label>
       <label index="fe_users.tx_org_vita">Vita</label>
-      <label index="fe_groups">Staff: Groups</label>
+      <label index="fe_groups">People: Groups</label>
       <label index="tx_org_cal">Calendar</label>
       <label index="tx_org_cal.div_calendar">Event</label>
       <label index="tx_org_cal.div_calpage">Internal Link</label>
@@ -139,7 +139,7 @@
       <label index="tx_org_department.div_embedded">Embedded Code</label>
       <label index="tx_org_department.div_department">Department</label>
       <label index="tx_org_department.div_contact">Contact Details</label>
-      <label index="tx_org_department.div_staff">Staff</label>
+      <label index="tx_org_department.div_staff">People</label>
       <label index="tx_org_department.div_calendar">Events</label>
       <label index="tx_org_department.div_doc">Documents <![CDATA[&]]> News</label>
       <label index="tx_org_department.div_media">Media</label>
@@ -155,7 +155,7 @@
       <label index="tx_org_department.fax">Fax</label>
       <label index="tx_org_department.email">E-mail</label>
       <label index="tx_org_department.url">URL</label>
-      <label index="tx_org_department.fe_users">Staff</label>
+      <label index="tx_org_department.fe_users">People</label>
       <label index="tx_org_department.tx_org_cal">Events</label>
       <label index="tx_org_departmentcat">Department: Groups</label>
       <label index="tx_org_departmentcat.div_cat">Group</label>
@@ -291,7 +291,7 @@
       <label index="tx_org_headquarters.postbox_postbox">Postbox: Postbox</label>
       <label index="tx_org_headquarters.postbox_postcode">Postbox: Postcode</label>
       <label index="tx_org_headquarters.postbox_city">Postbox: City</label>
-      <label index="tx_org_headquarters.fe_users">Staff</label>
+      <label index="tx_org_headquarters.fe_users">People</label>
       <label index="tx_org_headquarters.tx_org_department">Department</label>
       <label index="tx_org_headquarters.tx_org_headquarterscat">Category</label>
       <label index="tx_org_headquarters.telephone">Telephone</label>
@@ -393,9 +393,9 @@
       <label index="tx_org_tax.title">Label of the tax rate</label>
       <label index="tx_org_tax.title_lang_ol">Translations (i.e. fr:Traduction|de:<![CDATA[Ü]]>bersetzung)</label>
       <label index="tx_org_tax.value">Value of the tax rate</label>
-      <label index="wizard.fe_user.add">Add a new staff</label>
+      <label index="wizard.fe_user.add">Add a new people</label>
       <label index="wizard.fe_user.edit"> Edit the current person</label>
-      <label index="wizard.fe_user.list">Display the staff table</label>
+      <label index="wizard.fe_user.list">Display the people table</label>
       <label index="wizard.rte.fullscreen">Big size for the form</label>
       <label index="wizard.tx_org_cal.add">Add a new event</label>
       <label index="wizard.tx_org_cal.edit"> Edit the current event</label>
@@ -493,7 +493,7 @@
       <label index="tca_phrase.statistics_downloads_by_visits">Downloads (in Abh<![CDATA[ä]]>ngigkeit von Besuchen)</label>
       <label index="tca_phrase.statistics_hits">Aufrufe</label>
       <label index="tca_phrase.statistics_visits">Besuche</label>
-      <label index="fe_users">Personal</label>
+      <label index="fe_users">Personen</label>
       <label index="fe_users.div_tx_org_company">Firma</label>
       <label index="fe_users.div_tx_org_department">Abteilung</label>
       <label index="fe_users.div_tx_org_downloads">Dokumente</label>
@@ -501,7 +501,7 @@
       <label index="fe_users.tx_org_headquarters">Firma</label>
       <label index="fe_users.tx_org_department">Abteilung</label>
       <label index="fe_users.tx_org_vita">Vita</label>
-      <label index="fe_groups">Personal: Gruppen</label>
+      <label index="fe_groups">Personen: Gruppen</label>
       <label index="tx_org_cal">Kalender</label>
       <label index="tx_org_cal.div_calendar">Veranstaltung</label>
       <label index="tx_org_cal.div_calpage">Interner Link</label>
@@ -562,7 +562,7 @@
       <label index="tx_org_department">Abteilung</label>
       <label index="tx_org_department.div_department">Abteilung</label>
       <label index="tx_org_department.div_contact">Kontaktdaten</label>
-      <label index="tx_org_department.div_staff">Personal</label>
+      <label index="tx_org_department.div_staff">Personen</label>
       <label index="tx_org_department.div_calendar">Veranstaltungen</label>
       <label index="tx_org_department.div_media">Medien</label>
       <label index="tx_org_department.div_news">Nachrichten</label>
@@ -578,7 +578,7 @@
       <label index="tx_org_department.fax">Fax</label>
       <label index="tx_org_department.email">E-Mail</label>
       <label index="tx_org_department.url">URL</label>
-      <label index="tx_org_department.fe_users">Personal</label>
+      <label index="tx_org_department.fe_users">Personen</label>
       <label index="tx_org_department.tx_org_cal">Veranstaltungen</label>
       <label index="tx_org_department.fe_group">Frontend Benutzergruppe</label>
       <label index="tx_org_departmentcat">Abteilung: Gruppen</label>
@@ -823,7 +823,7 @@
       <label index="tx_org_tax.value">Mehrwertsteuersatz</label>
       <label index="wizard.fe_user.add">Neue Person erstellen</label>
       <label index="wizard.fe_user.edit">Daten der ausgew<![CDATA[ä]]>hlten Person bearbeiten</label>
-      <label index="wizard.fe_user.list">Personal-Tabelle anzeigen</label>
+      <label index="wizard.fe_user.list">Personen-Tabelle anzeigen</label>
       <label index="wizard.rte.fullscreen">Gr<![CDATA[öß]]>eres Formular</label>
       <label index="wizard.tx_org_cal.add">Neuen Kalendereintrag erstellen</label>
       <label index="wizard.tx_org_cal.edit">Kalendereintrag bearbeiten</label>

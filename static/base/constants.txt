@@ -39,7 +39,7 @@ plugin.org {
   pages.news =
   # cat=Organiser - Pages/150/109; type=+int; label= services:Uid of your services page
   pages.service =
-  # cat=Organiser - Pages/150/110; type=+int; label= staff:Uid of your staff page
+  # cat=Organiser - Pages/150/110; type=+int; label= people:Uid of your people page
   pages.staff =
   # cat=Organiser - Pages/150/111; type=+int; label= Caddy (events):Uid of your Caddy page for events
   pages.shopping_cart =
@@ -72,7 +72,7 @@ plugin.org {
   sysfolder.newsSlider =
   # cat=Organiser - Sysfolders/500/109; type=+int; label= services:Uid of the sysfolder with the services data
   sysfolder.service =
-  # cat=Organiser - Sysfolders/500/110; type=+int; label= staff:Uid of the sysfolder with the staff data
+  # cat=Organiser - Sysfolders/500/110; type=+int; label= people:Uid of the sysfolder with the people data
   sysfolder.staff =
 
   # cat=Organiser - static url/500/100; type=+int; label= [default] calendar:URL of your calendar (default language)
