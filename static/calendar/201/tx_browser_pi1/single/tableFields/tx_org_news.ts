@@ -2,10 +2,10 @@ plugin.tx_browser_pi1 {
   views {
     single {
       201 {
-        tx_org_headquarters {
+        tx_org_cal {
           uid {
           }
-            // tx_org_headquarters.crdate: placeholder for tx_org_news
+            // tx_org_cal.crdate: placeholder for tx_org_news
           uid = COA
           uid {
               // if is true tx_org_news.uid
@@ -39,8 +39,8 @@ plugin.tx_browser_pi1 {
                   //selectFields = tx_org_news.title
                   join = tx_org_mm_all ON tx_org_mm_all.uid_local = tx_org_news.uid
                   where {
-                    field = tx_org_headquarters.uid
-                    noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_foreign = 'tx_org_headquarters' AND tx_org_mm_all.table_local = 'tx_org_news'|
+                    field = tx_org_cal.uid
+                    noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_foreign = 'tx_org_cal' AND tx_org_mm_all.table_local = 'tx_org_news'|
                   }
                   orderBy = tx_org_news.datetime DESC
                   max = 3

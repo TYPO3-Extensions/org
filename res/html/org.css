@@ -53,27 +53,42 @@
   float:right;
   font-size: 1em;
 }
-.tx-browser-pi1 .my_datesheet_box {
-  float:left;
-  width:70px;
-}
-.tx-browser-pi1 .my_datesheet {
-  float:left;
-  font-weight:bold;
-  margin-right:1em;
-  padding:.4em;
+/* #61819, 140923, dwildt, + .datesheet*/
+.tx-browser-pi1 .datesheet {
+  background-color: #008CBA;
+  border-color: #008CBA;
   text-align:center;
 }
-.tx-browser-pi1 .my_datesheet_expired {
-  background-color:#CCC;
+.tx-browser-pi1 .datesheet a {
+  /*color: white;*/
 }
-.tx-browser-pi1 .my_datesheet .day_of_month {
-  font-size:2.8em;
-  line-height:1em;
+.tx-browser-pi1 .datesheet a,
+.tx-browser-pi1 .datesheet a:link,
+.tx-browser-pi1 .datesheet a:visited {
+  color:#FFF;
 }
-.tx-browser-pi1 .my_datesheet_repertoire .month {
+.tx-browser-pi1 .datesheet a:active,
+.tx-browser-pi1 .datesheet a:focus,
+.tx-browser-pi1 .datesheet a:hover {
+  color:#F79210;
+}
+.tx-browser-pi1 .datesheet .day_of_month {
   font-size:2em;
-  line-height:1.2em;
+}
+/* #61819, 140923, dwildt, + .datesheet_expired*/
+.tx-browser-pi1 .datesheet_expired {
+  background-color: #FFF;
+  border-color: #F79210;
+}
+.tx-browser-pi1 .datesheet_expired a,
+.tx-browser-pi1 .datesheet_expired a:link,
+.tx-browser-pi1 .datesheet_expired a:visited {
+  color:#F79210;
+}
+.tx-browser-pi1 .datesheet_expired a:active,
+.tx-browser-pi1 .datesheet_expired a:focus,
+.tx-browser-pi1 .datesheet_expired a:hover {
+  color:#008CBA;
 }
 
 .tx-browser-pi1 .cal_datetime {

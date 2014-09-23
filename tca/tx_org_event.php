@@ -177,42 +177,25 @@ $TCA['tx_org_event'] = array(
         'size' => $size_calendar,
         'minitems' => 0,
         'maxitems' => 999,
-        'MM' => 'tx_org_event_mm_tx_org_cal',
-        'foreign_table' => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.datetime DESC, title',
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_cal',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_cal',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_cal.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
-          ),
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_event',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
         ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
+        ),
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf
+        . ' AND tx_org_cal.deleted = 0'
+        . ' AND tx_org_cal.hidden = 0'
+        . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid###'
+        . ' ORDER BY datetime DESC, title'
+        ,
+        'selectedListStyle' => $listStyleWidth,
+        'itemListStyle' => $listStyleWidth,
       ),
     ),
     'documents_from_path' => array(

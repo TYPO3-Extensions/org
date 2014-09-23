@@ -45,13 +45,13 @@ $TCA[ 'tx_org_cal' ] = array(
     'type' => 'type',
     'typeicon_column' => 'type',
     'typeicons' => array(
-      '0' => '../typo3conf/ext/org/ext_icon/caldirect.gif',
+      'record' => '../typo3conf/ext/org/ext_icon/caldirect.gif',
+      'tx_org_event' => '../typo3conf/ext/org/ext_icon/event.gif',
       'page' => '../typo3conf/ext/org/ext_icon/page.gif',
       'url' => '../typo3conf/ext/org/ext_icon/url.gif',
       'notype' => '../typo3conf/ext/org/ext_icon/notype.gif',
       'calpage' => '../typo3conf/ext/org/ext_icon/page.gif',
       'calurl' => '../typo3conf/ext/org/ext_icon/url.gif',
-      'tx_org_event' => '../typo3conf/ext/org/ext_icon/event.gif',
     ),
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'

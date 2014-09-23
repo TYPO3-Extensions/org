@@ -1,6 +1,7 @@
 6.0.0
   14-09-22
   Major Features
+  * #61826: + Events
   * #61819: Improve cal (foundation, TypoScript)
   * #61793: Improve Companies (Headquarters: Foundation, TypoScript)
   * #61696: Improve templates

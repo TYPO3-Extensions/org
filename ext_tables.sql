@@ -24,7 +24,6 @@
 # tx_org_downloadsmedia
 # tx_org_event
 # tx_org_eventcat
-# tx_org_event_mm_tx_org_cal
 # tx_org_event_mm_tx_org_news
 # tx_org_headquarters
 # tx_org_headquarters_mm_fe_users
@@ -108,15 +107,11 @@ CREATE TABLE tx_org_cal (
   l10n_diffsource mediumtext,
   deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   type tinytext,
-  tx_org_event tinytext,
   title tinytext,
   subtitle tinytext,
   datetime int(11) unsigned NOT NULL DEFAULT '0',
   datetimeend int(11) unsigned NOT NULL DEFAULT '0',
-  tx_org_caltype tinytext,
   bodytext mediumtext ,
-  calpage tinytext,
-  calurl tinytext,
   description text,
   embeddedcode text,
   endtime int(11) NOT NULL DEFAULT '0',
@@ -142,6 +137,7 @@ CREATE TABLE tx_org_cal (
   marginal_title tinytext,
   marginal_subtitle tinytext,
   marginal_short text,
+  page tinytext,
   pages tinytext,
   print text,
   printcaption text,
@@ -150,10 +146,13 @@ CREATE TABLE tx_org_cal (
   teaser_title tinytext,
   teaser_subtitle tinytext,
   teaser_short mediumtext,
+  tx_org_caltype tinytext,
+  tx_org_event tinytext,
   tx_org_location tinytext,
   tx_org_calentrance tinytext,
   tx_org_headquarters tinytext,
   tx_org_department tinytext,
+  url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
@@ -575,6 +574,8 @@ CREATE TABLE tx_org_event (
   documentscaption tinytext,
   documentslayout tinyint(4) unsigned NOT NULL DEFAULT '0',
   documentssize tinyint(4) unsigned NOT NULL DEFAULT '0',
+  embeddedcode text,
+  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   image text,
   imagecaption text,
   imageseo tinytext,
@@ -591,12 +592,10 @@ CREATE TABLE tx_org_event (
   image_effects tinyint(3) unsigned NOT NULL default '0',
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
-  embeddedcode text,
+  pages tinytext,
   print text,
   printcaption text,
   printseo tinytext,
-  hidden tinyint(4) unsigned NOT NULL DEFAULT '0',
-  pages tinytext,
   fe_group int(11) NOT NULL DEFAULT '0',
   keywords text,
   description text,
@@ -629,20 +628,6 @@ CREATE TABLE tx_org_eventcat (
 
   PRIMARY KEY (uid),
   KEY parent (pid)
-);
-
-
-#
-# tx_org_event_mm_tx_org_cal
-#
-CREATE TABLE tx_org_event_mm_tx_org_cal (
-  uid_local int(11) unsigned NOT NULL DEFAULT '0',
-  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  tablenames varchar(30) NOT NULL DEFAULT '',
-  sorting         int(11) unsigned NOT NULL DEFAULT '0',
-  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
 );
 
 

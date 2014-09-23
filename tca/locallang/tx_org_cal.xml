@@ -8,8 +8,8 @@
     <languageKey index="default" type="array">
       <label index="tx_org_cal">Calendar</label>
       <label index="tx_org_cal.div_calendar">Event</label>
-      <label index="tx_org_cal.div_calpage">Internal Link</label>
-      <label index="tx_org_cal.div_calurl">External Link</label>
+      <label index="tx_org_cal.div_page">Internal Link</label>
+      <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
       <label index="tx_org_cal.div_company">Company</label>
       <label index="tx_org_cal.div_department">Department</label>
@@ -23,8 +23,8 @@
       <label index="tx_org_cal.palette_typeurl">Link to an external website</label>
       <label index="tx_org_cal.type.tx_org_event">Link to the detail view of an event</label>
       <label index="tx_org_cal.tx_org_event">Event</label>
-      <label index="tx_org_cal.calpage">Link to an internal page</label>
-      <label index="tx_org_cal.calurl">Link to an external page (URL)</label>
+      <label index="tx_org_cal.page">Link to an internal page</label>
+      <label index="tx_org_cal.url">Link to an external page (URL)</label>
       <label index="tx_org_cal.title">Title of the event</label>
       <label index="tx_org_cal.subtitle">Subheader</label>
       <label index="tx_org_cal.datetime">Datetime</label>
@@ -68,8 +68,8 @@
     <languageKey index="de" type="array">
       <label index="tx_org_cal">Kalender</label>
       <label index="tx_org_cal.div_calendar">Veranstaltung</label>
-      <label index="tx_org_cal.div_calpage">Interner Link</label>
-      <label index="tx_org_cal.div_calurl">Externer Link</label>
+      <label index="tx_org_cal.div_page">Interner Link</label>
+      <label index="tx_org_cal.div_url">Externer Link</label>
       <label index="tx_org_cal.div_embedded">Eingebundener Code</label>
       <label index="tx_org_cal.div_marginal">Randspalte</label>
       <label index="tx_org_cal.div_teaser">Kurztitel</label>
@@ -83,8 +83,8 @@
       <label index="tx_org_cal.palette_typeurl">Link auf eine externe Website</label>
       <label index="tx_org_cal.type.tx_org_event">die Detailansicht einer Veranstaltung</label>
       <label index="tx_org_cal.tx_org_event">Veranstaltung</label>
-      <label index="tx_org_cal.calpage">Link zu interner Seite</label>
-      <label index="tx_org_cal.calurl">Link zu externer Seite</label>
+      <label index="tx_org_cal.page">Link zu interner Seite</label>
+      <label index="tx_org_cal.url">Link zu externer Seite</label>
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.datetime">Beginn der Veranstaltung</label>

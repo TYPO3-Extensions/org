@@ -11,14 +11,14 @@ plugin.tx_browser_pi1 {
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                 <div class="margin columns small-12 medium-12 large-3">
-                  ###TX_ORG_HEADQUARTERS.CONTACT_EMAIL###
-                  ###TX_ORG_HEADQUARTERS.UID###<!-- tx_org_news -->
-                  ###TX_ORG_HEADQUARTERS.CRDATE###<!-- tx_org_staff -->
+                  ###TX_ORG_CAL.CONTACT_EMAIL###
+                  ###TX_ORG_CAL.UID###<!-- tx_org_news -->
+                  ###TX_ORG_CAL.CRDATE###<!-- tx_org_staff -->
                 </div>
                 <div class="main columns small-12 medium-12 large-9">
                   ###MAP###
                   ###RECORD_BROWSER###
-                  ###TX_ORG_HEADQUARTERS.TITLE###
+                  ###TX_ORG_CAL.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
                   <p class="backbutton">

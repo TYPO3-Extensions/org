@@ -2,12 +2,12 @@ plugin.tx_browser_pi1 {
   jQuery {
     plugin {
       jstree {
-        tablefield_01 = tx_org_headquarterscat.title
+        tablefield_01 = tx_org_caltype.title
       }
     }
   }
   navigation {
-    showUid = headquartersUid
+    showUid = calendarUid
   }
 
   templates {
@@ -18,17 +18,17 @@ plugin.tx_browser_pi1 {
             #list    =
             #single  =
           }
-          list    = tx_org_headquarters.title
-          single  = tx_org_headquarters.title
+          list    = tx_org_cal.title
+          single  = tx_org_cal.title
         }
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
-          file      = tx_org_headquarters.image
+          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
+          file      = tx_org_cal.image
           height    = 90c
           path      = uploads/tx_org/
-          seo       = tx_org_headquarters.imageseo
+          seo       = tx_org_cal.imageseo
           width     = 220c
         }
         1 {
@@ -41,23 +41,23 @@ plugin.tx_browser_pi1 {
           #width     =
         }
         2 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
-          file      = tx_org_headquarters.image
+          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
+          file      = tx_org_cal.image
           #height    =
           #listNum   =
           path      = uploads/tx_org/
-          seo       = tx_org_headquarters.imageseo
+          seo       = tx_org_cal.imageseo
           #width     =
         }
       }
       url {
         0 {
-          key       = tx_org_headquarters.type
-          page      = tx_org_headquarters.page
-          record    = tx_org_headquarters.uid
-          showUid   = headquartersUid
+          key       = tx_org_cal.type
+          page      = tx_org_cal.page
+          record    = tx_org_cal.uid
+          showUid   = calendarUid
           #singlePid =
-          url       = tx_org_headquarters.url
+          url       = tx_org_cal.url
         }
         1 {
           key       = type
@@ -80,13 +80,13 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
-          file      = tx_org_headquarters.image
+          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
+          file      = tx_org_cal.image
           #height    =
           #layoutKey = picture
           #listNum   =
           path      = uploads/tx_org/
-          #seo       = tx_org_headquarters.imageseo
+          #seo       = tx_org_cal.imageseo
           #width     =
         }
       }

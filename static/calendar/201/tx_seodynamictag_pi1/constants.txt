@@ -13,7 +13,7 @@ plugin.tx_seodynamictag {
     }
   }
   database {
-    table = tx_org_headquarters
+    table = tx_org_cal
     var.1 = tx_browser_pi1[headquartersUid]
     field {
       //author        =
@@ -24,10 +24,10 @@ plugin.tx_seodynamictag {
     }
   }
   default {
-    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Description]
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Calendar. See tab [Search Engine] field [Description]
   }
   keywords {
-    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Keywords]
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Calendar. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }
 }

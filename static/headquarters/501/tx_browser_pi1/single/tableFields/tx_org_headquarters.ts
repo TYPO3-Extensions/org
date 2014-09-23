@@ -43,14 +43,6 @@ plugin.tx_browser_pi1 {
               }
             }
               // vita
-            40 = TEXT
-            40 {
-              field = tx_org_headquarters.vita
-              stdWrap {
-                parseFunc < lib.parseFunc_RTE
-              }
-            }
-            40 >
             40 < tt_content.table.20
             40 {
               userFunc = tx_browser_cssstyledcontent->render_table

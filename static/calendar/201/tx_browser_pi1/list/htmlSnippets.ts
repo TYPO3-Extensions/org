@@ -9,8 +9,8 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
-                ###RADIALSEARCH###
-                ###TX_ORG_HEADQUARTERSCAT.TITLE###
+                ###TX_ORG_CAL.DATETIME###
+                ###TX_ORG_CALTYPE.TITLE###
               </div>
 )
             }
@@ -25,9 +25,9 @@ plugin.tx_browser_pi1 {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record###TX_ORG_HEADQUARTERS.CRDATE###">
-                ###TX_ORG_HEADQUARTERS.DELETED###
-                ###TX_ORG_HEADQUARTERS.TITLE###
+              <div class="record###TX_ORG_CAL.CRDATE###">
+                ###TX_ORG_CAL.DELETED###
+                ###TX_ORG_CAL.TITLE###
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
               </div> <!-- /listview -->

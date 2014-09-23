@@ -11,7 +11,7 @@
       <label index="filter_phrase.cal.title">Events</label>
       <label index="filter_phrase.calendar">Calendar</label>
       <label index="filter_phrase.calendar.expired">Calendar (expired)</label>
-      <label index="filter_phrase.caltype.title">Categories</label>
+      <label index="filter_phrase.caltype.title">Subjects</label>
       <label index="filter_phrase.company">Companies</label>
       <label index="filter_phrase.department">Departments</label>
       <label index="filter_phrase.doccat">Categories</label>
@@ -99,7 +99,7 @@
       <label index="filter_phrase.cal.title">Veranstaltungen</label>
       <label index="filter_phrase.calendar">Kalender</label>
       <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
-      <label index="filter_phrase.caltype.title">Rubriken</label>
+      <label index="filter_phrase.caltype.title">Themen</label>
       <label index="filter_phrase.company">Firma</label>
       <label index="filter_phrase.department">Abteilungen</label>
       <label index="filter_phrase.doccat">Rubriken</label>

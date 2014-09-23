@@ -3,7 +3,7 @@ plugin.tx_browser_pi1 {
   XXXadvanced {
     sql {
       devider {
-        tx_org_headquarterscat {
+        tx_org_caltype {
           title {
             display = TEXT
             display {
@@ -26,14 +26,14 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      201 = +Org: Headquarters
+      201 = +Org: Calendar
       201 {
-        name    = +Org: Headquarters
+        name    = +Org: Calendar
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {
-      201 = +Org: Headquarters
+      201 = +Org: Calendar
     }
   }
 }

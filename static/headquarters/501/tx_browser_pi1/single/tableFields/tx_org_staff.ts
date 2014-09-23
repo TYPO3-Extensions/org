@@ -18,11 +18,6 @@ plugin.tx_browser_pi1 {
               // div box
             wrap = <ul class="vcard tx_org_staff">|</ul><!-- vcard -->
               // Marginal staff box: header, items
-            X10 = TEXT
-            X10 {
-              data = LLL:EXT:org/locallang_db.xml:filter_phrase.staff
-              wrap = <li class="header">|</li>
-            }
             10 = COA_INT
             10 {
                 // header

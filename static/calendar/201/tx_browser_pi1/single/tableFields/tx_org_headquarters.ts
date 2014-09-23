@@ -3,11 +3,11 @@ plugin.tx_browser_pi1 {
     single {
       201 {
           // 140706: empty statement: for proper comments only
-        tx_org_headquarters {
+        tx_org_cal {
         }
           // title: image, header, bodytext, vita, groups
-        tx_org_headquarters =
-        tx_org_headquarters {
+        tx_org_cal =
+        tx_org_cal {
             // image, header, bodytext, vita, groups
           title = COA
           title {
@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
             11 {
               if {
                 isTrue {
-                  field = tx_org_headquarters.image
+                  field = tx_org_cal.image
                 }
               }
               wrap = <div style="float:left;padding:0 1em 1em 0;">|</div>
@@ -31,13 +31,13 @@ plugin.tx_browser_pi1 {
               // header
             20 = TEXT
             20 {
-              field = tx_org_headquarters.title
+              field = tx_org_cal.title
               wrap = <h1>|</h1>
             }
               // bodytext
             30 = TEXT
             30 {
-              field = tx_org_headquarters.bodytext
+              field = tx_org_cal.bodytext
               stdWrap {
                 parseFunc < lib.parseFunc_RTE
               }
@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
               // vita
             40 = TEXT
             40 {
-              field = tx_org_headquarters.vita
+              field = tx_org_cal.vita
               stdWrap {
                 parseFunc < lib.parseFunc_RTE
               }
@@ -58,18 +58,18 @@ plugin.tx_browser_pi1 {
                   // add the value of a field to another field in cObj->data
                 cObjDataFieldWrapper =
                 cObjDataFieldWrapper {
-                  cols            = tx_org_headquarters.cols
-                  pi_flexform     = tx_org_headquarters.pi_flexform
-                  uid             = tx_org_headquarters.uid
+                  cols            = tx_org_cal.cols
+                  pi_flexform     = tx_org_cal.pi_flexform
+                  uid             = tx_org_cal.uid
                 }
               }
-              field = tx_org_headquarters.vita
+              field = tx_org_cal.vita
               stdWrap {
                   // With a prefix comment there won't be any output!
                 prefixComment >
               }
             }
-              // tx_org_headquarterscat.title
+              // tx_org_caltype.title
             90 = COA
             90 {
                 // Marginal news box: header, items
@@ -85,22 +85,22 @@ plugin.tx_browser_pi1 {
                   }
                   noTrimWrap = |<span class="header">|:</span> |
                 }
-                  // items: tx_org_headquarterscat.title croped and linked
+                  // items: tx_org_caltype.title croped and linked
                 20 = CONTENT
                 20 {
-                  table = tx_org_headquarterscat
+                  table = tx_org_caltype
                   select {
                     pidInList = {$plugin.org.sysfolder.headquarters}
-                    //selectFields = tx_org_headquarterscat.title
-                    join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
+                    //selectFields = tx_org_caltype.title
+                    join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_caltype.uid
                     where {
-                      field = tx_org_headquarters.uid
-                      noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_headquarterscat'|
+                      field = tx_org_cal.uid
+                      noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_caltype'|
                     }
-                    orderBy = tx_org_headquarterscat.title
+                    orderBy = tx_org_caltype.title
                     max = 3
                   }
-                    // tx_org_headquarterscat.title
+                    // tx_org_caltype.title
                   renderObj = TEXT
                   renderObj {
                     field = title
@@ -118,15 +118,15 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-                // if is true tx_org_headquarterscat.uid
+                // if is true tx_org_caltype.uid
               if =
               if {
                 isTrue {
-                  field = tx_org_headquarterscat.uid
+                  field = tx_org_caltype.uid
                 }
               }
                 // div box
-              wrap = <div class="show-for-large-up tx_org_headquarterscat">|</div>
+              wrap = <div class="show-for-large-up tx_org_caltype">|</div>
             }
           }
             // headquarters marginal box: header, content
@@ -134,7 +134,7 @@ plugin.tx_browser_pi1 {
           contact_email {
             if {
               isTrue {
-                field = tx_org_headquarters.uid
+                field = tx_org_cal.uid
               }
             }
               // vcard: header, name, contact_email, contact_phone, contact_fax, contact_skype, contact_url,
@@ -143,7 +143,7 @@ plugin.tx_browser_pi1 {
                 // column: image, header, title, steet, zip city, url
               10 = COA
               10 {
-                wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
+                wrap = <ul class="vcard tx_org_cal">|</ul><!-- vcard -->
                   // image, header
                 10 = COA
                 10 {
@@ -167,7 +167,7 @@ plugin.tx_browser_pi1 {
                   }
                   default = TEXT
                   default {
-                    field = tx_org_headquarters.title
+                    field = tx_org_cal.title
                     noTrimWrap = |<li class="fn"> | &raquo;</li>|
                     required = 1
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
@@ -191,12 +191,12 @@ plugin.tx_browser_pi1 {
                 30 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_email
+                      field = tx_org_cal.contact_email
                     }
                   }
                   typolink {
                     parameter {
-                      field = tx_org_headquarters.contact_email
+                      field = tx_org_cal.contact_email
                     }
                   }
                   wrap = <li class="contact_email">|</li>
@@ -206,7 +206,7 @@ plugin.tx_browser_pi1 {
                 40 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_phone
+                      field = tx_org_cal.contact_phone
                     }
                   }
                   wrap = <li class="contact_phone">|</li>
@@ -221,7 +221,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_phone
+                    field = tx_org_cal.contact_phone
                     required = 1
                   }
                 }
@@ -230,7 +230,7 @@ plugin.tx_browser_pi1 {
                 50 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_fax
+                      field = tx_org_cal.contact_fax
                     }
                   }
                   wrap = <li class="contact_fax">|</li>
@@ -245,7 +245,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_fax
+                    field = tx_org_cal.contact_fax
                     required = 1
                   }
                 }
@@ -254,7 +254,7 @@ plugin.tx_browser_pi1 {
                 60 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_skype
+                      field = tx_org_cal.contact_skype
                     }
                   }
                   wrap = <li class="contact_skype">|</li>
@@ -269,7 +269,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_skype
+                    field = tx_org_cal.contact_skype
                     required = 1
                   }
                 }
@@ -278,7 +278,7 @@ plugin.tx_browser_pi1 {
                 70 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_url
+                      field = tx_org_cal.contact_url
                     }
                   }
                   wrap = <li class="contact_url">|</li>
@@ -293,7 +293,7 @@ plugin.tx_browser_pi1 {
                     required = 1
                     typolink {
                       parameter{
-                        field = tx_org_headquarters.contact_url
+                        field = tx_org_cal.contact_url
                       }
                     }
                   }
