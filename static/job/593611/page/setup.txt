@@ -4,7 +4,4 @@ page {
         TYPO3-Programmierung: die-netzmacher.de
 )
   }
-  includeCSS {
-    orgJobFoundation = EXT:org/res/css/job/foundation.css
-  }
 }

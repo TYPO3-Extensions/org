@@ -214,10 +214,11 @@
 }
 
 .tx-browser-pi1 .category_menu_treeview {
-  float: left;
+/*  float: left;
   padding-right: 1em;
   position: relative;
-  width: 30em;
+  width: 100%;*/
+  margin-bottom: 1em;
 }
 
 .tx-browser-pi1 .category_menu_treeview a {
@@ -234,11 +235,11 @@
 #tx-browser-pi1-jstree-05
 {
   border: 1px solid #CCC;
-  border-radius: 6px 6px 6px 6px;
-  padding: 0.4em;
-  position: relative;
+  /*border-radius: 6px 6px 6px 6px;*/
+  padding: 0.4em 0;
+/*  position: relative;
   top: 1em;
-  z-index: 1;
+  z-index: 1;*/
 }
 .tx-browser-pi1 .sword {
    position: relative;
