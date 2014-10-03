@@ -3,10 +3,10 @@ plugin.tx_browser_pi1 {
     list {
       401 {
         tx_org_news {
-            // image, bookmarks; teaser_title, teaser_subtitle, teaser_short
+            // text, bookmarks; image
           title = COA
           title {
-              // teaser_title, teaser_subtitle, teaser_short
+              // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
             10 = COA
             10 {
                 // teaser_title
@@ -58,7 +58,7 @@ plugin.tx_browser_pi1 {
               }
               wrap = <div class="columns small-12 medium-12 large-9">|</div>
             }
-              // image, bookmarks
+              // image
             20 = COA
             20 {
                 // image

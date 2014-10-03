@@ -35,6 +35,7 @@
       <label index="filter_phrase.servicetargetgroup">Target group</label>
       <label index="filter_phrase.staff">People</label>
       <label index="filter_phrase.staffgroup">Field of activities</label>
+      <label index="filter_phrase.tx_org_downloads.datetime">Year of publication</label>
       <label index="palette.appearance">Appearance</label>
       <label index="palette.datetime_datetimeend">Datetime: Begin and end</label>
       <label index="palette.documentscaption">Description</label>
@@ -124,6 +125,7 @@
       <label index="filter_phrase.servicetargetgroup">Zielgruppe</label>
       <label index="filter_phrase.staff">Personen</label>
       <label index="filter_phrase.staffgroup">Tätigkeitsfelder</label>
+      <label index="filter_phrase.tx_org_downloads.datetime">Erscheinungsjahr</label>
       <label index="palette.appearance">Design</label>
       <label index="palette.datetime_datetimeend">Beginn und Ende</label>
       <label index="palette.documentscaption">Kurzbeschreibung</label>

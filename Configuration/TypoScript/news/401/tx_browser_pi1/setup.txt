@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
       401 = +Org: News
       401 {
         name    = +Org: News
-        showUid = newsUid
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {

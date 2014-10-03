@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
       301 = +Org: Downloads
       301 {
         name    = +Org: Downloads
-        showUid = newsUid
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {

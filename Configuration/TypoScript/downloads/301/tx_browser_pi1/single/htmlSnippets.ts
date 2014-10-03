@@ -12,7 +12,10 @@ plugin.tx_browser_pi1 {
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                 <div class="main columns small-12 medium-12 large-8">
                   ###RECORD_BROWSER###
-                  ###TX_ORG_NEWS.TITLE###
+                  <div class="socialbookmarks">
+                    ###SOCIALMEDIA_BOOKMARKS###
+                  </div>
+                  ###TX_ORG_DOWNLOADS.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
                   <p class="backbutton">

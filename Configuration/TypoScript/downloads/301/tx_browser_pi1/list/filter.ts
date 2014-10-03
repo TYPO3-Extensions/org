@@ -3,30 +3,87 @@ plugin.tx_browser_pi1 {
     list {
       301 {
         filter {
-          tx_org_newscat {
-              // #43641, dwildt, 1-, 1+
-            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title < plugin.tx_browser_pi1.displayList.master_templates.treeview
-            title {
-              count_hits = 0
-              treeview {
-                enabled {
-                  value = 1
-                }
-                html_id {
-                  value = {$plugin.tx_browser_pi1.jQuery.plugin.jstree.selector_01}
-                }
-              }
+          tx_org_downloads {
+            datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            datetime {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.newscat
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.tx_org_downloads.datetime
                   }
                 }
               }
-                // #43641, dwildt, 1-, 1+
-              //wrap = <span class="selectbox">|</span>
-              wrap = <div class="category_menu category_menu_treeview">|</div>
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
+                  }
+                }
+              }
+              order.field = uid
+              area < plugin.tx_browser_pi1.displayList.master_templates.areas.sample_period
+              area {
+                interval {
+                  case = year
+                  year {
+                    start_period {
+                      stdWrap {
+                        value = -10 year
+                      }
+                    }
+                    times_stdWrap {
+                      value = 10
+                    }
+                  }
+                }
+              }
+            }
+          }
+          tx_org_downloadscat {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+          tx_org_downloadsmedia {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
+                  }
+                }
+              }
             }
           }
         }

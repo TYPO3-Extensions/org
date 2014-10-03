@@ -18,16 +18,15 @@ plugin.tx_browser_pi1 {
     fdTmplMainSingleColRightLarge {
       value = 9
     }
-    my_singleviewbackbutton = COA
     my_singleviewbackbutton {
       30 {
-        value = All news
+        value = All Downloads
         lang {
-          de = Alle Nachrichten
-          en = All Downloads
+          de  = Alle Downloads
+          en  = All Downloads
         }
         typolink {
-          parameter = {$plugin.org.pages.news}
+          parameter = {$plugin.org.pages.downloads}
         }
       }
     }
