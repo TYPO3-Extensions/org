@@ -19,6 +19,7 @@ plugin.tx_browser_pi1 {
           tx_org_downloads.seo_keywords,
           tx_org_downloads.statistics_downloads_by_visits,
           tx_org_downloads.subtitle,
+          tx_org_downloads.teaser_short,
           tx_org_downloads.thumbnail,
           tx_org_downloads.thumbnail_width,
           tx_org_downloads.thumbnail_height,

@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="main columns small-12 medium-12 large-8">
+                <div class="main columns">
                   ###RECORD_BROWSER###
                   <div class="socialbookmarks">
                     ###SOCIALMEDIA_BOOKMARKS###
@@ -23,11 +23,6 @@ plugin.tx_browser_pi1 {
                   </p>
                   <!-- ###BACKBUTTON### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
-                </div>
-                <div class="margin columns show-for-large-up small-12 medium-12 large-4">
-                  ###TX_ORG_STAFF.UID###
-                  ###TX_ORG_NEWS.CRDATE###
-                  ###TX_ORG_NEWS.DELETED###
                 </div>
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                 <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->

@@ -35,8 +35,8 @@ switch( true )
         break;
     }
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/6.x/', 'Org [2++] Downloads Flip it! TYPO3 >= 6.x');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/caddy/',               'Org [2+] Downloads Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/caddy/wiFlag/',        'Org [2++] Downloads Caddy Flaggen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [2+] Downloads Caddy');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag/',     'Org [2++] Downloads Caddy Flaggen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/311/',                     'Org [2] Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/302/',                     'Org [2] Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/',                      'Org [2] Kalender');
@@ -73,8 +73,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/expired/',              'Org [2+] Calendar expired');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2] Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [2] Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/caddy/',               'Org [2+] Downloads Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/caddy/wiFlag',         'Org [2++] Downloads Caddy Flags');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [2+] Downloads Caddy');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag',      'Org [2++] Downloads Caddy Flags');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/',           'Org [2+] Downloads Flip it!');
     switch( true )
     {

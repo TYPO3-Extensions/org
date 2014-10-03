@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
             20 = TEXT
             20 {
               required  = 1
-              tx_org_downloads.title // field     = tx_org_downloads.teaser_title
+              field     = tx_org_downloads.title // tx_org_downloads.teaser_title
               wrap      = <h1>|</h1>
             }
               // thumbnail: plugin.tx_browser_pi1.tt_content.uploads.20
@@ -205,7 +205,27 @@ plugin.tx_browser_pi1 {
                 }
               }
               stdWrap {
-                if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
+                if {
+                  isTrue {
+                    stdWrap {
+                      cObject = COA
+                      cObject {
+                        10 = TEXT
+                        10 {
+                          field = tx_org_downloads.documents
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_downloads.documents_from_path
+                        }
+                        30 = TEXT
+                        30 {
+                          field = tx_org_downloads.thumbnail
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
               // datetime, bodytext
@@ -215,64 +235,81 @@ plugin.tx_browser_pi1 {
                 // datetime
               10 = TEXT
               10 {
-                value       = ###TX_ORG_DOWNLOADS.DATETIME###
+                field       = tx_org_downloads.datetime
                 strftime    = %d. %b. %Y
                 noTrimWrap  = |<span class="datetime">| &ndash;</span> |
               }
                 // bodytext
               20 = TEXT
               20 {
-                value = ###TX_ORG_DOWNLOADS.BODYTEXT###
+                field = tx_org_downloads.bodytext // tx_org_downloads.teaser_short
               }
                 // Download statistics (if tx_org_downloads.type isn't shipping)
               30 = COA
               30 {
                 if {
-                  // #48871
-                  //value   = ###TX_ORG_DOWNLOADS.TYPE###
-                  //field   = tx_org_downloads.type
-                  //equals  = shipping
-                  value         = shipping
+                  value = shipping
                   equals {
-                    field  = tx_org_downloads.type
+                    field = tx_org_downloads.type
                   }
-                  negate  = 1
+                  negate = 1
                 }
                   // <span class="statistics-downloads">...</span>
                 wrap = <br /><br /><span class="statistics-downloads">|</span>
-                  // If it is 1 download
-                10 = TEXT
+
+                  // label: amount of downloads
+                10 = COA
                 10 {
-                  if {
-                    value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
-                    equals = 1
+                    // if value = 1
+                  10 = TEXT
+                  10 {
+                    if {
+                      value  = 1
+                      equals {
+                        field = tx_org_downloads.statistics_downloads_by_visits
+                      }
+                    }
+                    field = tx_org_downloads.statistics_downloads_by_visits
+                    stdWrap {
+                      append = TEXT
+                      append {
+                        value = Download
+                        lang {
+                          de = Download
+                          en = Download
+                        }
+                        noTrimWrap = | ||
+                      }
+                    }
                   }
-                  value = download
-                  lang {
-                    de = Download
-                    en = download
+                    // if value != 1
+                  20 = TEXT
+                  20 {
+                    if {
+                      value  = 1
+                      equals {
+                        field = tx_org_downloads.statistics_downloads_by_visits
+                      }
+                      negate = 1
+                    }
+                    field = tx_org_downloads.statistics_downloads_by_visits
+                    stdWrap {
+                      append = TEXT
+                      append {
+                        value = Downloads
+                        lang {
+                          de = Downloads
+                          en = Downloads
+                        }
+                        noTrimWrap = | ||
+                      }
+                    }
                   }
-                  noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
-                }
-                  // If it is 0 downloads or more than 1 downloads
-                20 = TEXT
-                20 {
-                  if {
-                    value  = ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS###
-                    equals = 1
-                    negate = 1
-                  }
-                  value = downloads
-                  lang {
-                    de = Downloads
-                    en = downloads
-                  }
-                  noTrimWrap = | ###TX_ORG_DOWNLOADS.STATISTICS_DOWNLOADS_BY_VISITS### | |
+                  noTrimWrap = || |
                 }
               }
             }
-              // File link and order form
-            //50 < plugin.tx_browser_pi1.tt_content.uploads.20
+              // File link and order form: plugin.tx_browser_pi1.tt_content.uploads.20
             50 < plugin.tx_browser_pi1.tt_content.uploads.20
             50 {
               userFunc = tx_browser_cssstyledcontent->render_uploads

@@ -53,18 +53,51 @@ plugin.tx_browser_pi1 {
                     10 = COA
                     10 {
                         // label: amount of downloads
-                      10 = TEXT
+                      10 = COA
                       10 {
-                        field = tx_org_downloads.statistics_downloads_by_visits
-                        stdWrap {
-                          append = TEXT
-                          append {
-                            value = Downloads
-                            lang {
-                              de = Downloads
-                              en = Downloads
+                          // if value = 1
+                        10 = TEXT
+                        10 {
+                          if {
+                            value  = 1
+                            equals {
+                              field = tx_org_downloads.statistics_downloads_by_visits
                             }
-                            noTrimWrap = | ||
+                          }
+                          field = tx_org_downloads.statistics_downloads_by_visits
+                          stdWrap {
+                            append = TEXT
+                            append {
+                              value = Download
+                              lang {
+                                de = Download
+                                en = Download
+                              }
+                              noTrimWrap = | ||
+                            }
+                          }
+                        }
+                          // if value != 1
+                        20 = TEXT
+                        20 {
+                          if {
+                            value  = 1
+                            equals {
+                              field = tx_org_downloads.statistics_downloads_by_visits
+                            }
+                            negate = 1
+                          }
+                          field = tx_org_downloads.statistics_downloads_by_visits
+                          stdWrap {
+                            append = TEXT
+                            append {
+                              value = Downloads
+                              lang {
+                                de = Downloads
+                                en = Downloads
+                              }
+                              noTrimWrap = | ||
+                            }
                           }
                         }
                         noTrimWrap = || |
