@@ -18,5 +18,18 @@ plugin.tx_browser_pi1 {
     fdTmplMainListColRightLarge {
       value = 9
     }
+    my_singleviewbackbutton = COA
+    my_singleviewbackbutton {
+      30 {
+        value = All companies
+        lang {
+          de = Alle Firmen
+          en = All companies
+        }
+        typolink {
+          parameter = {$plugin.org.pages.headquarters}
+        }
+      }
+    }
   }
 }

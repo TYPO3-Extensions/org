@@ -46,11 +46,6 @@ plugin.tx_browser_pi1 {
         categoryOffsetY   = tx_org_jobcat.icon_offset_y
       }
     }
-    popup {
-      image {
-        width = 60m
-      }
-    }
   }
   navigation {
     showUid = jobUid
@@ -65,12 +60,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_job.teaser_title
-          single  = tx_org_job.title
+          field   = tx_org_job.teaser_title // tx_org_job.title
         }
       }
       image {
@@ -103,12 +93,9 @@ plugin.tx_browser_pi1 {
         }
       }
       text {
-        crop {
-          #list    =
-          #single  =
+        0 {
+          field   = tx_org_job.teaser_short // tx_org_job.description
         }
-        list    = tx_org_job.teaser_short
-        single  = tx_org_job.description
       }
       url {
         0 {

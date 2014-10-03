@@ -14,20 +14,10 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_staff.title
-          single  = tx_org_staff.title
+          field   = tx_org_staff.title // tx_org_staff.name_last
         }
         1 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_staff.mail_city
-          #single  =
+          field   = tx_org_staff.mail_city
         }
       }
       image {
@@ -59,12 +49,9 @@ plugin.tx_browser_pi1 {
         }
       }
       text {
-        crop {
-          list    = 300
-          #single  =
+        0 {
+          field   = tx_org_staff.bodytext // tx_org_staff.vita
         }
-        list    = tx_org_staff.bodytext // tx_org_staff.vita
-        single  = tx_org_staff.bodytext
       }
       url {
         0 {

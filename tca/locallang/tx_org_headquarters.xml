@@ -12,7 +12,6 @@
       <label index="tx_org_headquarters.div_contact">Contact Details</label>
       <label index="tx_org_headquarters.div_company">Company</label>
       <label index="tx_org_headquarters.div_control">Controlling</label>
-      <label index="tx_org_headquarters.div_department">Departments</label>
       <label index="tx_org_headquarters.div_embedded">Embedded Code</label>
       <label index="tx_org_headquarters.div_event">Events</label>
       <label index="tx_org_headquarters.div_headquarters">Headquarter</label>
@@ -35,7 +34,6 @@
       <label index="tx_org_headquarters.description">Description</label>
       <label index="tx_org_headquarters.email">E-mail</label>
       <label index="tx_org_headquarters.fax">Fax</label>
-      <label index="tx_org_headquarters.fe_users">People</label>
       <label index="tx_org_headquarters.geoupdateprompt">Geoupdate prompt</label>
       <label index="tx_org_headquarters.geoupdateforbidden">Latitude and longitude should not updated automatically</label>
       <label index="tx_org_headquarters.mail_address">Address</label>
@@ -89,7 +87,6 @@
       <label index="tx_org_headquarters.div_company">Firma</label>
       <label index="tx_org_headquarters.div_contact">Kontaktdaten</label>
       <label index="tx_org_headquarters.div_control">Steuerung</label>
-      <label index="tx_org_headquarters.div_department">Abteilungen</label>
       <label index="tx_org_headquarters.div_embedded">Eingebundener Code</label>
       <label index="tx_org_headquarters.div_event">Veranstaltungen</label>
       <label index="tx_org_headquarters.div_headquarters">Firma</label>

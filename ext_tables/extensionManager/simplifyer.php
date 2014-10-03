@@ -10,38 +10,32 @@ if (!defined('TYPO3_MODE'))
 
 $confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
-// Don't exclude fe_user fields by default
-$bool_excludeFeuser = false;
-if (strtolower(substr($confArr['simplifyer.']['adapt_fe_user'], 0, strlen('no'))) == 'no')
-{
-  $bool_excludeFeuser = true;
-}
-// Don't exclude fe_user fields by default
 // Simplify backend forms
 $bool_time_control = true;
 if (strtolower(substr($confArr['simplifyer.']['time_control'], 0, strlen('no'))) == 'no')
 {
   $bool_time_control = false;
 }
-// Simplify backend forms
-// Relation fe_users to company
-switch ($confArr['simplifyer.']['fe_user_company'])
-{
-  case('Big') :
-    $bool_exclude_fe_user_company = true;
-    $bool_exclude_fe_user_tx_org_company = true;
-    $bool_exclude_tx_org_company = false;
-    $bool_exclude_tx_org_company_fe_users = true;
-    break;
-  case('Small (recommended)') :
-  default :
-    $bool_exclude_fe_user_company = true;
-    $bool_exclude_fe_user_tx_org_company = false;
-    $bool_exclude_tx_org_company = false;
-    $bool_exclude_tx_org_company_fe_users = false;
-  default:
-}
-// Relation fe_users to company
+// #62019, 141003, dwildt, -
+//// Simplify backend forms
+//// Relation fe_users to company
+//switch ($confArr['simplifyer.']['fe_user_company'])
+//{
+//  case('Big') :
+//    $bool_exclude_fe_user_company = true;
+//    $bool_exclude_fe_user_tx_org_company = true;
+//    $bool_exclude_tx_org_company = false;
+//    $bool_exclude_tx_org_company_fe_users = true;
+//    break;
+//  case('Small (recommended)') :
+//  default :
+//    $bool_exclude_fe_user_company = true;
+//    $bool_exclude_fe_user_tx_org_company = false;
+//    $bool_exclude_tx_org_company = false;
+//    $bool_exclude_tx_org_company_fe_users = false;
+//  default:
+//}
+//// Relation fe_users to company
 // Store record configuration
 switch ($confArr['simplifyer.']['store_records'])
 {

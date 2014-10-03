@@ -489,7 +489,7 @@ $TCA['tx_org_cal'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,print,printcaption,printseo,'.
                               'hidden,starttime,endtime,pages,fe_group,'.
-                              'keywords,description'
+                              'seo_keywords,seo_description'
   ),
   'feInterface' => $TCA['tx_org_cal']['feInterface'],
   'columns' => array (
@@ -1246,7 +1246,7 @@ $TCA['tx_org_cal'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         keywords,description'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_seo,         seo_keywords,seo_description'.
       ''),
     'calpage' => array ('showitem' =>
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_cal.div_calendar,    type,title,subtitle,datetime,tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'.
@@ -1512,7 +1512,7 @@ $TCA['tx_org_department'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,'.
                               'hidden,pages,fe_group,'.
-                              'keywords,description',
+                              'seo_keywords,seo_description',
   ),
   'feInterface' => $TCA['tx_org_department']['feInterface'],
   'columns' => array (
@@ -2210,7 +2210,7 @@ $TCA['tx_org_downloads'] = array (
                               'pages,' .
                               'fe_user,' .
                               'hidden,pages,starttime,endtime,fe_group,' .
-                              'keywords,description,' .
+                              'seo_keywords,seo_description,' .
                               'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,' ,
   ),
   'feInterface' => $TCA['tx_org_downloads']['feInterface'],
@@ -3358,7 +3358,7 @@ $TCA['tx_org_event'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,print,printcaption,printseo,'.
                               'hidden,pages,fe_group,'.
-                              'keywords,description'
+                              'seo_keywords,seo_description'
   ),
   'feInterface' => $TCA['tx_org_event']['feInterface'],
   'columns' => array (
@@ -3852,7 +3852,7 @@ $TCA['tx_org_event'] = array (
         '--palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,' .
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_embedded,  embeddedcode,print,printcaption,printseo,'.
       '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_control,   hidden,pages,fe_group,'.
-      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_seo,       keywords,description'.
+      '--div--;LLL:EXT:org/locallang_db.xml:tx_org_event.div_seo,       seo_keywords,seo_description'.
       ''),
   ),
   'palettes' => array (
@@ -3918,7 +3918,7 @@ $TCA['tx_org_headquarters'] = array (
                               'embeddedcode,'.
                               'tx_org_department,'.
                               'hidden,pages,fe_group,'.
-                              'keywords,description',
+                              'seo_keywords,seo_description',
   ),
   'feInterface' => $TCA['tx_org_headquarters']['feInterface'],
   'columns' => array (
@@ -4625,7 +4625,7 @@ $TCA['tx_org_location'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,'.
                               'hidden,pages,fe_group,'.
-                              'keywords,description',
+                              'seo_keywords,seo_description',
   ),
   'feInterface' => $TCA['tx_org_location']['feInterface'],
   'columns' => array (
@@ -5197,7 +5197,7 @@ $TCA['tx_org_news'] = array (
                               'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
                               'embeddedcode,'.
                               'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'.
-                              'keywords,description,'
+                              'seo_keywords,seo_description,'
       ,
   ),
   'feInterface' => $TCA['tx_org_news']['feInterface'],

@@ -22,6 +22,7 @@
       <label index="filter_phrase.jobcat">Categories</label>
       <label index="filter_phrase.jobsector">Sectors</label>
       <label index="filter_phrase.jobworkinghours">Working Hours</label>
+      <label index="filter_phrase.location">Locations</label>
       <label index="filter_phrase.newscat">Subjects</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
@@ -55,7 +56,6 @@
       <label index="page">Internal page</label>
       <label index="phrase_calLinkToSingle"><![CDATA[Details and tickets &raquo;]]></label>
       <label index="tca_phrase.color">Colour</label>
-      <label index="tca_phrase.description">Description for Search Engine Optimisation</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Captions (one line per file)</label>
@@ -73,11 +73,12 @@
       <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
       <label index="tca_phrase.image_settings.cat">Settings</label>
-      <label index="tca_phrase.keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.location">Location</label>
       <label index="tca_phrase.news">News</label>
       <label index="tca_phrase.pages">Display on pages with configured plugins:</label>
       <label index="tca_phrase.print">Images (high quality)</label>
+      <label index="tca_phrase.seo_description">Description for Search Engine Optimisation</label>
+      <label index="tca_phrase.seo_keywords">Keywords for Search Engine Optimisation (CSV: comma separated values)</label>
       <label index="tca_phrase.statistics_downloads">Downloads</label>
       <label index="tca_phrase.statistics_downloads_by_visits">Downloads (depending on visits)</label>
       <label index="tca_phrase.statistics_hits">Hits</label>
@@ -110,6 +111,7 @@
       <label index="filter_phrase.jobcat">Kategorie</label>
       <label index="filter_phrase.jobsector">Branche</label>
       <label index="filter_phrase.jobworkinghours">Arbeitszeit</label>
+      <label index="filter_phrase.location">Orte</label>
       <label index="filter_phrase.newscat">Themen</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
@@ -142,7 +144,6 @@
       <label index="type_record">die Detailansicht (Standard)</label>
       <label index="phrase_calLinkToSingle"><![CDATA[Details und Tickets &raquo;]]></label>
       <label index="tca_phrase.color">Farbe</label>
-      <label index="tca_phrase.description">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label>
       <label index="tca_phrase.documents">Dokumente</label>
       <label index="tca_phrase.documents_from_path">Dateien aus Verzeichnis (z.B. fileadmin/user_upload/)</label>
       <label index="tca_phrase.documentscaption">Beschriftung (eine Zeile pro Datei)</label>
@@ -160,11 +161,12 @@
       <label index="tca_phrase.imageseo_lang_ol.oneline">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
       <label index="tca_phrase.image_settings.cat">Einstellungen</label>
-      <label index="tca_phrase.keywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>
       <label index="tca_phrase.pages">Für entsprechende Plugins: zeige auf Seiten</label>
       <label index="tca_phrase.print">Bilder (in Druckqualität)</label>
+      <label index="tca_phrase.seo_description">Beschreibung für Suchmaschinen (bis etwa 200 Zeichen)</label>
+      <label index="tca_phrase.seo_keywords">Stichworte für Suchmaschinen (drei bis fünf, mit Komma trennen)</label>
       <label index="tca_phrase.statistics_downloads">Downloads</label>
       <label index="tca_phrase.statistics_downloads_by_visits">Downloads (in Abhängigkeit von Besuchen)</label>
       <label index="tca_phrase.statistics_hits">Aufrufe</label>

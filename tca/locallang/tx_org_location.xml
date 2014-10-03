@@ -53,7 +53,6 @@
       <label index="tx_org_location.div_calendar">Kalender</label>
       <label index="tx_org_location.div_contact">Kontaktdaten</label>
       <label index="tx_org_location.div_control">Steuerung</label>
-      <label index="tx_org_location.div_department">Abteilungen</label>
       <label index="tx_org_location.div_embedded">Eingebundener Code</label>
       <label index="tx_org_location.div_headquarters">Firma</label>
       <label index="tx_org_location.div_location">Veranstaltungsort</label>

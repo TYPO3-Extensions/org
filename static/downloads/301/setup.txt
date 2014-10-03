@@ -101,8 +101,8 @@ plugin.tx_browser_pi1 {
 
           tx_org_downloads.statistics_downloads_by_visits,
 
-          tx_org_downloads.keywords,
-          tx_org_downloads.description
+          tx_org_downloads.seo_description,
+          tx_org_downloads.seo_keywords
         )
         orderBy (
           tx_org_downloads.title
@@ -710,8 +710,8 @@ plugin.tx_browser_pi1 {
 
           tx_org_downloads.statistics_downloads_by_visits,
 
-          tx_org_downloads.keywords,
-          tx_org_downloads.description,
+          tx_org_downloads.seo_description,
+          tx_org_downloads.seo_keywords,
 
           tx_org_downloadscat.title,
           tx_org_downloadsmedia.title

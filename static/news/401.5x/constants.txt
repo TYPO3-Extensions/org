@@ -21,18 +21,18 @@ plugin.tx_browser_pi1 {
       header {
         0 {
           crop {
-            #list    =
+            #content =
             #single  =
           }
-          list    = tx_org_service.teaser_title
+          field   = tx_org_service.teaser_title
           single  = tx_org_service.title
         }
         1 {
           crop {
-            #list    =
+            #content =
             #single  =
           }
-          list    = tx_org_service.mail_city
+          field   = tx_org_service.mail_city
           #single  =
         }
       }
@@ -48,12 +48,14 @@ plugin.tx_browser_pi1 {
         }
       }
       text {
-        crop {
-          #list    =
-          #single  =
+        0 {
+          crop {
+            #content =
+            #single  =
+          }
+          field   = tx_org_service.teaser_short
+          single  = tx_org_service.description
         }
-        list    = tx_org_service.teaser_short
-        single  = tx_org_service.description
       }
       url {
         0 {
@@ -99,7 +101,7 @@ plugin.tx_seodynamictag {
     field {
       //author        =
       description   = description
-      keywords      = keywords
+      seo_keywords      = seo_keywords
       title         = title
       short         = subtitle
     }
@@ -109,7 +111,7 @@ plugin.tx_seodynamictag {
     description = Description is empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Description]
   }
 
-  keywords {
+  seo_keywords {
     default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser News. See tab [Search Engine] field [Keywords]
     moveToKeywords  = 0
   }

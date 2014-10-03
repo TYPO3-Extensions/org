@@ -10,8 +10,6 @@ $path = PATH_typo3conf . 'ext/org/tsConfig/page/tx_linkhandler/de/';
 require_once( $path . 'tx_org_service.php' );
   // Dokumente
 require_once( $path . 'tx_org_downloads.php' );
-  // FE users
-require_once( $path . 'fe_users.php' );
   // Firmen
 require_once( $path . 'tx_org_headquarters.php' );
   // Kalender

@@ -39,7 +39,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.bodytext,
           tx_org_news.image,
           tx_org_news.imageseo,
-          tx_org_news.keywords,
+          tx_org_news.seo_keywords,
           tx_org_news.description
         )
         andWhere (
@@ -353,7 +353,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.image_effects,
           tx_org_news.image_compression,
 
-          tx_org_news.keywords,
+          tx_org_news.seo_keywords,
           tx_org_news.description
         )
         andWhere (
@@ -643,18 +643,18 @@ plugin.tx_browser_pi1 {
     default {
       list_mode_401             = News
       list_mode_401_titleTag    = TYPO3 Organiser - News
-      list_mode_401_keywords    = TYPO3, Organiser, News
+      list_mode_401_seo_keywords,seo_description    = TYPO3, Organiser, News
       list_mode_401_summary     = TYPO3 Organiser: News
       single_mode_401_titleTag  = TYPO3 Organiser - ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_seo_keywords,seo_description  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
       single_mode_401_summary   = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
     }
     de {
       list_mode_401_titleTag    = Nachrichten
-      list_mode_401_keywords    = TYPO3, Organiser,  Nachrichten
+      list_mode_401_seo_keywords,seo_description    = TYPO3, Organiser,  Nachrichten
       list_mode_401_summary     = TYPO3 Organiser: Nachrichten
       single_mode_401_titleTag  = TYPO3 Organiser: ###TX_ORG_NEWS.TITLE###
-      single_mode_401_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_401_seo_keywords,seo_description  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
       single_mode_401_summary   = TYPO3 Organiser - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
     }
   }

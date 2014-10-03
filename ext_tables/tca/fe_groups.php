@@ -5,10 +5,10 @@ if (!defined('TYPO3_MODE'))
   die('Access denied.');
 }
 
-if (!$extManagerDowngradeEnable_fe_users)
-{
-  return;
-}
+//if (!$extManagerDowngradeEnable_fe_users)
+//{
+//  return;
+//}
 
 t3lib_div::loadTCA('fe_groups');
 $TCA['fe_groups']['ctrl']['title'] = 'LLL:EXT:org/tca/locallang/fe_groups.xml:fe_groups';

@@ -34,7 +34,7 @@ $TCA['tx_org_downloads'] = array(
     . 'pages,'
     . 'fe_user,'
     . 'hidden,pages,starttime,endtime,fe_group,'
-    . 'keywords,description,'
+    . 'seo_keywords,seo_description,'
     . 'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,'
   ,
   ),
@@ -125,7 +125,15 @@ $TCA['tx_org_downloads'] = array(
         'size' => 10,
         'minitems' => 0,
         'maxitems' => 99,
-        'MM' => 'tx_org_downloads_mm_tx_org_downloadscat',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadscat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadscat'
+        ),
         'foreign_table' => 'tx_org_downloadscat',
         'foreign_table_where' => 'AND tx_org_downloadscat.' . $str_store_record_conf . ' AND tx_org_downloadscat.deleted = 0 AND tx_org_downloadscat.hidden = 0 ORDER BY tx_org_downloadscat.title',
         'wizards' => array(
@@ -172,7 +180,15 @@ $TCA['tx_org_downloads'] = array(
         'size' => 10,
         'minitems' => 0,
         'maxitems' => 99,
-        'MM' => 'tx_org_downloads_mm_tx_org_downloadsmedia',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadsmedia'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadsmedia'
+        ),
         'foreign_table' => 'tx_org_downloadsmedia',
         'foreign_table_where' => 'AND tx_org_downloadsmedia.' . $str_store_record_conf . ' AND tx_org_downloadsmedia.deleted = 0 AND tx_org_downloadsmedia.hidden = 0 ORDER BY tx_org_downloadsmedia.title',
         'wizards' => array(
@@ -569,15 +585,15 @@ $TCA['tx_org_downloads'] = array(
     'starttime' => $conf_starttime,
     'endtime' => $conf_endtime,
     'fe_group' => $conf_fegroup,
-    'keywords' => array(
+    'seo_keywords,seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
-    'description' => array(
+    'seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,
     ),
@@ -635,7 +651,7 @@ $TCA['tx_org_downloads'] = array(
 //      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_staff,      tx_org_staff,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
@@ -658,7 +674,7 @@ $TCA['tx_org_downloads'] = array(
 //      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_staff,      tx_org_staff,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
       ''),
@@ -681,7 +697,7 @@ $TCA['tx_org_downloads'] = array(
 //      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_feuser,      fe_user,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_staff,      tx_org_staff,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_control,     sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,fe_group,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         keywords;;;;7-7-7, description,' .
+      '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics_shipping;statistics_shipping,' .
       ''),

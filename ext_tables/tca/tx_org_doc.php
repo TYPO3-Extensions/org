@@ -59,9 +59,8 @@ $TCA['tx_org_downloads'] = array(
     'tx_flipit_layout,tx_flipit_quality,tx_flipit_pagelist,tx_flipit_updateswfxml,tx_flipit_swf_files,tx_flipit_xml_file,tx_flipit_fancybox,tx_flipit_evaluate,' .
     'teaser_title,teaser_subtitle,teaser_short' .
     'pages,' .
-    'fe_user,' .
     'hidden,pages,starttime,endtime,fe_group,' .
-    'keywords,description,' .
+    'seo_keywords,seo_description,' .
     'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,',
   ),
 );

@@ -34,7 +34,7 @@ $TCA[ 'tx_org_cal' ] = array(
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,print,printcaption,printseo,' .
     'hidden,starttime,endtime,pages,fe_group,' .
-    'keywords,description'
+    'seo_keywords,seo_description'
   ),
   'feInterface' => $TCA[ 'tx_org_cal' ][ 'feInterface' ],
   'columns' => array(
@@ -435,7 +435,7 @@ $TCA[ 'tx_org_cal' ] = array(
       ),
     ),
     'tx_org_caltype' => array(
-      'exclude' => $bool_exclude_tx_org_company,
+      'exclude' => 0,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.tx_org_caltype',
       'config' => array(
@@ -743,15 +743,15 @@ $TCA[ 'tx_org_cal' ] = array(
     'endtime' => $conf_endtime,
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
-    'keywords' => array(
+    'seo_keywords,seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
-    'description' => array(
+    'seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,
     ),
@@ -766,7 +766,6 @@ $TCA[ 'tx_org_cal' ] = array(
       '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_teaser,      teaser_title,teaser_subtitle,teaser_short,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_marginal,    marginal_title,marginal_subtitle,marginal_short,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_event,       tx_org_location,tx_org_calentrance,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_company,     tx_org_caltype,' .
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
       '--palette--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:palette.image_accessibility;image_accessibility,' .
@@ -778,7 +777,7 @@ $TCA[ 'tx_org_cal' ] = array(
       '--palette--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:palette.appearance;documents_appearance,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
       '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
-      '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_seo,         keywords,description' .
+      '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_seo,         seo_keywords,seo_description' .
       '' ),
     'page' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_cal.xml:tx_org_cal.div_calendar,'

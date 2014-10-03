@@ -11,7 +11,6 @@ if (!defined('TYPO3_MODE'))
 //
 // INDEX
 // General Configuration
-// Wizard fe_users
 // Other wizards and config drafts
 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,59 +40,60 @@ $size_news = 30;
 $listStyleWidth = 'width:500px;';
 
 // General Configuration
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-  // Wizard fe_users
-// Wizard for fe_users
-$arr_config_feuser = array(
-  'type' => 'select',
-  'size' => $size_feuser,
-  'suppress_icons' => 1,
-  'minitems' => 0,
-  'maxitems' => 999,
-  'foreign_table' => 'fe_users',
-  'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
-  'wizards' => array(
-    '_PADDING' => 2,
-    '_VERTICAL' => 0,
-    'add' => array(
-      'type' => 'script',
-      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.add',
-      'icon' => 'add.gif',
-      'params' => array(
-        'table' => 'fe_users',
-        'pid' => $str_marker_pid,
-        'setValue' => 'prepend'
-      ),
-      'script' => 'wizard_add.php',
-    ),
-    'list' => array(
-      'type' => 'script',
-      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.list',
-      'icon' => 'list.gif',
-      'params' => array(
-        'table' => 'fe_users',
-        'pid' => $str_marker_pid,
-      ),
-      'script' => 'wizard_list.php',
-    ),
-    'edit' => array(
-      'type' => 'popup',
-      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.edit',
-      'script' => 'wizard_edit.php',
-      'popup_onlyOpenIfSelected' => 1,
-      'icon' => 'edit2.gif',
-      'JSopenParams' => $JSopenParams,
-    ),
-  ),
-);
-if (!$bool_full_wizardSupport_allTables)
-{
-  unset($arr_config_feuser['wizards']['add']);
-  unset($arr_config_feuser['wizards']['list']);
-}
-// Wizard for fe_users
-// Wizard fe_users
+// #62019, 141003, dwildt, -
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////
+//  // Wizard fe_users
+//// Wizard for fe_users
+//$arr_config_feuser = array(
+//  'type' => 'select',
+//  'size' => $size_feuser,
+//  'suppress_icons' => 1,
+//  'minitems' => 0,
+//  'maxitems' => 999,
+//  'foreign_table' => 'fe_users',
+//  'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
+//  'wizards' => array(
+//    '_PADDING' => 2,
+//    '_VERTICAL' => 0,
+//    'add' => array(
+//      'type' => 'script',
+//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.add',
+//      'icon' => 'add.gif',
+//      'params' => array(
+//        'table' => 'fe_users',
+//        'pid' => $str_marker_pid,
+//        'setValue' => 'prepend'
+//      ),
+//      'script' => 'wizard_add.php',
+//    ),
+//    'list' => array(
+//      'type' => 'script',
+//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.list',
+//      'icon' => 'list.gif',
+//      'params' => array(
+//        'table' => 'fe_users',
+//        'pid' => $str_marker_pid,
+//      ),
+//      'script' => 'wizard_list.php',
+//    ),
+//    'edit' => array(
+//      'type' => 'popup',
+//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.edit',
+//      'script' => 'wizard_edit.php',
+//      'popup_onlyOpenIfSelected' => 1,
+//      'icon' => 'edit2.gif',
+//      'JSopenParams' => $JSopenParams,
+//    ),
+//  ),
+//);
+//if (!$bool_full_wizardSupport_allTables)
+//{
+//  unset($arr_config_feuser['wizards']['add']);
+//  unset($arr_config_feuser['wizards']['list']);
+//}
+//// Wizard for fe_users
+//// Wizard fe_users
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
   // Other wizards and config drafts

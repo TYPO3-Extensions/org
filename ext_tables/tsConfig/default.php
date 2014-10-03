@@ -14,8 +14,6 @@ require_once( $path . 'tx_org_headquarters.php' );
 require_once( $path . 'tx_org_downloads.php' );
   // Events
 require_once( $path . 'tx_org_event.php' );
-  // FE users
-require_once( $path . 'fe_users.php' );
   // Jobs
 require_once( $path . 'tx_org_job.php' );
   // Locations

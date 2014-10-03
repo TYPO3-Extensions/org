@@ -41,7 +41,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'embeddedcode,'
     . 'hidden,pages,fe_group,'
-    . 'keywords,description'
+    . 'seo_keywords,seo_description'
   ,
   ),
   'feInterface' => $TCA[ 'tx_org_headquarters' ][ 'feInterface' ],
@@ -785,16 +785,16 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'hidden' => $conf_hidden,
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
-    'keywords' => array(
+    'seo_keywords,seo_description' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
       'config' => $conf_input_80_trim,
     ),
-    'description' => array(
+    'seo_description' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'config' => $conf_text_50_10,
     ),
   ),
@@ -846,7 +846,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
       . '  hidden,pages,fe_group,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_seo,'
-      . '  keywords, description,'
+      . '  seo_keywords,seo_description, description,'
     ),
     'page' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '

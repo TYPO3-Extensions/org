@@ -62,7 +62,7 @@ $TCA[ 'tx_org_cal' ] = array(
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,print,printcaption,printseo,' .
     'hidden,starttime,endtime,pages,fe_group,' .
-    'keywords,description',
+    'seo_keywords,seo_description',
   ),
 );
 // cal /////////////////////////////////////////////////////////////////////

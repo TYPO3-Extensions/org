@@ -5,8 +5,6 @@ basic.LLstatic = English
   # cat=basic//999;                type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 basic.externalLinks=0
 
-  # cat=downgrade//100;            type=boolean; label= Enable table fe_users:Use the table fe_users instead of the table tx_org_staff. Needed for Organiser version 4. The use of fe_users is deprecated and won't supported from Organiser version 7!
-downgrade.enable.fe_users = 0
   # cat=downgrade//200;            type=boolean; label= Enable field embedded code:Enable the field embedded code. Needed for Organiser version 4. The use of the field embedded code is deprecated and won't supported from Organiser version 7!
 downgrade.enable.embeddedcode = 0
   # cat=downgrade//201;            type=boolean; label= Enable field images for printing:Enable the field images for printing. Needed for Organiser version 4. The use of all fields in context of images for printing is deprecated and won't supported from Organiser version 7!
@@ -56,10 +54,6 @@ linkhandler.tx_org_downloads.onlyPids =
 linkhandler.tx_org_event = Yes (recommended)
   # cat=linkhandler//305;          type=string; label=Event pids: CSV list of page id with the event folders. The pids are recommended for usability only. I.e: 1335, 1245
 linkhandler.tx_org_event.onlyPids =
-  # cat=linkhandler//306;          type=options[Yes (recommended),No]; label=+FE users: Add the tab [Org: fe_users] to the linkhandler.
-linkhandler.fe_users = Yes (recommended)
-  # cat=linkhandler//307;          type=string; label=FE users pids: CSV list of page id with the fe_users folders. The pids are recommended for usability only. I.e: 1335, 1245
-linkhandler.fe_users.onlyPids =
   # cat=linkhandler//308;          type=options[Yes (recommended),No]; label=+Headquarters: Add the tab [Org: Headquarters] to the linkhandler.
 linkhandler.tx_org_headquarters = Yes (recommended)
   # cat=linkhandler//309;          type=string; label=Headquarters pids: CSV list of page id with the headquarters folders. The pids are recommended for usability only. I.e: 1335, 1245
@@ -97,10 +91,6 @@ simplifyer.fegroup_control = Yes: website dosn't contain private content
 simplifyer.startstop_control = Yes
   # cat=simplifyer//240;           type=options[Yes,No]; label=Top News as checkbox: Simplify backend forms! 'Yes' reduces the field `Top news` (table `News`) to a checkbox. 'No' means the field `Top news` is a select box with priorities. This has an effect for both editors and administrators.
 simplifyer.topnews_sorting = Yes
-  # cat=simplifyer//250;           type=options[Yes (recommended),No: Administrator configure exclude fields]; label=Don't exclude fe_users fields: The organiser needs some fe_users fields by default. Organiser makes this fields visible by disabling the 'exclude' property. This has an effect for editors only. For administrators all fields are visible anyway.
-simplifyer.adapt_fe_user = Yes (recommended)
-  # cat=simplifyer//260;           type=options[Small (recommended),Big]; label=Company size: Small: fe_users will linked with the company directly. You have an easy relation from user to company. The table department won't displayed. Big: fe_users will linked with a department of a headquarter. You have a complex relation from a user to a department to a headquarter.
-simplifyer.fe_user_company = Small (recommended)
   # cat=simplifyer//930;           type=options[Everywhere (recommended),Current folder,Folder with a storage pid,Folder group,Folder multigroup]; label=Visisbility of organiser records: [Everywhere] All organiser records are visible in all folders (recommended). [Current folder] Organiser records are visible in the current folder only. [Folder with a storage pid] Organiser records are visible in the defined folder only. [Folder group] Organiser records are visible within a defined group of folders. [Folder multigroup] Organiser records are visible within defined multigroups of folders only. FAQ: See section "FAQ: Store record configuration" in the manual.
 simplifyer.store_records = Easy 1: all in the same directory
   # cat=simplifyer//931;           type=options[Store it everywhere (TYPO3 default),Managed by general record storage page (not recommended),Managed by page TSconfig (ID),Managed by page TSconfig (list)]; label=Store fe_groups configuration: [Store it everywhere (TYPO3 default)]: You will see fe_groups of the whole website in a flexform fe_groups field. This is the TYPO3 default. [Managed by general record storage page (not recommended)] If you like to see only fe_groups of a special folder, you can configure it in the page properties with the field "general record storage page". [Managed by page TSconfig (ID)] If you like to see only fe_groups of a special folder, you can configure it in the page TSconfig with the property PAGE_TSCONFIG_ID. [Managed by page TSconfig (list)] If you like to see only fe_groups of a special folder, you can configure it in the page TSconfig with the property PAGE_TSCONFIG_IDLIST. See section "FAQ: Store fe_groups configuration" in the manual.

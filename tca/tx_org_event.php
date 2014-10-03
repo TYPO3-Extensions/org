@@ -23,7 +23,7 @@ $TCA['tx_org_event'] = array(
     . 'tx_org_staff,'
     . 'embeddedcode,print,printcaption,printseo,'
     . 'hidden,pages,fe_group,'
-    . 'keywords,description'
+    . 'seo_keywords,seo_description'
   ,
   ),
   'feInterface' => $TCA['tx_org_event']['feInterface'],
@@ -602,14 +602,14 @@ $TCA['tx_org_event'] = array(
     'hidden' => $conf_hidden,
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
-    'keywords' => array(
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+    'seo_keywords,seo_description' => array(
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
       'l10n_mode' => 'prefixLangTitle',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_80_trim,
     ),
-    'description' => array(
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+    'seo_description' => array(
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'exclude' => $bool_exclude_default,
       'config' => $conf_text_50_10,
@@ -643,7 +643,7 @@ $TCA['tx_org_event'] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_event.xml:tx_org_event.div_control,   '
       . '  hidden,pages,fe_group,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_event.xml:tx_org_event.div_seo,       '
-      . '  keywords,description'
+      . '  seo_keywords,seo_description'
     ,
     ),
   ),

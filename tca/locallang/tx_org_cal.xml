@@ -11,8 +11,6 @@
       <label index="tx_org_cal.div_page">Internal Link</label>
       <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
-      <label index="tx_org_cal.div_company">Company</label>
-      <label index="tx_org_cal.div_department">Department</label>
       <label index="tx_org_cal.div_embedded">Embedded Code</label>
       <label index="tx_org_cal.div_event">Location, admission</label>
       <label index="tx_org_cal.div_marginal">Marginal</label>
@@ -39,7 +37,6 @@
       <label index="tx_org_cal.teaser_short">Short (in list views)</label>
       <label index="tx_org_cal.tx_org_location">Location</label>
       <label index="tx_org_cal.tx_org_calentrance">Entrance Fee</label>
-      <label index="tx_org_cal.tx_org_headquarters">Company</label>
       <label index="tx_org_cal.documents">Documents</label>
       <label index="tx_org_calentrance">Calendar: Entrance Fees</label>
       <label index="tx_org_calentrance.div_calentrance">Entrance Fee</label>
@@ -77,8 +74,6 @@
       <label index="tx_org_cal.div_marginal">Randspalte</label>
       <label index="tx_org_cal.div_teaser">Kurztitel</label>
       <label index="tx_org_cal.div_event">Ort, Eintritt</label>
-      <label index="tx_org_cal.div_company">Firma</label>
-      <label index="tx_org_cal.div_department">Abteilungen</label>
       <label index="tx_org_cal.div_media">Medien</label>
       <label index="tx_org_cal.div_control">Steuerung</label>
       <label index="tx_org_cal.div_seo">Suchmaschinen</label>
@@ -102,7 +97,6 @@
       <label index="tx_org_cal.teaser_short">Kurztext (in Listen-Ansichten)</label>
       <label index="tx_org_cal.tx_org_location">Veranstaltungsort</label>
       <label index="tx_org_cal.tx_org_calentrance">Eintritt</label>
-      <label index="tx_org_cal.tx_org_headquarters">Company</label>
       <label index="tx_org_cal.documents">Dokumente</label>
       <label index="tx_org_calentrance">Kalender: Eintritt</label>
       <label index="tx_org_calentrance.div_calentrance">Eintritt</label>

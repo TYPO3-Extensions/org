@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
                 required = 1
               }
                 // teaser_short
-              30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text
+              30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               30 {
                 default {
                   10 {

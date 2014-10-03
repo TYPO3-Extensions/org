@@ -9,11 +9,10 @@ if (!defined ('TYPO3_MODE'))
 $includeIt = $confArr['linkhandler.']['tx_org_cal'];
 
   // RETURN : tx_org_cal should not include
-switch( $includeIt ) 
+switch( $includeIt )
 {
   case( 'No' ):
     return;
-    break;
   case( 'Yes (recommended)' ):
   default:
     // follow the workflow
@@ -32,11 +31,11 @@ plugin.tx_linkhandler {
     additionalParams = &tx_browser_pi1[calendarUid]={field:uid}
     additionalParams {
       insertData = 1
-    } 
+    }
   }
 }
 ';
-t3lib_extMgm::addTypoScriptSetup( $typoscript ); 
+t3lib_extMgm::addTypoScriptSetup( $typoscript );
 
 return;
 

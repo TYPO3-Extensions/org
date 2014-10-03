@@ -48,7 +48,7 @@ $TCA['tx_org_staff'] = array(
     . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
-    . 'tx_org_headquarters,fe_user,'
+    . 'tx_org_headquarters,'
     . 'tx_org_staffgroup,tx_org_staff_sector,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'

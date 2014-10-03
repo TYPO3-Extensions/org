@@ -29,7 +29,6 @@
       <label index="tx_org_job.dateofentry">Date of entry</label>
       <label index="tx_org_job.description">Description</label>
       <label index="tx_org_job.documents">Documents</label>
-      <label index="tx_org_job.fe_user">Frontend User</label>
       <label index="tx_org_job.geoupdateprompt">Geoupdate prompt</label>
       <label index="tx_org_job.geoupdateforbidden">Latitude and longitude should not updated automatically</label>
       <label index="tx_org_job.image">Images</label>
@@ -125,7 +124,6 @@
       <label index="tx_org_job.dateofentry">Eintrittsdatum</label>
       <label index="tx_org_job.description">Beschreibung</label>
       <label index="tx_org_job.documents">Dokumente</label>
-      <label index="tx_org_job.fe_user">Frontend Benutzer</label>
       <label index="tx_org_job.geoupdateprompt">Geoupdate-Meldungen</label>
       <label index="tx_org_job.geoupdateforbidden">Breiten- und Längengrad nicht automatisch aktualisieren</label>
       <label index="tx_org_job.image">Bilder</label>

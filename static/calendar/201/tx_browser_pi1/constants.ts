@@ -1,3 +1,9 @@
+
+// plugin.tx_browser_pi1
+// [globalVar = GP:tx_browser_pi1|calendarUid > 0]
+//   plugin.tx_browser_pi1.map.design
+
+
 plugin.tx_browser_pi1 {
   jQuery {
     plugin {
@@ -41,11 +47,6 @@ plugin.tx_browser_pi1 {
         categoryOffsetY   = tx_org_caltype.icon_offset_y
       }
     }
-    popup {
-      image {
-        width = 60m
-      }
-    }
   }
   navigation {
     showUid = calendarUid
@@ -58,12 +59,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_cal.title
-          single  = tx_org_cal.title
+          field   = tx_org_cal.subtitle // tx_org_cal.title
         }
       }
       image {
@@ -94,6 +90,12 @@ plugin.tx_browser_pi1 {
           #width     =
         }
       }
+      text {
+        0 {
+          crop    = 200|...|1
+          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+        }
+      }
       url {
         0 {
           key       = tx_org_cal.type
@@ -115,7 +117,7 @@ plugin.tx_browser_pi1 {
           key       = type
           page      = page
           record    = uid
-          showUid   = staffUid
+          showUid   = locationUid
           #singlePid =
           url       = url
         }
@@ -130,10 +132,25 @@ plugin.tx_browser_pi1 {
           #layoutKey = picture
           #listNum   =
           path      = uploads/tx_org/
-          #seo       = tx_org_cal.imageseo
+          seo       = tx_org_cal.imageseo // tx_org_cal.imagecaption
           #width     =
         }
       }
     }
   }
 }
+
+[globalVar = GP:tx_browser_pi1|calendarUid > 0]
+  plugin.tx_browser_pi1 {
+    map {
+      design {
+        height  = 200
+        width   = 303
+      }
+      zoomLevel {
+        mode  = fixed
+        start = 4
+      }
+    }
+  }
+[global]

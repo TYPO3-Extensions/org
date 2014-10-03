@@ -12,6 +12,7 @@ plugin.tx_browser_pi1 {
                 ###RADIALSEARCH###
                 ###TX_ORG_CAL.DATETIME###
                 ###TX_ORG_CALTYPE.TITLE###
+                ###TX_ORG_LOCATION.MAIL_CITY###
               </div>
 )
             }

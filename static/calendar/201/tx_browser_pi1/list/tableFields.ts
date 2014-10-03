@@ -2,15 +2,17 @@ plugin.tx_browser_pi1 {
   views {
     list {
       201 {
+          // crdate, deleted, title
+        tx_org_cal =
         tx_org_cal {
             // placeholder: radialsearch HTML class depending on radius
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
             // placeholder: radialsearch linear distance
           deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
-            // datesheet, bookmarks; name, bodytext || vita
+            // content, margin
           title = COA
           title {
-              // content: bookmarks, title, subline
+              // content: bookmarks, title, tx_org_caltype.title, teaser_short, location
             10 = COA
             10 {
                 // socialmedia_bookmarks
@@ -19,9 +21,10 @@ plugin.tx_browser_pi1 {
                 value = ###SOCIALMEDIA_BOOKMARKS###
                 wrap = <div style="float:right;">|</div>
               }
-                // tx_org_cal.title
+                // title: default, notype, page, url, tx_org_event
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
               20 {
+                  // link to tx_org_event
                 tx_org_event < .default
                 tx_org_event {
                   typolink {
@@ -58,7 +61,7 @@ plugin.tx_browser_pi1 {
                     field = tx_org_caltype.title
                   }
                 }
-                wrap = <div class="tx_org_caltype">|</div>
+                wrap = <p class="tx_org_caltype">|</p>
                   // label
                 10 = TEXT
                 10 {
@@ -70,9 +73,61 @@ plugin.tx_browser_pi1 {
                   field = tx_org_caltype.title
                 }
               }
-              40 = TEXT
+                // teaser_short: default, notype, page, url, tx_org_event
+              40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               40 {
-                field = tx_org_location.mail_lat
+                  // link to tx_org_event
+                tx_org_event < .default
+                tx_org_event {
+                  20 {
+                    typolink {
+                      parameter {
+                        cObject {
+                          10 {
+                            10 {
+                              if {
+                                isTrue = {$plugin.org.pages.event}
+                              }
+                              value = {$plugin.org.pages.event}
+                            }
+                            20 {
+                              if {
+                                isFalse = {$plugin.org.pages.event}
+                              }
+                              value = {$plugin.org.pages.event}
+                            }
+                          }
+                        }
+                      }
+                      additionalParams {
+                        field = tx_org_event.uid
+                        wrap  = &tx_browser_pi1[eventUid]=|
+                      }
+                    }
+                  }
+                }
+              }
+                // location
+              50 = COA
+              50 {
+                wrap = <p class="location">|</p>
+                required = 1
+                10 = TEXT
+                10 {
+                  field = tx_org_location.title
+                  noTrimWrap = || in |
+                  required = 1
+                }
+                20 = TEXT
+                20 {
+                  field = tx_org_location.mail_postcode
+                  noTrimWrap = || |
+                  required = 1
+                }
+                21 = TEXT
+                21 {
+                  field = tx_org_location.mail_city
+                }
               }
               wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }

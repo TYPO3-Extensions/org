@@ -157,11 +157,36 @@ plugin.tx_browser_pi1 {
   document_stdWrap.stdWrap.noTrimWrap = |<li>|</li> |
 
   marker {
-    my_back_button = TEXT
-    my_back_button {
-      value = Back
-      lang.de = Zur&uuml;ck
-      noTrimWrap  = |<a href="javascript:history.back()">&laquo; |</a>|
+    my_singleviewbackbutton = COA
+    my_singleviewbackbutton {
+        // History Back
+      10 = TEXT
+      10 {
+        value = Back
+        lang {
+          de = Zur&uuml;ck
+          en = Back
+        }
+        noTrimWrap  = |<a href="javascript:history.back()">&laquo; |</a>|
+      }
+        // Devider
+      20 = TEXT
+      20 {
+        value = |
+        noTrimWrap  = | | |
+      }
+        // List
+      30 = TEXT
+      30 {
+        value = To the list
+        lang {
+          de = Zur Liste
+          en = To the list
+        }
+        stdWrap {
+          noTrimWrap  = || &raquo;|
+        }
+      }
     }
   }
 
@@ -186,15 +211,6 @@ plugin.tx_browser_pi1 {
 
   // #53649, 131114, dwildt, +
 plugin.tx_linkhandler {
-  fe_users {
-    forceLink        = 0
-    useCacheHash     = 1
-    parameter        = {$plugin.org.pages.fe_users}
-    additionalParams = &tx_browser_pi1[feusersUid]={field:uid}
-    additionalParams {
-      insertData = 1
-    }
-  }
   tx_org_cal {
     forceLink        = 0
     useCacheHash     = 1

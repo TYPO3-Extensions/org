@@ -44,9 +44,11 @@ plugin.tx_browser_pi1 {
         }
       }
       text {
+        0 {
           crop = 100|...|1
-          list = tx_org_news.teaser_short // tx_org_news.bodytext
+          field = tx_org_news.teaser_short // tx_org_news.bodytext
           tag  = p
+        }
       }
       url {
         0 {

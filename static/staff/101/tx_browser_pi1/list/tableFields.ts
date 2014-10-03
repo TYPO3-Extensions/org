@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
                 // name
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
                 // bodytext || vita
-              20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text
+              20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }
             wrap = <div class="row">|</div>

@@ -55,7 +55,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.image_effects,
           tx_org_news.image_compression,
 
-          tx_org_news.keywords,
+          tx_org_news.seo_keywords,
           tx_org_news.description
         )
         andWhere (
@@ -296,7 +296,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.image_effects,
           tx_org_news.image_compression,
 
-          tx_org_news.keywords,
+          tx_org_news.seo_keywords,
           tx_org_news.description
         )
         andWhere (

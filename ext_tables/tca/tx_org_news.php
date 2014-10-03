@@ -54,13 +54,12 @@ $TCA['tx_org_news'] = array (
     'teaser_title,teaser_subtitle,teaser_short' .
     'marginal_title,marginal_subtitle,marginal_short' .
     'page,url' .
-    'fe_user,' .
     'tx_org_headquarters,' .
     'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,' .
     'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,' .
-    'keywords,description,'
+    'seo_keywords,seo_description,'
   ,
   ),
 );

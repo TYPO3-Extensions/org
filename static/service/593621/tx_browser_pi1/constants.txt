@@ -62,20 +62,10 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_service.teaser_title
-          single  = tx_org_service.title
+          field   = tx_org_service.teaser_title // tx_org_service.title
         }
         1 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_service.mail_city
-          #single  =
+          field   = tx_org_service.mail_city
         }
       }
       image {
@@ -90,12 +80,9 @@ plugin.tx_browser_pi1 {
         }
       }
       text {
-        crop {
-          #list    =
-          #single  =
+        0 {
+          field   = tx_org_service.teaser_short // tx_org_service.description
         }
-        list    = tx_org_service.teaser_short
-        single  = tx_org_service.description
       }
       url {
         0 {

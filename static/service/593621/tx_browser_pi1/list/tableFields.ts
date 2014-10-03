@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
               // header
             20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
               // text
-            30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text
+            30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
           }
         }
       }

@@ -5,7 +5,6 @@ if (!defined('TYPO3_MODE'))
   die('Access denied.');
 }
 
-require_once( PATH_typo3conf . 'ext/org/ext_tables/tca/fe_users.php' );
 require_once( PATH_typo3conf . 'ext/org/ext_tables/tca/fe_groups.php' );
 // The sorting of the tables in the backend list view depends on the sorting of the lines below.
 require_once( PATH_typo3conf . 'ext/org/ext_tables/tca/tx_org_news.php' );

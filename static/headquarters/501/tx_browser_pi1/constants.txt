@@ -52,12 +52,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop {
-            #list    =
-            #single  =
-          }
-          list    = tx_org_headquarters.title
-          single  = tx_org_headquarters.title
+          field   = tx_org_headquarters.teaser_title // tx_org_headquarters.title
         }
       }
       image {
@@ -86,6 +81,11 @@ plugin.tx_browser_pi1 {
           path      = uploads/tx_org/
           seo       = tx_org_headquarters.imageseo
           #width     =
+        }
+      }
+      text {
+        0 {
+          field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
         }
       }
       url {

@@ -63,28 +63,28 @@ function remove_fields_pubtrans($confArr, $showitem)
   $showitem = str_replace('citymap_embeddedcode,', null, $showitem);
   return $showitem;
 }
-
-/* Replace tx_org_staff with fe_users */
-
-function replace_table_tx_org_staff($confArr, $showitem, $orgTable)
-{
-  $arrOrgTablesWiFeUsers = array(
-    'tx_org_downloads',
-    'tx_org_news'
-  );
-
-  if( ! in_array($orgTable, $arrOrgTablesWiFeUsers ) )
-  {
-    return $showitem;
-  }
-  if (!$confArr['downgrade.']['enable.']['fe_users'])
-  {
-    return $showitem;
-  }
-  $showitem = str_replace('div_staff', 'div_feuser', $showitem);
-  $showitem = str_replace('tx_org_staff', 'fe_user', $showitem);
-  return $showitem;
-}
+// #62019, 141003, dwildt, -
+///* Replace tx_org_staff with fe_users */
+//
+//function replace_table_tx_org_staff($confArr, $showitem, $orgTable)
+//{
+//  $arrOrgTablesWiFeUsers = array(
+//    'tx_org_downloads',
+//    'tx_org_news'
+//  );
+//
+//  if( ! in_array($orgTable, $arrOrgTablesWiFeUsers ) )
+//  {
+//    return $showitem;
+//  }
+//  if (!$confArr['downgrade.']['enable.']['fe_users'])
+//  {
+//    return $showitem;
+//  }
+//  $showitem = str_replace('div_staff', 'div_feuser', $showitem);
+//  $showitem = str_replace('tx_org_staff', 'fe_user', $showitem);
+//  return $showitem;
+//}
 
 /* LOOP all Organiser tables */
 foreach ($arrOrgTables as $orgTable)
@@ -97,7 +97,8 @@ foreach ($arrOrgTables as $orgTable)
     $showitem = remove_fields_embeddedcode($confArr, $showitem);
     $showitem = remove_fields_print($confArr, $showitem);
     $showitem = remove_fields_pubtrans($confArr, $showitem);
-    $showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
+    // #62019, 141003, dwildt, 1-
+    //$showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
     $TCA[$orgTable]['palettes'][$palette]['showitem'] = $showitem;
   } // LOOP all palettes of the current table
   // LOOP all types of the current table

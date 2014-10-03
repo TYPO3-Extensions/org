@@ -157,7 +157,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.image_compression,
 
           tx_org_location.embeddedcode,
-          tx_org_location.keywords,
+          tx_org_location.seo_keywords,
           tx_org_location.description,
           tx_org_cal.uid,
           tx_org_cal.title,

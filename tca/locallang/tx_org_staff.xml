@@ -26,7 +26,6 @@
       <label index="tx_org_staff.contact_fax">Fax</label>
       <label index="tx_org_staff.contact_phone">Phone</label>
       <label index="tx_org_staff.contact_skype">Skype</label>
-      <label index="tx_org_staff.department">Department/function</label>
       <label index="tx_org_staff.gender">Gender</label>
       <label index="tx_org_staff.gender_female">female</label>
       <label index="tx_org_staff.gender_male">male</label>
@@ -74,7 +73,6 @@
       <label index="tx_org_staff.contact_fax">Fax</label>
       <label index="tx_org_staff.contact_phone">Telefon</label>
       <label index="tx_org_staff.contact_skype">Skype</label>
-      <label index="tx_org_staff.department">Abteilung/Funktion</label>
       <label index="tx_org_staff.gender">Geschlecht</label>
       <label index="tx_org_staff.gender_female">weiblich</label>
       <label index="tx_org_staff.gender_male">männlich</label>

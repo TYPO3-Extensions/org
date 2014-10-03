@@ -18,5 +18,18 @@ plugin.tx_browser_pi1 {
     fdTmplMainSingleColRightLarge {
       value = 9
     }
+    my_singleviewbackbutton = COA
+    my_singleviewbackbutton {
+      30 {
+        value = All news
+        lang {
+          de = Alle Nachrichten
+          en = All News
+        }
+        typolink {
+          parameter = {$plugin.org.pages.news}
+        }
+      }
+    }
   }
 }

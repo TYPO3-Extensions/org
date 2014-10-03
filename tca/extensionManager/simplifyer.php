@@ -50,25 +50,26 @@ if (strtolower(substr($confArr['simplifyer.']['topnews_sorting'], 0, strlen('no'
 {
   $bool_topnews_sorting = true;
 }
-// Simplify backend forms
-// Relation fe_users to company
-switch ($confArr['simplifyer.']['fe_user_company'])
-{
-  case('Big'):
-    $bool_exclude_fe_user_company = true;
-    $bool_exclude_fe_user_tx_org_company = true;
-    $bool_exclude_tx_org_company = false;
-    $bool_exclude_tx_org_company_fe_users = true;
-    break;
-  case('Small (recommended)'):
-  default :
-    $bool_exclude_fe_user_company = true;
-    $bool_exclude_fe_user_tx_org_company = false;
-    $bool_exclude_tx_org_company = false;
-    $bool_exclude_tx_org_company_fe_users = false;
-  default:
-}
-// Relation fe_users to company
+// #62019, 141003, dwildt, -
+//// Simplify backend forms
+//// Relation fe_users to company
+//switch ($confArr['simplifyer.']['fe_user_company'])
+//{
+//  case('Big'):
+//    $bool_exclude_fe_user_company = true;
+//    $bool_exclude_fe_user_tx_org_company = true;
+//    $bool_exclude_tx_org_company = false;
+//    $bool_exclude_tx_org_company_fe_users = true;
+//    break;
+//  case('Small (recommended)'):
+//  default :
+//    $bool_exclude_fe_user_company = true;
+//    $bool_exclude_fe_user_tx_org_company = false;
+//    $bool_exclude_tx_org_company = false;
+//    $bool_exclude_tx_org_company_fe_users = false;
+//  default:
+//}
+//// Relation fe_users to company
 // Full wizard support
 $bool_full_wizardSupport_catTables = true;
 if (strtolower(substr($confArr['simplifyer.']['full_wizardSupport'], 0, strlen('no'))) == 'no')

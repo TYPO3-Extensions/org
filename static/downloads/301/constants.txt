@@ -47,8 +47,8 @@ plugin.tx_seodynamictag {
     var.1 = tx_browser_pi1[downloadsUid]
     field {
       //author        = "Author is empty: Please use the TypoScript Constant Editor maintain "
-      description   = description
-      keywords      = keywords
+      description   = seo_description
+      keywords      = seo_keywords
       title         = title
       short         = subtitle
     }

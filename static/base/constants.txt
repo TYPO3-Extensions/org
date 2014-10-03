@@ -25,8 +25,6 @@ plugin.org {
   pages.downloads =
   # cat=Organiser - Pages/150/104; type=+int; label= event:Uid of your event page
   pages.event =
-  # cat=Organiser - Pages/150/105; type=+int; label= fe_users:Uid of your fe_users page
-  pages.fe_users =
   # cat=Organiser - Pages/150/105; type=+int; label= headquarters:Uid of your headquarters page
   pages.headquarter =
   # cat=Organiser - Pages/150/105; type=+int; label= jobs:Uid of your jobs page
@@ -58,8 +56,6 @@ plugin.org {
   sysfolder.downloads =
   # cat=Organiser - Sysfolders/500/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
-  # cat=Organiser - Sysfolders/500/105; type=+int; label= fe_users:Uid of the sysfolder with the fe_users data
-  sysfolder.fe_users =
   # cat=Organiser - Sysfolders/500/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
   sysfolder.headquarter =
   # cat=Organiser - Sysfolders/500/105; type=+int; label= jobs:Uid of the sysfolder with the jobs data
@@ -133,7 +129,7 @@ plugin.tx_seodynamictag {
     }
   }
 
-  keywords {
+  seo_keywords {
     forcedList = TYPO3,Organiser,Lobby,Demo
   }
 }

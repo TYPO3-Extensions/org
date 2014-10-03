@@ -36,7 +36,7 @@ $TCA['tx_org_event'] = array(
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
     'embeddedcode,print,printcaption,printseo,' .
     'hidden,pages,fe_group,' .
-    'keywords,description'
+    'seo_keywords,seo_description'
   ),
 );
 

@@ -1,18 +1,39 @@
 6.0.0
-  14-09-22
+  14-10-03
   Major Features
+  * #62019: Staff management by tx_org_staff
+            * Relations to fe_users are replaced
+            * No support for fe_users any longer
+            * Removed
+              * ext_tables/tca/fe_users.php
+              * static/base/tx_linkhandler/fe_users.php
+              * tca/locallang/fe_users.xml
+              * tsConfig/page/tx_linkhandler
+                * de/fe_users.php
+                * default/fe_users.php
+  * #62018: Improve tx_org_downloads
+            * for Browser 6.0
+            * Foundation
+            * simplify relations -> tx_org_mm_all
+              * removed:
+                * tx_org_downloads_mm_tx_org_downloadscat
+                * tx_org_downloads_mm_tx_org_downloadsmedia
+                * tx_org_headquarters_mm_fe_users
+                * tx_org_headquarters_mm_tx_org_cal
+            * file structure for TypoScript
   * #61827: tx_org_caltype: +icons
   * #61826: + Events
   * #61819: Improve cal (foundation, TypoScript)
   * #61793: Improve Companies (Headquarters: Foundation, TypoScript)
   * #61696: Improve templates
             * tx_org_news.description -> tx_org_news.seo_description
-            * tx_org_news.keywords    -> tx_org_news.seo_keywords
+            * tx_org_news.seo_keywords,seo_description    -> tx_org_news.seo_seo_keywords,seo_description
             * tx_org_news.newspage    -> tx_org_news.page
             * tx_org_news.newsurl     -> tx_org_news.url
   * #61248: Compatibility with TYPO3 CMS 6.2.x
   * #61661: Extension Initialisation
   Improvements
+  * #61856: Move all fields description and seo_keywords to seo_description and seo_seo_keywords,seo_description
   * #i0027: tx_org_departments is removed
 
 

@@ -25,14 +25,13 @@ $TCA[ 'tx_org_news' ] = array(
     . 'teaser_title,teaser_subtitle,teaser_short'
     . 'marginal_title,marginal_subtitle,marginal_short'
     . 'page,url'
-    . 'fe_user,'
     . 'tx_org_headquarters,'
     . 'tx_org_staff,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'embeddedcode,'
     . 'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'
-    . 'keywords,description,'
+    . 'seo_keywords,seo_description,'
   ,
   ),
   'feInterface' => $TCA[ 'tx_org_news' ][ 'feInterface' ],
@@ -157,14 +156,13 @@ $TCA[ 'tx_org_news' ] = array(
           'table_foreign' => 'tx_org_newscat'
         ),
         'foreign_table' => 'tx_org_newscat',
-//        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
+        'foreign_table_where' => 'AND tx_org_newscat.' . $str_store_record_conf . ' AND tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'treeView' => 1,
         'expandable' => 1,
         'expandFirst' => 0,
         'expandAll' => 0,
-        'foreign_table_where' => 'AND  tx_org_newscat.deleted = 0 AND tx_org_newscat.hidden = 0 ORDER BY tx_org_newscat.title',
         'wizards' => array(
           '_PADDING' => 2,
           '_VERTICAL' => 0,
@@ -241,28 +239,6 @@ $TCA[ 'tx_org_news' ] = array(
           ),
         ),
         'softref' => 'typolink',
-      ),
-    ),
-    'fe_user' => array(
-      'exclude' => $bool_exclude_default,
-//      'l10n_mode'   => 'exclude',
-      'label' => 'LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.fe_user',
-      'config' => array(
-        'type' => 'select',
-        'size' => $size_news,
-        'minitems' => 0,
-        'maxitems' => 1,
-        'items' => array(
-          '0' => array(
-            '0' => '',
-            '1' => '',
-          ),
-        ),
-        'MM' => 'fe_users_mm_tx_org_news',
-        'MM_opposite_field' => 'tx_org_news',
-        'foreign_table' => 'fe_users',
-        'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
-        'wizards' => $arr_config_feuser[ 'wizards' ],
       ),
     ),
     'tx_org_headquarters' => array(
@@ -587,15 +563,15 @@ $TCA[ 'tx_org_news' ] = array(
         ),
       ),
     ),
-    'keywords' => array(
+    'seo_keywords,seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.keywords',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
-    'description' => array(
+    'seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.description',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,
     ),
@@ -667,7 +643,7 @@ $TCA[ 'tx_org_news' ] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,'
       . '  sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews;;topnews_sorting,pages, fe_group,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_seo,'
-      . '  keywords;;;;7-7-7, description,'
+      . '  seo_keywords,seo_description;;;;7-7-7, description,'
     ,
     ),
     'page' => array( 'showitem' => ''
@@ -735,7 +711,7 @@ $TCA[ 'tx_org_news' ] = array(
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_control,'
       . '  sys_language_uid;;;;8-8-8, l10n_parent, l10n_diffsource, hidden;;3;;,topnews;;topnews_sorting,pages, fe_group,'
       . '--div--;LLL:EXT:org/tca/locallang/tx_org_news.xml:tx_org_news.div_seo,'
-      . '  keywords;;;;7-7-7, description,'
+      . '  seo_keywords,seo_description;;;;7-7-7, description,'
     ,
     ),
     'page' => array( 'showitem' => ''

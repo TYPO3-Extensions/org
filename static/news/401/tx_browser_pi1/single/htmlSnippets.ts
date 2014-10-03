@@ -16,7 +16,7 @@ plugin.tx_browser_pi1 {
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
                   <p class="backbutton">
-                    ###BUTTON###
+                    ###MY_SINGLEVIEWBACKBUTTON###
                   </p>
                   <!-- ###BACKBUTTON### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
