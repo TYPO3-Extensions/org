@@ -8,25 +8,24 @@ plugin.tx_browser_pi1 {
           // title, mail_city
         tx_org_downloads =
         tx_org_downloads {
-            // subtitle, title, thumbnail, datetime, bodytext, filelink
+            // subtitle, title, thumbnail, text
           title = COA
           title {
               // subtitle
             10 = TEXT
             10 {
               required  = 1
-              value     = ###TX_ORG_DOWNLOADS.SUBTITLE###
-              wrap      = <h2 class="doc_subtitle">|</h2>
+              field     = tx_org_downloads.subtitle // tx_org_downloads.teaser_subtitle
+              wrap      = <h2>|</h2>
             }
               // title
             20 = TEXT
             20 {
               required  = 1
-              value     = ###TX_ORG_DOWNLOADS.TITLE###
-              wrap      = <h1 class="doc_title csc-firstHeader">|</h1>
+              tx_org_downloads.title // field     = tx_org_downloads.teaser_title
+              wrap      = <h1>|</h1>
             }
-              // thumbnail
-            //30 < plugin.tx_browser_pi1.tt_content.uploads.20
+              // thumbnail: plugin.tx_browser_pi1.tt_content.uploads.20
             30 < plugin.tx_browser_pi1.tt_content.uploads.20
             30 {
               userFunc = tx_browser_cssstyledcontent->render_uploads
@@ -48,24 +47,10 @@ plugin.tx_browser_pi1 {
                   tx_flipit_pagelist = tx_org_downloads.tx_flipit_pagelist
                 }
               }
-//                // 130207, dwildt, 2+
               field     = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.documents}
               thumbnail = {$plugin.org.table.downloads}.{$plugin.org.table.downloads.field.thumbnail}
                 // Don't outerWrap with <table> by default
 //              outerWrap = <ul class="csc-uploads csc-uploads-{field:layout}">|</ul>
-                // 130207, dwildt, 1-
-//              filePath >
-                // #43976, 121213, dwildt, 9-
-              //itemRendering {
-              //  10 {
-              //    if    >
-              //    wrap  >
-              //  }
-              //  20 >
-              //  30 >
-              //  wrap = <div class="csc-uploads-thumbnail csc-uploads-thumbnail-first">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-even">|</div> || <div class="csc-uploads-thumbnail">|</div> |*| <div class="csc-uploads-thumbnail csc-uploads-thumbnail-last">|</div>
-              //}
-                // #43976, 121213, dwildt, 9+
               itemRendering >
               itemRendering = COA
               itemRendering {
@@ -129,15 +114,16 @@ plugin.tx_browser_pi1 {
                           parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                           title = TEXT
                           title {
-                            value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
-                            lang {
-                              de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                              en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            field = tx_org_downloads.title
+                            stdWrap {
+                              stripHtml = 1
+                              htmlSpecialChars = 1
                             }
-                            insertData = 1
                           }
                           additionalParams  = &tx_browser_pi1[plugin]={field:tt_content.uid}&tx_browser_pi1[file]=single.301.tx_org_downloads.{field:tx_org_downloads.uid}.documents.{field:key}
-                          additionalParams.insertData = 1
+                          additionalParams {
+                            insertData = 1
+                          }
                           useCacheHash      = 1
                         }
                       }
@@ -155,12 +141,11 @@ plugin.tx_browser_pi1 {
                         parameter         = {$plugin.org.pages.downloads},{$plugin.tx_browser_pi1.typeNum.downloadPageObj}
                         title = TEXT
                         title {
-                          value = Download: '###TX_ORG_DOWNLOADS.TITLE###'
-                          lang {
-                            de  = Herunterladen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          field = tx_org_downloads.title
+                          stdWrap {
+                            stripHtml = 1
+                            htmlSpecialChars = 1
                           }
-                          insertData = 1
                         }
                         additionalParams  = &tx_browser_pi1[plugin]={field:tt_content.uid}&tx_browser_pi1[file]=single.301.tx_org_downloads.{field:tx_org_downloads.uid}.documents.{field:key}
                         additionalParams.insertData = 1
@@ -174,13 +159,11 @@ plugin.tx_browser_pi1 {
                       imageLinkWrap {
                         typolink {
                           title {
-                            //value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
-                            value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
-                            lang {
-                              de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                              en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                            field = tx_org_downloads.title
+                            stdWrap {
+                              stripHtml = 1
+                              htmlSpecialChars = 1
                             }
-                            insertData  = 1
                           }
                         }
                       }
@@ -188,12 +171,11 @@ plugin.tx_browser_pi1 {
                     30 {
                       typolink {
                         title {
-                          value = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
-                          lang {
-                            de  = Herunterladen oder Bestellen: '###TX_ORG_DOWNLOADS.TITLE###'
-                            en  = Order or download: '###TX_ORG_DOWNLOADS.TITLE###'
+                          field = tx_org_downloads.title
+                          stdWrap {
+                            stripHtml = 1
+                            htmlSpecialChars = 1
                           }
-                          insertData = 1
                         }
                       }
                     }
@@ -222,17 +204,6 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-                // 130207, dwildt, 1-
-//              tableField = tx_org_downloads.documents
-                // 130207, dwildt, -8
-//              fields {
-//                from_path = ###TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
-//                files     = ###TX_ORG_DOWNLOADS.DOCUMENTS###
-//                files {
-//                  override = ###TX_ORG_DOWNLOADS.THUMBNAIL###
-//                }
-//                layout    = 2
-//              }
               stdWrap {
                 if.isTrue = ###TX_ORG_DOWNLOADS.THUMBNAIL######TX_ORG_DOWNLOADS.DOCUMENTS######TX_ORG_DOWNLOADS.DOCUMENTS_FROM_PATH###
               }
