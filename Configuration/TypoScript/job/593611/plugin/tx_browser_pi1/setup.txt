@@ -1,0 +1,38 @@
+plugin.tx_browser_pi1 {
+
+  XXXadvanced {
+    sql {
+      devider {
+        tx_org_jobcat {
+          title {
+            display = TEXT
+            display {
+              value =
+              wrap = |
+            }
+          }
+        }
+      }
+    }
+  }
+
+  displayList.selectBox_orderBy.display = 1
+
+  navigation.map.template.file = EXT:browser/res/html/map/map_filter_1.3.tmpl
+
+  views {
+    list {
+      593611 = +Org: Jobs
+      593611 {
+        name    = +Org: Jobs
+        showUid = jobUid
+      }
+    }
+    single {
+      593611 = +Org: Jobs
+    }
+  }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/list/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/single/_setup.txt">

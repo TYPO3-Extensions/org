@@ -1,0 +1,82 @@
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      301 {
+        tx_org_downloads {
+          title {
+            30 {
+              outerWrap = <table style="float:left;padding-right:1em;">|</table>
+              itemRendering {
+                layout_00 {
+                  20 {
+                    1 {
+                      if {
+                        isTrue {
+                          field = tx_org_downloads.documents_display_label
+                        }
+                      }
+                    }
+                    2 {
+                      if {
+                        isTrue {
+                          field = tx_org_downloads.documents_display_caption
+                        }
+                      }
+                    }
+                  }
+                    // 130207: Doc title and descriptions should not displayed beside the thumbnail in principle
+                  20 >
+                  wrap >
+                  wrap = <tr class="tx_flipit_layout_00">|</tr>
+                }
+                layout_01 {
+                  userFunc {
+                    content {
+                      10 {
+                        10 {
+                          wrap >
+                        }
+                        20 {
+                          wrap >
+                        }
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_01">|</tr>
+                    }
+                  }
+                }
+                layout_02 {
+                  userFunc {
+                    content {
+                      10 {
+                        10 {
+                          wrap >
+                        }
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_02">|</tr>
+                    }
+                  }
+                }
+                  // #i0001
+                layout_03 {
+                  userFunc {
+                    content {
+                      10 {
+                        10 {
+                          wrap >
+                        }
+                        wrap = <td class="tx_flipit_layout tx_flipit_layout_swf">|</td>
+                      }
+                      wrap = <tr class="tx_flipit_layout_03">|</tr>
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

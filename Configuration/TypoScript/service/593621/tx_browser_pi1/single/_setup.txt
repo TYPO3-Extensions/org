@@ -1,0 +1,71 @@
+plugin.tx_browser_pi1 {
+
+  views {
+    single {
+      593621 = +Org: Services
+      593621 {
+        select (
+          tx_org_service.title,
+          tx_org_servicecat.title
+        )
+        tx_org_service {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              field = tx_org_service.title
+              wrap = <h1>|</h1>
+            }
+            20 = TEXT
+            20 {
+              required = 1
+              field = tx_org_servicecat.title
+              wrap = <ul>|</ul>
+            }
+          }
+        }
+        tx_org_servicecat {
+          title = TEXT
+          title {
+            field = tx_org_servicecat.title
+            wrap = <li>|</li>
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_SERVICE.TITLE###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
+          }
+        }
+      }
+    }
+  }
+}

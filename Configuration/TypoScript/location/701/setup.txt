@@ -1,0 +1,707 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      701: +Org: Locations
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+
+  views {
+    list {
+      701 = +Org: Locations
+      701 {
+        name    = +Org: Locations
+        showUid = locationUid
+        select (
+          tx_org_location.title,
+          tx_org_location.mail_postcode,
+          tx_org_location.mail_city,
+          tx_org_location.mail_country,
+          tx_org_location.mail_address,
+          tx_org_location.mail_url,
+          tx_org_location.image,
+          tx_org_location.imageseo
+        )
+        orderBy = tx_org_location.title
+        csvLinkToSingleView = tx_org_location.title
+        tx_org_location {
+          mail_url = TEXT
+          mail_url {
+            if {
+              isTrue  = ###TX_ORG_LOCATION.MAIL_URL###
+            }
+            value = City map
+            lang.de = Stadtplan-Link
+            wrap = <br /><small>|</small>
+            typolink {
+              parameter = ###TX_ORG_LOCATION.MAIL_URL###
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###VIEW###view ###VIEW###view-content ###VIEW###view-###MODE### ###VIEW###view-content-###MODE###">
+              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              <div class="record01">
+                <div class="image01">
+                  ###TX_ORG_LOCATION.IMAGE###
+                </div>
+                <p>
+                  ###SOCIALMEDIA_BOOKMARKS### ###TX_ORG_LOCATION.TITLE###, ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
+                  ###TX_ORG_LOCATION.MAIL_URL###
+                </p>
+              </div>
+              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+            </div> <!-- /listview -->
+)
+            }
+          }
+        }
+      }
+    }
+    single {
+      701 = +Org: Locations
+      701 {
+        advanced < plugin.tx_browser_pi1.advanced
+        advanced.sql.devider.childrenRecords >
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_cal_div_begin = COA
+          my_cal_div_begin {
+            if.isTrue = ###TX_ORG_CAL.TITLE###
+            10 = TEXT
+            10 {
+              value   = Events
+              lang.de = Veranstaltungen
+              wrap    = <h3 class="location location_cal">|</h2>
+            }
+            20 = TEXT
+            20 {
+              value     = <ul class="location location_cal">
+            }
+          }
+          my_cal_div_end = TEXT
+          my_cal_div_end {
+            if.isTrue = ###TX_ORG_CAL.TITLE###
+            value     = </ul>
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All Locations &raquo;
+            lang.de = Alle Veranstaltungsorte &raquo;
+            typolink {
+              parameter = {$plugin.org.pages.location}
+              title {
+                value = All Locations
+                lang.de = Alle Veranstaltungsorte
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = Location
+            lang.de = Veranstaltungsort
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_location.title,
+          tx_org_location.mail_postcode,
+          tx_org_location.mail_city,
+          tx_org_location.mail_country,
+          tx_org_location.mail_address,
+          tx_org_location.mail_url,
+          tx_org_location.mail_embeddedcode,
+          tx_org_location.telephone,
+          tx_org_location.fax,
+          tx_org_location.email,
+          tx_org_location.pubtrans_stop,
+          tx_org_location.pubtrans_url,
+          tx_org_location.pubtrans_embeddedcode,
+
+          tx_org_location.documents_from_path,
+          tx_org_location.documents,
+          tx_org_location.documentslayout,
+          tx_org_location.documentscaption,
+          tx_org_location.documentssize,
+
+          tx_org_location.image,
+          tx_org_location.imagecaption,
+          tx_org_location.imageseo,
+          tx_org_location.imagewidth,
+          tx_org_location.imageheight,
+          tx_org_location.imageorient,
+          tx_org_location.imagecols,
+          tx_org_location.imageborder,
+          tx_org_location.image_frames,
+          tx_org_location.image_link,
+          tx_org_location.image_zoom,
+          tx_org_location.image_noRows,
+          tx_org_location.image_effects,
+          tx_org_location.image_compression,
+
+          tx_org_location.embeddedcode,
+          tx_org_location.seo_keywords,
+          tx_org_location.description,
+          tx_org_cal.uid,
+          tx_org_cal.title,
+          tx_org_cal.datetime
+        )
+        orderBy {
+          tx_org_cal (
+            SELECT    tx_org_cal.uid      AS 'uid',
+                      tx_org_cal.datetime AS 'datetime',
+                      tx_org_cal.title    AS 'title'
+            FROM      tx_org_cal,
+                      tx_org_cal_mm_tx_org_location
+            WHERE     tx_org_cal_mm_tx_org_location.uid_local    = tx_org_cal.uid
+            AND       tx_org_cal_mm_tx_org_location.uid_foreign  = ###UID_LOCAL###
+            ORDER BY  tx_org_cal.datetime DESC
+)
+        }
+        tx_org_cal {
+          title = COA
+          title {
+            if.isTrue = ###TX_ORG_CAL.DATETIME###
+            wrap      = <li>|</li>
+            10 = TEXT
+            10 {
+              value = ###TX_ORG_CAL.DATETIME###
+              noTrimWrap = || |
+              strftime = %a, %d. %b %Y, %H:%M Uhr
+              typolink {
+                parameter = {$plugin.org.pages.calendar}
+                // #59579, 140614, dwildt
+                //additionalParams = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                additionalParams {
+                  wrap  = &tx_browser_pi1[calendarUid]=|
+                  field = tx_org_cal.uid
+                }
+                useCacheHash = 1
+              }
+            }
+            11 = TEXT
+            11 {
+              value = &ndash;
+              noTrimWrap = | | |
+            }
+            12 = TEXT
+            12 {
+              value = ###TX_ORG_CAL.TITLE###
+            }
+          }
+        }
+        tx_org_location {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_LOCATION.DOCUMENTS######TX_ORG_LOCATION.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="location_documents">|</h2>
+            }
+              // documents
+            20 < plugin.tx_browser_pi1.tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Enable the DRS (you need devlog)
+                drs = TEXT
+                drs {
+                  value = 0
+                }
+              }
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_LOCATION.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_LOCATION.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_location.documents
+              fields {
+                from_path = ###TX_ORG_LOCATION.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_LOCATION.DOCUMENTS###
+                caption   = ###TX_ORG_LOCATION.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_LOCATION.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_LOCATION.DOCUMENTS######TX_ORG_LOCATION.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
+          mail_embeddedcode = COA
+          mail_embeddedcode {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE######TX_ORG_LOCATION.MAIL_URL###
+              }
+              value   = <div class="cleaner">&nbsp;</div>
+            }
+            11 = TEXT
+            11 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE######TX_ORG_LOCATION.MAIL_URL###
+              }
+              value   = City Map
+              lang.de = Stadtplan
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue  = ###TX_ORG_LOCATION.MAIL_URL###
+                isFalse = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              10 = TEXT
+              10 {
+                value = City map
+                lang.de = Stadtplan-Link
+                wrap = <p>|</p>
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.MAIL_URL###
+                }
+              }
+              20 = TEXT
+              20 {
+                value = <p>&nbsp;</p>
+              }
+            }
+            21 = COA
+            21 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+              }
+              20 = TEXT
+              20 {
+                value = <p>&nbsp;</p>
+              }
+            }
+          }
+          postbox_postbox = COA
+          postbox_postbox {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE######TX_ORG_LOCATION.POSTBOX_CITY######TX_ORG_LOCATION.POSTBOX_POSTBOX###
+              }
+              value   = Postbox
+              lang.de = Postfach
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE######TX_ORG_LOCATION.POSTBOX_CITY######TX_ORG_LOCATION.POSTBOX_POSTBOX###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTCODE###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_POSTCODE###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_CITY###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_CITY###
+                noTrimWrap = ||, |
+              }
+              12 = TEXT
+              12 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.POSTBOX_POSTBOX###
+                }
+                value = ###TX_ORG_LOCATION.POSTBOX_POSTBOX###
+                noTrimWrap = || |
+              }
+            }
+          }
+          pubtrans_stop = COA
+          pubtrans_stop {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP######TX_ORG_LOCATION.PUBTRANS_URL###
+              }
+              value   = Public Transport
+              lang.de = &Ouml;ffentlicher Nahverkehr (&Ouml;PNV)
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP######TX_ORG_LOCATION.PUBTRANS_URL###
+              }
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.PUBTRANS_STOP###
+                }
+                value = ###TX_ORG_LOCATION.PUBTRANS_STOP###
+                noTrimWrap = || |
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.PUBTRANS_URL###
+                }
+                value = Public Transport Stop
+                lang.de = Haltestelle
+                wrap = <p>|</p>
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.PUBTRANS_URL###
+                }
+              }
+            }
+          }
+          telephone = COA
+          telephone {
+            10 = TEXT
+            10 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.TELEPHONE######TX_ORG_LOCATION.FAX######TX_ORG_LOCATION.EMAIL###
+              }
+              value   = Contact Details
+              lang.de = Kontakt
+              wrap    = <h3>|</h3>
+            }
+            20 = COA
+            20 {
+              if {
+                isTrue = ###TX_ORG_LOCATION.TELEPHONE######TX_ORG_LOCATION.FAX######TX_ORG_LOCATION.EMAIL###
+              }
+              wrap = <p>|</p>
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.TELEPHONE###
+                }
+                value = phone
+                lang.de = Tel.:
+                noTrimWrap = || ###TX_ORG_LOCATION.TELEPHONE###<br />|
+              }
+              11 = TEXT
+              11 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.FAX###
+                }
+                value = fax
+                lang.de = Fax:
+                noTrimWrap = || ###TX_ORG_LOCATION.FAX###<br />|
+              }
+              20 = TEXT
+              20 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.EMAIL###
+                }
+                value = e-mail
+                lang.de = E-Mail:
+                noTrimWrap = || |
+              }
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###TX_ORG_LOCATION.EMAIL###
+                }
+                typolink {
+                  parameter = ###TX_ORG_LOCATION.EMAIL###
+                }
+                wrap = |<br />
+              }
+            }
+          }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_LOCATION.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_LOCATION.IMAGEWIDTH###
+                height  = ###TX_ORG_LOCATION.IMAGEHEIGHT###
+              }
+                // #43922, dwildt, 4-
+              //altText.field                 >
+              //altText                       = ###TX_ORG_LOCATION.IMAGESEO###
+              //titleText.field               >
+              //titleText                     = ###TX_ORG_LOCATION.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_LOCATION.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_LOCATION.IMAGE_LINK###
+                  // #43936
+                enable                      = ###TX_ORG_LOCATION.IMAGE_ZOOM###
+                enable {
+                  field >
+                  ifEmpty {
+                    typolink {
+                      parameter = ###TX_ORG_LOCATION.IMAGE_LINK###
+                      parameter {
+                        field  >
+                      }
+                    }
+                  }
+                }
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_LOCATION.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_LOCATION.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_LOCATION.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_LOCATION.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_LOCATION.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_LOCATION.IMAGEBORDER###
+              // #43912, 121211, dwildt
+            caption.1.1.field         >
+            caption.1.1.value         = ###TX_ORG_LOCATION.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_LOCATION.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_LOCATION.IMAGEORIENT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // #43936
+            rendering {
+              singleNoCaption {
+                allStdWrap {
+                  innerWrap {
+                    cObject {
+                      key = ###TX_ORG_LOCATION.IMAGEORIENT###
+                      key {
+                        field >
+                      }
+                    }
+                  }
+                }
+                fallbackRendering {
+                  10 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  20 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  30 {
+                    if {
+                      isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isTrue {
+                        field >
+                      }
+                    }
+                  }
+                  40 {
+                    if {
+                      isFalse = ###TX_ORG_LOCATION.IMAGECAPTION###
+                      isFalse {
+                        field >
+                      }
+                    }
+                  }
+                }
+              }
+              noCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              singleCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              splitCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+              globalCaption {
+                fallbackRendering {
+                  if {
+                    isTrue = ###TX_ORG_LOCATION.IMAGECAPTION###
+                    isTrue {
+                      field >
+                    }
+                  }
+                }
+              }
+            }
+              // title, mail
+            text = COA
+            text {
+              required  = 1
+                // #43970
+              wrap      =  <div class="csc-textpic-text"> | </div>
+                // title
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_LOCATION.TITLE###
+                wrap      = <h1 class="location_title csc-firstHeader">|</h1>
+              }
+                // mail
+              20 = TEXT
+              20 {
+                if.isTrue = ###TX_ORG_LOCATION.MAIL_POSTCODE######TX_ORG_LOCATION.MAIL_CITY######TX_ORG_LOCATION.MAIL_ADDRESS###
+                value     = ###TX_ORG_LOCATION.MAIL_POSTCODE### ###TX_ORG_LOCATION.MAIL_CITY###, ###TX_ORG_LOCATION.MAIL_ADDRESS###
+                wrap      = <p class="location_address">|</p>
+              }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="singleview-content">
+                <div style="float:right;">
+                  ###SOCIALMEDIA_BOOKMARKS###
+                </div>
+                ###TX_ORG_LOCATION.TITLE###
+                ###MY_CAL_DIV_BEGIN###
+                ###TX_ORG_CAL.TITLE###
+                ###MY_CAL_DIV_END###
+                ###TX_ORG_LOCATION.TELEPHONE###
+                ###TX_ORG_LOCATION.PUBTRANS_STOP###
+                ###TX_ORG_LOCATION.MAIL_EMBEDDEDCODE###
+                ###TX_ORG_LOCATION.DOCUMENTS###
+              </div><!-- /singleview-content end -->
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  _LOCAL_LANG {
+    default {
+      list_mode_701             = Locations
+      list_mode_701_titleTag    = TYPO3 Organiser: Locations
+      list_mode_701_keywords    = TYPO3, Organiser, Locations
+      list_mode_701_summary     = TYPO3 Organiser: Locations
+      single_mode_701_titleTag  = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords  = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary   = ###TX_ORG_LOCATION.DESCRIPTION###
+    }
+    de {
+      list_mode_701             = Veranstaltungsorte
+      list_mode_701_titleTag    = TYPO3 Organiser: Veranstaltungsorte
+      list_mode_701_keywords    = TYPO3, Organiser, Veranstaltungsorte
+      list_mode_701_summary     = TYPO3 Organiser: Veranstaltungsorte
+      single_mode_701_titleTag  = TYPO3 Organiser: ###TX_ORG_LOCATION.TITLE###
+      single_mode_701_keywords  = ###TX_ORG_LOCATION.KEYWORDS###
+      single_mode_701_summary   = ###TX_ORG_LOCATION.DESCRIPTION###
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+  ////////////////////////////////////////
+  //
+  // Header Comment
+
+page.config.headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  // Header Comment

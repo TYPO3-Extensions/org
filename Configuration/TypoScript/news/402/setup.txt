@@ -1,0 +1,519 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      402: +Org: Slider (News)
+  // page
+  //   includeCSS
+  //   includeJSFooter
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  views {
+    list {
+      402 = +Org: Slider (News)
+      402 {
+        name    = +Org: Slider (News)
+        showUid = newsUid
+        displayList < plugin.tx_browser_pi1.displayList
+        displayList {
+          selectBox_orderBy.display = 0
+        }
+        select (
+          tx_org_news.title,
+          tx_org_news.subtitle,
+          tx_org_news.bodytext,
+
+          tx_org_news.teaser_title,
+          tx_org_news.teaser_subtitle,
+          tx_org_news.teaser_short,
+
+          tx_org_news.newspage,
+          tx_org_news.newsurl,
+
+          tx_org_news.image,
+          tx_org_news.imagecaption,
+          tx_org_news.imageseo,
+          tx_org_news.imagewidth,
+          tx_org_news.imageheight,
+          tx_org_news.imageorient,
+          tx_org_news.imagecols,
+          tx_org_news.imageborder,
+          tx_org_news.image_frames,
+          tx_org_news.image_link,
+          tx_org_news.image_zoom,
+          tx_org_news.image_noRows,
+          tx_org_news.image_effects,
+          tx_org_news.image_compression,
+
+          tx_org_news.seo_keywords,
+          tx_org_news.description
+        )
+        andWhere (
+          (tx_org_news.archivedate = 0 OR tx_org_news.archivedate > UNIX_TIMESTAMP())
+        )
+        orderBy (
+          tx_org_news.topnews DESC, tx_org_news.datetime DESC
+        )
+        csvLinkToSingleView = tx_org_news.title
+        tx_org_news {
+          XXX_title = COA
+          XXX_title {
+              // news, newspage, newsurl
+            10 = CASE
+            10 {
+              key = ###TX_ORG_NEWS.TYPE###
+                // news
+              default = COA
+              default {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.news} - linktosingle
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.news} - linktosingle
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
+                  }
+                }
+              }
+              newspage = COA
+              newspage {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+              }
+              newsurl = COA
+              newsurl {
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
+              }
+            }
+          }
+
+
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_NEWS.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_NEWS.IMAGEWIDTH###
+                height  = ###TX_ORG_NEWS.IMAGEHEIGHT###
+              }
+              altText.field                 >
+              altText                       = ###TX_ORG_NEWS.IMAGESEO###
+              titleText.field               >
+              titleText                     = ###TX_ORG_NEWS.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_NEWS.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_NEWS.IMAGE_LINK###
+                enable.field                >
+                enable                      = ###TX_ORG_NEWS.IMAGE_ZOOM###
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_NEWS.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_NEWS.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_NEWS.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_NEWS.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_NEWS.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_NEWS.IMAGEBORDER###
+            caption.1.field         >
+            caption.1.value         = ###TX_ORG_NEWS.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_NEWS.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_NEWS.IMAGEORIENT###
+              XXX_default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div>
+            }
+            stdWrap {
+              prefixComment >
+            }
+          }
+
+
+        }
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+            <script type="text/javascript">
+            <!--
+              jQuery(document).ready(function(){
+                jQuery('#slideshow').fadeSlideShow({
+                  width: 768, // Weite der SlideShow
+                  height: 130, // Höhe der Slideshow
+                  speed: 'slow', // Animationsgeschwindigkeit
+                  interval: 6000, // Zeit zwischen Bildwechsel 1000 = 1 Sekunde
+                  PlayPauseElement: 'fssPlayPause', // ID für Play / Pause Element
+                  PlayText: 'Start', // Play Text
+                  PauseText: 'Stop', // Pause Text
+                  NextElement: 'fssNext', // ID für den weiter Button
+                  NextElementText: 'Next >', // Text für den weiter Button
+                  PrevElement: 'fssPrev', // ID für den zurück Button
+                  PrevElementText: '< Prev', // Text für den zurück Button
+                  ListElement: 'fssList', // ID für die Bilder-Liste
+                  ListLi: 'fssLi', // Klasse für LI-Elemente in der Bilder-Liste
+                  ListLiActive: 'fssActive', // Klasse für aktives Element in der Bilder-Liste
+                  addListToId: false, // Bilder-Liste in ein HTML Element mit der ID ... einfügen
+                  allowKeyboardCtrl: false, // Keyboardsteuerung verbieten (Konflikt mit Formularen: Leerzeichen)
+                  autoplay: true // Autoplay an
+                });
+              });
+            //-->
+            </script>
+            <div id="slideshow">
+            <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+              ###TX_ORG_NEWS.TITLE###<!-- ###LISTBODYITEM### end -->
+            <!-- ###LISTBODY### end -->
+            </div> <!-- /slideshow -->
+)
+            }
+          }
+        }
+      }
+    }
+    single {
+      402 = +Org: Slider (News)
+      402 {
+        displaySingle < plugin.tx_browser_pi1.displaySingle
+        displaySingle {
+          image.file >
+        }
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_page = TEXT
+          my_listview_page {
+            value = All News &raquo;
+            lang.de = Alle Nachrichten &raquo; 
+            typolink {
+              parameter = {$plugin.org.pages.news}
+              title {
+                value = All News
+                lang.de = Alle Nachrichten
+              }
+            }
+          }
+          my_singleview_title = TEXT
+          my_singleview_title {
+            value   = News
+            lang.de = Nachricht
+            wrap    = <div class="header01">|</div>
+          }
+        }
+        select (
+          tx_org_news.title,
+          tx_org_news.subtitle,
+          tx_org_news.datetime,
+          tx_org_news.bodytext,
+          tx_org_news.teaser_short,
+
+          tx_org_news.documents_from_path,
+          tx_org_news.documents,
+          tx_org_news.documentslayout,
+          tx_org_news.documentscaption,
+          tx_org_news.documentssize, 
+
+          tx_org_news.image,
+          tx_org_news.imagecaption,
+          tx_org_news.imageseo,
+          tx_org_news.imagewidth,
+          tx_org_news.imageheight,
+          tx_org_news.imageorient,
+          tx_org_news.imagecols,
+          tx_org_news.imageborder,
+          tx_org_news.image_frames,
+          tx_org_news.image_link,
+          tx_org_news.image_zoom,
+          tx_org_news.image_noRows,
+          tx_org_news.image_effects,
+          tx_org_news.image_compression,
+
+          tx_org_news.seo_keywords,
+          tx_org_news.description
+        )
+        andWhere (
+          (tx_org_news.archivedate = 0 OR tx_org_news.archivedate > UNIX_TIMESTAMP())
+        )
+        tx_org_news {
+          documents = COA
+          documents {
+              // title
+            10 = TEXT
+            10 {
+              if.isTrue = ###TX_ORG_NEWS.DOCUMENTS######TX_ORG_NEWS.DOCUMENTS_FROM_PATH###
+              value     = Documents
+              lang.de   = Dokumente
+              wrap      = <h2 class="news_documents">|</h2>
+            }
+              // documents
+            20 < plugin.tx_browser_pi1.tt_content.uploads.20
+            20 {
+              userFunc = tx_browser_cssstyledcontent->render_uploads
+              userFunc {
+                  // Enable the DRS (you need devlog)
+                drs = TEXT
+                drs {
+                  value = 0
+                }
+              }
+              filePath >
+              itemRendering {
+                10 {
+                  if {
+                    isPositive.field >
+                    isPositive = ###TX_ORG_NEWS.DOCUMENTSLAYOUT###
+                  }
+                }
+                30 {
+                  if {
+                    isTrue.field >
+                    isTrue = ###TX_ORG_NEWS.DOCUMENTSSIZE###
+                  }
+                }
+              }
+              tableField = tx_org_news.documents
+              fields {
+                from_path = ###TX_ORG_NEWS.DOCUMENTS_FROM_PATH###
+                files     = ###TX_ORG_NEWS.DOCUMENTS###
+                caption   = ###TX_ORG_NEWS.DOCUMENTSCAPTION###
+                layout    = ###TX_ORG_NEWS.DOCUMENTSLAYOUT###
+              }
+              stdWrap {
+                if.isTrue = ###TX_ORG_NEWS.DOCUMENTS######TX_ORG_NEWS.DOCUMENTS_FROM_PATH###
+              }
+            }
+          }
+            // title, address and image
+          title < tt_content.image.20
+          title {
+            imgList.field >
+            imgList = ###TX_ORG_NEWS.IMAGE###
+            imgPath = uploads/tx_org/
+            1 {
+              file {
+                width.field >
+                width   = ###TX_ORG_NEWS.IMAGEWIDTH###
+                height  = ###TX_ORG_NEWS.IMAGEHEIGHT###
+              }
+              altText.field                 >
+              altText                       = ###TX_ORG_NEWS.IMAGESEO###
+              titleText.field               >
+              titleText                     = ###TX_ORG_NEWS.IMAGESEO###
+              imageLinkWrap {
+                ifEmpty {
+                  typolink.parameter.field  >
+                  typolink.parameter        = ###TX_ORG_NEWS.IMAGE_LINK###
+                }
+                typolink.parameter.field    >
+                typolink.parameter          = ###TX_ORG_NEWS.IMAGE_LINK###
+                enable.field                >
+                enable                      = ###TX_ORG_NEWS.IMAGE_ZOOM###
+                width                       = 1000;
+                height                      = 800m;
+                //JSwindow = 0
+              }
+            }
+            textPos.field           >
+            textPos                 = ###TX_ORG_NEWS.IMAGEORIENT###
+            equalH                  >
+            image_compression.field >
+            image_compression       = ###TX_ORG_NEWS.IMAGE_COMPRESSION###
+            image_effects.field     >
+            image_effects           = ###TX_ORG_NEWS.IMAGE_EFFECTS###
+            noRows.field            >
+            noRows                  = ###TX_ORG_NEWS.IMAGE_NOROWS###
+            cols.field              >
+            cols                    = ###TX_ORG_NEWS.IMAGECOLS###
+            border.field            >
+            border                  = ###TX_ORG_NEWS.IMAGEBORDER###
+            caption.1.field         >
+            caption.1.value         = ###TX_ORG_NEWS.IMAGECAPTION###
+            captionAlign.field      >
+            captionAlign            = ###TX_ORG_NEWS.IMAGECAPTION_POSITION###
+            layout {
+              key.field        >
+              key              = ###TX_ORG_NEWS.IMAGEORIENT###
+              default.value    = <div class="csc-textpic csc-textpic-center csc-textpic-above###CLASSES###">###IMAGES###</div><div class="csc-textpic-clear"><!-- --></div>###TEXT###
+            }
+            stdWrap {
+              prefixComment >
+            }
+              // title, address
+            text {
+              required  = 1
+                // bodytext
+              10 = TEXT
+              10 {
+                required  = 1
+                value     = ###TX_ORG_NEWS.SUBTITLE###
+                wrap      = <h2 class="news_subtitle">|</h2>
+              }
+              20 = TEXT
+              20 {
+                required  = 1
+                value     = ###TX_ORG_NEWS.TITLE###
+                wrap      = <h1 class="news_title csc-firstHeader">|</h1>
+              }
+              30 = COA
+              30 {
+                stdWrap.parseFunc < lib.parseFunc_RTE
+                10 = TEXT
+                10 {
+                  value       = ###TX_ORG_NEWS.DATETIME###
+                  strftime    = %d. %b. %Y
+                  noTrimWrap  = |<span class="datetime">| &ndash;</span> |
+                }
+                20 = TEXT
+                20 {
+                  value = ###TX_ORG_NEWS.TEASER_SHORT###
+                  override = ###TX_ORG_NEWS.BODYTEXT###
+                }
+              }
+            }
+          }
+        }
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            singleview = TEXT
+            singleview {
+              value (
+<!-- ###AREA_FOR_AJAX_LIST_01### begin -->
+        <div id="c###TT_CONTENT.UID###-singleview-###MODE###" class="singleview singleview-###MODE###">
+          ###RECORD_BROWSER###
+          <div class="ui-widget ui-corner-all">
+            <div class="ui-widget-content ui-corner-all">
+              <!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
+              <div class="socialbookmarks">
+                ###SOCIALMEDIA_BOOKMARKS###
+              </div>
+              ###TX_ORG_NEWS.TITLE###
+              ###TX_ORG_NEWS.DOCUMENTS###
+              <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end -->
+            </div>
+<!-- ###AREA_FOR_AJAX_LIST_01### end -->
+            <!-- ###BACKBUTTON### begin -->
+            <p class="backbutton">
+              ###BUTTON###
+            </p>
+          <!-- ###BACKBUTTON### end -->
+<!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+          </div>
+        </div>
+<!-- ###AREA_FOR_AJAX_LIST_02### end -->
+)
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  _LOCAL_LANG {
+    default {
+      list_mode_402             = News
+      list_mode_402_titleTag    = TYPO3 Organiser - News
+      list_mode_402_keywords    = TYPO3, Organiser, News
+      list_mode_402_summary     = TYPO3 Organiser: News
+      single_mode_402_titleTag  = TYPO3 Organiser - ###TX_ORG_NEWS.TITLE###
+      single_mode_402_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_402_summary   = TYPO3 Organiser - News: ###TX_ORG_NEWS.DESCRIPTION###
+    }
+    de {
+      list_mode_402_titleTag    = Nachrichten
+      list_mode_402_keywords    = TYPO3, Organiser,  Nachrichten
+      list_mode_402_summary     = TYPO3 Organiser: Nachrichten
+      single_mode_402_titleTag  = TYPO3 Organiser: ###TX_ORG_NEWS.TITLE###
+      single_mode_402_keywords  = TYPO3 Organiser, ###TX_ORG_NEWS.KEYWORDS###
+      single_mode_402_summary   = TYPO3 Organiser - Nachricht: ###TX_ORG_NEWS.DESCRIPTION###
+    }
+  }
+}
+
+
+  ////////////////////////////////////////
+  //
+  // page
+
+page {
+  config {
+    headerComment (
+        TYPO3-Programmierung: die-netzmacher.de
+)
+  }
+  includeCSS {
+    fadeSlideShow = EXT:org/res/jss/fadeSlideShow/fadeSlideShow.css
+  }
+  includeJSFooter {
+    fadeSlideShow = EXT:org/res/jss/fadeSlideShow/fadeSlideShow.js
+  }
+}
+  // page

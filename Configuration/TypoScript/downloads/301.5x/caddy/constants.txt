@@ -1,0 +1,14 @@
+plugin.caddy {
+  db {
+    table = tx_org_downloads
+    min   = 
+    max   = 
+  }
+  getpost {
+    uid = tx_org_downloads|uid
+    qty = quantity
+  }
+  main {
+    dueDateFormat = %d. %b. %Y
+  }
+}

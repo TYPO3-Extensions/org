@@ -1,0 +1,98 @@
+plugin.tx_browser_pi1 {
+  jQuery {
+    plugin {
+      jstree {
+        tablefield_01 = tx_org_staffgroup.title
+      }
+    }
+  }
+  navigation {
+    showUid = staffUid
+  }
+
+  templates {
+    listview {
+      header {
+        0 {
+          field   = tx_org_staff.title // tx_org_staff.name_last
+        }
+        1 {
+          field   = tx_org_staff.mail_city
+        }
+      }
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
+          height    = 120c
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_staff.imageseo
+          width     = 97c
+        }
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
+          file      = tx_org_news.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_news.imageseo
+          #width     =
+        }
+        2 {
+          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
+          file      = tx_org_headquarters.image
+          height    = 400
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo
+          width     = 277m
+        }
+      }
+      text {
+        0 {
+          field   = tx_org_staff.bodytext // tx_org_staff.vita
+        }
+      }
+      url {
+        0 {
+          key       = tx_org_staff.type
+          page      = tx_org_staff.page
+          record    = tx_org_staff.uid
+          showUid   = staffUid
+          #singlePid =
+          url       = tx_org_staff.url
+        }
+        1 {
+          key       = type
+          page      = page
+          record    = uid
+          showUid   = newsUid
+          #singlePid =
+          url       = url
+        }
+        2 {
+          key       = tx_org_headquarters.type
+          page      = tx_org_headquarters.page
+          record    = tx_org_headquarters.uid
+          showUid   = headquartersUid
+          #singlePid =
+          url       = tx_org_headquarters.url
+        }
+      }
+    }
+    singleview {
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
+          file      = tx_org_staff.image
+          #height    =
+          #layoutKey = picture
+          #listNum   =
+          path      = uploads/tx_org/
+          #seo       = tx_org_staff.imageseo
+          #width     =
+        }
+      }
+    }
+  }
+}

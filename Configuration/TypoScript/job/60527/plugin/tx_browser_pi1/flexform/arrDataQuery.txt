@@ -1,0 +1,164 @@
+plugin.tx_browser_pi1 {
+  flexform {
+    templating {
+      arrDataQuery {
+        items {
+          10 = Aktualisierte Jobangebote seit Tagesbeginn
+          10 {
+            name = Aktualisierte Jobangebote seit Tagesbeginn
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) )
+            }
+          }
+          11 = Aktualisierte Jobangebote seit Tagesbeginn vor einem Tag
+          11 {
+            name = Aktualisierte Jobangebote seit Tagesbeginn vor einem Tag
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL 1 DAY )
+            }
+          }
+          12 = Aktualisierte Jobangebote seit Tagesbeginn vor zwei Tagen
+          12 {
+            name = Aktualisierte Jobangebote seit Tagesbeginn vor zwei Tagen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL 2 DAY )
+            }
+          }
+          13 = Aktualisierte Jobangebote seit Tagesbeginn vor drei Tagen
+          13 {
+            name = Aktualisierte Jobangebote seit Tagesbeginn vor drei Tagen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL 3 DAY )
+            }
+          }
+          14 = Aktualisierte Jobangebote seit Tagesbeginn vor vier Tagen
+          14 {
+            name = Aktualisierte Jobangebote seit Tagesbeginn vor vier Tagen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL 4 DAY )
+            }
+          }
+          20 = Aktualisierte Jobangebote seit Wochenbeginn
+          20 {
+            name = Aktualisierte Jobangebote seit Wochenbeginn
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL WEEKDAY( curdate( )) DAY )
+            }
+          }
+          21 = Aktualisierte Jobangebote seit Wochenbeginn vor einer Woche
+          21 {
+            name = Aktualisierte Jobangebote seit Wochenbeginn vor einer Woche
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL WEEKDAY( curdate( )) DAY - INTERVAL 1 WEEK )
+            }
+          }
+          22 = Aktualisierte Jobangebote seit Wochenbeginn vor zwei Wochen
+          22 {
+            name = Aktualisierte Jobangebote seit Wochenbeginn vor zwei Wochen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL WEEKDAY( curdate( )) DAY - INTERVAL 2 WEEK )
+            }
+          }
+          23 = Aktualisierte Jobangebote seit Wochenbeginn vor drei Wochen
+          23 {
+            name = Aktualisierte Jobangebote seit Wochenbeginn vor drei Wochen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL WEEKDAY( curdate( )) DAY - INTERVAL 3 WEEK )
+            }
+          }
+          24 = Aktualisierte Jobangebote seit Wochenbeginn vor vier Wochen
+          24 {
+            name = Aktualisierte Jobangebote seit Wochenbeginn vor vier Wochen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( curdate( ) -INTERVAL WEEKDAY( curdate( )) DAY - INTERVAL 4 WEEK )
+            }
+          }
+          30 = Aktualisierte Jobangebote seit Monatsbeginn
+          30 {
+            name = Aktualisierte Jobangebote seit Monatsbeginn
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', month( curdate( ) ), '-01') )
+            }
+          }
+          31 = Aktualisierte Jobangebote seit Monatsbeginn vor einem Monat
+          31 {
+            name = Aktualisierte Jobangebote seit Monatsbeginn vor einem Monat
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', month( curdate( ) ), '-01') - INTERVAL 1 MONTH )
+            }
+          }
+          32 = Aktualisierte Jobangebote seit Monatsbeginn vor zwei Monaten
+          32 {
+            name = Aktualisierte Jobangebote seit Monatsbeginn vor zwei Monaten
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', month( curdate( ) ), '-01') - INTERVAL 2 MONTH )
+            }
+          }
+          33 = Aktualisierte Jobangebote seit Monatsbeginn vor drei Monaten
+          33 {
+            name = Aktualisierte Jobangebote seit Monatsbeginn vor drei Monaten
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', month( curdate( ) ), '-01') - INTERVAL 3 MONTH )
+            }
+          }
+          40 = Aktualisierte Jobangebote seit Quartalsbeginn
+          40 {
+            name = Aktualisierte Jobangebote seit Quartalsbeginn
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', ((QUARTER( curdate())  -1 )* 3) + 1, '-01') )
+            }
+          }
+          41 = Aktualisierte Jobangebote seit Quartalsbeginn vor einem Quartal
+          41 {
+            name = Aktualisierte Jobangebote seit Quartalsbeginn vor einem Quartal
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', ((QUARTER( curdate())  -1 )* 3) + 1, '-01') - INTERVAL 1 QUARTER )
+            }
+          }
+          42 = Aktualisierte Jobangebote seit Quartalsbeginn vor zwei Quartalen
+          42 {
+            name = Aktualisierte Jobangebote seit Quartalsbeginn vor zwei Quartalen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', ((QUARTER( curdate())  -1 )* 3) + 1, '-01') - INTERVAL 2 QUARTER )
+            }
+          }
+          43 = Aktualisierte Jobangebote seit Quartalsbeginn vor drei Quartalen
+          43 {
+            name = Aktualisierte Jobangebote seit Quartalsbeginn vor drei Quartalen
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-', ((QUARTER( curdate())  -1 )* 3) + 1, '-01') - INTERVAL 3 QUARTER )
+            }
+          }
+          50 = Aktualisierte Jobangebote seit Jahresbeginn
+          50 {
+            name = Aktualisierte Jobangebote seit Jahresbeginn
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-01-01') )
+            }
+          }
+          51 = Aktualisierte Jobangebote seit Jahresbeginn vor einem Jahr
+          51 {
+            name = Aktualisierte Jobangebote seit Jahresbeginn vor einem Jahr
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-01-01') - INTERVAL 1 YEAR )
+            }
+          }
+          52 = Aktualisierte Jobangebote seit Jahresbeginn vor zwei Jahren
+          52 {
+            name = Aktualisierte Jobangebote seit Jahresbeginn vor zwei Jahren
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-01-01') - INTERVAL 2 YEAR )
+            }
+          }
+          53 = Aktualisierte Jobangebote seit Jahresbeginn vor drei Jahren
+          53 {
+            name = Aktualisierte Jobangebote seit Jahresbeginn vor drei Jahren
+            arrQuery {
+              andWhere = tx_org_job.tstamp >= UNIX_TIMESTAMP( CONCAT( year( curdate( ) ), '-01-01') - INTERVAL 3 YEAR )
+            }
+          }
+        }
+      }
+    }
+  }
+}

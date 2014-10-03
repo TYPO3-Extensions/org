@@ -1,0 +1,121 @@
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  // plugin.tx_radialsearch_pi1
+  // plugin.tx_seodynamictag
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  map {
+    aliases {
+      showUid {
+        marker = headquartersUid
+      }
+    }
+    controlling {
+      enabled = Map
+    }
+    design {
+      path {
+        categoryIcon  = uploads/tx_org/
+      }
+      width = 700
+    }
+    icon {
+      listNum {
+        categoryIconMap       = 1
+        categoryIconMapSingle = 2
+      }
+    }
+    marker {
+      field {
+        linktoSingle      = tx_org_headquarters.uid
+        latitude          = tx_org_headquarters.mail_lat
+        longitude         = tx_org_headquarters.mail_lon
+        description       = tx_org_headquarters.title
+        category          = tx_org_headquarterscat.title
+        categoryIcon      = tx_org_headquarterscat.icons
+        categoryOffsetX   = tx_org_headquarterscat.icon_offset_x
+        categoryOffsetY   = tx_org_headquarterscat.icon_offset_y
+      }
+    }
+  }
+  radialsearch {
+    lat = tx_org_headquarters.mail_lat
+    lon = tx_org_headquarters.mail_lon
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_radialsearch_pi1
+
+plugin.tx_radialsearch_pi1 {
+  css {
+    jquery {
+      path =
+    }
+  }
+  distance {
+    dec_point     = ,
+    thousands_sep = .
+  }
+
+}
+  // plugin.tx_radialsearch_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_seodynamictag
+
+plugin.tx_seodynamictag {
+
+  canonical {
+    single {
+        // Only this parameter are allowed:
+      additionalParams = &tx_browser_pi1[headquartersUid]={GP:tx_browser_pi1|headquartersUid}
+    }
+  }
+
+  condition {
+    single {
+        // Please replace xxx with the uid of the page with the news plugin for the single view
+        // Please use the Constant Editor
+      begin = globalVar = GP:tx_browser_pi1|headquartersUid > 0] && [globalVar = TSFE:id = xxx
+    }
+  }
+
+  database {
+    table = tx_org_headquarters
+    var.1 = tx_browser_pi1[headquartersUid]
+    field {
+      //author        =
+      description   = description
+      keywords      = keywords
+      title         = title
+      short         = mail_city
+    }
+  }
+
+  default {
+    description = Description is empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Description]
+  }
+
+  keywords {
+    default         = Keywords are empty! Please maintain the current record of the TYPO3 Organiser Headquarters. See tab [Search Engine] field [Keywords]
+    moveToKeywords  = 0
+  }
+}
+  // plugin.tx_seodynamictag

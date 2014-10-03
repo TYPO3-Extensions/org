@@ -1,0 +1,19 @@
+plugin.tx_caddy_pi1 {
+  db {
+    sql >
+    sql = TEXT
+    sql {
+      value (
+        SELECT CAST('{GP:tx_org_downloads|uid}' AS SIGNED)  AS puid,
+               CONCAT('<strong>', 
+                      tx_org_downloads.title, ' </strong>') AS title,
+                '0,00'                                      AS gross,
+                '0,00'                                      AS tax,
+                CAST('{GP:tx_org_downloads|uid}' AS SIGNED) AS sku
+        FROM `tx_org_downloads`            
+        WHERE tx_org_downloads.uid = CAST('{GP:tx_org_downloads|uid}' AS SIGNED) ###ENABLE_FIELDS:TX_ORG_DOWNLOADS###
+)
+      insertData = 1
+    }
+  }
+}

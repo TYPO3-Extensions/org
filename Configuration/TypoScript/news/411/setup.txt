@@ -1,0 +1,227 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1
+  //    views
+  //      411: +Org: News - right column
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+  
+  views {
+    list {
+      411 = +Org: News (margin)
+      411 {
+        name    = news - margin
+        showUid = newsUid
+        marker < plugin.tx_browser_pi1.marker
+        marker {
+          my_listview_title {
+            wrap = <h3><span>|</span></h3>
+            value = News
+            lang.de = Nachrichten
+            typolink {
+              parameter = {$plugin.org.pages.news}
+              title {
+                value = All News
+                lang.de = Alle Nachrichten
+              }
+            }
+          }
+          my_listview_page = TEXT
+          my_listview_page {
+            value   = All News &raquo;
+            lang.de = Alle Nachrichten &raquo; 
+            wrap    = <p>|</p>
+            typolink {
+              parameter = {$plugin.org.pages.news}
+              title {
+                value = All News
+                lang.de = Alle Nachrichten
+              }
+            }
+          }
+        }
+        select (
+          tx_org_news.title,
+          tx_org_news.teaser_title,
+          tx_org_news.subtitle,
+          tx_org_news.teaser_subtitle,
+          tx_org_news.datetime,
+          tx_org_news.type,
+          tx_org_news.newspage,
+          tx_org_news.newsurl,
+          tx_org_news.uid
+        )
+        andWhere (
+          (tx_org_news.archivedate = 0 OR tx_org_news.archivedate > UNIX_TIMESTAMP())
+        )
+        orderBy = tx_org_news.datetime DESC
+        csvLinkToSingleView = tx_org_news.title
+        tx_org_news {
+          title = COA
+          title {
+              // datetime
+            10 = COA
+            10 {
+              10 = TEXT
+              10 {
+                value = ###TX_ORG_NEWS.DATETIME###
+                noTrimWrap = || |
+                strftime = %d.%m:
+              }
+            }
+              // title: news, newspage, newsurl
+            11 = CASE
+            11 {
+              key = ###TX_ORG_NEWS.TYPE###
+                // news
+              default = COA
+              default {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter         = {$plugin.org.pages.news}
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter         = {$plugin.org.pages.news}
+                    additionalParams  = &tx_browser_pi1[newsUid]=###TX_ORG_NEWS.UID###
+                    useCacheHash = 1
+                  }
+                }
+              }
+              newspage = COA
+              newspage {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSPAGE###
+                  }
+                }
+              }
+              newsurl = COA
+              newsurl {
+                  // teaser_title or ...
+                10 = TEXT
+                10 {
+                  if.isTrue = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value     = ###TX_ORG_NEWS.TEASER_TITLE###
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
+                  // ... title
+                11 = TEXT
+                11 {
+                  if.isFalse  = ###TX_ORG_NEWS.TEASER_TITLE###
+                  value       = ###TX_ORG_NEWS.TITLE###
+                  crop        = 24 | ... | 1
+                  typolink {
+                    parameter = ###TX_ORG_NEWS.NEWSURL###
+                  }
+                }
+              }
+            }
+              // subtitle
+            20 = COA
+            20 {
+                // linebreak
+              10 = TEXT
+              10 {
+                if {
+                  isTrue = ###TX_ORG_NEWS.TEASER_SUBTITLE######TX_ORG_NEWS.SUBTITLE###
+                }
+                value = <br />
+              }
+                // teaser subtitle or ...
+              21 = TEXT
+              21 {
+                if {
+                  isTrue = ###TX_ORG_NEWS.TEASER_SUBTITLE###
+                }
+                value = ###TX_ORG_NEWS.TEASER_SUBTITLE###
+              }
+                // ... subtitle
+              22 = TEXT
+              22 {
+                if {
+                  isFalse = ###TX_ORG_NEWS.TEASER_SUBTITLE###
+                }
+                value = ###TX_ORG_NEWS.SUBTITLE###
+                crop  = 36 | ... | 1
+              }
+            }
+          }
+        }
+          // marker and subparts will replaced in the HTML template before data handling
+          // #43627, 121205, dwildt
+        htmlSnippets =
+        htmlSnippets {
+          subparts {
+            listview = TEXT
+            listview {
+              value (
+        <div class="###VIEW###view ###VIEW###view-###MODE###">
+          <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+          <p>
+            ###TX_ORG_NEWS.TITLE###
+          </p>
+          <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+          ###MY_LISTVIEW_PAGE###
+        </div>
+)
+            }
+          }
+        }
+      }
+    }
+    single {
+      411 = +Org: News (margin)
+      411 {
+        comment = This plugin should not used in the single view!
+        template {
+          file = EXT:org/res/html/news/411/default.tmpl
+        }
+        select = tx_org_news.title
+        andWhere (
+          (tx_org_news.archivedate = 0 OR tx_org_news.archivedate > UNIX_TIMESTAMP())
+        )
+      }
+    }
+  }
+  
+}
+  // plugin.tx_browser_pi1

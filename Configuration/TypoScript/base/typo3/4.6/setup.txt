@@ -1,0 +1,68 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1.views.single.201
+  // plugin.tx_browser_pi1.views.single.301
+
+  // @internal: #44024
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.201
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      201 {
+        tx_org_cal {
+          bodytext {
+            tx_org_repertoire {
+              caption.1.1 >
+              caption.1 {
+                field >
+                value = ###TX_ORG_REPERTOIRE.IMAGECAPTION###
+              }
+            }
+            rendering {
+              singleNoCaption >
+              noCaption       >
+              singleCaption   >
+              splitCaption    >
+              globalCaption   >
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.201
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1.views.single.301
+
+plugin.tx_browser_pi1 {
+  views {
+    single {
+      301 {
+        tx_org_downloads {
+          title {
+            30 {
+              outerWrap = <table style="float:left;padding-right:1em;">|</table>
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // plugin.tx_browser_pi1.views.single.301
+

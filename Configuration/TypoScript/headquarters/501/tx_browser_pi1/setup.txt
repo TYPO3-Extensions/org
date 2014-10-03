@@ -1,0 +1,42 @@
+plugin.tx_browser_pi1 {
+
+  XXXadvanced {
+    sql {
+      devider {
+        tx_org_headquarterscat {
+          title {
+            display = TEXT
+            display {
+              value =
+              wrap = |
+            }
+          }
+        }
+      }
+    }
+  }
+
+  displayList {
+    selectBox_orderBy {
+      display = 1
+    }
+  }
+
+  navigation.map.template.file = EXT:browser/res/html/map/map_filter_1.3.tmpl
+
+  views {
+    list {
+      501 = +Org: Headquarters
+      501 {
+        name    = +Org: Headquarters
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
+      }
+    }
+    single {
+      501 = +Org: Headquarters
+    }
+  }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/headquarters/501/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/_setup.ts">

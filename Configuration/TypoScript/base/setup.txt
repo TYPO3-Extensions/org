@@ -1,0 +1,356 @@
+
+
+  ////////////////////////////////////////
+  //
+  // INDEX
+
+  // plugin.tx_browser_pi1 - SEO
+  // plugin.tx_browser_pi1
+  // plugin.tx_linkhandler
+  // page
+  // globals: page / SEO
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // plugin.tx_browser_pi1
+
+plugin.tx_browser_pi1 {
+
+  template {
+      // #44136
+//    extensions {
+//      org {
+//        default {
+//          name      = Org: Default
+//            // #43636, 121206, dwildt, 1-/1+
+//          file      = EXT:org/res/html/_default/main.tmpl
+//          csvViews  = 101,201,301,302,401,501,501,601,701
+//        }
+//        margin {
+//          name      = Org: Margin
+//            // #43636, 121206, dwildt, 1-/1+
+//          file      = EXT:org/res/html/_default/margin.tmpl
+//          csvViews  = 111,211,311,411,511,511,611,711
+//        }
+//      }
+//    }
+    add_parameter {
+      extensions {
+        org = COA
+        org {
+            // calendarUid
+          10 = TEXT
+          10 {
+            dataWrap        = &tx_browser_pi1[calendarUid]={GPvar:tx_browser_pi1|calendarUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|calendarUid
+          }
+            // departmentUid
+          20 = TEXT
+          20 {
+            dataWrap        = &tx_browser_pi1[departmentUid]={GPvar:tx_browser_pi1|departmentUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|departmentUid
+          }
+            // downloadsUid
+          30 = TEXT
+          30 {
+            dataWrap        = &tx_browser_pi1[downloadsUid]={GPvar:tx_browser_pi1|downloadsUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|downloadsUid
+          }
+            // downloadscatUid
+          40 = TEXT
+          40 {
+            dataWrap        = &tx_browser_pi1[downloadscatUid]={GPvar:tx_browser_pi1|downloadscatUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|downloadscatUid
+          }
+            // eventUid
+          50 = TEXT
+          50 {
+            dataWrap        = &tx_browser_pi1[eventUid]={GPvar:tx_browser_pi1|eventUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|eventUid
+          }
+            // feuserUid
+          60 = TEXT
+          60 {
+            dataWrap        = &tx_browser_pi1[feuserUid]={GPvar:tx_browser_pi1|feuserUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|feuserUid
+          }
+            // headquarterUid
+          70 = TEXT
+          70 {
+            dataWrap        = &tx_browser_pi1[headquarterUid]={GPvar:tx_browser_pi1|headquarterUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|headquarterUid
+          }
+            // jobUid
+          80 = TEXT
+          80 {
+            dataWrap        = &tx_browser_pi1[jobUid]={GPvar:tx_browser_pi1|jobUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|jobUid
+          }
+            // locationUid
+          90 = TEXT
+          90 {
+            dataWrap        = &tx_browser_pi1[locationUid]={GPvar:tx_browser_pi1|locationUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|locationUid
+          }
+            // newsUid
+          100 = TEXT
+          100 {
+            dataWrap        = &tx_browser_pi1[newsUid]={GPvar:tx_browser_pi1|newsUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|newsUid
+          }
+            // serviceUid
+          110 = TEXT
+          110 {
+            dataWrap        = &tx_browser_pi1[serviceUid]={GPvar:tx_browser_pi1|serviceUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|serviceUid
+          }
+            // staffUid
+          120 = TEXT
+          120 {
+            dataWrap        = &tx_browser_pi1[staffUid]={GPvar:tx_browser_pi1|staffUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|staffUid
+          }
+        }
+      }
+    }
+  }
+
+  navigation {
+    indexBrowser {
+      tabs {
+        2 {
+          valuesCSV = A,Ä,a,ä
+        }
+        16 {
+          valuesCSV = O,Ö,o,ö
+        }
+        21 {
+          valuesCSV = U,Ü,u,ü
+        }
+      }
+    }
+    // browser #i0071, 140717, dwildt, 1-
+    //pageBrowser.showResultCount = 0
+  }
+
+  general_stdWrap {
+      // dwildt, 110123
+    parseFunc >
+    parseFunc < lib.parseFunc_RTE
+    parseFunc {
+      allowTags = {$styles.content.links.allowTags},table,td,tr,small,iframe,option,form,legend,fieldset,input,button
+      externalBlocks {
+        comment (
+          div >
+          Denn div soll nicht automatisch mit </div> ergaenzt werden.
+          Siehe 301: Repertoire - tx_org_cal.datetime
+        )
+        div >
+      }
+    }
+  }
+
+  displayList.selectBox_orderBy.selectbox.wrap.item.stdWrap.htmlSpecialChars = 0
+
+  document_stdWrap.stdWrap.noTrimWrap = |<li>|</li> |
+
+  marker {
+    my_singleviewbackbutton = COA
+    my_singleviewbackbutton {
+        // History Back
+      10 = TEXT
+      10 {
+        value = Back
+        lang {
+          de = Zur&uuml;ck
+          en = Back
+        }
+        noTrimWrap  = |<a href="javascript:history.back()">&laquo; |</a>|
+      }
+        // Devider
+      20 = TEXT
+      20 {
+        value = |
+        noTrimWrap  = | | |
+      }
+        // List
+      30 = TEXT
+      30 {
+        value = To the list
+        lang {
+          de = Zur Liste
+          en = To the list
+        }
+        stdWrap {
+          noTrimWrap  = || &raquo;|
+        }
+      }
+    }
+  }
+
+  _LOCAL_LANG {
+    default {
+      label_sword_default       = Search Word
+      pi_list_searchBox_search  = Search!
+    }
+    de {
+      label_sword_default       = Suchbegriff
+      pi_list_searchBox_search  = Suchen!
+    }
+  }
+}
+  // plugin.tx_browser_pi1
+
+
+
+  ////////////////////////////////////////
+  //
+  // plugin.tx_linkhandler
+
+  // #53649, 131114, dwildt, +
+plugin.tx_linkhandler {
+  tx_org_cal {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.calendar}
+    additionalParams = &tx_browser_pi1[calendarUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_downloads {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.downloads}
+    additionalParams = &tx_browser_pi1[downloadsUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_event {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.event}
+    additionalParams = &tx_browser_pi1[eventUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_headquarters {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.headquarter}
+    additionalParams = &tx_browser_pi1[headquarterUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_job {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.job}
+    additionalParams = &tx_browser_pi1[jobUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_location {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.location}
+    additionalParams = &tx_browser_pi1[locationUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_news {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.news}
+    additionalParams = &tx_browser_pi1[newsUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_service {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.service}
+    additionalParams = &tx_browser_pi1[serviceUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_org_staff {
+    forceLink        = 0
+    useCacheHash     = 1
+    parameter        = {$plugin.org.pages.staff}
+    additionalParams = &tx_browser_pi1[staffUid]={field:uid}
+    additionalParams {
+      insertData = 1
+    }
+  }
+}
+  // #53649, 131114, dwildt, +
+  // plugin.tx_linkhandler
+
+
+
+  ////////////////////////////////////////
+  //
+  // page
+
+page {
+  includeCSS.organiser = EXT:org/res/html/org.css
+  config.headerComment (
+          TYPO3-Programmierung: die-netzmacher.de
+  )
+}
+  // page
+  ////////////////////////////////////////////////////////////////////////////////
+  //
+  // globals: page / SEO
+
+  //    showUid
+  //    calendarUid
+  //    departmentUid
+  //    downloadsUid
+  //    downloadscatUid
+  //    eventUid
+  //    headquarterUid
+  //    locationUid
+  //    newsUid
+  //    staffUid
+
+//[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|calendarUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+//[globalVar = GP:tx_browser_pi1|showUid > 0] || [globalVar = GP:tx_browser_pi1|departmentUid > 0] || [globalVar = GP:tx_browser_pi1|downloadsUid > 0] || [globalVar = GP:tx_browser_pi1|downloadscatUid > 0] || [globalVar = GP:tx_browser_pi1|eventUid > 0] || [globalVar = GP:tx_browser_pi1|headquarterUid > 0] || [globalVar = GP:tx_browser_pi1|locationUid > 0] || [globalVar = GP:tx_browser_pi1|newsUid > 0] || [globalVar = GP:tx_browser_pi1|staffUid > 0]
+//  page {
+//    config {
+//      noPageTitle = 2
+//    }
+//    headerData {
+//      20 = TEXT
+//      20 {
+//        data = register:browser_htmlTitleTag
+//        ifEmpty {
+//          field = title
+//          noTrimWrap  = |TYPO3 Organiser: ||
+//        }
+//        wrap = <title>|</title>
+//      }
+//    }
+//    meta {
+//      description {
+//        field >
+//        data = register:browser_description
+//      }
+//      keywords {
+//        field >
+//        data = register:browser_keywords
+//      }
+//    }
+//  }
+//[global]
+  // globals: page / SEO
