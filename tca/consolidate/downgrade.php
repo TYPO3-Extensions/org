@@ -109,7 +109,8 @@ foreach ($arrOrgTables as $orgTable)
     $showitem = remove_fields_embeddedcode($confArr, $showitem);
     $showitem = remove_fields_print($confArr, $showitem);
     $showitem = remove_fields_pubtrans($confArr, $showitem);
-    $showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
+    // #62019, 141003, dwildt, 1-
+    //$showitem = replace_table_tx_org_staff($confArr, $showitem, $orgTable);
     $TCA[$orgTable]['types'][$type]['showitem'] = $showitem;
   } // LOOP all types of the current table
 } //LOOP all Organiser tables
