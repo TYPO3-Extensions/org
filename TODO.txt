@@ -1,2 +1,0 @@
-Feature
-* #48901: Field configuration by constant editor
