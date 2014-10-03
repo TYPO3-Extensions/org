@@ -1,2 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/60527/plugin/tx_browser_pi1/single/sql.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/60527/plugin/tx_browser_pi1/single/htmlSnippets.txt">

@@ -1,1 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/static/job/593611/plugin/tx_browser_pi1/setup.txt">

@@ -278,7 +278,7 @@ switch( true )
   // Add dynamic static files
 
   // #53649, 131114, dwildt, 1-
-//require_once( PATH_typo3conf . 'ext/org/ext_tables/default/typoscript.php' );
+//require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/default/typoscript.php' );
   // Add dynamic static files
 
 
@@ -347,7 +347,7 @@ t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-org_staff', '../typo3conf
   //
   // Add default page and user TSconfig
 
-require_once( PATH_typo3conf . 'ext/org/ext_tables/' . $llStatic . '/TSconfig.php' );
+require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/' . $llStatic . '/TSconfig.php' );
   // Add default page and user TSconfig
 
 
@@ -1120,7 +1120,7 @@ $TCA['tx_org_headquarterscat'] = array (
   // org /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_department'] = array (
   'ctrl' => array (
-    'title'             => 'LLL:EXT:org/tca/locallang/tx_org_department.xml:tx_org_department',
+    'title'             => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_department.xml:tx_org_department',
     'label'             => 'title',
     'tstamp'            => 'tstamp',
     'crdate'            => 'crdate',
@@ -1146,7 +1146,7 @@ $TCA['tx_org_department'] = array (
   // departmentcat ////////////////////////////////////////////////////////////////////
 $TCA['tx_org_departmentcat'] = array (
   'ctrl' => array (
-    'title'         => 'LLL:EXT:org/tca/locallang/tx_org_department.xml:tx_org_departmentcat',
+    'title'         => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_department.xml:tx_org_departmentcat',
     'label'         => 'title',
     'tstamp'        => 'tstamp',
     'crdate'        => 'crdate',

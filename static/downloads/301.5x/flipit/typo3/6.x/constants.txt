@@ -1,6 +1,0 @@
-plugin.tx_flipit {
-  html {
-    height  = 580px
-    width   = 717px
-  }
-}

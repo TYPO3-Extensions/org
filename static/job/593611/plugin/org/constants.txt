@@ -1,6 +1,0 @@
-plugin.org {
-
-  # cat=Organiser - jobs/200/100; type=string; label= Blackout e-mail:contractor e-mail. In case of a missing e-mail for the current job, this e-mail is used.
-  tx_org_jobs.contractoremail =
-}
-  // plugin.org
