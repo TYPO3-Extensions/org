@@ -23,10 +23,11 @@ plugin.tx_browser_pi1 {
       provider = GoogleMaps
     }
     design {
+      height  = 210
+      imgPath = typo3conf/ext/browser/res/js/map/themes/red/
       path {
         categoryIcon  = uploads/tx_org/
       }
-      height  = 210
       width   = 720
     }
     icon {

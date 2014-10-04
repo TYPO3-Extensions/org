@@ -16,10 +16,11 @@ plugin.tx_browser_pi1 {
       enabled = Map
     }
     design {
+      height  = 240
+      imgPath = typo3conf/ext/browser/res/js/map/themes/orange/
       path {
         categoryIcon  = uploads/tx_org/
       }
-      height  = 240
       width   = 720
     }
     icon {

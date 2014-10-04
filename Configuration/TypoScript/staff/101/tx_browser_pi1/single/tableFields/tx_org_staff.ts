@@ -26,7 +26,7 @@ plugin.tx_browser_pi1 {
                 }
               }
               wrap = <div style="float:left;padding:0 1em 1em 0;">|</div>
-              10 < plugin.tx_browser_pi1.displaySingle.master_templates.tableFields.image.0.notype
+              10 < plugin.tx_browser_pi1.displaySingle.master_templates.tableFields.image.0
             }
               // header
             20 = TEXT

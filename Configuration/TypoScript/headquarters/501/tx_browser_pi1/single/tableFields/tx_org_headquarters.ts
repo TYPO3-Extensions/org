@@ -82,7 +82,7 @@ plugin.tx_browser_pi1 {
                 20 {
                   table = tx_org_headquarterscat
                   select {
-                    pidInList = {$plugin.org.sysfolder.headquarters}
+                    pidInList = {$plugin.org.sysfolder.headquarter}
                     //selectFields = tx_org_headquarterscat.title
                     join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
                     where {
@@ -90,7 +90,7 @@ plugin.tx_browser_pi1 {
                       noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_headquarterscat'|
                     }
                     orderBy = tx_org_headquarterscat.title
-                    max = 3
+                    //max = 3
                   }
                     // tx_org_headquarterscat.title
                   renderObj = TEXT
@@ -109,6 +109,10 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
+              }
+              XXX30 = TEXT
+              XXX30 {
+                field = tx_org_headquarterscat.uid
               }
                 // if is true tx_org_headquarterscat.uid
               if =
