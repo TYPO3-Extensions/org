@@ -73,6 +73,13 @@ plugin.tx_browser_pi1 {
                   field = tx_org_caltype.title
                 }
               }
+                // image
+              39 = COA
+              39 {
+                  // image
+                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+                wrap = <div style="float:left;padding-right:1em;">|</div>
+              }
                 // teaser_short: default, notype, page, url, tx_org_event
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               40 {

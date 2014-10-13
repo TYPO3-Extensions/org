@@ -32,7 +32,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_postcode
         )
         orderBy (
-          tx_org_cal.title, tx_org_caltype.title
+          tx_org_cal.datetime
         )
         // Workaround: Without it i.e. the filename in tx_org_caltype.title would get a typolink!
         csvLinkToSingleView = dummy

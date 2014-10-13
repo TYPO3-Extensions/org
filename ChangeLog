@@ -34,6 +34,7 @@
   * #61661: Extension Initialisation
   Improvements
   * #61856: Move all fields description and seo_keywords to seo_description and seo_seo_keywords,seo_description
+  * #i0028: graded from beta to alpha
   * #i0027: tx_org_departments is removed
 
 5.0.15

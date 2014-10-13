@@ -119,14 +119,14 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
-          file      = tx_org_headquarters.image
-          #height    =
-          #layoutKey = picture
-          #listNum   =
-          path      = uploads/tx_org/
-          #seo       = tx_org_headquarters.imageseo
-          #width     =
+          caption     = tx_org_headquarters.imagecaption
+          file        = tx_org_headquarters.image
+          height      = tx_org_headquarters.imageheight
+          imagecols   = tx_org_headquarters.imagecols
+          imageorient = tx_org_headquarters.imageorient
+          path        = uploads/tx_org/
+          seo         = tx_org_headquarters.imageseo
+          width       = tx_org_headquarters.imagewidth
         }
       }
     }

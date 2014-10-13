@@ -67,28 +67,10 @@ plugin.tx_browser_pi1 {
         0 {
           default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
           file      = tx_org_cal.image
-          height    = 90c
+          height    = 95c
           path      = uploads/tx_org/
           seo       = tx_org_cal.imageseo
-          width     = 220c
-        }
-        1 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
-          file      = tx_org_news.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_news.imageseo
-          #width     =
-        }
-        2 {
-          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
-          file      = tx_org_cal.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_cal.imageseo
-          #width     =
+          width     = 95c
         }
       }
       text {
@@ -127,14 +109,14 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
-          file      = tx_org_cal.image
-          #height    =
-          #layoutKey = picture
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_cal.imageseo // tx_org_cal.imagecaption
-          #width     =
+          caption     = tx_org_cal.imagecaption
+          file        = tx_org_cal.image
+          height      = tx_org_cal.imageheight
+          imagecols   = tx_org_cal.imagecols
+          imageorient = tx_org_cal.imageorient
+          path        = uploads/tx_org/
+          seo         = tx_org_cal.imageseo
+          width       = tx_org_cal.imagewidth
         }
       }
     }

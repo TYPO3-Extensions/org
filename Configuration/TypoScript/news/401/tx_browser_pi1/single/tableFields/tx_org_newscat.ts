@@ -18,7 +18,7 @@ plugin.tx_browser_pi1 {
               // div box
             wrap = <ul class="vcard tx_org_newscat">|</ul><!-- vcard -->
               // Marginal news box: header, items
-            10 = COA_INT
+            10 = COA
             10 {
                 // header
               10 = TEXT

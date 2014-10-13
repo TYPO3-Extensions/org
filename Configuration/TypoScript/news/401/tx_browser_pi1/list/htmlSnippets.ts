@@ -8,9 +8,9 @@ plugin.tx_browser_pi1 {
             filter = TEXT
             filter {
               value (
-              <div class="filter">
-                ###TX_ORG_NEWSCAT.TITLE###
-              </div>
+                <div class="filter">
+                  ###TX_ORG_NEWSCAT.TITLE###
+                </div>
 )
             }
           }
@@ -22,13 +22,13 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-            <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
-              <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="tx_org_news tx_org_news-record record">
-                ###TX_ORG_NEWS.TITLE###
-              </div>
-              <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-              </div> <!-- /listview -->
+                <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
+                  <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                  <div class="tx_org_news tx_org_news-record record">
+                    ###TX_ORG_NEWS.TITLE###
+                  </div>
+                  <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                </div> <!-- /listview -->
 )
             }
           }

@@ -28,7 +28,7 @@ plugin.tx_browser_pi1 {
                 10 {
                   10 = COA
                   10 {
-                    10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.1
+                    10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.1.default
                     wrap = <div class="image" style="float:right;padding-left:1em;">|</div>
                   }
                     // title, if title (name)

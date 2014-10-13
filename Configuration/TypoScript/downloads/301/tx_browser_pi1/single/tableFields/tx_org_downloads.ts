@@ -718,7 +718,6 @@ plugin.tx_browser_pi1 {
               outerWrap = |
               filePath >
               itemRendering >
-                // Download link and ordering form
               itemRendering = COA
               itemRendering {
                   // Form begin

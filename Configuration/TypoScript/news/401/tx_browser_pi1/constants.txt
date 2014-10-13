@@ -77,5 +77,19 @@ plugin.tx_browser_pi1 {
         }
       }
     }
+    singleview {
+      image {
+        0 {
+          caption     = tx_org_news.imagecaption
+          file        = tx_org_news.image
+          height      = tx_org_news.imageheight
+          imagecols   = tx_org_news.imagecols
+          imageorient = tx_org_news.imageorient
+          path        = uploads/tx_org/
+          seo         = tx_org_news.imageseo
+          width       = tx_org_news.imagewidth
+        }
+      }
+    }
   }
 }
