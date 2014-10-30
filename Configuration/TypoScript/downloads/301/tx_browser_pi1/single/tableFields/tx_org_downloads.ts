@@ -613,7 +613,7 @@ plugin.tx_browser_pi1 {
                             // <img ... />
                           20 = IMAGE
                           20 {
-                            file    = EXT:org/res/cart.gif
+                            file    = EXT:org/res/shipping.gif
                           }
                             // label</button></td>
                           30 = TEXT
@@ -953,7 +953,7 @@ plugin.tx_browser_pi1 {
                         // <img ... />
                       20 = IMAGE
                       20 {
-                        file    = EXT:org/res/cart.gif
+                        file    = EXT:org/res/shipping.gif
                       }
                         // label</button></td>
                       30 = TEXT
