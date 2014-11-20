@@ -873,4 +873,89 @@ if (!$bool_full_wizardSupport_allTables)
   unset($TCA['tx_org_location']['columns']['tx_org_cal']['config']['wizards']['add']);
   unset($TCA['tx_org_location']['columns']['tx_org_cal']['config']['wizards']['list']);
 }
+
+$TCA[ 'tx_org_locationcat' ] = array(
+  'ctrl' => $TCA[ 'tx_org_locationcat' ][ 'ctrl' ],
+  'interface' => array(
+    'showRecordFieldList' => ''
+    . 'title,title_lang_ol,uid_parent,'
+    . 'icons,icon_offset_x,icon_offset_y,'
+    . 'hidden,'
+    . 'image,imagecaption,imageseo'
+  ,
+  ),
+  'columns' => array(
+    'title' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.title',
+      'config' => $conf_input_30_trimRequired,
+    ),
+    'title_lang_ol' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.title_lang_ol',
+      'config' => $conf_input_30_trim,
+    ),
+    'uid_parent' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.uid_parent',
+      'config' => array(
+        'type' => 'select',
+        'form_type' => 'user',
+        'userFunc' => 'tx_cpstcatree->getTree',
+        'foreign_table' => 'tx_org_locationcat',
+        'treeView' => 1,
+        'expandable' => 1,
+        'expandFirst' => 0,
+        'expandAll' => 0,
+        'size' => 1,
+        'minitems' => 0,
+        'maxitems' => 2,
+        'trueMaxItems' => 1,
+      ),
+    ),
+    'icons' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.icons',
+      'config' => $conf_file_image,
+    ),
+    'icon_offset_x' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.icon_offset_x',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'icon_offset_y' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.icon_offset_y',
+      'config' => array(
+        'type' => 'input',
+        'size' => '3',
+        'max' => '3',
+        'eval' => 'int',
+        'default' => '0',
+      ),
+    ),
+    'hidden' => $conf_hidden,
+  ),
+  'types' => array(
+    '0' => array( 'showitem' => ''
+      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.div_cat,'
+      . '  title;;1;;1-1-1,uid_parent,'
+      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.div_icons,'
+      . '  icons,icon_offset_x,icon_offset_y,'
+      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat.div_control,'
+      . 'hidden'
+    ),
+  ),
+  'palettes' => array(
+    '1' => array( 'showitem' => 'title_lang_ol,' ),
+  ),
+);
+
 ?>
