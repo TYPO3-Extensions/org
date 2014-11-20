@@ -15,7 +15,6 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_lon,
           tx_org_location.mail_postcode,
           tx_org_location.page,
-          tx_org_location.teaser_short,
           tx_org_location.type,
           tx_org_location.url,
           tx_org_locationcat.title,
