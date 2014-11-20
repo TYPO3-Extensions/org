@@ -13,9 +13,6 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_url,
           tx_org_location.mail_lat,
           tx_org_location.mail_lon,
-          tx_org_location.postbox_postbox,
-          tx_org_location.postbox_postcode,
-          tx_org_location.postbox_city,
           tx_org_location.telephone,
           tx_org_location.fax,
           tx_org_location.email,
@@ -43,12 +40,10 @@ plugin.tx_browser_pi1 {
 
           tx_org_location.page,
           tx_org_location.type,
-          tx_org_location.url,
-          tx_org_news.uid,
-          tx_org_staff.uid
+          tx_org_location.url
         )
         orderBy (
-          tx_org_location.title, tx_org_locationcat.title, tx_org_news.date DESC,
+          tx_org_location.title, tx_org_locationcat.title
         )
         functions.clean_up.csvTableFields (
           tx_org_location.page,
