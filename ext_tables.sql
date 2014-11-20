@@ -653,6 +653,7 @@ CREATE TABLE tx_org_location (
   sorting int(11) unsigned NOT NULL DEFAULT '0',
   deleted tinyint(4) unsigned NOT NULL DEFAULT '0',
   title tinytext,
+  bodytext text,
   geoupdateprompt text,
   geoupdateforbidden tinyint(4) unsigned NOT NULL DEFAULT '0',
   mail_address text ,

@@ -11,7 +11,7 @@ $TCA['tx_org_location'] = array(
     'showRecordFieldList' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,'
     . 'type,page,url,'
-    . 'title,tx_org_locationcat,'
+    . 'title,tx_org_locationcat,bodytext,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
     . 'telephone,ticket_telephone,ticket_url,fax,email,'
     . 'tx_org_cal,'
@@ -159,6 +159,26 @@ $TCA['tx_org_location'] = array(
         'expandFirst' => 0,
         'expandAll' => 0,
         'foreign_table_where' => 'AND tx_org_locationcat.' . $str_store_record_conf . ' AND tx_org_locationcat.deleted = 0 AND tx_org_locationcat.hidden = 0 ORDER BY tx_org_locationcat.title',
+      ),
+    ),
+    'bodytext' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.bodytext',
+      'config' => array(
+        'type' => 'text',
+        'cols' => '30',
+        'rows' => '5',
+        'wizards' => array(
+          '_PADDING' => 2,
+          'RTE' => array(
+            'notNewRecords' => 1,
+            'RTEonly' => 1,
+            'type' => 'script',
+            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.rte.fullscreen',
+            'icon' => 'wizard_rte2.gif',
+            'script' => 'wizard_rte.php',
+          ),
+        ),
       ),
     ),
     'url' => array(
@@ -714,6 +734,7 @@ $TCA['tx_org_location'] = array(
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_location, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typerecord;typerecord,'
       . '  title,tx_org_locationcat,'
+      . '  bodytext;;;richtext[]:rte_transform[mode=ts],'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_mail, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '

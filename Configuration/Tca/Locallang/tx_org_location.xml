@@ -21,6 +21,7 @@
       <label index="tx_org_location.palette_mailaddress">Address</label>
       <label index="tx_org_location.palette_maillatlon">Geo reference</label>
       <label index="tx_org_location.title">Label of the Location</label>
+      <label index="tx_org_location.bodytext">Description</label>
       <label index="tx_org_location.url">Homepage of the Location</label>
       <label index="tx_org_location.geoupdateprompt">Geoupdate prompt</label>
       <label index="tx_org_location.geoupdateforbidden">Latitude and longitude should not updated automatically</label>
@@ -75,8 +76,7 @@
       <label index="tx_org_location.palette_mailaddress">Adresse</label>
       <label index="tx_org_location.palette_maillatlon">Geo-Referenzierung</label>
       <label index="tx_org_location.title">Bezeichnung des Veranstaltungsorts</label>
-      <label index="tx_org_location.citymap_url">Stadtplan: URL</label>
-      <label index="tx_org_location.citymap_embeddedcode">Stadtplan: Eingebetteter Code</label>
+      <label index="tx_org_location.bodytext">Beschreibung</label>
       <label index="tx_org_location.documents">Dokumente</label>
       <label index="tx_org_location.email">E-Mail</label>
       <label index="tx_org_location.fe_group">Frontend Benutzergruppe</label>
