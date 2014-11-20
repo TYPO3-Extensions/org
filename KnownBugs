@@ -1,0 +1,25 @@
+AOE Link Handler
+
+  Version
+    * 1.1.0
+
+  ERROR prompt:
+    * Oops, an error occurred!
+      Invalid form/module token detected. Access Denied!
+
+  Context
+    * If you are clicking on an item in the page tree of the link wizard
+
+  Help by wiki.typo3.org
+    * http://wiki.typo3.org/Exception/CMS/1392409507
+    * In custom backend modules it is usually necessary to generate links to the module using BackendUtility::getModuleUrl() method
+      http://typo3.org/api/typo3cms/class_t_y_p_o3_1_1_c_m_s_1_1_backend_1_1_utility_1_1_backend_utility.html#a8437ed5134d2c407ca67cc5f5627b280)
+    * In the case of wizards the usage of the "script" key for type=>script wizards is deprecated.
+      Instead the configuration option "module" should get used
+      http://docs.typo3.org/typo3cms/TCAReference/AdditionalFeatures/WizardsConfiguration/Index.html#wizards-configuration-script-script
+
+  ToDo
+    * Fix the bug
+
+  Issue on forge
+    * https://forge.typo3.org/issues/63088

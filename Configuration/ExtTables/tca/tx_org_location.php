@@ -37,7 +37,7 @@ $TCA['tx_org_location'] = array(
       'notype'    => '../typo3conf/ext/org/Configuration/ExtIcon/notype.gif',
     ),
     'searchFields' => ''
-    . 'sys_language_uid,l10n_parent,l10n_diffsource,title,url,'
+    . 'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_locationcat,url,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,' .
     'telephone,ticket_telephone,ticket_url,fax,email,' .
     'tx_org_cal,' .
@@ -75,4 +75,30 @@ $TCA['tx_org_location'] = array(
     ),
   ),
 );
+
+$TCA['tx_org_locationcat'] = array(
+  'ctrl' => array(
+    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat',
+    'label' => 'title',
+    'tstamp' => 'tstamp',
+    'crdate' => 'crdate',
+    'default_sortby' => 'ORDER BY title',
+    //'sortby' => 'sorting',
+    'delete' => 'deleted',
+    'enablecolumns' => array(
+      'disabled' => 'hidden',
+    ),
+    'hideAtCopy' => false,
+    'dividers2tabs' => true,
+    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
+    'thumbnail' => 'icons',
+    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Configuration/ExtIcon/locationcat.gif',
+    'treeParentField' => 'uid_parent',
+    'searchFields' => 'title,title_lang_ol,uid_parent,icons,icon_offset_x,icon_offset_y,' .
+    'hidden,' .
+    'image,imagecaption,imageseo',
+  )
+);
+
+
 ?>

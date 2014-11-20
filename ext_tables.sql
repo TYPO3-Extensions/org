@@ -705,12 +705,39 @@ CREATE TABLE tx_org_location (
   seo_keywords text,
   tx_org_cal tinytext,
   tx_org_headquarters tinytext,
+  tx_org_locationcat tinytext,
   tx_org_staff tinytext,
   type tinytext,
   url tinytext,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
+);
+
+
+
+#
+# tx_org_locationcat
+#
+CREATE TABLE tx_org_locationcat (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  sorting int(10) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
+  title_lang_ol tinytext,
+  icons text,
+  icon_offset_x int(11) NOT NULL DEFAULT '0',
+  icon_offset_y int(11) DEFAULT '0' NOT NULL
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+
 );
 
 

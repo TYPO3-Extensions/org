@@ -1,18 +1,8 @@
 <?php
 
-########################################################################
-# Extension Manager/Repository config file for ext "org".
-#
-# Auto generated 15-12-2011 23:01
-#
-# Manual updates:
-# Only the data in the array - everything else is removed by next
-# writing. "version" and "dependencies" must not be touched!
-########################################################################
-
 $EM_CONF[$_EXTKEY] = array(
   'title' => 'Organiser',
-  'description' => 'TYPO3 Organiser, TYPO3 for the lobby and the organisers. '
+  'description' => 'TYPO3 Organiser, TYPO3 for the lobbies and the organisers. '
   . 'See: http://typo3-organiser.de/ '
   . 'Manual: http://typo3-organiser.de/typo3conf/ext/org/doc/manual.pdf '
   . 'The Organiser provides a lot of features for handle a simple calendar, companies, contacts, '

@@ -11,7 +11,7 @@ $TCA['tx_org_location'] = array(
     'showRecordFieldList' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,'
     . 'type,page,url,'
-    . 'title,'
+    . 'title,tx_org_locationcat,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
     . 'telephone,ticket_telephone,ticket_url,fax,email,'
     . 'tx_org_cal,'
@@ -131,6 +131,35 @@ $TCA['tx_org_location'] = array(
       'l10n_mode' => 'prefixLangTitle',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.title',
       'config' => $conf_input_30_trimRequired,
+    ),
+    'tx_org_locationcat' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.tx_org_locationcat',
+      'config' => array(
+        'type' => 'select',
+        'size' => 10,
+        'minitems' => 0,
+        'maxitems' => 99,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_location',
+          'table_foreign' => 'tx_org_locationcat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_location',
+          'table_foreign' => 'tx_org_locationcat'
+        ),
+        'foreign_table' => 'tx_org_locationcat',
+        // #58885, 140516, dwildt, 6+
+        'form_type' => 'user',
+        'userFunc' => 'tx_cpstcatree->getTree',
+        'treeView' => 1,
+        'expandable' => 1,
+        'expandFirst' => 0,
+        'expandAll' => 0,
+        'foreign_table_where' => 'AND tx_org_locationcat.' . $str_store_record_conf . ' AND tx_org_locationcat.deleted = 0 AND tx_org_locationcat.hidden = 0 ORDER BY tx_org_locationcat.title',
+      ),
     ),
     'url' => array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.url',
@@ -684,7 +713,7 @@ $TCA['tx_org_location'] = array(
     'record' => array('showitem' => ''
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_location, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typerecord;typerecord,'
-      . '  title,'
+      . '  title,tx_org_locationcat,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_mail, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
@@ -718,7 +747,7 @@ $TCA['tx_org_location'] = array(
     'page' => array('showitem' => ''
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_location, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
-      . '  title,'
+      . '  title,tx_org_locationcat,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_mail, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
@@ -742,7 +771,7 @@ $TCA['tx_org_location'] = array(
     'url' => array('showitem' => ''
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_location, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
-      . '  title,'
+      . '  title,tx_org_locationcat,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.div_mail, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_mailaddress;mailaddress, '
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.palette_maillatlon;maillatlon, '
