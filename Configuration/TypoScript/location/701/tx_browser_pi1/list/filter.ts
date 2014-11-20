@@ -1,10 +1,10 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      501 {
+      701 {
         filter {
           radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
-          tx_org_headquarterscat {
+          tx_org_locationcat {
               // #43641, dwildt, 1-, 1+
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.headquarterscat
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.locationcat
                   }
                 }
               }

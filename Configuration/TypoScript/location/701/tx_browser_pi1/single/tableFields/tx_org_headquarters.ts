@@ -1,13 +1,13 @@
 plugin.tx_browser_pi1 {
   views {
     single {
-      501 {
+      701 {
           // 140706: empty statement: for proper comments only
-        tx_org_headquarters {
+        tx_org_location {
         }
           // title: image, header, bodytext, vita, groups
-        tx_org_headquarters =
-        tx_org_headquarters {
+        tx_org_location =
+        tx_org_location {
             // image, header, bodytext, vita, groups
             // title
           title < plugin.tx_browser_pi1.displaySingle.master_templates.tableFields.imageText.0
@@ -27,13 +27,13 @@ plugin.tx_browser_pi1 {
                     // header
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.title
+                    field = tx_org_location.title
                     wrap = <h1>|</h1>
                   }
                     // bodytext
                   30 = TEXT
                   30 {
-                    field = tx_org_headquarters.bodytext
+                    field = tx_org_location.bodytext
                     stdWrap {
                       parseFunc < lib.parseFunc_RTE
                     }
@@ -46,18 +46,18 @@ plugin.tx_browser_pi1 {
                         // add the value of a field to another field in cObj->data
                       cObjDataFieldWrapper =
                       cObjDataFieldWrapper {
-                        cols            = tx_org_headquarters.cols
-                        pi_flexform     = tx_org_headquarters.pi_flexform
-                        uid             = tx_org_headquarters.uid
+                        cols            = tx_org_location.cols
+                        pi_flexform     = tx_org_location.pi_flexform
+                        uid             = tx_org_location.uid
                       }
                     }
-                    field = tx_org_headquarters.vita
+                    field = tx_org_location.vita
                     stdWrap {
                         // With a prefix comment there won't be any output!
                       prefixComment >
                     }
                   }
-                    // tx_org_headquarterscat.title
+                    // tx_org_locationcat.title
                   90 = COA
                   90 {
                       // Marginal news box: header, items
@@ -73,22 +73,22 @@ plugin.tx_browser_pi1 {
                         }
                         noTrimWrap = |<span class="header">|:</span> |
                       }
-                        // items: tx_org_headquarterscat.title croped and linked
+                        // items: tx_org_locationcat.title croped and linked
                       20 = CONTENT
                       20 {
-                        table = tx_org_headquarterscat
+                        table = tx_org_locationcat
                         select {
                           pidInList = {$plugin.org.sysfolder.headquarter}
-                          //selectFields = tx_org_headquarterscat.title
-                          join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
+                          //selectFields = tx_org_locationcat.title
+                          join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_locationcat.uid
                           where {
-                            field = tx_org_headquarters.uid
-                            noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_headquarterscat'|
+                            field = tx_org_location.uid
+                            noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_location' AND tx_org_mm_all.table_foreign = 'tx_org_locationcat'|
                           }
-                          orderBy = tx_org_headquarterscat.title
+                          orderBy = tx_org_locationcat.title
                           //max = 3
                         }
-                          // tx_org_headquarterscat.title
+                          // tx_org_locationcat.title
                         renderObj = TEXT
                         renderObj {
                           field = title
@@ -106,62 +106,62 @@ plugin.tx_browser_pi1 {
                         }
                       }
                     }
-                      // if is true tx_org_headquarterscat.uid
+                      // if is true tx_org_locationcat.uid
                     if =
                     if {
                       isTrue {
-                        field = tx_org_headquarterscat.uid
+                        field = tx_org_locationcat.uid
                       }
                     }
                       // div box
-                    wrap = <div class="show-for-large-up tx_org_headquarterscat">|</div>
+                    wrap = <div class="show-for-large-up tx_org_locationcat">|</div>
                   }
                 }
               }
               1 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               2 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               8 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               9 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               10 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               17 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               18 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               25 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
               26 {
                 10 >
-                10 < plugin.tx_browser_pi1.views.single.501.tx_org_headquarters.title.20.0.10
+                10 < plugin.tx_browser_pi1.views.single.701.tx_org_location.title.20.0.10
               }
             }
           }
-            // headquarters marginal box: header, content
+            // location marginal box: header, content
           contact_email = COA
           contact_email {
             if {
               isTrue {
-                field = tx_org_headquarters.uid
+                field = tx_org_location.uid
               }
             }
               // vcard: header, name, contact_email, contact_phone, contact_fax, contact_skype, contact_url,
@@ -170,7 +170,7 @@ plugin.tx_browser_pi1 {
                 // column: image, header, title, steet, zip city, url
               10 = COA
               10 {
-                wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
+                wrap = <ul class="vcard tx_org_location">|</ul><!-- vcard -->
                   // image, header
                 10 = COA
                 10 {
@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
                   }
                   default = TEXT
                   default {
-                    field = tx_org_headquarters.title
+                    field = tx_org_location.title
                     noTrimWrap = |<li class="fn"> | &raquo;</li>|
                     required = 1
                     typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
@@ -218,12 +218,12 @@ plugin.tx_browser_pi1 {
                 30 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_email
+                      field = tx_org_location.contact_email
                     }
                   }
                   typolink {
                     parameter {
-                      field = tx_org_headquarters.contact_email
+                      field = tx_org_location.contact_email
                     }
                   }
                   wrap = <li class="contact_email">|</li>
@@ -233,7 +233,7 @@ plugin.tx_browser_pi1 {
                 40 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_phone
+                      field = tx_org_location.contact_phone
                     }
                   }
                   wrap = <li class="contact_phone">|</li>
@@ -248,7 +248,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_phone
+                    field = tx_org_location.contact_phone
                     required = 1
                   }
                 }
@@ -257,7 +257,7 @@ plugin.tx_browser_pi1 {
                 50 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_fax
+                      field = tx_org_location.contact_fax
                     }
                   }
                   wrap = <li class="contact_fax">|</li>
@@ -272,7 +272,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_fax
+                    field = tx_org_location.contact_fax
                     required = 1
                   }
                 }
@@ -281,7 +281,7 @@ plugin.tx_browser_pi1 {
                 60 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_skype
+                      field = tx_org_location.contact_skype
                     }
                   }
                   wrap = <li class="contact_skype">|</li>
@@ -296,7 +296,7 @@ plugin.tx_browser_pi1 {
                   }
                   20 = TEXT
                   20 {
-                    field = tx_org_headquarters.contact_skype
+                    field = tx_org_location.contact_skype
                     required = 1
                   }
                 }
@@ -305,7 +305,7 @@ plugin.tx_browser_pi1 {
                 70 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.contact_url
+                      field = tx_org_location.contact_url
                     }
                   }
                   wrap = <li class="contact_url">|</li>
@@ -320,7 +320,7 @@ plugin.tx_browser_pi1 {
                     required = 1
                     typolink {
                       parameter{
-                        field = tx_org_headquarters.contact_url
+                        field = tx_org_location.contact_url
                       }
                     }
                   }

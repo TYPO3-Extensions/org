@@ -2,19 +2,19 @@ plugin.tx_seodynamictag {
   canonical {
     single {
         // Only this parameter are allowed:
-      additionalParams = &tx_browser_pi1[headquartersUid]={GP:tx_browser_pi1|headquartersUid}
+      additionalParams = &tx_browser_pi1[locationUid]={GP:tx_browser_pi1|locationUid}
     }
   }
   condition {
     single {
-        // Please replace xxx with the uid of the page with the headquarters plugin for the single view
+        // Please replace xxx with the uid of the page with the location plugin for the single view
         // Please use the Constant Editor
-      begin = globalVar = GP:tx_browser_pi1|headquartersUid > 0] && [globalVar = TSFE:id = xxx
+      begin = globalVar = GP:tx_browser_pi1|locationUid > 0] && [globalVar = TSFE:id = xxx
     }
   }
   database {
-    table = tx_org_headquarters
-    var.1 = tx_browser_pi1[headquartersUid]
+    table = tx_org_location
+    var.1 = tx_browser_pi1[locationUid]
     field {
       //author        =
       description   = seo_description

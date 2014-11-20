@@ -1,0 +1,134 @@
+plugin.tx_browser_pi1 {
+  jQuery {
+    plugin {
+      jstree {
+        tablefield_01 = tx_org_locationcat.title
+      }
+    }
+  }
+  map {
+    aliases {
+      showUid {
+        marker = locationUid
+      }
+    }
+    controlling {
+      enabled = Map
+    }
+    design {
+      height  = 240
+      imgPath = typo3conf/ext/browser/res/js/map/themes/orange/
+      path {
+        categoryIcon  = uploads/tx_org/
+      }
+      width   = 720
+    }
+    icon {
+      listNum {
+        categoryIconMap       = 1
+        categoryIconMapSingle = 2
+      }
+    }
+    marker {
+      field {
+        linktoSingle      = tx_org_location.uid
+        latitude          = tx_org_location.mail_lat
+        longitude         = tx_org_location.mail_lon
+        description       = tx_org_location.title
+        category          = tx_org_locationcat.title
+        categoryIcon      = tx_org_locationcat.icons
+        categoryOffsetX   = tx_org_locationcat.icon_offset_x
+        categoryOffsetY   = tx_org_locationcat.icon_offset_y
+      }
+    }
+  }
+  navigation {
+    showUid = locationUid
+  }
+  radialsearch {
+    lat = tx_org_location.mail_lat
+    lon = tx_org_location.mail_lon
+  }
+  templates {
+    listview {
+      header {
+        0 {
+          field   = tx_org_location.teaser_title // tx_org_location.title
+        }
+      }
+      image {
+        0 {
+          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.gif
+          file      = tx_org_location.image
+          height    = 90c
+          path      = uploads/tx_org/
+          seo       = tx_org_location.imageseo
+          width     = 220c
+        }
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
+          file      = tx_org_news.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_news.imageseo
+          #width     =
+        }
+        2 {
+          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.gif
+          file      = tx_org_location.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_location.imageseo
+          #width     =
+        }
+      }
+      text {
+        0 {
+          field   = tx_org_location.teaser_short // tx_org_location.bodytext
+        }
+      }
+      url {
+        0 {
+          key       = tx_org_location.type
+          page      = tx_org_location.page
+          record    = tx_org_location.uid
+          showUid   = locationUid
+          #singlePid =
+          url       = tx_org_location.url
+        }
+        1 {
+          key       = type
+          page      = page
+          record    = uid
+          showUid   = newsUid
+          #singlePid =
+          url       = url
+        }
+        2 {
+          key       = type
+          page      = page
+          record    = uid
+          showUid   = staffUid
+          #singlePid =
+          url       = url
+        }
+      }
+    }
+    singleview {
+      image {
+        0 {
+          caption     = tx_org_location.imagecaption
+          file        = tx_org_location.image
+          height      = tx_org_location.imageheight
+          imagecols   = tx_org_location.imagecols
+          imageorient = tx_org_location.imageorient
+          path        = uploads/tx_org/
+          seo         = tx_org_location.imageseo
+          width       = tx_org_location.imagewidth
+        }
+      }
+    }
+  }
+}

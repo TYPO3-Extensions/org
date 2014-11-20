@@ -1,8 +1,8 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      501 {
-        tx_org_headquarters {
+      701 {
+        tx_org_location {
             // placeholder: radialsearch HTML class depending on radius
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
             // placeholder: radialsearch linear distance
@@ -30,26 +30,26 @@ plugin.tx_browser_pi1 {
                 value = ###SOCIALMEDIA_BOOKMARKS###
                 wrap = <div style="float:right;">|</div>
               }
-                // tx_org_headquarters.title
+                // tx_org_location.title
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
-                // tx_org_headquarterscat.title
+                // tx_org_locationcat.title
               30 = COA
               30 {
                 if {
                   isTrue {
-                    field = tx_org_headquarterscat.title
+                    field = tx_org_locationcat.title
                   }
                 }
-                wrap = <div class="tx_org_headquarterscat">|</div>
+                wrap = <div class="tx_org_locationcat">|</div>
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.headquarterscat
+                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.locationcat
                   noTrimWrap = ||: |
                 }
                 20 = TEXT
                 20 {
-                  field = tx_org_headquarterscat.title
+                  field = tx_org_locationcat.title
                 }
               }
                 // mail_postcode, mail_city
@@ -61,10 +61,10 @@ plugin.tx_browser_pi1 {
                 10 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.mail_postcode
+                      field = tx_org_location.mail_postcode
                     }
                   }
-                  field = tx_org_headquarters.mail_postcode
+                  field = tx_org_location.mail_postcode
                   noTrimWrap = || |
                 }
                   // mail_city
@@ -72,10 +72,10 @@ plugin.tx_browser_pi1 {
                 20 {
                   if {
                     isTrue {
-                      field = tx_org_headquarters.mail_city
+                      field = tx_org_location.mail_city
                     }
                   }
-                  field = tx_org_headquarters.mail_city
+                  field = tx_org_location.mail_city
                   noTrimWrap = || |
                 }
                   // link to the single view (record), internal page, external URL or no link (empty value)

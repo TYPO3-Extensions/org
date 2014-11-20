@@ -3,7 +3,7 @@ plugin.tx_browser_pi1 {
   XXXadvanced {
     sql {
       devider {
-        tx_org_headquarterscat {
+        tx_org_locationcat {
           title {
             display = TEXT
             display {
@@ -26,17 +26,17 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      501 = +Org: Headquarters
-      501 {
+      701 = +Org: Headquarters
+      701 {
         name    = +Org: Headquarters
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {
-      501 = +Org: Headquarters
+      701 = +Org: Headquarters
     }
   }
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/headquarters/501/tx_browser_pi1/list/_setup.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/location/701/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/location/701/tx_browser_pi1/single/_setup.ts">

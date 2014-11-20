@@ -1,7 +1,7 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      501 {
+      701 {
         htmlSnippets =
         htmlSnippets {
           marker {
@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###RADIALSEARCH###
-                ###TX_ORG_HEADQUARTERSCAT.TITLE###
+                ###TX_ORG_LOCATIONCAT.TITLE###
               </div>
 )
             }
@@ -25,9 +25,9 @@ plugin.tx_browser_pi1 {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
               <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-              <div class="record###TX_ORG_HEADQUARTERS.CRDATE###">
-                ###TX_ORG_HEADQUARTERS.DELETED###
-                ###TX_ORG_HEADQUARTERS.TITLE###
+              <div class="record###TX_ORG_LOCATION.CRDATE###">
+                ###TX_ORG_LOCATION.DELETED###
+                ###TX_ORG_LOCATION.TITLE###
               </div>
               <div class="cleaner">&nbsp;</div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
               </div> <!-- /listview -->
