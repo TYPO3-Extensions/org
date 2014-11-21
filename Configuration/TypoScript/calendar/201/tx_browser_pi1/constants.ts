@@ -48,6 +48,7 @@ plugin.tx_browser_pi1 {
         categoryOffsetY   = tx_org_caltype.icon_offset_y
       }
     }
+    mobileTouchscreen = 1
   }
   navigation {
     showUid = calendarUid

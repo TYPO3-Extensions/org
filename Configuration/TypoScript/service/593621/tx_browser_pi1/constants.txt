@@ -49,6 +49,7 @@ plugin.tx_browser_pi1 {
         crop = 40
       }
     }
+    mobileTouchscreen = 1
   }
   navigation {
     showUid = serviceUid

@@ -141,7 +141,7 @@ plugin.tx_browser_pi1 {
               // margin: datesheet
             20 = COA
             20 {
-              wrap = <div class="show-for-large-up columns small-12 medium-12 large-2">|</div>
+              wrap = <div class="columns small-12 medium-12 large-2">|</div>
               10 = COA
               10 {
                 if {
