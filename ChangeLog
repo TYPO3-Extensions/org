@@ -40,7 +40,7 @@
   * #61248: Compatibility with TYPO3 CMS 6.2.x
   * #61661: Extension Initialisation
   Improvements
-  * #61856: Move all fields description and seo_keywords to seo_description and seo_seo_keywords,seo_description
+  * #61856: Move all fields description and keywords to seo_description and seo_keywords
   * #i0028: graded from beta to alpha
   * #i0027: tx_org_departments is removed
 
@@ -132,7 +132,7 @@
   14-07-01
   Improvements
   * #i0015: ext_tables.sql
-            * NOT NULL without defualt value is removed
+            * NOT NULL without default value is removed
   * #i0014: tx_org_staff: TCA
             title: obligate
             name_first: required

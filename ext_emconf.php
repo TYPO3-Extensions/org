@@ -6,13 +6,13 @@ $EM_CONF[$_EXTKEY] = array(
   . 'See: http://typo3-organiser.de/ '
   . 'Manual: http://typo3-organiser.de/typo3conf/ext/org/doc/manual.pdf '
   . 'The Organiser provides a lot of features for handle a simple calendar, companies, contacts, '
-  . 'events, jobs, locations, news, services and people. '
+  . 'events, jobs, locations, news, people and services. '
   . 'Sell your tickets with the integrated shop. '
   . 'The installer enables you to install the Organiser with one mouse click! Sample data is included.'
   ,
   'category' => 'plugin',
   'shy' => 0,
-  'version' => '6.0.0',
+  'version' => '6.0.1',
   //'dependencies' => 'browser,caddy,cps_tcatree,css_styled_content',
   'conflicts' => 'css_filelinks',
   'priority' => '',
