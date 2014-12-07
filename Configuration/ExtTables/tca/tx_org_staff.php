@@ -44,15 +44,20 @@ $TCA['tx_org_staff'] = array(
       'notype'  => '../typo3conf/ext/org/Configuration/ExtIcon/notype.gif',
     ),
     'searchFields' => ''
-    . 'title,reference_number,,short,description,specification,'
-    . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
-    . 'teaser_title,teaser_short,'
-    . 'marginal_title,marginal_short,'
-    . 'tx_org_headquarters,'
-    . 'tx_org_staffgroup,tx_org_staff_sector,'
+    . 'type,page,url,'
+    . 'title,'
+    . 'name_first,name_last,birthday,gender,'
+    . 'bodytext,cols,vita,pi_flexform,'
+    . 'tx_org_staffgroup,'
+    . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
-    . 'note,'
+    . 'tx_org_downloads,'
+    . 'tx_org_headquarters,department'
+    . 'tx_org_job,'
+    . 'tx_org_service,'
+    . 'tx_org_news,'
+    . 'tx_org_event,'
+    . 'tx_org_location,'
     . 'hidden,starttime,endtime,'
     ,
   ),
