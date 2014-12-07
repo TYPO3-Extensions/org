@@ -428,6 +428,8 @@ CREATE TABLE tx_org_headquarters (
   mail_embeddedcode text,
   marginal_title tinytext,
   marginal_short text,
+  migratedtable tinytext,
+  migrateduid int(11) unsigned,
   page tinytext,
   pages tinytext,
   postbox_city tinytext,
