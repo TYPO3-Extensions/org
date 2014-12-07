@@ -45,6 +45,7 @@
       <label index="tx_org_headquarters.mail_url">City map: URL</label>
       <label index="tx_org_headquarters.mail_street">Street and number</label>
       <label index="tx_org_headquarters.mail_embeddedcode">City map: Embedded Code</label>
+      <label index="tx_org_headquarters.manager">Manager</label>
       <label index="tx_org_headquarters.marginal_title">Header (in marginal views)</label>
       <label index="tx_org_headquarters.marginal_short">Short (in marginal views)</label>
       <label index="tx_org_headquarters.postbox_postbox">Postbox: Postbox</label>
@@ -120,6 +121,7 @@
       <label index="tx_org_headquarters.mail_street">Straße und Hausnummer</label>
       <label index="tx_org_headquarters.mail_url">Stadtplan: URL</label>
       <label index="tx_org_headquarters.mail_embeddedcode">Stadtplan: Eingebetter Code</label>
+      <label index="tx_org_headquarters.manager">Manager (Leitung)</label>
       <label index="tx_org_headquarters.marginal_title">Überschrift (in Randspalten)</label>
       <label index="tx_org_headquarters.marginal_short">Text (in Randspalten)</label>
       <label index="tx_org_headquarters.postbox_postbox">Postfach: Postfach</label>

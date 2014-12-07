@@ -27,7 +27,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     . 'title,uid_parent,tx_org_headquarterscat,bodytext,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
     . 'postbox_postbox,postbox_postcode,postbox_city,'
-    . 'telephone,fax,email,url,'
+    . 'manager,telephone,fax,email,url,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
     . 'tx_org_news,'
@@ -312,6 +312,31 @@ $TCA[ 'tx_org_headquarters' ] = array(
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.postbox_city',
       'config' => $conf_input_30_trim,
+    ),
+    'manager' => array(
+      'l10n_mode' => 'exclude',
+      'exclude' => 0,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.manager',
+      'config' => array(
+        'type' => 'select',
+        'size' => $size_headquarters,
+        'minitems' => 0,
+        'maxitems' => 999,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_headquartersManager',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_headquartersManager',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'selectedListStyle' => $listStyleWidth,
+        'itemListStyle' => $listStyleWidth,
+      )
     ),
     'telephone' => array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.telephone',
@@ -817,7 +842,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  mail_url,mail_embeddedcode,'
       . '  postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
-      . '  telephone,fax,email,url,'
+      . '  manager,telephone,fax,email,url,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_news,'
       . '  tx_org_news,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
@@ -859,7 +884,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
       . '  mail_url,mail_embeddedcode,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
-      . '  telephone,fax,email,'
+      . '  manager,telephone,fax,email,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
@@ -884,7 +909,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
       . '  mail_url,mail_embeddedcode,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
-      . '  telephone,fax,email,'
+      . '  manager,telephone,fax,email,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'

@@ -426,6 +426,7 @@ CREATE TABLE tx_org_headquarters (
   mail_url text ,
   mail_zip tinytext,
   mail_embeddedcode text,
+  manager tinytext,
   marginal_title tinytext,
   marginal_short text,
   migratedtable tinytext,
