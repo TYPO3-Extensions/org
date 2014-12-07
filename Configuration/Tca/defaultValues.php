@@ -31,7 +31,7 @@ $size_fegroup = 10;
 // Rows of fe_user select box
 $size_feuser = 30;
 // Rows of headquarters select box
-$size_headquarters = 10;
+$size_headquarters = 50;
 // Rows of location select box
 $size_location = 1;
 // Rows of news select box
