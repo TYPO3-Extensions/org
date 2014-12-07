@@ -64,7 +64,7 @@
       <label index="tx_org_headquarters.tx_org_news">News</label>
       <label index="tx_org_headquarters.tx_org_service">Services</label>
       <label index="tx_org_headquarters.tx_org_staff">People</label>
-      <label index="tx_org_headquarters.uid_parent">Superior company</label>
+      <label index="tx_org_headquarters.uid_parent">Superior company / superior unit of organisation</label>
       <label index="tx_org_headquarters.url">Homepage</label>
       <label index="tx_org_headquarterscat">Company: Business segments</label>
       <label index="tx_org_headquarterscat.div_cat">Business segment</label>
@@ -139,7 +139,7 @@
       <label index="tx_org_headquarters.tx_org_news">Nachrichten</label>
       <label index="tx_org_headquarters.tx_org_service">Dienstleistung</label>
       <label index="tx_org_headquarters.tx_org_staff">Personen</label>
-      <label index="tx_org_headquarters.uid_parent">Übergeordnete Firma</label>
+      <label index="tx_org_headquarters.uid_parent">Übergeordnete Firma / Organisationseinheit</label>
       <label index="tx_org_headquarters.url">Website</label>
       <label index="tx_org_headquarterscat">Firma: Geschäftsfelder</label>
       <label index="tx_org_headquarterscat.div_cat">Geschäftsfeld</label>
