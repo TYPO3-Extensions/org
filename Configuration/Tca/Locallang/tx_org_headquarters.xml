@@ -133,7 +133,7 @@
       <label index="tx_org_headquarters.telephone">Telefon</label>
       <label index="tx_org_headquarters.title">Firma</label>
       <label index="tx_org_headquarters.tx_org_event">Veranstaltungen</label>
-      <label index="tx_org_headquarters.tx_org_headquarterscat">Übergeordnetes Geschäftsfeld</label>
+      <label index="tx_org_headquarters.tx_org_headquarterscat">Geschäftsfeld</label>
       <label index="tx_org_headquarters.tx_org_job">Stellenangebote</label>
       <label index="tx_org_headquarters.tx_org_location">Veranstaltungsorte</label>
       <label index="tx_org_headquarters.tx_org_news">Nachrichten</label>
