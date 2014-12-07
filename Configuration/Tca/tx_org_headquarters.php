@@ -333,7 +333,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
           'table_foreign' => 'tx_org_staff'
         ),
         'foreign_table' => 'tx_org_staff',
-        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.name_last',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
       )
@@ -454,7 +454,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
           'table_foreign' => 'tx_org_staff'
         ),
         'foreign_table' => 'tx_org_staff',
-        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.name_last',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
       )
