@@ -6,7 +6,7 @@
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
-      <label index="tx_org_company">Company</label>
+      <label index="tx_org_company">Company / Unit of organisation</label>
       <label index="tx_org_company.title">Company label</label>
       <label index="tx_org_headquarters">Company</label>
       <label index="tx_org_headquarters.div_contact">Contact Details</label>
@@ -81,7 +81,7 @@
       <label index="wizard.tx_org_headquarters.list">Display the headquarter table</label>
     </languageKey>
     <languageKey index="de" type="array">
-      <label index="tx_org_company">Firma</label>
+      <label index="tx_org_company">Firma / Organisationseinheit</label>
       <label index="tx_org_company.title">Name der Firma</label>
       <label index="tx_org_headquarters">Firma</label>
       <label index="tx_org_headquarters.div_company">Firma</label>
