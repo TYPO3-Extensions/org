@@ -445,7 +445,7 @@ CREATE TABLE tx_org_headquarters (
   teaser_short text,
   telephone tinytext,
   title tinytext,
-  tx_org_event tinytext,
+  tx_org_cal tinytext,
   tx_org_headquarterscat tinytext,
   tx_org_job tinytext,
   tx_org_location tinytext,

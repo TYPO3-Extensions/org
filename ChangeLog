@@ -1,6 +1,7 @@
 6.0.2
   14-12-07
   Improvements
+  * #i0033: tx_org_headquarters relation to event is moved to cal
   * #i0032: tx_org_headquarters got the field manager
   * #i0031: tx_org_headquarters got the fields migratedtable and migrateduid
   * #i0030: Search fields for tx_org_staff

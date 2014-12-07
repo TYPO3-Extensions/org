@@ -34,7 +34,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     . 'tx_org_staff,'
     . 'tx_org_service,'
     . 'tx_org_job,'
-    . 'tx_org_event,'
+    . 'tx_org_cal,'
     . 'tx_org_location,'
     . 'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
@@ -484,11 +484,11 @@ $TCA[ 'tx_org_headquarters' ] = array(
         'itemListStyle' => $listStyleWidth,
       )
     ),
-    'tx_org_event' => array(
+    'tx_org_cal' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_event',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_cal',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -497,14 +497,14 @@ $TCA[ 'tx_org_headquarters' ] = array(
         'MM' => 'tx_org_mm_all',
         "MM_match_fields" => array(
           'table_local' => 'tx_org_headquarters',
-          'table_foreign' => 'tx_org_event'
+          'table_foreign' => 'tx_org_cal'
         ),
         "MM_insert_fields" => array(
           'table_local' => 'tx_org_headquarters',
-          'table_foreign' => 'tx_org_event'
+          'table_foreign' => 'tx_org_cal'
         ),
-        'foreign_table' => 'tx_org_event',
-        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf . ' AND tx_org_event.deleted = 0 AND tx_org_event.hidden = 0 AND tx_org_event.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_event.title',
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
       )
@@ -851,8 +851,8 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  tx_org_service,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_job,'
       . '  tx_org_job,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_event,'
-      . '  tx_org_event,'
+      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_cal,'
+      . '  tx_org_cal,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_location,'
       . '  tx_org_location,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_pubtrans,'

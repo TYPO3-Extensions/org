@@ -7,7 +7,7 @@
   <data type="array">
     <languageKey index="default" type="array">
       <label index="tx_org_cal">Calendar</label>
-      <label index="tx_org_cal.div_calendar">Event</label>
+      <label index="tx_org_cal.div_calendar">Entry</label>
       <label index="tx_org_cal.div_page">Internal Link</label>
       <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
@@ -67,7 +67,7 @@
     </languageKey>
     <languageKey index="de" type="array">
       <label index="tx_org_cal">Kalender</label>
-      <label index="tx_org_cal.div_calendar">Veranstaltung</label>
+      <label index="tx_org_cal.div_calendar">Eintrag im Kalender</label>
       <label index="tx_org_cal.div_page">Interner Link</label>
       <label index="tx_org_cal.div_url">Externer Link</label>
       <label index="tx_org_cal.div_embedded">Eingebundener Code</label>

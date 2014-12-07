@@ -13,7 +13,7 @@
       <label index="tx_org_headquarters.div_company">Company</label>
       <label index="tx_org_headquarters.div_control">Controlling</label>
       <label index="tx_org_headquarters.div_embedded">Embedded Code</label>
-      <label index="tx_org_headquarters.div_event">Events</label>
+      <label index="tx_org_headquarters.div_cal">Calendar entries</label>
       <label index="tx_org_headquarters.div_headquarters">Headquarter</label>
       <label index="tx_org_headquarters.div_job">Jobs</label>
       <label index="tx_org_headquarters.div_location">Location</label>
@@ -58,7 +58,7 @@
       <label index="tx_org_headquarters.teaser_short">Short (in list views)</label>
       <label index="tx_org_headquarters.telephone">Telephone</label>
       <label index="tx_org_headquarters.title">Company</label>
-      <label index="tx_org_headquarters.tx_org_event">Events</label>
+      <label index="tx_org_headquarters.tx_org_cal">Calendar entry</label>
       <label index="tx_org_headquarters.tx_org_headquarterscat">Business segment</label>
       <label index="tx_org_headquarters.tx_org_job">Jobs</label>
       <label index="tx_org_headquarters.tx_org_location">Locations</label>
@@ -89,7 +89,7 @@
       <label index="tx_org_headquarters.div_contact">Kontaktdaten</label>
       <label index="tx_org_headquarters.div_control">Steuerung</label>
       <label index="tx_org_headquarters.div_embedded">Eingebundener Code</label>
-      <label index="tx_org_headquarters.div_event">Veranstaltungen</label>
+      <label index="tx_org_headquarters.div_cal">Einträge im Kalender</label>
       <label index="tx_org_headquarters.div_headquarters">Firma</label>
       <label index="tx_org_headquarters.div_job">Stellenangebote</label>
       <label index="tx_org_headquarters.div_location">Veranstaltungsort</label>
@@ -134,7 +134,7 @@
       <label index="tx_org_headquarters.teaser_short">Text (in Listen-Ansichten)</label>
       <label index="tx_org_headquarters.telephone">Telefon</label>
       <label index="tx_org_headquarters.title">Firma</label>
-      <label index="tx_org_headquarters.tx_org_event">Veranstaltungen</label>
+      <label index="tx_org_headquarters.tx_org_cal">Eintrag im Kalender</label>
       <label index="tx_org_headquarters.tx_org_headquarterscat">Geschäftsfeld</label>
       <label index="tx_org_headquarters.tx_org_job">Stellenangebote</label>
       <label index="tx_org_headquarters.tx_org_location">Veranstaltungsorte</label>
