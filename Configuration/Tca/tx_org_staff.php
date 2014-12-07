@@ -18,7 +18,7 @@ $TCA[ 'tx_org_staff' ] = array(
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'tx_org_downloads,'
-    . 'tx_org_headquarters,department'
+    . 'tx_org_headquarters'
     . 'tx_org_job,'
     . 'tx_org_service,'
     . 'tx_org_news,'
@@ -629,16 +629,6 @@ $TCA[ 'tx_org_staff' ] = array(
         'itemListStyle' => $listStyleWidth,
       )
     ),
-    'department' => array(
-      'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.department',
-      'l10n_mode' => 'prefixLangTitle',
-      'config' => array(
-        'type' => 'input',
-        'size' => '30',
-        'eval' => 'trim',
-      )
-    ),
     'tx_org_job' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
@@ -839,7 +829,7 @@ $TCA[ 'tx_org_staff' ] = array(
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
@@ -873,7 +863,7 @@ $TCA[ 'tx_org_staff' ] = array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  tx_org_downloads,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_company, '
-      . '  tx_org_headquarters,department,'
+      . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_job, '
       . '  tx_org_job,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_service, '
