@@ -325,11 +325,11 @@ $TCA[ 'tx_org_headquarters' ] = array(
         'maxitems' => 999,
         'MM' => 'tx_org_mm_all',
         "MM_match_fields" => array(
-          'table_local' => 'tx_org_headquartersManager',
+          'table_local' => 'tx_org_headquarters-manager',
           'table_foreign' => 'tx_org_staff'
         ),
         "MM_insert_fields" => array(
-          'table_local' => 'tx_org_headquartersManager',
+          'table_local' => 'tx_org_headquarters-manager',
           'table_foreign' => 'tx_org_staff'
         ),
         'foreign_table' => 'tx_org_staff',
