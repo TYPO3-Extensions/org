@@ -320,16 +320,16 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.manager',
       'config' => array(
         'type' => 'select',
-        'size' => $size_headquarters,
+        'size' => 5,
         'minitems' => 0,
         'maxitems' => 999,
         'MM' => 'tx_org_mm_all',
         "MM_match_fields" => array(
-          'table_local' => 'tx_org_headquarters-manager',
+          'table_local' => 'tx_org_headquarters.manager',
           'table_foreign' => 'tx_org_staff'
         ),
         "MM_insert_fields" => array(
-          'table_local' => 'tx_org_headquarters-manager',
+          'table_local' => 'tx_org_headquarters.manager',
           'table_foreign' => 'tx_org_staff'
         ),
         'foreign_table' => 'tx_org_staff',
