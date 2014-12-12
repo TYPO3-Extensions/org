@@ -20,11 +20,11 @@ plugin.tx_browser_pi1 {
         0 {
           default   = EXT:org/res/icons/defaults/tx_org_downloads_300x200.gif
           file      = tx_org_downloads.thumbnail // tx_org_downloads.documents
-          height    = 160c
+          height    = 137c
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_downloads.documentscaption // tx_org_downloads.teaser_title // tx_org_downloads.title
-          width     = 160c
+          width     = 137c
         }
         1 {
           default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif

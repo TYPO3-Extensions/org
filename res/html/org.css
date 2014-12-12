@@ -1,9 +1,13 @@
+.row .indexBrowser,
+.row .modeSelector {
+  padding:0 0.9375rem !important;
+}
 .tx-browser-pi1 .cleaner {
   clear:both;
   line-height:.4em;
 }
 .tx-browser-pi1 .filter {
-  margin:.2em 0 0 0;
+  /*margin:.2em 0 0 0;*/
 }
 .tx-browser-pi1 .filter .period_menu {
   margin:0 0 1em 0;
@@ -224,6 +228,10 @@
 }
 .tx-browser-pi1 form.tx_org_downloads-order table td.csc-uploads-fileSize {
   text-align: right;
+}
+
+.tx_org_downloads-record {
+  padding-bottom: 1em;
 }
 
 

@@ -24,7 +24,7 @@ plugin.tx_browser_pi1 {
     }
     design {
       height  = 210
-      imgPath = typo3conf/ext/browser/res/js/map/themes/red/
+      imgPath = typo3conf/ext/browser/Resources/Public/JavaScript/Map/themes/red/
       path {
         categoryIcon  = uploads/tx_org/
       }

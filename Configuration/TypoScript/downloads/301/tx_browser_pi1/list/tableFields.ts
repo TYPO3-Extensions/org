@@ -6,9 +6,16 @@ plugin.tx_browser_pi1 {
             // text, bookmarks; image
           title = COA
           title {
-              // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
+              // image
             10 = COA
             10 {
+                // image
+              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+              wrap = <div class="show-for-large-up columns small-12 medium-12 large-2">|</div>
+            }
+              // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
+            20 = COA
+            20 {
                 // socialmedia_bookmarks
               10 = TEXT
               10 {
@@ -165,16 +172,9 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <div class="columns small-12 medium-12 large-9">|</div>
+              wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }
-              // image
-            20 = COA
-            20 {
-                // image
-              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-              wrap = <div class="show-for-large-up columns small-12 medium-12 large-3">|</div>
-            }
-            wrap = <div class="row">|</div>
+            //wrap = <div class="row">|</div>
           }
         }
       }
