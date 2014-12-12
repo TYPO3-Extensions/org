@@ -1,0 +1,39 @@
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = headquartersUid
+  }
+  templates {
+    listview {
+      header {
+        1 {
+          field   = tx_org_headquarters.teaser_title // tx_org_headquarters.title
+        }
+      }
+      image {
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
+          file      = tx_org_headquarters.image
+          height    = 90c
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo
+          width     = 220c
+        }
+      }
+      text {
+        1 {
+          field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
+        }
+      }
+      url {
+        1 {
+          key       = tx_org_headquarters.type
+          page      = tx_org_headquarters.page
+          record    = tx_org_headquarters.uid
+          showUid   = headquartersUid
+          #singlePid =
+          url       = tx_org_headquarters.url
+        }
+      }
+    }
+  }
+}
