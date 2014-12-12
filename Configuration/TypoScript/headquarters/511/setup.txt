@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
               }
             }
             10 >
-            10 = plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
+            10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
             20 = COA
             20 {
               10 = TEXT
