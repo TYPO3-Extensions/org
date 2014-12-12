@@ -131,8 +131,7 @@ plugin.tx_browser_pi1 {
         }
       }
     }
-    // browser #i0071, 140717, dwildt, 1-
-    //pageBrowser.showResultCount = 0
+    pageBrowser.showResultCount = 0
   }
 
   general_stdWrap {
