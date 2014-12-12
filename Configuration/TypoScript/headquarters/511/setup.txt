@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       511 = +Org: Headquarters - margin
@@ -65,14 +65,14 @@ plugin.tx_browser_pi1 {
           title {
             10 = TEXT
             10 {
-              value = ###TX_ORG_HEADQUARTERS.TITLE###
+              field = tx_org_headquarters.title
               typolink {
                 parameter = {$plugin.org.pages.headquarter}
                 parameter {
                   insertData = 1
                 }
                 title {
-                  value = ###TX_ORG_HEADQUARTERS.TITLE###
+                  field = tx_org_headquarters.title
                 }
                 additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###
                 useCacheHash = 1
