@@ -1,5 +1,5 @@
-.row .indexBrowser,
-.row .modeSelector {
+.row > .indexBrowser,
+.row > .modeSelector {
   padding:0 0.9375rem !important;
 }
 .tx-browser-pi1 .cleaner {
