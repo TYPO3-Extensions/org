@@ -78,36 +78,62 @@ plugin.tx_browser_pi1 {
                 useCacheHash = 1
               }
             }
-            20 = TEXT
+            10 >
+            10 = plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
+            20 = COA
             20 {
-              if {
-                //isTrue = ###TX_ORG_HEADQUARTERS.TELEPHONE######TX_ORG_HEADQUARTERS.EMAIL###
-                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS######TX_ORG_HEADQUARTERS.MAIL_POSTCODE######TX_ORG_HEADQUARTERS.MAIL_CITY###
+              10 = TEXT
+              10 {
+                if {
+                  isTrue {
+                    field = tx_org_headquarters.mail_postcode
+                  }
+                }
+                field = tx_org_headquarters.mail_postcode
+                noTrimWrap = || |
               }
-              value = <br />
-            }
-            21 = TEXT
-            21 {
-              if {
-                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
+              20 = TEXT
+              20 {
+                if {
+                  isTrue {
+                    field = tx_org_headquarters.mail_city
+                  }
+                }
+                field = tx_org_headquarters.mail_city
+                noTrimWrap = ||, |
               }
-              value = ###TX_ORG_HEADQUARTERS.MAIL_POSTCODE###
-              noTrimWrap = || |
-            }
-            22 = TEXT
-            22 {
-              if {
-                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
+              30 = TEXT
+              30 {
+                if {
+                  isTrue {
+                    field = tx_org_headquarters.mail_address
+                  }
+                }
+                field = tx_org_headquarters.mail_address
+                noTrimWrap = || |
               }
-              value = ###TX_ORG_HEADQUARTERS.MAIL_CITY###
-              noTrimWrap = ||, |
-            }
-            23 = TEXT
-            23 {
               if {
-                isTrue = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+                isTrue {
+                  stdWrap {
+                    cObject = COA
+                    cObject {
+                      10 = TEXT
+                      10 {
+                        field = tx_org_headquarters.mail_address
+                      }
+                      20 = TEXT
+                      20 {
+                        field = tx_org_headquarters.mail_postcode
+                      }
+                      30 = TEXT
+                      30 {
+                        field = tx_org_headquarters.mail_city
+                      }
+                    }
+                  }
+                }
               }
-              value = ###TX_ORG_HEADQUARTERS.MAIL_ADDRESS###
+              wrap = <br />|
             }
           }
         }
