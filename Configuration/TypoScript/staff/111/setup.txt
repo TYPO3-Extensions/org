@@ -178,7 +178,18 @@ plugin.tx_browser_pi1 {
                 renderObj = TEXT
                 renderObj {
                   field = title
-                  noTrimWrap = |<span class="item">|</span>|
+                  //noTrimWrap = |<span class="item">|</span>|
+                  wrap = |###POINT###
+                }
+                stdWrap {
+                  split {
+                    token = ###POINT###
+                    cObjNum = 1 |*| 1 |*| 2 || 2
+                    1.current = 1
+                    1.noTrimWrap = ||, |
+                    2.current = 1
+                    2.noTrimWrap = |||
+                  }
                 }
               }
             }
