@@ -67,14 +67,6 @@ plugin.tx_browser_pi1 {
           #singlePid =
           url       = tx_org_staff.url
         }
-        2 {
-          key       = type
-          page      = page
-          record    = uid
-          showUid   = headquartersUid
-          #singlePid =
-          url       = url
-        }
       }
     }
     singleview {
