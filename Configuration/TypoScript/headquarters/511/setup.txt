@@ -27,25 +27,37 @@ plugin.tx_browser_pi1 {
           my_listview_title {
             wrap    = <h3 class="tx_browser_pi1-title-margin">|</h3>
             value   = Headquarters
-            lang.de = Organisation
+            lang {
+              de = Organisation
+              en = Headquarters
+            }
             typolink {
               parameter = {$plugin.org.pages.headquarter}
               title {
                 value = All Headquarters
-                lang.de = Organisation
+                lang {
+                  de = Organisation
+                  en = All Headquarters
+                }
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
-            value   = All Headquarters &raquo;
-            lang.de = Organisation &raquo;
+            value   = All units &raquo;
+            lang {
+              de = Alle Organisationseinheiten &raquo;
+              en = All units &raquo;
+            }
             wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.headquarter}
               title {
-                value = All Headquarters
-                lang.de = Organisation
+                value = All units
+                lang {
+                  de = Alle Organisationseinheiten
+                  en = All Units
+                }
               }
             }
           }

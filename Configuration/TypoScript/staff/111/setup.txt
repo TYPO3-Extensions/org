@@ -20,52 +20,60 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      111 = +Org: People (margin)
+      111 = +Org: People - margin (don't cache!)
       111 {
-        name    = people - margin (don't cache!)
+        name    = +Org: people - margin (don't cache!)
         showUid = staffUid
-        displayList < plugin.tx_browser_pi1.displayList
-        displayList {
-          image {
-            file {
-              maxW = 40
-              maxH = 40
-            }
-          }
-        }
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap = <h3><span>|</span></h3>
+            wrap    = <h3 class="tx_browser_pi1-title-margin">|</h3>
             value = People
-            lang.de = Personen
+            lang {
+              de = Personen
+              en = People
+            }
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                value = People
-                lang.de = Personen-Datenbank
+                value = All people
+                lang {
+                  de = Alle Personen
+                  en = All people
+                }
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
-            value = People database &raquo;
-            lang.de = Personen-Datenbank &raquo;
-            wrap = <p>|</p>
+            value = All people &raquo;
+            lang {
+              de = Alle Personen &raquo;
+              en = All people &raquo;
+            }
+            wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                value = people database
-                lang.de = Personen-Datenbank
+                value = All people
+                lang {
+                  de = Alle Personen
+                  en = All people
+                }
               }
             }
           }
         }
         select (
-          fe_users.last_name,
-          fe_users.first_name,
-          fe_users.image,
-          fe_groups.title
+          tx_org_staff.title,
+          tx_org_staff.image,
+          tx_org_staff.imageseo,
+          tx_org_staff.name_first,
+          tx_org_staff.name_last,
+          tx_org_staff.page,
+          tx_org_staff.type,
+          tx_org_staff.url,
+          tx_org_staffgroup.uid
 )
         random = 1
         csvLinkToSingleView = fe_users.last_name, fe_users.first_name
@@ -79,14 +87,7 @@ plugin.tx_browser_pi1 {
               value (
         <div class="###VIEW###view ###VIEW###view-###MODE###">
           <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-          <div class="image" style="float:left;padding:0 1em 0 .6em;width:40px;">
-            ###FE_USERS.IMAGE###
-          </div>
-          <p style="margin-left:5.1em;">
-            ###FE_USERS.FIRST_NAME### ###FE_USERS.LAST_NAME###<br />
-            ###TX_ORG_DEPARTMENT.TITLE###<br />
-            ###FE_GROUPS.TITLE###
-          </p>
+            ###TX_ORG_STAFF.TITLE###
           <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
           ###MY_LISTVIEW_PAGE###
         </div>
@@ -97,14 +98,10 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      111 = +Org: People (margin)
+      111 = +Org: People - margin (don't cache!)
       111 {
         comment = This plugin should not used in the single view!
-        template < plugin.tx_browser_pi1.template
-        template {
-          file = EXT:org/res/html/staff/111/default.tmpl
-        }
-        select = fe_users.last_name
+        select = tx_org_staff.name_last
       }
     }
   }
