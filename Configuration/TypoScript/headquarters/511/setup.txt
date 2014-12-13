@@ -25,27 +25,27 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3><span>|</span></h3>
+            wrap    = <h3 class="tx_browser_pi1-title-margin">|</h3>
             value   = Headquarters
-            lang.de = Standorte
+            lang.de = Organisation
             typolink {
               parameter = {$plugin.org.pages.headquarter}
               title {
                 value = All Headquarters
-                lang.de = Alle Standorte
+                lang.de = Organisation
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
             value   = All Headquarters &raquo;
-            lang.de = Alle Standorte &raquo;
+            lang.de = Organisation &raquo;
             wrap    = <p>|</p>
             typolink {
               parameter = {$plugin.org.pages.headquarter}
               title {
                 value = All Headquarters
-                lang.de = Alle Standorte
+                lang.de = Organisation
               }
             }
           }
@@ -193,10 +193,6 @@ plugin.tx_browser_pi1 {
       511 {
         name    = +Org: Headquarters - margin
         comment = This plugin should not used in the single view!
-        template < plugin.tx_browser_pi1.template
-        template {
-          file = EXT:org/res/html/headquarters/511/default.tmpl
-        }
         select = tx_org_headquarters.title
       }
     }
