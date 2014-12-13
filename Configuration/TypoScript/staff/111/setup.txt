@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
         tx_org_staff {
           title = COA
           title {
-            wrap = <div class="row">|</div>
+            wrap = <div class="row tx_org_staff">|</div>
               // image
             10 = COA
             10 {
