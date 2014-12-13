@@ -52,9 +52,13 @@ plugin.tx_browser_pi1 {
         }
         select (
           tx_org_headquarters.title,
+          tx_org_headquarters.email,
           tx_org_headquarters.mail_address,
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_city,
+          tx_org_headquarters.pages,
+          tx_org_headquarters.teaser_title,
+          tx_org_headquarters.telephone,
           tx_org_headquarters.uid
         )
         orderBy (
@@ -63,23 +67,8 @@ plugin.tx_browser_pi1 {
         tx_org_headquarters {
           title = COA
           title {
-            10 = TEXT
-            10 {
-              field = tx_org_headquarters.title
-              typolink {
-                parameter = {$plugin.org.pages.headquarter}
-                parameter {
-                  insertData = 1
-                }
-                title {
-                  field = tx_org_headquarters.title
-                }
-                additionalParams = &tx_browser_pi1[headquartersUid]=###TX_ORG_HEADQUARTERS.UID###
-                useCacheHash = 1
-              }
-            }
-            10 >
             10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.2
+              // tx_org_headquarters.mail_postcode, tx_org_headquarters.mail_city, tx_org_headquarters.mail_address
             20 = COA
             20 {
               10 = TEXT

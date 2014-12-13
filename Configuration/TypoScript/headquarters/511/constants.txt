@@ -7,6 +7,7 @@ plugin.tx_browser_pi1 {
       header {
         2 {
           field   = tx_org_headquarters.teaser_title // tx_org_headquarters.title
+          tag     = h4
         }
       }
       image {
