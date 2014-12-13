@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3 class="tx_browser_pi1-title-margin">|</h3>
+            wrap    = <h3 class="show-for-large-up tx_browser_pi1-title-margin">|</h3>
             value = People
             lang {
               de = Personen
