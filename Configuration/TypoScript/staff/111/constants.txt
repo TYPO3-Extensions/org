@@ -14,10 +14,10 @@ plugin.tx_browser_pi1 {
         3 {
           default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
           file      = tx_org_staff.image
-          height    = 90c
+          height    = 56c
           path      = uploads/tx_org/
           seo       = tx_org_staff.imageseo
-          width     = 220c
+          width     = 56c
         }
       }
       text {
