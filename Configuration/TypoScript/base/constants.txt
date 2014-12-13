@@ -40,10 +40,10 @@ plugin.org {
   pages.location =
   # cat=Organiser - Pages/150/108; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser - Pages/150/109; type=+int; label= services:Uid of your services page
-  pages.service =
-  # cat=Organiser - Pages/150/110; type=+int; label= people:Uid of your people page
+  # cat=Organiser - Pages/150/109; type=+int; label= people:Uid of your people page
   pages.staff =
+  # cat=Organiser - Pages/150/110; type=+int; label= services:Uid of your services page
+  pages.service =
   # cat=Organiser - Pages/150/111; type=+int; label= Caddy (events):Uid of your Caddy page for events
   pages.shopping_cart =
   # cat=Organiser - Pages/150/112; type=+int; label= Caddy (downloads):Uid of your Caddy page for downloads
@@ -71,10 +71,10 @@ plugin.org {
   sysfolder.news =
   # cat=Organiser - Sysfolders/500/108; type=+int; label= news:Uid of the sysfolder with the news slider data
   sysfolder.newsSlider =
-  # cat=Organiser - Sysfolders/500/109; type=+int; label= services:Uid of the sysfolder with the services data
-  sysfolder.service =
-  # cat=Organiser - Sysfolders/500/110; type=+int; label= people:Uid of the sysfolder with the people data
+  # cat=Organiser - Sysfolders/500/109; type=+int; label= people:Uid of the sysfolder with the people data
   sysfolder.staff =
+  # cat=Organiser - Sysfolders/500/110; type=+int; label= services:Uid of the sysfolder with the services data
+  sysfolder.service =
 
   # cat=Organiser - static url/500/100; type=+int; label= [default] calendar:URL of your calendar (default language)
   url.default.calendar = schedule/

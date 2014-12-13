@@ -236,7 +236,7 @@ plugin.tx_browser_pi1 {
                 20 {
                   table = tx_org_staffgroup
                   select {
-                    pidInList = {$plugin.org.sysfolder.news}
+                    pidInList = {$plugin.org.sysfolder.staff}
                     //selectFields = tx_org_staffgroup.title
                     join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staffgroup.uid
                     where {
