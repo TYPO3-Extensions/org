@@ -131,7 +131,7 @@ plugin.tx_browser_pi1 {
                   }
                   additionalParams {
                     wrap  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=|
-                    data  = GP:tx_browser_pi1|tx_org_staff.uid
+                    field = tx_org_staff.uid
                   }
                   forceAbsoluteUrl = 1
                   forceAbsoluteUrl {
