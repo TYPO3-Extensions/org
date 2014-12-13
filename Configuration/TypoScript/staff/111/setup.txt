@@ -83,22 +83,22 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               field = tx_org_staff.title
-              noTrimWrap = || |
+              noTrimWrap = |<div>|</div> |
             }
             20 = TEXT
             20 {
               field = tx_org_staff.name_first
-              noTrimWrap = || |
+              noTrimWrap = |<div>|</div> |
             }
             30 = TEXT
             30 {
               field = tx_org_staff.name_last
-              noTrimWrap = || |
+              noTrimWrap = |<div>|</div> |
             }
             40 = TEXT
             40 {
               field = tx_org_staffgroup.uid
-              noTrimWrap = || |
+              noTrimWrap = |<div>staffgroup: |</div> |
             }
             50 = RECORDS
             50 {

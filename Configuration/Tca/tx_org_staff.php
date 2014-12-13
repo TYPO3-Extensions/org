@@ -13,7 +13,7 @@ $TCA[ 'tx_org_staff' ] = array(
     . 'type,page,url,'
     . 'title,'
     . 'name_first,name_last,birthday,gender,'
-    . 'bodytext,cols,vita,pi_flexform,'
+    . 'bodytext,cols,vita,'
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
@@ -199,26 +199,6 @@ $TCA[ 'tx_org_staff' ] = array(
     'bodytext' => array(
       'exclude' => 0,
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.bodytext',
-      'config' => array(
-        'type' => 'text',
-        'cols' => '30',
-        'rows' => '5',
-        'wizards' => array(
-          '_PADDING' => 2,
-          'RTE' => array(
-            'notNewRecords' => 1,
-            'RTEonly' => 1,
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:wizard.rte.fullscreen',
-            'icon' => 'wizard_rte2.gif',
-            'script' => 'wizard_rte.php',
-          ),
-        ),
-      )
-    ),
-    'vitaBAK' => array(
-      'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.vita',
       'config' => array(
         'type' => 'text',
         'cols' => '30',
