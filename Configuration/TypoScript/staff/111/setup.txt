@@ -80,20 +80,66 @@ plugin.tx_browser_pi1 {
         tx_org_staff {
           title = COA
           title {
-            10 = TEXT
+              // name_first, name_last
+            10 = COA
             10 {
-              field = tx_org_staff.title
-              noTrimWrap = |<div>|</div> |
-            }
-            20 = TEXT
-            20 {
-              field = tx_org_staff.name_first
-              noTrimWrap = |<div>|</div> |
-            }
-            30 = TEXT
-            30 {
-              field = tx_org_staff.name_last
-              noTrimWrap = |<div>|</div> |
+              10 = TEXT
+              10 {
+                field = tx_org_staff.name_first
+                noTrimWrap = || |
+              }
+              20 = TEXT
+              20 {
+                field = tx_org_staff.name_last
+              }
+              stdWrap {
+                typolink {
+                  parameter {
+                    cObject = COA
+                    cObject {
+                        // url
+                      10 = TEXT
+                      10 {
+                        value = {$plugin.org.pages.staff}
+                        htmlSpecialChars = 1
+                      }
+                        // target
+                      20 = TEXT
+                      20 {
+                        value       = _blank
+                        noTrimWrap  = | "|"|
+                      }
+                        // class
+                      30 = TEXT
+                      30 {
+                        value       = internal-link
+                        noTrimWrap  = | "|"|
+                      }
+                        // title
+                      40 = TEXT
+                      40 {
+                        value = Details
+                        lang {
+                          de = Details
+                          en = Details
+                        }
+                        noTrimWrap  = | "|"|
+                        htmlSpecialChars = 1
+                      }
+                    }
+                  }
+                  additionalParams {
+                    wrap  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=|
+                    data  = GP:tx_browser_pi1|tx_org_staff.uid
+                  }
+                  forceAbsoluteUrl = 1
+                  forceAbsoluteUrl {
+                    scheme = http
+                  }
+                  useCacheHash = 1
+                }
+              }
+              wrap = <div class="name">|</div>
             }
             40 = TEXT
             40 {
@@ -156,6 +202,7 @@ plugin.tx_browser_pi1 {
                   }
                   wrap = <div class="url">|</div>
                 }
+                wrap = <div class="record">|</div>
               }
             }
           }
