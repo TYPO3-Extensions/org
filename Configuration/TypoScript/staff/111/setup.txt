@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
         tx_org_staff {
           title = COA
           title {
-            wrap = <div class="row show-for-large-up">|</div>
+            wrap = <div class="row">|</div>
               // image
             10 = COA
             10 {
@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-        <div class="###VIEW###view ###VIEW###view-###MODE###">
+        <div class="show-for-large-up ###VIEW###view ###VIEW###view-###MODE###">
           <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
             ###TX_ORG_STAFF.TITLE###
           <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
