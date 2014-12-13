@@ -1,14 +1,14 @@
 plugin.tx_browser_pi1 {
 
-  advanced {
+  XXXadvanced {
     sql {
       devider {
         tx_org_staffgroup {
           title {
             display = TEXT
             display {
-              value = ,
-              wrap  = |
+              value =
+              wrap = |
             }
           }
         }
