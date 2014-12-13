@@ -76,7 +76,33 @@ plugin.tx_browser_pi1 {
           tx_org_staffgroup.uid
 )
         random = 1
-        csvLinkToSingleView = fe_users.last_name, fe_users.first_name
+        csvLinkToSingleView = dummy
+        tx_org_staff {
+          title = COA
+          title {
+            10 = TEXT
+            10 {
+              field = tx_org_staff.title
+              noTrimWrap = || |
+            }
+            20 = TEXT
+            20 {
+              field = tx_org_staff.name_first
+              noTrimWrap = || |
+            }
+            30 = TEXT
+            30 {
+              field = tx_org_staff.name_last
+              noTrimWrap = || |
+            }
+            40 = TEXT
+            40 {
+              field = tx_org_staffgroup.uid
+              noTrimWrap = || |
+            }
+          }
+        }
+
           // marker and subparts will replaced in the HTML template before data handling
           // #43627, 121205, dwildt
         htmlSnippets =
