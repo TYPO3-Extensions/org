@@ -40,7 +40,7 @@ plugin.tx_browser_pi1 {
           my_listview_page {
             value   = All Headquarters &raquo;
             lang.de = Organisation &raquo;
-            wrap    = <p>|</p>
+            wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.headquarter}
               title {
