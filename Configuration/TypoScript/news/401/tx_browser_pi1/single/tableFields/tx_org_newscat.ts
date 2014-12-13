@@ -5,7 +5,7 @@ plugin.tx_browser_pi1 {
         tx_org_news {
           deleted {
           }
-            // tx_org_news.crdate: placeholder for tx_org_news
+            // tx_org_news.crdate: placeholder for tx_org_newscat
           deleted = COA
           deleted {
               // if is true tx_org_newscat.uid
