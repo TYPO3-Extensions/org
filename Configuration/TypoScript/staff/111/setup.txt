@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3 class="show-for-large-up tx_browser_pi1-title-margin">|</h3>
+            wrap    = <h3 class="columns show-for-large-up tx_browser_pi1-title-margin">|</h3>
             value = People
             lang {
               de = Personen
@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-        <div class="show-for-large-up ###VIEW###view ###VIEW###view-###MODE###">
+        <div class="columns show-for-large-up listview listview-###MODE###">
           <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
             ###TX_ORG_STAFF.TITLE###
           <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
