@@ -150,8 +150,7 @@ plugin.tx_browser_pi1 {
             50 = RECORDS
             50 {
               source {
-                //field = tx_org_staffgroup.uid
-                value = 4,12
+                field = tx_org_staffgroup.uid
               }
               tables = tx_org_staffgroup
               conf {
