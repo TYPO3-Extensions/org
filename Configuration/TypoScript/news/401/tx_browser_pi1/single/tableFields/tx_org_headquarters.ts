@@ -35,7 +35,7 @@ plugin.tx_browser_pi1 {
               20 {
                 table = tx_org_headquarters
                 select {
-                  pidInList = {$plugin.org.sysfolder.headquarter}
+                  pidInList = {$plugin.org.sysfolder.headquarters}
                   //selectFields = tx_org_headquarters.title
                   join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarters.uid
                   where {

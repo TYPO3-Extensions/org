@@ -62,7 +62,7 @@ plugin.org {
   # cat=Organiser - Sysfolders/500/104; type=+int; label= event:Uid of the sysfolder with the event data
   sysfolder.event =
   # cat=Organiser - Sysfolders/500/105; type=+int; label= headquarters:Uid of the sysfolder with the headquarters data
-  sysfolder.headquarter =
+  sysfolder.headquarters =
   # cat=Organiser - Sysfolders/500/105; type=+int; label= jobs:Uid of the sysfolder with the jobs data
   sysfolder.job =
   # cat=Organiser - Sysfolders/500/106; type=+int; label= locations:Uid of the sysfolder with the locations data
