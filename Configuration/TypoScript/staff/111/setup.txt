@@ -138,6 +138,7 @@ plugin.tx_browser_pi1 {
                 field = tx_org_headquarters.uid
                 noTrimWrap = |<div>headquarters: |</div> |
               }
+              20 >
                 // tx_org_headquarters
               21 = COA
               21 {
@@ -182,6 +183,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+              21 >
                 // for debugging only
               30 = TEXT
               30 {
