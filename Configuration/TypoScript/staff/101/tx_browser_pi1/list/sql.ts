@@ -3,12 +3,12 @@ plugin.tx_browser_pi1 {
     list {
       101 {
         select (
+          tx_org_staff.name_last,
           tx_org_staff.title,
           tx_org_staff.bodytext,
           tx_org_staff.image,
           tx_org_staff.imageseo,
           tx_org_staff.name_first,
-          tx_org_staff.name_last,
           tx_org_staff.page,
           tx_org_staff.seo_description,
           tx_org_staff.seo_keywords,

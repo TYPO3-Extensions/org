@@ -42,12 +42,13 @@ plugin.tx_browser_pi1 {
                   default {
                     10 = TEXT
                     10 {
-                      field = tx_org_staff.name_first
-                      noTrimWrap = || |
+                      field = tx_org_staff.name_last
+                      noTrimWrap = ||, |
+                      required = 1
                     }
                     20 = TEXT
                     20 {
-                      field = tx_org_staff.name_last
+                      field = tx_org_staff.name_first
                     }
                     stdWrap {
                       typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
