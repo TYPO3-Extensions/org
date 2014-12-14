@@ -1,0 +1,40 @@
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = newsUid
+  }
+  templates {
+    listview {
+      header {
+        1 {
+          field   = tx_org_news.teaser_title // tx_org_news.title
+          tag     = h4
+        }
+      }
+      image {
+        1 {
+          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
+          file      = tx_org_news.image
+          height    = 90c
+          path      = uploads/tx_org/
+          seo       = tx_org_news.imageseo
+          width     = 220c
+        }
+      }
+      text {
+        1 {
+          field   = tx_org_news.teaser_short // tx_org_news.bodytext
+        }
+      }
+      url {
+        1 {
+          key       = tx_org_news.type
+          page      = tx_org_news.page
+          record    = tx_org_news.uid
+          showUid   = newsUid
+          #singlePid =
+          url       = tx_org_news.url
+        }
+      }
+    }
+  }
+}

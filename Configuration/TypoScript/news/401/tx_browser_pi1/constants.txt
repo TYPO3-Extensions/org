@@ -33,15 +33,6 @@ plugin.tx_browser_pi1 {
           seo       = tx_org_news.imageseo
           width     = 160c
         }
-        1 {
-          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.gif
-          file      = tx_org_staff.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_staff.title // tx_org_staff.imageseo // tx_org_news.title
-          #width     = 160c
-        }
       }
       text {
         0 {
@@ -58,14 +49,6 @@ plugin.tx_browser_pi1 {
           showUid   = newsUid
           #singlePid =
           url       = tx_org_news.url
-        }
-        1 {
-          key       = tx_org_staff.type
-          page      = tx_org_staff.page
-          record    = tx_org_staff.uid
-          showUid   = staffUid
-          #singlePid =
-          url       = tx_org_staff.url
         }
       }
     }
