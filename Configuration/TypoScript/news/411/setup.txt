@@ -69,7 +69,6 @@ plugin.tx_browser_pi1 {
           tx_org_news.subtitle,
           tx_org_news.teaser_title,
           tx_org_news.teaser_subtitle
-          tx_org_news.telephone,
           tx_org_news.uid
         )
         orderBy (
