@@ -76,15 +76,9 @@ plugin.tx_browser_pi1 {
                 // bodytext || vita
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
                 // for debugging only
-              30 = TEXT
-              30 {
-                field = tx_org_staffgroup.uid
-                noTrimWrap = |<div>staffgroup: |</div> |
-              }
-              x30 >
                 // tx_org_staffgroup
-              31 = COA
-              31 {
+              30 = COA
+              30 {
                   // if is true tx_org_staffgroup.uid
                 if =
                 if {
@@ -94,6 +88,12 @@ plugin.tx_browser_pi1 {
                 }
                   // div box
                 wrap = <div class="tx_org_staffgroup">|</div>
+                10 = TEXT
+                10 {
+                  field = tx_org_staffgroup.uid
+                  noTrimWrap = |<div>staffgroup: |</div> |
+                }
+                x10 >
                 20 = CONTENT
                 20 {
                   table = tx_org_staffgroup
@@ -127,8 +127,8 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // tx_org_headquarters
-              41 = COA
-              41 {
+              40 = COA
+              40 {
                   // if is true tx_org_headquarters.uid
                 if =
                 if {
@@ -136,15 +136,15 @@ plugin.tx_browser_pi1 {
                     field = tx_org_headquarters.uid
                   }
                 }
+                wrap = <div class="tx_org_headquarters">|</div>
                   // for debugging only
                 10 = TEXT
                 10 {
                   field = tx_org_headquarters.uid
                   noTrimWrap = |<div>headquarters: |</div> |
                 }
-                x10 >
+                10 >
                   // div box
-                wrap = <div class="tx_org_headquarters">|</div>
                 20 = CONTENT
                 20 {
                   table = tx_org_headquarters
