@@ -74,7 +74,8 @@ plugin.tx_browser_pi1 {
           tx_org_staff.type,
           tx_org_staff.uid,
           tx_org_staff.url,
-          tx_org_staffgroup.uid
+          tx_org_staffgroup.uid,
+          tx_org_headquarters.uid
 )
         random = 1
         csvLinkToSingleView = dummy
@@ -132,15 +133,15 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // for debugging only
-              40 = TEXT
-              40 {
+              30 = TEXT
+              30 {
                 field = tx_org_staffgroup.uid
                 noTrimWrap = |<div>staffgroup: |</div> |
               }
-              40 >
+              30 >
                 // tx_org_staffgroup
-              50 = COA
-              50 {
+              31 = COA
+              31 {
                   // if is true tx_org_staffgroup.uid
                 if =
                 if {
