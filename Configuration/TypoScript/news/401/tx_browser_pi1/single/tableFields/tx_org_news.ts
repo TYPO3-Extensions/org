@@ -36,6 +36,7 @@ plugin.tx_browser_pi1 {
                     value = ###SOCIALMEDIA_BOOKMARKS###
                     wrap = <div class="show-for-medium-up socialbookmarks">|</div>
                   }
+                    // staff
                   30 = COA
                   30 {
                     10 = TEXT
@@ -78,6 +79,7 @@ plugin.tx_browser_pi1 {
                     }
                     wrap = <p class="hide-for-large-up author">|</p>
                   }
+                    // bodytext
                   31 = COA
                   31 {
                     10 = TEXT
