@@ -151,10 +151,10 @@ plugin.tx_browser_pi1 {
                   select {
                     pidInList = {$plugin.org.sysfolder.headquarters}
                     //selectFields = tx_org_headquarters.title
-                    join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staff.uid
+                    join = tx_org_mm_all ON tx_org_mm_all.uid_local = tx_org_headquarters.uid
                     where {
-                      field = tx_org_headquarters.uid
-                      noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
+                      field = tx_org_staff.uid
+                      noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
                     }
                     orderBy = tx_org_headquarters.title
                   }
