@@ -126,13 +126,6 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-                // for debugging only
-              40 = TEXT
-              40 {
-                field = tx_org_headquarters.uid
-                noTrimWrap = |<div>headquarters: |</div> |
-              }
-              x40 >
                 // tx_org_headquarters
               41 = COA
               41 {
@@ -143,6 +136,13 @@ plugin.tx_browser_pi1 {
                     field = tx_org_headquarters.uid
                   }
                 }
+                  // for debugging only
+                10 = TEXT
+                10 {
+                  field = tx_org_headquarters.uid
+                  noTrimWrap = |<div>headquarters: |</div> |
+                }
+                x10 >
                   // div box
                 wrap = <div class="tx_org_headquarters">|</div>
                 20 = CONTENT
