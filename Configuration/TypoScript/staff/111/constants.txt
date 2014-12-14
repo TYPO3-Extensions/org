@@ -1,6 +1,7 @@
 plugin.tx_browser_pi1 {
   navigation {
-    showUid = staffUid
+    // Set never for plugins in the marginal column
+    //showUid = staffUid
   }
   templates {
     listview {
