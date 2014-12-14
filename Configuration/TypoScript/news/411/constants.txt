@@ -6,7 +6,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         1 {
-          field   = tx_org_news.teaser_title // tx_org_news.title
+          field   = tx_org_news.marginal_title // tx_org_news.teaser_title // tx_org_news.title
           tag     = h4
         }
       }
