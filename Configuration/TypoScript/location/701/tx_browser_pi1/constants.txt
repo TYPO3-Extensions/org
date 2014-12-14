@@ -59,7 +59,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.gif
+          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.png
           file      = tx_org_location.image
           height    = 90c
           path      = uploads/tx_org/
@@ -67,7 +67,7 @@ plugin.tx_browser_pi1 {
           width     = 220c
         }
         1 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.gif
+          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.png
           file      = tx_org_news.image
           #height    =
           #listNum   =
@@ -76,7 +76,7 @@ plugin.tx_browser_pi1 {
           #width     =
         }
         2 {
-          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.gif
+          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.png
           file      = tx_org_location.image
           #height    =
           #listNum   =

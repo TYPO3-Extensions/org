@@ -12,7 +12,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         2 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.gif
+          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
           height    = 90c
           path      = uploads/tx_org/

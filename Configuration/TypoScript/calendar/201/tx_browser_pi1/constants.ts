@@ -66,7 +66,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.gif
+          default   = EXT:org/res/icons/defaults/tx_org_cal_300x200.png
           file      = tx_org_cal.image
           height    = 95c
           path      = uploads/tx_org/
