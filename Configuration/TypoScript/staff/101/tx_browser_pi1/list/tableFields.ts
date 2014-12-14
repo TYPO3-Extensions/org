@@ -75,7 +75,6 @@ plugin.tx_browser_pi1 {
 
                 // bodytext || vita
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
-                // for debugging only
                 // tx_org_staffgroup
               30 = COA
               30 {
@@ -88,12 +87,13 @@ plugin.tx_browser_pi1 {
                 }
                   // div box
                 wrap = <div class="tx_org_staffgroup">|</div>
+                  // for debugging only
                 10 = TEXT
                 10 {
                   field = tx_org_staffgroup.uid
                   noTrimWrap = |<div>staffgroup: |</div> |
                 }
-                x10 >
+                10 >
                 20 = CONTENT
                 20 {
                   table = tx_org_staffgroup
