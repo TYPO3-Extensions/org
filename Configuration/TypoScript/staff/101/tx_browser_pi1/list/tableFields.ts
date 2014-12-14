@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
                 field = tx_org_staffgroup.uid
                 noTrimWrap = |<div>staffgroup: |</div> |
               }
-              30 >
+              x30 >
                 // tx_org_staffgroup
               31 = COA
               31 {
