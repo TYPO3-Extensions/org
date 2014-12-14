@@ -126,6 +126,57 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+                // for debugging only
+              40 = TEXT
+              40 {
+                field = tx_org_headquarters.uid
+                noTrimWrap = |<div>headquarters: |</div> |
+              }
+              x40 >
+                // tx_org_headquarters
+              41 = COA
+              41 {
+                  // if is true tx_org_headquarters.uid
+                if =
+                if {
+                  isTrue {
+                    field = tx_org_headquarters.uid
+                  }
+                }
+                  // div box
+                wrap = <div class="tx_org_headquarters">|</div>
+                20 = CONTENT
+                20 {
+                  table = tx_org_headquarters
+                  select {
+                    pidInList = {$plugin.org.sysfolder.headquarters}
+                    //selectFields = tx_org_headquarters.title
+                    join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staff.uid
+                    where {
+                      field = tx_org_headquarters.uid
+                      noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
+                    }
+                    orderBy = tx_org_headquarters.title
+                  }
+                    // tx_org_headquarters.title
+                  renderObj = TEXT
+                  renderObj {
+                    field = title
+                    //noTrimWrap = |<span class="item">|</span>|
+                    wrap = |###POINT###
+                  }
+                  stdWrap {
+                    split {
+                      token = ###POINT###
+                      cObjNum = 1 |*| 1 |*| 2 || 2
+                      1.current = 1
+                      1.noTrimWrap = ||, |
+                      2.current = 1
+                      2.noTrimWrap = |||
+                    }
+                  }
+                }
+              }
               wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }
             wrap = <div class="row">|</div>
