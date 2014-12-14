@@ -9,7 +9,7 @@ plugin.tx_browser_pi1 {
           en = All companies
         }
         typolink {
-          parameter = {$plugin.org.pages.headquarter}
+          parameter = {$plugin.org.pages.headquarters}
         }
       }
     }

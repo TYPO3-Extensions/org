@@ -240,7 +240,7 @@ plugin.tx_linkhandler {
   tx_org_headquarters {
     forceLink        = 0
     useCacheHash     = 1
-    parameter        = {$plugin.org.pages.headquarter}
+    parameter        = {$plugin.org.pages.headquarters}
     additionalParams = &tx_browser_pi1[headquarterUid]={field:uid}
     additionalParams {
       insertData = 1

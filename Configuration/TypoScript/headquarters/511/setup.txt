@@ -32,7 +32,7 @@ plugin.tx_browser_pi1 {
               en = Headquarters
             }
             typolink {
-              parameter = {$plugin.org.pages.headquarter}
+              parameter = {$plugin.org.pages.headquarters}
               title {
                 value = All Headquarters
                 lang {
@@ -51,7 +51,7 @@ plugin.tx_browser_pi1 {
             }
             wrap    = <div class="linkToList">|</div>
             typolink {
-              parameter = {$plugin.org.pages.headquarter}
+              parameter = {$plugin.org.pages.headquarters}
               title {
                 value = All units
                 lang {

@@ -1,7 +1,8 @@
 6.0.7
   14-12-12
   Improvements
-  * #i0037: moved: Constat sysfolder.headquarter to sysfolder.headquarters
+  * #i0038: moved: Constant pages.headquarter to pages.headquarters
+  * #i0037: moved: Constant sysfolder.headquarter to sysfolder.headquarters
   Update for Browser 6.0.7
   * #i0036: moved: browser/res/js/map to browser/Resources/Public/JavaScript/Map
   * #i0035: moved: browser/res/images to browser/Resources/Public/Images

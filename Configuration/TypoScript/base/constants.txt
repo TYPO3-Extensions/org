@@ -31,7 +31,7 @@ plugin.org {
   # cat=Organiser - Pages/150/104; type=+int; label= event:Uid of your event page
   pages.event =
   # cat=Organiser - Pages/150/105; type=+int; label= headquarters:Uid of your headquarters page
-  pages.headquarter =
+  pages.headquarters =
   # cat=Organiser - Pages/150/105; type=+int; label= jobs:Uid of your jobs page
   pages.job =
   # cat=Organiser - Pages/150/106; type=+int; label= jobs application form:Uid of your page with the apllication form
