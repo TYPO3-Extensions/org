@@ -72,7 +72,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.uid
         )
         orderBy (
-          tx_org_news.datetime ASC
+          tx_org_news.datetime DESC
         )
         tx_org_news {
           title = COA
