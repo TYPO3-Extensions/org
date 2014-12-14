@@ -133,12 +133,18 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // for debugging only
+              20 = TEXT
+              20 {
+                field = tx_org_headquarters.uid
+                noTrimWrap = |<div>headquarters: |</div> |
+              }
+                // for debugging only
               30 = TEXT
               30 {
                 field = tx_org_staffgroup.uid
                 noTrimWrap = |<div>staffgroup: |</div> |
               }
-              30 >
+              XXX30 >
                 // tx_org_staffgroup
               31 = COA
               31 {
