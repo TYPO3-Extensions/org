@@ -26,32 +26,6 @@ plugin.tx_browser_pi1 {
               20 {
                   // link to tx_org_event
                 tx_org_event < .default
-                tx_org_event {
-                  typolink {
-                    parameter {
-                      cObject {
-                        10 {
-                          10 {
-                            if {
-                              isTrue = {$plugin.org.pages.event}
-                            }
-                            value = {$plugin.org.pages.event}
-                          }
-                          20 {
-                            if {
-                              isFalse = {$plugin.org.pages.event}
-                            }
-                            value = {$plugin.org.pages.event}
-                          }
-                        }
-                      }
-                    }
-                    additionalParams {
-                      field = tx_org_event.uid
-                      wrap  = &tx_browser_pi1[eventUid]=|
-                    }
-                  }
-                }
               }
                 // tx_org_caltype.title
               30 = COA
@@ -78,6 +52,14 @@ plugin.tx_browser_pi1 {
               39 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+                10 {
+                  tx_org_event < .default
+                  tx_org_event {
+                    file.import.stdWrap.cObject.10.20.field := prependString(tx_org_event.image // )
+                    altText.field := prependString(tx_org_event.imageseo // )
+                    title.field := prependString(tx_org_event.imageseo // )
+                  }
+                }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
                 // teaser_short: default, notype, page, url, tx_org_event
@@ -85,34 +67,6 @@ plugin.tx_browser_pi1 {
               40 {
                   // link to tx_org_event
                 tx_org_event < .default
-                tx_org_event {
-                  20 {
-                    typolink {
-                      parameter {
-                        cObject {
-                          10 {
-                            10 {
-                              if {
-                                isTrue = {$plugin.org.pages.event}
-                              }
-                              value = {$plugin.org.pages.event}
-                            }
-                            20 {
-                              if {
-                                isFalse = {$plugin.org.pages.event}
-                              }
-                              value = {$plugin.org.pages.event}
-                            }
-                          }
-                        }
-                      }
-                      additionalParams {
-                        field = tx_org_event.uid
-                        wrap  = &tx_browser_pi1[eventUid]=|
-                      }
-                    }
-                  }
-                }
               }
                 // location
               50 = COA
@@ -186,32 +140,6 @@ plugin.tx_browser_pi1 {
                       wrap = <li class="weekday">|</li>
                     }
                     tx_org_event < .default
-                    tx_org_event {
-                      typolink {
-                        parameter {
-                          cObject {
-                            10 {
-                              10 {
-                                if {
-                                  isTrue = {$plugin.org.pages.event}
-                                }
-                                value = {$plugin.org.pages.event}
-                              }
-                              20 {
-                                if {
-                                  isFalse = {$plugin.org.pages.event}
-                                }
-                                value = {$plugin.org.pages.event}
-                              }
-                            }
-                          }
-                        }
-                        additionalParams {
-                          field = tx_org_event.uid
-                          wrap  = &tx_browser_pi1[eventUid]=|
-                        }
-                      }
-                    }
                     url {
                       value >
                       lang >
