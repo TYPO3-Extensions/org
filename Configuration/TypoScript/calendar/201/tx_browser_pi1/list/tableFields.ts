@@ -27,6 +27,13 @@ plugin.tx_browser_pi1 {
                   // link to tx_org_event
                 tx_org_event < .default
               }
+                // tx_org_cal.subtitle
+              21 = TEXT
+              21 {
+                field = tx_org_cal.teaser_subtitle // tx_org_cal.subtitle
+                wrap = <h3>|</h3>
+                required = 1
+              }
                 // tx_org_caltype.title
               30 = COA
               30 {
