@@ -1,6 +1,7 @@
 6.0.7
-  14-12-12
+  14-12-15
   Improvements
+  * #i0040: removed: searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simple
   * #i0039: removed: tx_org_event_mm_tx_org_news
   * #i0038: moved: Constant pages.headquarter to pages.headquarters
   * #i0037: moved: Constant sysfolder.headquarter to sysfolder.headquarters

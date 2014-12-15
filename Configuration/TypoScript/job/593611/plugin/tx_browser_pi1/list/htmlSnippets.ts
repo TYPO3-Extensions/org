@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
           }
           subparts {
             // For table_01.html
-            searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simple
+            //searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simple
             // For table_02.html
             //searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simpleMapFilter
           }
