@@ -9,7 +9,6 @@
 # tx_org_downloadsmedia
 # tx_org_event
 # tx_org_eventcat
-# tx_org_event_mm_tx_org_news
 # tx_org_headquarters
 # tx_org_headquarterscat
 # tx_org_job
@@ -353,21 +352,6 @@ CREATE TABLE tx_org_eventcat (
 
   PRIMARY KEY (uid),
   KEY parent (pid)
-);
-
-
-
-#
-# tx_org_event_mm_tx_org_news
-#
-CREATE TABLE tx_org_event_mm_tx_org_news (
-  uid_local int(11) unsigned NOT NULL DEFAULT '0',
-  uid_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  tablenames varchar(30) NOT NULL DEFAULT '',
-  sorting int(11) unsigned NOT NULL DEFAULT '0',
-  sorting_foreign int(11) unsigned NOT NULL DEFAULT '0',
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
 );
 
 

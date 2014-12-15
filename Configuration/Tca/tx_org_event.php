@@ -250,51 +250,35 @@ $TCA['tx_org_event'] = array(
       ),
     ),
     'tx_org_news' => array(
-      'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.news',
+      'exclude' => 0,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_news',
       'config' => array(
         'type' => 'select',
-        'size' => $size_news,
+        'size' => 20,
         'minitems' => 0,
-        'maxitems' => 999,
-        'MM' => 'tx_org_event_mm_tx_org_news',
-        'foreign_table' => 'tx_org_news',
-        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
-        'wizards' => array(
-          '_PADDING' => 2,
-          '_VERTICAL' => 0,
-          'add' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.add',
-            'icon' => 'add.gif',
-            'params' => array(
-              'table' => 'tx_org_news',
-              'pid' => $str_marker_pid,
-              'setValue' => 'prepend'
-            ),
-            'script' => 'wizard_add.php',
-          ),
-          'list' => array(
-            'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.list',
-            'icon' => 'list.gif',
-            'params' => array(
-              'table' => 'tx_org_news',
-              'pid' => $str_marker_pid,
-            ),
-            'script' => 'wizard_list.php',
-          ),
-          'edit' => array(
-            'type' => 'popup',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.tx_org_news.edit',
-            'script' => 'wizard_edit.php',
-            'popup_onlyOpenIfSelected' => 1,
-            'icon' => 'edit2.gif',
-            'JSopenParams' => $JSopenParams,
+        'maxitems' => 99,
+        'items' => array(
+          '0' => array(
+            '0' => '',
+            '1' => '',
           ),
         ),
-      ),
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_news'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_news'
+        ),
+        'foreign_table' => 'tx_org_news',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
+        'selectedListStyle' => $listStyleWidth,
+        'itemListStyle' => $listStyleWidth,
+      )
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,
