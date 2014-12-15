@@ -151,6 +151,7 @@ plugin.tx_browser_pi1 {
                     // day of month as number
                   20 < .10
                   20 {
+                    test = dummy
                     default {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
