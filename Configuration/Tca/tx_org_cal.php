@@ -76,11 +76,6 @@ $TCA[ 'tx_org_cal' ] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          '0' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
-            '1' => 'record',
-            '2' => 'EXT:org/Configuration/ExtIcon/caldirect.gif',
-          ),
           'tx_org_event' => array(
             '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.type.tx_org_event',
             '1' => 'tx_org_event',
@@ -112,7 +107,7 @@ $TCA[ 'tx_org_cal' ] = array(
             '2' => 'EXT:org/Configuration/ExtIcon/url.gif',
           ),
         ),
-        'default' => '0',
+        'default' => 'page',
       ),
     ),
     'page' => array(
