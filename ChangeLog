@@ -1,5 +1,7 @@
 6.0.7
   14-12-15
+  Features
+  * #i0041: Additional static template for calendar: display up-to-date items only
   Improvements
   * #i0040: removed: searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simple
   * #i0039: removed: tx_org_event_mm_tx_org_news
