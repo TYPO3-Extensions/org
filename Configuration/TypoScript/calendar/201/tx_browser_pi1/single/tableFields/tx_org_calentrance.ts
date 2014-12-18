@@ -74,7 +74,7 @@ plugin.tx_browser_pi1 {
                           noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_calentrance'|
                         }
                         orderBy = tx_org_calentrance.value
-                        max = 3
+                        //max = 3
                       }
                         // options
                       renderObj = COA
