@@ -50,7 +50,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.uid
         )
         orderBy (
-          tx_org_staff.title, tx_org_staffgroup.title, tx_org_news.date DESC,
+          tx_org_staff.title DESC
         )
         functions.clean_up.csvTableFields (
           tx_org_staff.page,
