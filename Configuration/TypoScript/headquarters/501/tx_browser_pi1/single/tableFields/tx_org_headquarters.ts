@@ -67,13 +67,9 @@ plugin.tx_browser_pi1 {
                         // phone
                       10 = TEXT
                       10 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.phone
-                          }
-                        }
-                        field = tx_org_headquarters.phone
+                        field = tx_org_headquarters.telephone
                         noTrimWrap = || |
+                        required = 1
                       }
                         // fax
                       20 = TEXT
@@ -85,6 +81,7 @@ plugin.tx_browser_pi1 {
                         }
                         field = tx_org_headquarters.fax
                         noTrimWrap = || |
+                        required = 1
                       }
                         // email
                       30 = TEXT
@@ -100,6 +97,7 @@ plugin.tx_browser_pi1 {
                           }
                         }
                         noTrimWrap = || |
+                        required = 1
                       }
                     }
                   }
