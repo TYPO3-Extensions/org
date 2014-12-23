@@ -83,14 +83,16 @@ plugin.tx_browser_pi1 {
               }
               wrap = <div class="columns datetime">|</div>
             }
-              // teaser_title or title
-            20 = COA
+            20 < plugin.tx_browser_pi1.templates.listview.header.0.field
             20 {
               wrap = <div class="columns title">|</div>
-              10 < plugin.tx_browser_pi1.templates.listview.header.0.field
+            }
+              // teaser_title or title
+            XX20 = COA
+            XX20 {
                 // 0 (direct), tx_org_event
-              XX10 = CASE
-              XX10 {
+              10 = CASE
+              10 {
                 key = ###TX_ORG_CAL.TYPE###
                   // 0 (direct)
                 default = COA
