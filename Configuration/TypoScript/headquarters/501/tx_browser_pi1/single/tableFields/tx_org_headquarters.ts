@@ -94,7 +94,11 @@ plugin.tx_browser_pi1 {
                             field = tx_org_headquarters.email
                           }
                         }
-                        field = tx_org_headquarters.email
+                        typolink {
+                          parameter {
+                            field = tx_org_headquarters.email
+                          }
+                        }
                         noTrimWrap = || |
                       }
                     }
