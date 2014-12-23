@@ -43,7 +43,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [4.1.1] + nur aktuelle Einträge');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [4.1.2] + nur abgelaufene Einträge');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [4.2] + Kalender Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4] Kalender - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4.3] Kalender - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [5] Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/411/',                          'Org [5] Nachrichten - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/402/',                          'Org [5] Nachrichten - Slider');
@@ -73,7 +73,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [2.1.1] + up-to-date only');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [2.1.2] + out-of-date only');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [2.2] + Calendar Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2] Calendar - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2.3] Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [3] Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [3.1] + Downloads Caddy');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag',      'Org [3.1.1] + Downloads Caddy Flags');
