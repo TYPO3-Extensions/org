@@ -56,6 +56,8 @@ plugin.tx_browser_pi1 {
               //wrap = <span class="selectbox">|</span>
               wrap = <div class="category_menu category_menu_treeview">|</div>
             }
+            title >
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
           }
         }
       }
