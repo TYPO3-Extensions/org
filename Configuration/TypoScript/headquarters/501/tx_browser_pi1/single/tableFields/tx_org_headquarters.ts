@@ -88,10 +88,10 @@ plugin.tx_browser_pi1 {
                         // phone
                       10 = TEXT
                       10 {
-                        append = TEXT
-                        append {
+                        prepend = TEXT
+                        prepend {
                           value = phone
-                          lange {
+                          lang {
                             de = Tel.
                             en = phone
                           }
