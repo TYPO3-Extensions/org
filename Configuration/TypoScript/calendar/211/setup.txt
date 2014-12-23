@@ -71,7 +71,7 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               field     = tx_org_cal.datetime
-              strftime  = %d. %B, %H:%M Uhr
+              strftime  = %d. %B, %H:%M
               postCObject = TEXT
               postCObject {
                 value = h
