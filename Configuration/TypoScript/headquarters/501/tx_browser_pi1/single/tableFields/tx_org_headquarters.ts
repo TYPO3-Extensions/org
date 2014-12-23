@@ -63,10 +63,40 @@ plugin.tx_browser_pi1 {
                       // contact
                     20 = COA
                     20 {
+                      if {
+                        isTrue {
+                          stdWrap {
+                            cObject = COA
+                            cObject {
+                              10 = TEXT
+                              10 {
+                                field = tx_org_headquarters.email
+                              }
+                              20 = TEXT
+                              20 {
+                                field = tx_org_headquarters.fax
+                              }
+                              30 = TEXT
+                              30 {
+                                field = tx_org_headquarters.telephone
+                              }
+                            }
+                          }
+                        }
+                      }
                       wrap = <div class="contact">|</div>
                         // phone
                       10 = TEXT
                       10 {
+                        append = TEXT
+                        append {
+                          value = phone
+                          lange {
+                            de = Tel.
+                            en = phone
+                          }
+                          noTrimWrap = || |
+                        }
                         field = tx_org_headquarters.telephone
                         noTrimWrap = || |
                         required = 1
