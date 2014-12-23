@@ -11,7 +11,6 @@ plugin.tx_browser_pi1 {
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                 <div class="margin columns small-12 medium-12 large-3">
-                  ###TX_ORG_HEADQUARTERS.CONTACT_EMAIL###
                   ###TX_ORG_HEADQUARTERS.UID###<!-- tx_org_news -->
                   ###TX_ORG_HEADQUARTERS.CRDATE###<!-- tx_org_staff -->
                 </div>
