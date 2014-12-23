@@ -63,79 +63,89 @@ plugin.tx_browser_pi1 {
         orderBy             = tx_org_cal.datetime
         andWhere            = tx_org_cal.datetime > UNIX_TIMESTAMP()
         tx_org_cal {
-            // dateline
-          datetime = TEXT
-          datetime {
-            value     = ###TX_ORG_CAL.DATETIME###
-            strftime  = %d. %B, %H:%M Uhr
-            wrap      = <div class="cal_datetime">|</div>
-          }
-            // teaser_title or title
+            // dateline, title
           title = COA
           title {
-              // 0 (direct), tx_org_event
-            10 = CASE
+            wrap = <div class="row tx_org_cal-row">|</div>
+              // dateline
+            10 = TEXT
             10 {
-              key = ###TX_ORG_CAL.TYPE###
-                // 0 (direct)
-              default = COA
-              default {
-                10 = TEXT
-                10 {
-                  required    = 1
-                  if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
-                  value       = ###TX_ORG_CAL.TEASER_TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                    useCacheHash = 1
-                  }
-                  stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_title cal_title_default">|</div>
-                }
-                11 = TEXT
-                11 {
-                  required    = 1
-                  if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
-                  value       = ###TX_ORG_CAL.TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                    useCacheHash = 1
-                  }
-                  stripHtml   = 1
-                  wrap        = <div class="cal_title cal_title_default">|</div>
-                }
+              field     = tx_org_cal.datetime
+              strftime  = %d. %B, %H:%M Uhr
+              postCObject = TEXT
+              postCObject {
+                value = XXX
+                noTrimWrap = | ||
               }
-              tx_org_event = COA
-              tx_org_event {
-                10 = TEXT
-                10 {
-                  required    = 1
-                  if.isTrue   = ###TX_ORG_EVENT.TEASER_TITLE###
-                  value       = ###TX_ORG_EVENT.TEASER_TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                    useCacheHash = 1
+              wrap      = <div class="columns datetime">|</div>
+            }
+              // teaser_title or title
+            20 = COA
+            20 {
+                // 0 (direct), tx_org_event
+              10 = CASE
+              10 {
+                key = ###TX_ORG_CAL.TYPE###
+                  // 0 (direct)
+                default = COA
+                default {
+                  10 = TEXT
+                  10 {
+                    required    = 1
+                    if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
+                    value       = ###TX_ORG_CAL.TEASER_TITLE###
+                    typolink {
+                      parameter         = {$plugin.org.pages.calendar} - linktosingle
+                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                      useCacheHash = 1
+                    }
+                    stripHtml   = 1
+                    crop        = 200 | ... | 1
+                    wrap        = <div class="cal_title cal_title_default">|</div>
                   }
-                  stripHtml   = 1
-                  crop        = 200 | ... | 1
-                  wrap        = <div class="cal_title cal_title_event">|</div>
+                  11 = TEXT
+                  11 {
+                    required    = 1
+                    if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
+                    value       = ###TX_ORG_CAL.TITLE###
+                    typolink {
+                      parameter         = {$plugin.org.pages.calendar} - linktosingle
+                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                      useCacheHash = 1
+                    }
+                    stripHtml   = 1
+                    wrap        = <div class="cal_title cal_title_default">|</div>
+                  }
                 }
-                11 = TEXT
-                11 {
-                  required    = 1
-                  if.isFalse  = ###TX_ORG_EVENT.TEASER_TITLE###
-                  value       = ###TX_ORG_EVENT.TITLE###
-                  typolink {
-                    parameter         = {$plugin.org.pages.calendar} - linktosingle
-                    additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                    useCacheHash = 1
+                tx_org_event = COA
+                tx_org_event {
+                  10 = TEXT
+                  10 {
+                    required    = 1
+                    if.isTrue   = ###TX_ORG_EVENT.TEASER_TITLE###
+                    value       = ###TX_ORG_EVENT.TEASER_TITLE###
+                    typolink {
+                      parameter         = {$plugin.org.pages.calendar} - linktosingle
+                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                      useCacheHash = 1
+                    }
+                    stripHtml   = 1
+                    crop        = 200 | ... | 1
+                    wrap        = <div class="cal_title cal_title_event">|</div>
                   }
-                  stripHtml   = 1
-                  wrap        = <div class="cal_title cal_title_event">|</div>
+                  11 = TEXT
+                  11 {
+                    required    = 1
+                    if.isFalse  = ###TX_ORG_EVENT.TEASER_TITLE###
+                    value       = ###TX_ORG_EVENT.TITLE###
+                    typolink {
+                      parameter         = {$plugin.org.pages.calendar} - linktosingle
+                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
+                      useCacheHash = 1
+                    }
+                    stripHtml   = 1
+                    wrap        = <div class="cal_title cal_title_event">|</div>
+                  }
                 }
               }
             }
