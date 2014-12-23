@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap = <h3>|</h3>
+            wrap    = <h3 class="columns tx_browser_pi1-title-margin">|</h3>
             value = Calendar
             lang.de = Kalender
             typolink {
@@ -41,13 +41,18 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All items &raquo;
-            lang.de = Alle Veranstaltungen &raquo;
-            wrap = <p>|</p>
+            lang {
+              de = Alle Veranstaltungen &raquo;
+              en = All items &raquo;
+            }
+            wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
-                value = All items
-                lang.de = Alle Veranstaltungen
+              value = All items
+              lang {
+                de = Alle Veranstaltungen
+                en = All items
               }
             }
           }
@@ -66,7 +71,6 @@ plugin.tx_browser_pi1 {
             // dateline, title
           title = COA
           title {
-            wrap = <div class="row tx_org_cal-row">|</div>
               // dateline
             10 = TEXT
             10 {
@@ -81,82 +85,13 @@ plugin.tx_browser_pi1 {
                 }
                 noTrimWrap = | ||
               }
-              wrap = <div class="columns datetime">|</div>
+              wrap = <div class="datetime">|</div>
             }
             20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
             20 {
-              wrap = <div class="columns title">|</div>
+              wrap = <div class="title">|</div>
             }
-              // teaser_title or title
-            XX20 = COA
-            XX20 {
-                // 0 (direct), tx_org_event
-              10 = CASE
-              10 {
-                key = ###TX_ORG_CAL.TYPE###
-                  // 0 (direct)
-                default = COA
-                default {
-                  10 = TEXT
-                  10 {
-                    required    = 1
-                    if.isTrue   = ###TX_ORG_CAL.TEASER_TITLE###
-                    value       = ###TX_ORG_CAL.TEASER_TITLE###
-                    typolink {
-                      parameter         = {$plugin.org.pages.calendar} - linktosingle
-                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                      useCacheHash = 1
-                    }
-                    stripHtml   = 1
-                    crop        = 200 | ... | 1
-                    wrap        = <div class="cal_title cal_title_default">|</div>
-                  }
-                  11 = TEXT
-                  11 {
-                    required    = 1
-                    if.isFalse  = ###TX_ORG_CAL.TEASER_TITLE###
-                    value       = ###TX_ORG_CAL.TITLE###
-                    typolink {
-                      parameter         = {$plugin.org.pages.calendar} - linktosingle
-                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                      useCacheHash = 1
-                    }
-                    stripHtml   = 1
-                    wrap        = <div class="cal_title cal_title_default">|</div>
-                  }
-                }
-                tx_org_event = COA
-                tx_org_event {
-                  10 = TEXT
-                  10 {
-                    required    = 1
-                    if.isTrue   = ###TX_ORG_EVENT.TEASER_TITLE###
-                    value       = ###TX_ORG_EVENT.TEASER_TITLE###
-                    typolink {
-                      parameter         = {$plugin.org.pages.calendar} - linktosingle
-                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                      useCacheHash = 1
-                    }
-                    stripHtml   = 1
-                    crop        = 200 | ... | 1
-                    wrap        = <div class="cal_title cal_title_event">|</div>
-                  }
-                  11 = TEXT
-                  11 {
-                    required    = 1
-                    if.isFalse  = ###TX_ORG_EVENT.TEASER_TITLE###
-                    value       = ###TX_ORG_EVENT.TITLE###
-                    typolink {
-                      parameter         = {$plugin.org.pages.calendar} - linktosingle
-                      additionalParams  = &tx_browser_pi1[calendarUid]=###TX_ORG_CAL.UID###
-                      useCacheHash = 1
-                    }
-                    stripHtml   = 1
-                    wrap        = <div class="cal_title cal_title_event">|</div>
-                  }
-                }
-              }
-            }
+            wrap = <div class="record">|</div>
           }
         }
           // marker and subparts will replaced in the HTML template before data handling
