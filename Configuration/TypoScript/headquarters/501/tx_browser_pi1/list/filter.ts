@@ -29,6 +29,7 @@ plugin.tx_browser_pi1 {
               //wrap = <span class="selectbox">|</span>
               wrap = <div class="category_menu category_menu_treeview">|</div>
             }
+            mail_lat < plugin.tx_browser_pi1.displayList.master_templates.selectbox
           }
           tx_org_headquarterscat {
               // #43641, dwildt, 1-, 1+

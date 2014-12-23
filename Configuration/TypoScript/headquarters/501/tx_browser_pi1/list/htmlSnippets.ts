@@ -11,6 +11,7 @@ plugin.tx_browser_pi1 {
               <div class="filter">
                 ###RADIALSEARCH###
                 ###TX_ORG_HEADQUARTERS.TITLE###
+                ###TX_ORG_HEADQUARTERS.MAIL_LAT###
                 ###TX_ORG_HEADQUARTERSCAT.TITLE###
               </div>
 )
