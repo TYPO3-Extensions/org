@@ -17,6 +17,7 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.page,
           tx_org_headquarters.teaser_short,
           tx_org_headquarters.type,
+          tx_org_headquarters.uid_parent,
           tx_org_headquarters.url,
           tx_org_headquarterscat.title,
           tx_org_headquarterscat.icons,
