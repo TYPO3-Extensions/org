@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
               value (
               <div class="filter">
                 ###RADIALSEARCH###
-                ###TX_ORG_HEADQUARTERS.UID_PARENT###
+                ###TX_ORG_HEADQUARTERS.TITLE###
                 ###TX_ORG_HEADQUARTERSCAT.TITLE###
               </div>
 )
