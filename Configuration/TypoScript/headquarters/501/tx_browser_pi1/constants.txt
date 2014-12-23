@@ -2,7 +2,8 @@ plugin.tx_browser_pi1 {
   jQuery {
     plugin {
       jstree {
-        tablefield_01 = tx_org_headquarterscat.title
+        tablefield_01 = tx_org_headquarters.title
+        tablefield_02 = tx_org_headquarterscat.title
       }
     }
   }
