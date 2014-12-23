@@ -74,11 +74,6 @@ plugin.tx_browser_pi1 {
                         // fax
                       20 = TEXT
                       20 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.fax
-                          }
-                        }
                         field = tx_org_headquarters.fax
                         noTrimWrap = || |
                         required = 1
@@ -86,18 +81,12 @@ plugin.tx_browser_pi1 {
                         // email
                       30 = TEXT
                       30 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.email
-                          }
-                        }
                         typolink {
                           parameter {
                             field = tx_org_headquarters.email
                           }
                         }
                         noTrimWrap = || |
-                        required = 1
                       }
                     }
                   }
