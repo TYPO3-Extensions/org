@@ -63,8 +63,9 @@ plugin.tx_browser_pi1 {
         }
         select (
           tx_org_cal.title,
-          tx_org_cal.teaser_title,
           tx_org_cal.datetime,
+          tx_org_cal.marginal_title,
+          tx_org_cal.teaser_title,
           tx_org_cal.type,
           tx_org_event.title,
           tx_org_event.teaser_title
@@ -95,15 +96,19 @@ plugin.tx_browser_pi1 {
             20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
             20 {
               default {
+                field := prependString(tx_org_cal.marginal_title // )
                 wrap >
               }
               notype {
+                field := prependString(tx_org_cal.marginal_title // )
                 wrap >
               }
               page {
+                field := prependString(tx_org_cal.marginal_title // )
                 wrap >
               }
               url {
+                field := prependString(tx_org_cal.marginal_title // )
                 wrap >
               }
               wrap = <div class="title">|</div>
