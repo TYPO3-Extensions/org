@@ -33,8 +33,11 @@ plugin.tx_browser_pi1 {
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
-                value = All Events
-                lang.de = Alle Veranstaltungen
+                value = All items
+                lang {
+                  de = Alle Veranstaltungen
+                  en = All items
+                }
               }
             }
           }
@@ -49,10 +52,11 @@ plugin.tx_browser_pi1 {
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
-              value = All items
-              lang {
-                de = Alle Veranstaltungen
-                en = All items
+                value = All items
+                lang {
+                  de = Alle Veranstaltungen
+                  en = All items
+                }
               }
             }
           }
