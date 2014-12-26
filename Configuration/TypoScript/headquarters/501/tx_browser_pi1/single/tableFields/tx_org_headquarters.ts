@@ -47,7 +47,15 @@ plugin.tx_browser_pi1 {
                               }
                               20 = TEXT
                               20 {
+                                field = tx_org_headquarters.mail_country
+                              }
+                              30 = TEXT
+                              30 {
                                 field = tx_org_headquarters.mail_postcode
+                              }
+                              40 = TEXT
+                              40 {
+                                field = tx_org_headquarters.mail_street
                               }
                             }
                           }
@@ -60,9 +68,20 @@ plugin.tx_browser_pi1 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
                         wrap = <li class="header">|</li>
                       }
-                        // location
-                      20 = COA
+                        // mail_street
+                      20 = TEXT
                       20 {
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.mail_street
+                          }
+                        }
+                        field = tx_org_headquarters.mail_street
+                        wrap = <li class="street">|</li>
+                      }
+                        // postcode, city
+                      30 = COA
+                      30 {
                           // mail_postcode
                         10 = TEXT
                         10 {
@@ -86,6 +105,17 @@ plugin.tx_browser_pi1 {
                           noTrimWrap = |<span class="city">|</span> |
                         }
                         wrap = <li class="postcode_city">|</li>
+                      }
+                        // mail_country
+                      40 = TEXT
+                      40 {
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.mail_country
+                          }
+                        }
+                        field = tx_org_headquarters.mail_country
+                        wrap = <li class="country">|</li>
                       }
                     }
                       // contact
