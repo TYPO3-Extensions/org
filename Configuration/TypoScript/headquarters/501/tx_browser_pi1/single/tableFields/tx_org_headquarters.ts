@@ -296,14 +296,31 @@ plugin.tx_browser_pi1 {
                     }
                     required = 1
                   }
-                    // tx_org_headquarterscat.title
+                    // Headquarters parent and children
                   50 = COA
                   50 {
+                      // parent
                     10 = COA
                     10 {
-                        // items: tx_org_headquarters.title croped and linked
-                      10 = CONTENT
+                      if {
+                        isTrue {
+                          field = tx_org_headquarters.uid_parent
+                        }
+                      }
+                      wrap = <ul class="vcard tx_org_headquarters parent">|</ul><!-- vcard -->
+                        // header
+                      10 = TEXT
                       10 {
+                        value = Superior unit
+                        lang {
+                          de = Übergeordneter Bereich
+                          en = Superior unit
+                        }
+                        wrap = <li class="header">|</li>
+                      }
+                        // item: tx_org_headquarters.title linked
+                      20 = CONTENT
+                      20 {
                         table = tx_org_headquarters
                         select {
                           pidInList = {$plugin.org.sysfolder.headquarters}
@@ -313,6 +330,7 @@ plugin.tx_browser_pi1 {
                             noTrimWrap = |tx_org_headquarters.uid = |
                           }
                           orderBy = tx_org_headquarters.sorting
+                          max = 1
                         }
                           // tx_org_headquarters.title
                         renderObj = CASE
@@ -324,7 +342,7 @@ plugin.tx_browser_pi1 {
                           default = TEXT
                           default {
                             field = title
-                            wrap = |###POINT###
+                            wrap = <li class="parent">|</li>
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
                           }
                             // no link
@@ -343,18 +361,28 @@ plugin.tx_browser_pi1 {
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.url
                           }
                         }
-                        stdWrap {
-                          split {
-                            token = ###POINT###
-                            cObjNum = 1 |*| 1 |*| 2 || 2
-                            1.current = 1
-                            1.noTrimWrap = ||, |
-                            2.current = 1
-                            2.noTrimWrap = |||
-                          }
+                      }
+                    }
+                      // children
+                    20 = COA
+                    20 {
+                      if {
+                        isTrue {
+                          field = tx_org_headquarters.uid_parent
                         }
                       }
-                        // items: tx_org_headquarters.title croped and linked
+                      wrap = <ul class="vcard tx_org_headquarters children">|</ul><!-- vcard -->
+                        // header
+                      10 = TEXT
+                      10 {
+                        value = Units
+                        lang {
+                          de = Bereiche
+                          en = Units
+                        }
+                        wrap = <li class="header">|</li>
+                      }
+                        // item: tx_org_headquarters.title linked
                       20 = CONTENT
                       20 {
                         table = tx_org_headquarters
@@ -377,7 +405,7 @@ plugin.tx_browser_pi1 {
                           default = TEXT
                           default {
                             field = title
-                            wrap = |###POINT###
+                            wrap = <li class="child circle">|</li>
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
                           }
                             // no link
@@ -396,27 +424,8 @@ plugin.tx_browser_pi1 {
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.url
                           }
                         }
-                        stdWrap {
-                          split {
-                            token = ###POINT###
-                            cObjNum = 1 |*| 1 |*| 2 || 2
-                            1.current = 1
-                            1.noTrimWrap = ||, |
-                            2.current = 1
-                            2.noTrimWrap = |||
-                          }
-                        }
                       }
                     }
-                      // if is true tx_org_headquarterscat.uid
-                    if =
-                    if {
-                      isTrue {
-                        field = tx_org_headquarters.uid
-                      }
-                    }
-                      // div box
-                    wrap = <div class="show-for-large-up tx_org_headquarterscat">|</div>
                   }
                     // tx_org_headquarterscat.title
                   90 = COA
