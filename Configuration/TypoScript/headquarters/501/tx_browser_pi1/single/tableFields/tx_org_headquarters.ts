@@ -366,9 +366,28 @@ plugin.tx_browser_pi1 {
                       // children
                     20 = COA
                     20 {
-                      XXXif {
+                      if {
                         isTrue {
-                          field = tx_org_headquarters.uid_parent
+                          stdWrap {
+                            cObject = CONTENT
+                            cObject {
+                              table = tx_org_headquarters
+                              select {
+                                pidInList = {$plugin.org.sysfolder.headquarters}
+                                //join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
+                                where {
+                                  field = tx_org_headquarters.uid
+                                  noTrimWrap = |tx_org_headquarters.uid_parent = |
+                                }
+                                orderBy = tx_org_headquarters.sorting
+                              }
+                                // tx_org_headquarters.title
+                              renderObj = TEXT
+                              renderObj {
+                                value = 1
+                              }
+                            }
+                          }
                         }
                       }
                       wrap = <ul class="vcard tx_org_headquarters children">|</ul><!-- vcard -->
