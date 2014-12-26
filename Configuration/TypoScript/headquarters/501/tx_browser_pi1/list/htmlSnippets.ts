@@ -27,10 +27,11 @@ plugin.tx_browser_pi1 {
                 <div class="row">
                   <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
                     <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-                    <div class="record###TX_ORG_HEADQUARTERS.CRDATE###">
-                      ###TX_ORG_HEADQUARTERS.DELETED###
-                      ###TX_ORG_HEADQUARTERS.TITLE###
-                    </div>
+                    <div class="row">
+                      <div class="record###TX_ORG_HEADQUARTERS.CRDATE###">
+                        ###TX_ORG_HEADQUARTERS.DELETED###
+                        ###TX_ORG_HEADQUARTERS.TITLE###
+                      </div>
                     </div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
                   </div><!-- /columns --><!-- /listview -->
                 </div><!-- /row -->

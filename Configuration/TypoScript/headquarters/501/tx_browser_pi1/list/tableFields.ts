@@ -83,7 +83,6 @@ plugin.tx_browser_pi1 {
               }
               wrap = <div class="columns small-12 medium-12 large-8">|</div>
             }
-            wrap = <div class="row">|</div>
           }
         }
       }
