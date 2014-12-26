@@ -176,7 +176,7 @@ plugin.tx_browser_pi1 {
                             pidInList = {$plugin.org.sysfolder.staff}
                             join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staff.uid
                             where {
-                              field = tx_org_headquarters.manager
+                              field = tx_org_headquarters.uid
                               noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters.manager' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
                             }
                             orderBy = tx_org_mm_all.sorting
