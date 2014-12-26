@@ -191,11 +191,18 @@ plugin.tx_browser_pi1 {
                             default = TEXT
                             default {
                               field = title
-                              wrap = <li class="url circle">|</li>
-                              stdWrap {
-                                noTrimWrap = || &raquo;|
-                              }
+                              wrap = |###POINT###
                               typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
+                              stdWrap {
+                                split {
+                                  token = ###POINT###
+                                  cObjNum = 1 |*| 1 |*| 2 || 2
+                                  1.current = 1
+                                  1.noTrimWrap = ||, |
+                                  2.current = 1
+                                  2.noTrimWrap = |||
+                                }
+                              }
                             }
                               // no link
                             notype = TEXT
@@ -214,6 +221,7 @@ plugin.tx_browser_pi1 {
                             }
                           }
                         }
+                        wrap = <li class="manager">|</li>
                       }
                         // phone
                       30 = COA
