@@ -85,9 +85,15 @@ plugin.tx_browser_pi1 {
                         }
                       }
                       wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
-                        // phone
-                      10 = COA
+                        // header
+                      10 = TEXT
                       10 {
+                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
+                        wrap = <li class="header">|</li>
+                      }
+                        // phone
+                      20 = COA
+                      20 {
                         10 = TEXT
                         10 {
                           value = phone:
@@ -109,15 +115,15 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="telephone">|</li>
                       }
                         // fax
-                      20 = TEXT
-                      20 {
+                      30 = TEXT
+                      30 {
                         field = tx_org_headquarters.fax
                         wrap = <li class="fax">|</li>
                         required = 1
                       }
                         // email
-                      30 = COA
-                      30 {
+                      40 = COA
+                      40 {
                         10 = TEXT
                         10 {
                           value = e-mail:

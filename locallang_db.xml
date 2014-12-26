@@ -13,6 +13,7 @@
       <label index="filter_phrase.calendar.expired">Calendar (expired)</label>
       <label index="filter_phrase.caltype.title">Subjects</label>
       <label index="filter_phrase.company">Companies</label>
+      <label index="filter_phrase.contact">Contact</label>
       <label index="filter_phrase.department">Departments</label>
       <label index="filter_phrase.doccat">Categories</label>
       <label index="filter_phrase.docmedia">Media</label>
@@ -104,6 +105,7 @@
       <label index="filter_phrase.calendar.expired">Kalender (Archiv)</label>
       <label index="filter_phrase.caltype.title">Themen</label>
       <label index="filter_phrase.company">Firma</label>
+      <label index="filter_phrase.contact">Kontakt</label>
       <label index="filter_phrase.department">Abteilungen</label>
       <label index="filter_phrase.doccat">Rubriken</label>
       <label index="filter_phrase.docmedia">Datenträger</label>
