@@ -301,9 +301,9 @@ plugin.tx_browser_pi1 {
                   50 {
                     10 = COA
                     10 {
-                        // items: tx_org_headquarterscat.title croped and linked
-                      20 = CONTENT
-                      20 {
+                        // items: tx_org_headquarters.title croped and linked
+                      10 = CONTENT
+                      10 {
                         table = tx_org_headquarters
                         select {
                           pidInList = {$plugin.org.sysfolder.headquarters}
@@ -311,6 +311,59 @@ plugin.tx_browser_pi1 {
                           where {
                             field = tx_org_headquarters.uid_parent
                             noTrimWrap = |tx_org_headquarters.uid = |
+                          }
+                          orderBy = tx_org_headquarters.sorting
+                        }
+                          // tx_org_headquarters.title
+                        renderObj = CASE
+                        renderObj {
+                          key {
+                            field = type
+                          }
+                            // link to detail view
+                          default = TEXT
+                          default {
+                            field = title
+                            wrap = |###POINT###
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
+                          }
+                            // no link
+                          notype = TEXT
+                          notype {
+                            field   = title
+                          }
+                            // link to internal page
+                          page < .default
+                          page {
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.page
+                          }
+                            // link to external url
+                          url < .page
+                          url {
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.url
+                          }
+                        }
+                        stdWrap {
+                          split {
+                            token = ###POINT###
+                            cObjNum = 1 |*| 1 |*| 2 || 2
+                            1.current = 1
+                            1.noTrimWrap = ||, |
+                            2.current = 1
+                            2.noTrimWrap = |||
+                          }
+                        }
+                      }
+                        // items: tx_org_headquarters.title croped and linked
+                      20 = CONTENT
+                      20 {
+                        table = tx_org_headquarters
+                        select {
+                          pidInList = {$plugin.org.sysfolder.headquarters}
+                          //join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
+                          where {
+                            field = tx_org_headquarters.uid
+                            noTrimWrap = |tx_org_headquarters.uid_parent = |
                           }
                           orderBy = tx_org_headquarters.sorting
                         }
