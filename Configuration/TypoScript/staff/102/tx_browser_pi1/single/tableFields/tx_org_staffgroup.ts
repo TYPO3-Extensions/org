@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
               }
             }
               // div box
-            wrap = <ul class="vcard tx_org_staffgroup">|</ul><!-- vcard -->
+            wrap = <div class="columns"><ul class="vcard tx_org_staffgroup">|</ul></div><!-- vcard -->
               // Marginal news box: header, items
             10 = COA
             10 {
