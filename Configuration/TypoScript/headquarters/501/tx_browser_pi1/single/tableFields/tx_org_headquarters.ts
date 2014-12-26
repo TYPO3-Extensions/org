@@ -86,10 +86,10 @@ plugin.tx_browser_pi1 {
                       }
                       wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
                         // phone
-                      10 = TEXT
+                      10 = COA
                       10 {
-                        prepend = TEXT
-                        prepend {
+                        10 = TEXT
+                        10 {
                           value = phone:
                           lang {
                             de = Tel.:
@@ -97,11 +97,16 @@ plugin.tx_browser_pi1 {
                           }
                           noTrimWrap = || |
                         }
-                        field = tx_org_headquarters.telephone
-                        required = 1
-                        stdWrap {
-                          wrap = <li class="phone">|</li>
+                        20 = TEXT
+                        20 {
+                          field = tx_org_headquarters.telephone
                         }
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.telephone
+                          }
+                        }
+                        wrap = <li class="telephone">|</li>
                       }
                         // fax
                       20 = TEXT
@@ -111,15 +116,10 @@ plugin.tx_browser_pi1 {
                         required = 1
                       }
                         // email
-                      30 = TEXT
+                      30 = COA
                       30 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.mail_city
-                          }
-                        }
-                        prepend = TEXT
-                        prepend {
+                        10 = TEXT
+                        10 {
                           value = e-mail:
                           lang {
                             de = E-Mail:
@@ -127,8 +127,12 @@ plugin.tx_browser_pi1 {
                           }
                           noTrimWrap = || |
                         }
-                        typolink {
-                          parameter {
+                        20 = TEXT
+                        20 {
+                          field = tx_org_headquarters.email
+                        }
+                        if {
+                          isTrue {
                             field = tx_org_headquarters.email
                           }
                         }
