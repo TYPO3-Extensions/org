@@ -215,7 +215,6 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
-            wrap = <div class="row">|</div>
           }
         }
       }
