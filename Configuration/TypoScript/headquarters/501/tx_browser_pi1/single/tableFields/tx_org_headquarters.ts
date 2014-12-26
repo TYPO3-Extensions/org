@@ -366,7 +366,7 @@ plugin.tx_browser_pi1 {
                       // children
                     20 = COA
                     20 {
-                      if {
+                      XXXif {
                         isTrue {
                           field = tx_org_headquarters.uid_parent
                         }
