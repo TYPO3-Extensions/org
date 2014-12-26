@@ -99,7 +99,9 @@ plugin.tx_browser_pi1 {
                         }
                         field = tx_org_headquarters.telephone
                         required = 1
-                        wrap = <li class="phone">|</li>
+                        stdWrap {
+                          wrap = <li class="phone">|</li>
+                        }
                       }
                         // fax
                       20 = TEXT
