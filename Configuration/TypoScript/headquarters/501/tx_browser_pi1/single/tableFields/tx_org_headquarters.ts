@@ -130,6 +130,11 @@ plugin.tx_browser_pi1 {
                         20 = TEXT
                         20 {
                           field = tx_org_headquarters.email
+                          typolink {
+                            parameter {
+                              field = tx_org_headquarters.email
+                            }
+                          }
                         }
                         if {
                           isTrue {
