@@ -32,7 +32,7 @@ plugin.tx_browser_pi1 {
                         ###TX_ORG_HEADQUARTERS.DELETED###
                         ###TX_ORG_HEADQUARTERS.TITLE###
                       </div>
-                    </div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                    </div><!-- /row --><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
                   </div><!-- /columns --><!-- /listview -->
                 </div><!-- /row -->
 )
