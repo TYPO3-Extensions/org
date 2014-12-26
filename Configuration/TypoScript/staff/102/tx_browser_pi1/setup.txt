@@ -1,0 +1,42 @@
+plugin.tx_browser_pi1 {
+
+  XXXadvanced {
+    sql {
+      devider {
+        tx_org_staffgroup {
+          title {
+            display = TEXT
+            display {
+              value =
+              wrap = |
+            }
+          }
+        }
+      }
+    }
+  }
+
+  displayList {
+    selectBox_orderBy {
+      display = 1
+    }
+  }
+
+  navigation.map.template.file = EXT:browser/Resources/Private/Templates/HTML/Map/map_filter_1.1.tmpl
+
+  views {
+    list {
+      102 = +Org: People
+      102 {
+        name    = +Org: People
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
+      }
+    }
+    single {
+      102 = +Org: People
+    }
+  }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/102/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/102/tx_browser_pi1/single/_setup.ts">
