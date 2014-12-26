@@ -86,7 +86,7 @@ plugin.tx_browser_pi1 {
               // image
             10 = COA
             10 {
-              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.3
+              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.1
               wrap = <div class="columns tx_org_staff_image small-10 medium-4">|</div>
             }
               // name_first name_last. staffgroup
