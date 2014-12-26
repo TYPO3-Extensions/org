@@ -38,8 +38,7 @@ plugin.tx_browser_pi1 {
                     field = tx_org_headquarters.uid
                     noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
                   }
-                  orderBy = RAND()
-                  max = 3
+                  orderBy = tx_org_mm_all.sorting
                 }
                   // tx_org_staff.title croped and linked
                 renderObj = CASE
