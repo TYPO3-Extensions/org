@@ -36,28 +36,56 @@ plugin.tx_browser_pi1 {
                       // address
                     10 = COA
                     10 {
-                      wrap = <div class="address">|</div>
-                        // mail_postcode
+                      if {
+                        isTrue {
+                          stdWrap {
+                            cObject = COA
+                            cObject {
+                              10 = TEXT
+                              10 {
+                                field = tx_org_headquarters.mail_city
+                              }
+                              20 = TEXT
+                              20 {
+                                field = tx_org_headquarters.mail_postcode
+                              }
+                            }
+                          }
+                        }
+                      }
+                      wrap = <ul class="vcard tx_org_headquarters address">|</ul><!-- vcard -->
+                        // header
                       10 = TEXT
                       10 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.mail_postcode
-                          }
-                        }
-                        field = tx_org_headquarters.mail_postcode
-                        noTrimWrap = || |
+                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
+                        wrap = <li class="header">|</li>
                       }
-                        // mail_city
-                      20 = TEXT
+                        // location
+                      20 = COA
                       20 {
-                        if {
-                          isTrue {
-                            field = tx_org_headquarters.mail_city
+                          // mail_postcode
+                        10 = TEXT
+                        10 {
+                          if {
+                            isTrue {
+                              field = tx_org_headquarters.mail_postcode
+                            }
                           }
+                          field = tx_org_headquarters.mail_postcode
+                          noTrimWrap = |<span class="postcode">|</span> |
                         }
-                        field = tx_org_headquarters.mail_city
-                        noTrimWrap = || |
+                          // mail_city
+                        20 = TEXT
+                        20 {
+                          if {
+                            isTrue {
+                              field = tx_org_headquarters.mail_city
+                            }
+                          }
+                          field = tx_org_headquarters.mail_city
+                          noTrimWrap = |<span class="city">|</span> |
+                        }
+                        wrap = <li class="postcode_city">|</li>
                       }
                     }
                       // contact
@@ -84,7 +112,7 @@ plugin.tx_browser_pi1 {
                           }
                         }
                       }
-                      wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
+                      wrap = <ul class="vcard tx_org_headquarters contact">|</ul><!-- vcard -->
                         // header
                       10 = TEXT
                       10 {

@@ -7,6 +7,7 @@
   <data type="array">
     <languageKey index="default" type="array">
       <label index="dummy.language">default</label>
+      <label index="filter_phrase.address">Address</label>
       <label index="filter_phrase.all">All</label>
       <label index="filter_phrase.cal.title">Events</label>
       <label index="filter_phrase.calendar">Calendar</label>
@@ -99,6 +100,7 @@
     </languageKey>
     <languageKey index="de" type="array">
       <label index="dummy.language">de</label>
+      <label index="filter_phrase.address">Adresse</label>
       <label index="filter_phrase.all">Alle</label>
       <label index="filter_phrase.cal.title">Veranstaltungen</label>
       <label index="filter_phrase.calendar">Kalender</label>
