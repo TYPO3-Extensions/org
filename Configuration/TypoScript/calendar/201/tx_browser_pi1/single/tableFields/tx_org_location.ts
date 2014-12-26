@@ -41,7 +41,7 @@ plugin.tx_browser_pi1 {
                 20 = CASE
                 20 {
                   key {
-                    field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
+                    field = {$plugin.tx_browser_pi1.templates.listview.url.4.key}
                   }
                   default = TEXT
                   default {
@@ -51,7 +51,7 @@ plugin.tx_browser_pi1 {
                       noTrimWrap = || &raquo;|
                     }
                     required = 1
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.4.default
                   }
                   notype = TEXT
                   notype {
@@ -59,11 +59,11 @@ plugin.tx_browser_pi1 {
                   }
                   page < .default
                   page {
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.4.page
                   }
                   url < .page
                   url {
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.4.url
                   }
                 }
                   // street

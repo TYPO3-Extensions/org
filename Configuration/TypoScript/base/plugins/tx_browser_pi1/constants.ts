@@ -26,6 +26,14 @@ plugin.tx_browser_pi1 {
           #singlePid =
           url       = tx_org_news.url // url
         }
+        4 {
+          key       = tx_org_location.type // type
+          page      = tx_org_location.page // page
+          record    = tx_org_location.uid // uid
+          showUid   = locationUid
+          #singlePid =
+          url       = tx_org_location.url // url
+        }
       }
     }
   }
