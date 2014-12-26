@@ -151,6 +151,10 @@ plugin.tx_browser_pi1 {
                               }
                               30 = TEXT
                               30 {
+                                field = tx_org_headquarters.manager
+                              }
+                              40 = TEXT
+                              40 {
                                 field = tx_org_headquarters.telephone
                               }
                             }

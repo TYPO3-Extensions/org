@@ -134,7 +134,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'config' => array(
         'type' => 'input',
         'size' => '30',
-        'eval' => 'trim',
+        'eval' => 'trim,required',
       )
     ),
     'name_first' => array(
