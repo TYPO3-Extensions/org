@@ -109,12 +109,12 @@ plugin.tx_browser_pi1 {
           url       = url
         }
         2 {
-          key       = type
-          page      = page
-          record    = uid
+          key       = tx_org_staff.type // type
+          page      = tx_org_staff.page // page
+          record    = tx_org_staff.uid // uid
           showUid   = staffUid
           #singlePid =
-          url       = url
+          url       = tx_org_staff.url // url
         }
       }
     }
