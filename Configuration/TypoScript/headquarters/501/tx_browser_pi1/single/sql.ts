@@ -5,7 +5,6 @@ plugin.tx_browser_pi1 {
         select (
           tx_org_headquarters.title,
           tx_org_headquarters.crdate,
-          tx_org_headquarters.uid,
           tx_org_headquarters.bodytext,
           tx_org_headquarters.mail_address,
           tx_org_headquarters.mail_city,
@@ -22,6 +21,8 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.telephone,
           tx_org_headquarters.fax,
           tx_org_headquarters.email,
+          tx_org_headquarters.uid,
+          tx_org_headquarters.uid_parent,
 
           tx_org_headquarters.image,
           tx_org_headquarters.imagecaption,
