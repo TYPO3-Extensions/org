@@ -51,7 +51,7 @@ plugin.tx_browser_pi1 {
                         }
                       }
                         // contact_email
-                      30 = TEXT
+                      30 = COA
                       30 {
                         if {
                           isTrue {

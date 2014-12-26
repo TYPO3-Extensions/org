@@ -16,7 +16,7 @@ plugin.tx_browser_pi1 {
               }
             }
               // div box
-            wrap = <ul class="vcard tx_org_news">|</ul><!-- vcard -->
+            wrap = <div class="columns"><ul class="vcard tx_org_news">|</ul></div><!-- vcard -->
               // Marginal news box: header, items
             10 = COA
             10 {
@@ -55,7 +55,7 @@ plugin.tx_browser_pi1 {
                   default = TEXT
                   default {
                     field = marginal_title // teaser_title // title
-                    crop = 24 | ... &raquo; | 1
+                    //crop = 24 | ... &raquo; | 1
                     wrap = <li class="url circle">|</li>
                     stdWrap {
                       noTrimWrap = || &raquo;|
