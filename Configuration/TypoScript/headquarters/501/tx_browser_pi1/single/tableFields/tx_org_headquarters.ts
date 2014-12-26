@@ -43,18 +43,22 @@ plugin.tx_browser_pi1 {
                             cObject {
                               10 = TEXT
                               10 {
-                                field = tx_org_headquarters.mail_city
+                                field = tx_org_headquarters.mail_address
                               }
                               20 = TEXT
                               20 {
-                                field = tx_org_headquarters.mail_country
+                                field = tx_org_headquarters.mail_city
                               }
                               30 = TEXT
                               30 {
-                                field = tx_org_headquarters.mail_postcode
+                                field = tx_org_headquarters.mail_country
                               }
                               40 = TEXT
                               40 {
+                                field = tx_org_headquarters.mail_postcode
+                              }
+                              50 = TEXT
+                              50 {
                                 field = tx_org_headquarters.mail_street
                               }
                             }
@@ -68,9 +72,20 @@ plugin.tx_browser_pi1 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
                         wrap = <li class="header">|</li>
                       }
-                        // mail_street
+                        // mail_address
                       20 = TEXT
                       20 {
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.mail_address
+                          }
+                        }
+                        field = tx_org_headquarters.mail_address
+                        wrap = <li class="address">|</li>
+                      }
+                        // mail_street
+                      30 = TEXT
+                      30 {
                         if {
                           isTrue {
                             field = tx_org_headquarters.mail_street
@@ -80,8 +95,8 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="street">|</li>
                       }
                         // postcode, city
-                      30 = COA
-                      30 {
+                      40 = COA
+                      40 {
                           // mail_postcode
                         10 = TEXT
                         10 {
@@ -107,8 +122,8 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="postcode_city">|</li>
                       }
                         // mail_country
-                      40 = TEXT
-                      40 {
+                      50 = TEXT
+                      50 {
                         if {
                           isTrue {
                             field = tx_org_headquarters.mail_country
