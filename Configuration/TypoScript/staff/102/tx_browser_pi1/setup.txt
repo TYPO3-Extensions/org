@@ -26,14 +26,14 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      102 = +Org: People
+      102 = +Org: People (one column)
       102 {
-        name    = +Org: People
+        name    = +Org: People  (one column)
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {
-      102 = +Org: People
+      102 = +Org: People  (one column)
     }
   }
 }
