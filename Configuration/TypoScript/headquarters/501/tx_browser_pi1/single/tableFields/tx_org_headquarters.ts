@@ -193,16 +193,6 @@ plugin.tx_browser_pi1 {
                               field = title
                               wrap = |###POINT###
                               typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
-                              stdWrap {
-                                split {
-                                  token = ###POINT###
-                                  cObjNum = 1 |*| 1 |*| 2 || 2
-                                  1.current = 1
-                                  1.noTrimWrap = ||, |
-                                  2.current = 1
-                                  2.noTrimWrap = |||
-                                }
-                              }
                             }
                               // no link
                             notype = TEXT
@@ -219,6 +209,16 @@ plugin.tx_browser_pi1 {
                             url {
                               typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
                             }
+                          }
+                        }
+                        stdWrap {
+                          split {
+                            token = ###POINT###
+                            cObjNum = 1 |*| 1 |*| 2 || 2
+                            1.current = 1
+                            1.noTrimWrap = ||, |
+                            2.current = 1
+                            2.noTrimWrap = |||
                           }
                         }
                         wrap = <li class="manager">|</li>
