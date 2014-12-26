@@ -84,39 +84,53 @@ plugin.tx_browser_pi1 {
                           }
                         }
                       }
-                      wrap = <div class="contact">|</div>
+                      wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
                         // phone
                       10 = TEXT
                       10 {
                         prepend = TEXT
                         prepend {
-                          value = phone
+                          value = phone:
                           lang {
-                            de = Tel.
-                            en = phone
+                            de = Tel.:
+                            en = phone:
                           }
                           noTrimWrap = || |
                         }
                         field = tx_org_headquarters.telephone
-                        noTrimWrap = || |
                         required = 1
+                        wrap = <li class="phone">|</li>
                       }
                         // fax
                       20 = TEXT
                       20 {
                         field = tx_org_headquarters.fax
-                        noTrimWrap = || |
+                        wrap = <li class="fax">|</li>
                         required = 1
                       }
                         // email
                       30 = TEXT
                       30 {
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.mail_city
+                          }
+                        }
+                        prepend = TEXT
+                        prepend {
+                          value = e-mail:
+                          lang {
+                            de = E-Mail:
+                            en = e-mail:
+                          }
+                          noTrimWrap = || |
+                        }
                         typolink {
                           parameter {
                             field = tx_org_headquarters.email
                           }
                         }
-                        noTrimWrap = || |
+                        wrap = <li class="email">|</li>
                       }
                     }
                   }
