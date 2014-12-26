@@ -164,9 +164,64 @@ plugin.tx_browser_pi1 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
                         wrap = <li class="header">|</li>
                       }
-                        // phone
+                        // manager
+                        // items: tx_org_headquarterscat.title croped and linked
                       20 = COA
                       20 {
+                          // items: tx_org_staff.title croped and linked
+                        10 = CONTENT
+                        10 {
+                          table = tx_org_staff
+                          select {
+                            pidInList = {$plugin.org.sysfolder.staff}
+                            join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staff.uid
+                            where {
+                              field = tx_org_headquarters.manager
+                              noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
+                            }
+                            orderBy = RAND()
+                            max = 3
+                          }
+                            // tx_org_staff.title croped and linked
+                          renderObj = CASE
+                          renderObj {
+                            key {
+                              field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
+                            }
+                              // link to detail view
+                            default = TEXT
+                            default {
+                              field = title
+                              crop = 25 | ... &raquo; | 1
+                              wrap = <li class="url circle">|</li>
+                              stdWrap {
+                                noTrimWrap = || &raquo;|
+                              }
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
+                            }
+                              // no link
+                            notype = TEXT
+                            notype {
+                              field   = title
+                              crop    = 25 | ... | 1
+                              stdWrap >
+                            }
+                              // link to internal page
+                            page < .default
+                            page {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
+                            }
+                              // link to external url
+                            url < .page
+                            url {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
+                            }
+                          }
+                        }
+                      }
+                        // phone
+                      30 = COA
+                      30 {
                         10 = TEXT
                         10 {
                           value = phone:
@@ -188,15 +243,15 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="telephone">|</li>
                       }
                         // fax
-                      30 = TEXT
-                      30 {
+                      40 = TEXT
+                      40 {
                         field = tx_org_headquarters.fax
                         wrap = <li class="fax">|</li>
                         required = 1
                       }
                         // email
-                      40 = COA
-                      40 {
+                      50 = COA
+                      50 {
                         10 = TEXT
                         10 {
                           value = e-mail:

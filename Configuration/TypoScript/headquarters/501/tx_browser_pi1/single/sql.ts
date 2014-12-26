@@ -15,6 +15,7 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.mail_postcode,
           tx_org_headquarters.mail_street,
           tx_org_headquarters.mail_url,
+          tx_org_headquarters.manager,
           tx_org_headquarters.postbox_postbox,
           tx_org_headquarters.postbox_postcode,
           tx_org_headquarters.postbox_city,
