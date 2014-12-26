@@ -189,14 +189,14 @@ plugin.tx_browser_pi1 {
                           renderObj = CASE
                           renderObj {
                             key {
-                              field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
+                              field = {$plugin.tx_browser_pi1.templates.listview.url.1.key}
                             }
                               // link to detail view
                             default = TEXT
                             default {
                               field = title
                               wrap = |###POINT###
-                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.default
                             }
                               // no link
                             notype = TEXT
@@ -206,12 +206,12 @@ plugin.tx_browser_pi1 {
                               // link to internal page
                             page < .default
                             page {
-                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.page
                             }
                               // link to external url
                             url < .page
                             url {
-                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.url
                             }
                           }
                         }

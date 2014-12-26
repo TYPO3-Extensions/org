@@ -89,22 +89,6 @@ plugin.tx_browser_pi1 {
           #singlePid =
           url       = tx_org_cal.url
         }
-        1 {
-          key       = type
-          page      = page
-          record    = uid
-          showUid   = newsUid
-          #singlePid =
-          url       = url
-        }
-        2 {
-          key       = type
-          page      = page
-          record    = uid
-          showUid   = locationUid
-          #singlePid =
-          url       = url
-        }
       }
     }
     singleview {
