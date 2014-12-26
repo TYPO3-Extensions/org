@@ -5,7 +5,7 @@ plugin.tx_browser_pi1 {
           // 140706: empty statement: for proper comments only
         tx_org_headquarters {
         }
-          // title: image, header, bodytext, vita, groups
+          // title: image, socialbookmarks, header, address, contact, bodytext, tx_org_headquarterscat.title
         tx_org_headquarters =
         tx_org_headquarters {
             // image, header, bodytext, vita, groups
@@ -15,7 +15,7 @@ plugin.tx_browser_pi1 {
             20 {
               0 {
                 10 >
-                  // header, text, cat
+                  // socialbookmarks, header, address, contact, bodytext, tx_org_headquarterscat.title
                 10 = COA
                 10 {
                     // socialmedia_bookmarks
@@ -295,6 +295,52 @@ plugin.tx_browser_pi1 {
                       parseFunc < lib.parseFunc_RTE
                     }
                     required = 1
+                  }
+                    // tx_org_headquarterscat.title
+                  50 = COA
+                  50 {
+                    10 = COA
+                    10 {
+                        // items: tx_org_headquarterscat.title croped and linked
+                      20 = CONTENT
+                      20 {
+                        table = tx_org_headquarters
+                        select {
+                          pidInList = {$plugin.org.sysfolder.headquarters}
+                          //join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_headquarterscat.uid
+                          where {
+                            field = tx_org_headquarters.uid_parent
+                            noTrimWrap = |tx_org_headquarters.uid = |
+                          }
+                          orderBy = tx_org_headquarters.sorting
+                        }
+                          // tx_org_headquarterscat.title
+                        renderObj = TEXT
+                        renderObj {
+                          field = title
+                          wrap = |###POINT###
+                        }
+                        stdWrap {
+                          split {
+                            token = ###POINT###
+                            cObjNum = 1 |*| 1 |*| 2 || 2
+                            1.current = 1
+                            1.noTrimWrap = ||, |
+                            2.current = 1
+                            2.noTrimWrap = |||
+                          }
+                        }
+                      }
+                    }
+                      // if is true tx_org_headquarterscat.uid
+                    if =
+                    if {
+                      isTrue {
+                        field = tx_org_headquarters.uid
+                      }
+                    }
+                      // div box
+                    wrap = <div class="show-for-large-up tx_org_headquarterscat">|</div>
                   }
                     // tx_org_headquarterscat.title
                   90 = COA
