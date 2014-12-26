@@ -830,7 +830,7 @@ $TCA[ 'tx_org_service' ] = array(
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(

@@ -722,7 +722,7 @@ $TCA['tx_org_location'] = array(
     'seo_keywords,seo_description' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords,',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
