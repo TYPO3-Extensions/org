@@ -76,10 +76,10 @@ $TCA[ 'tx_org_cal' ] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          'tx_org_event' => array(
-            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.type.tx_org_event',
-            '1' => 'tx_org_event',
-            '2' => 'EXT:org/Configuration/ExtIcon/event.gif',
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+            '2' => 'EXT:org/Configuration/ExtIcon/headquarters.gif',
           ),
           'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
@@ -95,6 +95,11 @@ $TCA[ 'tx_org_cal' ] = array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
             '1' => 'notype',
             '2' => 'EXT:org/Configuration/ExtIcon/notype.gif',
+          ),
+          'tx_org_event' => array(
+            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.type.tx_org_event',
+            '1' => 'tx_org_event',
+            '2' => 'EXT:org/Configuration/ExtIcon/event.gif',
           ),
           'calpage' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
