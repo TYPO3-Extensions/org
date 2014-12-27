@@ -45,14 +45,14 @@ plugin.tx_browser_pi1 {
                     field = tx_org_staff.uid
                     noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_foreign = 'tx_org_staff' AND tx_org_mm_all.table_local = 'tx_org_headquarters'|
                   }
-                  orderBy = tx_org_headquarters.datetime DESC
+                  orderBy = tx_org_headquarters.title
                   max = 3
                 }
                   // tx_org_headquarters.title croped and linked
                 renderObj = CASE
                 renderObj {
                   key {
-                    field = {$plugin.tx_browser_pi1.templates.listview.url.1.key}
+                    field = {$plugin.tx_browser_pi1.templates.listview.url.2.key}
                   }
                     // link to detail view
                   default = TEXT
@@ -63,7 +63,7 @@ plugin.tx_browser_pi1 {
                     stdWrap {
                       noTrimWrap = || &raquo;|
                     }
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.default
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.default
                   }
                     // no link
                   notype = TEXT
@@ -75,12 +75,12 @@ plugin.tx_browser_pi1 {
                     // link to internal page
                   page < .default
                   page {
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.page
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
                   }
                     // link to external url
                   url < .page
                   url {
-                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.url
+                    typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
                   }
                 }
               }
