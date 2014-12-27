@@ -79,7 +79,7 @@ $TCA[ 'tx_org_cal' ] = array(
           'record' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
             '1' => 'record',
-            '2' => 'EXT:org/Configuration/ExtIcon/headquarters.gif',
+            '2' => 'EXT:org/Configuration/ExtIcon/cal.gif',
           ),
           'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
