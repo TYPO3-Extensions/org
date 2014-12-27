@@ -13,9 +13,9 @@ plugin.tx_browser_pi1 {
                 <div class="main">
                   ###RECORD_BROWSER###
                   ###TX_ORG_STAFF.TITLE###
+                  ###TX_ORG_HEADQUARTERS.UID###
                   ###TX_ORG_STAFF.DELETED###<!-- tx_org_staffgroup -->
                   ###TX_ORG_STAFF.CRDATE###<!-- tx_org_news -->
-                  ###TX_ORG_HEADQUARTERS.UID###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                   <!-- ###BACKBUTTON### begin -->
