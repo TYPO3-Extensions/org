@@ -214,17 +214,17 @@ plugin.tx_browser_pi1 {
                       }
                     }
                       // div box
-                    wrap = <div class="columns"><ul class="vcard tx_org_headquarters">|</ul></div><!-- vcard -->
+                    wrap = <ul class="vcard tx_org_headquarters">|</ul><!-- vcard -->
                       // Marginal headquarters box: header, items
                     10 = COA
                     10 {
                         // header
                       10 = TEXT
                       10 {
-                        value = Latest headquarters
+                        value = Units
                         lang {
-                          de = Neuste Nachrichten
-                          en = Latest headquarters
+                          de = Bereiche
+                          en = Units
                         }
                         wrap = <li class="header">|</li>
                       }
