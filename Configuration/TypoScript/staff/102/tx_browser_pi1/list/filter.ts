@@ -40,7 +40,7 @@ plugin.tx_browser_pi1 {
                   value = 1
                 }
                 html_id {
-                  value = {$plugin.tx_browser_pi1.jQuery.plugin.jstree.selector_01}
+                  value = {$plugin.tx_browser_pi1.jQuery.plugin.jstree.selector_02}
                 }
               }
               first_item {
