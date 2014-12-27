@@ -87,12 +87,12 @@ plugin.tx_browser_pi1 {
             10 = COA
             10 {
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.1
-              wrap = <div class="columns tx_org_staff_image small-10 medium-4">|</div>
+              wrap = <div class="columns tx_org_staff_image medium-4">|</div>
             }
               // name_first name_last. staffgroup
             20 = COA
             20 {
-              wrap = <div class="columns tx_org_staff_name small-10 medium-6">|</div>
+              wrap = <div class="columns tx_org_staff_name medium-8">|</div>
                 // name_first, name_last
                 // title (linked)
               10 = CASE
