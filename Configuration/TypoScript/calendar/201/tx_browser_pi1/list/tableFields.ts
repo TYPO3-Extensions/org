@@ -30,7 +30,7 @@ plugin.tx_browser_pi1 {
                 // tx_org_cal.subtitle
               21 = TEXT
               21 {
-                field = tx_org_cal.teaser_subtitle // tx_org_cal.subtitle
+                field = tx_org_event.teaser_subtitle // tx_org_event.subtitle // tx_org_cal.teaser_subtitle // tx_org_cal.subtitle
                 wrap = <h3>|</h3>
                 required = 1
               }
@@ -74,6 +74,11 @@ plugin.tx_browser_pi1 {
               40 {
                   // link to tx_org_event
                 tx_org_event < .default
+                tx_org_event {
+                  10 {
+                    field := prependString(tx_org_event.teaser_short // tx_org_event.bodytext // )
+                  }
+                }
               }
                 // location
               50 = COA

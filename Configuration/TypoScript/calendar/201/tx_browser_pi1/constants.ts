@@ -61,7 +61,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          field   = tx_org_cal.subtitle // tx_org_cal.title
+          field   = tx_org_cal.teaser_title // tx_org_cal.title
         }
       }
       image {
@@ -77,7 +77,7 @@ plugin.tx_browser_pi1 {
       text {
         0 {
           crop    = 200|...|1
-          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+          field   = tx_org_event.teaser_short // tx_org_event.bodytext // tx_org_cal.teaser_short // tx_org_cal.bodytext
         }
       }
       url {

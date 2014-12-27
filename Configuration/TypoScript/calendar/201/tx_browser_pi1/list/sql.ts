@@ -26,6 +26,8 @@ plugin.tx_browser_pi1 {
           tx_org_event.image,
           tx_org_event.imageseo,
           tx_org_event.subtitle,
+          tx_org_event.teaser_title,
+          tx_org_event.teaser_subtitle,
           tx_org_event.teaser_short,
           tx_org_location.title,
           tx_org_location.mail_city,
