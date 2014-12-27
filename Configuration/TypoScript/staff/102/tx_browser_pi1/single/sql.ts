@@ -37,16 +37,7 @@ plugin.tx_browser_pi1 {
           tx_org_staff.vita,
           tx_org_staffgroup.title,
           tx_org_staffgroup.uid,
-          tx_org_headquarters.title,
-          tx_org_headquarters.mail_city,
-          tx_org_headquarters.mail_street,
-          tx_org_headquarters.mail_postcode,
-          tx_org_headquarters.image,
-          tx_org_headquarters.imageseo,
-          tx_org_headquarters.page,
-          tx_org_headquarters.type,
           tx_org_headquarters.uid,
-          tx_org_headquarters.url,
           tx_org_news.uid
         )
         orderBy (
