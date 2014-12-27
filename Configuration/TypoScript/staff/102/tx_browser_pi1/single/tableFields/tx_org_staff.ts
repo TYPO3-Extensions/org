@@ -273,7 +273,7 @@ plugin.tx_browser_pi1 {
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.page
                           }
                             // link to external url
-                          url < .page
+                          url < .default
                           url {
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.2.url
                           }

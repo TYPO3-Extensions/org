@@ -26,16 +26,6 @@ plugin.tx_browser_pi1 {
           field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
         }
       }
-      url {
-        2 {
-          key       = tx_org_headquarters.type
-          page      = tx_org_headquarters.page
-          record    = tx_org_headquarters.uid
-          showUid   = headquartersUid
-          #singlePid =
-          url       = tx_org_headquarters.url
-        }
-      }
     }
   }
 }
