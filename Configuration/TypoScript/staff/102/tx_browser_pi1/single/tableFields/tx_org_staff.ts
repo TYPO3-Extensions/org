@@ -204,7 +204,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                     // headquarters
-                  60 =
+                  60 = COA
                   60 {
                       // if is true tx_org_headquarters.uid
                     if =
