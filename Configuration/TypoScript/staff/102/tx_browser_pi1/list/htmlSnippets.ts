@@ -9,6 +9,7 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
+                ###TX_ORG_HEADQUARTERS.TITLE###
                 ###TX_ORG_STAFFGROUP.TITLE###
               </div>
 )
