@@ -20,10 +20,10 @@ plugin.tx_browser_pi1 {
                 <div class="columns">
                   ###MAP###
                   <div class="row">
-                    <div class="columns small-12 medium-12 large-4">
+                    <div class="columns medium-3 large-3">
                       ###TX_ORG_CAL.DATETIME###<!-- datesheet -->
                     </div>
-                    <div class="columns small-12 medium-12 large-8">
+                    <div class="columns medium-9 large-9">
                       ###TX_ORG_CAL.DELETED###<!-- tx_org_location -->
                     </div>
                   </div>
