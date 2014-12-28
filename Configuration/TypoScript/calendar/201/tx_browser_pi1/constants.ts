@@ -94,14 +94,14 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          caption     = tx_org_cal.imagecaption
-          file        = tx_org_cal.image
-          height      = tx_org_cal.imageheight
-          imagecols   = tx_org_cal.imagecols
-          imageorient = tx_org_cal.imageorient
+          caption     = tx_org_event.imagecaption // tx_org_cal.imagecaption
+          file        = tx_org_event.image // tx_org_cal.image
+          height      = tx_org_event.imageheight // tx_org_cal.imageheight
+          imagecols   = tx_org_event.imagecols // tx_org_cal.imagecols
+          imageorient = tx_org_event.imageorient // tx_org_cal.imageorient
           path        = uploads/tx_org/
-          seo         = tx_org_cal.imageseo
-          width       = tx_org_cal.imagewidth
+          seo         = tx_org_event.imageseo // tx_org_cal.imageseo
+          width       = tx_org_event.imagewidth // tx_org_cal.imagewidth
         }
       }
     }
