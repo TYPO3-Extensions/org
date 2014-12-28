@@ -26,12 +26,12 @@ plugin.tx_browser_pi1 {
                     <div class="columns medium-9 large-9">
                       ###TX_ORG_CAL.DELETED###<!-- tx_org_location -->
                     </div>
-                  </div>
+                  </div><!-- /row -->
                   <div class="row">
                     <div class="columns">
                       ###TX_ORG_CAL.CRDATE###<!-- form for tickets -->
                     </div>
-                  </div>
+                  </div><!-- /row -->
                   <div class="row">
                     <div class="columns">
                       ###RECORD_BROWSER###
@@ -44,8 +44,8 @@ plugin.tx_browser_pi1 {
                       <!-- ###BACKBUTTON### end -->
                       <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                     </div>
-                  </div>
-                </div><1-- columns -->
+                  </div><!-- /row -->
+                </div><!-- /columns -->
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                 <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->
 )
