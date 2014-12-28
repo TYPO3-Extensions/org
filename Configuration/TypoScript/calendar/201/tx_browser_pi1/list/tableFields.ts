@@ -63,12 +63,17 @@ plugin.tx_browser_pi1 {
                   tx_org_event < .default
                   tx_org_event {
                     file.import.stdWrap.cObject.10.20.field := prependString(tx_org_event.image // )
+                    file.import.stdWrap.cObject.10.if.isTrue.field := prependString(tx_org_event.image // )
                     altText.field := prependString(tx_org_event.imageseo // )
                     title.field := prependString(tx_org_event.imageseo // )
                   }
                 }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
+39 = TEXT
+39 {
+  value = <h1>XYZ</h1>
+}
                 // teaser_short: default, notype, page, url, tx_org_event
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               40 {
