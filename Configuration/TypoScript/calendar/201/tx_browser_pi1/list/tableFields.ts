@@ -55,8 +55,8 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // image
-              38 = COA
-              38 {
+              39 = COA
+              39 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
                 10 {
@@ -70,10 +70,6 @@ plugin.tx_browser_pi1 {
                 }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
-37 = TEXT
-37 {
-  value = <h1>XYZ</h1>
-}
                 // teaser_short: default, notype, page, url, tx_org_event
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
               40 {
