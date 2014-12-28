@@ -54,7 +54,7 @@ plugin.tx_browser_pi1 {
                   field = tx_org_caltype.title
                 }
               }
-                // image
+                // image [39 will handled but won't display in the TypoScript Object Browser!]]
               39 = COA
               39 {
                   // image
