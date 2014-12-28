@@ -1,7 +1,13 @@
 plugin.tx_browser_pi1 {
   views {
-    single {
+    list {
+      201 = +Org: Calendar (one column)
       201 {
+        name    = +Org: Calendar (one column)
+      }
+    }
+    single {
+      201 = +Org: Calendar (one column)
         htmlSnippets =
         htmlSnippets {
           subparts {
