@@ -55,8 +55,8 @@ plugin.tx_browser_pi1 {
                 }
               }
                 // image
-              39 = COA
-              39 {
+              38 = COA
+              38 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
                 10 {
