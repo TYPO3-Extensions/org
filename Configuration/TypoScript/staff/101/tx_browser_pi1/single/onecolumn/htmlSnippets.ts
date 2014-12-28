@@ -1,7 +1,14 @@
 plugin.tx_browser_pi1 {
   views {
+    list {
+      101 = +Org: People (one column)
+      101 {
+        name    = +Org: People (one column)
+      }
+    }
     single {
-      102 {
+      101 = +Org: People (one column)
+      101 {
         htmlSnippets =
         htmlSnippets {
           subparts {
