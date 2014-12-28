@@ -50,7 +50,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/402/',                          'Org [5] Nachrichten - Slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [5] Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [6] Personen');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/tx_browser_pi1/single/onecolumn/', 'Org [6.1] + einspaltig');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6] Personen (einspaltig)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [6] Personen - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/',                  'Org [7] Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [7] Standorte - Rand');
@@ -104,7 +104,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/402/',                          'Org [7] News - slider');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [7] News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [8] People');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/tx_browser_pi1/single/onecolumn/', 'Org [8.1] + one column');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [8] People (one column)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [8] People - margin (don\'t cache!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/service/593621/',                    'Org [9] Service');
     break;
