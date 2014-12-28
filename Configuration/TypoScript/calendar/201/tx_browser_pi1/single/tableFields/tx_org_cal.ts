@@ -38,7 +38,7 @@ plugin.tx_browser_pi1 {
                     // bodytext
                   30 = TEXT
                   30 {
-                    field = tx_org_empty.bodytext // tx_org_cal.bodytext
+                    field = tx_org_event.bodytext // tx_org_cal.bodytext
                     required = 1
                     stdWrap {
                       parseFunc < lib.parseFunc_RTE
