@@ -8,6 +8,7 @@ plugin.tx_browser_pi1 {
     }
     single {
       201 = +Org: Calendar (one column)
+      201 {
         htmlSnippets {
           subparts {
             singleview >
