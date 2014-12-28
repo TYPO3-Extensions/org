@@ -25,20 +25,20 @@ plugin.tx_browser_pi1 {
                     // header
                   20 = TEXT
                   20 {
-                    field = tx_org_cal.title
+                    field = tx_org_event.title // tx_org_cal.title
                     wrap = <h1>|</h1>
                   }
                     // tx_org_cal.subtitle
                   21 = TEXT
                   21 {
-                    field = tx_org_cal.subtitle
+                    field = tx_org_event.subtitle // tx_org_cal.subtitle
                     wrap = <h2>|</h2>
                     required = 1
                   }
                     // bodytext
                   30 = TEXT
                   30 {
-                    field = tx_org_cal.bodytext
+                    field = tx_org_empty.bodytext // tx_org_cal.bodytext
                     required = 1
                     stdWrap {
                       parseFunc < lib.parseFunc_RTE

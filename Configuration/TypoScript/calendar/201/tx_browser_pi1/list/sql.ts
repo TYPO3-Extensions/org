@@ -17,10 +17,12 @@ plugin.tx_browser_pi1 {
           tx_org_cal.page,
           tx_org_cal.type,
           tx_org_cal.url,
+
           tx_org_caltype.title,
           tx_org_caltype.icons,
           tx_org_caltype.icon_offset_x,
           tx_org_caltype.icon_offset_y,
+
           tx_org_event.title,
           tx_org_event.bodytext,
           tx_org_event.image,
@@ -29,6 +31,7 @@ plugin.tx_browser_pi1 {
           tx_org_event.teaser_title,
           tx_org_event.teaser_subtitle,
           tx_org_event.teaser_short,
+
           tx_org_location.title,
           tx_org_location.mail_city,
           tx_org_location.mail_lat,

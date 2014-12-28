@@ -5,13 +5,9 @@ plugin.tx_browser_pi1 {
         select (
           tx_org_cal.title,
           tx_org_cal.crdate,
-          tx_org_cal.deleted,
-          tx_org_cal.subtitle,
-          tx_org_cal.teaser_short,
           tx_org_cal.bodytext,
           tx_org_cal.datetime,
-          tx_org_cal.type,
-
+          tx_org_cal.deleted,
           tx_org_cal.image,
           tx_org_cal.imagecaption,
           tx_org_cal.imageseo,
@@ -26,14 +22,28 @@ plugin.tx_browser_pi1 {
           tx_org_cal.image_noRows,
           tx_org_cal.image_effects,
           tx_org_cal.image_compression,
-
           tx_org_cal.seo_description,
           tx_org_cal.seo_keywords,
+          tx_org_cal.subtitle,
+          tx_org_cal.teaser_short,
+          tx_org_cal.type,
           tx_org_cal.uid,
 
-          tx_org_caltype.title,
-
           tx_org_calentrance.uid,
+
+          tx_org_caltype.title,
+          tx_org_caltype.icons,
+          tx_org_caltype.icon_offset_x,
+          tx_org_caltype.icon_offset_y,
+
+          tx_org_event.title,
+          tx_org_event.bodytext,
+          tx_org_event.image,
+          tx_org_event.imageseo,
+          tx_org_event.subtitle,
+          tx_org_event.teaser_title,
+          tx_org_event.teaser_subtitle,
+          tx_org_event.teaser_short,
 
           tx_org_location.title,
           tx_org_location.uid,
@@ -45,7 +55,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_url
         )
         orderBy (
-          tx_org_cal.title, tx_org_caltype.title DESC,
+          tx_org_cal.title, tx_org_caltype
         )
         functions.clean_up.csvTableFields (
           tx_org_cal.page,
