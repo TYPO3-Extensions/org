@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/101/tx_browser_pi1/single/onecolumn/htmlSnippets.ts">
