@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
                 value = ###SOCIALMEDIA_BOOKMARKS###
                 wrap = <div>|</div>
               }
-              wrap = <div class="show-for-large-up columns small-12 medium-12 large-2">|</div>
+              wrap = <div class="show-for-medium-up columns medium-2 large-2">|</div>
             }
               // name, bodytext || vita
             20 = COA
@@ -177,8 +177,8 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <div class="columns">|</div>
-            }
+              wrap = <div class="columns medium-2 large-2">|</div>
+           }
           }
         }
       }
