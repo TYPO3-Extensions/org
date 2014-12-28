@@ -70,8 +70,8 @@ plugin.tx_browser_pi1 {
                 }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
-39 = TEXT
-39 {
+37 = TEXT
+37 {
   value = <h1>XYZ</h1>
 }
                 // teaser_short: default, notype, page, url, tx_org_event
