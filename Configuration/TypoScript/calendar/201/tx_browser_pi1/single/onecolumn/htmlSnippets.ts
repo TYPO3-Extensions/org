@@ -8,9 +8,9 @@ plugin.tx_browser_pi1 {
     }
     single {
       201 = +Org: Calendar (one column)
-        htmlSnippets =
         htmlSnippets {
           subparts {
+            singleview >
             singleview = TEXT
             singleview {
               value (
@@ -25,7 +25,9 @@ plugin.tx_browser_pi1 {
                     <div class="columns small-12 medium-12 large-8">
                       ###TX_ORG_CAL.DELETED###<!-- tx_org_location -->
                     </div>
-                    <div class="columns small-12 medium-12 large-12">
+                  </div>
+                  <div class="row">
+                    <div class="columns">
                       ###TX_ORG_CAL.CRDATE###<!-- form for tickets -->
                     </div>
                   </div>
