@@ -177,7 +177,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <div class="columns medium-2 large-2">|</div>
+              wrap = <div class="columns medium-10 large-10">|</div>
            }
           }
         }
