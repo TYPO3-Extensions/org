@@ -379,7 +379,7 @@ plugin.tx_browser_pi1 {
                           join = tx_org_mm_all ON tx_org_mm_all.uid_local = tx_org_cal.uid
                           where {
                             field = tx_org_location.uid
-                            noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_location' AND tx_org_mm_all.table_foreign = 'tx_org_location'|
+                            noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_location'|
                           }
                           orderBy = tx_org_mm_all.sorting
                         }
