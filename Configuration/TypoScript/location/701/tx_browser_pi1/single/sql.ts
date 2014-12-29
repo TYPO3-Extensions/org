@@ -34,6 +34,9 @@ plugin.tx_browser_pi1 {
           tx_org_location.seo_description,
           tx_org_location.seo_keywords,
           tx_org_location.telephone,
+          tx_org_location.ticket_telephone,
+          tx_org_location.ticket_url,
+          tx_org_location.tx_org_staff,
           tx_org_location.type,
           tx_org_location.url,
 

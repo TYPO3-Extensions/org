@@ -151,11 +151,19 @@ plugin.tx_browser_pi1 {
                               }
                               30 = TEXT
                               30 {
-                                field = tx_org_location.manager
+                                field = tx_org_location.telephone
                               }
                               40 = TEXT
                               40 {
-                                field = tx_org_location.telephone
+                                field = tx_org_location.ticket_telephone
+                              }
+                              50 = TEXT
+                              50 {
+                                field = tx_org_location.ticket_url
+                              }
+                              60 = TEXT
+                              60 {
+                                field = tx_org_location.tx_org_staff
                               }
                             }
                           }
@@ -249,16 +257,67 @@ plugin.tx_browser_pi1 {
                         }
                         wrap = <li class="telephone">|</li>
                       }
-                        // fax
-                      40 = TEXT
+                        // phone
+                      40 = COA
                       40 {
+                        10 = TEXT
+                        10 {
+                          value = ticket phone:
+                          lang {
+                            de = Karten-Tel.:
+                            en = ticket phone:
+                          }
+                          noTrimWrap = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_location.ticket_telephone
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_location.ticket_telephone
+                          }
+                        }
+                        wrap = <li class="ticket_telephone">|</li>
+                      }
+                        // ticket_url
+                      50 = COA
+                      50 {
+                        10 = TEXT
+                        10 {
+                          value = tickets online:
+                          lang {
+                            de = Karten online:
+                            en = tickets online:
+                          }
+                          noTrimWrap = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_location.ticket_url
+                          typolink {
+                            parameter {
+                              field = tx_org_location.ticket_url
+                            }
+                          }
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_location.ticket_url
+                          }
+                        }
+                        wrap = <li class="ticket_url">|</li>
+                      }
+                        // fax
+                      60 = TEXT
+                      60 {
                         field = tx_org_location.fax
                         wrap = <li class="fax">|</li>
                         required = 1
                       }
                         // email
-                      50 = COA
-                      50 {
+                      70 = COA
+                      70 {
                         10 = TEXT
                         10 {
                           value = e-mail:
@@ -303,10 +362,10 @@ plugin.tx_browser_pi1 {
                         // header
                       10 = TEXT
                       10 {
-                        value = Groups
+                        value = Business segments
                         lang {
-                          de = Gruppen
-                          en = Groups
+                          de = Geschäftsfelder
+                          en = Business segments
                         }
                         noTrimWrap = |<span class="header">|:</span> |
                       }
