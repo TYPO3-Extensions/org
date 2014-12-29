@@ -38,25 +38,6 @@ plugin.tx_browser_pi1 {
                       parseFunc < lib.parseFunc_RTE
                     }
                   }
-                    // vita
-                  40 < tt_content.table.20
-                  40 {
-                    userFunc = tx_browser_cssstyledcontent->render_table
-                    userFunc {
-                        // add the value of a field to another field in cObj->data
-                      cObjDataFieldWrapper =
-                      cObjDataFieldWrapper {
-                        cols            = tx_org_location.cols
-                        pi_flexform     = tx_org_location.pi_flexform
-                        uid             = tx_org_location.uid
-                      }
-                    }
-                    field = tx_org_location.vita
-                    stdWrap {
-                        // With a prefix comment there won't be any output!
-                      prefixComment >
-                    }
-                  }
                     // tx_org_locationcat.title
                   90 = COA
                   90 {
