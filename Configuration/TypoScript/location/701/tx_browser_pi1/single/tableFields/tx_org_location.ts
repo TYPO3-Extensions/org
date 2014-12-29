@@ -351,11 +351,24 @@ plugin.tx_browser_pi1 {
                     if {
                       isTrue {
                         stdWrap {
-                          cObject = COA
+                          cObject = CONTENT
                           cObject {
-                            10 = TEXT
-                            10 {
-                              field = tx_org_location.tx_org_cal
+                            table = tx_org_cal
+                            select {
+                              pidInList = {$plugin.org.sysfolder.calendar}
+                              join = tx_org_mm_all ON tx_org_mm_all.uid_local = tx_org_cal.uid
+                              where {
+                                field = tx_org_location.uid
+                                noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_location'|
+                              }
+                              andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
+                              orderBy = tx_org_cal.datetime ASC
+                              max = 1
+                            }
+                              // tx_org_cal.title croped and linked
+                            renderObj = TEXT
+                            renderObj {
+                              field = title
                             }
                           }
                         }
@@ -365,10 +378,10 @@ plugin.tx_browser_pi1 {
                       // header
                     10 = TEXT
                     10 {
-                      value = The next events
+                      value = Veranstaltungen
                       lang {
-                        de = Die nächsten Veranstaltungen
-                        en = The next events
+                        de = Veranstaltungen
+                        en = Events
                       }
                       wrap = <li class="header">|</li>
                     }
