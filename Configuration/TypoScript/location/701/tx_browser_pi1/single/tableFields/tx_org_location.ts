@@ -345,6 +345,87 @@ plugin.tx_browser_pi1 {
                       parseFunc < lib.parseFunc_RTE
                     }
                   }
+                    // tx_org_cal
+                  50 = COA
+                  50 {
+                    if {
+                      isTrue {
+                        stdWrap {
+                          cObject = COA
+                          cObject {
+                            10 = TEXT
+                            10 {
+                              field = tx_org_location.tx_org_cal
+                            }
+                          }
+                        }
+                      }
+                    }
+                    wrap = <ul class="vcard tx_org_location tx_org_cal">|</ul><!-- vcard -->
+                      // header
+                    10 = TEXT
+                    10 {
+                      data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
+                      wrap = <li class="header">|</li>
+                    }
+                      // tx_org_cal
+                    20 = COA
+                    20 {
+                      10 = CONTENT
+                      10 {
+                        table = tx_org_cal
+                        select {
+                          pidInList = {$plugin.org.sysfolder.calendar}
+                          join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_cal.uid
+                          where {
+                            field = tx_org_location.uid
+                            noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_location' AND tx_org_mm_all.table_foreign = 'tx_org_cal'|
+                          }
+                          orderBy = tx_org_mm_all.sorting
+                        }
+                          // tx_org_cal.title croped and linked
+                        renderObj = CASE
+                        renderObj {
+                          key {
+                            field = {$plugin.tx_browser_pi1.templates.listview.url.5.key}
+                          }
+                            // link to detail view
+                          default = TEXT
+                          default {
+                            field = title
+                            wrap = |###POINT###
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
+                          }
+                            // no link
+                          notype = TEXT
+                          notype {
+                            field   = title
+                          }
+                            // link to internal page
+                          page < .default
+                          page {
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.page
+                          }
+                            // link to external url
+                          url < .page
+                          url {
+                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.url
+                          }
+                        }
+                      }
+                      stdWrap {
+                        split {
+                          token = ###POINT###
+                          cObjNum = 1 |*| 1 |*| 2 || 2
+                          1.current = 1
+                          1.noTrimWrap = ||, |
+                          2.current = 1
+                          2.noTrimWrap = |||
+                        }
+                      }
+                      wrap = <li class="tx_org_cal">|</li>
+                    }
+                  }
                     // tx_org_locationcat.title
                   90 = COA
                   90 {
