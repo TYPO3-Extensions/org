@@ -365,7 +365,11 @@ plugin.tx_browser_pi1 {
                       // header
                     10 = TEXT
                     10 {
-                      data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
+                      value = The next events
+                      lang {
+                        de = Die nächsten Veranstaltungen
+                        en = The next events
+                      }
                       wrap = <li class="header">|</li>
                     }
                       // tx_org_cal
@@ -381,7 +385,9 @@ plugin.tx_browser_pi1 {
                             field = tx_org_location.uid
                             noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_location'|
                           }
-                          orderBy = tx_org_mm_all.sorting
+                          andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
+                          orderBy = tx_org_cal.datetime ASC
+                          max = 3
                         }
                           // tx_org_cal.title croped and linked
                         renderObj = CASE
@@ -393,13 +399,17 @@ plugin.tx_browser_pi1 {
                           default = TEXT
                           default {
                             field = title
-                            wrap = |###POINT###
+                            wrap = <li class="url circle">|</li>
+                            stdWrap {
+                              noTrimWrap = || &raquo;|
+                            }
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
                           }
                             // no link
                           notype = TEXT
                           notype {
                             field   = title
+                            wrap = <li class="url circle">|</li>
                           }
                             // link to internal page
                           page < .default
@@ -411,16 +421,6 @@ plugin.tx_browser_pi1 {
                           url {
                             typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.url
                           }
-                        }
-                      }
-                      stdWrap {
-                        split {
-                          token = ###POINT###
-                          cObjNum = 1 |*| 1 |*| 2 || 2
-                          1.current = 1
-                          1.noTrimWrap = ||, |
-                          2.current = 1
-                          2.noTrimWrap = |||
                         }
                       }
                       wrap = <li class="tx_org_cal">|</li>
