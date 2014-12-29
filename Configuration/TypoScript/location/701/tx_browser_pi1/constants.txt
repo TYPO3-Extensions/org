@@ -66,24 +66,6 @@ plugin.tx_browser_pi1 {
           seo       = tx_org_location.imageseo
           width     = 220c
         }
-        1 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.png
-          file      = tx_org_news.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_news.imageseo
-          #width     =
-        }
-        2 {
-          default   = EXT:org/res/icons/defaults/tx_org_location_300x200.png
-          file      = tx_org_location.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_location.imageseo
-          #width     =
-        }
       }
       text {
         0 {

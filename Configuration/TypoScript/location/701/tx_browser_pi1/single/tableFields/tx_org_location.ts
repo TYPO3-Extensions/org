@@ -168,8 +168,7 @@ plugin.tx_browser_pi1 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
                         wrap = <li class="header">|</li>
                       }
-                        // manager
-                        // items: tx_org_locationcat.title croped and linked
+                        // staff
                       20 = COA
                       20 {
                           // items: tx_org_staff.title croped and linked
@@ -225,7 +224,7 @@ plugin.tx_browser_pi1 {
                             2.noTrimWrap = |||
                           }
                         }
-                        wrap = <li class="manager">|</li>
+                        wrap = <li class="tx_org_staff">|</li>
                       }
                         // phone
                       30 = COA
