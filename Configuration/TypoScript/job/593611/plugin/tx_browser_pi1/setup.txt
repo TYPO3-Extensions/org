@@ -26,6 +26,12 @@ plugin.tx_browser_pi1 {
       593611 {
         name    = +Org: Jobs
         showUid = jobUid
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
+          }
+        }
       }
     }
     single {
