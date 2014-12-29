@@ -29,7 +29,6 @@ plugin.tx_browser_pi1 {
                     <div class="record###TX_ORG_LOCATION.CRDATE###">
                       ###TX_ORG_LOCATION.DELETED###
                       ###TX_ORG_LOCATION.TITLE###
-                    </div>
                     </div><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
                   </div><!-- /columns --><!-- /listview -->
                 </div><!-- /row -->
