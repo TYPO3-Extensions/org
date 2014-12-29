@@ -62,10 +62,10 @@ plugin.tx_browser_pi1 {
                 10 {
                   tx_org_event < .default
                   tx_org_event {
-                    file.import.stdWrap.cObject.10.20.field := prependString(tx_org_event.image // )
-                    file.import.stdWrap.cObject.10.if.isTrue.field := prependString(tx_org_event.image // )
-                    altText.field := prependString(tx_org_event.imageseo // )
-                    title.field := prependString(tx_org_event.imageseo // )
+                    file.import.stdWrap.cObject.10.20.field := appendString( // tx_org_event.image)
+                    file.import.stdWrap.cObject.10.if.isTrue.field := appendString( // tx_org_event.image)
+                    altText.field := appendString( // tx_org_event.imageseo)
+                    title.field := appendString( // tx_org_event.imageseo)
                   }
                 }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
