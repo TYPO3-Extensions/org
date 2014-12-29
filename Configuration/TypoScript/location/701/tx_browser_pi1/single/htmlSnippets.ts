@@ -10,12 +10,7 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="margin columns medium-3 large-3">
-                  ###TX_ORG_LOCATION.CONTACT_EMAIL###
-                  ###TX_ORG_LOCATION.UID###<!-- tx_org_news -->
-                  ###TX_ORG_LOCATION.CRDATE###<!-- tx_org_staff -->
-                </div>
-                <div class="main columns medium-9 large-9">
+                <div class="main columns">
                   ###MAP###
                   ###RECORD_BROWSER###
                   ###TX_ORG_LOCATION.TITLE###
