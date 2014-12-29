@@ -30,9 +30,266 @@ plugin.tx_browser_pi1 {
                     field = tx_org_location.title
                     wrap = <h1>|</h1>
                   }
-                    // bodytext
-                  30 = TEXT
+                    // address, contact
+                  30 = COA
                   30 {
+                      // address
+                    10 = COA
+                    10 {
+                      if {
+                        isTrue {
+                          stdWrap {
+                            cObject = COA
+                            cObject {
+                              10 = TEXT
+                              10 {
+                                field = tx_org_location.mail_address
+                              }
+                              20 = TEXT
+                              20 {
+                                field = tx_org_location.mail_city
+                              }
+                              30 = TEXT
+                              30 {
+                                field = tx_org_location.mail_country
+                              }
+                              40 = TEXT
+                              40 {
+                                field = tx_org_location.mail_postcode
+                              }
+                              50 = TEXT
+                              50 {
+                                field = tx_org_location.mail_street
+                              }
+                            }
+                          }
+                        }
+                      }
+                      wrap = <ul class="vcard tx_org_location address">|</ul><!-- vcard -->
+                        // header
+                      10 = TEXT
+                      10 {
+                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
+                        wrap = <li class="header">|</li>
+                      }
+                        // mail_address
+                      20 = TEXT
+                      20 {
+                        if {
+                          isTrue {
+                            field = tx_org_location.mail_address
+                          }
+                        }
+                        field = tx_org_location.mail_address
+                        wrap = <li class="address">|</li>
+                      }
+                        // mail_street
+                      30 = TEXT
+                      30 {
+                        if {
+                          isTrue {
+                            field = tx_org_location.mail_street
+                          }
+                        }
+                        field = tx_org_location.mail_street
+                        wrap = <li class="street">|</li>
+                      }
+                        // postcode, city
+                      40 = COA
+                      40 {
+                          // mail_postcode
+                        10 = TEXT
+                        10 {
+                          if {
+                            isTrue {
+                              field = tx_org_location.mail_postcode
+                            }
+                          }
+                          field = tx_org_location.mail_postcode
+                          noTrimWrap = |<span class="postcode">|</span> |
+                        }
+                          // mail_city
+                        20 = TEXT
+                        20 {
+                          if {
+                            isTrue {
+                              field = tx_org_location.mail_city
+                            }
+                          }
+                          field = tx_org_location.mail_city
+                          noTrimWrap = |<span class="city">|</span> |
+                        }
+                        wrap = <li class="postcode_city">|</li>
+                      }
+                        // mail_country
+                      50 = TEXT
+                      50 {
+                        if {
+                          isTrue {
+                            field = tx_org_location.mail_country
+                          }
+                        }
+                        field = tx_org_location.mail_country
+                        wrap = <li class="country">|</li>
+                      }
+                    }
+                      // contact
+                    20 = COA
+                    20 {
+                      if {
+                        isTrue {
+                          stdWrap {
+                            cObject = COA
+                            cObject {
+                              10 = TEXT
+                              10 {
+                                field = tx_org_location.email
+                              }
+                              20 = TEXT
+                              20 {
+                                field = tx_org_location.fax
+                              }
+                              30 = TEXT
+                              30 {
+                                field = tx_org_location.manager
+                              }
+                              40 = TEXT
+                              40 {
+                                field = tx_org_location.telephone
+                              }
+                            }
+                          }
+                        }
+                      }
+                      wrap = <ul class="vcard tx_org_location contact">|</ul><!-- vcard -->
+                        // header
+                      10 = TEXT
+                      10 {
+                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
+                        wrap = <li class="header">|</li>
+                      }
+                        // manager
+                        // items: tx_org_locationcat.title croped and linked
+                      20 = COA
+                      20 {
+                          // items: tx_org_staff.title croped and linked
+                        10 = CONTENT
+                        10 {
+                          table = tx_org_staff
+                          select {
+                            pidInList = {$plugin.org.sysfolder.staff}
+                            join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_staff.uid
+                            where {
+                              field = tx_org_location.uid
+                              noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_location' AND tx_org_mm_all.table_foreign = 'tx_org_staff'|
+                            }
+                            orderBy = tx_org_mm_all.sorting
+                          }
+                            // tx_org_staff.title croped and linked
+                          renderObj = CASE
+                          renderObj {
+                            key {
+                              field = {$plugin.tx_browser_pi1.templates.listview.url.1.key}
+                            }
+                              // link to detail view
+                            default = TEXT
+                            default {
+                              field = title
+                              wrap = |###POINT###
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.default
+                            }
+                              // no link
+                            notype = TEXT
+                            notype {
+                              field   = title
+                            }
+                              // link to internal page
+                            page < .default
+                            page {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.page
+                            }
+                              // link to external url
+                            url < .page
+                            url {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.1.url
+                            }
+                          }
+                        }
+                        stdWrap {
+                          split {
+                            token = ###POINT###
+                            cObjNum = 1 |*| 1 |*| 2 || 2
+                            1.current = 1
+                            1.noTrimWrap = ||, |
+                            2.current = 1
+                            2.noTrimWrap = |||
+                          }
+                        }
+                        wrap = <li class="manager">|</li>
+                      }
+                        // phone
+                      30 = COA
+                      30 {
+                        10 = TEXT
+                        10 {
+                          value = phone:
+                          lang {
+                            de = Tel.:
+                            en = phone:
+                          }
+                          noTrimWrap = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_location.telephone
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_location.telephone
+                          }
+                        }
+                        wrap = <li class="telephone">|</li>
+                      }
+                        // fax
+                      40 = TEXT
+                      40 {
+                        field = tx_org_location.fax
+                        wrap = <li class="fax">|</li>
+                        required = 1
+                      }
+                        // email
+                      50 = COA
+                      50 {
+                        10 = TEXT
+                        10 {
+                          value = e-mail:
+                          lang {
+                            de = E-Mail:
+                            en = e-mail:
+                          }
+                          noTrimWrap = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_location.email
+                          typolink {
+                            parameter {
+                              field = tx_org_location.email
+                            }
+                          }
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_location.email
+                          }
+                        }
+                        wrap = <li class="email">|</li>
+                      }
+                    }
+                  }
+                    // bodytext
+                  40 = TEXT
+                  40 {
                     field = tx_org_location.bodytext
                     stdWrap {
                       parseFunc < lib.parseFunc_RTE
