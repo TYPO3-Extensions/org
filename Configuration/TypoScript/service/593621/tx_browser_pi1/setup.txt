@@ -30,6 +30,12 @@ plugin.tx_browser_pi1 {
       593621 {
         name    = +Org: Services
         showUid = serviceUid
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
+          }
+        }
       }
     }
     single {

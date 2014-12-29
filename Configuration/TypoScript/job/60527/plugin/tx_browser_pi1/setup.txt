@@ -8,6 +8,12 @@ plugin.tx_browser_pi1 {
       60527 {
         name    = +Org: Jobs for Newsletter
         showUid = jobUid
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
+          }
+        }
       }
     }
     single {

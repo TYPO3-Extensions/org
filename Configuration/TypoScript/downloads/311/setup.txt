@@ -15,7 +15,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       311 = +Org: Downloads - Top 5
@@ -60,6 +60,12 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
+          }
+        }
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
           }
         }
         select (
@@ -131,6 +137,6 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
 }
   // plugin.tx_browser_pi1

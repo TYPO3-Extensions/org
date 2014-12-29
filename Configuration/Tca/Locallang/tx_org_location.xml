@@ -100,7 +100,7 @@
       <label index="tx_org_location.ticket_url">Karten Online</label>
       <label index="tx_org_location.tx_org_cal">Veranstaltungen</label>
       <label index="tx_org_location.tx_org_headquarters">Firmen</label>
-      <label index="tx_org_location.tx_org_locationcat">Übergeordnetes Geschäftsfeld</label>
+      <label index="tx_org_location.tx_org_locationcat">Geschäftsfeld</label>
       <label index="tx_org_location.tx_org_staff">Personen</label>
       <label index="tx_org_location.url">Website des Veranstaltungsortes</label>
       <label index="tx_org_locationcat">Veranstaltungsort: Geschäftsfelder</label>

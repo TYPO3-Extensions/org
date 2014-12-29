@@ -64,6 +64,12 @@ plugin.tx_browser_pi1 {
             }
           }
         }
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
+          }
+        }
         select (
           tx_org_staff.title,
           tx_org_staff.image,

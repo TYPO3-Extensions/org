@@ -30,6 +30,12 @@ plugin.tx_browser_pi1 {
       501 {
         name    = +Org: Headquarters
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
+        navigation < plugin.tx_browser_pi1.navigation
+        navigation {
+          map {
+            enabled = disabled
+          }
+        }
       }
     }
     single {
