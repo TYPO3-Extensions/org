@@ -59,7 +59,7 @@ plugin.tx_browser_pi1 {
                       20 {
                         table = tx_org_locationcat
                         select {
-                          pidInList = {$plugin.org.sysfolder.headquarters}
+                          pidInList = {$plugin.org.sysfolder.location}
                           //selectFields = tx_org_locationcat.title
                           join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_locationcat.uid
                           where {
