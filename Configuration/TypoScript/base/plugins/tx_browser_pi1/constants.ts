@@ -38,7 +38,7 @@ plugin.tx_browser_pi1 {
           key       = tx_org_cal.type // type
           page      = tx_org_cal.page // page
           record    = tx_org_cal.uid // uid
-          showUid   = locationUid
+          showUid   = calUid
           #singlePid =
           url       = tx_org_cal.url // url
         }
