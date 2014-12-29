@@ -281,24 +281,16 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="ticket_telephone">|</li>
                       }
                         // ticket_url
-                      50 = COA
+                      50 = TEXT
                       50 {
-                        10 = TEXT
-                        10 {
-                          value = tickets online:
-                          lang {
-                            de = Karten online:
-                            en = tickets online:
-                          }
-                          noTrimWrap = || |
+                        value = tickets online &raquo;
+                        lang {
+                          de = Karten online &raquo;
+                          en = tickets online &raquo;
                         }
-                        20 = TEXT
-                        20 {
-                          field = tx_org_location.ticket_url
-                          typolink {
-                            parameter {
-                              field = tx_org_location.ticket_url
-                            }
+                        typolink {
+                          parameter {
+                            field = tx_org_location.ticket_url
                           }
                         }
                         if {
