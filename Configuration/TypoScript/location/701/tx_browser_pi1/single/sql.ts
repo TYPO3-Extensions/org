@@ -37,7 +37,9 @@ plugin.tx_browser_pi1 {
           tx_org_location.url,
 
           tx_org_locationcat.title,
-          tx_org_locationcat.icons
+          tx_org_locationcat.icons,
+
+          tx_org_staff.uid
         )
         orderBy (
           tx_org_location.title
