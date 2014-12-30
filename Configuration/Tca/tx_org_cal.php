@@ -113,7 +113,7 @@ $TCA[ 'tx_org_cal' ] = array(
             '2' => 'EXT:org/Configuration/ExtIcon/url.gif',
           ),
         ),
-        'default' => 'page',
+        'default' => 'record',
       ),
     ),
     'page' => array(
