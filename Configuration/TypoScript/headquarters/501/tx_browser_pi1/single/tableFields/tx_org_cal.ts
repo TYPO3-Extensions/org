@@ -8,7 +8,7 @@ plugin.tx_browser_pi1 {
             // tx_org_headquarters.tx_org_cal: placeholder for tx_org_cal
           tx_org_cal = COA
           tx_org_cal {
-            if {
+            XXXif {
               isTrue {
                 stdWrap {
                   cObject = COA
