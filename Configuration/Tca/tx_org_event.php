@@ -816,7 +816,7 @@ $TCA['tx_org_eventcat'] = array(
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_calentrance.title_lang_ol',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.title_lang_ol',
       'config' => array(
         'type' => 'input',
         'size' => '30',
