@@ -28,6 +28,14 @@ $TCA['tx_org_event'] = array(
     'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Configuration/ExtIcon/event.gif',
+    'type' => 'type',
+    'typeicon_column' => 'type',
+    'typeicons' => array(
+      'record' => '../typo3conf/ext/org/Configuration/ExtIcon/event.gif',
+      'page' => '../typo3conf/ext/org/Configuration/ExtIcon/page.gif',
+      'url' => '../typo3conf/ext/org/Configuration/ExtIcon/url.gif',
+      'notype' => '../typo3conf/ext/org/Configuration/ExtIcon/notype.gif',
+    ),
     'searchFields' => 'sys_language_uid,l10n_parent,l10n_diffsource,title,subtitle,producer,length,bodytext,' .
     'teaser_title,teaser_subtitle,teaser_short,' .
     'tx_org_cal,' .
