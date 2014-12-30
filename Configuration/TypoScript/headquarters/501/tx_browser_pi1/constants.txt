@@ -122,7 +122,7 @@ plugin.tx_browser_pi1 {
           path          = uploads/tx_org/
           seo           = tx_org_headquarters.imageseo
           width         = tx_org_headquarters.imagewidth
-          widthDefault  = 140
+          widthDefault  = 300
         }
       }
     }
