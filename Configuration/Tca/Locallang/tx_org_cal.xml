@@ -12,7 +12,7 @@
       <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
       <label index="tx_org_cal.div_embedded">Embedded Code</label>
-      <label index="tx_org_cal.div_event">Location, organiser, dmission</label>
+      <label index="tx_org_cal.div_event">Location, organiser, admission</label>
       <label index="tx_org_cal.div_marginal">Marginal</label>
       <label index="tx_org_cal.div_media">Media</label>
       <label index="tx_org_cal.div_seo">Search Engines</label>
