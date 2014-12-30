@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
                         pidInList = {$plugin.org.sysfolder.calendar}
                         join = tx_org_mm_all ON tx_org_mm_all.uid_foreign = tx_org_cal.uid
                         where {
-                          field = tx_org_headquarters.uid
+                          field = tx_org_headquarters.uid // uid
                           noTrimWrap = |tx_org_mm_all.uid_local = | AND tx_org_mm_all.table_local = 'tx_org_headquarters' AND tx_org_mm_all.table_foreign = 'tx_org_cal'|
                         }
                         andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
