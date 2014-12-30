@@ -8,7 +8,7 @@ plugin.tx_browser_pi1 {
             // tx_org_headquarters.tx_org_cal: placeholder for tx_org_cal
           tx_org_cal = COA
           tx_org_cal {
-            XXXif {
+            if {
               isTrue {
                 stdWrap {
                   cObject = COA
@@ -56,8 +56,8 @@ plugin.tx_browser_pi1 {
             }
             20 = COA
             20 {
-              XXX10 = CONTENT
-              XXX10 {
+              10 = CONTENT
+              10 {
                 table = tx_org_cal
                 select {
                   pidInList = {$plugin.org.sysfolder.calendar}
