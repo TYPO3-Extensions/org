@@ -9,7 +9,7 @@ plugin.tx_browser_pi1 {
             filter {
               value (
               <div class="filter">
-                ###TX_ORG_EVENTTYPE.TITLE###
+                ###TX_ORG_EVENTCAT.TITLE###
               </div>
 )
             }
