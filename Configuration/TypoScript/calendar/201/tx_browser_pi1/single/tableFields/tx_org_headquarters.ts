@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
               10 {
                 table = tx_org_headquarters
                 select {
-                  pidInList = {$plugin.org.sysfolder.calendar}
+                  pidInList = {$plugin.org.sysfolder.headquarters}
                   join = tx_org_mm_all ON tx_org_mm_all.uid_local = tx_org_headquarters.uid
                   where {
                     field = tx_org_cal.uid
