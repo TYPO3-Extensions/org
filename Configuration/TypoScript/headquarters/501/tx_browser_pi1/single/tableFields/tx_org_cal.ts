@@ -49,6 +49,11 @@ plugin.tx_browser_pi1 {
               wrap = <li class="header">|</li>
             }
               // tx_org_cal
+            19 = TEXT
+            19 {
+              field = tx_org_headquarters.uid
+              wrap = <li class="tx_org_cal">|</li>
+            }
             20 = COA
             20 {
               XXX10 = CONTENT
