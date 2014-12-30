@@ -11,7 +11,7 @@ plugin.tx_browser_pi1 {
             10 {
                 // image
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-              wrap = <div class="show-for-large-up columns small-12 medium-12 large-2">|</div>
+              wrap = <div class="show-for-medium-up columns medium-2 large-2">|</div>
             }
               // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
             20 = COA
@@ -172,7 +172,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <div class="columns">|</div>
+              wrap = <div class="columns medium-10 large-10">|</div>
             }
             //wrap = <div class="row">|</div>
           }
