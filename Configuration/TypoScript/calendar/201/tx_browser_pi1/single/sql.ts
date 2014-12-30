@@ -26,6 +26,7 @@ plugin.tx_browser_pi1 {
           tx_org_cal.seo_keywords,
           tx_org_cal.subtitle,
           tx_org_cal.teaser_short,
+          tx_org_cal.tx_org_headquarters,
           tx_org_cal.type,
           tx_org_cal.uid,
 

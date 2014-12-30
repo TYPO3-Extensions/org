@@ -18,6 +18,7 @@ plugin.tx_browser_pi1 {
                     </div>
                     <div class="columns small-12 medium-12 large-8">
                       ###TX_ORG_CAL.DELETED###<!-- tx_org_location -->
+                      ###TX_ORG_CAL.TX_ORG_HEADQUARTERS###<!-- tx_org_headquarters -->
                     </div>
                     <div class="columns small-12 medium-12 large-12">
                       ###TX_ORG_CAL.CRDATE###<!-- form for tickets -->

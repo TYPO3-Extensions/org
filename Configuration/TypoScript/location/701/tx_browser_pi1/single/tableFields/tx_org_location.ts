@@ -378,7 +378,7 @@ plugin.tx_browser_pi1 {
                       // header
                     10 = TEXT
                     10 {
-                      value = Veranstaltungen
+                      value = Events
                       lang {
                         de = Veranstaltungen
                         en = Events
