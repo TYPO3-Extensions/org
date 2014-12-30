@@ -1,7 +1,7 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      501 {
+      61826 {
         filter {
           radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
           tx_org_headquarterscat {

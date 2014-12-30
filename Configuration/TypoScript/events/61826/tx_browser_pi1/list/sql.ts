@@ -1,7 +1,7 @@
 plugin.tx_browser_pi1 {
   views {
     list {
-      501 {
+      61826 {
         select (
           tx_org_headquarters.title,
           tx_org_headquarters.crdate,
