@@ -3,9 +3,7 @@ plugin.tx_browser_pi1 {
     list {
       61826 {
         filter {
-          radialsearch < plugin.tx_browser_pi1.displayList.master_templates.radialsearch
-          tx_org_headquarterscat {
-              // #43641, dwildt, 1-, 1+
+          tx_org_eventcat {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
@@ -21,7 +19,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.headquarterscat
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.eventcat
                   }
                 }
               }

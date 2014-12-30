@@ -2,70 +2,52 @@ plugin.tx_browser_pi1 {
   jQuery {
     plugin {
       jstree {
-        tablefield_01 = tx_org_headquarterscat.title
+        tablefield_01 = tx_org_eventcat.title
       }
     }
   }
   navigation {
-    showUid = headquartersUid
+    showUid = eventUid
   }
 
   templates {
     listview {
       header {
         0 {
-          field   = tx_org_headquarters.teaser_title // tx_org_headquarters.title
+          field   = tx_org_event.teaser_title // tx_org_event.title
         }
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.png
-          file      = tx_org_headquarters.image
+          default   = EXT:org/res/icons/defaults/tx_org_event_300x200.png
+          file      = tx_org_event.image
           height    = 90c
           path      = uploads/tx_org/
-          seo       = tx_org_headquarters.imageseo
+          seo       = tx_org_event.imageseo
           width     = 220c
-        }
-        1 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.png
-          file      = tx_org_news.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_news.imageseo
-          #width     =
-        }
-        2 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.png
-          file      = tx_org_headquarters.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_headquarters.imageseo
-          #width     =
         }
       }
       url {
         0 {
-          key       = tx_org_headquarters.type
-          page      = tx_org_headquarters.page
-          record    = tx_org_headquarters.uid
-          showUid   = headquartersUid
+          key       = tx_org_event.type // type
+          page      = tx_org_event.page // page
+          record    = tx_org_event.uid  // uid
+          showUid   = eventUid
           #singlePid =
-          url       = tx_org_headquarters.url
+          url       = tx_org_event.url // url
         }
       }
     }
     singleview {
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.png
-          file      = tx_org_headquarters.image
+          default   = EXT:org/res/icons/defaults/tx_org_event_300x200.png
+          file      = tx_org_event.image
           #height    =
           #layoutKey = picture
           #listNum   =
           path      = uploads/tx_org/
-          #seo       = tx_org_headquarters.imageseo
+          #seo       = tx_org_event.imageseo
           #width     =
         }
       }

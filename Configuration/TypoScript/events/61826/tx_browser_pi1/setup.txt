@@ -1,21 +1,5 @@
 plugin.tx_browser_pi1 {
 
-  XXXadvanced {
-    sql {
-      devider {
-        tx_org_headquarterscat {
-          title {
-            display = TEXT
-            display {
-              value =
-              wrap = |
-            }
-          }
-        }
-      }
-    }
-  }
-
   displayList {
     selectBox_orderBy {
       display = 1
@@ -26,9 +10,9 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      61826 = +Org: Headquarters
+      61826 = +Org: Events
       61826 {
-        name    = +Org: Headquarters
+        name    = +Org: Events
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
         navigation < plugin.tx_browser_pi1.navigation
         navigation {
@@ -39,7 +23,7 @@ plugin.tx_browser_pi1 {
       }
     }
     single {
-      61826 = +Org: Headquarters
+      61826 = +Org: Events
     }
   }
 }
