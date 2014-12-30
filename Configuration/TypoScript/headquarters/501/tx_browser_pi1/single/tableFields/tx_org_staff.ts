@@ -50,7 +50,7 @@ plugin.tx_browser_pi1 {
                   default = TEXT
                   default {
                     field = title
-                    crop = 25 | ... &raquo; | 1
+                    //crop = 25 | ... &raquo; | 1
                     wrap = <li class="url circle">|</li>
                     stdWrap {
                       noTrimWrap = || &raquo;|
@@ -61,7 +61,7 @@ plugin.tx_browser_pi1 {
                   notype = TEXT
                   notype {
                     field   = title
-                    crop    = 25 | ... | 1
+                    //crop    = 25 | ... | 1
                     stdWrap >
                   }
                     // link to internal page
