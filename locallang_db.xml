@@ -18,6 +18,8 @@
       <label index="filter_phrase.department">Departments</label>
       <label index="filter_phrase.doccat">Categories</label>
       <label index="filter_phrase.docmedia">Media</label>
+      <label index="filter_phrase.event">Event</label>
+      <label index="filter_phrase.eventcat">Category</label>
       <label index="filter_phrase.fe_group">Groups</label>
       <label index="filter_phrase.headquarters">Headquarters</label>
       <label index="filter_phrase.headquarterscat">Business segments</label>
@@ -111,6 +113,8 @@
       <label index="filter_phrase.department">Abteilungen</label>
       <label index="filter_phrase.doccat">Rubriken</label>
       <label index="filter_phrase.docmedia">Datenträger</label>
+      <label index="filter_phrase.event">Veranstaltung</label>
+      <label index="filter_phrase.eventcat">Kategorie</label>
       <label index="filter_phrase.fe_group">Gruppen</label>
       <label index="filter_phrase.headquarters">Firma</label>
       <label index="filter_phrase.headquarterscat">Geschäftsfelder</label>
