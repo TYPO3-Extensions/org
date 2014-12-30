@@ -27,6 +27,12 @@ plugin.tx_browser_pi1 {
           width     = 220c
         }
       }
+      text {
+        0 {
+          crop    = 200 | ... | 1
+          field   = tx_org_event.teaser_short // tx_org_event.bodytext
+        }
+      }
       url {
         0 {
           key       = tx_org_event.type // type

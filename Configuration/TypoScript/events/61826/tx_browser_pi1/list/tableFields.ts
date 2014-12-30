@@ -26,17 +26,6 @@ plugin.tx_browser_pi1 {
                 wrap = <h3>|</h3>
                 required = 1
               }
-                // bodytext
-              22 = TEXT
-              22 {
-                field = tx_org_event.teaser_short // tx_org_event.bodytext
-                stdWrap {
-                  stripHtml = 1
-                  htmlSpecialChars = 1
-                }
-                crop = 120 | ... | 1
-                wrap = <p>|</p>
-              }
                 // tx_org_eventcat.title
               30 = COA
               30 {
