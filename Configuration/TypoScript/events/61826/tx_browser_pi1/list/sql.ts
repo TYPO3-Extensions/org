@@ -14,10 +14,7 @@ plugin.tx_browser_pi1 {
           tx_org_event.teaser_subtitle,
           tx_org_event.type,
           tx_org_event.url,
-          tx_org_eventcat.title,
-          tx_org_eventcat.icons,
-          tx_org_eventcat.icon_offset_x,
-          tx_org_eventcat.icon_offset_y
+          tx_org_eventcat.title
         )
         orderBy (
           tx_org_event.title, tx_org_eventcat.title
