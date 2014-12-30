@@ -67,14 +67,15 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          caption     = tx_org_staff.imagecaption
-          file        = tx_org_staff.image
-          height      = tx_org_staff.imageheight
-          imagecols   = tx_org_staff.imagecols
-          imageorient = tx_org_staff.imageorient
-          path        = uploads/tx_org/
-          seo         = tx_org_staff.imageseo
-          width       = tx_org_staff.imagewidth
+          caption       = tx_org_staff.imagecaption
+          file          = tx_org_staff.image
+          height        = tx_org_staff.imageheight
+          imagecols     = tx_org_staff.imagecols
+          imageorient   = tx_org_staff.imageorient
+          path          = uploads/tx_org/
+          seo           = tx_org_staff.imageseo
+          width         = tx_org_staff.imagewidth
+          widthDefault  = 140
         }
       }
     }
