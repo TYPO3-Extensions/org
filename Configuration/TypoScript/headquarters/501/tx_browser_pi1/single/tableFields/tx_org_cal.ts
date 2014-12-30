@@ -51,8 +51,8 @@ plugin.tx_browser_pi1 {
               // tx_org_cal
             20 = COA
             20 {
-              10 = CONTENT
-              10 {
+              XXX10 = CONTENT
+              XXX10 {
                 table = tx_org_cal
                 select {
                   pidInList = {$plugin.org.sysfolder.calendar}
