@@ -13,7 +13,9 @@ plugin.tx_browser_pi1 {
                 <div class="main columns">
                   ###MAP###
                   ###RECORD_BROWSER###
-                  ###TX_ORG_HEADQUARTERS.TITLE###
+                  <div class="row">
+                    ###TX_ORG_HEADQUARTERS.TITLE###
+                  </div>
                   ###TX_ORG_HEADQUARTERS.TX_ORG_CAL###<!-- tx_org_cal -->
                   ###TX_ORG_HEADQUARTERS.UID###<!-- tx_org_news -->
                   ###TX_ORG_HEADQUARTERS.CRDATE###<!-- tx_org_staff -->
