@@ -23,7 +23,7 @@ plugin.tx_browser_pi1 {
                     <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                     <div class="row">
                       <div class="record">
-                        ###TX_ORG_CAL.TITLE###
+                        ###TX_ORG_EVENT.TITLE###
                       </div>
                     </div><!-- /row --><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
                   </div><!-- /columns --><!-- /listview -->
