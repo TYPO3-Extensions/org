@@ -18,6 +18,10 @@
       <label index="tx_org_event.div_seo">Search Engines</label>
       <label index="tx_org_event.div_staff">People</label>
       <label index="tx_org_event.div_teaser">Teaser</label>
+      <label index="tx_org_event.palette_typepage">Link to an internal page</label>
+      <label index="tx_org_event.palette_typeurl">Link to an external website</label>
+      <label index="tx_org_event.page">Link to an internal page</label>
+      <label index="tx_org_event.url">Link to an external page (URL)</label>
       <label index="tx_org_event.title">Title of the event</label>
       <label index="tx_org_event.subtitle">Subheader</label>
       <label index="tx_org_event.producer">Producer</label>
@@ -58,6 +62,10 @@
       <label index="tx_org_event.div_seo">Suchmaschinen</label>
       <label index="tx_org_event.div_staff">Personen</label>
       <label index="tx_org_event.div_teaser">Kurztitel</label>
+      <label index="tx_org_event.palette_typepage">Link auf eine interne Seite</label>
+      <label index="tx_org_event.palette_typeurl">Link auf eine externe Website</label>
+      <label index="tx_org_event.page">Link zu interner Seite</label>
+      <label index="tx_org_event.url">Link zu externer Seite</label>
       <label index="tx_org_event.title">Name der Veranstaltung</label>
       <label index="tx_org_event.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_event.length">Dauer</label>
