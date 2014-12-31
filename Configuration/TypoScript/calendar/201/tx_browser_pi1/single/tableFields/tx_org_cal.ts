@@ -44,6 +44,15 @@ plugin.tx_browser_pi1 {
                       parseFunc < lib.parseFunc_RTE
                     }
                   }
+                    // length
+                  31 = TEXT
+                  31 {
+                    field = tx_org_event.length
+                    required = 1
+                    stdWrap {
+                      parseFunc < lib.parseFunc_RTE
+                    }
+                  }
                 }
               }
               1 {

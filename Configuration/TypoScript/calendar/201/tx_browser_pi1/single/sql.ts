@@ -53,6 +53,7 @@ plugin.tx_browser_pi1 {
           tx_org_event.image_noRows,
           tx_org_event.image_effects,
           tx_org_event.image_compression,
+          tx_org_event.length,
           tx_org_event.subtitle,
           tx_org_event.teaser_title,
           tx_org_event.teaser_subtitle,
