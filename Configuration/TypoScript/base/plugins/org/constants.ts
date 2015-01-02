@@ -1,9 +1,9 @@
 plugin.org {
 
   # cat=Organiser - Icons/150/100; type=string; label= Download:path to the download icon
-  icon.download = EXT:org/res/download.gif
+  icon.download = EXT:org/Resources/Public/Images/download.gif
   # cat=Organiser - Icons/150/100; type=string; label= Shipping:path to the shipping icon
-  icon.shipping = EXT:org/res/shipping.gif
+  icon.shipping = EXT:org/Resources/Public/Images/shipping.gif
 
   # cat=Organiser - Pages/150/100; type=+int; label= calendar:Uid of your calendar page
   pages.calendar =

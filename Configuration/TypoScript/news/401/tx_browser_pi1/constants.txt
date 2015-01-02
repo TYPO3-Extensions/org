@@ -25,7 +25,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_news_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
           file      = tx_org_news.image
           height    = 160c
           #listNum   =

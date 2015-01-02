@@ -20,22 +20,6 @@ plugin.tx_browser_pi1 {
 
   template {
       // #44136
-//    extensions {
-//      org {
-//        default {
-//          name      = Org: Default
-//            // #43636, 121206, dwildt, 1-/1+
-//          file      = EXT:org/res/html/_default/main.tmpl
-//          csvViews  = 101,201,301,302,401,501,501,601,701
-//        }
-//        margin {
-//          name      = Org: Margin
-//            // #43636, 121206, dwildt, 1-/1+
-//          file      = EXT:org/res/html/_default/margin.tmpl
-//          csvViews  = 111,211,311,411,511,511,611,711
-//        }
-//      }
-//    }
     add_parameter {
       extensions {
         org = COA
@@ -302,7 +286,7 @@ plugin.tx_linkhandler {
   // page
 
 page {
-  includeCSS.organiser = EXT:org/res/html/org.css
+  includeCSS.organiser = EXT:org/Resources/Public/Css/org.css
   config.headerComment (
           TYPO3-Programmierung: die-netzmacher.de
   )

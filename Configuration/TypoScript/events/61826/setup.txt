@@ -1,2 +1,2 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/events/61826/page/setup.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/events/61826/tx_browser_pi1/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/events/61826/tx_browser_pi1/setup.ts">

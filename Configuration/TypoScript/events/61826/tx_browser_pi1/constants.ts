@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_event_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
           file      = tx_org_event.image
           height    = 95c
           path      = uploads/tx_org/
@@ -47,7 +47,7 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_event_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
           file      = tx_org_event.image
           #height    =
           #layoutKey = picture

@@ -66,7 +66,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:org/res/icons/defaults/tx_org_job_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_job_300x200.png
           file      = tx_org_headquarters.image // tx_org_job.image
           height    = 70c
           #listNum   =
@@ -75,7 +75,7 @@ plugin.tx_browser_pi1 {
           width     = 120m
         }
         1 {
-          default   = EXT:org/res/icons/defaults/tx_org_staff_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
           file      = tx_org_staff.image
           height    = 70c
           #listNum   =
@@ -84,7 +84,7 @@ plugin.tx_browser_pi1 {
           width     = 70c
         }
         2 {
-          default   = EXT:org/res/icons/defaults/tx_org_headquarters_300x200.png
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
           height    = 80
           #listNum   =

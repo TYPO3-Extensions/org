@@ -1,8 +1,17 @@
 6.0.7
-  14-12-15
+  15-01-02
   Features
   * #i0041: Additional static template for calendar: display up-to-date items only
   Improvements
+  * #i0042: moved
+            * res/*.gif to Resources/Public/Images/Icons
+            * res/html/org.css to Resources/Public/Css
+            * org/res/icons/defaults to Resources/Public/Images/Icons/Default
+            removed
+            * Configuration/TypoScript/news/402
+            * foundation-5.3.0
+            * res/html/shopping_cart
+            * res/jss/fadeSlideShow
   * #i0040: removed: searchform < plugin.tx_browser_pi1.displayList.master_templates.subparts.listview.searchform.simple
   * #i0039: removed: tx_org_event_mm_tx_org_news
   * #i0038: moved: Constant pages.headquarter to pages.headquarters
