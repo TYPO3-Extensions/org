@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_news.imageseo
-          width     = 160c
+          width     = 160
         }
       }
       text {

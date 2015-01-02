@@ -30,7 +30,7 @@ plugin.tx_browser_pi1 {
           height    = 56c
           path      = uploads/tx_org/
           seo       = tx_org_staff.imageseo
-          width     = 56c
+          width     = 56
         }
         2 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
@@ -38,7 +38,7 @@ plugin.tx_browser_pi1 {
           height    = 90c
           path      = uploads/tx_org/
           seo       = tx_org_headquarters.imageseo
-          width     = 220c
+          width     = 220
         }
         3 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
@@ -46,7 +46,7 @@ plugin.tx_browser_pi1 {
           height    = 90c
           path      = uploads/tx_org/
           seo       = tx_org_news.imageseo
-          width     = 220c
+          width     = 220
         }
         4 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_location_300x200.png
@@ -54,7 +54,7 @@ plugin.tx_browser_pi1 {
           height    = 90c
           path      = uploads/tx_org/
           seo       = tx_org_location.imageseo
-          width     = 220c
+          width     = 220
         }
         5 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
@@ -62,7 +62,7 @@ plugin.tx_browser_pi1 {
           height    = 90c
           path      = uploads/tx_org/
           seo       = tx_org_cal.imageseo
-          width     = 220c
+          width     = 220
         }
       }
       text {

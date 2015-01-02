@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_staff.imageseo
-          width     = 97c
+          width     = 97
         }
         1 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_news_300x200.png

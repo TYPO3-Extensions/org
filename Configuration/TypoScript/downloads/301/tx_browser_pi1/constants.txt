@@ -24,7 +24,7 @@ plugin.tx_browser_pi1 {
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_downloads.documentscaption // tx_org_downloads.teaser_title // tx_org_downloads.title
-          width     = 137c
+          width     = 137
         }
         1 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_staff.title // tx_org_staff.imageseo // tx_org_downloads.title
-          #width     = 160c
+          #width     = 160
         }
       }
       text {

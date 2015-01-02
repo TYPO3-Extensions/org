@@ -16,7 +16,7 @@
   // plugin.tx_browser_pi1
 
 plugin.tx_browser_pi1 {
-  
+
   views {
     list {
       101 = +Org: People
@@ -134,7 +134,7 @@ plugin.tx_browser_pi1 {
           my_listview_page = TEXT
           my_listview_page {
             value = All People &raquo;
-            lang.de = Personen-Datenbanken &raquo; 
+            lang.de = Personen-Datenbanken &raquo;
             typolink {
               parameter = {$plugin.org.pages.people}
               title {
@@ -196,7 +196,7 @@ plugin.tx_browser_pi1 {
               file {
                 width.field >
                 width   = 160c;
-                height  = 110c;
+                height  = 110;
               }
                 // #43922, dwildt, 4-
               //altText.field   >
@@ -246,7 +246,7 @@ plugin.tx_browser_pi1 {
                     cObject {
                       key = ###TX_ORG_NEWS.IMAGEORIENT###
                       key {
-                        field > 
+                        field >
                       }
                     }
                   }
@@ -500,7 +500,7 @@ plugin.tx_browser_pi1 {
       }
     }
   }
-  
+
   _LOCAL_LANG {
     default {
       list_mode_101               = People

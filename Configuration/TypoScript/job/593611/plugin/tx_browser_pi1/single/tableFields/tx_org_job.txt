@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
                     listNum = 0
                   }
                   height  = 200c
-                  width   = 200c
+                  width   = 200
                 }
                 altText = TEXT
                 altText {

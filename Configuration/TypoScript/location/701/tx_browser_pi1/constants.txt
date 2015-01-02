@@ -64,7 +64,7 @@ plugin.tx_browser_pi1 {
           height    = 90c
           path      = uploads/tx_org/
           seo       = tx_org_location.imageseo
-          width     = 220c
+          width     = 220
         }
       }
       text {

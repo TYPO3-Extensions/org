@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
           #listNum   =
           path      = uploads/tx_org/
           seo       = tx_org_staff.imageseo // tx_org_staff.title // tx_org_job.teaser_title // tx_org_job.title
-          width     = 70c
+          width     = 70
         }
         2 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
