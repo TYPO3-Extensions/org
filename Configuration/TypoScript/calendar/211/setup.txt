@@ -99,7 +99,7 @@ plugin.tx_browser_pi1 {
               wrap = <div class="datetime">|</div>
             }
               // title
-            20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
+            20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.5
             20 {
               default {
                 field := prependString(tx_org_cal.marginal_title // )
