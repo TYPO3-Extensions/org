@@ -47,14 +47,14 @@ plugin.tx_browser_pi1 {
     singleview {
       image {
         0 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
-          file      = tx_org_event.image
-          #height    =
-          #layoutKey = picture
-          #listNum   =
-          path      = uploads/tx_org/
-          #seo       = tx_org_event.imageseo
-          #width     =
+          caption     = tx_org_event.imagecaption
+          file        = tx_org_event.image
+          height      = tx_org_event.imageheight
+          imagecols   = tx_org_event.imagecols
+          imageorient = tx_org_event.imageorient
+          path        = uploads/tx_org/
+          seo         = tx_org_event.imageseo
+          width       = tx_org_event.imagewidth
         }
       }
       text {
