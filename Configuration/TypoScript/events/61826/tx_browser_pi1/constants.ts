@@ -21,10 +21,10 @@ plugin.tx_browser_pi1 {
         0 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
           file      = tx_org_event.image
-          height    = 95c
+          height    = 70c
           path      = uploads/tx_org/
           seo       = tx_org_event.imageseo
-          width     = 95
+          width     = 70
         }
       }
       text {
