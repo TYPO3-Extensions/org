@@ -43,8 +43,8 @@ plugin.tx_browser_pi1 {
                       field = tx_org_event.uid
                       noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_mm_all.table_foreign = 'tx_org_event'|
                     }
-                    //andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
-                    orderBy = tx_org_cal.datetime ASC
+                    andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
+                    orderBy = tx_org_cal.datetime DESC
                     //max = 3
                   }
                     // tx_org_cal.title croped and linked
@@ -57,7 +57,7 @@ plugin.tx_browser_pi1 {
                     default = TEXT
                     default {
                       field = datetime
-                      strftime  = %a., %d. %b. %Y %M:%H Uhr
+                      strftime  = %a., %d. %b. %Y %H:%M Uhr
                       wrap = <li class="url circle">|</li>
                       stdWrap {
                         noTrimWrap = || &raquo;|
@@ -79,6 +79,28 @@ plugin.tx_browser_pi1 {
                     url < .page
                     url {
                       typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.url
+                    }
+                  }
+                }
+                20 < .10
+                20 {
+                  select {
+                    andWhere = tx_org_cal.datetime <= UNIX_TIMESTAMP()
+                    //max = 3
+                  }
+                  renderObj {
+                    default {
+                      wrap = <li class="url circle expired">|</li>
+                    }
+                    notype {
+                      wrap = <li class="url circle expired">|</li>
+                    }
+                      // link to internal page
+                    page {
+                      wrap = <li class="url circle expired">|</li>
+                    }
+                    url {
+                      wrap = <li class="url circle expired">|</li>
                     }
                   }
                 }
