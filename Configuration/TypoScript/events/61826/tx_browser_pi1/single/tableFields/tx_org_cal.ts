@@ -59,7 +59,9 @@ plugin.tx_browser_pi1 {
                       field = datetime
                       strftime  = %a., %d. %b. %Y %H:%M Uhr
                       wrap = <li class="url">|</li>
-                      noTrimWrap = || &raquo;|
+                      stdWrap {
+                        noTrimWrap = || &raquo;|
+                      }
                       typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
                     }
                       // no link
