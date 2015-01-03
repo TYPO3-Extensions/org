@@ -70,10 +70,10 @@ plugin.tx_browser_pi1 {
       image {
         0 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
-          file      = tx_org_cal.image
+          file      = tx_org_cal.image // tx_org_event.image
           height    = 95c
           path      = uploads/tx_org/
-          seo       = tx_org_cal.imageseo
+          seo       = tx_org_cal.imageseo // tx_org_event.imageseo
           width     = 95
         }
         6 {
@@ -87,7 +87,7 @@ plugin.tx_browser_pi1 {
       text {
         0 {
           crop    = 200|...|1
-          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+          field   = tx_org_event.teaser_short // tx_org_event.bodytext // tx_org_cal.teaser_short // tx_org_cal.bodytext
         }
         6 {
           crop    = 200|...|1
