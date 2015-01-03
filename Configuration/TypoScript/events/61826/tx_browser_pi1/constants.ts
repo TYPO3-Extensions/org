@@ -57,6 +57,12 @@ plugin.tx_browser_pi1 {
           #width     =
         }
       }
+      text {
+        0 {
+          header    = tx_org_event.header
+          bodytext  = tx_org_event.bodytext // tx_org_event.teaser_short
+        }
+      }
     }
   }
 }
