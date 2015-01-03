@@ -30,40 +30,40 @@ plugin.tx_browser_pi1 {
                 }
               }
               1 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               2 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               8 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               9 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               10 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               17 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               18 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               25 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
               26 {
-                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.21
-                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_cal.title.20.0.31
+                21 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.21
+                31 < plugin.tx_browser_pi1.views.single.61826.tx_org_event.title.20.0.31
               }
             }
             wrap = <div class="row">|</div>
