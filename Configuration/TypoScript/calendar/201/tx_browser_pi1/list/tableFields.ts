@@ -58,10 +58,16 @@ plugin.tx_browser_pi1 {
               39 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+                10 {
+                  tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.6
+                }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
                 // teaser_short: default, notype, page, url, tx_org_event
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
+              40 {
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6
+              }
                 // location
               50 = COA
               50 {
@@ -140,11 +146,11 @@ plugin.tx_browser_pi1 {
                       strftime  = %a
                       wrap = <li class="weekday">|</li>
                     }
+                    tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
                   }
                     // day of month as number
                   20 < .10
                   20 {
-                    test = dummy
                     default {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
@@ -160,6 +166,24 @@ plugin.tx_browser_pi1 {
                     url {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
+                    }
+                    tx_org_event {
+                      default {
+                        strftime  = %d
+                        wrap      = <li class="day_of_month">|</li>
+                      }
+                      notype {
+                        strftime  = %d
+                        wrap      = <li class="day_of_month">|</li>
+                      }
+                      page {
+                        strftime  = %d
+                        wrap      = <li class="day_of_month">|</li>
+                      }
+                      url {
+                        strftime  = %d
+                        wrap      = <li class="day_of_month">|</li>
+                      }
                     }
                   }
                     // month year
@@ -180,6 +204,24 @@ plugin.tx_browser_pi1 {
                     url {
                       strftime  = %b %y
                       wrap      = <li class="month">|</li>
+                    }
+                    tx_org_event {
+                      default {
+                        strftime  = %b %y
+                        wrap      = <li class="month">|</li>
+                      }
+                      notype {
+                        strftime  = %b %y
+                        wrap      = <li class="month">|</li>
+                      }
+                      page {
+                        strftime  = %b %y
+                        wrap      = <li class="month">|</li>
+                      }
+                      url {
+                        strftime  = %b %y
+                        wrap      = <li class="month">|</li>
+                      }
                     }
                   }
                 }
