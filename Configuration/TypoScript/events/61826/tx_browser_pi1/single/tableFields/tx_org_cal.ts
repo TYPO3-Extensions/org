@@ -14,7 +14,7 @@ plugin.tx_browser_pi1 {
                   field = tx_org_event.tx_org_cal
                 }
               }
-              wrap = <ul class="vcard tx_org_event tx_org_cal">|</ul><!-- vcard -->
+              wrap = <div class="columns"><ul class="vcard tx_org_event tx_org_cal">|</ul><!-- vcard --></div><!-- /columns -->
                 // header
               10 = TEXT
               10 {
@@ -26,8 +26,8 @@ plugin.tx_browser_pi1 {
                 wrap = <li class="header">|</li>
               }
                 // tx_org_event.uid
-              19 = TEXT
-              19 {
+              XXX19 = TEXT
+              XXX19 {
                 field = tx_org_event.uid
                 wrap = <li class="tx_org_cal">|</li>
               }
@@ -83,7 +83,6 @@ plugin.tx_browser_pi1 {
                 }
                 wrap = <li class="tx_org_cal">|</li>
               }
-              wrap = <div class="columns">|</div>
             }
           }
         }
