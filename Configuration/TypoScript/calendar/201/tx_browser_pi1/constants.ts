@@ -63,10 +63,21 @@ plugin.tx_browser_pi1 {
         0 {
           field   = tx_org_cal.teaser_title // tx_org_cal.title
         }
+        tx_org_event {
+          field   = tx_org_cal.teaser_title // tx_org_cal.title
+        }
       }
       image {
         0 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
+          file      = tx_org_cal.image
+          height    = 95c
+          path      = uploads/tx_org/
+          seo       = tx_org_cal.imageseo
+          width     = 95
+        }
+        tx_org_event {
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
           file      = tx_org_cal.image // tx_org_event.image
           height    = 95c
           path      = uploads/tx_org/
@@ -77,17 +88,29 @@ plugin.tx_browser_pi1 {
       text {
         0 {
           crop    = 200|...|1
+          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+        }
+        tx_org_event {
+          crop    = 200|...|1
           field   = tx_org_event.teaser_short // tx_org_event.bodytext // tx_org_cal.teaser_short // tx_org_cal.bodytext
         }
       }
       url {
         0 {
-          key       = tx_org_event.type // tx_org_cal.type
-          page      = tx_org_event.page // tx_org_cal.page
+          key       = tx_org_cal.type
+          page      = tx_org_cal.page
           record    = tx_org_cal.uid
           showUid   = calendarUid
           #singlePid =
-          url       = tx_org_event.url // tx_org_cal.url
+          url       = tx_org_cal.url
+        }
+        tx_org_event {
+          key       = tx_org_event.type
+          page      = tx_org_event.page
+          record    = tx_org_cal.uid
+          showUid   = calendarUid
+          #singlePid =
+          url       = tx_org_event.url
         }
       }
     }
