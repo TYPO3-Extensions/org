@@ -24,7 +24,7 @@ plugin.tx_browser_pi1 {
                 // title: default, notype, page, url, tx_org_event
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
               20 {
-                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.tx_org_event
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.6
               }
                 // tx_org_cal.subtitle
               21 = TEXT
