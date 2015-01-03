@@ -9,10 +9,10 @@ plugin.tx_browser_pi1 {
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
             // placeholder: radialsearch linear distance
           deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
-            // content, margin
+            // bookmarks, title, subtitle, tx_org_caltype.title, image, teaser_short, location
           title = COA
           title {
-              // content: bookmarks, title, tx_org_caltype.title, teaser_short, location
+              // bookmarks, title, subtitle, tx_org_caltype.title, image, teaser_short, location
             10 = COA
             10 {
                 // socialmedia_bookmarks
@@ -50,6 +50,7 @@ plugin.tx_browser_pi1 {
                   field = tx_org_caltype.title
                 }
               }
+                // image
               39 = COA
               39 {
                   // image
