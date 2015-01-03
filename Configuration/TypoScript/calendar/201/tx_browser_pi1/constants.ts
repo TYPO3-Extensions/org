@@ -67,10 +67,10 @@ plugin.tx_browser_pi1 {
       image {
         0 {
           default   = EXT:Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
-          file      = tx_org_cal.image
+          file      = tx_org_cal.image // tx_org_event.image
           height    = 95c
           path      = uploads/tx_org/
-          seo       = tx_org_cal.imageseo
+          seo       = tx_org_cal.imageseo // tx_org_event.imageseo
           width     = 95
         }
       }
@@ -82,12 +82,12 @@ plugin.tx_browser_pi1 {
       }
       url {
         0 {
-          key       = tx_org_cal.type
-          page      = tx_org_cal.page
+          key       = tx_org_event.type // tx_org_cal.type
+          page      = tx_org_event.page // tx_org_cal.page
           record    = tx_org_cal.uid
           showUid   = calendarUid
           #singlePid =
-          url       = tx_org_cal.url
+          url       = tx_org_event.url // tx_org_cal.url
         }
       }
     }
