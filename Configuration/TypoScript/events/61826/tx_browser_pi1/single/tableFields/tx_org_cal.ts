@@ -58,17 +58,15 @@ plugin.tx_browser_pi1 {
                     default {
                       field = datetime
                       strftime  = %a., %d. %b. %Y %H:%M Uhr
-                      wrap = <li class="url circle">|</li>
-                      stdWrap {
-                        noTrimWrap = || &raquo;|
-                      }
+                      wrap = <li class="url">|</li>
+                      noTrimWrap = || &raquo;|
                       typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
                     }
                       // no link
                     notype = TEXT
                     notype {
                       field   = title
-                      wrap = <li class="url circle">|</li>
+                      wrap = <li class="url">|</li>
                     }
                       // link to internal page
                     page < .default
@@ -90,17 +88,17 @@ plugin.tx_browser_pi1 {
                   }
                   renderObj {
                     default {
-                      wrap = <li class="url circle expired">|</li>
+                      wrap = <li class="url expired">|</li>
                     }
                     notype {
-                      wrap = <li class="url circle expired">|</li>
+                      wrap = <li class="url expired">|</li>
                     }
                       // link to internal page
                     page {
-                      wrap = <li class="url circle expired">|</li>
+                      wrap = <li class="url expired">|</li>
                     }
                     url {
-                      wrap = <li class="url circle expired">|</li>
+                      wrap = <li class="url expired">|</li>
                     }
                   }
                 }
