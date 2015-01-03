@@ -58,10 +58,6 @@ plugin.tx_browser_pi1 {
               }
                 // teaser_short: default, notype, page, url, tx_org_event
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
-              40 {
-                  // link to tx_org_event
-                //tx_org_event < .default
-              }
                 // location
               50 = COA
               50 {
@@ -133,7 +129,6 @@ plugin.tx_browser_pi1 {
                       strftime  = %a
                       wrap = <li class="weekday">|</li>
                     }
-                    //tx_org_event < .default
                     url {
                       value >
                       lang >
@@ -158,10 +153,6 @@ plugin.tx_browser_pi1 {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
                     }
-                    tx_org_event {
-                      strftime  = %d
-                      wrap      = <li class="day_of_month">|</li>
-                    }
                     url {
                       strftime  = %d
                       wrap      = <li class="day_of_month">|</li>
@@ -179,10 +170,6 @@ plugin.tx_browser_pi1 {
                       wrap      = <li class="month">|</li>
                     }
                     page {
-                      strftime  = %b %y
-                      wrap      = <li class="month">|</li>
-                    }
-                    tx_org_event {
                       strftime  = %b %y
                       wrap      = <li class="month">|</li>
                     }
