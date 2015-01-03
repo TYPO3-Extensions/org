@@ -83,6 +83,7 @@ plugin.tx_browser_pi1 {
               }
               wrap = <li class="tx_org_cal">|</li>
             }
+            wrap = <div class="columns">|</div>
           }
         }
       }
