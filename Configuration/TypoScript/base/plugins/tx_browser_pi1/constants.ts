@@ -22,6 +22,10 @@ plugin.tx_browser_pi1 {
           field   = tx_org_cal.teaser_title // tx_org_cal.title
           tag     = h4
         }
+        6 {
+          field   = tx_org_event.teaser_title // tx_org_event.title
+          tag     = h4
+        }
       }
       image {
         1 {
@@ -64,6 +68,14 @@ plugin.tx_browser_pi1 {
           seo       = tx_org_cal.imageseo
           width     = 220
         }
+        6 {
+          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
+          file      = tx_org_event.image
+          height    = 90c
+          path      = uploads/tx_org/
+          seo       = tx_org_event.imageseo
+          width     = 220
+        }
       }
       text {
         1 {
@@ -80,6 +92,9 @@ plugin.tx_browser_pi1 {
         }
         5 {
           field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+        }
+        6 {
+          field   = tx_org_event.teaser_short // tx_org_event.bodytext
         }
       }
       url {
@@ -122,6 +137,14 @@ plugin.tx_browser_pi1 {
           showUid   = calendarUid
           #singlePid =
           url       = tx_org_cal.url // url
+        }
+        6 {
+          key       = tx_org_event.type // type
+          page      = tx_org_event.page // page
+          record    = tx_org_event.uid // uid
+          showUid   = eventUid
+          #singlePid =
+          url       = tx_org_event.url // url
         }
       }
     }
