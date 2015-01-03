@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
                   required = 1
                 }
                   // length
-                31 = TEXT
+                31 = COA
                 31 {
                   10 = TEXT
                   10 {
