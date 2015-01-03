@@ -12,7 +12,7 @@ plugin.tx_browser_pi1 {
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                 <div class="main columns">
                   ###RECORD_BROWSER###
-                  ###TX_ORG_HEADQUARTERS.TITLE###
+                  ###TX_ORG_EVENT.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
                   <p class="backbutton">
