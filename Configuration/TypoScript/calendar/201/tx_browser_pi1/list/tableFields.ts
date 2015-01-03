@@ -9,7 +9,7 @@ plugin.tx_browser_pi1 {
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
             // placeholder: radialsearch linear distance
           deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
-            // bookmarks, title, subtitle, tx_org_caltype.title, image, teaser_short, location
+            // bookmarks, title, subtitle, tx_org_caltype.title, image, teaser_short, location, datesheet
           title = COA
           title {
               // bookmarks, title, subtitle, tx_org_caltype.title, image, teaser_short, location

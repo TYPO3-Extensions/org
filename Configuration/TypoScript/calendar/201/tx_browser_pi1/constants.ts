@@ -65,6 +65,7 @@ plugin.tx_browser_pi1 {
         }
         6 {
           field   = tx_org_cal.teaser_title // tx_org_cal.title
+          tag     = h2
         }
       }
       image {
