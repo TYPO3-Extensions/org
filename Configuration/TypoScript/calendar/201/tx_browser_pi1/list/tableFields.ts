@@ -147,6 +147,36 @@ plugin.tx_browser_pi1 {
                       wrap = <li class="weekday">|</li>
                     }
                     tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
+                    tx_org_event {
+                      default {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a
+                        wrap = <li class="weekday">|</li>
+                      }
+                      notype {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a
+                        wrap = <li class="weekday">|</li>
+                      }
+                      page {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a
+                        wrap = <li class="weekday">|</li>
+                      }
+                      url {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a
+                        wrap = <li class="weekday">|</li>
+                      }
+                    }
                   }
                     // day of month as number
                   20 < .10
