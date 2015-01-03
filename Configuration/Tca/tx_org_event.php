@@ -72,11 +72,6 @@ $TCA['tx_org_event'] = array(
             '1' => 'record',
             '2' => 'EXT:org/Configuration/ExtIcon/event.gif',
           ),
-          'tx_org_cal' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
-            '1' => 'tx_org_cal',
-            '2' => 'EXT:org/Configuration/ExtIcon/cal.gif',
-          ),
           'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
             '1' => 'page',

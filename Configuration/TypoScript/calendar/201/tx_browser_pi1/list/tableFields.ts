@@ -25,7 +25,7 @@ plugin.tx_browser_pi1 {
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
               20 {
                   // link to tx_org_event
-                tx_org_event < .default
+                //tx_org_event < .default
               }
                 // tx_org_cal.subtitle
               21 = TEXT
@@ -59,13 +59,7 @@ plugin.tx_browser_pi1 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
                 10 {
-                  tx_org_event < .default
-                  tx_org_event {
-                    file.import.stdWrap.cObject.10.20.field := appendString( // tx_org_event.image)
-                    file.import.stdWrap.cObject.10.if.isTrue.field := appendString( // tx_org_event.image)
-                    altText.field := appendString( // tx_org_event.imageseo)
-                    title.field := appendString( // tx_org_event.imageseo)
-                  }
+                  //tx_org_event < .default
                 }
                 wrap = <div style="float:left;padding-right:1em;">|</div>
               }
@@ -74,11 +68,6 @@ plugin.tx_browser_pi1 {
               40 {
                   // link to tx_org_event
                 tx_org_event < .default
-                tx_org_event {
-                  10 {
-                    field := prependString(tx_org_event.teaser_short // tx_org_event.bodytext // )
-                  }
-                }
               }
                 // location
               50 = COA
