@@ -56,7 +56,8 @@ plugin.tx_browser_pi1 {
                       // link to detail view
                     default = TEXT
                     default {
-                      field = title
+                      field = datetime
+                      strftime  = %a., %d. %b. %Y %M:%H Uhr
                       wrap = <li class="url circle">|</li>
                       stdWrap {
                         noTrimWrap = || &raquo;|
