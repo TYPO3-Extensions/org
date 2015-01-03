@@ -22,8 +22,24 @@ plugin.tx_browser_pi1 {
                   // length
                 31 = TEXT
                 31 {
-                  field = tx_org_event.length
-                  required = 1
+                  10 = TEXT
+                  10 {
+                    value = Length
+                    lang {
+                      de = Dauer
+                      en = Length
+                    }
+                    noTrimWrap = ||: |
+                  }
+                  20 = TEXT
+                  20 {
+                    field = tx_org_event.length
+                  }
+                  if {
+                    isTrue {
+                      field = tx_org_event.length
+                    }
+                  }
                   stdWrap {
                     parseFunc < lib.parseFunc_RTE
                   }
