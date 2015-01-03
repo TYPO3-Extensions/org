@@ -9,6 +9,9 @@ plugin.tx_browser_pi1 {
         tx_org_event =
         tx_org_event {
           title < plugin.tx_browser_pi1.displaySingle.master_templates.tableFields.imageText.0
+          title {
+            wrap = <div class="row">|</div>
+          }
           XXXtitle {
             20 {
               0 {
