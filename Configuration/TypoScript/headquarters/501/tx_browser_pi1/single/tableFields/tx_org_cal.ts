@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
                     // link to detail view
                   default = TEXT
                   default {
-                    field = title
+                    field = teaser_marginal // teaser_list // title
                     wrap = <li class="url circle">|</li>
                     stdWrap {
                       noTrimWrap = || &raquo;|
