@@ -85,16 +85,16 @@ plugin.tx_browser_pi1 {
           field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
         }
         3 {
-          field   = tx_org_news.teaser_short // tx_org_news.bodytext
+          field   = tx_org_news.teaser_marginal // tx_org_news.teaser_short // tx_org_news.bodytext
         }
         4 {
-          field   = tx_org_location.teaser_short // tx_org_location.bodytext
+          field   = tx_org_cal.teaser_marginal // tx_org_cal.teaser_short // tx_org_location.bodytext
         }
         5 {
-          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
+          field   = tx_org_cal.teaser_marginal // tx_org_cal.teaser_short // tx_org_cal.bodytext
         }
         6 {
-          field   = tx_org_event.teaser_short // tx_org_event.bodytext
+          field   = tx_org_event.teaser_marginal // tx_org_event.teaser_short // tx_org_event.bodytext
         }
       }
       url {
