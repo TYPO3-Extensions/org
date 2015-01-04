@@ -7,7 +7,7 @@ plugin.tx_browser_pi1 {
           tag     = h4
         }
         2 {
-          field   = tx_org_headquarters.teaser_title // tx_org_headquarters.title
+          field   = tx_org_headquarters.marginal_title // tx_org_headquarters.teaser_title // tx_org_headquarters.title
           tag     = h4
         }
         3 {
@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
           tag     = h4
         }
         5 {
-          field   = tx_org_cal.teaser_title // tx_org_cal.title
+          field   = tx_org_cal.marginal_title // tx_org_cal.teaser_title // tx_org_cal.title
           tag     = h4
         }
         6 {
@@ -85,16 +85,16 @@ plugin.tx_browser_pi1 {
           field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
         }
         3 {
-          field   = tx_org_news.teaser_marginal // tx_org_news.teaser_short // tx_org_news.bodytext
+          field   = tx_org_news.teaser_short // tx_org_news.bodytext
         }
         4 {
-          field   = tx_org_cal.teaser_marginal // tx_org_cal.teaser_short // tx_org_location.bodytext
+          field   = tx_org_cal.teaser_short // tx_org_location.bodytext
         }
         5 {
-          field   = tx_org_cal.teaser_marginal // tx_org_cal.teaser_short // tx_org_cal.bodytext
+          field   = tx_org_cal.teaser_short // tx_org_cal.bodytext
         }
         6 {
-          field   = tx_org_event.teaser_marginal // tx_org_event.teaser_short // tx_org_event.bodytext
+          field   = tx_org_event.teaser_short // tx_org_event.bodytext
         }
       }
       url {
