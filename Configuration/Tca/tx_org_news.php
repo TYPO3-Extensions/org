@@ -569,7 +569,7 @@ $TCA[ 'tx_org_news' ] = array(
         ),
       ),
     ),
-    'seo_keywords,seo_description' => array(
+    'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'l10n_mode' => 'prefixLangTitle',
