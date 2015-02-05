@@ -1,9 +1,18 @@
 plugin.tx_browser_pi1 {
 
-  XXXadvanced {
+  advanced {
     sql {
       devider {
-        tx_org_staffgroup {
+        tx_org_headquarters {
+          uid {
+            display = TEXT
+            display {
+              value =
+              wrap = |
+            }
+          }
+        }
+        XXXtx_org_staffgroup {
           title {
             display = TEXT
             display {
