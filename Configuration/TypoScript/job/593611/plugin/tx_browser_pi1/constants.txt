@@ -113,8 +113,16 @@ plugin.tx_browser_pi1 {
 }
 
 [globalVar = GP:tx_browser_pi1|jobUid > 0]
-  plugin.tx_browser_pi1.map.zoomLevel.mode = fixed
-  plugin.tx_browser_pi1.map.zoomLevel.start = 10
-  plugin.tx_browser_pi1.map.design.width = 303
-  plugin.tx_browser_pi1.map.design.height = 150
+  plugin.tx_browser_pi1 {
+    map {
+      zoomLevel {
+        mode = fixed
+        start = 10
+      }
+      design {
+        XXXheight = 150
+        XXXwidth = 303
+      }
+    }
+  }
 [global]

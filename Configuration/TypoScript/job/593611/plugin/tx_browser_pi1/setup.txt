@@ -16,7 +16,11 @@ plugin.tx_browser_pi1 {
     }
   }
 
-  displayList.selectBox_orderBy.display = 1
+  displayList {
+    selectBox_orderBy {
+      display = 0
+    }
+  }
 
   navigation.map.template.file = EXT:browser/Resources/Private/Templates/HTML/Map/map_filter_1.3.tmpl
 
@@ -26,12 +30,6 @@ plugin.tx_browser_pi1 {
       593611 {
         name    = +Org: Jobs
         showUid = jobUid
-        navigation < plugin.tx_browser_pi1.navigation
-        navigation {
-          map {
-            enabled = disabled
-          }
-        }
       }
     }
     single {
@@ -40,5 +38,5 @@ plugin.tx_browser_pi1 {
   }
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/list/_setup.txt">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/single/_setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/single/_setup.ts">

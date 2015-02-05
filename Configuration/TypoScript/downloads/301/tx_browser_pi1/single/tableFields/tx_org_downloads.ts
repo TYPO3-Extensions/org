@@ -522,7 +522,7 @@ plugin.tx_browser_pi1 {
                             // <img ... />
                           30 = IMAGE
                           30 {
-                            file    = EXT:org/Resources/Public/Images/download.gif
+                            file    = EXT:org/Resources/Public/Images/Icons/download.gif
                           }
                             // ... label</a>
                           40 = TEXT
@@ -613,7 +613,7 @@ plugin.tx_browser_pi1 {
                             // <img ... />
                           20 = IMAGE
                           20 {
-                            file    = EXT:org/Resources/Public/Images/shipping.gif
+                            file    = EXT:org/Resources/Public/Images/Icons/shipping.gif
                           }
                             // label</button></td>
                           30 = TEXT
@@ -865,7 +865,7 @@ plugin.tx_browser_pi1 {
                         // <img ... />
                       30 = IMAGE
                       30 {
-                        file    = EXT:org/Resources/Public/Images/download.gif
+                        file    = EXT:org/Resources/Public/Images/Icons/download.gif
                       }
                         // ... label</a>
                       40 = TEXT
@@ -953,7 +953,7 @@ plugin.tx_browser_pi1 {
                         // <img ... />
                       20 = IMAGE
                       20 {
-                        file    = EXT:org/Resources/Public/Images/shipping.gif
+                        file    = EXT:org/Resources/Public/Images/Icons/shipping.gif
                       }
                         // label</button></td>
                       30 = TEXT

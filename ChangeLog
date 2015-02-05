@@ -1,3 +1,13 @@
+6.0.9
+  15-02-05
+  New feature
+  * #i0044: job application got an external url
+  Improvements
+  * #i0047: job list and single view is improved
+  Bugfixes
+  * #i0046: Margin content has broken links in single views
+  * #i0045: Icons had broken paths in TypoScript
+
 6.0.8
   15-01-14
   Improvements

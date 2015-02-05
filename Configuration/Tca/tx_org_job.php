@@ -1,13 +1,13 @@
 <?php
 
-if (!defined('TYPO3_MODE'))
+if ( !defined( 'TYPO3_MODE' ) )
 {
-  die('Access denied.');
+  die( 'Access denied.' );
 }
 
 
-$TCA['tx_org_job'] = array(
-  'ctrl' => $TCA['tx_org_job']['ctrl'],
+$TCA[ 'tx_org_job' ] = array(
+  'ctrl' => $TCA[ 'tx_org_job' ][ 'ctrl' ],
   'interface' => array(
     'showRecordFieldList' => ''
     . 'type,page,url,'
@@ -15,7 +15,7 @@ $TCA['tx_org_job'] = array(
     . 'mail_address,mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
-    . 'applicationaddress,onlineapplication,'
+    . 'applicationaddress,onlineapplication,applicationurl,'
     . 'newsletter,'
     . 'tx_org_headquarters,'
     . 'tx_org_staff,'
@@ -25,7 +25,7 @@ $TCA['tx_org_job'] = array(
     . 'hidden,starttime,endtime,'
   ,
   ),
-  'feInterface' => $TCA['tx_org_job']['feInterface'],
+  'feInterface' => $TCA[ 'tx_org_job' ][ 'feInterface' ],
   'columns' => array(
     'sys_language_uid' => array(
       'exclude' => 1,
@@ -35,8 +35,8 @@ $TCA['tx_org_job'] = array(
         'foreign_table' => 'sys_language',
         'foreign_table_where' => 'AND sys_language.hidden = 0 ORDER BY sys_language.title',
         'items' => array(
-          array('LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1),
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array( 'LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1 ),
+          array( 'LLL:EXT:lang/locallang_general.php:LGL.default_value', 0 ),
         ),
       ),
     ),
@@ -47,7 +47,7 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('', 0),
+          array( '', 0 ),
         ),
         'foreign_table' => 'tx_org_cal',
         'foreign_table_where' => 'AND tx_org_cal.uid=###REC_FIELD_l10n_parent### AND tx_org_cal.sys_language_uid IN (-1,0)',
@@ -165,10 +165,10 @@ $TCA['tx_org_job'] = array(
         'max' => '20',
         'eval' => 'date',
         'checkbox' => '0',
-        'default' => mktime(date('H'), date('i'), 0, date('m'), date('d'), date('Y')),
+        'default' => mktime( date( 'H' ), date( 'i' ), 0, date( 'm' ), date( 'd' ), date( 'Y' ) ),
         'range' => array(
-          'upper' => mktime(3, 14, 7, 1, 19, 2038),
-          'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+          'upper' => mktime( 3, 14, 7, 1, 19, 2038 ),
+          'lower' => mktime( 0, 0, 0, date( 'm' ) - 1, date( 'd' ), date( 'Y' ) )
         )
       )
     ),
@@ -227,6 +227,15 @@ $TCA['tx_org_job'] = array(
         'size' => '60',
         'eval' => 'trim'
       ),
+//      'external' => array(
+//        0 => array(
+//          'field' => 'bdfMapAddress',
+//          'userFunc' => array(
+//            'class' => 'EXT:org4loewengruppe/Resources/Private/Transformation/class.tx_org4loewengruppe_transformation.php:tx_org4loewengruppe_transformation',
+//            'method' => 'mail_street'
+//          )
+//        )
+//      ),
     ),
     'mail_zip' => array(
       'exclude' => $bool_exclude_default,
@@ -326,6 +335,29 @@ $TCA['tx_org_job'] = array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.onlineapplication',
       'config' => array(
         'type' => 'check'
+      ),
+    ),
+    'applicationurl' => array(
+      'exclude' => $bool_exclude_default,
+//      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.applicationurl',
+      'config' => array(
+        'type' => 'input',
+        'size' => '80',
+        'max' => '256',
+        'checkbox' => '',
+        'eval' => 'trim',
+        'wizards' => array(
+          '_PADDING' => '2',
+          'link' => array(
+            'type' => 'popup',
+            'title' => 'Link',
+            'icon' => 'link_popup.gif',
+            'script' => 'browse_links.php?mode=wizard',
+            'JSopenParams' => $JSopenParams,
+          ),
+        ),
+        'softref' => 'typolink',
       ),
     ),
     'newsletter' => array(
@@ -626,10 +658,10 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('', ''),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left'),
+          array( '', '' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.1', 'center' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.2', 'right' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imagecaption_position.I.3', 'left' ),
         ),
         'default' => ''
       ),
@@ -672,17 +704,17 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif'),
-          array('LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif'),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.0', 0, 'selicons/above_center.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.1', 1, 'selicons/above_right.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.2', 2, 'selicons/above_left.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.3', 8, 'selicons/below_center.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.4', 9, 'selicons/below_right.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.5', 10, 'selicons/below_left.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.6', 17, 'selicons/intext_right.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.7', 18, 'selicons/intext_left.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.8', '--div--' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.9', 25, 'selicons/intext_right_nowrap.gif' ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:imageorient.I.10', 26, 'selicons/intext_left_nowrap.gif' ),
         ),
         'selicon_cols' => 6,
         'default' => '0',
@@ -736,16 +768,16 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.0', 0 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.1', 1 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.2', 2 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.3', 3 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.4', 10 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.5', 11 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.6', 20 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.7', 23 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.8', 25 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_effects.I.9', 26 ),
         ),
       ),
     ),
@@ -755,15 +787,15 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.0', 0 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.1', 1 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.2', 2 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.3', 3 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.4', 4 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.5', 5 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.6', 6 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.7', 7 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_frames.I.8', 8 ),
         ),
       ),
     ),
@@ -773,26 +805,26 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1),
-          array('GIF/256', 10),
-          array('GIF/128', 11),
-          array('GIF/64', 12),
-          array('GIF/32', 13),
-          array('GIF/16', 14),
-          array('GIF/8', 15),
-          array('PNG', 39),
-          array('PNG/256', 30),
-          array('PNG/128', 31),
-          array('PNG/64', 32),
-          array('PNG/32', 33),
-          array('PNG/16', 34),
-          array('PNG/8', 35),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26),
-          array('LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28),
+          array( 'LLL:EXT:lang/locallang_general.php:LGL.default_value', 0 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.1', 1 ),
+          array( 'GIF/256', 10 ),
+          array( 'GIF/128', 11 ),
+          array( 'GIF/64', 12 ),
+          array( 'GIF/32', 13 ),
+          array( 'GIF/16', 14 ),
+          array( 'GIF/8', 15 ),
+          array( 'PNG', 39 ),
+          array( 'PNG/256', 30 ),
+          array( 'PNG/128', 31 ),
+          array( 'PNG/64', 32 ),
+          array( 'PNG/32', 33 ),
+          array( 'PNG/16', 34 ),
+          array( 'PNG/8', 35 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.15', 21 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.16', 22 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.17', 24 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.18', 26 ),
+          array( 'LLL:EXT:cms/locallang_ttc.xml:image_compression.I.19', 28 ),
         ),
       ),
     ),
@@ -802,14 +834,14 @@ $TCA['tx_org_job'] = array(
       'config' => array(
         'type' => 'select',
         'items' => array(
-          array('1', 1),
-          array('2', 2),
-          array('3', 3),
-          array('4', 4),
-          array('5', 5),
-          array('6', 6),
-          array('7', 7),
-          array('8', 8),
+          array( '1', 1 ),
+          array( '2', 2 ),
+          array( '3', 3 ),
+          array( '4', 4 ),
+          array( '5', 5 ),
+          array( '6', 6 ),
+          array( '7', 7 ),
+          array( '8', 8 ),
         ),
         'default' => 1
       ),
@@ -842,9 +874,9 @@ $TCA['tx_org_job'] = array(
         'size' => 1,
         'maxitems' => 1,
         'items' => array(
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0 ),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1 ),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2 ),
         ),
       ),
     ),
@@ -891,8 +923,8 @@ $TCA['tx_org_job'] = array(
         'checkbox' => '0',
         'default' => '0',
         'range' => array(
-          'upper' => mktime(3, 14, 7, 1, 19, 2038),
-          'lower' => mktime(0, 0, 0, date('m') - 1, date('d'), date('Y'))
+          'upper' => mktime( 3, 14, 7, 1, 19, 2038 ),
+          'lower' => mktime( 0, 0, 0, date( 'm' ) - 1, date( 'd' ), date( 'Y' ) )
         )
       )
     ),
@@ -931,7 +963,7 @@ $TCA['tx_org_job'] = array(
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.div_marginal,'
       . '  marginal_title,marginal_short,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.div_application,'
-      . '  applicationaddress,onlineapplication,'
+      . '  applicationaddress,onlineapplication,applicationurl,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.div_newsletter,'
       . '  newsletter,'
       . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.div_company,'
@@ -1097,8 +1129,8 @@ $TCA['tx_org_job'] = array(
 
 $TCA[ 'tx_org_job' ][ 'types' ][ 'notype' ] = $TCA[ 'tx_org_job' ][ 'types' ][ 'record' ];
 
-$TCA['tx_org_jobcat'] = array(
-  'ctrl' => $TCA['tx_org_jobcat']['ctrl'],
+$TCA[ 'tx_org_jobcat' ] = array(
+  'ctrl' => $TCA[ 'tx_org_jobcat' ][ 'ctrl' ],
   'interface' => array(
     'showRecordFieldList' => ''
     . 'title,title_lang_ol,uid_parent,'
@@ -1106,7 +1138,7 @@ $TCA['tx_org_jobcat'] = array(
     . 'hidden,'
   ,
   ),
-  'feInterface' => $TCA['tx_org_jobcat']['feInterface'],
+  'feInterface' => $TCA[ 'tx_org_jobcat' ][ 'feInterface' ],
   'columns' => array(
     'title' => array(
       'exclude' => 0,
@@ -1194,12 +1226,12 @@ $TCA['tx_org_jobcat'] = array(
     ),
   ),
   'palettes' => array(
-    '1' => array('showitem' => 'title_lang_ol,'),
+    '1' => array( 'showitem' => 'title_lang_ol,' ),
   )
 );
 
-$TCA['tx_org_jobsector'] = array(
-  'ctrl' => $TCA['tx_org_jobsector']['ctrl'],
+$TCA[ 'tx_org_jobsector' ] = array(
+  'ctrl' => $TCA[ 'tx_org_jobsector' ][ 'ctrl' ],
   'interface' => array(
     'showRecordFieldList' => ''
     . 'title,title_lang_ol,uid_parent,'
@@ -1207,7 +1239,7 @@ $TCA['tx_org_jobsector'] = array(
     . 'hidden,'
   ,
   ),
-  'feInterface' => $TCA['tx_org_jobsector']['feInterface'],
+  'feInterface' => $TCA[ 'tx_org_jobsector' ][ 'feInterface' ],
   'columns' => array(
     'title' => array(
       'exclude' => 0,
@@ -1295,12 +1327,12 @@ $TCA['tx_org_jobsector'] = array(
     ),
   ),
   'palettes' => array(
-    '1' => array('showitem' => 'title_lang_ol,'),
+    '1' => array( 'showitem' => 'title_lang_ol,' ),
   )
 );
 
-$TCA['tx_org_jobworkinghours'] = array(
-  'ctrl' => $TCA['tx_org_jobworkinghours']['ctrl'],
+$TCA[ 'tx_org_jobworkinghours' ] = array(
+  'ctrl' => $TCA[ 'tx_org_jobworkinghours' ][ 'ctrl' ],
   'interface' => array(
     'showRecordFieldList' => ''
     . 'title,title_lang_ol,uid_parent,'
@@ -1308,7 +1340,7 @@ $TCA['tx_org_jobworkinghours'] = array(
     . 'hidden,'
   ,
   ),
-  'feInterface' => $TCA['tx_org_jobworkinghours']['feInterface'],
+  'feInterface' => $TCA[ 'tx_org_jobworkinghours' ][ 'feInterface' ],
   'columns' => array(
     'title' => array(
       'exclude' => 0,
@@ -1396,7 +1428,6 @@ $TCA['tx_org_jobworkinghours'] = array(
     ),
   ),
   'palettes' => array(
-    '1' => array('showitem' => 'title_lang_ol,'),
+    '1' => array( 'showitem' => 'title_lang_ol,' ),
   )
 );
-?>

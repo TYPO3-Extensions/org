@@ -16,7 +16,7 @@ plugin.tx_browser_pi1 {
           tx_org_job.onlineapplication,
           tx_org_job.page,
           tx_org_job.seo_description,
-          tx_org_job.seo_keywords
+          tx_org_job.seo_keywords,
           tx_org_job.type,
           tx_org_job.url,
           tx_org_jobcat.title,

@@ -1,2 +1,0 @@
-  // Needed for powermail
-config.linkVars = tx_browser_pi1

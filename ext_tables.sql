@@ -487,6 +487,7 @@ CREATE TABLE tx_org_job (
   starttime int(11) NOT NULL DEFAULT '0',
   endtime int(11) NOT NULL DEFAULT '0',
   applicationaddress tinytext,
+  applicationurl tinytext,
   dateofentry int(11) NOT NULL DEFAULT '0',
   description text,
   documents_from_path tinytext,
