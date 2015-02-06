@@ -59,7 +59,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_location_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_location_300x200.png
           file      = tx_org_location.image
           height    = 90c
           path      = uploads/tx_org/

@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         1 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
           file      = tx_org_staff.image
           height    = 56c
           path      = uploads/tx_org/
@@ -37,7 +37,7 @@ plugin.tx_browser_pi1 {
           width     = 56
         }
         2 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
           height    = 90c
           path      = uploads/tx_org/
@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
           width     = 220
         }
         3 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
           file      = tx_org_news.image
           height    = 90c
           path      = uploads/tx_org/
@@ -53,7 +53,7 @@ plugin.tx_browser_pi1 {
           width     = 220
         }
         4 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_location_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_location_300x200.png
           file      = tx_org_location.image
           height    = 90c
           path      = uploads/tx_org/
@@ -61,7 +61,7 @@ plugin.tx_browser_pi1 {
           width     = 220
         }
         5 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_cal_300x200.png
           file      = tx_org_cal.image
           height    = 90c
           path      = uploads/tx_org/
@@ -69,7 +69,7 @@ plugin.tx_browser_pi1 {
           width     = 220
         }
         6 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_event_300x200.png
           file      = tx_org_event.image
           height    = 90c
           path      = uploads/tx_org/

@@ -3,6 +3,7 @@
   New feature
   * #i0044: job application got an external url
   Improvements
+  * #i0048: job: pop-up in the map: description is replaced by city
   * #i0047: job list and single view is improved
   Bugfixes
   * #i0046: Margin content has broken links in single views

@@ -13,7 +13,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_job_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_job_300x200.png
           file      = tx_org_headquarters.image // tx_org_job.image
           height    = 70c
           #listNum   =

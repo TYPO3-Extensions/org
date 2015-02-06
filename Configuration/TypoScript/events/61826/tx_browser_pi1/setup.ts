@@ -6,8 +6,6 @@ plugin.tx_browser_pi1 {
     }
   }
 
-  navigation.map.template.file = EXT:browser/Resources/Private/Templates/HTML/Map/map_filter_1.3.tmpl
-
   views {
     list {
       61826 = +Org: Events

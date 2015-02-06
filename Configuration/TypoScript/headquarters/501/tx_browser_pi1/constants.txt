@@ -24,6 +24,12 @@ plugin.tx_browser_pi1 {
       }
       width   = 720
     }
+    html {
+      jss {
+        toggle = 1
+      }
+      path = EXT:browser/Resources/Private/Templates/HTML/Map/map_toggle.tmpl
+    }
     icon {
       listNum {
         categoryIconMap       = 1
@@ -60,7 +66,7 @@ plugin.tx_browser_pi1 {
       }
       image {
         0 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
           height    = 90c
           path      = uploads/tx_org/
@@ -68,7 +74,7 @@ plugin.tx_browser_pi1 {
           width     = 220
         }
         1 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
           file      = tx_org_staff.image
           #height    =
           #listNum   =
@@ -77,7 +83,7 @@ plugin.tx_browser_pi1 {
           #width     =
         }
         2 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
           #height    =
           #listNum   =
@@ -86,7 +92,7 @@ plugin.tx_browser_pi1 {
           #width     =
         }
         3 {
-          default   = EXT:Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
           file      = tx_org_news.image
           #height    =
           #listNum   =
