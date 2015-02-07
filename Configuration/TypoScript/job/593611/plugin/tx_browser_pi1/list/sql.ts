@@ -4,6 +4,8 @@ plugin.tx_browser_pi1 {
       593611 {
         select (
           tx_org_job.title,
+          tx_org_job.crdate,
+          tx_org_job.deleted,
           tx_org_job.mail_city,
           tx_org_job.mail_zip,
           tx_org_job.mail_lat,
@@ -32,6 +34,7 @@ plugin.tx_browser_pi1 {
         functions {
           clean_up {
             csvTableFields (
+              distance,
               tx_org_job.mail_zip,
               tx_org_job.mail_lat,
               tx_org_job.mail_lon,
@@ -47,7 +50,6 @@ plugin.tx_browser_pi1 {
               tx_org_jobcat.icon_offset_y,
               tx_org_headquarters.image,
               tx_org_headquarters.imageseo,
-              distance
 )
           }
         }

@@ -25,8 +25,13 @@ plugin.tx_browser_pi1 {
       path {
         categoryIcon  = uploads/tx_org/
       }
-      height  = 210
-      width   = 637
+      height  = 415
+      width   = 470
+    }
+    html {
+      jss {
+        //toggle = 1
+      }
     }
     icon {
       listNum {
@@ -47,6 +52,12 @@ plugin.tx_browser_pi1 {
       }
     }
     mobileTouchscreen = 1
+    popup {
+      image {
+        height = 60
+        width =
+      }
+    }
   }
   navigation {
     showUid = jobUid
@@ -120,8 +131,8 @@ plugin.tx_browser_pi1 {
         start = 10
       }
       design {
-        XXXheight = 150
-        XXXwidth = 303
+        height = 340
+        width = 637
       }
     }
   }
