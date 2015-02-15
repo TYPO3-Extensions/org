@@ -20,6 +20,11 @@ plugin.tx_browser_pi1 {
     selectBox_orderBy {
       display = 0
     }
+    templateMarker {
+      cssClass {
+        wrap = 0
+      }
+    }
   }
 
   views {
