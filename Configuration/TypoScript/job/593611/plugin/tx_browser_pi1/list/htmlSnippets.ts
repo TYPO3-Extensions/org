@@ -49,23 +49,23 @@ plugin.tx_browser_pi1 {
               value (
                 <div class="row">
                   <div class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
-                    <table>
+                    <table cellspacing="0">
                       <thead>
                         <tr>
                           <th class="td td-0 first">
-                            Titel
+                            ###MY_TX_ORG_JOB__TITLE###
                           </th>
                           <th class="td td-1 last">
-                            Ort
+                            ###MY_TX_ORG_JOB__MAIL_CITY###
                           </th>
                         </tr>
                       </thead>
                       <tbody><!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                         <tr class="###CLASS######TX_ORG_JOB.CRDATE###">
-                          <td class="###CLASS###">
+                          <td class="###CLASS### td-0 first">
                             ###TX_ORG_JOB.TITLE###
                           </td>
-                          <td class="###CLASS###">
+                          <td class="###CLASS### td-1 last">
                             ###TX_ORG_JOB.MAIL_CITY###
                           </td>
                         </tr><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->

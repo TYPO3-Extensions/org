@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
             10 = COA
             10 {
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-              wrap = <div style="float:left;padding-right:1em;>|</div>
+              wrap = <div style="float:left;padding-right:1em;">|</div>
             }
             20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
             20.default.wrap = |

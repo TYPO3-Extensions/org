@@ -11,11 +11,13 @@ plugin.tx_browser_pi1 {
           tx_org_job.mail_lat,
           tx_org_job.mail_lon,
           tx_org_job.page,
+          tx_org_job.reference_number,
           tx_org_job.seo_description,
           tx_org_job.seo_keywords,
           tx_org_job.teaser_title,
           tx_org_job.teaser_short,
           tx_org_job.type,
+          tx_org_job.uid,
           tx_org_job.url,
           tx_org_jobcat.title,
           tx_org_jobcat.icons,
@@ -24,7 +26,7 @@ plugin.tx_browser_pi1 {
           tx_org_jobsector.title,
           tx_org_headquarters.title,
           tx_org_headquarters.image,
-          tx_org_headquarters.imageseo,
+          tx_org_headquarters.imageseo
         )
         orderBy (
           tx_org_job.title, tx_org_job.mail_city, tx_org_job.mail_zip, tx_org_jobcat.title, tx_org_jobsector.title, tx_org_headquarters.title
