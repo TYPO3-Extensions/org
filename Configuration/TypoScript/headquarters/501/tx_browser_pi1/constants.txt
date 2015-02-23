@@ -18,7 +18,7 @@ plugin.tx_browser_pi1 {
     }
     design {
       height  = 240
-      imgPath = typo3conf/ext/browser/Resources/Public/JavaScript/Map/themes/orange/
+      imgPath = typo3conf/ext/browser/Resources/Public/JavaScript/Map/oxMap/themes/orange/
       path {
         categoryIcon  = uploads/tx_org/
       }
@@ -28,7 +28,7 @@ plugin.tx_browser_pi1 {
       jss {
         toggle = 1
       }
-      path = EXT:browser/Resources/Private/Templates/HTML/Map/map_toggle.tmpl
+      //path = EXT:browser/Resources/Private/Templates/HTML/Map/oxMap/map_toggle.tmpl
     }
     icon {
       listNum {

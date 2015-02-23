@@ -1,3 +1,10 @@
+7.0.0
+  15-02-19
+  Major Feature
+  * #65185: Integration of Leaflet - responsive map
+            See: http://leafletjs.com/
+            See TYPO3 browser at #65184
+
 6.0.9
   15-02-05
   New feature
