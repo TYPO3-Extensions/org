@@ -31,8 +31,8 @@ plugin.tx_browser_pi1 {
                   ###TX_ORG_DOWNLOADS.TITLE###
                 </div>
                 <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-              </div> <!-- /columns -->
-            </div> <!-- /listview -->
+              </div><!-- /columns -->
+            </div><!-- /listview -->
 )
             }
           }

@@ -20,21 +20,23 @@ plugin.tx_browser_pi1 {
     }
     controlling {
       enabled = Map
-      provider = GoogleMaps
     }
     design {
       height  = 210
-      imgPath = typo3conf/ext/browser/Resources/Public/JavaScript/Map/oxMap/themes/red/
+      height {
+        single = 200
+      }
       path {
         categoryIcon  = uploads/tx_org/
       }
-      width   = 720
     }
-    icon {
-      listNum {
-        categoryIconMap       = 0
-        categoryIconMapSingle = 0
+    html {
+      jss {
+        toggle = 1
       }
+    }
+    leafletcontrolling {
+      overlays = 0
     }
     marker {
       field {
@@ -48,7 +50,6 @@ plugin.tx_browser_pi1 {
         categoryOffsetY   = tx_org_caltype.icon_offset_y
       }
     }
-    mobileTouchscreen = 1
   }
   navigation {
     showUid = calendarUid
@@ -131,13 +132,9 @@ plugin.tx_browser_pi1 {
 [globalVar = GP:tx_browser_pi1|calendarUid > 0]
   plugin.tx_browser_pi1 {
     map {
-      design {
-        height  = 200
-        width   = 303
-      }
       zoomLevel {
         mode  = fixed
-        start = 4
+        start = 10
       }
     }
   }

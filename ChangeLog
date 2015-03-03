@@ -1,3 +1,10 @@
+7.0.1
+  15-03-03
+  Improvements
+  * #i0049: SQL select of single views: image is extended with all image fields
+            * news
+            * job
+
 7.0.0
   15-02-19
   Major Feature

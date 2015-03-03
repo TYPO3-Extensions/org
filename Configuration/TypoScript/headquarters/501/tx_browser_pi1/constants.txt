@@ -17,16 +17,14 @@ plugin.tx_browser_pi1 {
       enabled = Map
     }
     design {
-      height  = 240
-      imgPath = typo3conf/ext/browser/Resources/Public/JavaScript/Map/oxMap/themes/orange/
+      height  = 422
       path {
         categoryIcon  = uploads/tx_org/
       }
-      width   = 720
     }
     html {
       jss {
-        toggle = 1
+        toggle = 0
       }
       //path = EXT:browser/Resources/Private/Templates/HTML/Map/oxMap/map_toggle.tmpl
     }
@@ -49,6 +47,9 @@ plugin.tx_browser_pi1 {
       }
     }
     mobileTouchscreen = 1
+    provider {
+      default = googleRoadmap
+    }
   }
   navigation {
     showUid = headquartersUid

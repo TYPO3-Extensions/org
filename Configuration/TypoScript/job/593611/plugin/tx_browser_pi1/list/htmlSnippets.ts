@@ -22,24 +22,26 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-                <div class="row">
-                  <div class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
-                    <table###SUMMARY###>
-                      ###CAPTION###
-                      <!-- ###LISTHEAD### begin -->
-                      <thead>
-                        <tr><!-- ###LISTHEADITEM### begin -->
-                          <th###CLASS###>###ITEM###</th><!-- ###LISTHEADITEM### end -->
-                        </tr>
-                      </thead><!-- ###LISTHEAD### end -->
-                      <tbody><!-- ###LISTBODY### begin -->
-                        <tr class="###CLASS###"><!-- ###LISTBODYITEM### begin -->
-                          <td class="###CLASS###">###ITEM### ###SOCIALMEDIA_BOOKMARKS###</td><!-- ###LISTBODYITEM### end -->
-                        </tr><!-- ###LISTBODY### end -->
-                      </tbody>
-                    </table>
-                  </div><!-- /columns --><!-- /listview -->
-                </div><!-- /row -->
+                <div class="columns">
+                  <div class="row">
+                    <div class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
+                      <table###SUMMARY###>
+                        ###CAPTION###
+                        <!-- ###LISTHEAD### begin -->
+                        <thead>
+                          <tr><!-- ###LISTHEADITEM### begin -->
+                            <th###CLASS###>###ITEM###</th><!-- ###LISTHEADITEM### end -->
+                          </tr>
+                        </thead><!-- ###LISTHEAD### end -->
+                        <tbody><!-- ###LISTBODY### begin -->
+                          <tr class="###CLASS###"><!-- ###LISTBODYITEM### begin -->
+                            <td class="###CLASS###">###ITEM### ###SOCIALMEDIA_BOOKMARKS###</td><!-- ###LISTBODYITEM### end -->
+                          </tr><!-- ###LISTBODY### end -->
+                        </tbody>
+                      </table>
+                    </div><!-- /columns --><!-- /listview -->
+                  </div><!-- /row -->
+                </div><!-- /columns -->
 )
             }
               // Production
