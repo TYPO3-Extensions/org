@@ -58,6 +58,7 @@ plugin.tx_browser_pi1 {
     lat         = tx_org_service.mail_lat
     lon         = tx_org_service.mail_lon
     #searchmode  = Within the radius only
+    uid         = tx_org_service.uid
   }
 
   templates {
