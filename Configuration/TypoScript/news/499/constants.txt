@@ -1,0 +1,21 @@
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = newsUid
+  }
+  templates {
+    listview {
+      url {
+        0 {
+          forceAbsoluteUrl  = 1
+          key               = tx_org_news.type
+          page              = tx_org_news.page
+          record            = tx_org_news.uid
+          returnLast        = url
+          showUid           = newsUid
+          #singlePid =
+          url               = tx_org_news.url
+        }
+      }
+    }
+  }
+}
