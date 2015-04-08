@@ -1,0 +1,21 @@
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = calendarUid
+  }
+  templates {
+    listview {
+      url {
+        0 {
+          forceAbsoluteUrl  = 1
+          key               = tx_org_cal.type
+          page              = tx_org_cal.page
+          record            = tx_org_cal.uid
+          returnLast        = url
+          showUid           = calendarUid
+          #singlePid =
+          url               = tx_org_cal.url
+        }
+      }
+    }
+  }
+}
