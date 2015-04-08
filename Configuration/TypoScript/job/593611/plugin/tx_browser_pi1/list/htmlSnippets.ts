@@ -34,8 +34,8 @@ plugin.tx_browser_pi1 {
                           </tr>
                         </thead><!-- ###LISTHEAD### end -->
                         <tbody><!-- ###LISTBODY### begin -->
-                          <tr class="###CLASS###"><!-- ###LISTBODYITEM### begin -->
-                            <td class="###CLASS###">###ITEM### ###SOCIALMEDIA_BOOKMARKS###</td><!-- ###LISTBODYITEM### end -->
+                          <tr###CLASS###><!-- ###LISTBODYITEM### begin -->
+                            <td###CLASS###>###ITEM### ###SOCIALMEDIA_BOOKMARKS###</td><!-- ###LISTBODYITEM### end -->
                           </tr><!-- ###LISTBODY### end -->
                         </tbody>
                       </table>
