@@ -22,10 +22,10 @@ plugin.tx_browser_pi1 {
           }
           rss_title = TEXT
           rss_title {
-            value   = TYPO3 Organiser Calender
+            value   = Organiser Calender
             lang {
-              de = TYPO3 Organiser Kalender
-              en = TYPO3 Organiser Calender
+              de = Organiser Kalender
+              en = Organiser Calender
             }
           }
           rss_url = TEXT

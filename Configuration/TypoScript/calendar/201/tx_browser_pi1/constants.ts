@@ -124,6 +124,7 @@ plugin.tx_browser_pi1 {
           path        = uploads/tx_org/
           seo         = tx_org_event.imageseo // tx_org_cal.imageseo
           width       = tx_org_event.imagewidth // tx_org_cal.imagewidth
+          zoom        = tx_org_event.image_zoom // tx_org_cal.image_zoom
         }
       }
     }

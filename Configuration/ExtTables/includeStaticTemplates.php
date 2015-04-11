@@ -57,6 +57,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [7] Standorte - Rand');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593611/',                        'Org [8] Stellenangebote');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/60527/',                         'Org [8] Stellenangebote - Newsletter');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593619/',                        'Org [8] Stellenangebote (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/events/61826/',                      'Org [9] Veranstaltungen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/701/',                      'Org [10] Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/711/',                      'Org [10] Veranstaltorte - Rand');
@@ -102,6 +103,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [5] Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593611/',                        'Org [6] Jobs');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/60527/',                         'Org [6] Jobs - newsletter');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593619/',                        'Org [6] Jobs (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/701/',                      'Org [7] Locations');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/711/',                      'Org [7] Locations - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [8] News');

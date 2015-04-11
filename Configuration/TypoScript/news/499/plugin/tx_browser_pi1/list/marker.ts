@@ -22,10 +22,10 @@ plugin.tx_browser_pi1 {
           }
           rss_title = TEXT
           rss_title {
-            value   = TYPO3 Organiser News
+            value   = Organiser News
             lang {
-              de = TYPO3 Organiser Nachrichten
-              en = TYPO3 Organiser News
+              de = Organiser Nachrichten
+              en = Organiser News
             }
           }
           rss_url = TEXT

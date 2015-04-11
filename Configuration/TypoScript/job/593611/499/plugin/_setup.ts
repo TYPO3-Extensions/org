@@ -1,1 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/499/plugin/tx_browser_pi1/_setup.ts">

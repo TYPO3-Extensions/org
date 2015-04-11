@@ -30,7 +30,7 @@ plugin.tx_browser_pi1 {
                   ###TX_ORG_CAL.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###BACKBUTTON### begin -->
-                  <p class="backbutton">
+                  <p class="columns backbutton">
                     ###MY_SINGLEVIEWBACKBUTTON###
                   </p>
                   <!-- ###BACKBUTTON### end -->

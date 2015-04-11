@@ -1,4 +1,0 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/499/plugin/_setup.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/499/tt_content/setup.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/499/page/setup.ts">
-

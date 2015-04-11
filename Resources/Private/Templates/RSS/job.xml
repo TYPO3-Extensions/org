@@ -8,12 +8,12 @@
 <!-- ###LISTVIEW### begin --><!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
     <item>
       <title>
-        <![CDATA[###TX_ORG_NEWS.TITLE###]]>
+        <![CDATA[###TX_ORG_JOB.TITLE###]]>
       </title>
       <link>
-        <![CDATA[###TX_ORG_NEWS.UID###]]>
+        <![CDATA[###TX_ORG_JOB.UID###]]>
       </link>
-      <content:encoded><![CDATA[###TX_ORG_NEWS.TEASER_SHORT###]]></content:encoded>
+      <content:encoded><![CDATA[###TX_ORG_JOB.TEASER_SHORT###]]></content:encoded>
     </item><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end --><!-- ###LISTVIEW### end -->
   </channel>
 </rss>
