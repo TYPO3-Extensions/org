@@ -55,6 +55,7 @@ plugin.tx_browser_pi1 {
           path        = uploads/tx_org/
           seo         = tx_org_event.imageseo
           width       = tx_org_event.imagewidth
+          zoom        = tx_org_event.image_zoom
         }
       }
       text {

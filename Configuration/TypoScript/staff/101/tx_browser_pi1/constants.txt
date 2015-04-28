@@ -76,6 +76,7 @@ plugin.tx_browser_pi1 {
           seo           = tx_org_staff.imageseo
           width         = tx_org_staff.imagewidth
           widthDefault  = 140
+          zoom          = tx_org_staff.image_zoom
         }
       }
     }

@@ -63,6 +63,7 @@ plugin.tx_browser_pi1 {
           path        = uploads/tx_org/
           seo         = tx_org_news.imageseo
           width       = tx_org_news.imagewidth
+          zoom        = tx_org_news.image_zoom
         }
       }
     }

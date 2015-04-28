@@ -1,0 +1,21 @@
+plugin.tx_browser_pi1 {
+  navigation {
+    showUid = jobUid
+  }
+  templates {
+    listview {
+      url {
+        0 {
+          forceAbsoluteUrl  = 1
+          key               = tx_org_job.type
+          page              = tx_org_job.page
+          record            = tx_org_job.uid
+          returnLast        = url
+          showUid           = jobUid
+          #singlePid =
+          url               = tx_org_job.url
+        }
+      }
+    }
+  }
+}

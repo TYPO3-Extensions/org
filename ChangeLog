@@ -1,3 +1,14 @@
+7.1.0
+  15-04-28
+  Feature
+  * #i0056: clearing lightbox: update for Browser 7.0.7
+            See: Configuration/TypoScript/62037/tx_browser_pi1/constants.ts
+  * #i0054: Migrate tt_news
+            * Manual is updated
+            * SQL statements see: Resources/Private/Migration/tt_news/statements.sql
+  Improvement
+  * #i0055: state is set from alpha to beta
+
 7.0.7
   15-04-10
   Improvement
