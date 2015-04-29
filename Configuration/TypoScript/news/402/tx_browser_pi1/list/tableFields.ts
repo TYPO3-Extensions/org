@@ -26,7 +26,7 @@ plugin.tx_browser_pi1 {
                 20 {
                   field = tx_org_news.marginal_subtitle // tx_org_news.teaser_subtitle // tx_org_news.subtitle
                   wrap  = <p>|</p>
-                  crop  = 40|...|1
+                  crop  = {$plugin.tx_browser_pi1.templates.listview.text.0.crop}
                   required = 1
                 }
                 20 >
