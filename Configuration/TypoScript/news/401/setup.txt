@@ -1,2 +1,3 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/401/page/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/401/tx_browser_pi1/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/401/401_newsonly/setup.txt">
