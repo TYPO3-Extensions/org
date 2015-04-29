@@ -1,6 +1,7 @@
 7.1.0
-  15-04-28
+  15-04-29
   Feature
+  * #i0057: news template for slick carousel
   * #i0056: clearing lightbox: update for Browser 7.0.7
             See: Configuration/TypoScript/62037/tx_browser_pi1/constants.ts
   * #i0054: Migrate tt_news
