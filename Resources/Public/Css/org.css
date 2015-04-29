@@ -295,26 +295,3 @@ ul.vcard li.circle {
   list-style-position:inside;
 }
 /* foundation */
-
-
-div.tx_org_news-slick h2 {
-  font-size: 1.2em;
-  line-height: 1.2em;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-div.tx_org_news-slick p {
-  font-size: 1em;
-  line-height: 1em;
-  margin-bottom: 0;
-}
-div.tx_org_news-slick p a {
-  color: #000;
-  font-weight: normal;
-}
-div.tx_org_news-slick p a:active,
-div.tx_org_news-slick p a:focus,
-div.tx_org_news-slick p a:hover
-{
-  color: #8B0000;
-}
