@@ -2,6 +2,9 @@
   15-05-14
   Feature
   * #i0059: news simple
+  Improvement
+  * #i0061: news margin: new file structure
+  * #i0060: news margin (411) got a wrap <div class="row">|</div>
 
 7.1.0
   15-04-29

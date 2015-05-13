@@ -8,14 +8,14 @@ plugin.tx_browser_pi1 {
 
   views {
     list {
-      402 = +Org: News for Slick Carousel
+      402 = +Org: News Simple
       402 {
-        name    = +Org: News for Slick Carousel
+        name    = +Org: News Simple
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }
     }
     single {
-      402 = +Org: News for Slick Carousel
+      402 = +Org: News Simple
     }
   }
 }
