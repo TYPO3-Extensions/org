@@ -41,3 +41,12 @@ WHERE  tx_org_news.uid = tt_news.uid;
 SELECT image FROM tt_news_cat WHERE image != '';
 SELECT image FROM tt_news WHERE image != '';
 SELECT news_files FROM tt_news WHERE image != '';
+
+
+  # Set default image properties for all news
+UPDATE tx_org_news
+SET    tx_org_news.imageorient  = 25,
+       tx_org_news.imagewidth   = 293,
+       tx_org_news.image_zoom   = 1;
+
+
