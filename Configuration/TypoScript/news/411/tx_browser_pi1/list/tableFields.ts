@@ -12,7 +12,7 @@ plugin.tx_browser_pi1 {
               required = 1
               noTrimWrap = |<p>|</p> |
               stdWrap {
-                crop = 30|...|1
+                crop = 80|...|1
               }
             }
             wrap = <div class="record">|</div>
