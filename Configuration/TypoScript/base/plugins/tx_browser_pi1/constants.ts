@@ -85,7 +85,8 @@ plugin.tx_browser_pi1 {
           field   = tx_org_headquarters.teaser_short // tx_org_headquarters.bodytext
         }
         3 {
-          field   = tx_org_news.teaser_short // tx_org_news.bodytext
+          //field   = tx_org_news.marginal_short // tx_org_news.teaser_short // tx_org_news.bodytext
+          field   = tx_org_news.marginal_subtitle // tx_org_news.teaser_subtitle // tx_org_news.subtitle
         }
         4 {
           field   = tx_org_cal.teaser_short // tx_org_location.bodytext
