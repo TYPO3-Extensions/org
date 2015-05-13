@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
             20 {
               field = tx_org_news.marginal_subtitle // tx_org_news.teaser_subtitle // tx_org_news.subtitle
               required = 1
-              noTrimWrap = || |
+              noTrimWrap = |<p>|</p> |
               stdWrap {
                 crop = 30|...|1
               }

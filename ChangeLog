@@ -3,6 +3,7 @@
   Feature
   * #i0059: news simple
   Improvement
+  * #i0062: news margin: subtitle got a wrap <p>|</p>
   * #i0061: news margin: new file structure
   * #i0060: news margin (411) got a wrap <div class="row">|</div>
 
