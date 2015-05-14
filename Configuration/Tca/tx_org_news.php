@@ -28,7 +28,7 @@ $TCA[ 'tx_org_news' ] = array(
     . 'tx_org_headquarters,'
     . 'tx_org_staff,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
-    . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+    . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_1stforlistonly,image_link,image_zoom,image_noRows,image_effects,image_compression,'
     . 'embeddedcode,'
     . 'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'
     . 'seo_keywords,seo_description,'
@@ -400,6 +400,14 @@ $TCA[ 'tx_org_news' ] = array(
         'type' => 'check'
       ),
     ),
+    'image_1stforlistonly' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/locallang_db.xml:image_1stforlistonly',
+      'config' => array(
+        'type' => 'check'
+      ),
+    ),
     'image_link' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
@@ -633,6 +641,7 @@ $TCA[ 'tx_org_news' ] = array(
       . '  marginal_title;;;;6-6-6, marginal_subtitle, marginal_short,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_1stforlistonly;image_1stforlistonly,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
@@ -772,6 +781,10 @@ $TCA[ 'tx_org_news' ] = array(
     'documents_upload' => array(
       'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
       'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
+      'canNotCollapse' => 1,
+    ),
+    'image_1stforlistonly' => array(
+      'showitem' => 'image_1stforlistonly;LLL:EXT:org/locallang_db.xml:tca_phrase.image_1stforlistonly,',
       'canNotCollapse' => 1,
     ),
     'image_accessibility' => array(

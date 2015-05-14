@@ -47,6 +47,7 @@
       <label index="palette.tx_flipit_fancybox">Lightbox</label>
       <label index="palette.tx_flipit_files">Files</label>
       <label index="palette.tx_flipit_quality">Quality and bitmap pages</label>
+      <label index="palette.image_1stforlistonly">First Image</label>
       <label index="palette.image_accessibility">Search engines and accessibility</label>
       <label index="palette.link">Download link</label>
       <label index="palette.link_shipping">Link for shipping</label>
@@ -78,6 +79,7 @@
       <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
+      <label index="tca_phrase.image_1stforlistonly">For the list view only</label>
       <label index="tca_phrase.image_settings.cat">Settings</label>
       <label index="tca_phrase.location">Location</label>
       <label index="tca_phrase.news">News</label>
@@ -143,6 +145,7 @@
       <label index="palette.tx_flipit_files">Dateien</label>
       <label index="palette.tx_flipit_quality">Qualit<![CDATA[&auml;]]>t und Bitmap-Seiten</label>
       <label index="palette.tx_flipit_properties">Einstellungen</label>
+      <label index="palette.image_1stforlistonly">Erstes Bild</label>
       <label index="palette.image_accessibility">Suchmaschinen und Barrierefreiheit</label>
       <label index="palette.link">Download-Link</label>
       <label index="palette.statistics">Statistik</label>
@@ -172,6 +175,7 @@
       <label index="tca_phrase.imageseo.oneline">Bezeichnung für Suchmaschinen</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
+      <label index="tca_phrase.image_1stforlistonly">Exklusiv für die Listenansicht</label>
       <label index="tca_phrase.image_settings.cat">Einstellungen</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>

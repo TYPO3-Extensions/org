@@ -769,6 +769,7 @@ CREATE TABLE tx_org_news (
   imagecols tinyint(4) unsigned NOT NULL default '0',
   imageborder tinyint(4) unsigned NOT NULL default '0',
   imagecaption_position varchar(12) default '',
+  image_1stforlistonly tinyint(3) unsigned NOT NULL default '0',
   image_link text,
   image_zoom tinyint(3) unsigned NOT NULL default '0',
   image_noRows tinyint(3) unsigned NOT NULL default '0',

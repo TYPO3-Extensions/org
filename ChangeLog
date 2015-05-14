@@ -1,6 +1,7 @@
 7.1.1
   15-05-14
   Feature
+  * #i0065: news 1st image for list only
   * #i0064: news add query top news
   * #i0059: news simple
   Improvement
