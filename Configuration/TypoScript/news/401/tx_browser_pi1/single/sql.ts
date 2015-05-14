@@ -17,6 +17,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.imageorient,
           tx_org_news.imagecols,
           tx_org_news.imageborder,
+          tx_org_news.image_1stforlistonly,
           tx_org_news.image_frames,
           tx_org_news.image_link,
           tx_org_news.image_zoom,
