@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/409/tx_browser_pi1/templating/addDataQuery.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/409/tx_browser_pi1/templating/aarrDataQuery.ts">
