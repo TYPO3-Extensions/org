@@ -9,13 +9,13 @@ plugin.tx_browser_pi1 {
               value (
                 <div class="row">
                   <div class="columns listview listview-###MODE###">
-                    <!-- ###LISTBODY### begin -->
                     <ul class="disc">
+                      <!-- ###LISTBODY### begin -->
                       <!-- ###LISTBODYITEM### begin -->
                       ###TX_ORG_NEWS.TITLE###
                       <!-- ###LISTBODYITEM### end -->
+                      <!-- ###LISTBODY### end -->
                     </ul>
-                    <!-- ###LISTBODY### end -->
                     ###MY_LISTVIEW_PAGE###
                   </div>
                 </div><!-- /row -->
