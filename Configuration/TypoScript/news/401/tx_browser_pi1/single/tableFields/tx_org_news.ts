@@ -130,6 +130,14 @@ plugin.tx_browser_pi1 {
               25 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.401.tx_org_news.title.20.0.10
+                20 {
+                  10 {
+                    split {
+                      2 < .1
+                      2.10.20.wrap = <li><figure class="tx-browser-pi1-figure">x|y</figure></li>
+                    }
+                  }
+                }
               }
               26 {
                 10 >
