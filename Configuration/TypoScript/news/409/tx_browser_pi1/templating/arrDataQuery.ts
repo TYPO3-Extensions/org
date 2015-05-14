@@ -6,7 +6,7 @@ plugin.tx_browser_pi1 {
           409 {
             name = Top News
             arrQuery {
-              andWhere = tx_org_news.top = 1
+              andWhere = tx_org_news.topnews = 1
             }
           }
         }

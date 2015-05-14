@@ -19,6 +19,7 @@ plugin.tx_browser_pi1 {
           tx_org_news.teaser_title,
           tx_org_news.teaser_short,
           tx_org_news.teaser_subtitle,
+          tx_org_news.topnews,
           tx_org_news.type,
           tx_org_news.url,
           tx_org_newscat.title
