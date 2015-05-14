@@ -11,25 +11,25 @@ plugin.tx_browser_pi1 {
                 stdWrap {
                   wrap = |&nbsp;&raquo;
                 }
-                wrap = <p class="black-on-white">|</p>
+                wrap = <li class="black-on-white">|</li>
               }
               notype {
-                wrap = <p class="black-on-white">|</p>
+                wrap = <li class="black-on-white">|</li>
               }
               page {
                 stdWrap {
                   wrap = |&nbsp;&raquo;
                 }
-                wrap = <p class="black-on-white">|</p>
+                wrap = <li class="black-on-white">|</li>
               }
               url {
                 stdWrap {
                   wrap = |&nbsp;&raquo;
                 }
-                wrap = <p class="black-on-white">|</p>
+                wrap = <li class="black-on-white">|</li>
               }
             }
-            wrap = <div class="record">|</div>
+            XXXwrap = <div class="record">|</div>
           }
         }
       }
