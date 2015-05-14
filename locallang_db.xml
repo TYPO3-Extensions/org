@@ -79,7 +79,7 @@
       <label index="tca_phrase.imageseo.oneline">Label for Search Engines</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tca_phrase.image.cat">Icon</label>
-      <label index="tca_phrase.image_1stforlistonly">For the list view only</label>
+      <label index="tca_phrase.image_1stforlistonly">For the list view and the margin view only</label>
       <label index="tca_phrase.image_settings.cat">Settings</label>
       <label index="tca_phrase.location">Location</label>
       <label index="tca_phrase.news">News</label>
@@ -175,7 +175,7 @@
       <label index="tca_phrase.imageseo.oneline">Bezeichnung für Suchmaschinen</label>
       <label index="tca_phrase.imageseo_lang_ol.oneline">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tca_phrase.image.cat">Symbol</label>
-      <label index="tca_phrase.image_1stforlistonly">Exklusiv für die Listenansicht</label>
+      <label index="tca_phrase.image_1stforlistonly">Exklusiv für die Marginal- und Listenansicht</label>
       <label index="tca_phrase.image_settings.cat">Einstellungen</label>
       <label index="tca_phrase.location">Veranstaltungsort</label>
       <label index="tca_phrase.news">Nachrichten</label>
