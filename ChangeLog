@@ -5,6 +5,7 @@
   * #i0064: news add query top news
   * #i0059: news simple
   Improvement
+  * #i0066: SQL (all tables): imageseo is moved from tinytext to text
   * #i0063: Migrate tt_news: new property source pid
   * #i0062: news margin: is configured by Constant Editor [Browser Template] header and text 3
   * #i0061: news margin: new file structure
