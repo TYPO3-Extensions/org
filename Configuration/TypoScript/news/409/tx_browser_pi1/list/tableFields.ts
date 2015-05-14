@@ -38,6 +38,9 @@ plugin.tx_browser_pi1 {
                     20 {
                       value >
                       field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      stdWrap {
+                        htmlSpecialChars = 0
+                      }
                     }
                   }
                   notype {
@@ -45,6 +48,9 @@ plugin.tx_browser_pi1 {
                     20 {
                       value >
                       field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      stdWrap {
+                        htmlSpecialChars = 0
+                      }
                     }
                   }
                   page {
@@ -52,6 +58,9 @@ plugin.tx_browser_pi1 {
                     20 {
                       value >
                       field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      stdWrap {
+                        htmlSpecialChars = 0
+                      }
                     }
                   }
                   url {
@@ -59,6 +68,9 @@ plugin.tx_browser_pi1 {
                     20 {
                       value >
                       field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      stdWrap {
+                        htmlSpecialChars = 0
+                      }
                     }
                   }
                 }
