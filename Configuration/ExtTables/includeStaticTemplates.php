@@ -49,7 +49,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [5.1] Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/401_newsonly/',             'Org [5.1] + Nachrichten solo');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/409/',                          'Org [5.4] Nachrichten - Slick');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/411/',                          'Org [5.5] Nachrichten - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/411/',                          'Org [5.5.1] Nachrichten - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [5.5.2] Nachrichten - Mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [5.6] Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [6] Personen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6] Personen (einspaltig)');
@@ -111,7 +112,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [8.1] News');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/401_newsonly/',             'Org [8.1] + News solo');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/409/',                          'Org [8.4] News - Slick');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/411/',                          'Org [8.5] News - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/411/',                          'Org [8.5.1] News - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [8.5.2] News - mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [8.6] News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [9] People');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [9] People (one column)');
