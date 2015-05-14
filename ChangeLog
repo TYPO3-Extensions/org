@@ -1,8 +1,10 @@
 7.1.1
   15-05-14
   Feature
+  * #i0064: news add query top news
   * #i0059: news simple
   Improvement
+  * #i0063: Migrate tt_news: new property source pid
   * #i0062: news margin: is configured by Constant Editor [Browser Template] header and text 3
   * #i0061: news margin: new file structure
   * #i0060: news margin (411) got a wrap <div class="row">|</div>

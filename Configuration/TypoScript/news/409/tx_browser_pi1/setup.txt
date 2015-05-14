@@ -21,3 +21,4 @@ plugin.tx_browser_pi1 {
 }
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/409/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/news/409/tx_browser_pi1/templating/_setup.ts">

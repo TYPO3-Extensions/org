@@ -2,10 +2,11 @@
   # Remove all records from tx_org_newscat
 TRUNCATE TABLE tx_org_newscat;
   # page id of your folder with the organiser news (here: 3606)
-SET @pid = '3606';
+SET @destPid = '3606';
+SET @srcePid = '1081';
   # Migrate tt_newscat records to tx_org_newscat
 INSERT INTO tx_org_newscat (uid, pid, uid_parent, tstamp, crdate, hidden, deleted, title, title_lang_ol, image)
-SELECT uid, @pid, parent_category, tstamp, crdate, hidden, deleted, title, title_lang_ol, image FROM tt_news_cat;
+SELECT uid, @destPid, parent_category, tstamp, crdate, hidden, deleted, title, title_lang_ol, image FROM tt_news_cat WHERE tt_news_cat.pid = @srcePid;
 
 
 # From tt_news_cat_mm to tx_org_mm_all
@@ -20,14 +21,15 @@ SELECT uid_local, uid_foreign, sorting, 'tx_org_news', 'tx_org_newscat' FROM tt_
   # Remove all records from tx_org_newscat
 TRUNCATE TABLE tx_org_news;
   # page id of your folder with the organiser news (here: 3606)
-SET @pid = '3606';
-  # Migrate tt_news_cat_mm records to tx_org_mm_all
+SET @destPid = '3606';
+SET @srcePid = '1081';
+  # Migrate tt_news records to tx_org_news
 INSERT INTO tx_org_news (archivedate, bodytext, crdate, cruser_id, datetime, deleted, documents,  endtime, fe_group, hidden, image, imagecaption, imageseo,       l10n_diffsource, l10n_parent, page, pid,  seo_keywords, starttime, subtitle, sys_language_uid, title, tstamp, tx_org_newscat, type, uid, url)
-SELECT                   archivedate, bodytext, crdate, cruser_id, datetime, deleted, news_files, endtime, fe_group, hidden, image, imagecaption, imagetitletext, l18n_diffsource, l18n_parent, page, @pid, keywords,     starttime, short,    sys_language_uid, title, tstamp, category,       type, uid, ext_url FROM tt_news;
+SELECT                   archivedate, bodytext, crdate, cruser_id, datetime, deleted, news_files, endtime, fe_group, hidden, image, imagecaption, imagetitletext, l18n_diffsource, l18n_parent, page, @destPid, keywords, starttime, short,    sys_language_uid, title, tstamp, category,       type, uid, ext_url FROM tt_news WHERE tt_news.pid = @srcePid;
   # Update the type
-UPDATE tx_org_news SET type = 'record' WHERE type = 0;
-UPDATE tx_org_news SET type = 'page'   WHERE type = 1;
-UPDATE tx_org_news SET type = 'url'    WHERE type = 2;
+UPDATE tx_org_news SET type = 'record' WHERE type = 0 AND tx_org_news.pid = @destPid;
+UPDATE tx_org_news SET type = 'page'   WHERE type = 1 AND tx_org_news.pid = @destPid;
+UPDATE tx_org_news SET type = 'url'    WHERE type = 2 AND tx_org_news.pid = @destPid;
 
   # Migrate data from third party extension (here: newscomfort)
 UPDATE tx_org_news, tt_news
@@ -38,15 +40,16 @@ WHERE  tx_org_news.uid = tt_news.uid;
 
 
 # Get list of images and files for CSV export
-SELECT image FROM tt_news_cat WHERE image != '';
-SELECT image FROM tt_news WHERE image != '';
-SELECT news_files FROM tt_news WHERE image != '';
+SELECT image FROM tt_news_cat WHERE image != '' AND tt_news_cat.pid = @srcePid;
+SELECT image FROM tt_news WHERE image != '' AND tt_news.pid = @srcePid;
+SELECT news_files FROM tt_news WHERE news_files != '' AND tt_news.pid = @srcePid;
 
 
   # Set default image properties for all news
-UPDATE tx_org_news
-SET    tx_org_news.imageorient  = 25,
-       tx_org_news.imagewidth   = 293,
-       tx_org_news.image_zoom   = 1;
+SET @destPid = '3606';
 
-
+UPDATE  tx_org_news
+SET     tx_org_news.imageorient  = 25,
+        tx_org_news.imagewidth   = 293,
+        tx_org_news.image_zoom   = 1
+WHERE   tx_org_news.pid = @destPid;
