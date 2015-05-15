@@ -16,7 +16,6 @@ plugin.tx_browser_pi1 {
                       <!-- ###LISTBODYITEM### end -->
                       <!-- ###LISTBODY### end -->
                     </ul>
-                    ###MY_LISTVIEW_PAGE###
                   </div>
                 </div><!-- /row -->
 )
