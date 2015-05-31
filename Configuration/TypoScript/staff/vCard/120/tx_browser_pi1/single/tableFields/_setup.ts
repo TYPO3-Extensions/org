@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/vCard/120/tx_browser_pi1/single/tableFields/tx_org_staff.ts">

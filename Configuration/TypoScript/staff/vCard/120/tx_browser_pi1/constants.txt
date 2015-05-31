@@ -1,0 +1,120 @@
+plugin.tx_browser_pi1 {
+  jQuery {
+    plugin {
+      jstree {
+        tablefield_01 = tx_org_staffgroup.title
+      }
+    }
+  }
+  navigation {
+    showUid = staffUid
+  }
+
+  templates {
+    listview {
+      header {
+        0 {
+          field   = tx_org_staff.title // tx_org_staff.name_last
+        }
+        1 {
+          field   = tx_org_staff.mail_city
+        }
+      }
+      image {
+        0 {
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
+          file      = tx_org_staff.image
+          height    = 120c
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_staff.imageseo
+          width     = 97
+        }
+        1 {
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_news_300x200.png
+          file      = tx_org_news.image
+          #height    =
+          #listNum   =
+          path      = uploads/tx_org/
+          seo       = tx_org_news.imageseo
+          #width     =
+        }
+        2 {
+          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
+          file      = tx_org_headquarters.image
+          height    = 400
+          path      = uploads/tx_org/
+          seo       = tx_org_headquarters.imageseo
+          width     = 277m
+        }
+      }
+      text {
+        0 {
+          field   = tx_org_staff.bodytext // tx_org_staff.vita
+        }
+      }
+      url {
+        0 {
+          key       = tx_org_staff.type
+          page      = tx_org_staff.page
+          record    = tx_org_staff.uid
+          showUid   = staffUid
+          #singlePid =
+          url       = tx_org_staff.url
+        }
+      }
+    }
+    singleview {
+      image {
+        0 {
+          caption       = tx_org_staff.imagecaption
+          file          = tx_org_staff.image
+          height        = tx_org_staff.imageheight
+          imagecols     = tx_org_staff.imagecols
+          imageorient   = tx_org_staff.imageorient
+          path          = uploads/tx_org/
+          seo           = tx_org_staff.imageseo
+          width         = tx_org_staff.imagewidth
+          widthDefault  = 140
+          zoom          = tx_org_staff.image_zoom
+        }
+      }
+      vCard {
+        0 {
+          field {
+            adr {
+              1 = tx_org_headquarters.postbox_postbox
+              2 = tx_org_headquarters.mail_address
+              3 = tx_org_headquarters.mail_street
+              4 = tx_org_headquarters.mail_city
+              6 = tx_org_headquarters.mail_postcode
+              7 = tx_org_headquarters.mail_country
+            }
+            email {
+              work = tx_org_staff.contact_email
+            }
+            fn = tx_org_staff.title
+            impp {
+              skype = tx_org_staff.contact_skype
+            }
+            geo {
+              lat = tx_org_headquarters.mail_lat
+              lon = tx_org_headquarters.mail_lon
+            }
+            n {
+              1 = tx_org_staff.name_last
+              2 = tx_org_staff.name_first
+            }
+            org = tx_org_headquarters.title
+            tel {
+              work {
+                fax   = tx_org_staff.contact_fax
+                voice = tx_org_staff.contact_phone
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

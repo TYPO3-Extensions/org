@@ -55,6 +55,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [6] Personen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6] Personen (einspaltig)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [6] Personen - Rand (nicht cachen!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                 'Org [6] Personen vCard');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/',                  'Org [7] Standorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/onecolumn/', 'Org [7.1] + einspaltig');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [7] Standorte - Rand');
@@ -118,6 +119,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [9] People');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [9] People (one column)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [9] People - margin (don\'t cache!)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                 'Org [9] People vCard');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/service/593621/',                    'Org [10] Service');
     break;
 }

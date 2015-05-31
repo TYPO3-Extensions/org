@@ -37,6 +37,8 @@ plugin.org {
   pages.terms =
   # cat=Organiser - Pages/150/114; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
   pages.terms_downloads =
+  # cat=Organiser - Pages/150/115; type=+int; label= vCard:Uid of your page with the vCard
+  pages.vCard =
 
   # cat=Organiser - Sysfolders/500/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =

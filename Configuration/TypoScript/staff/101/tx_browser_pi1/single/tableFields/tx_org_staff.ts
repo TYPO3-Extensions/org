@@ -161,8 +161,53 @@ plugin.tx_browser_pi1 {
                     }
                   }
                   typolink {
-                    parameter {
+                    XXXparameter {
                       field = tx_org_staff.contact_email
+                    }
+                    parameter {
+                      cObject = COA
+                      cObject {
+                        // url
+                        10 = TEXT
+                        10 {
+                          field = tx_org_staff.contact_email
+                        }
+                          // target
+                        20 = TEXT
+                        20 {
+                          value       = -
+                          noTrimWrap  = | "|"|
+                        }
+                          // class
+                        30 = TEXT
+                        30 {
+                          value       = email
+                          noTrimWrap  = | "|"|
+                        }
+                          // title
+                        40 = COA
+                        40 {
+                          10 = TEXT
+                          10 {
+                            value = e-mail of
+                            lang {
+                              de = E-Mail f&uuml;r
+                              en = e-mail of
+                            }
+                            noTrimWrap = || |
+                          }
+                          20 = TEXT
+                          20 {
+                            field = {$plugin.tx_browser_pi1.templates.listview.header.0.field}
+                          }
+                          stdWrap {
+                            stripHtml         = 1
+                            htmlSpecialChars  = 1
+                            crop              = {$plugin.tx_browser_pi1.templates.listview.header.0.title.crop}
+                            noTrimWrap  = | "|"|
+                          }
+                        }
+                      }
                     }
                   }
                   wrap = <li class="contact_email">|</li>
@@ -263,6 +308,80 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
+                }
+                  // vCard for Download
+                80 = COA
+                80 {
+                  10 = COA
+                  10 {
+                    10 = TEXT
+                    10 {
+                      prepend = TEXT
+                      prepend {
+                        value       = <i class="fi-address-book"></i>
+                        noTrimWrap  = || |
+                      }
+                      value = vCard
+                      lang {
+                        de = Visitenkarte
+                        en = vCard
+                      }
+                    }
+                    stdWrap {
+                      typolink {
+                        parameter {
+                          cObject = COA
+                          cObject {
+                            // url
+                            10 = TEXT
+                            10 {
+                              value = {$plugin.org.pages.vCard}
+                            }
+                              // target
+                            20 = TEXT
+                            20 {
+                              value       = -
+                              noTrimWrap  = | "|"|
+                            }
+                              // class
+                            30 = TEXT
+                            30 {
+                              value       = download
+                              noTrimWrap  = | "|"|
+                            }
+                              // title
+                            40 = COA
+                            40 {
+                              10 = TEXT
+                              10 {
+                                value = vCard for
+                                lang {
+                                  de = vCard von
+                                  en = vCard for
+                                }
+                                noTrimWrap = || |
+                              }
+                              20 = TEXT
+                              20 {
+                                field = {$plugin.tx_browser_pi1.templates.listview.header.0.field}
+                              }
+                              stdWrap {
+                                stripHtml         = 1
+                                htmlSpecialChars  = 1
+                                crop              = {$plugin.tx_browser_pi1.templates.listview.header.0.title.crop}
+                                noTrimWrap  = | "|"|
+                              }
+                            }
+                          }
+                        }
+                        additionalParams {
+                          wrap  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=|&type={$plugin.tx_browser_pi1.typeNum.vCardPageObj}
+                          field = tx_org_staff.uid
+                        }
+                      }
+                    }
+                  }
+                  wrap = <li class="contact_vCard">|</li>
                 }
               }
             }

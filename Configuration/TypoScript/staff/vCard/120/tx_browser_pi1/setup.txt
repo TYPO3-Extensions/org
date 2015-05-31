@@ -1,0 +1,18 @@
+plugin.tx_browser_pi1 {
+
+  views {
+    list {
+      120 = +Org: People vCard
+      120 {
+        name    = +Org: People vCard
+        showUid = {$plugin.tx_browser_pi1.navigation.showUid}
+      }
+    }
+    single {
+      120 = +Org: People vCard
+    }
+  }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/vCard/120/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/staff/vCard/120/tx_browser_pi1/single/_setup.ts">
