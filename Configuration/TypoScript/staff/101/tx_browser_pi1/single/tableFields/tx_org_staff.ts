@@ -376,7 +376,7 @@ plugin.tx_browser_pi1 {
                         }
                         additionalParams {
                           wrap  = &tx_browser_pi1[{$plugin.tx_browser_pi1.navigation.showUid}]=|&type={$plugin.tx_browser_pi1.typeNum.vCardPageObj}
-                          field = tx_org_staff.uid
+                          field = {$plugin.tx_browser_pi1.templates.listview.url.0.record}
                         }
                       }
                     }
