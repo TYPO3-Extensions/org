@@ -57,6 +57,8 @@ $TCA['tx_org_service'] = array(
     . 'note,'
     . 'hidden,starttime,endtime,'
     ,
+    // #69255, 150821, dwildt, 1+
+    'filter' => 'filter_for_all_fields',
     'tx_browser' => array(
       'geoupdate' => array(
         'address' => array(

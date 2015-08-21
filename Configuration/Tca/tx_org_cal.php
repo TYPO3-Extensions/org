@@ -115,6 +115,44 @@ $TCA[ 'tx_org_cal' ] = array(
         ),
         'default' => 'record',
       ),
+      // #69250, 150821, dwildt, 1+
+      'config_filter' => array(
+        'type' => 'select',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+          ),
+          'page' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '1' => 'page',
+          ),
+          'url' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '1' => 'url',
+          ),
+          'notype' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '1' => 'notype',
+          ),
+          'tx_org_event' => array(
+            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.type.tx_org_event',
+            '1' => 'tx_org_event',
+          ),
+          'calpage' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
+            '1' => 'calpage',
+          ),
+          'calurl' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
+            '1' => 'calurl',
+          ),
+        ),
+      ),
     ),
     'page' => array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.page',
@@ -195,8 +233,8 @@ $TCA[ 'tx_org_cal' ] = array(
         'suppress_icons' => 1,
         'MM' => 'tx_org_cal_mm_tx_org_caltype',
         'foreign_table' => 'tx_org_caltype',
-        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf
-        . ' AND tx_org_caltype.deleted = 0 '
+        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' '
+        . 'AND tx_org_caltype.deleted = 0 '
         . 'AND tx_org_caltype.hidden = 0 ORDER BY tx_org_caltype.title'
         ,
         'form_type' => 'user',
@@ -239,6 +277,23 @@ $TCA[ 'tx_org_cal' ] = array(
           ),
         ),
       ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_cal_mm_tx_org_caltype',
+        'foreign_table' => 'tx_org_caltype',
+        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf . ' '
+        . 'AND tx_org_caltype.deleted = 0 '
+        . 'AND tx_org_caltype.hidden = 0 ORDER BY tx_org_caltype.title'
+        ,
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'bodytext' => array(
       'exclude' => $bool_exclude_default,
@@ -278,6 +333,32 @@ $TCA[ 'tx_org_cal' ] = array(
         ),
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
+      ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
+        ),
+        'foreign_table' => 'tx_org_event',
+        'foreign_table_where' => 'AND tx_org_event.' . $str_store_record_conf
+        . ' AND tx_org_event.deleted = 0 AND tx_org_event.hidden = 0'
+        . ' AND tx_org_event.sys_language_uid=###REC_FIELD_sys_language_uid### '
+        . 'ORDER BY tx_org_event.title'
+        ,
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
       ),
     ),
     'teaser_title' => array(
@@ -345,6 +426,28 @@ $TCA[ 'tx_org_cal' ] = array(
         ),
         'suppress_icons' => 1,
       ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_location'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_location'
+        ),
+        'foreign_table' => 'tx_org_location',
+        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_headquarters' => array(
       'exclude' => $bool_exclude_default,
@@ -374,6 +477,29 @@ $TCA[ 'tx_org_cal' ] = array(
           ),
         ),
         'suppress_icons' => 1,
+      ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_cal',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_cal'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_cal'
+        ),
+        'foreign_table' => 'tx_org_headquarters',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
       ),
     ),
     'tx_org_calentrance' => array(
@@ -492,6 +618,31 @@ $TCA[ 'tx_org_cal' ] = array(
             'popup_onlyOpenIfSelected' => 1,
             'icon' => 'edit2.gif',
             'JSopenParams' => $JSopenParams,
+          ),
+        ),
+      ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_caltype'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_caltype'
+        ),
+        'foreign_table' => 'tx_org_caltype',
+        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf
+        . ' AND tx_org_caltype.deleted = 0 AND tx_org_caltype.hidden = 0'
+        . ' ORDER BY tx_org_caltype.title'
+        ,
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
           ),
         ),
       ),

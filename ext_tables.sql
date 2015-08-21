@@ -16,6 +16,7 @@
 # tx_org_jobsector
 # tx_org_jobworkinghours
 # tx_org_location
+# tx_org_locationcat
 # tx_org_news
 # tx_org_newscat
 # tx_org_service

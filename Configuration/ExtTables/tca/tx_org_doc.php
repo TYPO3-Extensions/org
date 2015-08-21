@@ -62,6 +62,8 @@ $TCA['tx_org_downloads'] = array(
     'hidden,pages,starttime,endtime,fe_group,' .
     'seo_keywords,seo_description,' .
     'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,',
+    // #69257, 150821, dwildt, 1+
+    'filter' => 'filter_for_all_fields',
   ),
 );
 // doc /////////////////////////////////////////////////////////////////////
@@ -72,7 +74,8 @@ $TCA['tx_org_downloadscat'] = array(
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
-    'sortby' => 'sorting',
+    // #i0071, 150822, dwildt, 1-
+    //'sortby' => 'sorting',
     'delete' => 'deleted',
     'enablecolumns' => array(
       'disabled' => 'hidden',
@@ -105,7 +108,8 @@ $TCA['tx_org_downloadsmedia'] = array(
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
-    'sortby' => 'sorting',
+    // #i0071, 150822, dwildt, 1-
+    //'sortby' => 'sorting',
     'delete' => 'deleted',
     'enablecolumns' => array(
       'disabled' => 'hidden',

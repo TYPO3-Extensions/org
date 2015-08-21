@@ -27,7 +27,8 @@ $TCA['tx_org_headquarters'] = array(
     'transOrigPointerField' => 'l10n_parent',
     'transOrigDiffSourceField' => 'l10n_diffsource',
     'default_sortby' => 'ORDER BY title',
-    'sortby'    => 'sorting',
+    // #i0071, 150822, dwildt, 1-
+    //'sortby'    => 'sorting',
     'delete' => 'deleted',
     'enablecolumns' => array(
       'disabled' => 'hidden',
@@ -60,6 +61,8 @@ $TCA['tx_org_headquarters'] = array(
     'embeddedcode,' .
     'hidden,pages,fe_group,' .
     'seo_keywords,seo_description',
+    // #69252, 150821, dwildt, 1+
+    'filter' => 'filter_for_all_fields',
     'tx_browser' => array(
       'geoupdate' => array(
         'address' => array(

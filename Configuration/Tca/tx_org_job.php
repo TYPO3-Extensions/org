@@ -88,6 +88,32 @@ $TCA[ 'tx_org_job' ] = array(
         ),
         'default' => 'record',
       ),
+      // #69253, 150821, dwildt, 1+
+      'config_filter' => array(
+        'type' => 'select',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+          ),
+          'page' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '1' => 'page',
+          ),
+          'url' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '1' => 'url',
+          ),
+          'notype' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '1' => 'notype',
+          ),
+        ),
+      ),
     ),
     'page' => array(
       'exclude' => $bool_exclude_default,
@@ -387,7 +413,7 @@ $TCA[ 'tx_org_job' ] = array(
           'table_foreign' => 'tx_org_jobcat'
         ),
         'foreign_table' => 'tx_org_jobcat',
-        'foreign_table_where' => 'AND tx_org_jobcat.pid=###CURRENT_PID### AND tx_org_jobcat.deleted = 0 AND tx_org_jobcat.hidden = 0 ORDER BY tx_org_jobcat.title',
+        'foreign_table_where' => 'AND tx_org_jobcat.' . $str_store_record_conf . ' AND tx_org_jobcat.deleted = 0 AND tx_org_jobcat.hidden = 0 ORDER BY tx_org_jobcat.title',
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'treeView' => 1,
@@ -409,7 +435,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_jobcat',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -420,7 +446,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_jobcat',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -433,7 +459,29 @@ $TCA[ 'tx_org_job' ] = array(
             'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
           ),
         ),
-      )
+      ),
+      // #69253, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobcat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobcat'
+        ),
+        'foreign_table' => 'tx_org_jobcat',
+        'foreign_table_where' => 'AND tx_org_jobcat.' . $str_store_record_conf . ' AND tx_org_jobcat.deleted = 0 AND tx_org_jobcat.hidden = 0 ORDER BY tx_org_jobcat.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_jobsector' => array(
       'l10n_mode' => 'exclude',
@@ -455,7 +503,7 @@ $TCA[ 'tx_org_job' ] = array(
           'table_foreign' => 'tx_org_jobsector'
         ),
         'foreign_table' => 'tx_org_jobsector',
-        'foreign_table_where' => 'AND tx_org_jobsector.pid=###CURRENT_PID###  AND tx_org_jobsector.deleted = 0 AND tx_org_jobsector.hidden = 0 ORDER BY tx_org_jobsector.title',
+        'foreign_table_where' => 'AND tx_org_jobsector.' . $str_store_record_conf . '  AND tx_org_jobsector.deleted = 0 AND tx_org_jobsector.hidden = 0 ORDER BY tx_org_jobsector.title',
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'treeView' => 1,
@@ -477,7 +525,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_jobsector',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -488,7 +536,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_jobsector',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -501,7 +549,29 @@ $TCA[ 'tx_org_job' ] = array(
             'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
           ),
         ),
-      )
+      ),
+      // #69253, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobsector'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobsector'
+        ),
+        'foreign_table' => 'tx_org_jobsector',
+        'foreign_table_where' => 'AND tx_org_jobsector.' . $str_store_record_conf . '  AND tx_org_jobsector.deleted = 0 AND tx_org_jobsector.hidden = 0 ORDER BY tx_org_jobsector.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_jobworkinghours' => array(
       'l10n_mode' => 'exclude',
@@ -523,7 +593,7 @@ $TCA[ 'tx_org_job' ] = array(
           'table_foreign' => 'tx_org_jobworkinghours'
         ),
         'foreign_table' => 'tx_org_jobworkinghours',
-        'foreign_table_where' => 'AND tx_org_jobworkinghours.pid=###CURRENT_PID###  AND tx_org_jobworkinghours.deleted = 0 AND tx_org_jobworkinghours.hidden = 0 ORDER BY tx_org_jobworkinghours.title',
+        'foreign_table_where' => 'AND tx_org_jobworkinghours.' . $str_store_record_conf . '  AND tx_org_jobworkinghours.deleted = 0 AND tx_org_jobworkinghours.hidden = 0 ORDER BY tx_org_jobworkinghours.title',
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'treeView' => 1,
@@ -545,7 +615,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_jobworkinghours',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -556,7 +626,7 @@ $TCA[ 'tx_org_job' ] = array(
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_jobworkinghours',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -569,7 +639,29 @@ $TCA[ 'tx_org_job' ] = array(
             'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
           ),
         ),
-      )
+      ),
+      // #69253, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobworkinghours'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_jobworkinghours'
+        ),
+        'foreign_table' => 'tx_org_jobworkinghours',
+        'foreign_table_where' => 'AND tx_org_jobworkinghours.' . $str_store_record_conf . '  AND tx_org_jobworkinghours.deleted = 0 AND tx_org_jobworkinghours.hidden = 0 ORDER BY tx_org_jobworkinghours.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_headquarters' => array(
       'l10n_mode' => 'exclude',
@@ -607,7 +699,30 @@ $TCA[ 'tx_org_job' ] = array(
         'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69253, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_job',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_job'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_job'
+        ),
+        'foreign_table' => 'tx_org_headquarters',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_staff' => array(
       'l10n_mode' => 'exclude',
@@ -638,7 +753,29 @@ $TCA[ 'tx_org_job' ] = array(
         'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69253, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_job',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,

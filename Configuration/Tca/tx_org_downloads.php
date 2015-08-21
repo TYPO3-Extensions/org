@@ -97,6 +97,28 @@ $TCA['tx_org_downloads'] = array(
         ),
         'default' => 'download',
       ),
+      // #69257, 150821, dwildt, 1+
+      'config_filter' => array(
+        'type' => 'select',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+          'download' => array(
+            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.type.download',
+            '1' => 'download',
+          ),
+          'download_shipping' => array(
+            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.type.download_shipping',
+            '1' => 'download_shipping',
+          ),
+          'shipping' => array(
+            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.type.shipping',
+            '1' => 'shipping',
+          ),
+        ),
+      ),
     ),
     'title' => array(
       'exclude' => 0,
@@ -170,6 +192,28 @@ $TCA['tx_org_downloads'] = array(
           ),
         ),
       ),
+      // #69257, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadscat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadscat'
+        ),
+        'foreign_table' => 'tx_org_downloadscat',
+        'foreign_table_where' => 'AND tx_org_downloadscat.' . $str_store_record_conf . ' AND tx_org_downloadscat.deleted = 0 AND tx_org_downloadscat.hidden = 0 ORDER BY tx_org_downloadscat.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_downloadsmedia' => array(
       'exclude' => $bool_exclude_default,
@@ -222,6 +266,28 @@ $TCA['tx_org_downloads'] = array(
             'popup_onlyOpenIfSelected' => 1,
             'icon' => 'edit2.gif',
             'JSopenParams' => $JSopenParams,
+          ),
+        ),
+      ),
+      // #69257, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadsmedia'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_downloadsmedia'
+        ),
+        'foreign_table' => 'tx_org_downloadsmedia',
+        'foreign_table_where' => 'AND tx_org_downloadsmedia.' . $str_store_record_conf . ' AND tx_org_downloadsmedia.deleted = 0 AND tx_org_downloadsmedia.hidden = 0 ORDER BY tx_org_downloadsmedia.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
           ),
         ),
       ),
@@ -578,7 +644,29 @@ $TCA['tx_org_downloads'] = array(
         'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69257, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_downloads',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'pages' => $conf_pages,
     'hidden' => $conf_hidden,

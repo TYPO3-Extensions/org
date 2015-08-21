@@ -63,6 +63,8 @@ $TCA[ 'tx_org_cal' ] = array(
     'embeddedcode,print,printcaption,printseo,' .
     'hidden,starttime,endtime,pages,fe_group,' .
     'seo_keywords,seo_description',
+    // #69250, 150821, dwildt, 1+
+    'filter' => 'filter_for_all_fields',
   ),
 );
 // cal /////////////////////////////////////////////////////////////////////

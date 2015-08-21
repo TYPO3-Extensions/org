@@ -60,6 +60,8 @@ $TCA['tx_org_staff'] = array(
     . 'tx_org_location,'
     . 'hidden,starttime,endtime,'
     ,
+    // #69256, 150821, dwildt, 1+
+    'filter' => 'filter_for_all_fields',
   ),
 );
 

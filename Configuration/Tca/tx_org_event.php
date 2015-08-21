@@ -90,6 +90,32 @@ $TCA['tx_org_event'] = array(
         ),
         'default' => 'record',
       ),
+      // #69251, 150821, dwildt, 1+
+      'config_filter' => array(
+        'type' => 'select',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+          'record' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '1' => 'record',
+          ),
+          'page' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '1' => 'page',
+          ),
+          'url' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '1' => 'url',
+          ),
+          'notype' => array(
+            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '1' => 'notype',
+          ),
+        ),
+      ),
     ),
     'page' => array(
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.page',
@@ -189,7 +215,7 @@ $TCA['tx_org_event'] = array(
           'table_foreign' => 'tx_org_eventcat'
         ),
         'foreign_table' => 'tx_org_eventcat',
-        'foreign_table_where' => 'AND tx_org_eventcat.pid=###CURRENT_PID### AND tx_org_eventcat.deleted = 0 AND tx_org_eventcat.hidden = 0 ORDER BY tx_org_eventcat.title',
+        'foreign_table_where' => 'AND tx_org_eventcat.' . $str_store_record_conf . ' AND tx_org_eventcat.deleted = 0 AND tx_org_eventcat.hidden = 0 ORDER BY tx_org_eventcat.title',
         'form_type' => 'user',
         'userFunc' => 'tx_cpstcatree->getTree',
         'treeView' => 1,
@@ -211,7 +237,7 @@ $TCA['tx_org_event'] = array(
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_eventcat',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
               'setValue' => 'prepend'
             ),
             'script' => 'wizard_add.php',
@@ -222,7 +248,7 @@ $TCA['tx_org_event'] = array(
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_eventcat',
-              'pid' => '###CURRENT_PID###',
+              'pid' => $str_marker_pid,
             ),
             'script' => 'wizard_list.php',
           ),
@@ -235,7 +261,29 @@ $TCA['tx_org_event'] = array(
             'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
           ),
         ),
-      )
+      ),
+      // #69251, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_eventcat'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_eventcat'
+        ),
+        'foreign_table' => 'tx_org_eventcat',
+        'foreign_table_where' => 'AND tx_org_eventcat.' . $str_store_record_conf . ' AND tx_org_eventcat.deleted = 0 AND tx_org_eventcat.hidden = 0 ORDER BY tx_org_eventcat.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_cal' => array(
       'exclude' => $bool_exclude_default,
@@ -265,6 +313,34 @@ $TCA['tx_org_event'] = array(
         ,
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
+      ),
+      // #69251, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_event',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_event'
+        ),
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf
+        . ' AND tx_org_cal.deleted = 0'
+        . ' AND tx_org_cal.hidden = 0'
+        . ' AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid###'
+        . ' ORDER BY datetime DESC, title'
+        ,
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
       ),
     ),
     'documents_from_path' => array(
@@ -347,7 +423,29 @@ $TCA['tx_org_event'] = array(
         'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69251, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_news'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_news'
+        ),
+        'foreign_table' => 'tx_org_news',
+        'foreign_table_where' => 'AND tx_org_news.' . $str_store_record_conf . ' AND tx_org_news.deleted = 0 AND tx_org_news.hidden = 0 AND tx_org_news.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_news.datetime DESC, title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,
@@ -601,7 +699,30 @@ $TCA['tx_org_event'] = array(
         'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69251, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_event',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_event'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_headquarters',
+          'table_foreign' => 'tx_org_event'
+        ),
+        'foreign_table' => 'tx_org_headquarters',
+        'foreign_table_where' => 'AND tx_org_headquarters.' . $str_store_record_conf . ' AND tx_org_headquarters.deleted = 0 AND tx_org_headquarters.hidden = 0 AND tx_org_headquarters.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_headquarters.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'tx_org_staff' => array(
       'l10n_mode' => 'exclude',
@@ -632,7 +753,29 @@ $TCA['tx_org_event'] = array(
         'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
         'selectedListStyle' => $listStyleWidth,
         'itemListStyle' => $listStyleWidth,
-      )
+      ),
+      // #69251, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_event',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
     ),
     'hidden' => $conf_hidden,
     'pages' => $conf_pages,
