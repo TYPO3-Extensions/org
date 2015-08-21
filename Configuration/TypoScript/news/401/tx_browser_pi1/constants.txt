@@ -14,7 +14,7 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          crop  = 24|...|1
+          crop  = 40|...|1
           field = tx_org_news.teaser_title // tx_org_news.title
         }
         1 {
@@ -36,7 +36,7 @@ plugin.tx_browser_pi1 {
       }
       text {
         0 {
-          crop = 100|...|1
+          crop = 240|...|1
           field = tx_org_news.teaser_short // tx_org_news.bodytext
           tag  = p
         }

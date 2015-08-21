@@ -13,52 +13,52 @@ plugin.tx_browser_pi1 {
               10 = COA
               10 {
                   // image
-                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.6
                 wrap = <div class="columns small-4">|</div>
               }
                 // text
               20 = COA
               20 {
                   // title
-                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0
+                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.6
                   // teaser_subtitle
                 20 = TEXT
                 20 {
                   field = tx_org_news.marginal_subtitle // tx_org_news.teaser_subtitle // tx_org_news.subtitle
                   wrap  = <p>|</p>
-                  crop  = {$plugin.tx_browser_pi1.templates.listview.text.0.crop}
+                  crop  = {$plugin.tx_browser_pi1.templates.listview.text.6.crop}
                   required = 1
                 }
                 20 >
                   // subtitle // short
-                30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0
+                30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6
                 30 {
                   default {
                     10 >
                     20 {
                       value >
-                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6.default.10.field
                     }
                   }
                   notype {
                     10 >
                     20 {
                       value >
-                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6.default.10.field
                     }
                   }
                   page {
                     10 >
                     20 {
                       value >
-                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6.default.10.field
                     }
                   }
                   url {
                     10 >
                     20 {
                       value >
-                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default.10.field
+                      field < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6.default.10.field
                     }
                   }
                 }

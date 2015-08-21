@@ -1,3 +1,13 @@
+7.2.3
+  15-08-21
+  Bugfix
+  * #i0070: list view slick news (409) is overriding a constant of list view news (401). Move 0 to 6.
+
+7.2.2
+  15-06-12
+  Improvement
+  * #i0069: Default PDF with a proper second page
+
 7.2.1
   15-06-01
   Improvement

@@ -5,10 +5,10 @@ plugin.tx_browser_pi1 {
           // 140706: empty statement: for proper comments only
         tx_org_staff {
         }
-          // title: image, header, bodytext, vita
+          // title, marginal box: contact
         tx_org_staff =
         tx_org_staff {
-            // title
+            // title: image, header, bodytext, vita
           title < plugin.tx_browser_pi1.displaySingle.master_templates.tableFields.imageText.0
           title {
             20 {
@@ -104,7 +104,7 @@ plugin.tx_browser_pi1 {
                 field = tx_org_staff.uid
               }
             }
-              // vcard: header, name, contact_email, contact_phone, contact_fax, contact_skype, contact_url,
+              // vcard: header, name, contact_email, contact_phone, contact_fax, contact_skype, contact_url, vCard for Download
             10 = COA
             10 {
                 // column: image, header, title, steet, zip city, url

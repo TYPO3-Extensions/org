@@ -2,14 +2,8 @@ plugin.tx_browser_pi1 {
   navigation {
     showUid = staffUid
   }
-
   templates {
     listview {
-      XXXheader {
-        0 {
-          field   = tx_org_staff.title // tx_org_staff.name_last
-        }
-      }
       url {
         0 {
           record    = tx_org_staff.uid
