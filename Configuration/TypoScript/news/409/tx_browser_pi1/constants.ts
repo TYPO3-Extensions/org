@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
         6 {
           crop = 100|...|1
           field = tx_org_news.marginal_subtitle // tx_org_news.teaser_subtitle // tx_org_news.subtitle // tx_org_news.marginal_short // tx_org_news.teaser_short // tx_org_news.bodytext
-          tag  = p
+          tag  = div
         }
       }
     }
