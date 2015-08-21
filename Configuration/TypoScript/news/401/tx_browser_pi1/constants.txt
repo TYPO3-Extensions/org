@@ -34,7 +34,7 @@ plugin.tx_browser_pi1 {
           width     = 160
         }
       }
-      subheader {
+      subtitle {
         0 {
           crop  = 60|...|1
           field = tx_org_news.teaser_subtitle // tx_org_news.subtitle
