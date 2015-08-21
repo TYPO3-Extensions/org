@@ -16,7 +16,7 @@ plugin.tx_browser_pi1 {
               20 {
                 field = tx_org_news.teaser_subtitle // tx_org_news.subtitle
                 wrap  = <h3>|</h3>
-                crop  = 40|...|1
+                crop  = 60|...|1
                 required = 1
               }
                 // teaser_short
