@@ -14,9 +14,9 @@ plugin.tx_browser_pi1 {
                 // teaser_subtitle
               20 = TEXT
               20 {
-                field = tx_org_news.teaser_subtitle // tx_org_news.subtitle
-                wrap  = <h3>|</h3>
-                crop  = 60|...|1
+                field = plugin.tx_browser_pi1.templates.listview.subtitle.0.field
+                wrap  = plugin.tx_browser_pi1.templates.listview.subtitle.0.wrap
+                crop  = plugin.tx_browser_pi1.templates.listview.subtitle.0.crop
                 required = 1
               }
                 // teaser_short
