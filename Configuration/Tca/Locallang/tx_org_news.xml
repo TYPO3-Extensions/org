@@ -47,7 +47,7 @@
       <label index="tx_org_news.tx_org_newsgroup">Group</label>
       <label index="tx_org_news.tx_org_staff">Author</label>
       <label index="tx_org_newscat">News: Categories</label>
-      <label index="tx_org_newscat.div_categories">Categories</label>
+      <label index="tx_org_newscat.div_cat">Categories</label>
       <label index="tx_org_newscat.div_control">Controlling</label>
       <label index="tx_org_newscat.div_teaser">Teaser</label>
       <label index="tx_org_newscat.div_media">Media</label>
@@ -56,7 +56,7 @@
       <label index="tx_org_newscat.note">Note (internal)</label>
       <label index="tx_org_newscat.uid_parent">Superior category</label>
       <label index="tx_org_newsgroup">News: Groups</label>
-      <label index="tx_org_newsgroup.div_categories">Groups</label>
+      <label index="tx_org_newsgroup.div_cat">Groups</label>
       <label index="tx_org_newsgroup.div_control">Controlling</label>
       <label index="tx_org_newsgroup.div_teaser">Teaser</label>
       <label index="tx_org_newsgroup.div_media">Media</label>
