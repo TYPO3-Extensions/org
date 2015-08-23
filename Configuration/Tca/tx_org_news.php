@@ -519,7 +519,7 @@ $TCA[ 'tx_org_news' ] = array(
     'image_1stforlistonly' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:image_1stforlistonly',
+      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image_1stforlistonly',
       'config' => array(
         'type' => 'check'
       ),

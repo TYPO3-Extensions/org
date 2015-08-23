@@ -1,4 +1,9 @@
 7.3.0
+  15-08-23
+  Bugfix
+  * #i0074:	TCA Labelling 1st image in list views
+
+7.3.0
   15-08-21
   Feature
   * #69257:	Backend-Filter Documents
