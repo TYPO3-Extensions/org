@@ -8,8 +8,9 @@ plugin.tx_browser_pi1 {
             filter = TEXT
             filter {
               value (
-                <div class="filter">
+                <div class="row filter">
                   ###TX_ORG_NEWSCAT.TITLE###
+                  ###TX_ORG_NEWSGROUP.TITLE###
                 </div>
 )
             }

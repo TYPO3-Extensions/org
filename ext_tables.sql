@@ -19,6 +19,7 @@
 # tx_org_locationcat
 # tx_org_news
 # tx_org_newscat
+# tx_org_newsgroup
 # tx_org_service
 # tx_org_servicecat
 # tx_org_servicesector
@@ -734,7 +735,6 @@ CREATE TABLE tx_org_locationcat (
 #
 # tx_org_news
 #
-# #32223 Category tree, 111130, dwildt+, tx_org_newscat_parent_uid
 CREATE TABLE tx_org_news (
   uid int(11) NOT NULL auto_increment,
   pid int(11) NOT NULL DEFAULT '0',
@@ -792,7 +792,7 @@ CREATE TABLE tx_org_news (
   tx_org_event tinytext,
   tx_org_headquarters tinytext,
   tx_org_newscat tinytext,
-  tx_org_newscat_uid_parent int(11) NOT NULL DEFAULT '0',
+  tx_org_newsgroup tinytext,
   tx_org_staff tinytext,
   type tinytext,
   url tinytext,
@@ -808,6 +808,31 @@ CREATE TABLE tx_org_news (
 #
 # #32223 Category tree, 111130, dwildt+, uid_parent
 CREATE TABLE tx_org_newscat (
+  uid int(11) NOT NULL auto_increment,
+  pid int(11) NOT NULL DEFAULT '0',
+  uid_parent int(11) NOT NULL DEFAULT '0',
+  tstamp int(11) NOT NULL DEFAULT '0',
+  crdate int(11) NOT NULL DEFAULT '0',
+  cruser_id int(11) NOT NULL DEFAULT '0',
+  deleted tinyint(4) NOT NULL DEFAULT '0',
+  hidden tinyint(4) NOT NULL DEFAULT '0',
+  title tinytext,
+  title_lang_ol tinytext,
+  image text,
+  imagecaption text,
+  imageseo text,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+
+);
+
+
+
+#
+# tx_org_newsgroup
+#
+CREATE TABLE tx_org_newsgroup (
   uid int(11) NOT NULL auto_increment,
   pid int(11) NOT NULL DEFAULT '0',
   uid_parent int(11) NOT NULL DEFAULT '0',

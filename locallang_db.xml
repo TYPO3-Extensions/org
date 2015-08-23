@@ -29,6 +29,7 @@
       <label index="filter_phrase.location">Locations</label>
       <label index="filter_phrase.locationcat">Business segments</label>
       <label index="filter_phrase.newscat">Subjects</label>
+      <label index="filter_phrase.newsgroup">Groups</label>
       <label index="filter_phrase.part_of_calendar">Part of calendar in ...</label>
       <label index="filter_phrase.part_of_schedule">Part of playing schedule in ...</label>
       <label index="filter_phrase.period">Period</label>
@@ -126,6 +127,7 @@
       <label index="filter_phrase.location">Orte</label>
       <label index="filter_phrase.locationcat">Geschäftsfelder</label>
       <label index="filter_phrase.newscat">Themen</label>
+      <label index="filter_phrase.newsgroup">Gruppen</label>
       <label index="filter_phrase.part_of_calendar">Im Kalender von ...</label>
       <label index="filter_phrase.part_of_schedule">Im Spielplan von ...</label>
       <label index="filter_phrase.period">Zeitraum</label>

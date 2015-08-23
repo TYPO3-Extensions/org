@@ -3,6 +3,7 @@ plugin.tx_browser_pi1 {
     plugin {
       jstree {
         tablefield_01 = tx_org_newscat.title
+        tablefield_02 = tx_org_newsgroup.title
       }
     }
   }

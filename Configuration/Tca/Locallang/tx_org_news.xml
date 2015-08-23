@@ -7,6 +7,7 @@
   <data type="array">
     <languageKey index="default" type="array">
       <label index="tx_org_news">News</label>
+      <label index="tx_org_news.div_categories">Filter</label>
       <label index="tx_org_news.div_news">News</label>
       <label index="tx_org_news.div_marginal">Marginal</label>
       <label index="tx_org_news.div_teaser">Teaser</label>
@@ -43,10 +44,10 @@
       <label index="tx_org_news.topnews.0">Standard</label>
       <label index="tx_org_news.tx_org_headquarters">Company</label>
       <label index="tx_org_news.tx_org_newscat">Category</label>
-      <label index="tx_org_news.tx_org_newscat_uid_parent">Category</label>
+      <label index="tx_org_news.tx_org_newsgroup">Group</label>
       <label index="tx_org_news.tx_org_staff">Author</label>
       <label index="tx_org_newscat">News: Categories</label>
-      <label index="tx_org_newscat.div_cat">Category</label>
+      <label index="tx_org_newscat.div_categories">Categories</label>
       <label index="tx_org_newscat.div_control">Controlling</label>
       <label index="tx_org_newscat.div_teaser">Teaser</label>
       <label index="tx_org_newscat.div_media">Media</label>
@@ -54,15 +55,28 @@
       <label index="tx_org_newscat.title_lang_ol">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
       <label index="tx_org_newscat.note">Note (internal)</label>
       <label index="tx_org_newscat.uid_parent">Superior category</label>
+      <label index="tx_org_newsgroup">News: Groups</label>
+      <label index="tx_org_newsgroup.div_categories">Groups</label>
+      <label index="tx_org_newsgroup.div_control">Controlling</label>
+      <label index="tx_org_newsgroup.div_teaser">Teaser</label>
+      <label index="tx_org_newsgroup.div_media">Media</label>
+      <label index="tx_org_newsgroup.title">Category label</label>
+      <label index="tx_org_newsgroup.title_lang_ol">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
+      <label index="tx_org_newsgroup.note">Note (internal)</label>
+      <label index="tx_org_newsgroup.uid_parent">Superior group</label>
       <label index="wizard.tx_org_news.add">Add a news</label>
       <label index="wizard.tx_org_news.edit">Edit the selected news</label>
       <label index="wizard.tx_org_news.list">Display the news table</label>
       <label index="wizard.tx_org_newscat.add">Add a news category</label>
       <label index="wizard.tx_org_newscat.edit">Edit the selected news category</label>
       <label index="wizard.tx_org_newscat.list">Display the news categories table</label>
+      <label index="wizard.tx_org_newsgroup.add">Add a news group</label>
+      <label index="wizard.tx_org_newsgroup.edit">Edit the selected news group</label>
+      <label index="wizard.tx_org_newsgroup.list">Display the news group table</label>
     </languageKey>
     <languageKey index="de" type="array">
       <label index="tx_org_news">Nachricht</label>
+      <label index="tx_org_news.div_categories">Filter</label>
       <label index="tx_org_news.div_company">Firma</label>
       <label index="tx_org_news.div_control">Steuerung</label>
       <label index="tx_org_news.div_embedded">Eingebundener Code</label>
@@ -98,11 +112,11 @@
       <label index="tx_org_news.page">Link zu interner Seite</label>
       <label index="tx_org_news.url">Link zu externer Seite</label>
       <label index="tx_org_news.tx_org_headquarters">Firma</label>
-      <label index="tx_org_news.tx_org_newscat">Kategory</label>
-      <label index="tx_org_news.tx_org_newscat_uid_parent">Kategorie</label>
+      <label index="tx_org_news.tx_org_newscategories">Kategorien</label>
       <label index="tx_org_news.tx_org_staff">Autor</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
       <label index="tx_org_news.tx_org_newscat">Kategorie</label>
+      <label index="tx_org_news.tx_org_newsgroup">Gruppe</label>
       <label index="tx_org_news.tx_org_staff">Personen</label>
       <label index="tx_org_newscat">Nachricht: Kategorien</label>
       <label index="tx_org_newscat.div_cat">Kategorie</label>
@@ -112,12 +126,23 @@
       <label index="tx_org_newscat.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
       <label index="tx_org_newscat.note">Bemerkung (intern)</label>
       <label index="tx_org_newscat.uid_parent">Übergeordnete Kategorie</label>
+      <label index="tx_org_newsgroup">Nachricht: Gruppen</label>
+      <label index="tx_org_newsgroup.div_cat">Gruppen</label>
+      <label index="tx_org_newsgroup.div_control">Steuerung</label>
+      <label index="tx_org_newsgroup.div_media">Medien</label>
+      <label index="tx_org_newsgroup.title">Bezeichnung der Nachrichten-Gruppe</label>
+      <label index="tx_org_newsgroup.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tx_org_newsgroup.note">Bemerkung (intern)</label>
+      <label index="tx_org_newsgroup.uid_parent">Übergeordnete Gruppe</label>
       <label index="wizard.tx_org_news.add">Neue Nachricht erstellen</label>
       <label index="wizard.tx_org_news.edit">Markierte Nachricht bearbeiten</label>
       <label index="wizard.tx_org_news.list">Tabelle mit Nachrichten anzeigen</label>
       <label index="wizard.tx_org_newscat.add">Neue Nachrichten-Kategorie erstellen</label>
       <label index="wizard.tx_org_newscat.edit">Markierte Nachrichten-Kategorie bearbeiten</label>
       <label index="wizard.tx_org_newscat.list">Tabelle mit Nachrichten-Kategorien anzeigen</label>
+      <label index="wizard.tx_org_newsgroup.add">Neue Nachrichten-Gruppe erstellen</label>
+      <label index="wizard.tx_org_newsgroup.edit">Markierte Nachrichten-Gruppe bearbeiten</label>
+      <label index="wizard.tx_org_newsgroup.list">Tabelle mit Nachrichten-Gruppen anzeigen</label>
     </languageKey>
   </data>
 </T3locallang>

@@ -1,5 +1,20 @@
-7.3.0
+7.4.0
   15-08-23
+  Feature
+  * #69272: Group table for news
+            ToDo:
+            * Page TSConfig of the data folderr and the news folder must updated
+            Effected files:
+            * ext_tables.sql
+            * locallang_db.xml
+            * Configuration
+              * ExtTables/tca/tx_org_news.php
+              * Tca
+                * tx_org_news.php
+                * Locallang/tx_org_news.xml
+              * TypoScript/news/401/tx_browser_pi1
+                * constants.txt
+                * list/htmlSnippets.ts
   Bugfix
   * #i0074:	TCA Labelling 1st image in list views
 
