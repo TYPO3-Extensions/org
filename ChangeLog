@@ -14,7 +14,10 @@
                 * Locallang/tx_org_news.xml
               * TypoScript/news/401/tx_browser_pi1
                 * constants.txt
-                * list/htmlSnippets.ts
+                * list
+                  * filter.ts
+                  * htmlSnippets.ts
+
   Bugfix
   * #i0074:	TCA Labelling 1st image in list views
 
