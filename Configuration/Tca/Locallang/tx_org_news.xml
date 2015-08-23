@@ -24,6 +24,8 @@
       <label index="tx_org_news.title">Header</label>
       <label index="tx_org_news.subtitle">Subheader</label>
       <label index="tx_org_news.datetime">Datetime</label>
+      <label index="tx_org_news.datetime.from">from</label>
+      <label index="tx_org_news.datetime.to">to</label>
       <label index="tx_org_news.archivedate">Archive date</label>
       <label index="tx_org_news.bodytext">Bodytext</label>
       <label index="tx_org_news.marginal_title">Header (in marginal views)</label>
@@ -78,6 +80,8 @@
       <label index="tx_org_news.title">Überschrift</label>
       <label index="tx_org_news.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_news.datetime">Datum der Veröffentlichung</label>
+      <label index="tx_org_news.datetime.from">veröffentlicht zwischen ...</label>
+      <label index="tx_org_news.datetime.to">... und</label>
       <label index="tx_org_news.archivedate">Archivdatum</label>
       <label index="tx_org_news.topnews">Spitzenmeldung</label>
       <label index="tx_org_news.topnews.3">Hohe Priorität</label>

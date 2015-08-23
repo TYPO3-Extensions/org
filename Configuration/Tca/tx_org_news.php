@@ -168,6 +168,18 @@ $TCA[ 'tx_org_news' ] = array(
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.datetime',
       'config' => $conf_datetime,
+      // #69248, 150821, dwildt, 1+
+      'config_filter' => array(
+        'type' => 'input',
+        'size' => '8',
+        'max' => '20',
+        'eval' => 'date',
+        'fromto' => true,
+        'fromto_labels' => array(
+          'from' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.datetime.from',
+          'to' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.datetime.to',
+        ),
+      ),
     ),
     'archivedate' => array(
       'exclude' => $bool_exclude_default,

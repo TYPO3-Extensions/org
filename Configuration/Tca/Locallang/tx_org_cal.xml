@@ -26,6 +26,8 @@
       <label index="tx_org_cal.title">Title of the event</label>
       <label index="tx_org_cal.subtitle">Subheader</label>
       <label index="tx_org_cal.datetime">Datetime</label>
+      <label index="tx_org_cal.datetime.from">Datetime from ...</label>
+      <label index="tx_org_cal.datetime.to">... and</label>
       <label index="tx_org_cal.datetimeend">Datetime end of event</label>
       <label index="tx_org_cal.tx_org_caltype">Type of Event</label>
       <label index="tx_org_cal.bodytext">Bodytext</label>
@@ -87,6 +89,8 @@
       <label index="tx_org_cal.title">Bezeichnung im Kalender</label>
       <label index="tx_org_cal.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_cal.datetime">Beginn der Veranstaltung</label>
+      <label index="tx_org_cal.datetime.from">Beginn zwischen ...</label>
+      <label index="tx_org_cal.datetime.to">... und</label>
       <label index="tx_org_cal.datetimeend">Ende der Veranstaltung</label>
       <label index="tx_org_cal.tx_org_caltype">Thema der Veranstaltung</label>
       <label index="tx_org_cal.bodytext">Text</label>

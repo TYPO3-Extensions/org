@@ -49,6 +49,8 @@
       <label index="tx_org_downloads.title">Header</label>
       <label index="tx_org_downloads.subtitle">Subheader</label>
       <label index="tx_org_downloads.datetime">Datetime</label>
+      <label index="tx_org_downloads.datetime.from">Datetime from ...</label>
+      <label index="tx_org_downloads.datetime.to">... and</label>
       <label index="tx_org_downloads.bodytext">Bodytext</label>
       <label index="tx_org_downloads.teaser_title">Header (in list views)</label>
       <label index="tx_org_downloads.teaser_subtitle">Subheader (in list views)</label>
@@ -149,6 +151,8 @@
       <label index="tx_org_downloads.title">Überschrift</label>
       <label index="tx_org_downloads.subtitle">Untertitel / Dachzeile</label>
       <label index="tx_org_downloads.datetime">Datum der Veröffentlichung</label>
+      <label index="tx_org_downloads.datetime.from">veröffentlicht zwischen ...</label>
+      <label index="tx_org_downloads.datetime.to">... und</label>
       <label index="tx_org_downloads.bodytext">Text</label>
       <label index="tx_org_downloads.teaser_title">Überschrift (in Listen-Ansichten)</label>
       <label index="tx_org_downloads.teaser_subtitle">Untertitel / Dachzeile (in Listen-Ansichten)</label>

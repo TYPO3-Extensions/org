@@ -137,6 +137,17 @@ $TCA['tx_org_downloads'] = array(
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.datetime',
       'config' => $conf_datetime,
+      'config_filter' => array(
+        'type' => 'input',
+        'size' => '8',
+        'max' => '20',
+        'eval' => 'date',
+        'fromto' => true,
+        'fromto_labels' => array(
+          'from' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.datetime.from',
+          'to' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads.datetime.to',
+        ),
+      ),
     ),
     'tx_org_downloadscat' => array(
       'exclude' => $bool_exclude_default,

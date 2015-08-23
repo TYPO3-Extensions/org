@@ -208,6 +208,17 @@ $TCA[ 'tx_org_cal' ] = array(
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.datetime',
       'config' => $conf_datetime,
+      'config_filter' => array(
+        'type' => 'input',
+        'size' => '8',
+        'max' => '20',
+        'eval' => 'date',
+        'fromto' => true,
+        'fromto_labels' => array(
+          'from' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.datetime.from',
+          'to' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal.datetime.to',
+        ),
+      ),
     ),
     'datetimeend' => array(
       'exclude' => $bool_exclude_default,

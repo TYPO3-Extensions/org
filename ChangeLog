@@ -1,11 +1,5 @@
 7.3.0
   15-08-21
-  Improvements
-  * #i0073: "pid=###CURRENT_PID###" is moved to "' . $str_store_record_conf . '"
-  * #i0072: "'###CURRENT_PID###'" is moved to "$str_marker_pid"
-  * #i0071: There is a conflict with BE filters and the TCA ctrl sortby
-            sortby is disabled at:
-
   Feature
   * #69257:	Backend-Filter Documents
   * #69256: Backend-Filter Staff
@@ -16,6 +10,17 @@
   * #69251: Backend-Filter Event
   * #69250: Backend-Filter Calendar
   * #69248: Backend-Filter News
+  Improvements
+  * #i0073: "pid=###CURRENT_PID###" is moved to "' . $str_store_record_conf . '"
+  * #i0072: "'###CURRENT_PID###'" is moved to "$str_marker_pid"
+  * #i0071: There is a conflict with BE filters and the TCA ctrl sortby
+            sortby is disabled at:
+            * tx_org_downloadscat
+            * tx_org_downloadsmedia
+            * tx_org_headquarters
+            * tx_org_headquarterscat
+            * tx_org_location
+            * tx_org_locationcat
 
 7.2.3
   15-08-21
