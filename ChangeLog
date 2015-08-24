@@ -1,3 +1,12 @@
+7.4.1
+  15-08-23
+  Improvement
+  * #i0075: news single: backbutton is moved from html to typoscript
+            Effected files:
+            * Configuration/TypoScript/news/401/tx_browser_pi1/single
+              * htmlSnippets.ts
+              * tableFields/tx_org_news.ts
+
 7.4.0
   15-08-23
   Feature

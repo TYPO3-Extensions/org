@@ -13,13 +13,6 @@ plugin.tx_browser_pi1 {
                 <div class="main columns small-12 medium-12 large-8">
                   ###RECORD_BROWSER###
                   ###TX_ORG_NEWS.TITLE###
-                  <!-- ###AREA_FOR_AJAX_LIST_01### end -->
-                  <!-- ###BACKBUTTON### begin -->
-                  <p class="backbutton">
-                    ###MY_SINGLEVIEWBACKBUTTON###
-                  </p>
-                  <!-- ###BACKBUTTON### end -->
-                  <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                 </div>
                 <div class="margin columns show-for-large-up small-12 medium-12 large-4">
                   ###TX_ORG_STAFF.UID###

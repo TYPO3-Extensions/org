@@ -97,6 +97,19 @@ plugin.tx_browser_pi1 {
                       parseFunc < lib.parseFunc_RTE
                     }
                   }
+                    // backbutton
+                  50 = TEXT
+                  50 {
+                    value (
+                      <!-- ###AREA_FOR_AJAX_LIST_01### end -->
+                      <!-- ###BACKBUTTON### begin -->
+                      <p class="backbutton">
+                        ###MY_SINGLEVIEWBACKBUTTON###
+                      </p>
+                      <!-- ###BACKBUTTON### end -->
+                      <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+)
+                  }
                 }
               }
               1 {
