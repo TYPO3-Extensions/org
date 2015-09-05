@@ -82,14 +82,14 @@ plugin.tx_browser_pi1 {
             title {
               10 {
                 40 >
-                wrap = <td class="text">|</td>
+                wrap = <td class="text" style="width:75%;">|</td>
               }
                 // image
               20 = COA
               20 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-                wrap = <td class="image">|</td>
+                wrap = <td class="image" style="width:25%;">|</td>
               }
               wrap = <tr class="row">|</tr>
             }

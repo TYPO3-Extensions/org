@@ -48,15 +48,7 @@ plugin.tx_browser_pi1 {
             subparts {
               listview {
                 value (
-                  <style>
-                    #c###TT_CONTENT.UID###-listview-###MODE### tr td.text {
-                      width:75%;
-                    }
-                    #c###TT_CONTENT.UID###-listview-###MODE### tr td.image {
-                      width:25%;
-                    }
-                  </style>
-                  <table id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-###MODE###">
+                  <table class="listview listview-###MODE###" style="width:100%;">
                     <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                     ###TX_ORG_NEWS.TITLE###
                     <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
