@@ -49,11 +49,9 @@ plugin.tx_browser_pi1 {
             subparts {
               listview {
                 value (
-                  <div class="listview listview-###MODE###">
-                    <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-                    ###TX_ORG_NEWS.TITLE###
-                    <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-                  </div>
+                  <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                  ###TX_ORG_NEWS.TITLE###
+                  <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
 )
               }
             }
