@@ -109,7 +109,7 @@ plugin.org {
 }
 
 
-[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+[globalVar = GP:type = 67426]
   plugin.org {
     templates.401 = EXT:browser/Resources/Private/Templates/HTML/newsletter.html
   }

@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
   }
 }
 
-[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+[globalVar = GP:type = 67426]
   plugin.tx_browser_pi1 {
     templates {
       listview {
