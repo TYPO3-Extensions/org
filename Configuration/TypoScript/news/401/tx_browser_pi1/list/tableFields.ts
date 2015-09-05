@@ -72,3 +72,30 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+  plugin.tx_browser_pi1 {
+    views {
+      list {
+        401 {
+          tx_org_news {
+            title {
+              10 {
+                40 >
+                wrap = <td class="text">|</td>
+              }
+                // image
+              20 = COA
+              20 {
+                  // image
+                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
+                wrap = <td class="image">|</td>
+              }
+              wrap = <tr class="row">|</tr>
+            }
+          }
+        }
+      }
+    }
+  }
+[global]

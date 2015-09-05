@@ -35,3 +35,30 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+  plugin.tx_browser_pi1 {
+    views {
+      list {
+        401 {
+          htmlSnippets {
+            marker {
+              filter >
+            }
+            subparts {
+              listview {
+                value (
+                  <table id="c###TT_CONTENT.UID###-listview-###MODE###" class="listview listview-###MODE###">
+                    <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                    ###TX_ORG_NEWS.TITLE###
+                    <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                  </table>
+)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+[global]
