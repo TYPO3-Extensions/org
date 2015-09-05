@@ -88,7 +88,7 @@ plugin.tx_browser_pi1 {
               20 {
                 wrap = <td class="image" style="width:20%;">|</td>
               }
-              wrap = <table style="width:100%;border-top:1em solid white;"><tr class="row">|</tr></table>
+              wrap = <table style="width:100%;"><tr class="row">|</tr></table><p>&nbsp;</p>
             }
           }
         }
