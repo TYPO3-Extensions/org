@@ -36,27 +36,11 @@ plugin.tx_browser_pi1 {
   }
 }
 
-  plugin.tx_browser_pi1 {
-    views {
-      list {
-        401 {
-          template {
-            file = EXT:browser/Resources/Private/Templates/HTML/Foundation/main_03.html
-          }
-        }
-      }
-    }
-  }
-
 [globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
   plugin.tx_browser_pi1 {
     views {
       list {
         401 {
-          template {
-// EXT:browser/Resources/Private/Templates/HTML/Foundation/main_03.html
-            file = EXT:browser/Resources/Private/Templates/HTML/newsletter.html
-          }
           htmlSnippets {
             marker {
               filter >

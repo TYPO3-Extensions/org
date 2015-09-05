@@ -10,6 +10,9 @@ plugin.tx_browser_pi1 {
     list {
       401 = +Org: News
       401 {
+        template {
+          file = {$plugin.org.templates.401}
+        }
         name    = +Org: News
         showUid = {$plugin.tx_browser_pi1.navigation.showUid}
       }

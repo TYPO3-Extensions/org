@@ -103,4 +103,14 @@ plugin.org {
   table.downloads.field.documents_from_path = documents_from_path
   # cat=Organiser - Table Downloads/600/300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
   table.downloads.field.thumbnail = thumbnail
+
+  # cat=Organiser - Templates//100; type=string; label= news:Path to the HTML template.
+  templates.401 = EXT:browser/Resources/Private/Templates/HTML/Foundation/main_03.html
 }
+
+
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+  plugin.org {
+    templates.401 = EXT:browser/Resources/Private/Templates/HTML/newsletter.html
+  }
+[global]
