@@ -84,8 +84,6 @@ plugin.tx_browser_pi1 {
                 40 >
                 wrap = <td class="text" style="width:75%;">|</td>
               }
-                // image
-              20 = COA
               20 {
                 wrap = <td class="image" style="width:25%;">|</td>
               }
