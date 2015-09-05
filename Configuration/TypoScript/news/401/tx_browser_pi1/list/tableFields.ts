@@ -87,8 +87,6 @@ plugin.tx_browser_pi1 {
                 // image
               20 = COA
               20 {
-                  // image
-                10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
                 wrap = <td class="image" style="width:25%;">|</td>
               }
               wrap = <tr class="row">|</tr>
