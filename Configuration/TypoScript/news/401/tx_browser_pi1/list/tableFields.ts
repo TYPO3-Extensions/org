@@ -82,10 +82,10 @@ plugin.tx_browser_pi1 {
             title {
               10 {
                 40 >
-                wrap = <td class="text" style="width:75%;">|</td>
+                wrap = <td class="text" style="width:80%;">|</td>
               }
               20 {
-                wrap = <td class="image" style="width:25%;">|</td>
+                wrap = <td class="image" style="width:20%;">|</td>
               }
               wrap = <tr class="row">|</tr>
             }
