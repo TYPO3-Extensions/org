@@ -41,6 +41,9 @@ plugin.tx_browser_pi1 {
     views {
       list {
         401 {
+          template {
+            file = EXT:browser/Resources/Private/Templates/HTML/newsletter.html
+          }
           htmlSnippets {
             marker {
               filter >
