@@ -78,3 +78,18 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+  plugin.tx_browser_pi1 {
+    templates {
+      listview {
+        image {
+          0 {
+            height    = 100c
+            width     = 100
+          }
+        }
+      }
+    }
+  }
+[global]
