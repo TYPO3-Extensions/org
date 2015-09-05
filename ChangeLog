@@ -1,7 +1,16 @@
 7.5.0
   15-09-05
   New Feature
-  * #i0076: News: template for PDF Controller 
+  * #i0076: News: template for PDF Controller
+            Effected files:
+            * Configuration/TypoScript
+              * base/plugins/org/constants.ts
+              * news/401/tx_browser_pi1
+                * constants.txt
+                * setup.txt
+                * list
+                  * htmlSnippets.ts
+                  * tableFields.ts
 
 7.4.1
   15-08-23

@@ -11,6 +11,7 @@ plugin.tx_browser_pi1 {
       401 = +Org: News
       401 {
         template {
+          // #i0076
           file = {$plugin.org.templates.401}
         }
         name    = +Org: News

@@ -73,6 +73,7 @@ plugin.tx_browser_pi1 {
   }
 }
 
+// #i0076
 [globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
   plugin.tx_browser_pi1 {
     views {
