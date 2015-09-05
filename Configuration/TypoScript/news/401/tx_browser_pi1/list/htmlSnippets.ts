@@ -49,11 +49,11 @@ plugin.tx_browser_pi1 {
             subparts {
               listview {
                 value (
-                  <table class="listview listview-###MODE###" style="width:100%;">
+                  <div class="listview listview-###MODE###">
                     <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                     ###TX_ORG_NEWS.TITLE###
                     <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-                  </table>
+                  </div>
 )
               }
             }
