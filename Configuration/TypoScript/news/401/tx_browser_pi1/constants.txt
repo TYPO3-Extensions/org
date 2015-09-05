@@ -85,8 +85,8 @@ plugin.tx_browser_pi1 {
       listview {
         image {
           0 {
-            height    = 50c
-            width     = 50
+            height    = 56c
+            width     = 56
           }
         }
       }
