@@ -38,6 +38,7 @@ plugin.tx_browser_pi1 {
     views {
       single {
         401 {
+          dummy = news solo
           htmlSnippets {
             subparts {
               singleview {
