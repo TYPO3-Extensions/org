@@ -93,12 +93,11 @@ plugin.tx_browser_pi1 {
       singleview {
         image {
           0 {
-            height      =
-            imagecols   = 1
-            width       = 100
+            widthDefault = 100
           }
         }
       }
     }
   }
 [global]
+
