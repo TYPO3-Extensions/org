@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
   }
 }
 
-[globalVar = GP:type = 6742622]
+[globalVar = GP:type = 67426]
   plugin.tx_browser_pi1 {
     templates {
       listview {
@@ -95,8 +95,6 @@ plugin.tx_browser_pi1 {
           0 {
             height      =
             imagecols   = 1
-              // own column left from the text
-            imageorient = 26
             width       = 100
           }
         }
