@@ -45,7 +45,11 @@ plugin.tx_browser_pi1 {
                   <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                   <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
                   <table class="main">
-                    ###TX_ORG_NEWS.TITLE###
+                    <tbody>
+                      <tr>
+                        ###TX_ORG_NEWS.TITLE###
+                      </tr>
+                    </tbody>
                   </table>
                   <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                   <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->
