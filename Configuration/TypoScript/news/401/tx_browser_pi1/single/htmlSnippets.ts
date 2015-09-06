@@ -36,10 +36,9 @@ plugin.tx_browser_pi1 {
     views {
       single {
         401 {
-          htmlSnippets =
+          dummy = 1
           htmlSnippets {
             subparts {
-              singleview = TEXT
               singleview {
                 value (
                   <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
