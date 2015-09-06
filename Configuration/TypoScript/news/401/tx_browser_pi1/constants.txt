@@ -95,7 +95,8 @@ plugin.tx_browser_pi1 {
           0 {
             height      =
             imagecols   = 1
-            imageorient = 26   // own column left from the text
+              // own column left from the text
+            imageorient = 26
             width       = 100
           }
         }
