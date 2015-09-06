@@ -219,7 +219,9 @@ plugin.tx_browser_pi1 {
                 }
                 26 {
                   10 {
+                      // ./. social bookmarks
                     28 >
+                      // ./. author
                     30 >
                   }
                   wrap = <td class="content" style="width:80%;">|</td>
