@@ -147,7 +147,6 @@ plugin.tx_browser_pi1 {
                   10 {
                     split {
                       2 < .1
-                      2.10.20.wrap = <li><figure class="tx-browser-pi1-figure">x|y</figure></li>
                     }
                   }
                 }
