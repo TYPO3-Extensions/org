@@ -31,7 +31,7 @@ plugin.tx_browser_pi1 {
 }
 
 #i0077
-[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}22]
   plugin.tx_browser_pi1 {
     views {
       single {
