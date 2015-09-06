@@ -79,7 +79,7 @@ plugin.tx_browser_pi1 {
   }
 }
 
-[globalVar = GP:type = 67426]
+[globalVar = GP:type = 6742622]
   plugin.tx_browser_pi1 {
     templates {
       listview {
