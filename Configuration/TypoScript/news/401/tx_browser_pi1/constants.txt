@@ -90,13 +90,6 @@ plugin.tx_browser_pi1 {
           }
         }
       }
-      singleview {
-        image {
-          0 {
-            widthDefault = 100
-          }
-        }
-      }
     }
   }
 [global]
