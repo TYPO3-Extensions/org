@@ -178,7 +178,7 @@ plugin.tx_browser_pi1 {
                 }
                 26 {
                   10 {
-                    value = <td class="image" style="border-bottom: 1em solid black;font-size: 0.7em;width:20%;">
+                    value = <td class="image" style="width:20%;">
                   }
                   20 {
                     10 {
@@ -189,10 +189,14 @@ plugin.tx_browser_pi1 {
                           10.20.10.layoutKey = default
                           10.20.10.layout.default.element = <img src="###SRC###" width="###WIDTH###" height="###HEIGHT###" ###PARAMS### ###ALTPARAMS### ###BORDER### ###SELFCLOSINGTAGSLASH###>
                           10.20.10.wrap = <tr><td class="image">|</td></tr>
-                          10.20.20.wrap = <tr><td class="figcaption">|</td></tr>
+                          10.20.20.wrap = <tr><td class="caption" style="border-bottom: 1em solid black;font-size: 0.7em;">|</td></tr>
                           10.20.wrap = |
                         }
+                        2 < .1
                         2 {
+                          10.if >
+                        }
+                        XX2 {
                           10.20.10.file.width = 100
                           10.20.10.file.width.override >
                           10.20.10.layoutKey = default
