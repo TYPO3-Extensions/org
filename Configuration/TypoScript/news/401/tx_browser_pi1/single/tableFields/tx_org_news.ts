@@ -162,3 +162,79 @@ plugin.tx_browser_pi1 {
     }
   }
 }
+
+#i0077
+[globalVar = GP:type = {$plugin.pdfcontroller.pages.print.typeNum}]
+  plugin.tx_browser_pi1 {
+    views {
+      single {
+        401 {
+          tx_org_news {
+            title {
+              10 {
+                key = 26
+                key {
+                  field >
+                }
+                26 {
+                  10 {
+                    value = <td class="image">
+                  }
+                  20 {
+                    10 {
+                      split {
+                        1 {
+                          10.20.10.file.width = 200
+                          10.20.10.file.width.override >
+                          10.20.10.layoutKey = default
+                          10.20.10.layout.default.element = <img src="###SRC###" width="###WIDTH###" height="###HEIGHT###" ###PARAMS### ###ALTPARAMS### ###BORDER### ###SELFCLOSINGTAGSLASH###>
+                          10.20.10.wrap = <tr><td class="image">|</td></tr>
+                          10.20.20.wrap = <tr><td class="figcaption">|</td></tr>
+                          10.20.wrap = |
+                        }
+                        2 {
+                          10.20.10.file.width = 200
+                          10.20.10.file.width.override >
+                          10.20.10.layoutKey = default
+                          10.20.10.layout.default.element = <img src="###SRC###" width="###WIDTH###" height="###HEIGHT###" ###PARAMS### ###ALTPARAMS### ###BORDER### ###SELFCLOSINGTAGSLASH###>
+                          10.20.10.wrap = <tr><td class="image">|</td></tr>
+                          10.20.20.wrap = <tr><td class="figcaption">|</td></tr>
+                          10.20.wrap = |
+                        }
+                      }
+                    }
+                  }
+                  20 {
+                    wrap = <table>|</table>
+                    wrap {
+                      stdWrap >
+                    }
+                  }
+                  30 {
+                    value = </td>
+                  }
+                }
+              }
+              20 {
+                10 >
+                key = 26
+                key {
+                  stdWrap >
+                }
+                26 {
+                  wrap = <td class="content">|</td>
+                }
+              }
+              30 {
+                key = 26
+                key {
+                  field >
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+[global]
