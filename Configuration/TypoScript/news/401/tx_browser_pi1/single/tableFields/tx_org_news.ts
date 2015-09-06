@@ -178,7 +178,7 @@ plugin.tx_browser_pi1 {
                 }
                 26 {
                   10 {
-                    value = <td class="image" style="width:20%;">
+                    value = <td class="image" style="border-bottom: 1em solid black;font-size: 0.7em;width:20%;">
                   }
                   20 {
                     10 {
