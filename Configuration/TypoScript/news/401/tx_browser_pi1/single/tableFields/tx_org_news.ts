@@ -224,6 +224,56 @@ plugin.tx_browser_pi1 {
                     28 >
                       // ./. author
                     30 >
+                    50 >
+                      // Backbutton
+                    50 = COA
+                    50 {
+                        // empty line
+                      10 = TEXT
+                      10 {
+                        value = &nbsp;
+                        wrap = <p>|</p>
+                      }
+                        // Link to root page
+                      20 = COA
+                      20 {
+                          // Link to root page
+                        10 = TEXT
+                        10 {
+                          typolink {
+                            parameter   = {$start.pages.root}
+                          }
+                          append {
+                            value = |
+                            noTrimWrap = | | |
+                          }
+                        }
+                        11 = TEXT
+                        11 {
+                          value = |
+                          noTrimWrap = | | |
+                        }
+                          // Link to news
+                        20 = TEXT
+                        20 {
+                          if {
+                            isTrue = {$start.pages.news}
+                          }
+                          typolink {
+                            parameter   = {$start.pages.news}
+                          }
+                        }
+                        21 = TEXT
+                        21 {
+                          if {
+                            isTrue = {$start.pages.news}
+                          }
+                          value = |
+                          noTrimWrap = | | |
+                        }
+                        wrap = <p>|</p>
+                      }
+                    }
                   }
                   wrap = <td class="space" style="width:5%;">&nbsp;</td><td class="content" style="width:75%;">|</td>
                 }
