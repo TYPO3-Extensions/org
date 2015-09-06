@@ -90,6 +90,16 @@ plugin.tx_browser_pi1 {
           }
         }
       }
+      singleview {
+        image {
+          0 {
+            height      =
+            imagecols   = 1
+            imageorient = 26   // own column left from the text
+            width       = 100
+          }
+        }
+      }
     }
   }
 [global]
