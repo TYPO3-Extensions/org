@@ -243,14 +243,10 @@ plugin.tx_browser_pi1 {
                           typolink {
                             parameter   = {$start.pages.root}
                           }
+                          append = TEXT
                           append {
-                            stdWrap {
-                              cObject = TEXT
-                              cObject {
-                                value = |
-                                noTrimWrap = | | |
-                              }
-                            }
+                            value = |
+                            noTrimWrap = | | |
                           }
                         }
                         11 = TEXT
