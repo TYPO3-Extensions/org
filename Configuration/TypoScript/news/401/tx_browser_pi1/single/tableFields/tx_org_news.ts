@@ -184,6 +184,7 @@ plugin.tx_browser_pi1 {
                     10 {
                       split {
                         1 {
+                          10.20.10.file.height.override >
                           10.20.10.file.width = 100
                           10.20.10.file.width.override >
                           10.20.10.layoutKey = default
