@@ -244,8 +244,13 @@ plugin.tx_browser_pi1 {
                             parameter   = {$start.pages.root}
                           }
                           append {
-                            value = |
-                            noTrimWrap = | | |
+                            stdWrap {
+                              cObject = TEXT
+                              cObject {
+                                value = |
+                                noTrimWrap = | | |
+                              }
+                            }
                           }
                         }
                         11 = TEXT
