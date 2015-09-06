@@ -1,7 +1,8 @@
 7.5.0
-  15-09-05
+  15-09-06
   New Feature
-  * #i0076: News: template for PDF Controller
+  * #i0077: News: template for PDF Controller single view
+  * #i0076: News: template for PDF Controller list view
             Effected files:
             * Configuration/TypoScript
               * base/plugins/org/constants.ts
