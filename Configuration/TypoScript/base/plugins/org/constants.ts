@@ -5,39 +5,43 @@ plugin.org {
   # cat=Organiser - Icons/150/100; type=string; label= Shipping:path to the shipping icon
   icon.shipping = EXT:org/Resources/Public/Images/Icons/shipping.gif
 
-  # cat=Organiser - Pages/150/100; type=+int; label= calendar:Uid of your calendar page
+  # cat=Organiser - Pages/150/100; type=+int; label= home:Uid of your home page
+  pages.root =
+  # cat=Organiser - Pages/150/200; type=+int; label= calendar:Uid of your calendar page
   pages.calendar =
-  # cat=Organiser - Pages/150/101; type=+int; label= calendar with expired dates (archive):Uid of your calendar page with expired dates. It is the calendar archive.
+  # cat=Organiser - Pages/150/201; type=+int; label= calendar with expired dates (archive):Uid of your calendar page with expired dates. It is the calendar archive.
   pages.calendar_expired =
-  # cat=Organiser - Pages/150/102; type=+int; label= department:Uid of your department page
+  # cat=Organiser - Pages/150/202; type=+int; label= department:Uid of your department page
   pages.department =
-  # cat=Organiser - Pages/150/103; type=+int; label= downloads:Uid of your downloads page
+  # cat=Organiser - Pages/150/203; type=+int; label= downloads:Uid of your downloads page
   pages.downloads =
-  # cat=Organiser - Pages/150/104; type=+int; label= event:Uid of your event page
+  # cat=Organiser - Pages/150/204; type=+int; label= event:Uid of your event page
   pages.event =
-  # cat=Organiser - Pages/150/105; type=+int; label= headquarters:Uid of your headquarters page
+  # cat=Organiser - Pages/150/205; type=+int; label= headquarters:Uid of your headquarters page
   pages.headquarters =
-  # cat=Organiser - Pages/150/105; type=+int; label= jobs:Uid of your jobs page
+  # cat=Organiser - Pages/150/206; type=+int; label= jobs:Uid of your jobs page
   pages.job =
-  # cat=Organiser - Pages/150/106; type=+int; label= jobs application form:Uid of your page with the apllication form
+  # cat=Organiser - Pages/150/207; type=+int; label= jobs application form:Uid of your page with the apllication form
   pages.jobApply =
-  # cat=Organiser - Pages/150/107; type=+int; label= locations:Uid of your locations page
+  # cat=Organiser - Pages/150/208; type=+int; label= locations:Uid of your locations page
   pages.location =
-  # cat=Organiser - Pages/150/108; type=+int; label= news:Uid of your news page
+  # cat=Organiser - Pages/150/209; type=+int; label= news:Uid of your news page
   pages.news =
-  # cat=Organiser - Pages/150/109; type=+int; label= people:Uid of your people page
+  # cat=Organiser - Pages/150/210; type=+int; label= newsleter:Uid of your page for subscribing a newsletter
+  pages.newsletter =
+  # cat=Organiser - Pages/150/211; type=+int; label= people:Uid of your people page
   pages.staff =
-  # cat=Organiser - Pages/150/110; type=+int; label= services:Uid of your services page
+  # cat=Organiser - Pages/150/212; type=+int; label= services:Uid of your services page
   pages.service =
-  # cat=Organiser - Pages/150/111; type=+int; label= Caddy (events):Uid of your Caddy page for events
+  # cat=Organiser - Pages/150/213; type=+int; label= Caddy (events):Uid of your Caddy page for events
   pages.shopping_cart =
-  # cat=Organiser - Pages/150/112; type=+int; label= Caddy (downloads):Uid of your Caddy page for downloads
+  # cat=Organiser - Pages/150/214; type=+int; label= Caddy (downloads):Uid of your Caddy page for downloads
   pages.shopping_cart_downloads =
-  # cat=Organiser - Pages/150/113; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
+  # cat=Organiser - Pages/150/215; type=+int; label= terms & conditions (events):Uid of your page with terms and conditions for booking events
   pages.terms =
-  # cat=Organiser - Pages/150/114; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
+  # cat=Organiser - Pages/150/216; type=+int; label= terms & conditions (downloads):Uid of your page with terms and conditions for ordering downloads
   pages.terms_downloads =
-  # cat=Organiser - Pages/150/115; type=+int; label= vCard:Uid of your page with the vCard
+  # cat=Organiser - Pages/150/217; type=+int; label= vCard:Uid of your page with the vCard
   pages.vCard =
 
   # cat=Organiser - Sysfolders/500/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data

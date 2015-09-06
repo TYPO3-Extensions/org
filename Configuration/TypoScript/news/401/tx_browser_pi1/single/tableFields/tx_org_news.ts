@@ -237,40 +237,42 @@ plugin.tx_browser_pi1 {
                         // Link to root page
                       20 = COA
                       20 {
-                          // Link to root page
+                          // root page
                         10 = TEXT
                         10 {
                           typolink {
-                            parameter   = {$start.pages.root}
+                            parameter   = {$plugin.org.pages.root}
                           }
-                          append = TEXT
-                          append {
+                        }
+                          // news
+                        20 = TEXT
+                        20 {
+                          if {
+                            isTrue = {$plugin.org.pages.news}
+                          }
+                          typolink {
+                            parameter   = {$plugin.org.pages.news}
+                          }
+                          prepend = TEXT
+                          prepend {
                             value = |
                             noTrimWrap = | | |
                           }
                         }
-                        11 = TEXT
-                        11 {
-                          value = |
-                          noTrimWrap = | | |
-                        }
-                          // Link to news
-                        20 = TEXT
-                        20 {
+                          // newsletter
+                        30 = TEXT
+                        30 {
                           if {
-                            isTrue = {$start.pages.news}
+                            isTrue = {$plugin.org.pages.newsletter}
                           }
                           typolink {
-                            parameter   = {$start.pages.news}
+                            parameter   = {$plugin.org.pages.newsletter}
                           }
-                        }
-                        21 = TEXT
-                        21 {
-                          if {
-                            isTrue = {$start.pages.news}
+                          prepend = TEXT
+                          prepend {
+                            value = |
+                            noTrimWrap = | | |
                           }
-                          value = |
-                          noTrimWrap = | | |
                         }
                         wrap = <p>|</p>
                       }
