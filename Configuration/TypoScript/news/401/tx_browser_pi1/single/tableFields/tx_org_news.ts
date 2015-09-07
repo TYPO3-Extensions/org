@@ -242,6 +242,13 @@ plugin.tx_browser_pi1 {
                         10 {
                           typolink {
                             parameter   = {$plugin.org.pages.root}
+                            title {
+                              value = Home page
+                              lang {
+                                de = Startseite
+                                en = Home page
+                              }
+                            }
                           }
                         }
                           // news
@@ -252,6 +259,13 @@ plugin.tx_browser_pi1 {
                           }
                           typolink {
                             parameter   = {$plugin.org.pages.news}
+                            title {
+                              value = All news
+                              lang {
+                                de = Alle Nachrichten
+                                en = All news
+                              }
+                            }
                           }
                           prepend = TEXT
                           prepend {
@@ -267,6 +281,13 @@ plugin.tx_browser_pi1 {
                           }
                           typolink {
                             parameter   = {$plugin.org.pages.newsletter}
+                            title {
+                              value = Subscribe newsletter
+                              lang {
+                                de = Newsletter abonnieren
+                                en = Subscribe newsletter
+                              }
+                            }
                           }
                           prepend = TEXT
                           prepend {
