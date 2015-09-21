@@ -7,14 +7,12 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-                <div class="row">
-                  <div class="columns listview listview-###MODE###">
-                    <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-                    ###TX_ORG_NEWS.TITLE###
-                    <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
-                    ###MY_LISTVIEW_PAGE###
-                  </div>
-                </div><!-- /row -->
+                <div class="columns listview listview-###MODE###">
+                  <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                  ###TX_ORG_NEWS.TITLE###
+                  <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                  ###MY_LISTVIEW_PAGE###
+                </div>
 )
             }
           }

@@ -1,6 +1,15 @@
+7.5.1
+  15-09-21
+  Bugfix
+  * #i0078/#t0462: Update Organiser hfs-berlin.de
+            * 411: News margin view
+              * removed: wrap <div class="row">|</div>
+              Effected files:
+              * Configuration/TypoScript/news/411/tx_browser_pi1/list/htmlSnippets.ts
+
 7.5.0
   15-09-06
-  New Feature
+  Feature
   * #i0077: News: template for PDF Controller single view
   * #i0076: News: template for PDF Controller list view
             Effected files:
@@ -27,7 +36,7 @@
   Feature
   * #69272: Group table for news
             ToDo:
-            * Page TSConfig of the data folderr and the news folder must updated
+            * Page TSConfig of the data folder and the news folder must updated
             Effected files:
             * ext_tables.sql
             * locallang_db.xml
@@ -41,7 +50,6 @@
                 * list
                   * filter.ts
                   * htmlSnippets.ts
-
   Bugfix
   * #i0074:	TCA Labelling 1st image in list views
 
