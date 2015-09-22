@@ -35,10 +35,6 @@ plugin.tx_browser_pi1 {
                       }
                       10 = TEXT
                       10 {
-                        field = tx_org_staff.title
-                      }
-                      10 = TEXT
-                      10 {
                         field       = tx_org_staff.prefix
                         required    = 1
                         noTrimWrap  = || |
@@ -53,7 +49,6 @@ plugin.tx_browser_pi1 {
                       30 {
                         field       = tx_org_staff.name_last
                       }
-                      wrap = <h1>|</h1>
                     }
                     20 = COA
                     20 {
@@ -67,23 +62,6 @@ plugin.tx_browser_pi1 {
                       10 {
                         field = tx_org_staff.title
                       }
-                      10 = TEXT
-                      10 {
-                        field       = tx_org_staff.prefix
-                        required    = 1
-                        noTrimWrap  = || |
-                      }
-                      20 = TEXT
-                      20 {
-                        field       = tx_org_staff.name_first
-                        required    = 1
-                        noTrimWrap  = || |
-                      }
-                      30 = TEXT
-                      30 {
-                        field       = tx_org_staff.name_last
-                      }
-                      wrap = <h1>|</h1>
                     }
                     wrap = <h1>|</h1>
                   }
