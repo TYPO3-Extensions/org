@@ -31,6 +31,7 @@ plugin.tx_browser_pi1 {
           tx_org_staff.name_first,
           tx_org_staff.name_last,
           tx_org_staff.page,
+          tx_org_staff.prefix,
           tx_org_staff.type,
           tx_org_staff.uid,
           tx_org_staff.url,
