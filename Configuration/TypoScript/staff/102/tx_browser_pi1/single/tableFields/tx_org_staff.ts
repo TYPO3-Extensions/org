@@ -337,6 +337,17 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
+                  90 = TEXT
+                  90 {
+                    value (
+
+                  <!-- ###BACKBUTTON### begin -->
+                  <p class="backbutton">
+                    ###MY_SINGLEVIEWBACKBUTTON###
+                  </p>
+                  <!-- ###BACKBUTTON### end -->
+)
+                  }
                 }
               }
               1 {
