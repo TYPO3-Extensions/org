@@ -1,6 +1,7 @@
 7.5.2
   15-09-22
   Improvement
+  * #i0080: CSS .singleview padding:1em 0;
   * #i0079: cal single: backbutton is moved from html to typoscript
             Effected files:
             * Configuration/TypoScript/calendar/201/tx_browser_pi1/single

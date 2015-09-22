@@ -115,6 +115,10 @@
   /*foundation, 140922, dwildt, 1-*/
   /*padding:.6em;*/
 }
+/* #i0080, 150922, dwildt, 3+*/
+.tx-browser-pi1 .singleview {
+  padding:1em 0;
+}
 .tx-browser-pi1 .singleview-content {
   /*foundation, 140922, dwildt, 1-*/
   /*padding:1em;*/
