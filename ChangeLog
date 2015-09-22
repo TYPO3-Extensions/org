@@ -1,3 +1,12 @@
+7.5.2
+  15-09-22
+  Improvement
+  * #i0079: cal single: backbutton is moved from html to typoscript
+            Effected files:
+            * Configuration/TypoScript/calendar/201/tx_browser_pi1/single
+              * htmlSnippets.ts
+              * tableFields/tx_org_news.ts
+
 7.5.1
   15-09-21
   Bugfix
