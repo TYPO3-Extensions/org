@@ -12,7 +12,7 @@ $TCA[ 'tx_org_staff' ] = array(
     'showRecordFieldList' => ''
     . 'type,page,url,'
     . 'title,'
-    . 'name_first,name_last,birthday,gender,'
+    . 'prefix,name_first,name_last,birthday,gender,'
     . 'bodytext,cols,vita,'
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
@@ -161,6 +161,16 @@ $TCA[ 'tx_org_staff' ] = array(
         'type' => 'input',
         'size' => '30',
         'eval' => 'trim,required',
+      )
+    ),
+    'prefix' => array(
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.prefix',
+      'l10n_mode' => 'prefixLangTitle',
+      'config' => array(
+        'type' => 'input',
+        'size' => '30',
+        'eval' => 'required,trim',
       )
     ),
     'name_first' => array(
@@ -1156,6 +1166,7 @@ $TCA[ 'tx_org_staff' ] = array(
     'name' => array(
       'showitem' => ''
       . 'title;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.title, --linebreak--,'
+      . 'prefix;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.prefix,'
       . 'name_first;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_first,'
       . 'name_last;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_last'
       ,

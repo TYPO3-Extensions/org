@@ -31,6 +31,7 @@
       <label index="tx_org_staff.gender_male">male</label>
       <label index="tx_org_staff.gender_unknown">unknown</label>
       <label index="tx_org_staff.name_first">First name</label>
+      <label index="tx_org_staff.prefix">Title, graduate profession</label>
       <label index="tx_org_staff.title">Full name</label>
       <label index="tx_org_staff.name_last">Last name</label>
       <label index="tx_org_staff.vita">Vita</label>
@@ -78,6 +79,7 @@
       <label index="tx_org_staff.gender_male">männlich</label>
       <label index="tx_org_staff.gender_unknown">unbekannt</label>
       <label index="tx_org_staff.name_first">Vorname</label>
+      <label index="tx_org_staff.prefix">Titel / akademischer Grad</label>
       <label index="tx_org_staff.title">Voller Name</label>
       <label index="tx_org_staff.name_last">Nachname</label>
       <label index="tx_org_staff.vita">Vita</label>

@@ -1047,6 +1047,7 @@ CREATE TABLE tx_org_staff (
   name_last tinytext,
   page tinytext,
   pi_flexform mediumtext,
+  prefix tinytext,
   seo_description text,
   seo_keywords text,
   thirdparty_id tinytext,
