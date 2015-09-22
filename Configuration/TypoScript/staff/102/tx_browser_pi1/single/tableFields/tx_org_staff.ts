@@ -337,54 +337,63 @@ plugin.tx_browser_pi1 {
                       }
                     }
                   }
-                  90 = TEXT
-                  90 {
-                    value (
-
-                  <!-- ###BACKBUTTON### begin -->
-                  <p class="backbutton">
-                    ###MY_SINGLEVIEWBACKBUTTON###
-                  </p>
-                  <!-- ###BACKBUTTON### end -->
-)
-                  }
                 }
+                20 >
+                30 >
               }
               1 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               2 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               8 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               9 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               10 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               17 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               18 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               25 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               26 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.102.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
             }
           }

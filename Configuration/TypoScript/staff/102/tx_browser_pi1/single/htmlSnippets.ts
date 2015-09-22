@@ -17,6 +17,11 @@ plugin.tx_browser_pi1 {
                   ###TX_ORG_STAFF.CRDATE###<!-- tx_org_news -->
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
+                  <!-- ###BACKBUTTON### begin -->
+                  <p class="columns backbutton">
+                    ###MY_SINGLEVIEWBACKBUTTON###
+                  </p>
+                  <!-- ###BACKBUTTON### end -->
                 </div>
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                 <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->
