@@ -30,7 +30,7 @@ plugin.tx_browser_pi1 {
                     10 {
                       if {
                         isTrue {
-                          field = tx_org_staff.name_first, tx_org_staff.name_last
+                          field = tx_org_staff.name_first // tx_org_staff.name_last
                         }
                       }
                       10 = TEXT
@@ -54,7 +54,7 @@ plugin.tx_browser_pi1 {
                     20 {
                       if {
                         isTrue {
-                          field = tx_org_staff.name_first, tx_org_staff.name_last
+                          field = tx_org_staff.name_first // tx_org_staff.name_last
                         }
                         negate = 1
                       }
@@ -93,42 +93,62 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
+                20 >
+                30 >
               }
               1 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               2 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               8 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               9 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               10 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               17 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               18 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               25 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
               26 {
                 10 >
                 10 < plugin.tx_browser_pi1.views.single.101.tx_org_staff.title.20.0.10
+                20 >
+                30 >
               }
             }
           }
