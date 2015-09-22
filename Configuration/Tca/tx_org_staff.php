@@ -160,7 +160,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'config' => array(
         'type' => 'input',
         'size' => '30',
-        'eval' => 'trim',
+        'eval' => 'trim,required',
       )
     ),
     'prefix' => array(
@@ -170,7 +170,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'config' => array(
         'type' => 'input',
         'size' => '30',
-        'eval' => 'required,trim',
+        'eval' => 'trim',
       )
     ),
     'name_first' => array(
