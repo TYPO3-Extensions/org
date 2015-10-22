@@ -304,3 +304,9 @@ ul.vcard li.circle {
   list-style-position:inside;
 }
 /* foundation */
+
+/* leaflet */
+.leaflet-control-layers label {
+  color:#000;
+}
+/* leaflet */
