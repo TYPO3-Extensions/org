@@ -56,7 +56,7 @@ plugin.tx_browser_pi1 {
   }
   radialsearch {
     lat = tx_org_location.mail_lat
-    lon = tx_org_location.mail_lonf
+    lon = tx_org_location.mail_lon
     uid = tx_org_location.uid
   }
   templates {
