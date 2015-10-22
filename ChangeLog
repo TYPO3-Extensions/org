@@ -1,3 +1,11 @@
+7.5.4
+  15-10-22
+  Improvement
+  * #i0083: Calendar items: Pop ups in the map are extended with date and location. See:
+            * Configuration/TypoScript/calendar/201/tx_browser_pi1/list/navigation.ts
+  * #i0082: CSS .sub-nav. See:
+            * Resources/Public/Css/org.css
+
 7.5.3
   15-10-21
   Improvement

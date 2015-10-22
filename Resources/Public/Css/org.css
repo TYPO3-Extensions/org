@@ -291,6 +291,11 @@
 
 
 /* foundation */
+.sub-nav {
+  margin-left: 0;
+  padding-top: .75rem;
+  padding-left: .5em;
+}
 ul.vcard {
   width:100%;
 }
