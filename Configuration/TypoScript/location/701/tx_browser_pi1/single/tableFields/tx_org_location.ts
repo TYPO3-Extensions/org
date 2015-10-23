@@ -439,8 +439,8 @@ plugin.tx_browser_pi1 {
                               value = &raquo;
                               noTrimWrap = | ||
                             }
-                            wrap = <li class="url circle">|</li>
                             stdWrap {
+                              wrap = <li class="url circle">|</li>
                               typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
                             }
                           }
