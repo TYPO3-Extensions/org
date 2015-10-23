@@ -1,6 +1,8 @@
 7.5.5
   15-10-23
   Improvement
+  * #i0086: CSS z-index for .clearing-blackout moved from 998 to 2.000
+            * Resources/Public/Css/org.css
   * #i0085: CSS new class ul.vcard li.expired. See:
             * Resources/Public/Css/org.css
 

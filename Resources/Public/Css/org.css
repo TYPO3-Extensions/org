@@ -291,6 +291,9 @@
 
 
 /* foundation */
+.clearing-blackout {
+  z-index: 2000; /* leaflet top has 1.000 */
+}
 .sub-nav {
   margin-left: 0;
   padding-top: .75rem;
