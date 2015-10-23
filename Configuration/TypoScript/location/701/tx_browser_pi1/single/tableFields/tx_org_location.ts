@@ -409,30 +409,61 @@ plugin.tx_browser_pi1 {
                             field = {$plugin.tx_browser_pi1.templates.listview.url.5.key}
                           }
                             // link to detail view
-                          default = TEXT
+                          default = COA
                           default {
-                            field = title
-                            wrap = <li class="url circle">|</li>
-                            stdWrap {
+                              // datetime
+                            20 = TEXT
+                            20 {
+                              field = datetime
+                              strftime {
+                                stdWrap {
+                                  cObject = TEXT
+                                  cObject {
+                                    value = %a., %d.%b.%Y %H:%M h
+                                    lang {
+                                      de = %a., %d.%b.%Y %H:%M Uhr
+                                      en = %a., %d.%b.%Y %H:%M h
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                            30 = TEXT
+                            30 {
+                              field       = title
+                              noTrimWrap  = |: ||
+                              required    = 1
+                            }
+                            40 = TEXT
+                            40 {
+                              value = &raquo;
                               noTrimWrap = || &raquo;|
                             }
-                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
+                            wrap = <li class="url circle">|</li>
+                            stdWrap {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.default
+                            }
                           }
                             // no link
-                          notype = TEXT
+                          notype < .default
                           notype {
-                            field   = title
-                            wrap = <li class="url circle">|</li>
+                            stdWrap {
+                              typolink >
+                            }
                           }
                             // link to internal page
                           page < .default
                           page {
-                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.page
+                            stdWrap {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.page
+                            }
                           }
                             // link to external url
                           url < .page
                           url {
-                            typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.url
+                            stdWrap {
+                              typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.5.url
+                            }
                           }
                         }
                       }
