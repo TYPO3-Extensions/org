@@ -437,7 +437,7 @@ plugin.tx_browser_pi1 {
                             40 = TEXT
                             40 {
                               value = &raquo;
-                              noTrimWrap = || |
+                              noTrimWrap = | ||
                             }
                             wrap = <li class="url circle">|</li>
                             stdWrap {
