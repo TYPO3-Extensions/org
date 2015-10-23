@@ -303,6 +303,9 @@ ul.vcard li.circle {
   display:list-item;
   list-style-position:inside;
 }
+ul.vcard li.expired {
+  opacity:.5;
+}
 /* foundation */
 
 /* leaflet */
