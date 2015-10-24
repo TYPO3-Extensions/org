@@ -55,14 +55,24 @@ $TCA[ 'tx_org_cal' ] = array(
     ),
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'
-    . 'teaser_title,teaser_subtitle,teaser_short,' .
-    'marginal_title,marginal_subtitle,marginal_short,' .
-    'tx_org_location,tx_org_calentrance,' .
-    'tx_org_headquarters' .
-    'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
-    'embeddedcode,print,printcaption,printseo,' .
-    'hidden,starttime,endtime,pages,fe_group,' .
-    'seo_keywords,seo_description',
+    . 'teaser_title,teaser_subtitle,teaser_short,'
+    . 'marginal_title,marginal_subtitle,marginal_short,'
+    . 'tx_org_location,tx_org_calentrance,'
+    . 'tx_org_headquarters'
+    . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+    . 'embeddedcode,print,printcaption,printseo,'
+    . 'hidden,starttime,endtime,pages,fe_group,'
+    . 'seo_keywords,seo_description',
+    'copyAfterDuplFields' =>  ''
+    . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'
+    . 'teaser_title,teaser_subtitle,teaser_short,'
+    . 'marginal_title,marginal_subtitle,marginal_short,'
+    . 'tx_org_location,tx_org_calentrance,'
+    . 'tx_org_headquarters'
+    . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+    . 'embeddedcode,print,printcaption,printseo,'
+    . 'hidden,starttime,endtime,pages,fe_group,'
+    . 'seo_keywords,seo_description',
     // #69250, 150821, dwildt, 1+
     'filter' => 'filter_for_all_fields',
   ),
