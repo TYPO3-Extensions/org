@@ -102,16 +102,16 @@ $TCA[ 'tx_org_cal' ] = array(
             '1' => 'tx_org_event',
             '2' => 'EXT:org/Configuration/ExtIcon/event.gif',
           ),
-          'calpage' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
-            '1' => 'calpage',
-            '2' => 'EXT:org/Configuration/ExtIcon/page.gif',
-          ),
-          'calurl' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
-            '1' => 'calurl',
-            '2' => 'EXT:org/Configuration/ExtIcon/url.gif',
-          ),
+//          'calpage' => array(
+//            '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
+//            '1' => 'calpage',
+//            '2' => 'EXT:org/Configuration/ExtIcon/page.gif',
+//          ),
+//          'calurl' => array(
+//            '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
+//            '1' => 'calurl',
+//            '2' => 'EXT:org/Configuration/ExtIcon/url.gif',
+//          ),
         ),
         'default' => 'record',
       ),
