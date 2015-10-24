@@ -301,7 +301,7 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="ticket_url">|</li>
                       }
                         // fax
-                      60 = TEXT
+                      60 = COA
                       60 {
                         10 = TEXT
                         10 {
@@ -315,7 +315,6 @@ plugin.tx_browser_pi1 {
                         20 = TEXT
                         20 {
                           field = tx_org_location.fax
-                          required = 1
                         }
                         if {
                           isTrue {
