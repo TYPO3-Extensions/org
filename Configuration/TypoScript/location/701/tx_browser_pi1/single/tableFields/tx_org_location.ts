@@ -303,9 +303,26 @@ plugin.tx_browser_pi1 {
                         // fax
                       60 = TEXT
                       60 {
-                        field = tx_org_location.fax
+                        10 = TEXT
+                        10 {
+                          value = fax:
+                          lang {
+                            de = Fax:
+                            en = fax:
+                          }
+                          noTrimWrap = || |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_location.fax
+                          required = 1
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_location.fax
+                          }
+                        }
                         wrap = <li class="fax">|</li>
-                        required = 1
                       }
                         // email
                       70 = COA
