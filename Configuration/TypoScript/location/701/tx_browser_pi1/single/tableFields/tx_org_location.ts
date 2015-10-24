@@ -72,38 +72,49 @@ plugin.tx_browser_pi1 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
                         wrap = <li class="header">|</li>
                       }
-                        // mail_address
+                        // title
                       20 = TEXT
                       20 {
-                        field     = tx_org_location.mail_address
+                        field     = tx_org_location.title
                         required  = 1
-                        wrap      = <li class="address">|</li>
+                        wrap      = <li class="title">|</li>
                       }
-                        // mail_street
-                      30 = TEXT
+                        // address
+                      30 = COA
                       30 {
-                        field     = tx_org_location.mail_street
-                        required  = 1
-                        wrap      = <li class="street">|</li>
-                      }
-                        // postcode, city
-                      40 = COA
-                      40 {
-                          // mail_postcode
-                        10 = TEXT
-                        10 {
-                          field       = tx_org_location.mail_postcode
-                          noTrimWrap  = |<span class="postcode">|</span> |
-                          required    = 1
-                        }
-                          // mail_city
+                          // mail_address
                         20 = TEXT
                         20 {
-                          field       = tx_org_location.mail_city
-                          noTrimWrap  = |<span class="city">|</span> |
-                          required    = 1
+                          field     = tx_org_location.mail_address
+                          required  = 1
+                          wrap      = <li class="address">|</li>
                         }
-                        wrap = <li class="postcode_city">|</li>
+                          // mail_street
+                        30 = TEXT
+                        30 {
+                          field     = tx_org_location.mail_street
+                          required  = 1
+                          wrap      = <li class="street">|</li>
+                        }
+                          // postcode, city
+                        40 = COA
+                        40 {
+                            // mail_postcode
+                          10 = TEXT
+                          10 {
+                            field       = tx_org_location.mail_postcode
+                            noTrimWrap  = |<span class="postcode">|</span> |
+                            required    = 1
+                          }
+                            // mail_city
+                          20 = TEXT
+                          20 {
+                            field       = tx_org_location.mail_city
+                            noTrimWrap  = |<span class="city">|</span> |
+                            required    = 1
+                          }
+                          wrap = <li class="postcode_city">|</li>
+                        }
                       }
                         // mail_country
                       50 = TEXT
