@@ -428,7 +428,7 @@ $TCA[ 'tx_org_cal' ] = array(
           'table_foreign' => 'tx_org_location'
         ),
         'foreign_table' => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.title',
+        'foreign_table_where' => 'AND tx_org_location.' . $str_store_record_conf . ' AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 AND tx_org_location.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_location.mail_city, tx_org_location.title',
         'items' => array(
           '0' => array(
             '0' => '',
