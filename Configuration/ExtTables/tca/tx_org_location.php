@@ -8,8 +8,8 @@ if ( !defined( 'TYPO3_MODE' ) )
 $TCA[ 'tx_org_location' ] = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location',
-    'label' => 'title',
-    'label_alt' => 'mail_city',
+    'label' => 'mail_city',
+    'label_alt' => 'title',
     'label_alt_force' => true,
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
