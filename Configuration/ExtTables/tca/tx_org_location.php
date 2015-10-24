@@ -11,6 +11,7 @@ $TCA[ 'tx_org_location' ] = array(
     'label' => 'mail_city',
     'label_alt' => 'title',
     'label_alt_force' => true,
+    'default_sortby' => 'ORDER BY mail_city, title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
     'cruser_id' => 'cruser_id',
