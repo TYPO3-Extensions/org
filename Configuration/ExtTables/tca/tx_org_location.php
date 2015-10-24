@@ -49,6 +49,8 @@ $TCA[ 'tx_org_location' ] = array(
     . 'embeddedcode,'
     . 'hidden,pages,fe_group,'
     . 'seo_keywords,seo_description',
+    'useColumnsForDefaultValues' =>  ''
+    . 'type',
     // #69254, 150821, dwildt, 1+
     'filter' => 'filter_for_all_fields',
     'tx_browser' => array(
