@@ -25,6 +25,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.image_compression,
           tx_org_location.mail_address,
           tx_org_location.mail_city,
+          tx_org_location.mail_country,
           tx_org_location.mail_lat,
           tx_org_location.mail_lon,
           tx_org_location.mail_postcode,
