@@ -71,24 +71,43 @@ plugin.tx_browser_pi1 {
                 // location
               50 = COA
               50 {
-                wrap = <p class="location">|</p>
-                required = 1
-                10 = TEXT
+                if {
+                  isTrue {
+                    field = tx_org_location.mail_city, tx_org_location.mail_postcode, tx_org_location.title
+                  }
+                }
+                  // location
+                10 = COA
                 10 {
-                  field = tx_org_location.title
-                  noTrimWrap = || in |
-                  required = 1
+                  if {
+                    isTrue {
+                      field = tx_org_location.mail_city, tx_org_location.mail_postcode
+                    }
+                  }
+                  10 = TEXT
+                  10 {
+                    field       = tx_org_location.mail_postcode
+                    noTrimWrap  = || |
+                    required    = 1
+                  }
+                  20 = TEXT
+                  20 {
+                    field       = tx_org_location.mail_city
+                    noTrimWrap  = || |
+                    required    = 1
+                  }
+                  30 = TEXT
+                  30 {
+                    value       = |
+                    noTrimWrap  = | | |
+                  }
                 }
                 20 = TEXT
                 20 {
-                  field = tx_org_location.mail_postcode
-                  noTrimWrap = || |
-                  required = 1
+                  field       = tx_org_location.title
+                  required =  1
                 }
-                21 = TEXT
-                21 {
-                  field = tx_org_location.mail_city
-                }
+                wrap = <p class="location">|</p>
               }
               wrap = <div class="columns small-12 medium-12 large-10">|</div>
             }

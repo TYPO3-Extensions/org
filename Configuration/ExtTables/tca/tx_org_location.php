@@ -38,6 +38,7 @@ $TCA[ 'tx_org_location' ] = array(
       'url' => '../typo3conf/ext/org/Configuration/ExtIcon/url.gif',
       'notype' => '../typo3conf/ext/org/Configuration/ExtIcon/notype.gif',
     ),
+    'prependAtCopy' => 'LLL:EXT:lang/locallang_general.php:LGL.prependAtCopy',
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_locationcat,url,'
     . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
@@ -50,7 +51,7 @@ $TCA[ 'tx_org_location' ] = array(
     . 'hidden,pages,fe_group,'
     . 'seo_keywords,seo_description',
     'useColumnsForDefaultValues' =>  ''
-    . 'type',
+    . 'title,type',
     // #69254, 150821, dwildt, 1+
     'filter' => 'filter_for_all_fields',
     'tx_browser' => array(
