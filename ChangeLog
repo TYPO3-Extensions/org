@@ -1,7 +1,7 @@
 7.5.5
   15-10-23
   Improvement
-  * #i0089: Calender: new TCA property copyAfterDuplFields
+  * #i0089: Calender: new TCA property useColumnsForDefaultValues
   * #i0088: Calender TCE form: deprecated types are removed
   * #i0087: Location template: calendar items got a date
   * #i0086: CSS z-index for .clearing-blackout moved from 998 to 2.000

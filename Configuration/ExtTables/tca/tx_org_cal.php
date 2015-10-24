@@ -63,7 +63,7 @@ $TCA[ 'tx_org_cal' ] = array(
     . 'embeddedcode,print,printcaption,printseo,'
     . 'hidden,starttime,endtime,pages,fe_group,'
     . 'seo_keywords,seo_description',
-    'copyAfterDuplFields' =>  ''
+    'useColumnsForDefaultValues' =>  ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'
     . 'teaser_title,teaser_subtitle,teaser_short,'
     . 'marginal_title,marginal_subtitle,marginal_short,'
