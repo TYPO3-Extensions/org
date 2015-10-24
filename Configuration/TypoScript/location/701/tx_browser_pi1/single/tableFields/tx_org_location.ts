@@ -75,24 +75,16 @@ plugin.tx_browser_pi1 {
                         // mail_address
                       20 = TEXT
                       20 {
-                        if {
-                          isTrue {
-                            field = tx_org_location.mail_address
-                          }
-                        }
-                        field = tx_org_location.mail_address
-                        wrap = <li class="address">|</li>
+                        field     = tx_org_location.mail_address
+                        required  = 1
+                        wrap      = <li class="address">|</li>
                       }
                         // mail_street
                       30 = TEXT
                       30 {
-                        if {
-                          isTrue {
-                            field = tx_org_location.mail_street
-                          }
-                        }
-                        field = tx_org_location.mail_street
-                        wrap = <li class="street">|</li>
+                        field     = tx_org_location.mail_street
+                        required  = 1
+                        wrap      = <li class="street">|</li>
                       }
                         // postcode, city
                       40 = COA
@@ -100,37 +92,25 @@ plugin.tx_browser_pi1 {
                           // mail_postcode
                         10 = TEXT
                         10 {
-                          if {
-                            isTrue {
-                              field = tx_org_location.mail_postcode
-                            }
-                          }
-                          field = tx_org_location.mail_postcode
-                          noTrimWrap = |<span class="postcode">|</span> |
+                          field       = tx_org_location.mail_postcode
+                          noTrimWrap  = |<span class="postcode">|</span> |
+                          required    = 1
                         }
                           // mail_city
                         20 = TEXT
                         20 {
-                          if {
-                            isTrue {
-                              field = tx_org_location.mail_city
-                            }
-                          }
-                          field = tx_org_location.mail_city
-                          noTrimWrap = |<span class="city">|</span> |
+                          field       = tx_org_location.mail_city
+                          noTrimWrap  = |<span class="city">|</span> |
+                          required    = 1
                         }
                         wrap = <li class="postcode_city">|</li>
                       }
                         // mail_country
                       50 = TEXT
                       50 {
-                        if {
-                          isTrue {
-                            field = tx_org_location.mail_country
-                          }
-                        }
-                        field = tx_org_location.mail_country
-                        wrap = <li class="country">|</li>
+                        field     = tx_org_location.mail_country
+                        required  = 1
+                        wrap      = <li class="country">|</li>
                       }
                     }
                       // contact
