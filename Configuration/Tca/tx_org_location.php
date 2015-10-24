@@ -260,7 +260,7 @@ $TCA[ 'tx_org_location' ] = array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location.mail_city',
-      'config' => $conf_input_30,
+      'config' => $conf_input_30_trimRequired,
     ),
     'mail_country' => array(
       'exclude' => $bool_exclude_default,
