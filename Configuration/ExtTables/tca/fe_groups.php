@@ -11,7 +11,7 @@ if (!defined('TYPO3_MODE'))
 //}
 
 t3lib_div::loadTCA('fe_groups');
-$TCA['fe_groups']['ctrl']['title'] = 'LLL:EXT:org/Configuration/Tca/Locallang/fe_groups.xml:fe_groups';
+$TCA['fe_groups']['ctrl']['title'] = 'LLL:EXT:org/Resources/Private/Language/fe_groups.xml:fe_groups';
 $TCA['fe_groups']['ctrl']['default_sortby'] = 'ORDER BY title';
 if ($andWhere_fegroups_subgroup)
 {

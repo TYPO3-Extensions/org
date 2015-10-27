@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.title
+                    data = LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.title
                   }
                 }
               }
@@ -47,7 +47,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobcat.title
+                    data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobcat.title
                   }
                 }
               }
@@ -73,7 +73,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobsector.title
+                    data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobsector.title
                   }
                 }
               }

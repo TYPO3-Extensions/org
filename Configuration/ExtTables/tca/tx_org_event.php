@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE'))
 
 $TCA['tx_org_event'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event',
     'label' => 'title',
     //'label_alt'         => 'tx_org_headquarters',
     //'label_alt_force'   => true,
@@ -52,7 +52,7 @@ $TCA['tx_org_event'] = array(
 
 $TCA['tx_org_eventcat'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

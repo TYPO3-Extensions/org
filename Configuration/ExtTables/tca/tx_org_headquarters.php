@@ -18,7 +18,7 @@ if (!defined('TYPO3_MODE'))
 // headquarters //////////////////////////////////////////////////////////////////
 $TCA['tx_org_headquarters'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -93,14 +93,14 @@ $TCA['tx_org_headquarters'] = array(
 );
 if (!$bool_exclude_tx_org_company)
 {
-  $TCA['tx_org_headquarters']['ctrl']['title'] = 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_company';
+  $TCA['tx_org_headquarters']['ctrl']['title'] = 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_company';
 }
 // headquarters //////////////////////////////////////////////////////////////////
 //
 // headquarterscat ////////////////////////////////////////////////////////////////////
 $TCA['tx_org_headquarterscat'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

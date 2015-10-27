@@ -30,11 +30,11 @@ plugin.tx_browser_pi1 {
   marker {
     my_tx_org_job__mail_city = TEXT
     my_tx_org_job__mail_city {
-      data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.mail_city
+      data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.mail_city
     }
     my_tx_org_job__title = TEXT
     my_tx_org_job__title {
-      data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.title
+      data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.title
     }
   }
 

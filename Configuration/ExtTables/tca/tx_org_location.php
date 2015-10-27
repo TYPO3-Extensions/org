@@ -7,7 +7,7 @@ if ( !defined( 'TYPO3_MODE' ) )
 
 $TCA[ 'tx_org_location' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_location',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location',
     'label' => 'mail_city',
     'label_alt' => 'title',
     'label_alt_force' => true,
@@ -85,7 +85,7 @@ $TCA[ 'tx_org_location' ] = array(
 
 $TCA[ 'tx_org_locationcat' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_location.xml:tx_org_locationcat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

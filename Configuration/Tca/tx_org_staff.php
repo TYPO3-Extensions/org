@@ -155,7 +155,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.title',
       'l10n_mode' => 'prefixLangTitle',
       'config' => array(
         'type' => 'input',
@@ -165,7 +165,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'prefix' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.prefix',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.prefix',
       'l10n_mode' => 'prefixLangTitle',
       'config' => array(
         'type' => 'input',
@@ -175,7 +175,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'name_first' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_first',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.name_first',
       'l10n_mode' => 'prefixLangTitle',
       'config' => array(
         'type' => 'input',
@@ -185,7 +185,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'name_last' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_last',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.name_last',
       'l10n_mode' => 'prefixLangTitle',
       'config' => array(
         'type' => 'input',
@@ -195,7 +195,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'birthday' => array(
       'exclude' => 1,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.birthday',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.birthday',
       'config' => array(
         'type' => 'input',
         'size' => '8',
@@ -212,20 +212,20 @@ $TCA[ 'tx_org_staff' ] = array(
     'gender' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.gender',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender',
       'config' => array(
         'type' => 'select',
         'items' => array(
           'unknown' => array(
-            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.gender_unknown',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender_unknown',
             '1' => '',
           ),
           'male' => array(
-            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.gender_male',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender_male',
             '1' => 'male',
           ),
           'female' => array(
-            '0' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.gender_female',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender_female',
             '1' => 'female',
           ),
         ),
@@ -234,7 +234,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'bodytext' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.bodytext',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.bodytext',
       'config' => array(
         'type' => 'text',
         'cols' => '30',
@@ -245,7 +245,7 @@ $TCA[ 'tx_org_staff' ] = array(
             'notNewRecords' => 1,
             'RTEonly' => 1,
             'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:wizard.rte.fullscreen',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:wizard.rte.fullscreen',
             'icon' => 'wizard_rte2.gif',
             'script' => 'wizard_rte.php',
           ),
@@ -254,7 +254,7 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'vita' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.vita',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.vita',
       'config' => array(
         'type' => 'text',
         'cols' => '30',
@@ -268,7 +268,7 @@ $TCA[ 'tx_org_staff' ] = array(
     'tx_org_staffgroup' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_staffgroup',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_staffgroup',
       'config' => array(
         'type' => 'select',
         'size' => 10,
@@ -302,7 +302,7 @@ $TCA[ 'tx_org_staff' ] = array(
           '_VERTICAL' => 0,
           'add' => array(
             'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:wizard.tx_org_staffgroup.add',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:wizard.tx_org_staffgroup.add',
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_staffgroup',
@@ -313,7 +313,7 @@ $TCA[ 'tx_org_staff' ] = array(
           ),
           'list' => array(
             'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:wizard.tx_org_staffgroup.list',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:wizard.tx_org_staffgroup.list',
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_staffgroup',
@@ -323,7 +323,7 @@ $TCA[ 'tx_org_staff' ] = array(
           ),
           'edit' => array(
             'type' => 'popup',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:wizard.tx_org_staffgroup.edit',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:wizard.tx_org_staffgroup.edit',
             'script' => 'wizard_edit.php',
             'popup_onlyOpenIfSelected' => 1,
             'icon' => 'edit2.gif',
@@ -355,22 +355,22 @@ $TCA[ 'tx_org_staff' ] = array(
       ),
     ),
     'contact_email' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.contact_email',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.contact_email',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'contact_fax' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.contact_fax',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.contact_fax',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'contact_phone' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.contact_phone',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.contact_phone',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'contact_skype' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.contact_skype',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.contact_skype',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
@@ -607,7 +607,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_downloads',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_downloads',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -662,7 +662,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_headquarters',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -723,7 +723,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_job',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_job',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -778,7 +778,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_service',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_service',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -833,7 +833,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_news',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_news',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -888,7 +888,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_event',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_event',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -943,7 +943,7 @@ $TCA[ 'tx_org_staff' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.tx_org_location',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_location',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -1050,14 +1050,14 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'record' => array(
       'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_particulars, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_particulars, '
       . '  type,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_name;name,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
       . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;9;nowrap:wizards[table],'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_group, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1067,33 +1067,33 @@ $TCA[ 'tx_org_staff' ] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  tx_org_downloads,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_company, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_job, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_job, '
       . '  tx_org_job,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_service, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_service, '
       . '  tx_org_service,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_news, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_news, '
       . '  tx_org_news,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_event, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_event, '
       . '  tx_org_event,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_location, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_location, '
       . '  tx_org_location,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_control,'
       . '  hidden;;control;;,fe_group,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_seo,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_seo,'
       . '  seo_keywords, seo_description,'
     ,
     ),
     'page' => array(
       'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_particulars, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_particulars, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_name;name,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_group, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1101,21 +1101,21 @@ $TCA[ 'tx_org_staff' ] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_company, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_control,'
       . '  hidden;;control;;,fe_group,'
     ,
     ),
     'url' => array(
       'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_particulars, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_particulars, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_name;name,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_group, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_contact, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1123,9 +1123,9 @@ $TCA[ 'tx_org_staff' ] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_company, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_control,'
       . '  hidden;;control;;,fe_group,'
     ,
     ),
@@ -1133,8 +1133,8 @@ $TCA[ 'tx_org_staff' ] = array(
   'palettes' => array(
     'birthday' => array(
       'showitem' => ''
-      . 'birthday;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.birthday,'
-      . 'gender;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.gender'
+      . 'birthday;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.birthday,'
+      . 'gender;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender'
       ,
       'canNotCollapse' => 1,
     ),
@@ -1165,10 +1165,10 @@ $TCA[ 'tx_org_staff' ] = array(
     ),
     'name' => array(
       'showitem' => ''
-      . 'title;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.title, --linebreak--,'
-      . 'prefix;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.prefix,'
-      . 'name_first;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_first,'
-      . 'name_last;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff.name_last'
+      . 'title;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.title, --linebreak--,'
+      . 'prefix;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.prefix,'
+      . 'name_first;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.name_first,'
+      . 'name_last;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.name_last'
       ,
       'canNotCollapse' => 1,
     ),
@@ -1215,7 +1215,7 @@ $TCA[ 'tx_org_staffgroup' ] = array(
     ),
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.title',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -1224,7 +1224,7 @@ $TCA[ 'tx_org_staffgroup' ] = array(
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_calentrance.title_lang_ol',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_calentrance.title_lang_ol',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -1233,7 +1233,7 @@ $TCA[ 'tx_org_staffgroup' ] = array(
     ),
     'uid_parent' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.uid_parent',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.uid_parent',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -1253,8 +1253,8 @@ $TCA[ 'tx_org_staffgroup' ] = array(
   'types' => array(
     '0' => array(
       'showitem' =>
-      '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.div_category, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.div_control, hidden'
+      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.div_category, title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.div_control, hidden'
       . ''
     ),
   ),

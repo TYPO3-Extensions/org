@@ -174,12 +174,12 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'title' => array(
       'exclude' => 0,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.title',
       'config' => $conf_input_30_trimRequired,
     ),
     'uid_parent' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.uid_parent',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.uid_parent',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -204,7 +204,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'tx_org_headquarterscat' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_headquarterscat',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_headquarterscat',
       'config' => array(
         'type' => 'select',
         'size' => 10,
@@ -254,7 +254,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
     ),
     'bodytext' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.bodytext',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.bodytext',
       'config' => array(
         'type' => 'text',
         'cols' => '30',
@@ -275,13 +275,13 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'mail_address' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_address',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_address',
       'config' => $conf_text_30_05,
     ),
     'mail_street' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_street',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_street',
       'config' => array(
         'type' => 'input',
         'size' => '60',
@@ -291,53 +291,53 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'mail_postcode' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_postcode',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_postcode',
       'config' => $conf_input_30_trim,
     ),
     'mail_city' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_city',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_city',
       'config' => $conf_input_30_trim,
     ),
     'mail_country' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_country',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_country',
       'config' => $conf_input_30,
     ),
     'mail_lat' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_lat',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_lat',
       'config' => $conf_input_30,
     ),
     'mail_lon' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_lon',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_lon',
       'config' => $conf_input_30,
     ),
     'mail_url' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_url',
       'config' => $arr_wizard_url,
     ),
     'mail_embeddedcode' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_embeddedcode',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_embeddedcode',
       'config' => $conf_text_50_10,
     ),
     'geoupdateprompt' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.geoupdateprompt',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.geoupdateprompt',
       'config' => $conf_text_50_10,
     ),
     'geoupdateforbidden' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.geoupdateforbidden',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.geoupdateforbidden',
       'config' => array(
         'type' => 'check',
         'default' => '0'
@@ -346,26 +346,26 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'postbox_postbox' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.postbox_postbox',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_postbox',
       'config' => $conf_text_30_05,
     ),
     'postbox_postcode' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.postbox_postcode',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_postcode',
       'config' => $conf_input_30_trim,
     ),
     'postbox_city' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.postbox_city',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_city',
       'config' => $conf_input_30_trim,
     ),
     'manager' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.manager',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.manager',
       'config' => array(
         'type' => 'select',
         'size' => 50,
@@ -409,22 +409,22 @@ $TCA[ 'tx_org_headquarters' ] = array(
       ),
     ),
     'telephone' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.telephone',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.telephone',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'fax' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.fax',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.fax',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'email' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.email',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.email',
       'exclude' => $bool_exclude_default,
       'config' => $conf_input_30_trim,
     ),
     'url' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.url',
 //      'l10n_mode' => 'exclude',
       'exclude' => $bool_exclude_default,
       'config' => $arr_wizard_url,
@@ -432,32 +432,32 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'teaser_title' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.teaser_title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.teaser_title',
       'config' => $conf_input_30_trim,
     ),
     'teaser_short' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.teaser_short',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.teaser_short',
       'config' => $conf_text_50_10,
     ),
     'marginal_title' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.marginal_title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.marginal_title',
       'config' => $conf_input_30_trim,
     ),
     'marginal_short' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.marginal_short',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.marginal_short',
       'config' => $conf_text_50_10,
     ),
     'tx_org_news' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_news',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_news',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -506,7 +506,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_service',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_service',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -553,7 +553,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_staff',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_staff',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -600,7 +600,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_job',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_job',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -647,7 +647,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_cal',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_cal',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -694,7 +694,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.tx_org_location',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.tx_org_location',
       'config' => array(
         'type' => 'select',
         'size' => $size_headquarters,
@@ -740,16 +740,16 @@ $TCA[ 'tx_org_headquarters' ] = array(
     'pubtrans_stop' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_stop',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_stop',
       'config' => $conf_text_rte,
     ),
     'pubtrans_url' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_url',
       'exclude' => $bool_exclude_default,
       'config' => $arr_wizard_url,
     ),
     'pubtrans_embeddedcode' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_embeddedcode',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.pubtrans_embeddedcode',
       'exclude' => $bool_exclude_default,
       'config' => $conf_text_50_10,
     ),
@@ -1031,34 +1031,34 @@ $TCA[ 'tx_org_headquarters' ] = array(
       'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
     ),
     'record' => array( 'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
       . '  type,'
       . '  title,uid_parent,tx_org_headquarterscat,'
       . '  bodytext;;;richtext[]:rte_transform[mode=ts],'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
       . '  teaser_title,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_marginal,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_marginal,'
       . '  marginal_title,marginal_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
       . '  mail_url,mail_embeddedcode,'
       . '  postbox_postbox;;;;3-3-3,postbox_postcode,postbox_city,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
       . '  manager,telephone,fax,email,url,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_news,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_news,'
       . '  tx_org_news,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
       . '  tx_org_service,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_job,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_job,'
       . '  tx_org_job,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_cal,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_cal,'
       . '  tx_org_cal,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_location,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_location,'
       . '  tx_org_location,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_pubtrans,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_pubtrans,'
       . '  pubtrans_stop;;;richtext[]:rte_transform[mode=ts],pubtrans_url,pubtrans_embeddedcode,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1069,28 +1069,28 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_embedded,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_embedded,'
       . '  embeddedcode,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
       . '  hidden,pages,fe_group,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_seo,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_seo,'
       . '  seo_keywords,seo_description, description,'
     ),
     'page' => array( 'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
       . '  title,uid_parent,tx_org_headquarterscat,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
       . '  teaser_title,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
       . '  mail_url,mail_embeddedcode,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
       . '  manager,telephone,fax,email,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
       . '  tx_org_service,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1098,24 +1098,24 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
       . '  hidden,pages,fe_group,'
     ),
     'url' => array( 'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters, '
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
       . '  title,uid_parent,tx_org_headquarterscat,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_teaser,'
       . '  teaser_title,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_mail, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_mailaddress;mailaddress, '
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.palette_maillatlon;maillatlon, '
       . '  mail_url,mail_embeddedcode,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_contact,'
       . '  manager,telephone,fax,email,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_service,'
       . '  tx_org_service,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -1123,7 +1123,7 @@ $TCA[ 'tx_org_headquarters' ] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_control,'
       . '  hidden,pages,fe_group,'
     ),
   ),
@@ -1161,19 +1161,19 @@ $TCA[ 'tx_org_headquarters' ] = array(
     ),
     'mailaddress' => array(
       'showitem' => ''
-      . 'mail_address;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_address,--linebreak--,'
-      . 'mail_street;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_street,--linebreak--,'
-      . 'mail_postcode;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_postcode,'
-      . 'mail_city;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_city,--linebreak--,'
-      . 'mail_country;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_country,',
+      . 'mail_address;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_address,--linebreak--,'
+      . 'mail_street;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_street,--linebreak--,'
+      . 'mail_postcode;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_postcode,'
+      . 'mail_city;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_city,--linebreak--,'
+      . 'mail_country;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_country,',
       'canNotCollapse' => 1,
     ),
     'maillatlon' => array(
       'showitem' => ''
-      . 'geoupdateprompt;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.geoupdateprompt,--linebreak--,'
-      . 'geoupdateforbidden;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.geoupdateforbidden,--linebreak--,'
-      . 'mail_lat;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_lat,'
-      . 'mail_lon;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.mail_lon,',
+      . 'geoupdateprompt;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.geoupdateprompt,--linebreak--,'
+      . 'geoupdateforbidden;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.geoupdateforbidden,--linebreak--,'
+      . 'mail_lat;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_lat,'
+      . 'mail_lon;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_lon,',
       'canNotCollapse' => 1,
     ),
     'typepage' => array(
@@ -1197,11 +1197,11 @@ $TCA[ 'tx_org_headquarters' ][ 'types' ][ 'notype' ] = $TCA[ 'tx_org_headquarter
 
 if ( !$bool_exclude_tx_org_company )
 {
-  $TCA[ 'tx_org_headquarters' ][ 'columns' ][ 'title' ][ 'label' ] = 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.title';
+  $TCA[ 'tx_org_headquarters' ][ 'columns' ][ 'title' ][ 'label' ] = 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.title';
   $showitem = $TCA[ 'tx_org_headquarters' ][ 'types' ][ '0' ][ 'showitem' ];
   $showitem = str_replace
           (
-          'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters', 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarters.div_company', $showitem
+          'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_headquarters', 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.div_company', $showitem
   );
   $TCA[ 'tx_org_headquarters' ][ 'types' ][ '0' ][ 'showitem' ] = $showitem;
 }
@@ -1224,17 +1224,17 @@ $TCA[ 'tx_org_headquarterscat' ] = array(
   'columns' => array(
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.title',
       'config' => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.title_lang_ol',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.title_lang_ol',
       'config' => $conf_input_30_trim,
     ),
     'uid_parent' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.uid_parent',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.uid_parent',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -1253,12 +1253,12 @@ $TCA[ 'tx_org_headquarterscat' ] = array(
     'icons' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.icons',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.icons',
       'config' => $conf_file_image,
     ),
     'icon_offset_x' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.icon_offset_x',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.icon_offset_x',
       'config' => array(
         'type' => 'input',
         'size' => '3',
@@ -1269,7 +1269,7 @@ $TCA[ 'tx_org_headquarterscat' ] = array(
     ),
     'icon_offset_y' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.icon_offset_y',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.icon_offset_y',
       'config' => array(
         'type' => 'input',
         'size' => '3',
@@ -1282,11 +1282,11 @@ $TCA[ 'tx_org_headquarterscat' ] = array(
   ),
   'types' => array(
     '0' => array( 'showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.div_cat,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.div_cat,'
       . '  title;;1;;1-1-1,uid_parent,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.div_icons,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.div_icons,'
       . '  icons,icon_offset_x,icon_offset_y,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_headquarters.xml:tx_org_headquarterscat.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarterscat.div_control,'
       . 'hidden'
     ),
   ),

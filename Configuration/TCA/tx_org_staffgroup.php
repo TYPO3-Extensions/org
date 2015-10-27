@@ -12,7 +12,7 @@ require_once( PATH_typo3conf . 'ext/org/Configuration/TCA/Defaults/defaultValues
 
 return array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -40,7 +40,7 @@ return array(
     ),
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.title',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -49,7 +49,7 @@ return array(
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_calentrance.title_lang_ol',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_calentrance.title_lang_ol',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -58,7 +58,7 @@ return array(
     ),
     'uid_parent' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.uid_parent',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.uid_parent',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -78,8 +78,8 @@ return array(
   'types' => array(
     '0' => array(
       'showitem' =>
-      '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.div_category, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup.div_control, hidden'
+      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.div_category, title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup.div_control, hidden'
       . ''
     ),
   ),

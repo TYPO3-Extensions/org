@@ -19,7 +19,7 @@ if ( !defined( 'TYPO3_MODE' ) )
 // cal /////////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_cal' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_cal',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal',
     'label' => 'datetime',
     'label_alt' => 'title,tx_org_location',
     'label_alt_force' => true,
@@ -79,7 +79,7 @@ $TCA[ 'tx_org_cal' ] = array(
 // caltype ///////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_caltype' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_caltype',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -106,7 +106,7 @@ $TCA[ 'tx_org_caltype' ] = array(
 // calentrance //////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_calentrance' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_cal.xml:tx_org_calentrance',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_calentrance',
     'label' => 'title',
     'label_alt' => 'value',
     'label_alt_force' => true,

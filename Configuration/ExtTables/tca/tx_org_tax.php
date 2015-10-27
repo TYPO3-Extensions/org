@@ -6,7 +6,7 @@ if (!defined ('TYPO3_MODE'))
 
 $TCA['tx_org_tax'] = array (
   'ctrl' => array (
-    'title'             => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax',
+    'title'             => 'LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax',
     'label'             => 'value',
     'label_alt'         => 'title',
     'label_alt_force'   => true,

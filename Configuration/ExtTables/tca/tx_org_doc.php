@@ -18,7 +18,7 @@ if (!defined('TYPO3_MODE'))
 // doc /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_downloads'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloads',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads',
     'label' => 'title',
     //'label'             => 'datetime',
     //'label_alt'         => 'title',
@@ -70,7 +70,7 @@ $TCA['tx_org_downloads'] = array(
 // doccat /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_downloadscat'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloadscat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadscat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -104,7 +104,7 @@ $TCA['tx_org_downloadscat'] = array(
 // docmedia /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_downloadsmedia'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_downloads.xml:tx_org_downloadsmedia',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadsmedia',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

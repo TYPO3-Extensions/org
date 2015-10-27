@@ -16,7 +16,7 @@ if (!defined('TYPO3_MODE'))
 
 $TCA['tx_org_service'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_service.xml:tx_org_service',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service',
     'label' => 'title',
     'label_alt'         => 'tx_org_headquarters',
     'label_alt_force'   => true,
@@ -90,7 +90,7 @@ $TCA['tx_org_service'] = array(
 
 $TCA['tx_org_servicecat'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_service.xml:tx_org_servicecat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_servicecat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -113,7 +113,7 @@ $TCA['tx_org_servicecat'] = array(
 
 $TCA['tx_org_servicesector'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_service.xml:tx_org_servicesector',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_servicesector',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -136,7 +136,7 @@ $TCA['tx_org_servicesector'] = array(
 
 $TCA['tx_org_servicetargetgroup'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_service.xml:tx_org_servicetargetgroup',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_servicetargetgroup',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

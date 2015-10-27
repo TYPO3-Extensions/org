@@ -14,7 +14,7 @@ if (!defined('TYPO3_MODE'))
 
 $TCA['tx_org_staff'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staff',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff',
     'label' => 'name_last',
     'label_alt'         => 'name_first,title,tx_org_headquarters',
     'label_alt_force'   => true,
@@ -67,7 +67,7 @@ $TCA['tx_org_staff'] = array(
 
 $TCA['tx_org_staffgroup'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_staff.xml:tx_org_staffgroup',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staffgroup',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

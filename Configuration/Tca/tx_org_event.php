@@ -118,7 +118,7 @@ $TCA['tx_org_event'] = array(
       ),
     ),
     'page' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.page',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.page',
 //      'l10n_mode' => 'mergeIfNotBlank',
       'exclude' => $bool_exclude_default,
       'config' => array(
@@ -132,7 +132,7 @@ $TCA['tx_org_event'] = array(
       ),
     ),
     'url' => array(
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.url',
 //      'l10n_mode' => 'mergeIfNotBlank',
       'exclude' => $bool_exclude_default,
       'config' => array(
@@ -157,49 +157,49 @@ $TCA['tx_org_event'] = array(
     'title' => array(
       'exclude' => 0,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.title',
       'config' => $conf_input_30_trimRequired,
     ),
     'subtitle' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.subtitle',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.subtitle',
       'config' => $conf_input_30_trim,
     ),
     'length' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.length',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.length',
       'config' => $conf_input_30_trim,
     ),
     'bodytext' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.bodytext',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.bodytext',
       'config' => $conf_text_rte,
     ),
     'teaser_title' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.teaser_title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.teaser_title',
       'config' => $conf_input_30_trim,
     ),
     'teaser_subtitle' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.teaser_subtitle',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.teaser_subtitle',
       'config' => $conf_input_30_trim,
     ),
     'teaser_short' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.teaser_short',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.teaser_short',
       'config' => $conf_text_50_10,
     ),
     'tx_org_eventcat' => array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_eventcat',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.tx_org_eventcat',
       'config' => array(
         'type' => 'select',
         'size' => 10,
@@ -233,7 +233,7 @@ $TCA['tx_org_event'] = array(
           '_VERTICAL' => 0,
           'add' => array(
             'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:wizard.tx_org_eventcat.add',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:wizard.tx_org_eventcat.add',
             'icon' => 'add.gif',
             'params' => array(
               'table' => 'tx_org_eventcat',
@@ -244,7 +244,7 @@ $TCA['tx_org_event'] = array(
           ),
           'list' => array(
             'type' => 'script',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:wizard.tx_org_eventcat.list',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:wizard.tx_org_eventcat.list',
             'icon' => 'list.gif',
             'params' => array(
               'table' => 'tx_org_eventcat',
@@ -254,7 +254,7 @@ $TCA['tx_org_event'] = array(
           ),
           'edit' => array(
             'type' => 'popup',
-            'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:wizard.tx_org_eventcat.edit',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:wizard.tx_org_eventcat.edit',
             'script' => 'wizard_edit.php',
             'popup_onlyOpenIfSelected' => 1,
             'icon' => 'edit2.gif',
@@ -288,7 +288,7 @@ $TCA['tx_org_event'] = array(
     'tx_org_cal' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_cal',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.tx_org_cal',
       'config' => array(
         'type' => 'select',
         'size' => $size_calendar,
@@ -398,7 +398,7 @@ $TCA['tx_org_event'] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_news',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.tx_org_news',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -667,7 +667,7 @@ $TCA['tx_org_event'] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_headquarters',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -728,7 +728,7 @@ $TCA['tx_org_event'] = array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.tx_org_staff',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.tx_org_staff',
       'config' => array(
         'type' => 'select',
         'size' => 20,
@@ -795,14 +795,14 @@ $TCA['tx_org_event'] = array(
   ),
   'types' => array(
     'record' => array('showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_event,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_event,'
       . '  type,'
       . '  title;;;;1-1-1,subtitle,producer,length,bodytext;;;richtext[]:rte_transform[mode=ts];,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_eventcat,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_eventcat,'
       . '  tx_org_eventcat,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_calendar,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_calendar,'
       . '  tx_org_cal,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -813,13 +813,13 @@ $TCA['tx_org_event'] = array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_headquarters,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_headquarters,'
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_control,'
       . '  hidden,pages,fe_group,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_seo,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_seo,'
       . '  seo_keywords,seo_description'
     ,
     ),
@@ -827,14 +827,14 @@ $TCA['tx_org_event'] = array(
       'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
     ),
     'page' => array('showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_event,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.palette_typepage;typepage,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_event,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.palette_typepage;typepage,'
       . '  title;;;;1-1-1,subtitle,producer,length,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_eventcat,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_eventcat,'
       . '  tx_org_eventcat,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_calendar,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_calendar,'
       . '  tx_org_cal,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -842,23 +842,23 @@ $TCA['tx_org_event'] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_headquarters,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_headquarters,'
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_control,'
       . '  hidden,pages,fe_group,'
     ,
     ),
     'url' => array('showitem' => ''
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_event,'
-      . '  --palette--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.palette_typeurl;typeurl,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_event,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.palette_typeurl;typeurl,'
       . '  title;;;;1-1-1,subtitle,producer,length,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_teaser,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_eventcat,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_eventcat,'
       . '  tx_org_eventcat,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_calendar,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_calendar,'
       . '  tx_org_cal,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
@@ -866,11 +866,11 @@ $TCA['tx_org_event'] = array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_headquarters,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_headquarters,'
       . '  tx_org_headquarters,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_staff,'
       . '  tx_org_staff,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.div_control,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_control,'
       . '  hidden,pages,fe_group,'
     ,
     ),
@@ -910,15 +910,15 @@ $TCA['tx_org_event'] = array(
     ),
     'typepage' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.type,'
-      . 'page;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.page'
+      . 'type;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.type,'
+      . 'page;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.page'
       ,
       'canNotCollapse' => 1,
     ),
     'typeurl' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.type,'
-      . 'url;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_event.url'
+      . 'type;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.type,'
+      . 'url;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.url'
       ,
       'canNotCollapse' => 1,
     ),
@@ -950,7 +950,7 @@ $TCA['tx_org_eventcat'] = array(
     ),
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat.title',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -959,7 +959,7 @@ $TCA['tx_org_eventcat'] = array(
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.title_lang_ol',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat.title_lang_ol',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -968,7 +968,7 @@ $TCA['tx_org_eventcat'] = array(
     ),
     'uid_parent' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.uid_parent',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat.uid_parent',
       'config' => array(
         'type' => 'select',
         'form_type' => 'user',
@@ -988,8 +988,8 @@ $TCA['tx_org_eventcat'] = array(
   'types' => array(
     '0' => array(
       'showitem' =>
-      '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.div_category, title;;1;;,uid_parent,'
-      . '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_event.xml:tx_org_eventcat.div_control, hidden'
+      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat.div_category, title;;1;;,uid_parent,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_eventcat.div_control, hidden'
       . ''
     ),
   ),

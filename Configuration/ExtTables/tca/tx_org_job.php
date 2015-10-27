@@ -16,7 +16,7 @@ if (!defined('TYPO3_MODE'))
 
 $TCA['tx_org_job'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job',
     'label' => 'title',
     'label_alt'         => 'tx_org_headquarters',
     'label_alt_force'   => true,
@@ -90,7 +90,7 @@ $TCA['tx_org_job'] = array(
 
 $TCA['tx_org_jobcat'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobcat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobcat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -113,7 +113,7 @@ $TCA['tx_org_jobcat'] = array(
 
 $TCA['tx_org_jobsector'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobsector',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobsector',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -136,7 +136,7 @@ $TCA['tx_org_jobsector'] = array(
 
 $TCA['tx_org_jobworkinghours'] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobworkinghours',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobworkinghours',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

@@ -17,7 +17,7 @@ if ( !defined( 'TYPO3_MODE' ) )
 // tx_org_new ////////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_news' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news',
     'label' => 'datetime',
     'label_alt' => 'title',
     'label_alt_force' => true,
@@ -70,7 +70,7 @@ $TCA[ 'tx_org_news' ] = array(
 // tx_org_newscat ////////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_newscat' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_newscat',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_newscat',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -95,7 +95,7 @@ $TCA[ 'tx_org_newscat' ] = array(
 // tx_org_newsgroup ////////////////////////////////////////////////////////////////////
 $TCA[ 'tx_org_newsgroup' ] = array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_newsgroup',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_newsgroup',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',

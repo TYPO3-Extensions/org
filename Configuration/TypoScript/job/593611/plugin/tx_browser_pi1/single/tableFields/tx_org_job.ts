@@ -136,7 +136,7 @@ plugin.tx_browser_pi1 {
                 // <th>label</th>
               10 = TEXT
               10 {
-                data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.mail_city
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.mail_city
                 wrap = <th>|</th>
               }
                 // <td>value</td>
@@ -158,7 +158,7 @@ plugin.tx_browser_pi1 {
                 // <th>label</th>
               10 = TEXT
               10 {
-                data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.dateofentry
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.dateofentry
                 wrap = <th>|</th>
               }
                 // <td>value</td>
@@ -179,7 +179,7 @@ plugin.tx_browser_pi1 {
                 }
               }
               10 {
-                data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobsector.title
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobsector.title
               }
               20 {
                 field = tx_org_jobsector.title
@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
                 }
               }
               10 {
-                data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobcat.title
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobcat.title
               }
               20 {
                 field = tx_org_jobcat.title
@@ -209,7 +209,7 @@ plugin.tx_browser_pi1 {
                 }
               }
               10 {
-                data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_jobworkinghours.title
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_jobworkinghours.title
               }
               20 {
                 field = tx_org_jobworkinghours.title

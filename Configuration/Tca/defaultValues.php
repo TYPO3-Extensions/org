@@ -292,7 +292,7 @@ $conf_fegroup = array(
 $conf_topnews = array(
   'exclude' => $bool_exclude_none,
 //    'l10n_mode'   => 'exclude',
-  'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.topnews',
+  'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.topnews',
   'config' => array(
     'type' => 'check',
     'default' => '0',
@@ -303,10 +303,10 @@ if ($bool_topnews_sorting === true)
   $conf_topnews['config'] = array(
     'type' => 'select',
     'items' => array(
-      array('LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.topnews.3', 3),
-      array('LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.topnews.2', 2),
-      array('LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.topnews.1', 1),
-      array('LLL:EXT:org/Configuration/Tca/Locallang/tx_org_news.xml:tx_org_news.topnews.0', 0),
+      array('LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.topnews.3', 3),
+      array('LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.topnews.2', 2),
+      array('LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.topnews.1', 1),
+      array('LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.topnews.0', 0),
     ),
     'size' => 4,
     'maxitems' => 1,

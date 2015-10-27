@@ -15,17 +15,17 @@ $TCA['tx_org_tax'] = array(
   'columns' => array(
     'title' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax.title',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax.title',
       'config' => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax.title_lang_ol',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax.title_lang_ol',
       'config' => $conf_input_30_trim,
     ),
     'value' => array(
       'exclude' => 0,
-      'label' => 'LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax.value',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax.value',
       'config' => array(
         'type' => 'input',
         'size' => '5',
@@ -38,8 +38,8 @@ $TCA['tx_org_tax'] = array(
     'endtime' => $conf_endtime,
   ),
   'types' => array(
-    '0' => array('showitem' => '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax.div_tax,     title;;1;;,value,' .
-      '--div--;LLL:EXT:org/Configuration/Tca/Locallang/tx_org_tax.xml:tx_org_tax.div_control, hidden;;2;;' .
+    '0' => array('showitem' => '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax.div_tax,     title;;1;;,value,' .
+      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_tax.xml:tx_org_tax.div_control, hidden;;2;;' .
       ''),
   ),
   'palettes' => array(

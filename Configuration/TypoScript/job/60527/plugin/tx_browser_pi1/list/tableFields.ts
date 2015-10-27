@@ -25,7 +25,7 @@ plugin.tx_browser_pi1 {
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.mail_city
+                  data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.mail_city
                   noTrimWrap = |<span class="label">|</span> |
                 }
                   // value
@@ -47,7 +47,7 @@ plugin.tx_browser_pi1 {
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.tx_org_headquarters
+                  data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_headquarters
                   noTrimWrap = | <span class="label">|</span> |
                 }
                   // value
@@ -69,7 +69,7 @@ plugin.tx_browser_pi1 {
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/Configuration/Tca/Locallang/tx_org_job.xml:tx_org_job.dateofentry
+                  data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.dateofentry
                   noTrimWrap = | <span class="label">|</span> |
                 }
                   // value
