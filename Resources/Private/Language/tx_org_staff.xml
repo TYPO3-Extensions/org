@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'org'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="tx_org_staff.div_company">Company</label>
+      <label index="tx_org_staff.div_contact">Contact</label>
+      <label index="tx_org_staff.div_control">Controlling</label>
+      <label index="tx_org_staff.div_event">Events</label>
+      <label index="tx_org_staff.div_group">Fields of activity</label>
+      <label index="tx_org_staff.div_job">Jobs</label>
+      <label index="tx_org_staff.div_location">Location</label>
+      <label index="tx_org_staff.div_news">News</label>
+      <label index="tx_org_staff.div_particulars">Particulars</label>
+      <label index="tx_org_staff.div_seo">Search Engines</label>
+      <label index="tx_org_staff.div_service">Service</label>
+      <label index="tx_org_staff.palette_birthday">Birthday and gender</label>
+      <label index="tx_org_staff.palette_name">Name</label>
+      <label index="tx_org_staff">People</label>
+      <label index="tx_org_staff.birthday">Birthday</label>
+      <label index="tx_org_staff.bodytext">Description</label>
+      <label index="tx_org_staff.contact_email">E-mail</label>
+      <label index="tx_org_staff.contact_fax">Fax</label>
+      <label index="tx_org_staff.contact_phone">Phone</label>
+      <label index="tx_org_staff.contact_skype">Skype</label>
+      <label index="tx_org_staff.gender">Gender</label>
+      <label index="tx_org_staff.gender_female">female</label>
+      <label index="tx_org_staff.gender_male">male</label>
+      <label index="tx_org_staff.gender_unknown">unknown</label>
+      <label index="tx_org_staff.name_first">First name</label>
+      <label index="tx_org_staff.prefix">Title, graduate profession</label>
+      <label index="tx_org_staff.title">Full name</label>
+      <label index="tx_org_staff.name_last">Last name</label>
+      <label index="tx_org_staff.vita">Vita</label>
+      <label index="tx_org_staff.tx_org_downloads">Documents</label>
+      <label index="tx_org_staff.tx_org_event">Events</label>
+      <label index="tx_org_staff.tx_org_headquarters">Company</label>
+      <label index="tx_org_staff.tx_org_job">Jobs</label>
+      <label index="tx_org_staff.tx_org_location">Locations</label>
+      <label index="tx_org_staff.tx_org_news">News</label>
+      <label index="tx_org_staff.tx_org_service">Service</label>
+      <label index="tx_org_staff.tx_org_staffgroup">Field of activity</label>
+      <label index="tx_org_staffgroup">People: Field of activity</label>
+      <label index="tx_org_staffgroup.div_category">Field of activity</label>
+      <label index="tx_org_staffgroup.div_control">Controlling</label>
+      <label index="tx_org_staffgroup.title">Field of activity</label>
+      <label index="tx_org_staffgroup.title_lang_ol">Translations (i.e. fr:Traduction|de:Übersetzung)</label>
+      <label index="tx_org_staffgroup.uid_parent">Superior field of activity</label>
+      <label index="wizard.tx_org_staffgroup.add">Add a new field of activity</label>
+      <label index="wizard.tx_org_staffgroup.edit"> Edit the current field of activity</label>
+      <label index="wizard.tx_org_staffgroup.list">Display the field of activity table</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="tx_org_staff.div_company">Firma</label>
+      <label index="tx_org_staff.div_contact">Kontakt</label>
+      <label index="tx_org_staff.div_control">Steuerung</label>
+      <label index="tx_org_staff.div_event">Veranstaltungen</label>
+      <label index="tx_org_staff.div_group">Tätigkeitsfelder</label>
+      <label index="tx_org_staff.div_job">Stellenangebot</label>
+      <label index="tx_org_staff.div_location">Veranstaltungsort</label>
+      <label index="tx_org_staff.div_news">Nachrichten</label>
+      <label index="tx_org_staff.div_particulars">Persönliche Daten</label>
+      <label index="tx_org_staff.div_seo">Suchmaschinen</label>
+      <label index="tx_org_staff.div_service">Dienstleistung</label>
+      <label index="tx_org_staff.palette_birthday">Geburtstag / Geschlecht</label>
+      <label index="tx_org_staff.palette_name">Name</label>
+      <label index="tx_org_staff">Personen</label>
+      <label index="tx_org_staff.birthday">Geburtstag</label>
+      <label index="tx_org_staff.bodytext">Beschreibung</label>
+      <label index="tx_org_staff.contact_email">E-Mail</label>
+      <label index="tx_org_staff.contact_fax">Fax</label>
+      <label index="tx_org_staff.contact_phone">Telefon</label>
+      <label index="tx_org_staff.contact_skype">Skype</label>
+      <label index="tx_org_staff.gender">Geschlecht</label>
+      <label index="tx_org_staff.gender_female">weiblich</label>
+      <label index="tx_org_staff.gender_male">männlich</label>
+      <label index="tx_org_staff.gender_unknown">unbekannt</label>
+      <label index="tx_org_staff.name_first">Vorname</label>
+      <label index="tx_org_staff.prefix">Titel / akademischer Grad</label>
+      <label index="tx_org_staff.title">Voller Name</label>
+      <label index="tx_org_staff.name_last">Nachname</label>
+      <label index="tx_org_staff.vita">Vita</label>
+      <label index="tx_org_staff.tx_org_downloads">Dokumente</label>
+      <label index="tx_org_staff.tx_org_event">Veranstaltungen</label>
+      <label index="tx_org_staff.tx_org_headquarters">Firma</label>
+      <label index="tx_org_staff.tx_org_job">Stelleangebote</label>
+      <label index="tx_org_staff.tx_org_location">Veranstaltungsorte</label>
+      <label index="tx_org_staff.tx_org_news">Nachrichten</label>
+      <label index="tx_org_staff.tx_org_service">Dienstleistung</label>
+      <label index="tx_org_staff.tx_org_staffgroup">Tätigkeitsfeld</label>
+      <label index="tx_org_staffgroup">Personen: Tätigkeitsfeld</label>
+      <label index="tx_org_staffgroup.div_category">Tätigkeitsfeld</label>
+      <label index="tx_org_staffgroup.div_control">Steuerung</label>
+      <label index="tx_org_staffgroup.title">Tätigkeitsfeld</label>
+      <label index="tx_org_staffgroup.title_lang_ol">Übersetzungen (z.B. en:Translation|fr:Traduction)</label>
+      <label index="tx_org_staffgroup.uid_parent">Übergeordnetes Tätigkeitsfeld</label>
+      <label index="wizard.tx_org_staffgroup.add">Neues Tätigkeitsfeld erstellen</label>
+      <label index="wizard.tx_org_staffgroup.edit">Markiertes Tätigkeitsfeld bearbeiten</label>
+      <label index="wizard.tx_org_staffgroup.list">Tabelle mit Tätigkeitsfelder anzeigen</label>
+    </languageKey>
+  </data>
+</T3locallang>
