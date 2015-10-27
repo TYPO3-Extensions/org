@@ -1,3 +1,11 @@
+7.6.0
+  15-10-25
+  Improvement
+  * #i0092: TCA configuration got TYPO3 6.x structure
+            * TCA downgrade isnto Organiser 3.x isn't possible any longer.
+  Feature
+  * #i0091: calender gets a relation to staff and staff gets a relation to calendar
+
 7.5.5
   15-10-23
   Improvement
