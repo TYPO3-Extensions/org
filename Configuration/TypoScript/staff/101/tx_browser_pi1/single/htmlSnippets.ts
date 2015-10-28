@@ -26,6 +26,7 @@ plugin.tx_browser_pi1 {
                   ###TX_ORG_STAFF.DELETED###<!-- tx_org_staffgroup -->
                   ###TX_ORG_STAFF.CRDATE###<!-- tx_org_news -->
                   ###TX_ORG_HEADQUARTERS.UID###
+                  ###TX_ORG_STAFF.TX_ORG_CAL###<!-- tx_org_cal -->
                 </div>
                 <!-- ###AREA_FOR_AJAX_LIST_02### end -->
                 <!-- ###SINGLEBODYROW### end --><!-- ###SINGLEBODY### end --><!-- ###SINGLEVIEW### end -->
