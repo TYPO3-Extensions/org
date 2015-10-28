@@ -8,15 +8,16 @@
     <languageKey index="default" type="array">
       <label index="tx_org_cal">Calendar</label>
       <label index="tx_org_cal.div_calendar">Entry</label>
-      <label index="tx_org_cal.div_page">Internal Link</label>
-      <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.div_control">Controlling</label>
       <label index="tx_org_cal.div_embedded">Embedded Code</label>
       <label index="tx_org_cal.div_event">Location, organiser, admission</label>
       <label index="tx_org_cal.div_marginal">Marginal</label>
       <label index="tx_org_cal.div_media">Media</label>
+      <label index="tx_org_cal.div_page">Internal Link</label>
       <label index="tx_org_cal.div_seo">Search Engines</label>
+      <label index="tx_org_cal.div_staff">Staff</label>
       <label index="tx_org_cal.div_teaser">Teaser</label>
+      <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.palette_typepage">Link to an internal page</label>
       <label index="tx_org_cal.palette_typeurl">Link to an external website</label>
       <label index="tx_org_cal.type.tx_org_event">Link to the detail view of an event</label>
@@ -40,6 +41,7 @@
       <label index="tx_org_cal.tx_org_calentrance">Entrance Fee</label>
       <label index="tx_org_cal.tx_org_headquarters">Organiser</label>
       <label index="tx_org_cal.tx_org_location">Location</label>
+      <label index="tx_org_cal.tx_org_staff">Staff</label>
       <label index="tx_org_cal.documents">Documents</label>
       <label index="tx_org_calentrance">Calendar: Entrance Fees</label>
       <label index="tx_org_calentrance.div_calentrance">Entrance Fee</label>
@@ -71,15 +73,16 @@
     <languageKey index="de" type="array">
       <label index="tx_org_cal">Kalender</label>
       <label index="tx_org_cal.div_calendar">Eintrag im Kalender</label>
-      <label index="tx_org_cal.div_page">Interner Link</label>
-      <label index="tx_org_cal.div_url">Externer Link</label>
+      <label index="tx_org_cal.div_control">Steuerung</label>
+      <label index="tx_org_cal.div_event">Ort, Veranstalter, Eintritt</label>
       <label index="tx_org_cal.div_embedded">Eingebundener Code</label>
       <label index="tx_org_cal.div_marginal">Randspalte</label>
-      <label index="tx_org_cal.div_teaser">Kurztitel</label>
-      <label index="tx_org_cal.div_event">Ort, Veranstalter, Eintritt</label>
       <label index="tx_org_cal.div_media">Medien</label>
-      <label index="tx_org_cal.div_control">Steuerung</label>
+      <label index="tx_org_cal.div_page">Interner Link</label>
+      <label index="tx_org_cal.div_url">Externer Link</label>
+      <label index="tx_org_cal.div_teaser">Kurztitel</label>
       <label index="tx_org_cal.div_seo">Suchmaschinen</label>
+      <label index="tx_org_cal.div_staff">Personen</label>
       <label index="tx_org_cal.palette_typepage">Link auf eine interne Seite</label>
       <label index="tx_org_cal.palette_typeurl">Link auf eine externe Website</label>
       <label index="tx_org_cal.type.tx_org_event">die Detailansicht einer Veranstaltung</label>
@@ -103,6 +106,7 @@
       <label index="tx_org_cal.tx_org_calentrance">Eintritt</label>
       <label index="tx_org_cal.tx_org_headquarters">Veranstalter</label>
       <label index="tx_org_cal.tx_org_location">Veranstaltungsort</label>
+      <label index="tx_org_cal.tx_org_staff">Personal</label>
       <label index="tx_org_cal.documents">Dokumente</label>
       <label index="tx_org_calentrance">Kalender: Eintritt</label>
       <label index="tx_org_calentrance.div_calentrance">Eintritt</label>

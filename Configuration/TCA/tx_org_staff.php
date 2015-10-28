@@ -48,6 +48,7 @@ return array(
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+    . 'tx_org_cal,'
     . 'tx_org_downloads,'
     . 'tx_org_headquarters,department'
     . 'tx_org_job,'
@@ -69,6 +70,7 @@ return array(
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+    . 'tx_org_cal,'
     . 'tx_org_downloads,'
     . 'tx_org_headquarters'
     . 'tx_org_job,'
@@ -101,8 +103,8 @@ return array(
         'items' => array(
           array( '', 0 ),
         ),
-        'foreign_table' => 'tx_org_cal',
-        'foreign_table_where' => 'AND tx_org_cal.uid=###REC_FIELD_l10n_parent### AND tx_org_cal.sys_language_uid IN (-1,0)',
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.uid=###REC_FIELD_l10n_parent### AND tx_org_staff.sys_language_uid IN (-1,0)',
       ),
     ),
     'l10n_diffsource' => array(
@@ -1045,6 +1047,61 @@ return array(
         ),
       ),
     ),
+    'tx_org_cal' => array(
+      'l10n_mode' => 'exclude',
+      'exclude' => 0,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_cal',
+      'config' => array(
+        'type' => 'select',
+        'size' => 20,
+        'minitems' => 0,
+        'maxitems' => 99,
+        'items' => array(
+          '0' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_staff',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.title',
+        'selectedListStyle' => $listStyleWidth,
+        'itemListStyle' => $listStyleWidth,
+      ),
+      // #69256, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        'MM_opposite_field' => 'tx_org_staff',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0 AND tx_org_cal.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_cal.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
+    ),
     'hidden' => array(
       'exclude' => 1,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
@@ -1117,6 +1174,8 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_cal, '
+      . '  tx_org_cal,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  tx_org_downloads,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
@@ -1154,6 +1213,8 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_cal, '
+      . '  tx_org_cal,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  tx_org_downloads,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
@@ -1190,6 +1251,8 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_cal, '
+      . '  tx_org_cal,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_control,'
@@ -1212,6 +1275,8 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_cal, '
+      . '  tx_org_cal,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_company, '
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_control,'

@@ -50,13 +50,15 @@ return array(
     . 'sys_language_uid,l10n_parent,l10n_diffsource,type,title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'
     . 'teaser_title,teaser_subtitle,teaser_short,'
     . 'marginal_title,marginal_subtitle,marginal_short,'
-    . 'tx_org_location,tx_org_calentrance,'
+    . 'tx_org_location,'
+    . 'tx_org_calentrance,'
     . 'tx_org_headquarters'
+    . 'tx_org_staff'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
 //    . 'embeddedcode,print,printcaption,printseo,'
     . 'hidden,starttime,endtime,pages,fe_group,'
     . 'seo_keywords,seo_description',
-    'useColumnsForDefaultValues' =>  ''
+    'useColumnsForDefaultValues' => ''
     . 'type,title,subtitle,datetime,datetimeend,bodytext,'
     . 'teaser_title,teaser_subtitle,teaser_short,'
     . 'marginal_title,marginal_subtitle,marginal_short,'
@@ -74,14 +76,15 @@ return array(
     . 'title,subtitle,datetime,datetimeend,tx_org_caltype,bodytext,tx_org_event,'
     . 'teaser_title,teaser_subtitle,teaser_short,'
     . 'marginal_title,marginal_subtitle,marginal_short,'
-    . 'tx_org_location,'
+    . 'tx_org_calentrance,'
+    . 'tx_org_caltype'
     . 'tx_org_headquarters,'
-    . 'tx_org_calentrance,' .
-    'tx_org_caltype' .
-    'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
-//    'embeddedcode,print,printcaption,printseo,' .
-    'hidden,starttime,endtime,pages,fe_group,' .
-    'seo_keywords,seo_description'
+    . 'tx_org_location,'
+    . 'tx_org_staff,'
+    . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
+//    . 'embeddedcode,print,printcaption,printseo,'
+    . 'hidden,starttime,endtime,pages,fe_group,'
+    . 'seo_keywords,seo_description'
   ),
   'columns' => array(
     'sys_language_uid' => array(
@@ -703,6 +706,58 @@ return array(
         ),
       ),
     ),
+    'tx_org_staff' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'exclude',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_staff',
+      'config' => array(
+        'type' => 'select',
+        'size' => 20,
+        'minitems' => 0,
+        'maxitems' => 999,
+//        'MM' => 'tx_org_cal_mm_tx_org_staff',
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'items' => array(
+          '0' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+        'suppress_icons' => 1,
+      ),
+      // #69250, 150821, dwildt, +
+      'config_filter' => array(
+        'type' => 'select',
+        'size' => 1,
+        'MM' => 'tx_org_mm_all',
+        "MM_match_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        "MM_insert_fields" => array(
+          'table_local' => 'tx_org_cal',
+          'table_foreign' => 'tx_org_staff'
+        ),
+        'foreign_table' => 'tx_org_staff',
+        'foreign_table_where' => 'AND tx_org_staff.' . $str_store_record_conf . ' AND tx_org_staff.deleted = 0 AND tx_org_staff.hidden = 0 AND tx_org_staff.sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_org_staff.title',
+        'items' => array(
+          'empty' => array(
+            '0' => '',
+            '1' => '',
+          ),
+        ),
+      ),
+    ),
     'image' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
@@ -972,21 +1027,27 @@ return array(
       . '  teaser_title,teaser_subtitle,teaser_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_marginal,'
       . '  marginal_title,marginal_subtitle,marginal_short,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_staff,'
+      . '  tx_org_staff,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
-      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,' .
-      '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
-      '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,' .
-//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,         seo_keywords,seo_description' .
-      '' ),
+      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,'
+
+//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
+      . '  hidden;;1;;,pages,fe_group,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,'
+      . '  seo_keywords,seo_description'
+      . ''
+    ),
     // Copy of record
     'notype' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
