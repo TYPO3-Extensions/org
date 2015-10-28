@@ -5,15 +5,6 @@ basic.LLstatic = English
   # cat=basic//999;                type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
 basic.externalLinks=0
 
-  # cat=downgrade//200;            type=boolean; label= Enable field embedded code:Enable the field embedded code. Needed for Organiser version 4. The use of the field embedded code is deprecated and won't supported from Organiser version 7!
-downgrade.enable.embeddedcode = 0
-  # cat=downgrade//201;            type=boolean; label= Enable field images for printing:Enable the field images for printing. Needed for Organiser version 4. The use of all fields in context of images for printing is deprecated and won't supported from Organiser version 7!
-downgrade.enable.print = 0
-  # cat=downgrade//202;            type=boolean; label= Enable field public transport:Enable the fields for public transport. Needed for Organiser version 4. The use of the fields for public transport is deprecated and won't supported from Organiser version 7!
-downgrade.enable.pubtrans = 0
-  # cat=downgrade//999;            type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
-downgrade.externalLinks=0
-
   # cat=geocoding//100;            type=boolean; label= Enabled:If geocoding is enabled, latitude and longitude will updated automatically by the Google API. If you are using the Google API you have to publish your address data with Google Maps. And the free use of the API is limited. For details please refer to the FAQ of the Google API at http://developers.google.com/maps/faq
 geocoding.enabled  = 0
   # cat=geocoding//999;            type=user[EXT:org/lib/class.tx_org_extmanager.php:tx_org_extmanager->promptExternalLinks]; label=External Links
@@ -35,7 +26,7 @@ hide.tables.tx_org_location = 0
 hide.tables.tx_org_news = 0
   # cat=hide tables//108;            type=boolean; label= Service:Hide the table service (tx_org_service), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_service = 0
-  # cat=hide tables//109;            type=boolean; label= People:Hide the table people (tx_org_staff), if you don't need it. It will simplify your backend forms.
+  # cat=hide tables//109;            type=boolean; label= Staff:Hide the table staff/people (tx_org_staff), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_staff = 0
   # cat=hide tables//110;            type=boolean; label= Tax:Hide the table tax (tx_org_tax), if you don't need it. It will simplify your backend forms.
 hide.tables.tx_org_tax = 0
