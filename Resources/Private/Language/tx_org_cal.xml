@@ -15,7 +15,7 @@
       <label index="tx_org_cal.div_media">Media</label>
       <label index="tx_org_cal.div_page">Internal Link</label>
       <label index="tx_org_cal.div_seo">Search Engines</label>
-      <label index="tx_org_cal.div_staff">Staff</label>
+      <label index="tx_org_cal.div_staff">People</label>
       <label index="tx_org_cal.div_teaser">Teaser</label>
       <label index="tx_org_cal.div_url">External Link</label>
       <label index="tx_org_cal.palette_typepage">Link to an internal page</label>
@@ -41,7 +41,7 @@
       <label index="tx_org_cal.tx_org_calentrance">Entrance Fee</label>
       <label index="tx_org_cal.tx_org_headquarters">Organiser</label>
       <label index="tx_org_cal.tx_org_location">Location</label>
-      <label index="tx_org_cal.tx_org_staff">Staff</label>
+      <label index="tx_org_cal.tx_org_staff">People</label>
       <label index="tx_org_cal.documents">Documents</label>
       <label index="tx_org_calentrance">Calendar: Entrance Fees</label>
       <label index="tx_org_calentrance.div_calentrance">Entrance Fee</label>
