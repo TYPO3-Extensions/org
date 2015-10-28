@@ -53,7 +53,7 @@ return array(
     'tx_org_headquarters,' .
     'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
-    'embeddedcode,' .
+//    'embeddedcode,' .
     'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,' .
     'seo_keywords,seo_description,'
     ,
@@ -74,7 +74,7 @@ return array(
     . 'tx_org_staff,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_1stforlistonly,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'embeddedcode,'
+//    . 'embeddedcode,'
     . 'hidden,topnews,topnews_sorting,pages,starttime,endtime,fe_group,'
     . 'seo_keywords,seo_description,'
   ,
@@ -769,12 +769,12 @@ return array(
         'default' => 1
       ),
     ),
-    'embeddedcode' => array(
-      'exclude' => $bool_exclude_none,
-//      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'config' => $conf_text_50_10,
-    ),
+//    'embeddedcode' => array(
+//      'exclude' => $bool_exclude_none,
+////      'l10n_mode' => 'exclude',
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
+//      'config' => $conf_text_50_10,
+//    ),
     'documents_from_path' => array(
       'exclude' => $bool_exclude_default,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
@@ -897,8 +897,8 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
-      . '  embeddedcode,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
+//      . '  embeddedcode,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_staff,'
@@ -931,8 +931,8 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
-      . '  embeddedcode,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
+//      . '  embeddedcode,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_staff,'
@@ -1006,8 +1006,8 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
-      . '  embeddedcode,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_embedded,'
+//      . '  embeddedcode,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.div_staff,'

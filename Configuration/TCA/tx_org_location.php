@@ -46,13 +46,13 @@ return array(
     'prependAtCopy' => 'LLL:EXT:lang/locallang_general.php:LGL.prependAtCopy',
     'searchFields' => ''
     . 'sys_language_uid,l10n_parent,l10n_diffsource,title,tx_org_locationcat,url,'
-    . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_embeddedcode,'
+    . 'mail_address,mail_street,mail_postcode,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,mail_url,mail_,'
     . 'telephone,ticket_telephone,ticket_url,fax,email,'
     . 'tx_org_cal,'
     . 'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,citymap_url,citymap_embeddedcode,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'embeddedcode,'
+//    . 'embeddedcode,'
     . 'hidden,pages,fe_group,'
     . 'seo_keywords,seo_description',
     'useColumnsForDefaultValues' =>  ''
@@ -99,7 +99,7 @@ return array(
     . 'pubtrans_stop,pubtrans_url,pubtrans_embeddedcode,citymap_url,citymap_embeddedcode,'
     . 'documents_from_path,documents,documentscaption,documentslayout,documentssize,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'embeddedcode,'
+//    . 'embeddedcode,'
     . 'hidden,pages,fe_group,'
     . 'seo_keywords,seo_description'
   ,
@@ -854,12 +854,12 @@ return array(
         'default' => 1
       ),
     ),
-    'embeddedcode' => array(
-      'exclude' => $bool_exclude_none,
-//      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'config' => $conf_text_50_10,
-    ),
+//    'embeddedcode' => array(
+//      'exclude' => $bool_exclude_none,
+////      'l10n_mode' => 'exclude',
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
+//      'config' => $conf_text_50_10,
+//    ),
     'documents_from_path' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
@@ -960,8 +960,8 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_embedded,'
-      . '  embeddedcode,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_embedded,'
+//      . '  embeddedcode,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_control,'
       . '  hidden,pages,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_seo,'
@@ -996,8 +996,8 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
-      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_embedded,'
-      . '  embeddedcode,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_embedded,'
+//      . '  embeddedcode,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_control,'
       . '  hidden,pages,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.div_seo,'

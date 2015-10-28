@@ -53,7 +53,7 @@ return array(
     . 'tx_org_location,tx_org_calentrance,'
     . 'tx_org_headquarters'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'embeddedcode,print,printcaption,printseo,'
+//    . 'embeddedcode,print,printcaption,printseo,'
     . 'hidden,starttime,endtime,pages,fe_group,'
     . 'seo_keywords,seo_description',
     'useColumnsForDefaultValues' =>  ''
@@ -61,7 +61,7 @@ return array(
     . 'teaser_title,teaser_subtitle,teaser_short,'
     . 'marginal_title,marginal_subtitle,marginal_short,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
-    . 'embeddedcode,print,printcaption,printseo,'
+//    . 'embeddedcode,print,printcaption,printseo,'
     . 'hidden,starttime,endtime,pages,'
     . 'seo_keywords,seo_description',
     // #69250, 150821, dwildt, 1+
@@ -79,7 +79,7 @@ return array(
     . 'tx_org_calentrance,' .
     'tx_org_caltype' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
-    'embeddedcode,print,printcaption,printseo,' .
+//    'embeddedcode,print,printcaption,printseo,' .
     'hidden,starttime,endtime,pages,fe_group,' .
     'seo_keywords,seo_description'
   ),
@@ -919,30 +919,30 @@ return array(
         'default' => 1
       ),
     ),
-    'embeddedcode' => array(
-      'exclude' => $bool_exclude_none,
+//    'embeddedcode' => array(
+//      'exclude' => $bool_exclude_none,
+////      'l10n_mode' => 'exclude',
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
+//      'config' => $conf_text_50_10,
+//    ),
+//    'print' => array(
+//      'exclude' => $bool_exclude_none,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
-      'config' => $conf_text_50_10,
-    ),
-    'print' => array(
-      'exclude' => $bool_exclude_none,
-      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.print',
-      'config' => $conf_file_image,
-    ),
-    'printcaption' => array(
-      'exclude' => $bool_exclude_none,
-      'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
-      'config' => $conf_text_30_05,
-    ),
-    'printseo' => array(
-      'exclude' => $bool_exclude_none,
-      'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
-      'config' => $conf_text_30_05,
-    ),
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.print',
+//      'config' => $conf_file_image,
+//    ),
+//    'printcaption' => array(
+//      'exclude' => $bool_exclude_none,
+//      'l10n_mode' => 'prefixLangTitle',
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+//      'config' => $conf_text_30_05,
+//    ),
+//    'printseo' => array(
+//      'exclude' => $bool_exclude_none,
+//      'l10n_mode' => 'prefixLangTitle',
+//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+//      'config' => $conf_text_30_05,
+//    ),
     'hidden' => $conf_hidden,
     'starttime' => $conf_starttime,
     'endtime' => $conf_endtime,
@@ -983,7 +983,7 @@ return array(
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,' .
       '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
+//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,         seo_keywords,seo_description' .
       '' ),
@@ -1009,7 +1009,7 @@ return array(
       '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,' .
       '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,' .
       '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
+//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,         seo_keywords,seo_description' .
       '' ),

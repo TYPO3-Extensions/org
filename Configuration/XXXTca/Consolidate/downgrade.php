@@ -114,5 +114,3 @@ foreach ($arrOrgTables as $orgTable)
     $TCA[$orgTable]['types'][$type]['showitem'] = $showitem;
   } // LOOP all types of the current table
 } //LOOP all Organiser tables
-
-?>

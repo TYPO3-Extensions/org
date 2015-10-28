@@ -47,7 +47,6 @@ return array(
     'documents_from_path,documents,documentscaption,documentslayout,documentssize,' .
     'tx_org_news,' .
     'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,' .
-    'embeddedcode,print,printcaption,printseo,' .
     'hidden,pages,fe_group,' .
     'seo_keywords,seo_description',
     // #69251, 150821, dwildt, 1+
