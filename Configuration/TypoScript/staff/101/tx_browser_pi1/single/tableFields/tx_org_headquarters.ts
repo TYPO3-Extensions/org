@@ -51,6 +51,8 @@ plugin.tx_browser_pi1 {
                       en = Company
                     }
                   }
+                    // 151028, dwildt, 1-
+                  20 >
                 }
                   // title
                 20 = TEXT
