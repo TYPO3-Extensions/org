@@ -12,7 +12,7 @@ $EM_CONF[$_EXTKEY] = array(
   ,
   'category' => 'plugin',
   'shy' => 0,
-  'version' => '7.5.5',
+  'version' => '7.6.0',
   'conflicts' => 'css_filelinks',
   'priority' => '',
   'loadOrder' => '',

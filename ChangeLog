@@ -1,5 +1,5 @@
 7.6.0
-  15-10-25
+  15-10-28
   Improvement
   * #i0092: TCA configuration got TYPO3 6.x structure
             * TCA downgrade isnto Organiser 3.x isn't possible any longer.

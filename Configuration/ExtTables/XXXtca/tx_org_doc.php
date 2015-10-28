@@ -66,41 +66,6 @@ $TCA['tx_org_downloads'] = array(
     'filter' => 'filter_for_all_fields',
   ),
 );
-// doc /////////////////////////////////////////////////////////////////////
-// doccat /////////////////////////////////////////////////////////////////////
-$TCA['tx_org_downloadscat'] = array(
-  'ctrl' => array(
-    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadscat',
-    'label' => 'title',
-    'tstamp' => 'tstamp',
-    'crdate' => 'crdate',
-    // #i0071, 150822, dwildt, 1-
-    //'sortby' => 'sorting',
-    'delete' => 'deleted',
-    'enablecolumns' => array(
-      'disabled' => 'hidden',
-    ),
-    'hideAtCopy' => false,
-    'dividers2tabs' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
-    'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Configuration/ExtIcon/downloadcat.gif',
-    'type' => 'type',
-    'typeicon_column' => 'type',
-    'typeicons' => array(
-      'cat_text' => '../typo3conf/ext/org/Configuration/ExtIcon/cat_text.gif',
-      'cat_color' => '../typo3conf/ext/org/Configuration/ExtIcon/cat_color.gif',
-      'cat_image' => '../typo3conf/ext/org/Configuration/ExtIcon/cat_image.gif',
-    ),
-    'searchFields' => ''
-    . 'type,'
-    . 'title,title_lang_ol,text,text_lang_ol,' .
-    'color,' .
-    'image,imageseo,imageseo_lang_ol,image_width,image_height,image_compression,image_effects,' .
-    'hidden',
-  )
-);
-// doccat /////////////////////////////////////////////////////////////////////
 // docmedia /////////////////////////////////////////////////////////////////////
 $TCA['tx_org_downloadsmedia'] = array(
   'ctrl' => array(

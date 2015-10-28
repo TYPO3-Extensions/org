@@ -31,14 +31,14 @@ return array(
     ),
     'dividers2tabs' => TRUE,
     'thumbnail' => 'image',
-    'iconfile' => '../typo3conf/ext/org/Configuration/ExtIcon/staff.gif',
+    'iconfile' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/staff.gif',
     'type' => 'type',
     'typeicon_column' => 'type',
     'typeicons' => array(
-      'record' => '../typo3conf/ext/org/Configuration/ExtIcon/staff.gif',
-      'page' => '../typo3conf/ext/org/Configuration/ExtIcon/page.gif',
-      'url' => '../typo3conf/ext/org/Configuration/ExtIcon/url.gif',
-      'notype' => '../typo3conf/ext/org/Configuration/ExtIcon/notype.gif',
+      'record' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/staff.gif',
+      'page' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/page.gif',
+      'url' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/url.gif',
+      'notype' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
     ),
     'searchFields' => ''
     . 'type,page,url,'
@@ -120,22 +120,22 @@ return array(
           'record' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
             '1' => 'record',
-            '2' => 'EXT:org/Configuration/ExtIcon/staff.gif',
+            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/staff.gif',
           ),
           'page' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
             '1' => 'page',
-            '2' => 'EXT:org/Configuration/ExtIcon/page.gif',
+            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/page.gif',
           ),
           'url' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
             '1' => 'url',
-            '2' => 'EXT:org/Configuration/ExtIcon/url.gif',
+            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/url.gif',
           ),
           'notype' => array(
             '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
             '1' => 'notype',
-            '2' => 'EXT:org/Configuration/ExtIcon/notype.gif',
+            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
           ),
         ),
         'default' => 'record',
