@@ -40,7 +40,7 @@ plugin.tx_browser_pi1 {
               }
             }
               // div box
-            wrap = <ul class="vcard tx_org_staff">|</ul><!-- vcard -->
+            wrap = <ul class="vcard tx_org_cal">|</ul><!-- vcard -->
               // Marginal news box: header, items
               // header
             10 = TEXT
