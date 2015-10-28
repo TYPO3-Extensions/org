@@ -101,6 +101,28 @@ plugin.tx_browser_pi1 {
               }
             }
           }
+          tx_org_staff {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
+              first_item {
+                cObject {
+                  20 {
+                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.staff
+                  }
+                }
+              }
+              wrap = <span class="selectbox">|</span>
+              wrap {
+                item {
+                  cObject {
+                    20 {
+                      crop = 30 | ... | 1
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

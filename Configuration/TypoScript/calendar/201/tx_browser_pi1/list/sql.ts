@@ -39,7 +39,9 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_city,
           tx_org_location.mail_lat,
           tx_org_location.mail_lon,
-          tx_org_location.mail_postcode
+          tx_org_location.mail_postcode,
+
+          tx_org_staff.title
         )
         orderBy (
           tx_org_cal.datetime

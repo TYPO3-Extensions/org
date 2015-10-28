@@ -27,6 +27,7 @@ plugin.tx_browser_pi1 {
           tx_org_cal.subtitle,
           tx_org_cal.teaser_short,
           tx_org_cal.tx_org_headquarters,
+          tx_org_cal.tx_org_staff,
           tx_org_cal.type,
           tx_org_cal.uid,
 
@@ -66,7 +67,9 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_lon,
           tx_org_location.mail_postcode,
           tx_org_location.mail_street,
-          tx_org_location.mail_url
+          tx_org_location.mail_url,
+
+          tx_org_location.uid
         )
         orderBy (
           tx_org_cal.title, tx_org_caltype

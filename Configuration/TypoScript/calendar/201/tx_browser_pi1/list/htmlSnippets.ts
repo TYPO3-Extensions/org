@@ -13,6 +13,7 @@ plugin.tx_browser_pi1 {
                 ###TX_ORG_CAL.DATETIME###
                 ###TX_ORG_CALTYPE.TITLE###
                 ###TX_ORG_LOCATION.MAIL_CITY###
+                ###TX_ORG_STAFF.TITLE###
               </div>
 )
             }
