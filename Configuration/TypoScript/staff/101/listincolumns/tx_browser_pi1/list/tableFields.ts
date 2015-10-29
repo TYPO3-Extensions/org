@@ -37,8 +37,9 @@ plugin.tx_browser_pi1 {
               }
               20 = TEXT
               20 {
-                field = tx_org_staff.marginal_subtitle
-                wrap = <li class="bullet-item">|</li>
+                field     = tx_org_staff.marginal_subtitle
+                required  = 1
+                wrap      = <li class="bullet-item">|</li>
               }
                 // category
               30 = COA
