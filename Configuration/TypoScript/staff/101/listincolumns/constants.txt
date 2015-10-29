@@ -14,7 +14,7 @@ plugin.tx_browser_pi1 {
       }
       text {
         0 {
-          tx_org_staff.marginal_short // tx_org_staff.bodytext // tx_org_staff.vita
+          field = tx_org_staff.marginal_short // tx_org_staff.bodytext // tx_org_staff.vita
         }
       }
     }
