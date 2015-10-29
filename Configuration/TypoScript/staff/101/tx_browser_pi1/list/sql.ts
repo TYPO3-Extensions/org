@@ -23,7 +23,7 @@ plugin.tx_browser_pi1 {
           tx_org_headquarters.uid
         )
         orderBy (
-          tx_org_staff.name_last, tx_org_staff.title, tx_org_staffgroup.title
+          tx_org_staff.title, tx_org_staff.name_last, tx_org_staffgroup.title
         )
         // Workaround: Without it i.e. the filename in tx_org_headquarters.image would get a typolink!
         csvLinkToSingleView = tx_org_job.title
