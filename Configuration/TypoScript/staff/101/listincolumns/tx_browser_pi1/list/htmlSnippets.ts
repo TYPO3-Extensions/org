@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
               value (
                 <div class="row">
                   <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
-                    <div class="row" data-equalizer>
+                    <div class="row" data-equalizer="tx_org_staff">
                       <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                       ###TX_ORG_STAFF.TITLE###
                       <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
