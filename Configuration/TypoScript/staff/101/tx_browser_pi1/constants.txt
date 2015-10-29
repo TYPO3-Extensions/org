@@ -42,7 +42,7 @@ plugin.tx_browser_pi1 {
         2 {
           default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_headquarters_300x200.png
           file      = tx_org_headquarters.image
-          height    = 400
+          height    = 80
           path      = uploads/tx_org/
           seo       = tx_org_headquarters.imageseo
           width     = 277m
