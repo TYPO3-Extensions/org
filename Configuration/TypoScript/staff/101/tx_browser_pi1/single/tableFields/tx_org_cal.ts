@@ -65,7 +65,7 @@ plugin.tx_browser_pi1 {
                   noTrimWrap = |tx_org_mm_all.uid_foreign = | AND tx_org_mm_all.table_foreign = 'tx_org_staff' AND tx_org_mm_all.table_local = 'tx_org_cal' AND tx_org_cal.datetime > UNIX_TIMESTAMP()|
                 }
                 orderBy = tx_org_cal.datetime ASC
-                //max = 3
+                max = 3
               }
                 // tx_org_staff.title croped and linked
               renderObj = CASE
@@ -118,6 +118,32 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+            }
+            30 < .20
+            30 {
+              select {
+                begin = 3
+                max >
+              }
+              renderObj {
+                default {
+                  wrap = <li class="url circle toggle" style="display:none;">|</li>
+                }
+                notype {
+                  wrap = <li class="url circle toggle" style="display:none;">|</li>
+                }
+                page {
+                  wrap = <li class="url circle toggle" style="display:none;">|</li>
+                }
+                url {
+                  wrap = <li class="url circle toggle" style="display:none;">|</li>
+                }
+              }
+            }
+            40 = TEXT
+            40 {
+              value = <span class="tx_org_cal_toggle label" style="display:none;">More &raquo;</span>
+              wrap  = <li class="url">|</li>
             }
           }
         }

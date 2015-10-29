@@ -1,11 +1,13 @@
 7.6.0
-  15-10-28
+  15-10-29
   Feature
+  * #i0098: Staff single view calendar get the more/less property
   * #i0096: Staff single view is extended with a calendar list
   * #i0095: Calendar single view is extended with a people list
   * #i0094: Calendar list view is extended with a people filter
   * #i0091: calender gets a relation to staff and staff gets a relation to calendar
   Improvement
+  * #71116: Get an ID for including a JavaScript inline
   * #i0097: Staff single view: image height for company logo is decreased from 400 to 80
   * #i0093: Downgrade property is removed in ext_conf_template.txt
   * #i0092: TCA configuration got TYPO3 6.x structure
