@@ -7,7 +7,7 @@ plugin.tx_browser_pi1 {
             // title
           title = COA
           title {
-            wrap = <div class="columns medium-4">|</div>
+            wrap = <div class="columns medium-3" data-equalizer-watch>|</div>
               // image
             10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0.default
             10 {
@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
             20 = COA
             20 {
               stdWrap {
-                wrap = <ul class="pricing-table" data-equalizer-watch>|</ul>
+                wrap = <ul class="pricing-table">|</ul>
               }
                 // teaser_title
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0.default
