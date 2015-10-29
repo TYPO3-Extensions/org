@@ -35,15 +35,9 @@ plugin.tx_browser_pi1 {
                 typolink.parameter.cObject.30.value = linktosingle button expand
                 wrap  = <li class="title">|</li>
               }
-              20 = TEXT
-              20 {
-                field     = tx_org_staff.marginal_subtitle
-                required  = 1
-                wrap      = <li class="bullet-item">|</li>
-              }
                 // category
-              30 = COA
-              30 {
+              20 = COA
+              20 {
                 if =
                 if {
                   isTrue {
@@ -83,6 +77,12 @@ plugin.tx_browser_pi1 {
                   }
                 }
                 wrap = <li class="bullet-item">|</li>
+              }
+              30 = TEXT
+              30 {
+                field     = tx_org_staff.marginal_subtitle
+                required  = 1
+                wrap      = <li class="bullet-item">|</li>
               }
                 // teaser_short
               40 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.0.default
