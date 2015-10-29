@@ -291,8 +291,23 @@
 
 
 /* foundation */
+.circle img {
+  border-radius: 10em;
+}
 .clearing-blackout {
   z-index: 2000; /* leaflet top has 1.000 */
+}
+.pricing-table .title {
+  padding: 0;
+  font-weight:bold;
+}
+.pricing-table .title .button {
+  color:white;
+  font-weight:bold;
+}
+.pricing-table button.expand,
+.pricing-table .button.expand {
+  margin: 0;
 }
 .sub-nav {
   margin-left: 0;

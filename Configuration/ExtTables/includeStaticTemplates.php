@@ -53,7 +53,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [5.5.2] Nachrichten - Mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [5.6] Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [6.1] Personen');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6.2] Personen (einspaltig)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [6.1.1] +List-View in Spalten');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6.2] Personen (Single-View: einspaltig)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [6.3] Personen - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                   'Org [6.4] Personen vCard');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/',                  'Org [7.1] Standorte');
@@ -117,6 +118,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [8.5.2] News - mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [8.6] News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [9.1] People');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [9.1.1] +list view with columns');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [9.2] People (one column)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [9.3] People - margin (don\'t cache!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                   'Org [9.4] People vCard');

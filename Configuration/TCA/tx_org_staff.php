@@ -45,6 +45,7 @@ return array(
     . 'title,'
     . 'name_first,name_last,birthday,gender,'
     . 'bodytext,cols,vita,pi_flexform,'
+    . 'marginal_title,marginal_subtitle,marginal_short,'
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
@@ -67,6 +68,7 @@ return array(
     . 'title,'
     . 'prefix,name_first,name_last,birthday,gender,'
     . 'bodytext,cols,vita,'
+    . 'marginal_title,marginal_subtitle,marginal_short,'
     . 'tx_org_staffgroup,'
     . 'contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
     . 'image,imagecaption,imageseo,imagewidth,imageheight,imageorient,imagecaption,imagecols,imageborder,imagecaption_position,image_link,image_zoom,image_noRows,image_effects,image_compression,'
@@ -317,6 +319,24 @@ return array(
           'table' => $TCA[ 'tt_content' ][ 'columns' ][ 'bodytext' ][ 'config' ][ 'wizards' ][ 'table' ],
         ),
       )
+    ),
+    'marginal_title' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.marginal_title',
+      'config' => $conf_input_30_trim,
+    ),
+    'marginal_subtitle' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.marginal_subtitle',
+      'config' => $conf_input_30_trim,
+    ),
+    'marginal_short' => array(
+      'exclude' => $bool_exclude_default,
+      'l10n_mode' => 'prefixLangTitle',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.marginal_short',
+      'config' => $conf_text_50_10,
     ),
     'tx_org_staffgroup' => array(
       'l10n_mode' => 'exclude',
@@ -1164,6 +1184,8 @@ return array(
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
       . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;9;nowrap:wizards[table],'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
+      . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
@@ -1203,6 +1225,8 @@ return array(
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
       . '  bodytext;;;richtext[]:rte_transform[mode=ts],vita;;9;nowrap:wizards[table],'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
+      . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
@@ -1241,6 +1265,8 @@ return array(
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
+      . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '
@@ -1265,6 +1291,8 @@ return array(
       . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
+      . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_group, '
       . '  tx_org_staffgroup,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_contact, '

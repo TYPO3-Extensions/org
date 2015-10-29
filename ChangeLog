@@ -1,6 +1,8 @@
 7.6.0
   15-10-29
   Feature
+  * #i0100: tx_org_staff is extended with marginal fields
+  * #i0099: New template: Org [9.1.1] +list view with columns
   * #i0098: Staff single view calendar get the more/less property
   * #i0096: Staff single view is extended with a calendar list
   * #i0095: Calendar single view is extended with a people list

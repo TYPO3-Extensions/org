@@ -1,0 +1,22 @@
+plugin.tx_browser_pi1 {
+  templates {
+    listview {
+      header {
+        0 {
+          field = tx_org_staff.marginal_title // tx_org_staff.title // tx_org_staff.name_last
+        }
+      }
+      image {
+        0 {
+          height  = 219c
+          width   = 219c
+        }
+      }
+      text {
+        0 {
+          tx_org_staff.marginal_short // tx_org_staff.bodytext // tx_org_staff.vita
+        }
+      }
+    }
+  }
+}

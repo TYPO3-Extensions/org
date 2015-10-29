@@ -14,6 +14,7 @@
       <label index="tx_org_staff.div_group">Fields of activity</label>
       <label index="tx_org_staff.div_job">Jobs</label>
       <label index="tx_org_staff.div_location">Location</label>
+      <label index="tx_org_staff.div_marginal">Marginal</label>
       <label index="tx_org_staff.div_news">News</label>
       <label index="tx_org_staff.div_particulars">Particulars</label>
       <label index="tx_org_staff.div_seo">Search Engines</label>
@@ -31,6 +32,9 @@
       <label index="tx_org_staff.gender_female">female</label>
       <label index="tx_org_staff.gender_male">male</label>
       <label index="tx_org_staff.gender_unknown">unknown</label>
+      <label index="tx_org_staff.marginal_title">Title of the event (in marginal views)</label>
+      <label index="tx_org_staff.marginal_subtitle">Subheader (in marginal views)</label>
+      <label index="tx_org_staff.marginal_short">Short (in marginal views)</label>
       <label index="tx_org_staff.name_first">First name</label>
       <label index="tx_org_staff.prefix">Title, graduate profession</label>
       <label index="tx_org_staff.title">Full name</label>
@@ -64,6 +68,7 @@
       <label index="tx_org_staff.div_group">Tätigkeitsfelder</label>
       <label index="tx_org_staff.div_job">Stellenangebot</label>
       <label index="tx_org_staff.div_location">Veranstaltungsort</label>
+      <label index="tx_org_staff.div_marginal">Randspalte</label>
       <label index="tx_org_staff.div_news">Nachrichten</label>
       <label index="tx_org_staff.div_particulars">Persönliche Daten</label>
       <label index="tx_org_staff.div_seo">Suchmaschinen</label>
@@ -81,6 +86,9 @@
       <label index="tx_org_staff.gender_female">weiblich</label>
       <label index="tx_org_staff.gender_male">männlich</label>
       <label index="tx_org_staff.gender_unknown">unbekannt</label>
+      <label index="tx_org_staff.marginal_title">Titel (in Randspalten)</label>
+      <label index="tx_org_staff.marginal_subtitle">Untertitel (in Randspalten)</label>
+      <label index="tx_org_staff.marginal_short">Kurztext (in Randspalten)</label>
       <label index="tx_org_staff.name_first">Vorname</label>
       <label index="tx_org_staff.prefix">Titel / akademischer Grad</label>
       <label index="tx_org_staff.title">Voller Name</label>

@@ -20,12 +20,11 @@ plugin.tx_browser_pi1 {
               value (
                 <div class="row">
                   <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
-                    <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
-                    <div class="row">
-                      <div class="tx_org_staff tx_org_staff-record record">
-                        ###TX_ORG_STAFF.TITLE###
-                      </div>
-                    </div><!-- /row --><!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                    <div class="row" data-equalizer>
+                      <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
+                      ###TX_ORG_STAFF.TITLE###
+                      <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->
+                    </div><!-- /row -->
                   </div><!-- /columns --><!-- /listview -->
                 </div><!-- /row -->
 )
