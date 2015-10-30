@@ -268,7 +268,7 @@ return array(
       ),
     ),
     'datetimeend' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.datetimeend',
       'config' => $conf_datetimeend,
@@ -1020,7 +1020,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  type,'
       . '  title,subtitle,'
-      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.datetime_datetimeend;datetime_datetimeend,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
@@ -1052,7 +1052,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  type,'
       . '  title,subtitle,'
-      . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.datetime_datetimeend;datetime_datetimeend,'
+      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
