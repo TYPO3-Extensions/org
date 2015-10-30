@@ -45,8 +45,10 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [4.1.3] + nur aktuelle Einträge');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [4.1.4] + nur abgelaufene Einträge');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [4.1.5] + Kalender Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4.2] Kalender - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [4.3] Kalender (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/202/',                      'Org [4.2] Kalender (nur Karte)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/203/',                      'Org [4.3] Kalender (ohne Karte)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4.4] Kalender - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [4.5] Kalender (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [5.1] Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/401_newsonly/',             'Org [5.1] + Nachrichten solo');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/409/',                          'Org [5.4] Nachrichten - Slick');
@@ -86,8 +88,10 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [2.1.3] + up-to-date only');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [2.1.4] + out-of-date only');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [2.1.5] + Calendar Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2.2] Calendar - margin');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [2.3] Calendar (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/202/',                      'Org [2.2] Calendar (map only)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/203/',                      'Org [2.3] Calendar (without any map)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2.4] Calendar - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [2.5] Calendar (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [3.1] Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [3.1.1] + Downloads Caddy');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag',      'Org [3.1.2] + Downloads Caddy Flags');

@@ -1,6 +1,8 @@
 7.6.0
   15-10-29
   Feature
+  * #i0104: New cal template: Org [2.3] Calendar (map only)
+  * #i0103: New cal template: Org [2.2] Calendar (map only)
   * #71189: CSS inline for the new cal template
   * #i0102: New cal template: Org [2.1.1] +list view with columns
   * #i0100: tx_org_staff is extended with marginal fields
