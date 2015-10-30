@@ -40,12 +40,13 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/311/',                     'Org [3.3] Downloads - TOP 5');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/302/',                     'Org [3.4] Downloads Kategorien');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/',                      'Org [4.1] Kalender');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/tx_browser_pi1/single/onecolumn/', 'Org [4.1] + einspaltig');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [4.2.1] + nur aktuelle Einträge');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [4.2.2] + nur abgelaufene Einträge');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [4.3] + Kalender Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4.4] Kalender - Rand');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [4.5] Kalender (RSS)');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/listincolumns/',        'Org [4.1.1] + List View mit Spalten');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/tx_browser_pi1/single/onecolumn/', 'Org [4.1.2] + einspaltig Single-View');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [4.1.3] + nur aktuelle Einträge');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [4.1.4] + nur abgelaufene Einträge');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [4.1.5] + Kalender Caddy');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [4.2] Kalender - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [4.3] Kalender (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/',                          'Org [5.1] Nachrichten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/401/401_newsonly/',             'Org [5.1] + Nachrichten solo');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/409/',                          'Org [5.4] Nachrichten - Slick');
@@ -53,7 +54,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [5.5.2] Nachrichten - Mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [5.6] Nachrichten (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [6.1] Personen');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [6.1.1] +List-View in Spalten');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [6.1.1] + List-View in Spalten');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [6.2] Personen (Single-View: einspaltig)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [6.3] Personen - Rand (nicht cachen!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                   'Org [6.4] Personen vCard');
@@ -80,10 +81,11 @@ switch( true )
         break;
     }
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/',                      'Org [2.1] Calendar');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/tx_browser_pi1/single/onecolumn/',  'Org [2.1] + one column');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [2.1.1] + up-to-date only');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [2.1.2] + out-of-date only');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [2.1.3] + Calendar Caddy');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/listincolumns/',        'Org [2.1.1] + list view with columns');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/tx_browser_pi1/single/onecolumn/',  'Org [2.1.2] + one column single view');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/upToDate/',             'Org [2.1.3] + up-to-date only');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/outOfDate/',            'Org [2.1.4] + out-of-date only');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/201/caddy/',                'Org [2.1.5] + Calendar Caddy');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/211/',                      'Org [2.2] Calendar - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [2.3] Calendar (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [3.1] Downloads');
@@ -104,8 +106,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/302/',                     'Org [3.3] Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/events/61826/',                      'Org [4] Events');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/',                  'Org [5.1] Headquarters');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/onecolumn/', 'Org [5.1] + one column');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [5.2] Headquarters - margin');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/onecolumn/', 'Org [5.2] + one column');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/511/',                  'Org [5.3] Headquarters - margin');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593611/',                        'Org [6.1] Jobs');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/60527/',                         'Org [6.2] Jobs - newsletter');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/job/593619/',                        'Org [6.3] Jobs (RSS)');
@@ -118,7 +120,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/412/',                          'Org [8.5.2] News - mini');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/news/499/',                          'Org [8.6] News (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/',                         'Org [9.1] People');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [9.1.1] +list view with columns');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/101/listincolumns/',           'Org [9.1.1] + list view with columns');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/102/',                         'Org [9.2] People (one column)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [9.3] People - margin (don\'t cache!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                   'Org [9.4] People vCard');
