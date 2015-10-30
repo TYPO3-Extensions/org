@@ -41,13 +41,13 @@ return array(
   ),
   'columns' => array(
     'icons' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype.icons',
       'config' => $conf_file_image,
     ),
     'icon_offset_x' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype.icon_offset_x',
       'config' => array(
         'type' => 'input',
@@ -58,7 +58,7 @@ return array(
       ),
     ),
     'icon_offset_y' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype.icon_offset_y',
       'config' => array(
         'type' => 'input',
@@ -74,12 +74,12 @@ return array(
       'config' => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype.title_lang_ol',
       'config' => $conf_input_30_trim,
     ),
     'uid_parent' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_caltype.uid_parent',
       'config' => array(
         'type' => 'select',
@@ -118,10 +118,10 @@ return array(
           'table_foreign' => 'tx_org_caltype'
         ),
         'MM_opposite_field' => 'tx_org_caltype',
-        'foreign_table' => 'tx_org_caltype',
-        'foreign_table_where' => 'AND tx_org_caltype.' . $str_store_record_conf
-        . ' AND tx_org_caltype.deleted = 0 AND tx_org_caltype.hidden = 0'
-        . ' ORDER BY tx_org_caltype.title'
+        'foreign_table' => 'tx_org_cal',
+        'foreign_table_where' => 'AND tx_org_cal.' . $str_store_record_conf
+        . ' AND tx_org_cal.deleted = 0 AND tx_org_cal.hidden = 0'
+        . ' ORDER BY tx_org_cal.datetime DESC, title'
         ,
         'wizards' => array(
           '_PADDING' => 2,

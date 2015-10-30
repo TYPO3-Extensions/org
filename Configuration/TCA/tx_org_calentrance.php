@@ -12,7 +12,7 @@ require_once( PATH_typo3conf . 'ext/org/Configuration/TCA/Defaults/defaultValues
 
 return array(
   'ctrl' => array(
-    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype',
+    'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_calentrance',
     'label' => 'title',
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
@@ -25,7 +25,7 @@ return array(
     'dividers2tabs' => true,
     'hideAtCopy' => false,
     'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/caltype.gif',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/calentrance.gif',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
     . 'title,title_lang_ol,'
