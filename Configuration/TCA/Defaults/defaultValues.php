@@ -316,7 +316,7 @@ if ($bool_topnews_sorting === true)
   );
 }
 $conf_pages = array(
-  'exclude' => $bool_exclude_default,
+  'exclude' => 1,
   'l10n_mode' => 'exclude',
   'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.pages',
   'config' => array(

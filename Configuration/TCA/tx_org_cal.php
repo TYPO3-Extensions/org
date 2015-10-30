@@ -561,7 +561,7 @@ return array(
       ),
     ),
     'tx_org_calentrance' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_calentrance',
       'config' => array(
@@ -1003,13 +1003,13 @@ return array(
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
     'seo_keywords' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 0,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 0,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,

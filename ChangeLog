@@ -9,6 +9,7 @@
   * #i0094: Calendar list view is extended with a people filter
   * #i0091: calender gets a relation to staff and staff gets a relation to calendar
   Improvement
+  * #i0101: Resources/Private/RealUrl/realurl_conf.php got an update
   * #71116: Get an ID for including a JavaScript inline
   * #i0097: Staff single view: image height for company logo is decreased from 400 to 80
   * #i0093: Downgrade property is removed in ext_conf_template.txt

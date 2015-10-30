@@ -16,6 +16,13 @@ if (strtolower(substr($confArr['simplifyer.']['time_control'], 0, strlen('no')))
 {
   $bool_time_control = false;
 }
+$bool_fegroup_control = true;
+if (strtolower(substr($confArr['simplifyer.']['fegroup_control'], 0, strlen('no'))) == 'no')
+{
+  $bool_time_control = false;
+}
+
+
 // #62019, 141003, dwildt, -
 //// Simplify backend forms
 //// Relation fe_users to company

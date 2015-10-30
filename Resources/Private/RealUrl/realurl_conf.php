@@ -85,36 +85,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
 (
   '_DEFAULT' => array
   (
-    // department: tx_org_department
-    'abteilung' => array
-    (
-      array
-      (
-        'GETvar' => 'tx_browser_pi1[departmentUid]',
-        'lookUpTable' => array
-        (
-          'table'               => 'tx_org_department',
-          'id_field'            => 'uid',
-          'alias_field'         => 'title',
-          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
-          'useUniqueCache'      => 1,
-          'useUniqueCache_conf' => array
-          (
-            'strtolower'      => 1,
-            'spaceCharacter'  => '-',
-          ),
-        )
-      ),
-    ),
-    // datetime: tx_org_cal
-    'zeitraum' => array
-    (
-      array
-      (
-        'GETvar' => 'tx_browser_pi1[tx_org_cal.datetime]',
-      ),
-    ),
-    // calendar: tx_org_cal
+    // tx_org_cal
     'termin' => array
     (
       array
@@ -135,7 +106,15 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         )
       ),
     ),
-    // event: tx_org_event
+    // tx_org_cal: datetime
+    'zeitraum' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[tx_org_cal.datetime]',
+      ),
+    ),
+    // tx_org_event
     'veranstaltung' => array
     (
       array
@@ -144,6 +123,69 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         'lookUpTable' => array
         (
           'table'               => 'tx_org_event',
+          'id_field'            => 'uid',
+          'alias_field'         => 'title',
+          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
+          'useUniqueCache'      => 1,
+          'useUniqueCache_conf' => array
+          (
+            'strtolower'      => 1,
+            'spaceCharacter'  => '-',
+          ),
+        )
+      ),
+    ),
+    // tx_org_headquarters
+    'bereich' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[headquartersUid]',
+        'lookUpTable' => array
+        (
+          'table'               => 'tx_org_headquarters',
+          'id_field'            => 'uid',
+          'alias_field'         => 'title',
+          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
+          'useUniqueCache'      => 1,
+          'useUniqueCache_conf' => array
+          (
+            'strtolower'      => 1,
+            'spaceCharacter'  => '-',
+          ),
+        )
+      ),
+    ),
+    // tx_org_job
+    'job' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[jobUid]',
+        'lookUpTable' => array
+        (
+          'table'               => 'tx_org_job',
+          'id_field'            => 'uid',
+          'alias_field'         => 'title',
+          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
+          'useUniqueCache'      => 1,
+          'useUniqueCache_conf' => array
+          (
+            'strtolower'      => 1,
+            'spaceCharacter'  => '-',
+          ),
+        )
+      ),
+    ),
+    // tx_org_location
+    'veranstaltungsort' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[locationUid]',
+        'lookUpTable' => array
+        (
+          'table'               => 'tx_org_location',
           'id_field'            => 'uid',
           'alias_field'         => 'title',
           'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
@@ -177,49 +219,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         )
       ),
     ),
-    // staff: fe_users
-    'name' => array
-    (
-      array
-      (
-        'GETvar' => 'tx_browser_pi1[staffUid]',
-        'lookUpTable' => array
-        (
-          'table'               => 'tx_org_staff',
-          'id_field'            => 'uid',
-          'alias_field'         => 'title',
-          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
-          'useUniqueCache'      => 1,
-          'useUniqueCache_conf' => array
-          (
-            'strtolower'      => 1,
-            'spaceCharacter'  => '-',
-          ),
-        )
-      ),
-    ),
-    // headquarter: tx_org_headquarters
-    'bereich' => array
-    (
-      array
-      (
-        'GETvar' => 'tx_browser_pi1[headquartersUid]',
-        'lookUpTable' => array
-        (
-          'table'               => 'tx_org_headquarters',
-          'id_field'            => 'uid',
-          'alias_field'         => 'title',
-          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
-          'useUniqueCache'      => 1,
-          'useUniqueCache_conf' => array
-          (
-            'strtolower'      => 1,
-            'spaceCharacter'  => '-',
-          ),
-        )
-      ),
-    ),
-    // repertoire: tx_org_repertoire
+    // tx_org_repertoire
     'stueck' => array
     (
       array
@@ -240,15 +240,15 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         )
       ),
     ),
-    // veranstalter: tx_org_location
-    'veranstalter' => array
+    // tx_org_service
+    'dienstleistung' => array
     (
       array
       (
-        'GETvar' => 'tx_browser_pi1[locationUid]',
+        'GETvar' => 'tx_browser_pi1[serviceUid]',
         'lookUpTable' => array
         (
-          'table'               => 'tx_org_location',
+          'table'               => 'tx_org_service',
           'id_field'            => 'uid',
           'alias_field'         => 'title',
           'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
@@ -261,6 +261,28 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         )
       ),
     ),
+    // staff: tx_org_staff
+    'person' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[staffUid]',
+        'lookUpTable' => array
+        (
+          'table'               => 'tx_org_staff',
+          'id_field'            => 'uid',
+          'alias_field'         => 'title',
+          'addWhereClause'      => ' AND NOT deleted AND NOT hidden',
+          'useUniqueCache'      => 1,
+          'useUniqueCache_conf' => array
+          (
+            'strtolower'      => 1,
+            'spaceCharacter'  => '-',
+          ),
+        )
+      ),
+    ),
+    // tx_browser_pi1: defaults
     'ansicht' => array
     (
       array
