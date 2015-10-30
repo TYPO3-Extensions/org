@@ -240,7 +240,7 @@ return array(
       'config' => $conf_input_30_trimRequired,
     ),
     'uid_parent' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.uid_parent',
       'config' => array(
         'type' => 'select',
@@ -387,13 +387,13 @@ return array(
       'config' => $conf_input_30,
     ),
     'mail_url' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_url',
       'config' => $arr_wizard_url,
     ),
     'mail_embeddedcode' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.mail_embeddedcode',
       'config' => $conf_text_50_10,
@@ -412,26 +412,26 @@ return array(
       )
     ),
     'postbox_postbox' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_postbox',
       'config' => $conf_text_30_05,
     ),
     'postbox_postcode' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_postcode',
       'config' => $conf_input_30_trim,
     ),
     'postbox_city' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.postbox_city',
       'config' => $conf_input_30_trim,
     ),
     'manager' => array(
       'l10n_mode' => 'exclude',
-      'exclude' => 0,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_headquarters.xml:tx_org_headquarters.manager',
       'config' => array(
@@ -1033,7 +1033,7 @@ return array(
 //      'config' => $conf_text_50_10,
 //    ),
     'documents_from_path' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
       'config' => array(
         'type' => 'input',
@@ -1043,17 +1043,17 @@ return array(
       ),
     ),
     'documents' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
       'config' => $conf_file_document,
     ),
     'documentscaption' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
       'config' => $conf_text_30_05,
     ),
     'documentslayout' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout',
       'config' => array(
         'type' => 'select',
@@ -1067,7 +1067,7 @@ return array(
       ),
     ),
     'documentssize' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
       'config' => array(
         'type' => 'check',

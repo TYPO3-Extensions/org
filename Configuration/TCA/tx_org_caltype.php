@@ -97,7 +97,7 @@ return array(
       ),
     ),
     'tx_org_cal' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_caltype.tx_org_cal',
       'config' => array(
         'type' => 'select',
