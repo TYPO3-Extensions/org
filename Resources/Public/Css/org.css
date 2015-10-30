@@ -342,7 +342,7 @@ ul.vcard li.expired {
 /* foundation */
 
 /* leaflet */
-leaflet-popup {
+.leaflet-popup {
   color:#000;
 }
 .leaflet-control-layers label {
