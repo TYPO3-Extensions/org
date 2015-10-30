@@ -115,6 +115,7 @@
 .tx-browser-pi1 .searchbox fieldset,
 .tx-browser-pi1 .selectboxorderby fieldset {
   border:0;
+  margin:0;
   padding:0;
 }
 .tx-browser-pi1 .searchbox fieldset legend,
