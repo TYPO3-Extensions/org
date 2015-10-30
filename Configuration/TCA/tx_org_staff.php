@@ -265,7 +265,7 @@ return array(
       )
     ),
     'gender' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.gender',
       'config' => array(
@@ -1014,7 +1014,7 @@ return array(
     ),
     'tx_org_location' => array(
       'l10n_mode' => 'exclude',
-      'exclude' => 0,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.tx_org_location',
       'config' => array(
