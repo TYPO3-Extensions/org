@@ -159,6 +159,12 @@ plugin.tx_browser_pi1 {
                 wrap  = <li class="bullet-item">|</li>
                 override {
                   stdWrap {
+                    if =
+                    if {
+                      isTrue {
+                        field = tx_org_caltype.uid
+                      }
+                    }
                       // tx_org_caltype
                     cObject = CONTENT
                     cObject {
@@ -193,12 +199,6 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                Xif =
-                Xif {
-                  isTrue {
-                    field = tx_org_caltype.uid
-                  }
-                }
               }
               30 = TEXT
               30 {
@@ -226,8 +226,15 @@ plugin.tx_browser_pi1 {
               50 = TEXT
               50 {
                 crop      = 25 | ... | 1
-                field     = tx_org_location.mail_city
-                required  = 1
+                override {
+                  stdWrap {
+                    cObject = TEXT
+                    cObject {
+                      field = tx_org_location.mail_city
+                    }
+                  }
+                }
+                value     = &nbsp;
                 wrap      = <li class="bullet-item">|</li>
               }
             }
