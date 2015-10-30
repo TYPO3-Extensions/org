@@ -73,7 +73,7 @@ plugin.tx_browser_pi1 {
               50 {
                 if {
                   isTrue {
-                    field = tx_org_location.mail_city, tx_org_location.mail_postcode, tx_org_location.title
+                    field = tx_org_location.mail_city // tx_org_location.mail_postcode // tx_org_location.title
                   }
                 }
                   // location
@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
                 10 {
                   if {
                     isTrue {
-                      field = tx_org_location.mail_city, tx_org_location.mail_postcode
+                      field = tx_org_location.mail_city // tx_org_location.mail_postcode
                     }
                   }
                   10 = TEXT
