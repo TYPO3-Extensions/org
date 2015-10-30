@@ -1,6 +1,7 @@
 7.6.0
   15-10-29
   Feature
+  * #71189: CSS inline for the new cal template
   * #i0102: New cal template: Org [2.1.1] +list view with columns
   * #i0100: tx_org_staff is extended with marginal fields
   * #i0099: New staff template: Org [9.1.1] +list view with columns

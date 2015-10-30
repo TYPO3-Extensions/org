@@ -17,20 +17,121 @@ plugin.tx_browser_pi1 {
           title {
             wrap = <div class="columns medium-3">|</div>
               // image
-            10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0.default
+            10 = COA
             10 {
-              imageLinkWrap {
-                typolink {
-                  parameter {
-                    cObject {
-                      30 {
-                        value = linktosingle circle
+              wrap = <div class="row" style="padding-bottom:1em;">|</div>
+              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0.default
+              10 {
+                imageLinkWrap {
+                  typolink {
+                    parameter {
+                      cObject {
+                        30 {
+                          value = linktosingle circle
+                        }
                       }
                     }
                   }
                 }
+                wrap = <div class="columns small-6">|</div>
               }
-              wrap = <div style="padding-bottom:1em;">|</div>
+                // tx_org_cal.datetime
+              20 = COA
+              20 {
+                10 = COA
+                10 {
+                  if {
+                    isTrue {
+                      field = tx_org_cal.datetime
+                    }
+                  }
+                    // 10: date isn't expired
+                  10 = COA
+                  10 {
+                    if {
+                      value {
+                        data = date : U
+                      }
+                      isGreaterThan {
+                        field = tx_org_cal.datetime
+                      }
+                    }
+                      // name of weekday
+                    10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0
+                    10 {
+                      default {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a<br />%d %b %y<br />%H:%M
+                        typolink.parameter.cObject.30.value = linktosingle button expand
+                      }
+                      notype {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a<br />%d %b %y<br />%H:%M
+                        typolink.parameter.cObject.30.value = linktosingle button expand
+                      }
+                      page {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a<br />%d %b %y<br />%H:%M
+                        typolink.parameter.cObject.30.value = linktosingle button expand
+                      }
+                      tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
+                      tx_org_event {
+                        default {
+                          value >
+                          lang >
+                          field = tx_org_cal.datetime
+                          strftime  = %a<br />%d %b %y<br />%H:%M
+                          typolink.parameter.cObject.30.value = linktosingle button expand
+                        }
+                        notype {
+                          value >
+                          lang >
+                          field = tx_org_cal.datetime
+                          strftime  = %a<br />%d %b %y<br />%H:%M
+                          typolink.parameter.cObject.30.value = linktosingle button expand
+                        }
+                        page {
+                          value >
+                          lang >
+                          field = tx_org_cal.datetime
+                          strftime  = %a<br />%d %b %y<br />%H:%M
+                          typolink.parameter.cObject.30.value = linktosingle button expand
+                        }
+                        url {
+                          value >
+                          lang >
+                          field = tx_org_cal.datetime
+                          strftime  = %a<br />%d %b %y<br />%H:%M
+                          typolink.parameter.cObject.30.value = linktosingle button expand
+                        }
+                      }
+                      url {
+                        value >
+                        lang >
+                        field = tx_org_cal.datetime
+                        strftime  = %a<br />%d %b %y<br />%H:%M
+                        typolink.parameter.cObject.30.value = linktosingle button expand
+                      }
+                    }
+                    wrap = <div class="tx_org_cal_datetime">|</div>
+                  }
+                    // 20: date is expired
+                  20 < .10
+                  20 {
+                    if {
+                      negate = 1
+                    }
+                    wrap = <div class="tx_org_cal_datetime expired">|</div>
+                  }
+                  wrap = <div class="columns small-6">|</div>
+                }
+              }
             }
             20 = COA
             20 {
