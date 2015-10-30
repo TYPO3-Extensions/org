@@ -1003,13 +1003,13 @@ return array(
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
     'seo_keywords' => array(
-      //'exclude' => 0,
+      'exclude' => 0,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
-      //'exclude' => 0,
+      'exclude' => 0,
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,
