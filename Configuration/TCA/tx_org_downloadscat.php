@@ -24,7 +24,6 @@ return array(
     ),
     'hideAtCopy' => false,
     'dividers2tabs' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/downloadcat.gif',
     'type' => 'type',

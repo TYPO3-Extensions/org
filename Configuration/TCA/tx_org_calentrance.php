@@ -24,7 +24,6 @@ return array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/caltype.gif',
     'treeParentField' => 'uid_parent',
@@ -38,7 +37,6 @@ return array(
     . 'title,title_lang_ol,value,tx_org_tax,'
     . 'hidden,starttime,endtime,fe_group'
   ),
-  'feInterface' => $TCA[ 'tx_org_calentrance' ][ 'feInterface' ],
   'columns' => array(
     'title' => array(
       'exclude' => 0,

@@ -23,7 +23,6 @@ return array(
       'disabled' => 'hidden',
     ),
     'dividers2tabs' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/event.gif',
     'treeParentField' => 'uid_parent',
     'searchFields' => ''
@@ -33,7 +32,6 @@ return array(
   'interface' => array(
     'showRecordFieldList' => 'hidden,title,title_lang_ol,uid_parent,'
   ),
-  'feInterface' => $TCA['tx_org_eventcat']['feInterface'],
   'columns' => array(
     'hidden' => array(
       'exclude' => 1,

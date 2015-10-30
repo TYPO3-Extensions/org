@@ -24,7 +24,6 @@ return array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/caltype.gif',
     'treeParentField' => 'uid_parent',
@@ -40,7 +39,6 @@ return array(
     . 'tx_org_cal,'
     . 'hidden'
   ),
-  'feInterface' => $TCA[ 'tx_org_caltype' ][ 'feInterface' ],
   'columns' => array(
     'icons' => array(
       'exclude' => $bool_exclude_default,

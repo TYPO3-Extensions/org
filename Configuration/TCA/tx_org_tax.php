@@ -28,7 +28,6 @@ return array(
     ),
     'dividers2tabs'     => true,
     'hideAtCopy'        => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
     'thumbnail'         => 'image',
     'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Images/Icons/ExtIcon/tax.gif',
     'searchFields' => 'title,title_lang_ol,value,' .
@@ -38,7 +37,6 @@ return array(
     'showRecordFieldList' => 'title,title_lang_ol,value,' .
     'hidden,starttime,endtime'
   ),
-  'feInterface' => $TCA['tx_org_tax']['feInterface'],
   'columns' => array(
     'title' => array(
       'exclude' => 0,

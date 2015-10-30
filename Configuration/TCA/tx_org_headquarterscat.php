@@ -24,7 +24,6 @@ return array(
     ),
     'hideAtCopy' => false,
     'dividers2tabs' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'icons',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/headquarterscat.gif',
     // #58885, 140516, dwildt, 1+

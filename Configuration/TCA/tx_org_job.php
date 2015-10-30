@@ -30,7 +30,6 @@ return array(
       'endtime' => 'endtime',
     ),
     'dividers2tabs' => TRUE,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail'         => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/job.gif',
     'type'              => 'type',
@@ -99,7 +98,6 @@ return array(
     . 'hidden,starttime,endtime,'
   ,
   ),
-  'feInterface' => $TCA[ 'tx_org_job' ][ 'feInterface' ],
   'columns' => array(
     'sys_language_uid' => array(
       'exclude' => 1,

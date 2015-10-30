@@ -32,7 +32,6 @@ return array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath( $_EXTKEY ) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/cal.gif',
     'type' => 'type',

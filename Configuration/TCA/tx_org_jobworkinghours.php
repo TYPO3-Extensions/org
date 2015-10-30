@@ -23,7 +23,6 @@ return array(
       'disabled' => 'hidden',
     ),
     'dividers2tabs' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/job.gif',
     'thumbnail' => 'icons',
     'treeParentField' => 'uid_parent',
@@ -38,7 +37,6 @@ return array(
     . 'hidden,'
   ,
   ),
-  'feInterface' => $TCA[ 'tx_org_jobworkinghours' ][ 'feInterface' ],
   'columns' => array(
     'title' => array(
       'exclude' => 0,

@@ -34,7 +34,6 @@ return array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => true,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/download.gif',
     'type' => 'type',
@@ -76,7 +75,6 @@ return array(
     . 'statistics_hits,statistics_visits,statistics_downloads,statistics_downloads_by_visits,'
   ,
   ),
-  'feInterface' => $TCA['tx_org_downloads']['feInterface'],
   'columns' => array(
     'sys_language_uid' => array(
       'exclude' => 1,

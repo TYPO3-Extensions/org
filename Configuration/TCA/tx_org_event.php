@@ -30,7 +30,6 @@ return array(
     ),
     'dividers2tabs' => true,
     'hideAtCopy' => false,
-    'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
     'thumbnail' => 'image',
     'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/event.gif',
     'type' => 'type',
@@ -69,7 +68,6 @@ return array(
     . 'seo_keywords,seo_description'
   ,
   ),
-  'feInterface' => $TCA['tx_org_event']['feInterface'],
   'columns' => array(
     'sys_language_uid' => array(
       'exclude' => 1,
