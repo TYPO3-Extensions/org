@@ -27,7 +27,6 @@ plugin.tx_browser_pi1 {
                     <div class="row" data-equalizer>
                       <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                       <div class="record###TX_ORG_CAL.CRDATE###">
-                        ###TX_ORG_CAL.DELETED###
                         ###TX_ORG_CAL.TITLE###
                       </div>
                       <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->

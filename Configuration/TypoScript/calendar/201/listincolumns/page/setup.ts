@@ -5,6 +5,10 @@ page {
 .pricing-table .description {
   height: 8em;
 }
+.radialsearch-distance {
+  font-size: 0.85em;
+  padding-bottom: 1em;
+}
 .tx_org_cal_datetime {
   background-color:#008CBA;
   border-radius:99em;

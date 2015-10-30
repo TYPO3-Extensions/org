@@ -9,13 +9,13 @@ plugin.tx_browser_pi1 {
             // placeholder: radialsearch HTML class depending on radius
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
           deleted >
-            // placeholder: radialsearch linear distance
-          deleted < plugin.tx_radialsearch.masterTemplates.linearDistanceString
           title >
             // title
           title = COA
           title {
             wrap = <div class="columns medium-3">|</div>
+              // placeholder: radialsearch linear distance
+            9 < plugin.tx_radialsearch.masterTemplates.linearDistanceString
               // image
             10 = COA
             10 {
