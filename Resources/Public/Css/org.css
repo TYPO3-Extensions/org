@@ -2,6 +2,7 @@
 .row > .modeSelector {
   padding:0 0.9375rem !important;
 }
+
 .tx-browser-pi1 .cleaner {
   clear:both;
   line-height:.4em;
@@ -109,6 +110,16 @@
 
 .tx-browser-pi1 .searchbox {
   padding-bottom:1em;
+}
+
+.tx-browser-pi1 .searchbox fieldset,
+.tx-browser-pi1 .selectboxorderby fieldset {
+  border:0;
+  padding:0;
+}
+.tx-browser-pi1 .searchbox fieldset legend,
+.tx-browser-pi1 .selectboxorderby fieldset legend {
+  display:none;
 }
 
 .tx-browser-pi1 .listview-content {
