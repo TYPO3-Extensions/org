@@ -358,13 +358,13 @@ return array(
       'config' => $conf_input_30,
     ),
     'mail_url' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.mail_url',
       'config' => $arr_wizard_url,
     ),
     'mail_embeddedcode' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.mail_embeddedcode',
       'config' => $conf_text_50_10,
@@ -859,7 +859,7 @@ return array(
 //      'config' => $conf_text_50_10,
 //    ),
     'documents_from_path' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.code',
       'config' => array(
@@ -870,19 +870,19 @@ return array(
       ),
     ),
     'documents' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
       'config' => $conf_file_document,
     ),
     'documentscaption' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
       'config' => $conf_text_30_05,
     ),
     'documentslayout' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout',
       'config' => array(
@@ -897,7 +897,7 @@ return array(
       ),
     ),
     'documentssize' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:cms/locallang_ttc.xml:filelink_size',
       'config' => array(
@@ -913,13 +913,13 @@ return array(
     'pages' => $conf_pages,
     'fe_group' => $conf_fegroup,
     'seo_keywords' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 0,
       'l10n_mode' => 'prefixLangTitle',
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 0,
       'l10n_mode' => 'prefixLangTitle',
       'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
       'config' => $conf_text_50_10,

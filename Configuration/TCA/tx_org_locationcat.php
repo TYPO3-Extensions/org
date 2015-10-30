@@ -46,12 +46,12 @@ return array(
       'config' => $conf_input_30_trimRequired,
     ),
     'title_lang_ol' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat.title_lang_ol',
       'config' => $conf_input_30_trim,
     ),
     'uid_parent' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat.uid_parent',
       'config' => array(
         'type' => 'select',
@@ -69,13 +69,13 @@ return array(
       ),
     ),
     'icons' => array(
-      'exclude' => $bool_exclude_default,
+      'exclude' => 1,
 //      'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat.icons',
       'config' => $conf_file_image,
     ),
     'icon_offset_x' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat.icon_offset_x',
       'config' => array(
         'type' => 'input',
@@ -86,7 +86,7 @@ return array(
       ),
     ),
     'icon_offset_y' => array(
-      'exclude' => 0,
+      'exclude' => 1,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_locationcat.icon_offset_y',
       'config' => array(
         'type' => 'input',
