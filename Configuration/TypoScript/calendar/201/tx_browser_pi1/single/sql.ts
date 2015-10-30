@@ -68,6 +68,7 @@ plugin.tx_browser_pi1 {
           tx_org_location.mail_postcode,
           tx_org_location.mail_street,
           tx_org_location.mail_url,
+          tx_org_location.type,
 
           tx_org_location.uid
         )
