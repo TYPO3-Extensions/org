@@ -129,7 +129,9 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                wrap = <div class="columns small-6">|</div>
+                stdWrap {
+                  wrap = <div class="columns small-6">|</div>
+                }
               }
                 // tx_org_cal.datetime
               20 = COA
