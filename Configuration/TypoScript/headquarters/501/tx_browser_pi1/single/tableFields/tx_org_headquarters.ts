@@ -39,38 +39,22 @@ plugin.tx_browser_pi1 {
                       if {
                         isTrue {
                           stdWrap {
-                            cObject = COA
-                            cObject {
-                              10 = TEXT
-                              10 {
-                                field = tx_org_headquarters.mail_address
-                              }
-                              20 = TEXT
-                              20 {
-                                field = tx_org_headquarters.mail_city
-                              }
-                              30 = TEXT
-                              30 {
-                                field = tx_org_headquarters.mail_country
-                              }
-                              40 = TEXT
-                              40 {
-                                field = tx_org_headquarters.mail_postcode
-                              }
-                              50 = TEXT
-                              50 {
-                                field = tx_org_headquarters.mail_street
-                              }
-                            }
+                            field = tx_org_headquarters.mail_address // tx_org_headquarters.mail_city // tx_org_headquarters.mail_country // tx_org_headquarters.mail_postcode // tx_org_headquarters.mail_street // tx_org_headquarters.url
                           }
                         }
                       }
                       wrap = <ul class="vcard tx_org_headquarters address">|</ul><!-- vcard -->
                         // header
+                      //10 = TEXT
+                      //10 {
+                      //  data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
+                      //  wrap = <li class="header">|</li>
+                      //}
+                        // title
                       10 = TEXT
                       10 {
-                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
-                        wrap = <li class="header">|</li>
+                        field = tx_org_headquarters.title
+                        wrap = <li class="title">|</li>
                       }
                         // mail_address
                       20 = TEXT
@@ -284,6 +268,34 @@ plugin.tx_browser_pi1 {
                           }
                         }
                         wrap = <li class="email">|</li>
+                      }
+                        // url
+                      60 = COA
+                      60 {
+                        10 = TEXT
+                        10 {
+                          value = WWW
+                          lang {
+                            de = WWW
+                            en = WWW
+                          }
+                          noTrimWrap = ||: |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_headquarters.url
+                          typolink {
+                            parameter {
+                              field = tx_org_headquarters.url
+                            }
+                          }
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.url
+                          }
+                        }
+                        wrap = <li class="url">|</li>
                       }
                     }
                   }
