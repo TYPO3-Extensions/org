@@ -1,6 +1,5 @@
 # INDEX
 # -----
-# fe_groups
 # tx_org_cal
 # tx_org_calentrance
 # tx_org_caltype

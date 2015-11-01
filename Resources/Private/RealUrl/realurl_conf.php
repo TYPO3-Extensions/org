@@ -325,6 +325,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         'GETvar' => 'tx_browser_pi1[sword]',
       ),
     ),
+    'radius' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[radius]',
+      ),
+    ),
+    'zip' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[radialsearch]',
+      ),
+    ),
   ),
 );
 

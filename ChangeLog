@@ -1,6 +1,10 @@
 7.6.0
   15-10-29
   Feature
+  * #i0105: New CSS properties
+            * .tx-browser-pi1 .searchbox fieldset
+            * .tx-browser-pi1 .searchbox fieldset legend
+            See: Resources/Public/Css/org.css
   * #i0104: New cal template: Org [2.3] Calendar (map only)
   * #i0103: New cal template: Org [2.2] Calendar (map only)
   * #71189: CSS inline for the new cal template
