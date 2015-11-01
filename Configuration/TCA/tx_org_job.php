@@ -6,6 +6,7 @@ if ( !defined( 'TYPO3_MODE' ) )
 }
 
 // Configuration by the extension manager
+require_once( PATH_typo3conf . 'ext/org/Configuration/ExtensionManager/geocoding.php' );
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtensionManager/simplifyer.php' );
 // Default values and wizards
 require_once( PATH_typo3conf . 'ext/org/Configuration/TCA/Defaults/defaultValues.php' );

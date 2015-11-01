@@ -8,5 +8,3 @@ if (!defined('TYPO3_MODE'))
 $confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['org']);
 
 $extManagerGeocodingEnabled = $confArr['geocoding.']['enabled'];
-
-?>
