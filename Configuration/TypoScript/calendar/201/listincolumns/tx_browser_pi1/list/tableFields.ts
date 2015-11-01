@@ -20,14 +20,110 @@ plugin.tx_browser_pi1 {
             10 = COA
             10 {
               wrap = <div class="row" style="padding-bottom:1em;">|</div>
-              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0.default
+              10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
               10 {
-                imageLinkWrap {
-                  typolink {
-                    parameter {
-                      cObject {
-                        30 {
-                          value = linktosingle circle
+                default {
+                  imageLinkWrap {
+                    typolink {
+                      parameter {
+                        cObject {
+                          30 {
+                            value = linktosingle circle
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                notype {
+                  imageLinkWrap {
+                    typolink {
+                      parameter {
+                        cObject {
+                          30 {
+                            value = linktosingle circle
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                page {
+                  imageLinkWrap {
+                    typolink {
+                      parameter {
+                        cObject {
+                          30 {
+                            value = linktosingle circle
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
+                tx_org_event {
+                  default {
+                    imageLinkWrap {
+                      typolink {
+                        parameter {
+                          cObject {
+                            30 {
+                              value = linktosingle circle
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  notype {
+                    imageLinkWrap {
+                      typolink {
+                        parameter {
+                          cObject {
+                            30 {
+                              value = linktosingle circle
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  page {
+                    imageLinkWrap {
+                      typolink {
+                        parameter {
+                          cObject {
+                            30 {
+                              value = linktosingle circle
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  url {
+                    imageLinkWrap {
+                      typolink {
+                        parameter {
+                          cObject {
+                            30 {
+                              value = linktosingle circle
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                url {
+                  imageLinkWrap {
+                    typolink {
+                      parameter {
+                        cObject {
+                          30 {
+                            value = linktosingle circle
+                          }
                         }
                       }
                     }
