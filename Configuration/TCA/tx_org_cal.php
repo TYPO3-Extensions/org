@@ -706,7 +706,7 @@ return array(
       ),
     ),
     'tx_org_staff' => array(
-      'exclude' => 1,
+      'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_staff',
       'config' => array(
