@@ -297,6 +297,13 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets'] = array
         'GETvar' => 'tx_browser_pi1[azTab]',
       ),
     ),
+    'buchstabe' => array
+    (
+      array
+      (
+        'GETvar' => 'tx_browser_pi1[indexBrowserTab]',
+      ),
+    ),
     'seite' => array
     (
       array

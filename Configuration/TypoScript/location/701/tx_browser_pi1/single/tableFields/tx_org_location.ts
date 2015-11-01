@@ -407,7 +407,7 @@ plugin.tx_browser_pi1 {
                           }
                           andWhere = tx_org_cal.datetime > UNIX_TIMESTAMP()
                           orderBy = tx_org_cal.datetime ASC
-                          max = 3
+                          //max = 3
                         }
                           // tx_org_cal.title croped and linked
                         renderObj = CASE
