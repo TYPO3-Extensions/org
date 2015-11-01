@@ -112,50 +112,53 @@ plugin.tx_browser_pi1 {
             wrap = |
             10 = COA
             10 {
-              if {
-                isTrue {
-                  field = tx_org_cal.datetime
-                }
-              }
-                // 10: date isn't expired
               10 = COA
               10 {
                 if {
-                  value {
-                    data = date : U
-                  }
-                  isGreaterThan {
+                  isTrue {
                     field = tx_org_cal.datetime
                   }
                 }
-                wrap = <ul class="vcard datesheet">|</ul><!-- vcard -->
-                  // name of weekday
-                10 = TEXT
+                  // 10: date isn't expired
+                10 = COA
                 10 {
-                  field = tx_org_cal.datetime
-                  strftime  = %a
-                  wrap = <li class="weekday">|</li>
+                  if {
+                    value {
+                      data = date : U
+                    }
+                    isGreaterThan {
+                      field = tx_org_cal.datetime
+                    }
+                  }
+                  wrap = <ul class="vcard datesheet">|</ul><!-- vcard -->
+                    // name of weekday
+                  10 = TEXT
+                  10 {
+                    field = tx_org_cal.datetime
+                    strftime  = %a
+                    wrap = <li class="weekday">|</li>
+                  }
+                    // day of month as number
+                  20 < .10
+                  20 {
+                    strftime  = %d
+                    wrap      = <li class="day_of_month">|</li>
+                  }
+                    // month year
+                  30 < .10
+                  30 {
+                    strftime  = %b %y
+                    wrap      = <li class="month">|</li>
+                  }
                 }
-                  // day of month as number
+                  // 20: date is expired
                 20 < .10
                 20 {
-                  strftime  = %d
-                  wrap      = <li class="day_of_month">|</li>
+                  if {
+                    negate = 1
+                  }
+                  wrap = <ul class="vcard datesheet datesheet_expired">|</ul><!-- vcard -->
                 }
-                  // month year
-                30 < .10
-                30 {
-                  strftime  = %b %y
-                  wrap      = <li class="month">|</li>
-                }
-              }
-                // 20: date is expired
-              20 < .10
-              20 {
-                if {
-                  negate = 1
-                }
-                wrap = <ul class="vcard datesheet datesheet_expired">|</ul><!-- vcard -->
               }
             }
           }
