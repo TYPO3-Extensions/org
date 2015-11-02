@@ -3,6 +3,15 @@
   padding:0 0.9375rem !important;
 }
 
+span.circle {
+  border-radius: 10em;
+}
+span.normal {
+  font-weight: normal;
+}
+.cursorinherit {
+  cursor: inherit;
+}
 .tx-browser-pi1 .cleaner {
   clear:both;
   line-height:.4em;
@@ -303,6 +312,7 @@
 
 
 /* foundation */
+img.circle,
 .circle img {
   border-radius: 10em;
 }

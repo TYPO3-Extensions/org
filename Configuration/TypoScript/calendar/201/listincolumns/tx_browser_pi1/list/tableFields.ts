@@ -36,17 +36,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
                 notype {
-                  imageLinkWrap {
-                    typolink {
-                      parameter {
-                        cObject {
-                          30 {
-                            value = linktosingle circle
-                          }
-                        }
-                      }
-                    }
-                  }
+                  params = class="circle"
                 }
                 page {
                   imageLinkWrap {
@@ -77,17 +67,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                   notype {
-                    imageLinkWrap {
-                      typolink {
-                        parameter {
-                          cObject {
-                            30 {
-                              value = linktosingle circle
-                            }
-                          }
-                        }
-                      }
-                    }
+                    params = class="circle"
                   }
                   page {
                     imageLinkWrap {
@@ -161,21 +141,20 @@ plugin.tx_browser_pi1 {
                         value >
                         lang >
                         field = tx_org_cal.datetime
-                        strftime  = %a<br />%e %b %y<br />%H:%M
+                        strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                         typolink.parameter.cObject.30.value = linktosingle button expand
                       }
                       notype {
                         value >
                         lang >
                         field = tx_org_cal.datetime
-                        strftime  = %a<br />%e %b %y<br />%H:%M
-                        typolink.parameter.cObject.30.value = linktosingle button expand
+                        strftime  = <span class="button expand circle cursorinherit"><span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span></span>
                       }
                       page {
                         value >
                         lang >
                         field = tx_org_cal.datetime
-                        strftime  = %a<br />%e %b %y<br />%H:%M
+                        strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                         typolink.parameter.cObject.30.value = linktosingle button expand
                       }
                       tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
@@ -184,28 +163,27 @@ plugin.tx_browser_pi1 {
                           value >
                           lang >
                           field = tx_org_cal.datetime
-                          strftime  = %a<br />%e %b %y<br />%H:%M
+                          strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                           typolink.parameter.cObject.30.value = linktosingle button expand
                         }
                         notype {
                           value >
                           lang >
                           field = tx_org_cal.datetime
-                          strftime  = %a<br />%e %b %y<br />%H:%M
-                          typolink.parameter.cObject.30.value = linktosingle button expand
+                          strftime  = <span class="button expand circle cursorinherit"><span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span></span>
                         }
                         page {
                           value >
                           lang >
                           field = tx_org_cal.datetime
-                          strftime  = %a<br />%e %b %y<br />%H:%M
+                          strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                           typolink.parameter.cObject.30.value = linktosingle button expand
                         }
                         url {
                           value >
                           lang >
                           field = tx_org_cal.datetime
-                          strftime  = %a<br />%e %b %y<br />%H:%M
+                          strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                           typolink.parameter.cObject.30.value = linktosingle button expand
                         }
                       }
@@ -213,7 +191,7 @@ plugin.tx_browser_pi1 {
                         value >
                         lang >
                         field = tx_org_cal.datetime
-                        strftime  = %a<br />%e %b %y<br />%H:%M
+                        strftime  = <span class="normal">%a</span><br />%e %b %y<br /><span class="normal">%H:%M</span>
                         typolink.parameter.cObject.30.value = linktosingle button expand
                       }
                     }
@@ -244,8 +222,7 @@ plugin.tx_browser_pi1 {
                   typolink.parameter.cObject.30.value = linktosingle button expand
                 }
                 notype {
-                  wrap = <li class="title">|</li>
-                  typolink.parameter.cObject.30.value = linktosingle button expand
+                  wrap = <li class="title"><span class="button expand cursorinherit">|</span></li>
                 }
                 page {
                   wrap = <li class="title">|</li>
