@@ -67,8 +67,8 @@ plugin.tx_browser_pi1 {
                       }
                       wrap = <ul class="vcard tx_org_location address">|</ul><!-- vcard -->
                         // header
-                      10 = TEXT
-                      10 {
+                      XXX10 = TEXT
+                      XXX10 {
                         data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
                         wrap = <li class="header">|</li>
                       }
