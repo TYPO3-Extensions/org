@@ -653,7 +653,7 @@ CREATE TABLE tx_org_location (
   mail_lon text,
   mail_url text,
   mail_embeddedcode text,
-  mail_street text ,
+  mail_street text,
   mail_zip tinytext,
   telephone tinytext,
   ticket_telephone tinytext,

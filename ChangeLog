@@ -22,7 +22,7 @@
   * #i0097: Staff single view: image height for company logo is decreased from 400 to 80
   * #i0093: Downgrade property is removed in ext_conf_template.txt
   * #i0092: TCA configuration got TYPO3 6.x structure
-            * TCA downgrade isnto Organiser 3.x isn't possible any longer.
+            * TCA downgrade to Organiser 3.x isn't possible any longer.
 
 7.5.5
   15-10-23
