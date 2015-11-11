@@ -323,8 +323,8 @@ img.circle,
   background-color:white;
 }
 .pricing-table .title {
-  padding: 0;
-  font-weight:bold;
+  padding: 0 !important;
+  font-weight:bold !important;
 }
 .pricing-table .title .button {
   color:white;
