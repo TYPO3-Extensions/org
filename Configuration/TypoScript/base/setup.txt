@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
 
   // #53649, 131114, dwildt, +
 plugin.tx_linkhandler {
-    tx__org_cal {
+  tx_org_cal {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.calendar}
@@ -203,7 +203,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_downloads {
+  tx_org_downloads {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.downloads}
@@ -212,7 +212,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_event {
+  tx_org_event {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.event}
@@ -221,7 +221,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_headquarters {
+  tx_org_headquarters {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.headquarters}
@@ -230,7 +230,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_job {
+  tx_org_job {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.job}
@@ -239,7 +239,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_location {
+  tx_org_location {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.location}
@@ -248,7 +248,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_news {
+  tx_org_news {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.news}
@@ -257,7 +257,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_service {
+  tx_org_service {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.service}
@@ -266,7 +266,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-    tx__org_staff {
+  tx_org_staff {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.staff}
