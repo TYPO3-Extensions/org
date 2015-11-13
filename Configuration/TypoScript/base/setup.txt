@@ -194,7 +194,7 @@ plugin.tx_browser_pi1 {
 
   // #53649, 131114, dwildt, +
 plugin.tx_linkhandler {
-  XXXtx_org_cal {
+    tx__org_cal {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.calendar}
@@ -203,7 +203,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_downloads {
+    tx__org_downloads {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.downloads}
@@ -212,7 +212,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_event {
+    tx__org_event {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.event}
@@ -221,7 +221,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_headquarters {
+    tx__org_headquarters {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.headquarters}
@@ -230,7 +230,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_job {
+    tx__org_job {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.job}
@@ -239,7 +239,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_location {
+    tx__org_location {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.location}
@@ -248,7 +248,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_news {
+    tx__org_news {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.news}
@@ -257,7 +257,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_service {
+    tx__org_service {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.service}
@@ -266,7 +266,7 @@ plugin.tx_linkhandler {
       insertData = 1
     }
   }
-  XXXtx_org_staff {
+    tx__org_staff {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.staff}
