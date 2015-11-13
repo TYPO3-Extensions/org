@@ -38,5 +38,3 @@ plugin.tx_linkhandler {
 t3lib_extMgm::addTypoScriptSetup( $typoscript );
 
 return;
-
-?>
