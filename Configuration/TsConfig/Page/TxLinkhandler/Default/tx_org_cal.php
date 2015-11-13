@@ -9,11 +9,10 @@ if (!defined ('TYPO3_MODE'))
 $includeIt = $confArr['linkhandler.']['tx_org_cal'];
 
   // RETURN : tx_org_cal should not include
-switch( $includeIt ) 
+switch( $includeIt )
 {
   case( 'No' ):
     return;
-    break;
   case( 'Yes (recommended)' ):
   default:
     // follow the workflow
@@ -46,12 +45,10 @@ switch( true )
   case( empty ( $onlyPids ) ):
   default;
     $onlyPids = null;
-    break;  
+    break;
 }
 
 $tsConfig = str_replace( '%onlyPids%', $onlyPids, $tsConfig );
 t3lib_extMgm::addPageTSConfig( $tsConfig );
 
 return;
-
-?>
