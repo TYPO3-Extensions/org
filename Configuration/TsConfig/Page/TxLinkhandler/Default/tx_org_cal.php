@@ -13,7 +13,6 @@ switch( $includeIt )
 {
   case( 'No' ):
     return;
-    break;
   case( 'Yes (recommended)' ):
   default:
     // follow the workflow
@@ -53,5 +52,3 @@ $tsConfig = str_replace( '%onlyPids%', $onlyPids, $tsConfig );
 t3lib_extMgm::addPageTSConfig( $tsConfig );
 
 return;
-
-?>
