@@ -67,6 +67,8 @@ plugin.tx_browser_pi1 {
 )
                   }
                 }
+                20 >
+                30 >
               }
               1 {
                 10 >
