@@ -10,23 +10,23 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="margin columns small-12 medium-12 large-4">
+                <div class="margin ###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###4">
                   ###MAP###
                   <div class="row">
-                    <div class="columns small-12 medium-12 large-4">
+                    <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###4">
                       ###TX_ORG_CAL.DATETIME###<!-- datesheet -->
                     </div>
-                    <div class="columns small-12 medium-12 large-8">
+                    <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###8">
                       ###TX_ORG_CAL.DELETED###<!-- tx_org_location -->
                       ###TX_ORG_CAL.TX_ORG_HEADQUARTERS###<!-- tx_org_headquarters -->
                       ###TX_ORG_CAL.TX_ORG_STAFF###<!-- tx_org_staff -->
                     </div>
-                    <div class="columns small-12 medium-12 large-12">
+                    <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###12">
                       ###TX_ORG_CAL.CRDATE###<!-- form for tickets -->
                     </div>
                   </div>
                 </div>
-                <div class="main columns small-12 medium-12 large-8">
+                <div class="main ###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###8">
                   ###RECORD_BROWSER###
                   ###TX_ORG_CAL.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->

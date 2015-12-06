@@ -26,7 +26,7 @@ plugin.tx_browser_pi1 {
             listview {
               value (
                 <div class="row">
-                  <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
+                  <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="###CSSGRID###listview listview-content listview-###MODE### listview-content-###MODE###">
                     <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                     <div class="tx_org_service tx_org_service-record record###TX_ORG_SERVICE.CRDATE###">
                       <div class="sbmFloatRight">

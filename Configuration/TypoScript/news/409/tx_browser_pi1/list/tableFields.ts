@@ -14,7 +14,7 @@ plugin.tx_browser_pi1 {
               10 {
                   // image
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.6
-                wrap = <div class="columns small-4">|</div>
+                wrap = <div class="###CSSGRID######CSSGRIDSMALL###4">|</div>
               }
                 // text
               20 = COA
@@ -62,7 +62,7 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                wrap = <div class="columns small-8">|</div>
+                wrap = <div class="###CSSGRID######CSSGRIDSMALL###8">|</div>
               }
             }
             wrap = <div class="row">|</div>

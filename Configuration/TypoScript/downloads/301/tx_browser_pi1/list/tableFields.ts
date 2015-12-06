@@ -11,7 +11,7 @@ plugin.tx_browser_pi1 {
             10 {
                 // image
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-              wrap = <div class="show-for-medium-up columns medium-2 large-2">|</div>
+              wrap = <div class="###CSSVISMEDIUMTO######CSSGRID######CSSGRIDMEDIUM###2 ###CSSGRIDLARGE###2">|</div>
             }
               // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
             20 = COA
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
               10 {
                 value = ###SOCIALMEDIA_BOOKMARKS###
                 //wrap = <div class="row"><div class="columns">|</div></div>
-                wrap = <div class="show-for-large-up" style="float:right;">|</div>
+                wrap = <div class="###CSSVISLARGETO###" style="float:right;">|</div>
               }
                 // teaser_title
               20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.0.default
@@ -172,7 +172,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
-              wrap = <div class="columns medium-10 large-10">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###10 ###CSSGRIDLARGE###10">|</div>
             }
             //wrap = <div class="row">|</div>
           }

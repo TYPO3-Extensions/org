@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3 class="columns tx_browser_pi1-title-margin">|</h3>
+            wrap    = <h3 class="###CSSGRID###tx_browser_pi1-title-margin">|</h3>
             value = Calendar
             lang.de = Kalender
             typolink {
@@ -130,7 +130,7 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-        <div class="columns listview listview-###MODE###">
+        <div class="###CSSGRID###listview listview-###MODE###">
           <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
             ###TX_ORG_CAL.TITLE###
           <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->

@@ -7,7 +7,7 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-                <div class="columns listview listview-###MODE###">
+                <div class="###CSSGRID###listview listview-###MODE###">
                   <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                   ###TX_ORG_NEWS.TITLE###
                   <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->

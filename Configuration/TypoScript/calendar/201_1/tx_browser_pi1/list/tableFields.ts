@@ -109,12 +109,12 @@ plugin.tx_browser_pi1 {
                 }
                 wrap = <p class="location">|</p>
               }
-              wrap = <div class="columns small-12 medium-12 large-10">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###10">|</div>
             }
               // margin: datesheet
             20 = COA
             20 {
-              wrap = <div class="columns small-12 medium-12 large-2">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###2">|</div>
               10 = COA
               10 {
                 if {

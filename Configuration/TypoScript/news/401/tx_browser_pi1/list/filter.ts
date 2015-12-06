@@ -25,8 +25,8 @@ plugin.tx_browser_pi1 {
               }
                 // #43641, dwildt, 1-, 1+
               //wrap = <span class="selectbox">|</span>
-              //wrap = <div class="columns small-12 medium-6 category_menu category_menu_treeview">|</div>
-              wrap = <div class="columns small-12 medium-6 selectbox">|</div>
+              //wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###6 category_menu category_menu_treeview">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###6 selectbox">|</div>
             }
           }
           tx_org_newsgroup {
@@ -51,8 +51,8 @@ plugin.tx_browser_pi1 {
               }
                 // #43641, dwildt, 1-, 1+
               //wrap = <span class="selectbox">|</span>
-              //wrap = <div class="columns small-12 medium-6 category_menu category_menu_treeview">|</div>
-              wrap = <div class="columns small-12 medium-6 selectbox">|</div>
+              //wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###6 category_menu category_menu_treeview">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###6 selectbox">|</div>
             }
           }
         }

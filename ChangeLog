@@ -1,3 +1,85 @@
+7.7.0
+  15-12-06
+  Features
+  * #i0108: New TypoScript for download
+            * If downloads are available in several languages, it will display in each language
+  * #i0107: Bootstrap: Update for Browser 7.3.0 Bootstrap
+            Effected files:
+            * Configuration/TypoScript
+              * calendar
+                * 201
+                  * listincolumns/tx_browser_pi1/list
+                    * htmlSnippets.ts
+                    * tableFields.ts
+                  * tx_browser_pi1
+                    * list
+                      * htmlSnippets.ts
+                      * tableFields.ts
+                    * single
+                      * htmlSnippets.ts
+                      * onecolumn/htmlSnippets.ts
+                      * tableFields/tx_org_calentrance.ts
+                * 211/setup.txt
+              * downloads/301/tx_browser_pi1/list
+                  * filter.ts
+                  * tableFields.ts
+              * events/61826/tx_browser_pi1/list
+                * htmlSnippets.ts
+                * tableFields.ts
+              * headquarters
+                * 501/tx_browser_pi1
+                  * list
+                    * htmlSnippets.ts
+                    * tableFields.ts
+                  * single/htmlSnippets.ts
+                * 511/setup.txt
+              * job/593611/plugin/tx_browser_pi1
+                * list/htmlSnippets.ts
+                * single
+                  * htmlSnippets.ts
+                  * tableFields
+                    * tx_org_headquarters.ts
+                    * tx_org_staff.ts
+              * location/701/tx_browser_pi1/list
+                * htmlSnippets.ts
+                * tableFields.ts
+              * news
+                * 401
+                  * tx_browser_pi1
+                    * list
+                      * filter.ts
+                      * htmlSnippets.ts
+                      * tableFields.ts
+                    * single/htmlSnippets.ts
+                * 409/tx_browser_pi1/list/tableFields.ts
+                * 411/tx_browser_pi1/list
+                  * htmlSnippets.ts
+                  * marker.ts
+                * 412/tx_browser_pi1/list
+                  * htmlSnippets.ts
+                  * marker.ts
+              * service/593621/tx_browser_pi1/list/htmlSnippets.ts
+              * staff
+                 * 101
+                   * listincolumns/tx_browser_pi1/list
+                     * htmlSnippets.ts
+                     * tableFields.ts
+                   * list
+                     * htmlSnippets.ts
+                     * tableFields.ts
+                   * single
+                     * htmlSnippets.ts
+                 * 102
+                   * list
+                     * htmlSnippets.ts
+                     * tableFields.ts
+                   * single
+                     * htmlSnippets.ts
+                  * 111/setup.txt
+                  * vCard/120/tx_browser_pi1/list/htmlSnippets.ts
+  Improvement
+  * #i0108: If extension Flip it! isn't loaded, any Flip it! tab won't displayed in the TCA of the download records
+
 7.6.1
   15-11-15
   Bugfix
@@ -21,7 +103,6 @@
   * #i0095: Calendar single view is extended with a people list
   * #i0094: Calendar list view is extended with a people filter
   * #i0091: calender gets a relation to staff and staff gets a relation to calendar
-  Improvement
   * #i0101: Resources/Private/RealUrl/realurl_conf.php got an update
   * #71116: Get an ID for including a JavaScript inline
   * #i0097: Staff single view: image height for company logo is decreased from 400 to 80

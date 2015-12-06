@@ -28,7 +28,7 @@ plugin.tx_browser_pi1 {
                 10 {
                     // image
                   10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
-                  wrap = <li class="show-for-large-up image">|</li>
+                  wrap = <li class="###CSSVISLARGETO###image">|</li>
                 }
                   // image, header
                 11 = COA
@@ -39,7 +39,7 @@ plugin.tx_browser_pi1 {
                   10 {
                       // image
                     10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.2
-                    wrap = <div class="show-for-large-up image" style="float:right;">|</div>
+                    wrap = <div class="###CSSVISLARGETO###image" style="float:right;">|</div>
                   }
                   10 >
                     // title, if title (name)

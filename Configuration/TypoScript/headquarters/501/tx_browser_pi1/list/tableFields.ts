@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
                 10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
                 wrap = <div>|</div>
               }
-              wrap = <div class="show-for-large-up columns large-4">|</div>
+              wrap = <div class="###CSSVISLARGETO######CSSGRID######CSSGRIDLARGE###4">|</div>
             }
               // bookmarks, title, subline
             20 = COA
@@ -81,7 +81,7 @@ plugin.tx_browser_pi1 {
                   // link to the single view (record), internal page, external URL or no link (empty value)
                 30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0
               }
-              wrap = <div class="columns large-8">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDLARGE###8">|</div>
             }
           }
         }

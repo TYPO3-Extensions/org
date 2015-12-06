@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="main columns small-###FDTMPLTABLESINGLECOLLEFTSMALL### medium-###FDTMPLTABLESINGLECOLLEFTMEDIUM### large-###FDTMPLTABLESINGLECOLLEFTLARGE###">
+                <div class="main ###CSSGRID######CSSGRIDSMALL######FDTMPLTABLESINGLECOLLEFTSMALL### ###CSSGRIDMEDIUM######FDTMPLTABLESINGLECOLLEFTMEDIUM### ###CSSGRIDLARGE######FDTMPLTABLESINGLECOLLEFTLARGE###">
                   ###RECORD_BROWSER###
                   ###TX_ORG_STAFF.TITLE###
                   <!-- ###AREA_FOR_AJAX_LIST_01### end -->
@@ -21,7 +21,7 @@ plugin.tx_browser_pi1 {
                   <!-- ###BACKBUTTON### end -->
                   <!-- ###AREA_FOR_AJAX_LIST_02### begin -->
                 </div>
-                <div class="margin columns small-###FDTMPLTABLESINGLECOLRIGHTSMALL### medium-###FDTMPLTABLESINGLECOLRIGHTMEDIUM### large-###FDTMPLTABLESINGLECOLRIGHTLARGE###">
+                <div class="margin ###CSSGRID######CSSGRIDSMALL######FDTMPLTABLESINGLECOLRIGHTSMALL### ###CSSGRIDMEDIUM######FDTMPLTABLESINGLECOLRIGHTMEDIUM### ###CSSGRIDLARGE######FDTMPLTABLESINGLECOLRIGHTLARGE###">
                   ###TX_ORG_STAFF.CONTACT_EMAIL###
                   ###TX_ORG_HEADQUARTERS.UID###
                   ###TX_ORG_STAFF.DELETED###<!-- tx_org_staffgroup -->

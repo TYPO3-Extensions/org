@@ -15,7 +15,7 @@ plugin.tx_browser_pi1 {
               }
               // wrap for all filters in one row
               //wrap = <span class="selectbox">|</span>
-              wrap = <div class="columns small-12 medium-4 selectbox">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###4 selectbox">|</div>
               wrap {
                 item {
                   cObject {
@@ -56,7 +56,7 @@ plugin.tx_browser_pi1 {
               }
               // wrap for all filters in one row
               //wrap = <span class="selectbox">|</span>
-              wrap = <div class="columns small-12 medium-4 selectbox">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###4 selectbox">|</div>
               wrap {
                 item {
                   cObject {
@@ -80,7 +80,7 @@ plugin.tx_browser_pi1 {
               }
               // wrap for all filters in one row
               //wrap = <span class="selectbox">|</span>
-              wrap = <div class="columns small-12 medium-4 selectbox">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###4 selectbox">|</div>
               wrap {
                 item {
                   cObject {

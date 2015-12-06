@@ -498,7 +498,7 @@ plugin.tx_browser_pi1 {
                         60 {
                             // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
                           wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
-                            // <a href="X" class="ui-button-text" ...
+                            // <a href="X" class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" ...
                           10 = TEXT
                           10 {
                             typolink {
@@ -507,7 +507,7 @@ plugin.tx_browser_pi1 {
                               useCacheHash      = 1
                               returnLast        = url
                             }
-                            wrap    = <a href="|" class="ui-button-text"
+                            wrap    = <a href="|" class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###"
                           }
                             // ... title="X">
                           20 = TEXT
@@ -600,7 +600,7 @@ plugin.tx_browser_pi1 {
                           // Form submit (cart icon)
                         60 = COA
                         60 {
-                            // <td class="csc-uploads-button"><button type="submit" name="submit" value="X">
+                            // <td class="csc-uploads-button"><button class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" type="submit" name="submit" value="X">
                           10 = TEXT
                           10 {
                             value = Ordering
@@ -608,7 +608,7 @@ plugin.tx_browser_pi1 {
                               de  = Bestellen
                               en  = Ordering
                             }
-                            wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|">
+                            wrap    = <td class="csc-uploads-button"><button class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" type="submit" name="submit" value="|">
                           }
                             // <img ... />
                           20 = IMAGE
@@ -840,7 +840,7 @@ plugin.tx_browser_pi1 {
                     60 {
                         // <td class="csc-uploads-button"><div class="iconbutton">...</div></td>
                       wrap = <td class="csc-uploads-button"><div class="iconbutton">|</div></td>
-                        // <a href="X" class="ui-button-text" ...
+                        // <a href="X" class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" ...
                       10 = TEXT
                       10 {
                         typolink {
@@ -850,7 +850,7 @@ plugin.tx_browser_pi1 {
                           useCacheHash      = 1
                           returnLast        = url
                         }
-                        wrap    = <a href="|" class="ui-button-text"
+                        wrap    = <a href="|" class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###"
                       }
                         // ... title="X">
                       20 = TEXT
@@ -940,7 +940,7 @@ plugin.tx_browser_pi1 {
                       // Form submit (cart icon)
                     60 = COA
                     60 {
-                        // <td class="csc-uploads-button"><button type="submit" name="submit" value="X">
+                        // <td class="csc-uploads-button"><button class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" type="submit" name="submit" value="X">
                       10 = TEXT
                       10 {
                         value = Ordering
@@ -948,7 +948,7 @@ plugin.tx_browser_pi1 {
                           de  = Bestellen
                           en  = Ordering
                         }
-                        wrap    = <td class="csc-uploads-button"><button type="submit" name="submit" value="|">
+                        wrap    = <td class="csc-uploads-button"><button class="###CSSBTN######CSSBTNTINY######CSSBTNPRIMARY######CSSBTNBLOCK###" type="submit" name="submit" value="|">
                       }
                         // <img ... />
                       20 = IMAGE

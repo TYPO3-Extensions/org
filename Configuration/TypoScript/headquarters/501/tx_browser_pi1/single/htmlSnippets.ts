@@ -10,12 +10,12 @@ plugin.tx_browser_pi1 {
               value (
                 <!-- ###SINGLEVIEW### begin --><!-- ###SINGLEBODY### begin --><!-- ###SINGLEBODYROW### begin -->
                 <!-- ###AREA_FOR_AJAX_LIST_01### begin -->
-                <div class="margin columns small-12 medium-12 large-3">
+                <div class="margin ###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###3">
                   ###TX_ORG_HEADQUARTERS.TX_ORG_CAL###<!-- tx_org_cal -->
                   ###TX_ORG_HEADQUARTERS.UID###<!-- tx_org_news -->
                   ###TX_ORG_HEADQUARTERS.CRDATE###<!-- tx_org_staff -->
                 </div>
-                <div class="main columns small-12 medium-12 large-9">
+                <div class="main ###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###9">
                   ###MAP###
                   ###RECORD_BROWSER###
                   ###TX_ORG_HEADQUARTERS.TITLE###

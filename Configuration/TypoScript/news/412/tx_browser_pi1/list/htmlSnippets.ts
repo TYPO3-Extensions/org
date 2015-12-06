@@ -8,7 +8,7 @@ plugin.tx_browser_pi1 {
             listview {
               value (
                 <div class="row">
-                  <div class="columns listview listview-###MODE###">
+                  <div class="###CSSGRID###listview listview-###MODE###">
                     <ul class="disc">
                       <!-- ###LISTBODY### begin -->
                       <!-- ###LISTBODYITEM### begin -->

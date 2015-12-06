@@ -50,12 +50,12 @@ plugin.tx_browser_pi1 {
                 }
                 30 {
                   10 {
-                    wrap = <div class="small-12 large-2 columns">|</div>
+                    wrap = <div class="###CSSGRIDSMALL###12 ###CSSGRIDLARGE###2 columns">|</div>
                   }
                     // select: tx_org_calentrance
                   20 = COA
                   20 {
-                    wrap = <div class="small-12 large-9 columns">|</div>
+                    wrap = <div class="###CSSGRIDSMALL###12 ###CSSGRIDLARGE###9 columns">|</div>
                       // select
                     10 = TEXT
                     10 {
@@ -109,7 +109,7 @@ plugin.tx_browser_pi1 {
                         de = &raquo;
                       }
                     }
-                    wrap = <div class="small-12 large-1 columns">|</div>
+                    wrap = <div class="###CSSGRIDSMALL###12 ###CSSGRIDLARGE###1 columns">|</div>
                   }
                 }
               }

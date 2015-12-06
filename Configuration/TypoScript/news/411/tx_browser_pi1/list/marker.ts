@@ -5,7 +5,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3 class="columns tx_browser_pi1-title-margin">|</h3>
+            wrap    = <h3 class="###CSSGRID###tx_browser_pi1-title-margin">|</h3>
             value   = News
             lang {
               de = Nachrichten

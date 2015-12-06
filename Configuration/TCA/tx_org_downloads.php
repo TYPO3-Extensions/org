@@ -10,7 +10,7 @@ require_once( PATH_typo3conf . 'ext/org/Configuration/ExtensionManager/simplifye
 // Default values and wizards
 require_once( PATH_typo3conf . 'ext/org/Configuration/TCA/Defaults/defaultValues.php' );
 
-return array(
+$aTca = array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads',
     'label' => 'title',
@@ -35,7 +35,7 @@ return array(
     'dividers2tabs' => true,
     'hideAtCopy' => true,
     'thumbnail' => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/download.gif',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/download.gif',
     'type' => 'type',
     'typeicon_column' => 'type',
     'typeicons' => array(
@@ -85,8 +85,8 @@ return array(
         'foreign_table' => 'sys_language',
         'foreign_table_where' => 'ORDER BY sys_language.title',
         'items' => array(
-          array('LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1),
-          array('LLL:EXT:lang/locallang_general.php:LGL.default_value', 0),
+          array( 'LLL:EXT:lang/locallang_general.php:LGL.allLanguages', -1 ),
+          array( 'LLL:EXT:lang/locallang_general.php:LGL.default_value', 0 ),
         ),
       ),
     ),
@@ -98,7 +98,7 @@ return array(
         'type' => 'select',
         'suppress_icons' => 1,
         'items' => array(
-          array('', 0),
+          array( '', 0 ),
         ),
         'foreign_table' => 'tx_org_downloads',
         'foreign_table_where' => 'AND tx_org_downloads.uid=###REC_FIELD_l10n_parent### AND tx_org_downloads.sys_language_uid IN (-1,0)',
@@ -393,9 +393,9 @@ return array(
         'size' => 1,
         'maxitems' => 1,
         'items' => array(
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1),
-          array('LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0 ),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1 ),
+          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2 ),
         ),
       ),
     ),
@@ -586,7 +586,7 @@ return array(
         'type' => 'group',
         'internal_type' => 'file',
         'allowed' => 'swf',
-        'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+        'max_size' => $GLOBALS[ 'TYPO3_CONF_VARS' ][ 'BE' ][ 'maxFileSize' ],
         'uploadfolder' => 'uploads/tx_flipit',
         'show_thumbs' => '1',
         'size' => '10',
@@ -601,7 +601,7 @@ return array(
         'type' => 'group',
         'internal_type' => 'file',
         'allowed' => 'xml',
-        'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],
+        'max_size' => $GLOBALS[ 'TYPO3_CONF_VARS' ][ 'BE' ][ 'maxFileSize' ],
         'uploadfolder' => 'uploads/tx_flipit',
         'show_thumbs' => '1',
         'size' => '1',
@@ -659,7 +659,7 @@ return array(
         'MM_opposite_field' => 'tx_org_downloads',
         'foreign_table' => 'fe_users',
         'foreign_table_where' => 'AND fe_users.' . $str_store_record_conf . ' AND fe_users.deleted = 0 AND fe_users.disable = 0 ORDER BY fe_users.last_name',
-        'wizards' => $arr_config_feuser['wizards'],
+        'wizards' => $arr_config_feuser[ 'wizards' ],
       ),
     ),
     'tx_org_staff' => array(
@@ -766,7 +766,7 @@ return array(
     ),
   ),
   'types' => array(
-    'download' => array('showitem' =>
+    'download' => array( 'showitem' =>
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_file,        ' .
@@ -789,8 +789,8 @@ return array(
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
-      ''),
-    'download_shipping' => array('showitem' =>
+      '' ),
+    'download_shipping' => array( 'showitem' =>
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_file,        ' .
@@ -812,8 +812,8 @@ return array(
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics;statistics,' .
-      ''),
-    'shipping' => array('showitem' =>
+      '' ),
+    'shipping' => array( 'showitem' =>
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_doc,         type,title;;;;1-1-1,subtitle,datetime,tx_org_downloadscat,tx_org_downloadsmedia,bodytext;;;richtext[]:rte_transform[mode=ts];3-3-3,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_teaser,      teaser_title;;;;6-6-6, teaser_subtitle, teaser_short,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_file,        ' .
@@ -835,10 +835,10 @@ return array(
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_seo,         seo_keywords,seo_description;;;;7-7-7, description,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_statistics,  ' .
       '--palette--;LLL:EXT:org/locallang_db.xml:palette.statistics_shipping;statistics_shipping,' .
-      ''),
+      '' ),
   ),
   'palettes' => array(
-    '3' => array('showitem' => 'starttime, endtime'),
+    '3' => array( 'showitem' => 'starttime, endtime' ),
     'documentscaption' => array(
       'showitem' => 'documentscaption;LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
       'canNotCollapse' => 1,
@@ -925,3 +925,17 @@ return array(
 //  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['add']);
 //  unset($TCA['tx_org_downloads']['columns']['tx_org_downloadsmedia']['config']['wizards']['list']);
 //}
+
+if ( !\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded( 'flipit' ) )
+{
+  foreach ( $aTca[ 'types' ] as $key => $value )
+  {
+    $sSearch = '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloads.div_flipit,' .
+            'tx_flipit_layout,';
+    //var_dump( __METHOD__, __LINE__, $aTca[ 'types' ][ $key ] );
+    $aTca[ 'types' ][ $key ] = str_replace( $sSearch, null, $aTca[ 'types' ][ $key ] );
+  }
+  //exit;
+}
+
+return $aTca;

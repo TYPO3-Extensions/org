@@ -13,7 +13,7 @@ plugin.tx_browser_pi1 {
             // title
           title = COA
           title {
-            wrap = <div class="columns medium-3">|</div>
+            wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###3">|</div>
               // placeholder: radialsearch linear distance
             9 < plugin.tx_radialsearch.masterTemplates.linearDistanceString
               // image
@@ -110,7 +110,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
                 stdWrap {
-                  wrap = <div class="columns small-6">|</div>
+                  wrap = <div class="###CSSGRID######CSSGRIDSMALL###6">|</div>
                 }
               }
                 // tx_org_cal.datetime
@@ -205,7 +205,7 @@ plugin.tx_browser_pi1 {
                     }
                     wrap = <div class="tx_org_cal_datetime expired">|</div>
                   }
-                  wrap = <div class="columns small-6">|</div>
+                  wrap = <div class="###CSSGRID######CSSGRIDSMALL###6">|</div>
                 }
               }
             }

@@ -7,7 +7,7 @@ plugin.tx_browser_pi1 {
             // title
           title = COA
           title {
-            wrap = <div class="columns medium-3">|</div>
+            wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###3">|</div>
               // image
             10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0.default
             10 {

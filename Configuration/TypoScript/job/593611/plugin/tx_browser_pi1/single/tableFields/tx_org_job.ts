@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
                   field = tx_org_job.image // tx_org_headquarters.image
                 }
               }
-              wrap = <div class="show-for-medium-up" style="float:left;padding: 0 1rem 1rem 0;">|</div>
+              wrap = <div class="###CSSVISMEDIUMTO###" style="float:left;padding: 0 1rem 1rem 0;">|</div>
               10 = IMAGE
               10 {
                 file {

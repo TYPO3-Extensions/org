@@ -22,7 +22,7 @@ plugin.tx_browser_pi1 {
                   10 = TEXT
                   10 {
                     value = ###SOCIALMEDIA_BOOKMARKS###
-                    wrap = <div class="show-for-large-up socialbookmarks">|</div>
+                    wrap = <div class="###CSSVISLARGETO###socialbookmarks">|</div>
                   }
                     // header
                   20 = TEXT
@@ -515,7 +515,7 @@ plugin.tx_browser_pi1 {
                       }
                     }
                       // div box
-                    wrap = <div class="show-for-large-up tx_org_headquarterscat">|</div>
+                    wrap = <div class="###CSSVISLARGETO###tx_org_headquarterscat">|</div>
                   }
                 }
               }

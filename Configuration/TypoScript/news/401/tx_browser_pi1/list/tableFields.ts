@@ -54,16 +54,16 @@ plugin.tx_browser_pi1 {
               40 {
                 value = ###SOCIALMEDIA_BOOKMARKS###
                 //wrap = <div class="row"><div class="columns">|</div></div>
-                wrap = <div class="show-for-large-up">|</div>
+                wrap = <div class="###CSSVISLARGETO###">|</div>
               }
-              wrap = <div class="columns small-12 medium-12 large-9">|</div>
+              wrap = <div class="###CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###9">|</div>
             }
               // image
             20 = COA
             20 {
                 // image
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
-              wrap = <div class="show-for-large-up columns small-12 medium-12 large-3">|</div>
+              wrap = <div class="###CSSVISLARGETO######CSSGRID######CSSGRIDSMALL###12 ###CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###3">|</div>
             }
             wrap = <div class="row">|</div>
           }

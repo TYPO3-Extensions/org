@@ -24,7 +24,7 @@ plugin.tx_browser_pi1 {
               value (
                 <div class="columns">
                   <div class="row">
-                    <div class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
+                    <div class="###CSSGRID###listview listview-content listview-###MODE### listview-content-###MODE###">
                       <table###SUMMARY###>
                         ###CAPTION###
                         <!-- ###LISTHEAD### begin -->
@@ -50,7 +50,7 @@ plugin.tx_browser_pi1 {
             listview {
               value (
                 <div class="row">
-                  <div class="columns listview listview-content listview-###MODE### listview-content-###MODE###">
+                  <div class="###CSSGRID###listview listview-content listview-###MODE### listview-content-###MODE###">
                     <table cellspacing="0">
                       <thead>
                         <tr>

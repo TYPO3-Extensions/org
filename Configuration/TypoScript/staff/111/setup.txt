@@ -27,7 +27,7 @@ plugin.tx_browser_pi1 {
         marker < plugin.tx_browser_pi1.marker
         marker {
           my_listview_title {
-            wrap    = <h3 class="columns show-for-large-up tx_browser_pi1-title-margin">|</h3>
+            wrap    = <h3 class="###CSSGRID######CSSVISLARGETO###tx_browser_pi1-title-margin">|</h3>
             value = People
             lang {
               de = Personen
@@ -93,12 +93,12 @@ plugin.tx_browser_pi1 {
             10 = COA
             10 {
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.1
-              wrap = <div class="columns tx_org_staff_image medium-3">|</div>
+              wrap = <div class="###CSSGRID###tx_org_staff_image ###CSSGRIDMEDIUM###3">|</div>
             }
               // name_first name_last. staffgroup
             20 = COA
             20 {
-              wrap = <div class="columns tx_org_staff_name medium-9">|</div>
+              wrap = <div class="###CSSGRID###tx_org_staff_name ###CSSGRIDMEDIUM###9">|</div>
                 // name_first, name_last
                 // title (linked)
               10 = CASE
@@ -253,7 +253,7 @@ plugin.tx_browser_pi1 {
             listview = TEXT
             listview {
               value (
-        <div class="columns show-for-large-up listview listview-###MODE###">
+        <div class="###CSSGRID######CSSVISLARGETO###listview listview-###MODE###">
           <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
             ###TX_ORG_STAFF.TITLE###
           <!-- ###LISTBODYITEM### end --><!-- ###LISTBODY### end -->

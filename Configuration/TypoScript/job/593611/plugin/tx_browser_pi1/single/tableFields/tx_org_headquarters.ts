@@ -20,7 +20,7 @@ plugin.tx_browser_pi1 {
               // column: vcard
             10 = COA
             10 {
-              wrap = <div class="columns large-12">|</div><!-- columns large-12 -->
+              wrap = <div class="###CSSGRID######CSSGRIDLARGE###12">|</div><!--columns-->
                 // column: image, header, title, steet, zip city, url
               10 = COA
               10 {
