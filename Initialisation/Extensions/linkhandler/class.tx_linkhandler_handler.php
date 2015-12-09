@@ -146,10 +146,13 @@ class tx_linkhandler_handler {
 
 		$recordArray = array();
 			// check for l18n_parent and fix the recordRow
-		$l18nPointer = ( array_key_exists('transOrigPointerField', $GLOBALS['TCA'][$recordTableName]['ctrl']) )
+      // #i0001, 151209, dwildt, 3-/+
+//		$l18nPointer = ( array_key_exists('transOrigPointerField', $GLOBALS['TCA'][$recordTableName]['ctrl']) )
+//							? $GLOBALS['TCA'][$recordTableName]['ctrl']['transOrigPointerField']
+//							: '';
+		$l18nPointer = ( array_key_exists('transOrigPointerField', ( array ) $GLOBALS['TCA'][$recordTableName]['ctrl']) )
 							? $GLOBALS['TCA'][$recordTableName]['ctrl']['transOrigPointerField']
 							: '';
-
 		$recordArray = $GLOBALS['TSFE']->sys_page->getRawRecord($recordTableName, $recordUid);
 
 		if ( is_array($recordArray) && (array_key_exists($l18nPointer, $recordArray) && $recordArray[$l18nPointer] > 0 && $recordArray['sys_language_uid'] > 0) ) {
