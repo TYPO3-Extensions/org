@@ -308,6 +308,12 @@ span.normal {
   margin: 0 0 1em 0;
   padding: 1em 0;
 }
+.buttons form.caddy {
+  display: inline-block;
+}
+.buttons .btn {
+  margin-left: 1em;
+}
 /* tx_caddy */
 
 

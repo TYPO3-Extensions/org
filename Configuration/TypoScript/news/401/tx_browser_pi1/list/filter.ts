@@ -19,7 +19,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.newscat
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.newscat
                   }
                 }
               }
@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.newsgroup
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.newsgroup
                   }
                 }
               }

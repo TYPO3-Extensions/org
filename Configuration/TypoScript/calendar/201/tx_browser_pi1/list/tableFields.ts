@@ -45,7 +45,7 @@ plugin.tx_browser_pi1 {
                   // label
                 10 = TEXT
                 10 {
-                  data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
+                  data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.caltype.title
                   noTrimWrap = ||: |
                 }
                 20 = TEXT

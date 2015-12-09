@@ -120,27 +120,27 @@ return array(
     'type' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:type',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type',
       'config' => array(
         'type' => 'select',
         'items' => array(
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/cal.gif',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/page.gif',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/url.gif',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
           ),
@@ -150,12 +150,12 @@ return array(
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/event.gif',
           ),
 //          'calpage' => array(
-//            '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
+//            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_pagedeprecated',
 //            '1' => 'calpage',
 //            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/page.gif',
 //          ),
 //          'calurl' => array(
-//            '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
+//            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_urldeprecated',
 //            '1' => 'calurl',
 //            '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/url.gif',
 //          ),
@@ -171,19 +171,19 @@ return array(
             '1' => '',
           ),
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
           ),
           'tx_org_event' => array(
@@ -191,11 +191,11 @@ return array(
             '1' => 'tx_org_event',
           ),
           'calpage' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_pagedeprecated',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_pagedeprecated',
             '1' => 'calpage',
           ),
           'calurl' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_urldeprecated',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_urldeprecated',
             '1' => 'calurl',
           ),
         ),
@@ -760,13 +760,13 @@ return array(
     'image' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image',
       'config' => $conf_file_image,
     ),
     'imagecaption' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imagecaption',
       'config' => $conf_text_30_05,
     ),
     'imagecaption_position' => array(
@@ -787,7 +787,7 @@ return array(
     'imageseo' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
       'config' => $conf_text_30_05,
     ),
     'imagewidth' => array(
@@ -976,25 +976,25 @@ return array(
 //    'embeddedcode' => array(
 //      'exclude' => $bool_exclude_none,
 ////      'l10n_mode' => 'exclude',
-//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.embeddedcode',
+//      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.embeddedcode',
 //      'config' => $conf_text_50_10,
 //    ),
 //    'print' => array(
 //      'exclude' => $bool_exclude_none,
 //      'l10n_mode' => 'exclude',
-//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.print',
+//      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.print',
 //      'config' => $conf_file_image,
 //    ),
 //    'printcaption' => array(
 //      'exclude' => $bool_exclude_none,
 //      'l10n_mode' => 'prefixLangTitle',
-//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+//      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imagecaption',
 //      'config' => $conf_text_30_05,
 //    ),
 //    'printseo' => array(
 //      'exclude' => $bool_exclude_none,
 //      'l10n_mode' => 'prefixLangTitle',
-//      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+//      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
 //      'config' => $conf_text_30_05,
 //    ),
     'hidden' => $conf_hidden,
@@ -1004,13 +1004,13 @@ return array(
     'fe_group' => $conf_fegroup,
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_keywords',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_description',
       'l10n_mode' => 'prefixLangTitle',
       'config' => $conf_text_50_10,
     ),
@@ -1020,7 +1020,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  type,'
       . '  title,subtitle,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
@@ -1052,7 +1052,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  type,'
       . '  title,subtitle,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
       . '  teaser_title,teaser_subtitle,teaser_short,'
@@ -1124,7 +1124,7 @@ return array(
   'palettes' => array(
     '1' => array( 'showitem' => 'starttime,endtime,' ),
     'documents_appearance' => array(
-      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
+      'showitem' => 'documentslayout;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
     'datetime_datetimeend' => array(
@@ -1132,12 +1132,12 @@ return array(
       'canNotCollapse' => 1,
     ),
     'documents_upload' => array(
-      'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
+      'showitem' => 'documents_from_path;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
       'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
     'image_accessibility' => array(
-      'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
+      'showitem' => 'imageseo;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
     'imageblock' => array(

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels for plugin &quot;tx_org&quot;</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="promptEvaluatorIncludeCss4-6"><![CDATA[Please iclude the static template [+Flip it!: Basis for TYPO3 < 4.7 (obligate!)]]]></label>
+      <label index="promptEvaluatorTYPO3version45smaller">Your are using a TYPO3 version smaller than 4.5. Organiser isn't tested in this version. Try it!</label>
+      <label index="promptEvaluatorTYPO3version46smaller">You are using TYPO3 4.5. This is perfect!</label>
+      <label index="promptEvaluatorTYPO3version47smaller">You are using TYPO3 4.6. This is perfect!</label>
+      <label index="promptEvaluatorTYPO3version48smaller">You are using TYPO3 4.7. This is perfect!</label>
+      <label index="promptEvaluatorTYPO3version48orGreater">You are using TYPO3 greater than 4.7. Organiser isn't tested in this version. Try it!</label>
+      <label index="promptExternalLinksBody"><![CDATA[
+        <div>
+          <a href="http://die-netzmacher.de/"
+            alt="die-netzmacher.de"
+            title="die-netzmacher.de"
+            target="_blank">
+            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher-logo-quadrat.png"
+              width="130"
+              height="130"
+              alt="die-netzmacher.de" /></a><br />
+          <a href="http://die-netzmacher.de/"
+            alt="die-netzmacher.de"
+            title="die-netzmacher.de"
+            target="_blank">
+            Die Netzmacher - the developers of TYPO3 without PHP.</a>
+        </div>
+      ]]></label>
+      <label index="promptSponsors"><![CDATA[
+        <h1 style="text-align:left;">
+          Thanks!
+        </h1>
+        <p style="font-weight:bold;padding:1em 0;">
+          The TYPO3-Organiser is sponsored by:
+        </p>
+        <p style="padding:0 0 1em 0;">
+          You like to subsidise the TYPO3-Organiser?
+          <a href="http://typo3-organiser.de/sponsoring/"
+            style="text-decoration:underline;"
+            alt="Your logo with your URL. 120 x 90 pixel."
+            title="Your logo with your URL. 120 x 90 pixel."
+            target="_blank">
+            Further information</a>.
+        </p>
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Your logo with your URL. 120 x 90 pixel."
+          title="Your logo with your URL. 120 x 90 pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-blue.gif"
+            width="120"
+            height="90"
+            alt="Your logo with your URL. 120 x 90 pixel." /></a>
+        &nbsp;&nbsp;
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Your logo with your URL. 120 x 90 pixel."
+          title="Your logo with your URL. 120 x 90 pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif"
+            width="120"
+            height="90"
+            alt="Your logo with your URL. 120 x 90 pixel." /></a>
+        &nbsp;&nbsp;
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Your logo with your URL. 120 x 90 pixel."
+          title="Your logo with your URL. 120 x 90 pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_default-grey.gif"
+            width="120"
+            height="90"
+            alt="Your logo with your URL. 120 x 90 pixel." /></a>
+      ]]></label>
+      <label index="tcaFilterPrompt"><![CDATA[
+        <p style="font-weight:bold;">
+          To enable and disable the filter in the frontend:
+        </p>
+        <ul style="list-style:outside;">
+          <li style="margin:0;">
+            Web > Template
+          </li>
+          <li style="margin:0;">
+            Pagetree: page with the Browser plugin, which displays your download items.
+          </li>
+          <li style="margin:0;">
+            Edit area
+            <ul style="list-style:outside;">
+              <li style="margin:0;">
+                [Constant Editor]
+              </li>
+              <li style="margin:0;">
+                Category: [ORGANISER DOWNLOADS - FILTER]
+              </li>
+            </ul>
+          </li>
+        </ul>
+      ]]></label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="promptEvaluatorIncludeCss4-6"><![CDATA[Du musst das Static Template [+Flip it!: Basis fuer TYPO3 < 4.7 einbinden.]]]></label>
+      <label index="promptEvaluatorTYPO3version45smaller">Du verwendest eine TYPO3-Version, die kleiner ist als 4.5. Organiser ist f<![CDATA[&uuml;]]>r diese Version nicht getestet. Aber probier es einfach aus!</label>
+      <label index="promptEvaluatorTYPO3version46smaller">Du verwendest TYPO3 4.5.x. Das ist perfekt.</label>
+      <label index="promptEvaluatorTYPO3version47smaller">Du verwendest TYPO3 4.6.x. Das ist perfekt.</label>
+      <label index="promptEvaluatorTYPO3version48smaller">Du verwendest TYPO3 4.7.x. Das ist perfekt.</label>
+      <label index="promptEvaluatorTYPO3version48orGreater">Du verwendest eine TYPO3 Version, die gr<![CDATA[&ouml;]]><![CDATA[&szlig;]]>er ist als 4.7. Organiser ist f<![CDATA[&uuml;]]>r diese Version nicht getestet. Aber probier es einfach aus!</label>
+      <label index="promptExternalLinksBody"><![CDATA[
+        <div>
+          <a href="http://die-netzmacher.de/"
+            alt="die-netzmacher.de"
+            title="die-netzmacher.de"
+            target="_blank">
+            <img src="../../../../typo3conf/ext/org/lib/icons/die-netzmacher-logo-quadrat.png"
+              width="130"
+              height="130"
+              alt="die-netzmacher.de" /></a><br />
+          <a href="http://die-netzmacher.de/"
+            alt="die-netzmacher.de"
+            title="die-netzmacher.de"
+            target="_blank">
+            Die Netzmacher - die Entwickler von TYPO3 ohne PHP</a>
+        </div>
+      ]]></label>
+      <label index="promptSponsors"><![CDATA[
+        <h1 style="text-align:left;">
+          Herzlichen Dank!
+        </h1>
+        <p style="font-weight:bold;padding:1em 0;">
+          Der TYPO3-Organiser wird gesponsert von
+        </p>
+        <p style="padding:0 0 1em 0;">
+          M&ouml;chtest Du den TYPO3-Organiser unterst&uuml;tzen?
+          <a href="http://typo3-organiser.de/sponsoring/"
+            style="text-decoration:underline;"
+            alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+            title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+            target="_blank">
+            Mehr Infos</a>.
+        </p>
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-blue.gif"
+            width="120"
+            height="90"
+            alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
+        &nbsp;&nbsp;
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif"
+            width="120"
+            height="90"
+            alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
+        &nbsp;&nbsp;
+        <a href="http://typo3-organiser.de/sponsoring/"
+          alt="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          title="Dein Logo mit Deiner URL. 120 x 90 Pixel."
+          target="_blank">
+          <img src="../../../../typo3conf/ext/org/lib/icons/your-logo_de-grey.gif"
+            width="120"
+            height="90"
+            alt="Dein Logo mit Deiner URL. 120 x 90 Pixel." /></a>
+      ]]></label>
+      <label index="tcaFilterPrompt"><![CDATA[
+        <p style="font-weight:bold;">
+          So blendest Du die Filter im Frontend ein- oder aus:
+        </p>
+        <ul style="list-style:outside;">
+          <li style="margin:0;">
+            Web > Template
+          </li>
+          <li style="margin:0;">
+            Seitenbaum: W&auml;hle die Seite mit dem Browser-Plugin aus, auf der Du Deine Downloads anbietest.
+          </li>
+          <li style="margin:0;">
+            Bearbeitungsbereich
+            <ul style="list-style:outside;">
+              <li style="margin:0;">
+                [Constant Editor]
+              </li>
+              <li style="margin:0;">
+                Kategorie: [ORGANISER - FILTER]
+              </li>
+            </ul>
+          </li>
+        </ul>
+      ]]></label>
+    </languageKey>
+  </data>
+</T3locallang>

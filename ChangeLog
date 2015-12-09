@@ -1,8 +1,10 @@
 7.7.0
   15-12-06
   Features
-  * #i0108: New TypoScript for download
+  * #i0111: Filter for Downloads can disabled by TypoScript Constant Editor
+  * #i0109: New TypoScript for download
             * If downloads are available in several languages, it will display in each language
+            * Extra files for caddy
   * #i0107: Bootstrap: Update for Browser 7.3.0 Bootstrap
             Effected files:
             * Configuration/TypoScript
@@ -78,6 +80,7 @@
                   * 111/setup.txt
                   * vCard/120/tx_browser_pi1/list/htmlSnippets.ts
   Improvement
+  * #i0110: locallang_db.xml is moved to Resources/Private/Language
   * #i0108: If extension Flip it! isn't loaded, any Flip it! tab won't displayed in the TCA of the download records
 
 7.6.1

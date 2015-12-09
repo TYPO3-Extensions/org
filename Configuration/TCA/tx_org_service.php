@@ -132,27 +132,27 @@ return array(
     'type' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:type',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type',
       'config' => array(
         'type' => 'select',
         'items' => array(
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/service.gif',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/page.gif',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/url.gif',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
           ),
@@ -168,19 +168,19 @@ return array(
             '1' => '',
           ),
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
           ),
         ),
@@ -189,7 +189,7 @@ return array(
     'page' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:page',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:page',
       'config' => array(
         'type' => 'group',
         'internal_type' => 'db',
@@ -203,7 +203,7 @@ return array(
     'url' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url',
       'config' => array(
         'type' => 'input',
         'size' => '80',
@@ -255,7 +255,7 @@ return array(
             'notNewRecords' => 1,
             'RTEonly' => 1,
             'type' => 'script',
-            'title' => 'LLL:EXT:org/locallang_db.xml:wizard.rte.fullscreen',
+            'title' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:wizard.rte.fullscreen',
             'icon' => 'wizard_rte2.gif',
             'script' => 'wizard_rte.php',
           ),
@@ -750,13 +750,13 @@ return array(
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image',
       'config' => $conf_file_image,
     ),
     'imagecaption' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imagecaption',
       'config' => $conf_text_30_05,
     ),
     'imagecaption_position' => array(
@@ -777,7 +777,7 @@ return array(
     'imageseo' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
       'config' => $conf_text_30_05,
     ),
     'imagewidth' => array(
@@ -966,25 +966,25 @@ return array(
     ),
     'documents' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documents',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documents',
       'config' => $conf_file_document,
     ),
     'documentscaption' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentscaption',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentscaption',
       'config' => $conf_text_30_05,
     ),
     'documentslayout' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout',
       'config' => array(
         'type' => 'select',
         'size' => 1,
         'maxitems' => 1,
         'items' => array(
-          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.0', 0 ),
-          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.1', 1 ),
-          array( 'LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout.2', 2 ),
+          array( 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout.0', 0 ),
+          array( 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout.1', 1 ),
+          array( 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout.2', 2 ),
         ),
       ),
     ),
@@ -1040,13 +1040,13 @@ return array(
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_description',
       'config' => $conf_text_50_10,
     ),
   ),
@@ -1076,13 +1076,13 @@ return array(
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_control,'
       . '  hidden;;control;;,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_seo,'
@@ -1110,13 +1110,13 @@ return array(
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.appearance;documents_appearance,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_control,'
       . '  hidden;;control;;,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_seo,'
@@ -1126,7 +1126,7 @@ return array(
     'page' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_service, '
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette_typepage;typepage,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.palette_title;title, '
       . '  description;;;richtext[]:rte_transform[mode=ts],'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_teaser,'
@@ -1142,7 +1142,7 @@ return array(
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1153,7 +1153,7 @@ return array(
     'url' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_service, '
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette_typeurl;typeurl,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.palette_title;title, '
       . '  description;;;richtext[]:rte_transform[mode=ts],'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.div_teaser,'
@@ -1169,7 +1169,7 @@ return array(
       . '  tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1183,16 +1183,16 @@ return array(
       'showitem' => 'starttime, endtime'
     ),
     'documents_appearance' => array(
-      'showitem' => 'documentslayout;LLL:EXT:org/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
+      'showitem' => 'documentslayout;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documentslayout,documentssize;LLL:EXT:cms/locallang_ttc.xml:filelink_size_formlabel',
       'canNotCollapse' => 1,
     ),
     'documents_upload' => array(
-      'showitem' => 'documents_from_path;LLL:EXT:org/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
+      'showitem' => 'documents_from_path;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.documents_from_path, --linebreak--,' .
       'documents;LLL:EXT:cms/locallang_ttc.xml:media.ALT.uploads_formlabel, documentscaption;LLL:EXT:cms/locallang_ttc.xml:imagecaption.ALT.uploads_formlabel;;nowrap, --linebreak--,',
       'canNotCollapse' => 1,
     ),
     'image_accessibility' => array(
-      'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
+      'showitem' => 'imageseo;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
     'imageblock' => array(
@@ -1239,15 +1239,15 @@ return array(
     ),
     'typepage' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/locallang_db.xml:type,'
-      . 'page;LLL:EXT:org/locallang_db.xml:page'
+      . 'type;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type,'
+      . 'page;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:page'
       ,
       'canNotCollapse' => 1,
     ),
     'typeurl' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/locallang_db.xml:type,'
-      . 'url;LLL:EXT:org/locallang_db.xml:url'
+      . 'type;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type,'
+      . 'url;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url'
       ,
       'canNotCollapse' => 1,
     ),

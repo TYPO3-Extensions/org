@@ -10,7 +10,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.calendar
                   }
                 }
               }
@@ -29,7 +29,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.calendar
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.calendar
                   }
                 }
               }
@@ -70,7 +70,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.caltype.title
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.caltype.title
                   }
                 }
               }
@@ -85,7 +85,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.location
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.location
                   }
                 }
               }
@@ -107,7 +107,7 @@ plugin.tx_browser_pi1 {
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.staff
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.staff
                   }
                 }
               }

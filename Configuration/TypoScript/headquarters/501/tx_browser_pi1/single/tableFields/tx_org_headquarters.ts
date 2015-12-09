@@ -47,7 +47,7 @@ plugin.tx_browser_pi1 {
                         // header
                       //10 = TEXT
                       //10 {
-                      //  data = LLL:EXT:org/locallang_db.xml:filter_phrase.address
+                      //  data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.address
                       //  wrap = <li class="header">|</li>
                       //}
                         // title
@@ -149,7 +149,7 @@ plugin.tx_browser_pi1 {
                         // header
                       10 = TEXT
                       10 {
-                        data = LLL:EXT:org/locallang_db.xml:filter_phrase.contact
+                        data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.contact
                         wrap = <li class="header">|</li>
                       }
                         // manager

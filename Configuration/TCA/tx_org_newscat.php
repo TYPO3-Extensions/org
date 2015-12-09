@@ -68,17 +68,17 @@ return array(
     'image' => array(
       'l10n_mode' => 'exclude',
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image',
       'config' => $conf_file_image,
     ),
     'imagecaption' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imagecaption',
       'config' => $conf_text_30_05,
     ),
     'imageseo' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
       'config' => $conf_text_30_05,
     ),
     'hidden' => $conf_hidden,

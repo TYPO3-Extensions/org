@@ -5,6 +5,8 @@ if (!defined('TYPO3_MODE'))
   die('Access denied.');
 }
 
+// Methods for backend workflows
+require_once(t3lib_extMgm::extPath( $_EXTKEY ) . 'lib/userfunc/class.tx_org_userfunc.php' );
 // Set TYPO3 version
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/t3version.php' );
 // Configuration by the extension manager

@@ -6,10 +6,15 @@ plugin.tx_browser_pi1 {
           tx_org_downloads {
             datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             datetime {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.tx_org_downloads.filter.datetime}
+              }
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.tx_org_downloads.datetime
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.tx_org_downloads.datetime
                   }
                 }
               }
@@ -47,10 +52,15 @@ plugin.tx_browser_pi1 {
           tx_org_downloadscat {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.tx_org_downloads.filter.tx_org_downloadscat}
+              }
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.doccat
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.doccat
                   }
                 }
               }
@@ -71,10 +81,15 @@ plugin.tx_browser_pi1 {
           tx_org_downloadsmedia {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.tx_org_downloads.filter.tx_org_downloadsmedia}
+              }
               first_item {
                 cObject {
                   20 {
-                    data = LLL:EXT:org/locallang_db.xml:filter_phrase.docmedia
+                    data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.docmedia
                   }
                 }
               }

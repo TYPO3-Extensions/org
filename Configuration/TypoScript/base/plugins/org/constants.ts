@@ -4,6 +4,10 @@ plugin.org {
   icon.download = EXT:org/Resources/Public/Images/Icons/download.gif
   # cat=Organiser - Icons/150/100; type=string; label= Shipping:path to the shipping icon
   icon.shipping = EXT:org/Resources/Public/Images/Icons/shipping.gif
+  # cat=Organiser - Icons/150/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  icon.externalLinks          = Click me!
+  # cat=Organiser - Icons/150/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  icon.externalSponsors       = Click me!
 
   # cat=Organiser - Pages/150/100; type=+int; label= home:Uid of your home page
   pages.root =
@@ -43,6 +47,10 @@ plugin.org {
   pages.terms_downloads =
   # cat=Organiser - Pages/150/217; type=+int; label= vCard:Uid of your page with the vCard
   pages.vCard =
+  # cat=Organiser - Pages/150/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  pages.externalLinks          = Click me!
+  # cat=Organiser - Pages/150/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  pages.externalSponsors       = Click me!
 
   # cat=Organiser - Sysfolders/500/100; type=+int; label= calendar:Uid of the sysfolder with the calendar data
   sysfolder.calendar =
@@ -66,6 +74,10 @@ plugin.org {
   sysfolder.staff =
   # cat=Organiser - Sysfolders/500/110; type=+int; label= services:Uid of the sysfolder with the services data
   sysfolder.service =
+  # cat=Organiser - Sysfolders/500/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  sysfolder.externalLinks          = Click me!
+  # cat=Organiser - Sysfolders/500/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  sysfolder.externalSponsors       = Click me!
 
   # cat=Organiser - static url/500/100; type=+int; label= [default] calendar:URL of your calendar (default language)
   url.default.calendar = schedule/
@@ -79,6 +91,10 @@ plugin.org {
   url.default.terms = tickets/terms/
   # cat=Organiser - static url/500/110; type=+int; label= [default] terms & conditions for downloads:URL of your terms and conditions for ordering downloads (default language)
   url.default.terms_downloads = downloads/terms/
+  # cat=Organiser - static url/500/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  url.default.externalLinks          = Click me!
+  # cat=Organiser - static url/500/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  url.default.externalSponsors       = Click me!
 
   # cat=Organiser - static url/500/200; type=+int; label= [de] Kalender:URL of your calendar (only if German is configured!)
   url.de.calendar = spielplan/
@@ -92,6 +108,10 @@ plugin.org {
   url.de.terms = karten/agb/
   # cat=Organiser - static url/500/210; type=+int; label= [de] AGB Downloads:URL of your terms and conditions for ordering downloads (only if German is configured!)
   url.de.terms_downloads = downloads/agb/
+  # cat=Organiser - static url/500/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  url.de.externalLinks          = Click me!
+  # cat=Organiser - static url/500/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  url.de.externalSponsors       = Click me!
 
   # cat=Organiser - Table Downloads/600/100; type=+int; label= table:lable of the downloads table. Example: tx_org_downloads
   table.downloads = tx_org_downloads
@@ -107,9 +127,17 @@ plugin.org {
   table.downloads.field.documents_from_path = documents_from_path
   # cat=Organiser - Table Downloads/600/300; type=+int; label= thumbnails:field with thumbnails. Example: thumbnail
   table.downloads.field.thumbnail = thumbnail
+  # cat=Organiser - Table Downloads/600/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  table.externalLinks          = Click me!
+  # cat=Organiser - Table Downloads/600/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  table.externalSponsors       = Click me!
 
   # cat=Organiser - Templates//100; type=string; label= news:Path to the HTML template (#i0076)
   templates.401 = EXT:browser/Resources/Private/Templates/HTML/Foundation/main_03.html
+  # cat=Organiser - Templates/100/998;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptExternalLinks]; label=Powered by:die-netzmacher.de
+  templates.externalLinks          = Click me!
+  # cat=Organiser - Templates/100/999;     type=user[EXT:org/lib/userfunc/class.tx_org_userfunc.php:tx_org_userfunc->promptSponsors]; label=Subsidise the TYPO3-Organiser!
+  templates.externalSponsors       = Click me!
 }
 
 

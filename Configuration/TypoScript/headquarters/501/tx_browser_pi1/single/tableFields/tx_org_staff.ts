@@ -23,7 +23,7 @@ plugin.tx_browser_pi1 {
                 // header
               10 = TEXT
               10 {
-                data = LLL:EXT:org/locallang_db.xml:filter_phrase.staff
+                data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:filter_phrase.staff
                 wrap = <li class="header">|</li>
               }
                 // items: tx_org_staff.title croped and linked

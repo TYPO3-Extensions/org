@@ -63,6 +63,7 @@
       <label index="palette_typeurl">Link to an external website</label>
       <label index="page">Internal page</label>
       <label index="phrase_calLinkToSingle"><![CDATA[Details and tickets &raquo;]]></label>
+      <label index="phrase_notInStock">Not available at the time</label>
       <label index="tca_phrase.color">Colour</label>
       <label index="tca_phrase.documents">Documents</label>
       <label index="tca_phrase.documents_from_path">Files from directory (i.e. fileadmin/user_upload/)</label>

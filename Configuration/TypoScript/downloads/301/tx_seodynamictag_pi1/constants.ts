@@ -1,30 +1,3 @@
-
-  ////////////////////////////////////////
-  //
-  // INDEX
-
-  // plugin.tx_browser_pi1
-  // plugin.tx_seodynamictag_pi1
-
-
-
-  ////////////////////////////////////////
-  //
-  // plugin.tx_browser_pi1
-
-plugin.tx_browser_pi1 {
-  navigation {
-    showUid = downloadsUid
-  }
-}
-  // plugin.tx_browser_pi1
-
-
-
-  ////////////////////////////////////////
-  //
-  // plugin.tx_seodynamictag
-
 plugin.tx_seodynamictag {
 
   canonical {
@@ -36,7 +9,7 @@ plugin.tx_seodynamictag {
 
   condition {
     single {
-        // Please replace xxx with the uid of the page with the news plugin for the single view
+        // Please replace xxx with the uid of the page with the downloads plugin for the single view
         // Please use the Constant Editor
       begin = globalVar = GP:tx_browser_pi1|downloadsUid > 0] && [globalVar = TSFE:id = xxx
     }
@@ -63,4 +36,3 @@ plugin.tx_seodynamictag {
     moveToKeywords  = 0
   }
 }
-  // plugin.tx_seodynamictag

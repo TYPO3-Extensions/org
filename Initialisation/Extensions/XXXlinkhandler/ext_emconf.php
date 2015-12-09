@@ -11,11 +11,11 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'AOE link handler',
+	'title' => 'AOE link handler [FIXED by dwildt]',
 	'description' => 'Enables userfriendly links to records like tt_news etc... Configure new Tabs to the link-wizard. (by AOE media GmbH)',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.1.0',
+	'version' => '1.1.1',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',

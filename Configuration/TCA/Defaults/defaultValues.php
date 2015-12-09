@@ -59,7 +59,7 @@ $listStyleWidth = 'width:500px;';
 //    '_VERTICAL' => 0,
 //    'add' => array(
 //      'type' => 'script',
-//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.add',
+//      'title' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:wizard.fe_user.add',
 //      'icon' => 'add.gif',
 //      'params' => array(
 //        'table' => 'fe_users',
@@ -70,7 +70,7 @@ $listStyleWidth = 'width:500px;';
 //    ),
 //    'list' => array(
 //      'type' => 'script',
-//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.list',
+//      'title' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:wizard.fe_user.list',
 //      'icon' => 'list.gif',
 //      'params' => array(
 //        'table' => 'fe_users',
@@ -80,7 +80,7 @@ $listStyleWidth = 'width:500px;';
 //    ),
 //    'edit' => array(
 //      'type' => 'popup',
-//      'title' => 'LLL:EXT:org/locallang_db.xml:wizard.fe_user.edit',
+//      'title' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:wizard.fe_user.edit',
 //      'script' => 'wizard_edit.php',
 //      'popup_onlyOpenIfSelected' => 1,
 //      'icon' => 'edit2.gif',
@@ -318,7 +318,7 @@ if ($bool_topnews_sorting === true)
 $conf_pages = array(
   'exclude' => 1,
   'l10n_mode' => 'exclude',
-  'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.pages',
+  'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.pages',
   'config' => array(
     'type' => 'group',
     'internal_type' => 'db',

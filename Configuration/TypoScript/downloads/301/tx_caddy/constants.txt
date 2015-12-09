@@ -1,11 +1,11 @@
 plugin.caddy {
   db {
     table = tx_org_downloads
-    min   = 
-    max   = 
+    min   =
+    max   =
   }
   getpost {
-    uid = tx_org_downloads|uid
+    uid = tx_browser_pi1|downloadsUid
     qty = quantity
   }
   main {

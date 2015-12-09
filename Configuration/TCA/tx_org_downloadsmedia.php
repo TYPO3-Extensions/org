@@ -96,7 +96,7 @@ return array(
     'color' => array(
       'l10n_mode' => 'exclude',
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.color',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.color',
       'config' => array(
         'type' => 'input',
         'size' => 10,
@@ -116,17 +116,17 @@ return array(
     'image' => array(
       'l10n_mode' => 'exclude',
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image.cat',
       'config' => $conf_file_icon,
     ),
     'imageseo' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo.oneline',
       'config' => $conf_input_30,
     ),
     'imageseo_lang_ol' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo_lang_ol.oneline',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo_lang_ol.oneline',
       'config' => $conf_input_30,
     ),
     'imagewidth' => array(
@@ -218,8 +218,8 @@ return array(
     'cat_image' => array('showitem' =>
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadsmedia.div_cat,     type,title;;1;;1-1-1,text;;2;;2-2-2,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadsmedia.div_media,   ' .
-      '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
-      '--palette--;LLL:EXT:org/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
+      '--palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image.cat;imagefiles,' .
+      '--palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image_settings.cat;image_settings,' .
       '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_downloads.xml:tx_org_downloadsmedia.div_control, hidden'),
   ),
   'palettes' => array(
@@ -227,7 +227,7 @@ return array(
     '2' => array('showitem' => 'text_lang_ol'),
     '3' => array('showitem' => 'imageseo_lang_ol'),
     'imagefiles' => array(
-      'showitem' => 'image;LLL:EXT:org/locallang_db.xml:tca_phrase.image.cat, imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo.oneline',
+      'showitem' => 'image;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image.cat, imageseo;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo.oneline',
       'canNotCollapse' => 1,
     ),
     'image_settings' => array(

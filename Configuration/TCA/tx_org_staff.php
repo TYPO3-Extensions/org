@@ -117,27 +117,27 @@ return array(
     'type' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:type',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type',
       'config' => array(
         'type' => 'select',
         'items' => array(
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/staff.gif',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/page.gif',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/url.gif',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
             '2' => 'EXT:org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
           ),
@@ -153,19 +153,19 @@ return array(
             '1' => '',
           ),
           'record' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_record',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_record',
             '1' => 'record',
           ),
           'page' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_page',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_page',
             '1' => 'page',
           ),
           'url' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_url',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_url',
             '1' => 'url',
           ),
           'notype' => array(
-            '0' => 'LLL:EXT:org/locallang_db.xml:type_notype',
+            '0' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type_notype',
             '1' => 'notype',
           ),
         ),
@@ -174,7 +174,7 @@ return array(
     'page' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:page',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:page',
       'config' => array(
         'type' => 'group',
         'internal_type' => 'db',
@@ -188,7 +188,7 @@ return array(
     'url' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url',
       'config' => array(
         'type' => 'input',
         'size' => '80',
@@ -450,7 +450,7 @@ return array(
     'contact_url' => array(
       'exclude' => $bool_exclude_default,
 //      'l10n_mode' => 'exclude',
-      'label' => 'LLL:EXT:org/locallang_db.xml:url',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url',
       'config' => array(
         'type' => 'input',
         'size' => '80',
@@ -472,13 +472,13 @@ return array(
     ),
     'image' => array(
       'exclude' => $bool_exclude_default,
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.image',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.image',
       'config' => $conf_file_image,
     ),
     'imagecaption' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imagecaption',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imagecaption',
       'config' => $conf_text_30_05,
     ),
     'imagecaption_position' => array(
@@ -499,7 +499,7 @@ return array(
     'imageseo' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
       'config' => $conf_text_30_05,
     ),
     'imagewidth' => array(
@@ -1162,13 +1162,13 @@ return array(
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_keywords',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_keywords',
       'config' => $conf_input_80_trim,
     ),
     'seo_description' => array(
       'exclude' => $bool_exclude_default,
       'l10n_mode' => 'prefixLangTitle',
-      'label' => 'LLL:EXT:org/locallang_db.xml:tca_phrase.seo_description',
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.seo_description',
       'config' => $conf_text_50_10,
     ),
   ),
@@ -1192,7 +1192,7 @@ return array(
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1233,7 +1233,7 @@ return array(
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1262,7 +1262,7 @@ return array(
     'page' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_particulars, '
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typepage;typepage,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette_typepage;typepage,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
@@ -1273,7 +1273,7 @@ return array(
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1288,7 +1288,7 @@ return array(
     'url' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_particulars, '
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette_typeurl;typeurl,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette_typeurl;typeurl,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_name;name,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.palette_birthday;birthday,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff.div_marginal,'
@@ -1299,7 +1299,7 @@ return array(
       . '  contact_email,contact_fax,contact_phone,contact_skype,contact_url,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
-      . '  --palette--;LLL:EXT:org/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
@@ -1324,7 +1324,7 @@ return array(
       'showitem' => 'starttime, endtime'
     ),
     'image_accessibility' => array(
-      'showitem' => 'imageseo;LLL:EXT:org/locallang_db.xml:tca_phrase.imageseo,',
+      'showitem' => 'imageseo;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo,',
       'canNotCollapse' => 1,
     ),
     'imageblock' => array(
@@ -1356,15 +1356,15 @@ return array(
     ),
     'typepage' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/locallang_db.xml:type,'
-      . 'page;LLL:EXT:org/locallang_db.xml:page'
+      . 'type;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type,'
+      . 'page;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:page'
       ,
       'canNotCollapse' => 1,
     ),
     'typeurl' => array(
       'showitem' => ''
-      . 'type;LLL:EXT:org/locallang_db.xml:type,'
-      . 'url;LLL:EXT:org/locallang_db.xml:url'
+      . 'type;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:type,'
+      . 'url;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url'
       ,
       'canNotCollapse' => 1,
     ),

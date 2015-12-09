@@ -13,7 +13,7 @@ plugin.tx_browser_pi1 {
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
               wrap = <div class="###CSSVISMEDIUMTO######CSSGRID######CSSGRIDMEDIUM###2 ###CSSGRIDLARGE###2">|</div>
             }
-              // text: teaser_title, teaser_subtitle, teaser_short, bookmarks
+              // text: bookmarks, teaser_title, teaser_subtitle, teaser_short
             20 = COA
             20 {
                 // socialmedia_bookmarks
@@ -33,7 +33,7 @@ plugin.tx_browser_pi1 {
                 crop  = 40|...|1
                 required = 1
               }
-                // teaser_short
+                // teaser_short, download statistic
               40 = COA
               40 {
                 wrap = <p>|</p>
@@ -48,133 +48,13 @@ plugin.tx_browser_pi1 {
                     required = 1
                   }
                 }
-                  // link to detail view
-                20 = CASE
-                20 {
-                  key {
-                    field = tx_org_downloads.type
-                  }
-                  default = COA
-                  default {
-                      // download: label, icon
-                    10 = COA
-                    10 {
-                        // label: amount of downloads
-                      10 = COA
-                      10 {
-                          // if value = 1
-                        10 = TEXT
-                        10 {
-                          if {
-                            value  = 1
-                            equals {
-                              field = tx_org_downloads.statistics_downloads_by_visits
-                            }
-                          }
-                          field = tx_org_downloads.statistics_downloads_by_visits
-                          stdWrap {
-                            append = TEXT
-                            append {
-                              value = Download
-                              lang {
-                                de = Download
-                                en = Download
-                              }
-                              noTrimWrap = | ||
-                            }
-                          }
-                        }
-                          // if value != 1
-                        20 = TEXT
-                        20 {
-                          if {
-                            value  = 1
-                            equals {
-                              field = tx_org_downloads.statistics_downloads_by_visits
-                            }
-                            negate = 1
-                          }
-                          field = tx_org_downloads.statistics_downloads_by_visits
-                          stdWrap {
-                            append = TEXT
-                            append {
-                              value = Downloads
-                              lang {
-                                de = Downloads
-                                en = Downloads
-                              }
-                              noTrimWrap = | ||
-                            }
-                          }
-                        }
-                        noTrimWrap = || |
-                      }
-                        // icon
-                      20 = IMAGE
-                      20 {
-                        file = {$plugin.org.icon.download}
-                        altText {
-                          stdWrap {
-                            value = Download
-                            lang {
-                              de = Herunterladen
-                              en = Download
-                            }
-                          }
-                        }
-                        titleText < .altText
-                        imageLinkWrap = 1
-                        imageLinkWrap {
-                          enable = 1
-                          typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
-                        }
-                        stdWrap {
-                          noTrimWrap = || |
-                        }
-                      }
-                    }
-                      // shipping
-                    20 = IMAGE
-                    20 {
-                      file = {$plugin.org.icon.shipping}
-                      altText {
-                        stdWrap {
-                          value = Order
-                          lang {
-                            de = Bestellen
-                            en = Order
-                          }
-                        }
-                      }
-                      titleText < .altText
-                      imageLinkWrap = 1
-                      imageLinkWrap {
-                        enable = 1
-                        typolink < plugin.tx_browser_pi1.displayList.master_templates.tableFields.typolinks.0.default
-                      }
-                      stdWrap {
-                        noTrimWrap = || |
-                      }
-                    }
-                      // details link
-                    30 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0.default
-                  }
-                  download < .default
-                  download {
-                    20 >
-                  }
-                  shipping < .default
-                  shipping {
-                    10 >
-                  }
-                  stdWrap {
-                    noTrimWrap = |<span class="more" style="float:right;">|</span>|
-                  }
-                }
+                  // download statistic
+                20 < temp.tx_org_downloads.statistic
               }
               wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###10 ###CSSGRIDLARGE###10">|</div>
             }
-            //wrap = <div class="row">|</div>
+              // buttons: download, shipping, details
+            30 < temp.tx_org_downloads.buttons.list
           }
         }
       }
