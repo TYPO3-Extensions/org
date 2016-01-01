@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-31T12:00:00Z" product-name="org">
+    <header/>
+    <body>
+      <trans-unit id="default.label">
+        <source>Note</source>
+        <target state="translated">Hinweis</target>
+      </trans-unit>
+      <trans-unit id="default.prompt">
+        <source><![CDATA[
+        <p style="font-weight:bold;">
+          To enable and disable the filter in the frontend:
+        </p>
+        <ul style="list-style:outside;">
+          <li style="margin:0;">
+            Web > Template
+          </li>
+          <li style="margin:0;">
+            Pagetree: page with the Browser plugin, which displays your download items.
+          </li>
+          <li style="margin:0;">
+            Edit area
+            <ul style="list-style:outside;">
+              <li style="margin:0;">
+                [Constant Editor]
+              </li>
+              <li style="margin:0;">
+                Category: [ORGANISER - FILTER: %tableLL%]
+              </li>
+            </ul>
+          </li>
+        </ul>
+      ]]></source>
+        <target state="translated"><![CDATA[
+        <p style="font-weight:bold;">
+          So blendest Du die Filter im Frontend ein- oder aus:
+        </p>
+        <ul style="list-style:outside;">
+          <li style="margin:0;">
+            Web > Template
+          </li>
+          <li style="margin:0;">
+            Seitenbaum: W&auml;hle die Seite mit dem Browser-Plugin aus, auf der Du Deine Downloads anbietest.
+          </li>
+          <li style="margin:0;">
+            Bearbeitungsbereich
+            <ul style="list-style:outside;">
+              <li style="margin:0;">
+                [Constant Editor]
+              </li>
+              <li style="margin:0;">
+                Kategorie: [ORGANISER - FILTER: %tableLL%]
+              </li>
+            </ul>
+          </li>
+        </ul>
+      ]]></target>
+      </trans-unit>
+			<trans-unit id="tx_org_downloads">
+				<source>DOWNLOADS</source>
+        <target state="translated">DOWNLOADS</target>
+			</trans-unit>
+			<trans-unit id="tx_org_jobs">
+				<source>JOBS</source>
+        <target state="translated">JOBS</target>
+			</trans-unit>
+    </body>
+  </file>
+</xliff>

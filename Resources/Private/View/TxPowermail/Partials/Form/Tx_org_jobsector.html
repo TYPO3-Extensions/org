@@ -1,0 +1,56 @@
+{namespace vh=Netzmacher\Org\ViewHelpers}
+{namespace pm=In2code\Powermail\ViewHelpers}
+
+<div id="powermail_fieldwrap_{field.uid}" class="powermail_fieldwrap powermail_fieldwrap_check powermail_fieldwrap_{field.uid} {field.css}">
+  <fieldset>
+    <legend class="powermail_label powermail_check_legend" title="{field.description}">
+      <pm:string.RawAndRemoveXss>{field.title}</pm:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
+    </legend>
+
+    <div class="powermail_check_outer {pm:Validation.ErrorClass(field:field, class:'powermail_field_error')}">
+      <f:alias map="{vh:getter.GetTxOrgJobsectors()}">
+        <f:groupedFor each="{tx_org_sector}" as="sectors" groupBy="catParent" groupKey="catParent">
+          <f:comment>
+            BE AWARE: cycle below has 20 elements. If main categories are mor than 20, please increase cycle.
+          </f:comment>
+          <f:cycle values="{0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10, 10: 11, 11: 12, 12: 13, 13: 14, 14: 15, 15: 16, 16: 17, 17: 18, 18: 19, 19: 20}" as="cycle">
+            <f:for each="{sectors}" as="sector" iteration="index">
+              <f:if condition="{index.isFirst}">
+                <div class="powermail_check_inner powermail_check_inner_{cycle}">
+                  <f:form.checkbox
+                    property="{field.marker}."
+                    value="{sector.catParentUid}"
+                    checked="{vh:Misc.PrefillMultiField(field:field, value:sector.catParentUid)}"
+                    id="tx_org_sector_index_{cycle}"
+                    additionalAttributes="{pm:Validation.ValidationDataAttribute(field:field, iteration:index)}"
+                    class="powermail_checkbox" />
+                  <label for="tx_org_sector_index_{cycle}">
+                    <pm:string.RawAndRemoveXss>{sector.catParent}</pm:string.RawAndRemoveXss>
+                  </label>
+                </div>
+              </f:if>
+              <f:if condition="{sector.catChild}">
+                <div class="powermail_check_inner powermail_check_inner_sublevel powermail_check_inner_{cycle}_{index.cycle}">
+                  <f:form.checkbox
+                    property="{field.marker}."
+                    value="{sector.catChildUid}"
+                    checked="{vh:Misc.PrefillMultiField(field:field, value:sector.catChildUid)}"
+                    id="tx_org_sector_index_{cycle}_{index.cycle}"
+                    additionalAttributes="{pm:Validation.ValidationDataAttribute(field:field, iteration:index)}"
+                    class="powermail_checkbox" />
+                  <label for="tx_org_sector_index_{cycle}_{index.cycle}">
+                    <pm:string.RawAndRemoveXss>{sector.catChild}</pm:string.RawAndRemoveXss>
+                  </label>
+                </div>
+              </f:if>
+            </f:for>
+          </f:cycle>
+        </f:groupedFor>
+      </f:alias>
+
+      <f:if condition="{settings.validation.client}">
+        <div class="powermail_field_error_container powermail_field_error_container_{field.marker}"></div>
+      </f:if>
+    </div>
+  </fieldset>
+</div>

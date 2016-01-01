@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-31T12:00:00Z" product-name="org">
+		<header/>
+		<body>
+			<trans-unit id="default.label">
+				<source>Please choose...</source>
+			</trans-unit>
+			<trans-unit id="default.prompt">
+				<source><![CDATA[
+        <p style="font-weight:bold;">
+          To enable and disable the filter in the frontend:
+        </p>
+        <ul style="list-style:outside;">
+          <li style="margin:0;">
+            Web > Template
+          </li>
+          <li style="margin:0;">
+            Pagetree: page with the Browser plugin, which displays your download items.
+          </li>
+          <li style="margin:0;">
+            Edit area
+            <ul style="list-style:outside;">
+              <li style="margin:0;">
+                [Constant Editor]
+              </li>
+              <li style="margin:0;">
+                Category: [ORGANISER - FILTER: %tableLL%]
+              </li>
+            </ul>
+          </li>
+        </ul>
+      ]]></source>
+			</trans-unit>
+			<trans-unit id="tx_org_downloads">
+				<source>DOWNLOADS</source>
+			</trans-unit>
+			<trans-unit id="tx_org_jobs">
+				<source>JOBS</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
