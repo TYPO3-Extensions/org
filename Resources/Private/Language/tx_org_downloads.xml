@@ -75,6 +75,7 @@
       <label index="tx_org_downloadscat.div_color">Colour</label>
       <label index="tx_org_downloadscat.div_control">Controlling</label>
       <label index="tx_org_downloadscat.div_media">Icon</label>
+      <label index="tx_org_downloadscat.div_seo">Search Engines</label>
       <label index="tx_org_downloadscat.type">Type</label>
       <label index="tx_org_downloadscat.type.cat_color">Colour</label>
       <label index="tx_org_downloadscat.type.cat_image">Icon</label>
@@ -177,6 +178,7 @@
       <label index="tx_org_downloadscat.div_color">Farbe</label>
       <label index="tx_org_downloadscat.div_control">Steuerung</label>
       <label index="tx_org_downloadscat.div_media">Symbol</label>
+      <label index="tx_org_downloadscat.div_seo">Suchmaschinen</label>
       <label index="tx_org_downloadscat.type">Typ</label>
       <label index="tx_org_downloadscat.type.cat_color">Farbe</label>
       <label index="tx_org_downloadscat.type.cat_image">Symbol</label>

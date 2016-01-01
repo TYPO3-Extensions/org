@@ -52,7 +52,12 @@ plugin.tx_browser_pi1 {
               }
               20 = TEXT
               20 {
-                value = Configuration/TypoScript/downloads/301/tx_browser_pi1/single/tableFields/tx_org_downloads/main_form.ts
+                value = Configuration/TypoScript/downloads/301/tx_browser_pi1/single/tableFields/tx_org_downloads/main_buttons.ts
+                noTrimWrap  = |<p style="color:red;font-weight:bold;">Please include: |</p>|
+              }
+              30 = TEXT
+              30 {
+                value = Configuration/TypoScript/downloads/301/tx_browser_pi1/single/tableFields/tx_org_downloads/main_buttonsLL.ts
                 noTrimWrap  = |<p style="color:red;font-weight:bold;">Please include: |</p>|
               }
               wrap = <div class="columns small-12 large-8 col-xs-12 col-lg-8 intext-left">|</div>

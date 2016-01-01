@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/_constants.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/_constants.ts">

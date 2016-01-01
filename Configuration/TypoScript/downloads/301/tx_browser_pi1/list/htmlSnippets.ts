@@ -25,7 +25,7 @@ plugin.tx_browser_pi1 {
             listview {
               value (
             <div id="c###TT_CONTENT.UID###-listview-###MODE###" class="row listview listview-content listview-###MODE### listview-content-###MODE###">
-              <div class="columns">
+              <div class="columns col-lg-12">
                 <!-- ###LISTBODY### begin --><!-- ###LISTBODYITEM### begin -->
                 <div class="row tx_org_downloads tx_org_downloads-record record">
                   ###TX_ORG_DOWNLOADS.TITLE###

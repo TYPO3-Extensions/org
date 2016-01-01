@@ -232,7 +232,7 @@ return array(
     ),
     'tx_org_newscat' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.tx_org_newscat',
       'config' => array(
         'type' => 'select',
@@ -315,7 +315,7 @@ return array(
     ),
     'tx_org_newsgroup' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.tx_org_newsgroup',
       'config' => array(
         'type' => 'select',
@@ -441,7 +441,7 @@ return array(
     ),
     'tx_org_headquarters' => array(
       'exclude' => $bool_exclude_tx_org_company,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
@@ -493,7 +493,7 @@ return array(
     ),
     'tx_org_staff' => array(
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_news.xml:tx_org_news.tx_org_staff',
       'config' => array(
         'type' => 'select',

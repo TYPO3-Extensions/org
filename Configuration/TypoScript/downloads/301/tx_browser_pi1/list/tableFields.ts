@@ -54,7 +54,46 @@ plugin.tx_browser_pi1 {
               wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###10 ###CSSGRIDLARGE###10">|</div>
             }
               // buttons: download, shipping, details
-            30 < temp.tx_org_downloads.buttons.list
+            30 = COA
+            30 {
+                // downloads and shipping, downloads only, shipping only
+              10 = CASE
+              10 {
+                key {
+                  field = tx_org_downloads.type
+                }
+                  // downloads and shipping
+                default = COA
+                default {
+                    // flag
+                  10 < temp.tx_org_downloads.flag
+                    // download
+                  20 = TEXT
+                  20 {
+                    value = Download
+                    typolink < temp.tx_org_downloads.typolinkbutton
+                  }
+                    // shipping
+                  30 < plugin.tx_caddy_pi1.templates.html.form.order
+                }
+                  // download only
+                download < .default
+                download {
+                  30 >
+                }
+                  // shipping only
+                shipping < .default
+                shipping {
+                  20 >
+                }
+              }
+                // details
+              20 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.0.default
+              20 {
+                typolink.parameter.cObject.30.value = {$plugin.org.css.button.linktorecord}
+              }
+              wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###12 ###CSSGRIDLARGE###12 text-right"><div class="buttons">|</div></div>
+            }
           }
         }
       }

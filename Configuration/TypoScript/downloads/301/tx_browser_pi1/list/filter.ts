@@ -9,7 +9,7 @@ plugin.tx_browser_pi1 {
               condition >
               condition = TEXT
               condition {
-                value = {$plugin.tx_org_downloads.filter.datetime}
+                value = {$plugin.org.filter.tx_org_downloads.datetime}
               }
               first_item {
                 cObject {
@@ -55,7 +55,7 @@ plugin.tx_browser_pi1 {
               condition >
               condition = TEXT
               condition {
-                value = {$plugin.tx_org_downloads.filter.tx_org_downloadscat}
+                value = {$plugin.org.filter.tx_org_downloads.tx_org_downloadscat}
               }
               first_item {
                 cObject {
@@ -84,7 +84,7 @@ plugin.tx_browser_pi1 {
               condition >
               condition = TEXT
               condition {
-                value = {$plugin.tx_org_downloads.filter.tx_org_downloadsmedia}
+                value = {$plugin.org.filter.tx_org_downloads.tx_org_downloadsmedia}
               }
               first_item {
                 cObject {

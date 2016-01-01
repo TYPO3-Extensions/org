@@ -15,11 +15,12 @@ return array(
   'ctrl' => array(
     'title' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job',
     'label' => 'title',
-    'label_alt'         => 'tx_org_headquarters',
-    'label_alt_force'   => true,
+    'label_alt' => 'tx_org_headquarters',
+    'label_alt_force' => true,
     'tstamp' => 'tstamp',
     'crdate' => 'crdate',
     'cruser_id' => 'cruser_id',
+    'fe_cruser_id' => 'fe_cruser_id',
     'languageField' => 'sys_language_uid',
     'transOrigPointerField' => 'l10n_parent',
     'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -31,15 +32,15 @@ return array(
       'endtime' => 'endtime',
     ),
     'dividers2tabs' => TRUE,
-    'thumbnail'         => 'image',
-    'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/Icons/ExtIcon/job.gif',
-    'type'              => 'type',
-    'typeicon_column'   => 'type',
-    'typeicons'         => array(
-      'record'  => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/job.gif',
-      'page'    => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/page.gif',
-      'url'     => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/url.gif',
-      'notype'  => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
+    'thumbnail' => 'image',
+    'iconfile' => t3lib_extMgm::extRelPath( $_EXTKEY ) . 'Resources/Public/Images/Icons/ExtIcon/job.gif',
+    'type' => 'type',
+    'typeicon_column' => 'type',
+    'typeicons' => array(
+      'record' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/job.gif',
+      'page' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/page.gif',
+      'url' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/url.gif',
+      'notype' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
     ),
     'searchFields' => ''
     . 'title,reference_number,,short,description,specification,'
@@ -91,6 +92,7 @@ return array(
     . 'marginal_title,marginal_short,'
     . 'applicationaddress,onlineapplication,applicationurl,'
     . 'newsletter,'
+    . 'filterPrompt,'
     . 'tx_org_headquarters,'
     . 'tx_org_staff,'
     . 'tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
@@ -467,9 +469,18 @@ return array(
         'default' => '1'
       )
     ),
-    'tx_org_jobcat' => array(
+    'filterPrompt' => array(
       'l10n_mode' => 'exclude',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:org/Resources/Private/Language/Userfunc/TcaFilterPrompt/locallang.xlf:default.label',
+      'config' => array(
+        'type' => 'user',
+        'userFunc' => '\Netzmacher\Org\Utility\UserFunc\TcaFilterPrompt->tx_org_jobs',
+      ),
+    ),
+    'tx_org_jobcat' => array(
       'exclude' => 0,
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_jobcat',
       'config' => array(
         'type' => 'select',
@@ -477,11 +488,11 @@ return array(
         'minitems' => 0,
         'maxitems' => 99,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobcat'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobcat'
         ),
@@ -538,11 +549,11 @@ return array(
         'type' => 'select',
         'size' => 1,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobcat'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobcat'
         ),
@@ -557,9 +568,8 @@ return array(
       ),
     ),
     'tx_org_jobsector' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_jobsector',
       'config' => array(
         'type' => 'select',
@@ -567,11 +577,11 @@ return array(
         'minitems' => 0,
         'maxitems' => 99,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobsector'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobsector'
         ),
@@ -628,11 +638,11 @@ return array(
         'type' => 'select',
         'size' => 1,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobsector'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobsector'
         ),
@@ -647,9 +657,8 @@ return array(
       ),
     ),
     'tx_org_jobworkinghours' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_jobworkinghours',
       'config' => array(
         'type' => 'select',
@@ -657,11 +666,11 @@ return array(
         'minitems' => 0,
         'maxitems' => 99,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobworkinghours'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobworkinghours'
         ),
@@ -718,11 +727,11 @@ return array(
         'type' => 'select',
         'size' => 1,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobworkinghours'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_jobworkinghours'
         ),
@@ -737,9 +746,8 @@ return array(
       ),
     ),
     'tx_org_headquarters' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
@@ -760,11 +768,11 @@ return array(
         ),
         'MM' => 'tx_org_mm_all',
         'MM_opposite_field' => 'tx_org_job',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_headquarters',
           'table_foreign' => 'tx_org_job'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_headquarters',
           'table_foreign' => 'tx_org_job'
         ),
@@ -779,11 +787,11 @@ return array(
         'size' => 1,
         'MM' => 'tx_org_mm_all',
         'MM_opposite_field' => 'tx_org_job',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_headquarters',
           'table_foreign' => 'tx_org_job'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_headquarters',
           'table_foreign' => 'tx_org_job'
         ),
@@ -798,9 +806,8 @@ return array(
       ),
     ),
     'tx_org_staff' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.tx_org_staff',
       'config' => array(
         'type' => 'select',
@@ -814,11 +821,11 @@ return array(
           ),
         ),
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_staff'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_staff'
         ),
@@ -832,11 +839,11 @@ return array(
         'type' => 'select',
         'size' => 1,
         'MM' => 'tx_org_mm_all',
-        "MM_match_fields" => array(
+        'MM_match_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_staff'
         ),
-        "MM_insert_fields" => array(
+        'MM_insert_fields' => array(
           'table_local' => 'tx_org_job',
           'table_foreign' => 'tx_org_staff'
         ),
@@ -1138,6 +1145,19 @@ return array(
         )
       )
     ),
+    'fe_cruser_id' => Array(
+      'exclude' => $bool_exclude_default,
+      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.fe_cruser_id',
+      'config' => Array(
+        'type' => 'group',
+        'internal_type' => 'db',
+        'allowed' => 'fe_users',
+        'size' => '1',
+        'maxitems' => '1',
+        'minitems' => '0',
+        'show_thumbs' => '1'
+      )
+    ),
     'fe_group' => $conf_fegroup,
     'seo_keywords' => array(
       'exclude' => $bool_exclude_default,
@@ -1156,7 +1176,7 @@ return array(
     'noitem' => array(
       'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
     ),
-      // Copy of record
+    // Copy of record
     'notype' => array(
       'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_job, '
@@ -1165,6 +1185,7 @@ return array(
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
       . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_mail, '
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
@@ -1191,7 +1212,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_group,'
+      . '  hidden;;control;;,fe_cruser_id,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_seo,'
       . '  seo_keywords, seo_description,'
     ,
@@ -1204,6 +1225,7 @@ return array(
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
       . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_mail, '
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
@@ -1230,7 +1252,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_group,'
+      . '  hidden;;control;;,fe_cruser_id,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_seo,'
       . '  seo_keywords, seo_description,'
     ,
@@ -1242,6 +1264,7 @@ return array(
       . '  title,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_mail, '
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
@@ -1261,7 +1284,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_group,'
+      . '  hidden;;control;;,fe_cruser_id,fe_group,'
     ,
     ),
     'url' => array(
@@ -1271,6 +1294,7 @@ return array(
       . '  title,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
+      . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_mail, '
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_mailaddress;mailaddress, '
@@ -1290,7 +1314,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_group,'
+      . '  hidden;;control;;,fe_cruser_id,fe_group,'
     ,
     ),
   ),

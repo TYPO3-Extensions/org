@@ -48,7 +48,7 @@
  */
 class tx_org_flexform
 {
-  
+
  /**
   * Extension key
   *
@@ -62,7 +62,7 @@ class tx_org_flexform
   * @var array
   */
   private $arr_extConf = null;
-  
+
  /**
   * Max width for prompts
   *
@@ -85,10 +85,11 @@ class tx_org_flexform
  * @param    object        The parent object
  * @return    void
  */
-  function __construct( $pObj )
-  {
-    $this->pObj = $pObj;
-  }
+  // #i0115, 151212, dwildt, 4-
+//  function __construct( $pObj )
+//  {
+//    $this->pObj = $pObj;
+//  }
 
 
 
@@ -127,8 +128,8 @@ class tx_org_flexform
     $str_prompt = $str_prompt . $this->evaluate_promptSwftools( );
     return $str_prompt;
   }
-  
-  
+
+
 /**
  * evaluate_promptSwftools: Evaluates the plugin, flexform, TypoScript
  *                  Returns a HTML report
@@ -152,12 +153,12 @@ class tx_org_flexform
       // Include class userfunc
     $typo3_document_root  = t3lib_div::getIndpEnv( 'TYPO3_DOCUMENT_ROOT' );
     $pathToUserfunc       = $typo3_document_root . '/typo3conf/ext/flipit/lib/userfunc/class.tx_flipit_userfunc.php';
-    
-    if( ! file_exists( $pathToUserfunc ) ) 
+
+    if( ! file_exists( $pathToUserfunc ) )
     {
       return;
     }
-    
+
     require_once( $pathToUserfunc );
     $this->objUserfunc = new tx_flipit_userfunc( $this );
     $this->objUserfunc->set_allParams( );
@@ -183,7 +184,7 @@ class tx_org_flexform
         </div>
       </div>
       ';
-    
+
     $str_prompt = str_replace( '%pid%', $this->pid, $str_prompt );
     return $str_prompt;
   }

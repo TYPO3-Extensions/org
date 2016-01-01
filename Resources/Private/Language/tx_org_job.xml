@@ -6,6 +6,7 @@
   </meta>
   <data type="array">
     <languageKey index="default" type="array">
+      <label index="tsconf.tx_powermail.tx_org_jobsector">Organiser: Job Sector</label>
       <label index="tx_org_job.div_application">Application</label>
       <label index="tx_org_job.div_categories">Categories</label>
       <label index="tx_org_job.div_company">Company</label>
@@ -102,6 +103,7 @@
       <label index="wizard.tx_org_jobworkinghours.list">Display the working hour table</label>
     </languageKey>
     <languageKey index="de" type="array">
+      <label index="tsconf.tx_powermail.tx_org_jobsector">Organiser: Branche</label>
       <label index="tx_org_job.div_application">Bewerbung</label>
       <label index="tx_org_job.div_categories">Kategorien</label>
       <label index="tx_org_job.div_company">Firma / Anbieter</label>

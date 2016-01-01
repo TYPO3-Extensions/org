@@ -9,6 +9,11 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_job.tx_org_headquarters}
+              }
               count_hits = 0
               treeview {
                 enabled {
@@ -35,6 +40,11 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_job.tx_org_jobcat}
+              }
               count_hits = 0
               treeview {
                 enabled {
@@ -61,6 +71,11 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_job.tx_org_jobsector}
+              }
               count_hits = 0
               treeview {
                 enabled {

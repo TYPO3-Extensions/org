@@ -9,11 +9,7 @@ plugin.tx_browser_pi1 {
         0 {
           #crop  = 24|...|1
           field = tx_org_downloads.teaser_title // tx_org_downloads.title
-        }
-        1 {
-          #crop  = 30|...|1
-          field = tx_org_downloads.teaser_subtitle // tx_org_downloads.subtitle
-          tag   = h3
+          title = tx_org_downloads.seo_description // tx_org_downloads.title
         }
       }
       image {
@@ -26,15 +22,6 @@ plugin.tx_browser_pi1 {
           seo       = tx_org_downloads.documentscaption // tx_org_downloads.teaser_title // tx_org_downloads.title
           width     = 137
         }
-        1 {
-          default   = EXT:org/Resources/Public/Images/Icons/Default/tx_org_staff_300x200.png
-          file      = tx_org_staff.image
-          #height    =
-          #listNum   =
-          path      = uploads/tx_org/
-          seo       = tx_org_staff.title // tx_org_staff.imageseo // tx_org_downloads.title
-          #width     = 160
-        }
       }
       text {
         0 {
@@ -45,12 +32,12 @@ plugin.tx_browser_pi1 {
       }
       url {
         0 {
-          key       = tx_org_downloads.type
-          page      = tx_org_downloads.page
+          #key       =
+          #page      =
           record    = tx_org_downloads.uid
           showUid   = downloadsUid
           #singlePid =
-          url       = tx_org_downloads.url
+          #url       =
         }
       }
     }

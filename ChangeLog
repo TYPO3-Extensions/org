@@ -1,7 +1,28 @@
+7.8.0
+  15-12-30
+  Features
+  * #i0119: Jobs: Frontend Editing:
+            * Only for inserting a new record.
+            * Editing of records isn't possible.
+            * No localisation support.
+            Effected files:
+            * ext_tables.sql
+              * tx_org_job.fe_cruser_id (new)
+            * Classes/* (new)
+            * Configuration/TCA/tx_org_job.php
+              * tx_org_job.fe_cruser_id (new)
+            * Resources/Private/View/TxPowermail/Partials/Form/Tx_org_jobsector.html (new)
+  Improvement
+  * #i0121: Update cps_tcatree from 0.4.2 -> 0.4.3
+  * #i0120: Initialisation Extension linkhandler is removed.
+
 7.7.0
   15-12-06
   Features
-  * #i0111: Filter for Downloads can disabled by TypoScript Constant Editor
+  * #i0116: Caddy: new template for hidden fields
+  * #i0114: Path to flags is configurable by the constant editor. See [ORGANISER - ICONS] > Flags
+  * #i0113: New static template Bootstrap
+  * #i0111: Filter for Downloads can disabled by TypoScript Constant Editor. See: [ORGANISER - FILTER: DOWNLOADS]
   * #i0109: New TypoScript for download
             * If downloads are available in several languages, it will display in each language
             * Extra files for caddy
@@ -22,9 +43,12 @@
                       * onecolumn/htmlSnippets.ts
                       * tableFields/tx_org_calentrance.ts
                 * 211/setup.txt
-              * downloads/301/tx_browser_pi1/list
-                  * filter.ts
-                  * tableFields.ts
+              * downloads
+                  * 301/tx_browser_pi1/list
+                    * filter.ts
+                    * tableFields.ts
+                  * 311
+                    * setup.txt
               * events/61826/tx_browser_pi1/list
                 * htmlSnippets.ts
                 * tableFields.ts
@@ -80,9 +104,16 @@
                   * 111/setup.txt
                   * vCard/120/tx_browser_pi1/list/htmlSnippets.ts
   Improvement
+  * #i0117: Template hidden: 'Org [3.1.2] + Downloads Caddy Flags'
   * #i0112: linkhandler 1.1.0 is fixed. New version 1.1.1
   * #i0110: locallang_db.xml is moved to Resources/Private/Language
   * #i0108: If extension Flip it! isn't loaded, any Flip it! tab won't displayed in the TCA of the download records
+  Bugfix
+  * #i0118: SQL bug in case of an andWhere category statement and localisation (see #i0214 at TYPO3 Browser)
+            Workaround:
+            * The l10n_mode property in the TCA of the category fields of all tables
+              is moved from 'l10n_mode' => 'exclude' to 'l10n_mode' => 'mergeIfNotBlank'
+  * #i0115: PHP Warning: Missing argument 1 for tx_org_flexform::__construct() in lib/flexform/class.tx_org_flexform.php line 88
 
 7.6.1
   15-11-15

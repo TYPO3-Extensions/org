@@ -308,11 +308,28 @@ span.normal {
   margin: 0 0 1em 0;
   padding: 1em 0;
 }
+.buttons .button,
+.buttons .btn {
+  margin-left: 1em;
+}
+.buttons .button.wiselect,
+.buttons .btn.wiselect {
+  margin-left: 0;
+}
 .buttons form.caddy {
   display: inline-block;
 }
-.buttons .btn {
-  margin-left: 1em;
+.buttons select.bootstrap,
+.buttons select.foundation {
+  margin: 0 0 0 1em;
+}
+.buttons select.bootstrap {
+  padding: 0.65rem;
+}
+.buttons select.foundation {
+  height: 3.4rem;
+  padding: 1.05rem 0.5rem;
+  width: auto;
 }
 /* tx_caddy */
 

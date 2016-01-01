@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/downloads/302/301/tx_browser_pi1/list/_setup.ts">

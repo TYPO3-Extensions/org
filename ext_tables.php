@@ -20,7 +20,15 @@ require_once( PATH_typo3conf . 'ext/org/Configuration/ExtensionManager/hideTable
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/includeStaticTemplates.php' );
 // Add pagetree icons
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/pageTreeIcons.php' );
-// Add default page and user TSconfig
+
+/**
+ * page and user TSconfig
+ *
+ */
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/tsConfig.php' );
-// Methods for backend workflows
+
+/**
+ * Methods for backend workflows
+ *
+ */
 require_once( PATH_typo3conf . 'ext/org/Configuration/ExtTables/backendWorkflows.php' );

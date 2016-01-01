@@ -275,7 +275,7 @@ return array(
     ),
     'tx_org_caltype' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_caltype',
       'config' => array(
         'type' => 'select',
@@ -361,7 +361,7 @@ return array(
     ),
     'tx_org_event' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_event',
       'config' => array(
         'type' => 'select',
@@ -457,7 +457,7 @@ return array(
     ),
     'tx_org_location' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_location',
       'config' => array(
         'type' => 'select',
@@ -509,7 +509,7 @@ return array(
     ),
     'tx_org_headquarters' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
@@ -562,7 +562,7 @@ return array(
     ),
     'tx_org_calentrance' => array(
       'exclude' => 1,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_calentrance',
       'config' => array(
         'type' => 'select',
@@ -618,7 +618,7 @@ return array(
     ),
     'tx_org_caltype' => array(
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_caltype',
       'config' => array(
         'type' => 'select',
@@ -707,7 +707,7 @@ return array(
     ),
     'tx_org_staff' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.tx_org_staff',
       'config' => array(
         'type' => 'select',

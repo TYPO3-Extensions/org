@@ -60,7 +60,7 @@ return array(
     ),
     'tx_org_tax' => array(
       'exclude' => $bool_exclude_default,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_calentrance.tx_org_tax',
       'config' => array(
         'type' => 'select',

@@ -366,8 +366,8 @@ return array(
       'config' => $conf_text_50_10,
     ),
     'tx_org_servicecat' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.tx_org_servicecat',
       'config' => array(
         'type' => 'select',
@@ -455,9 +455,8 @@ return array(
       ),
     ),
     'tx_org_servicesector' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.tx_org_servicesector',
       'config' => array(
         'type' => 'select',
@@ -545,9 +544,8 @@ return array(
       ),
     ),
     'tx_org_servicetargetgroup' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.tx_org_servicetargetgroup',
       'config' => array(
         'type' => 'select',
@@ -635,9 +633,8 @@ return array(
       ),
     ),
     'tx_org_headquarters' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.tx_org_headquarters',
       'config' => array(
         'type' => 'select',
@@ -696,9 +693,8 @@ return array(
       ),
     ),
     'tx_org_staff' => array(
-      'l10n_mode' => 'exclude',
       'exclude' => 0,
-      'l10n_mode' => 'exclude',
+      'l10n_mode' => 'mergeIfNotBlank',
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_service.xml:tx_org_service.tx_org_staff',
       'config' => array(
         'type' => 'select',

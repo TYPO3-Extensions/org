@@ -1,21 +1,5 @@
 plugin.tx_browser_pi1 {
 
-  XXXadvanced {
-    sql {
-      devider {
-        tx_org_newscat {
-          title {
-            display = TEXT
-            display {
-              value =
-              wrap = |
-            }
-          }
-        }
-      }
-    }
-  }
-
   displayList {
     selectBox_orderBy {
       display = 1

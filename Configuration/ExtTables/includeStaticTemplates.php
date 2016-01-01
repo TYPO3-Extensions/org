@@ -24,8 +24,8 @@ switch( true )
     }
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/service/593621/',                    'Org [2] Dienstleistungen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [3] Downloads');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [3.1] + Downloads Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag/',     'Org [3.1.1] + Downloads Caddy Flaggen');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [3.1.1] + Downloads Caddy');
+    //t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag/',     'Org [3.1.2] + Downloads Caddy Flaggen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/',           'Org [3.2] + Downloads Flip it!');
     switch( true )
     {
@@ -69,6 +69,8 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/events/61826/',                      'Org [9] Veranstaltungen');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/701/',                      'Org [10.1] Veranstaltungsorte');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/location/711/',                      'Org [10.2] Veranstaltorte - Rand');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/zz/responsive/bootstrap/',           'Org [20] + Bootstrap');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/zz/responsive/foundation/',          'Org [20] + Foundation');
     break;
   default:
       // English
@@ -94,20 +96,20 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/calendar/299/',                      'Org [2.5] Calendar (RSS)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/',                     'Org [3.1] Downloads');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/',            'Org [3.1.1] + Downloads Caddy');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag',      'Org [3.1.2] + Downloads Caddy Flags');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/',           'Org [3.1.3] + Downloads Flip it!');
+    //t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_caddy/wiFlag',      'Org [3.1.2] + Downloads Caddy Flags');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/',           'Org [3.2] + Downloads Flip it!');
     switch( true )
     {
       case( $typo3Version < 4007000 ):
-        t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/4.6/', 'Org [3.1.4] + Downloads Flip it! TYPO3 < 4.7 (obligate!');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/4.6/', 'Org [3.2.1] + Downloads Flip it! TYPO3 < 4.7 (obligate!');
         break;
       default:
-        t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/4.6/', 'Org [3.1.4] + Downloads Flip it! TYPO3 < 4.7 (don\'t use it!');
+        t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/4.6/', 'Org [3.2.1] + Downloads Flip it! TYPO3 < 4.7 (don\'t use it!');
         break;
     }
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/6.x/', 'Org [3.1.5] + Downloads Flip it! TYPO3 >= 6.x');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/311/',                     'Org [3.2] Downloads - TOP 5');
-    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/302/',                     'Org [3.3] Downloads categories');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/301/tx_flipit/typo3/6.x/', 'Org [3.2.2] + Downloads Flip it! TYPO3 >= 6.x');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/311/',                     'Org [3.3] Downloads - TOP 5');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/downloads/302/',                     'Org [3.4] Downloads categories');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/events/61826/',                      'Org [4] Events');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/',                  'Org [5.1] Headquarters');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/headquarters/501/tx_browser_pi1/single/onecolumn/', 'Org [5.2] + one column');
@@ -129,5 +131,7 @@ switch( true )
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/111/',                         'Org [9.3] People - margin (don\'t cache!)');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/staff/vCard/120/',                   'Org [9.4] People vCard');
     t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/service/593621/',                    'Org [10] Service');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/zz/responsive/bootstrap/',           'Org [20] + Bootstrap');
+    t3lib_extMgm::addStaticFile($_EXTKEY,'Configuration/TypoScript/zz/responsive/foundation/',          'Org [20] + Foundation');
     break;
 }

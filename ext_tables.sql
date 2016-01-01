@@ -482,6 +482,7 @@ CREATE TABLE tx_org_job (
   tstamp int(11) NOT NULL DEFAULT '0',
   crdate int(11) NOT NULL DEFAULT '0',
   cruser_id int(11) NOT NULL DEFAULT '0',
+  fe_cruser_id int(11) NOT NULL DEFAULT '0',
   sys_language_uid int(11) NOT NULL DEFAULT '0',
   l10n_parent int(11) NOT NULL DEFAULT '0',
   l10n_diffsource mediumtext,

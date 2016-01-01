@@ -1,1 +1,2 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_powermail/setup.ts">

@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/downloads/311/tx_browser_pi1/constants.ts">

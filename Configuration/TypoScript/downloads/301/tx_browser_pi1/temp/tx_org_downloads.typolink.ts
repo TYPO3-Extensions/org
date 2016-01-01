@@ -1,4 +1,13 @@
-temp.tx_org_downloads.typolink  {
+
+  ///////////////////////////////////
+  //
+  // INDEX
+  //
+  // temp.tx_org_downloads.typolink
+  // temp.tx_org_downloads.typolinkbutton
+
+
+temp.tx_org_downloads.typolink {
   parameter {
   }
     // cObject: url, target, class, title
@@ -22,16 +31,32 @@ temp.tx_org_downloads.typolink  {
         // class
       30 = TEXT
       30 {
-        value = -
+        value = linktorecord
         noTrimWrap  = |"|" |
       }
         // title
-      40 = TEXT
+      40 = COA
       40 {
-        field = tx_org_downloads.title
-        stdWrap {
-          stripHtml = 1
-          htmlSpecialChars = 1
+        10 = TEXT
+        10 {
+          value = Download
+          XXXlang {
+            de = Herunterladen
+            en = Download
+          }
+          noTrimWrap = ||: |
+          stdWrap {
+            stripHtml = 1
+            htmlSpecialChars = 1
+          }
+        }
+        20 = TEXT
+        20 {
+          field = tx_org_downloads.title // title
+          stdWrap {
+            stripHtml = 1
+            htmlSpecialChars = 1
+          }
         }
         wrap = "|"
       }
@@ -52,7 +77,7 @@ temp.tx_org_downloads.typolink  {
       20 {
         10 = TEXT
         10 {
-          field     = tx_org_downloads.uid
+          field     = tx_org_downloads.uid // uid
           required  = 1
           wrap      = &tx_browser_pi1[file]=single.301.tx_org_downloads.|.documents
         }
@@ -67,4 +92,16 @@ temp.tx_org_downloads.typolink  {
     }
   }
   useCacheHash = 1
+}
+
+temp.tx_org_downloads.typolinkbutton < temp.tx_org_downloads.typolink
+temp.tx_org_downloads.typolinkbutton {
+  parameter {
+    cObject {
+        // class
+      30 {
+        value = {$plugin.org.css.button.linktorecord}
+      }
+    }
+  }
 }

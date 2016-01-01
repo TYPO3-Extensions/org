@@ -311,34 +311,6 @@ class tx_org_userfunc
     return $prompt;
   }
 
-  /**
-   * tcaFilterPrompt( ): Displays the quick start message.
-   *
-   * @return  string    message wrapped in HTML
-   * @access  public
-   * @version 4.0.0
-   * @since   4.0.0
-   */
-  public function tcaFilterPrompt()
-  {
-//.message-notice
-//.message-information
-//.message-ok
-//.message-warning
-//.message-error
-
-      $prompt = null;
-
-      $prompt = $prompt . '
-        <div class="typo3-message message-information" style="max-width:' . $this->maxWidth . ';">
-          <div class="message-body">
-            ' . $GLOBALS['LANG']->sL('LLL:EXT:org/lib/userfunc/locallang.xml:tcaFilterPrompt') . '
-          </div>
-        </div>';
-
-    return $prompt;
-  }
-
 
 
 }
