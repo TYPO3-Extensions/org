@@ -31,7 +31,7 @@ use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  * Class for rendering a HTML page by TCPDF methods
  *
  * @package TYPO3
- * @subpackage browser
+ * @subpackage org
  * @author Dirk Wildt <http://wildt.at.die-netzmacher.de>
  * @version 7.8.0
  * @since 7.8.0
