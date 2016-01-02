@@ -1,3 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/job/593611/plugin/tx_browser_pi1/settings/_setup.ts">
+
 plugin.tx_browser_pi1 {
 
   XXXadvanced {
