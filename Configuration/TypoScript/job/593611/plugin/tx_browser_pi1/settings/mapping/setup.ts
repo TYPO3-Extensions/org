@@ -16,10 +16,20 @@ plugin.tx_browser_pi6 {
           // empty statement for proper comments only
         defaults {
         }
-          // pid
+          // fe_cruser_id, hidden, pid
         defaults =
         defaults {
-            // value: {$plugin.org.sysfolder.job}
+            // field = fe_users.uid
+          fe_cruser_id = TEXT
+          fe_cruser_id {
+            field = fe_users.uid
+          }
+            // value = 1
+          hidden = TEXT
+          hidden {
+            value = 1
+          }
+            // value = {$plugin.org.sysfolder.job}
           pid = TEXT
           pid {
             value = {$plugin.org.sysfolder.job}
