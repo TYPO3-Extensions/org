@@ -4,7 +4,7 @@ plugin.tx_browser_pi1 {
       201 {
         htmlSnippets =
         htmlSnippets {
-          marker {
+          XXXmarker {
             filter = TEXT
             filter {
               value (
@@ -12,7 +12,7 @@ plugin.tx_browser_pi1 {
                 ###RADIALSEARCH###
                 ###TX_ORG_CAL.DATETIME###
                 ###TX_ORG_CALTYPE.TITLE###
-                ###TX_ORG_LOCATION.MAIL_CITY###
+                ###TX_ORG_LOCATION.TITLE###
                 ###TX_ORG_STAFF.TITLE###
               </div>
 )

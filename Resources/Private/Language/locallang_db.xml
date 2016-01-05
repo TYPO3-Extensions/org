@@ -127,7 +127,7 @@
       <label index="filter_phrase.jobcat">Kategorie</label>
       <label index="filter_phrase.jobsector">Branche</label>
       <label index="filter_phrase.jobworkinghours">Arbeitszeit</label>
-      <label index="filter_phrase.location">Orte</label>
+      <label index="filter_phrase.location">Veranstaltungsorte</label>
       <label index="filter_phrase.locationcat">Geschäftsfelder</label>
       <label index="filter_phrase.newscat">Themen</label>
       <label index="filter_phrase.newsgroup">Gruppen</label>
