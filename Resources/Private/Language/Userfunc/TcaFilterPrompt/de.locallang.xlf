@@ -17,7 +17,7 @@
             Web > Template
           </li>
           <li style="margin:0;">
-            Pagetree: page with the Browser plugin, which displays your download items.
+            Pagetree: page with the Browser plugin, which displays your items.
           </li>
           <li style="margin:0;">
             Edit area
@@ -41,7 +41,7 @@
             Web > Template
           </li>
           <li style="margin:0;">
-            Seitenbaum: W&auml;hle die Seite mit dem Browser-Plugin aus, auf der Du Deine Downloads anbietest.
+            Seitenbaum: W&auml;hle die Seite mit dem Browser-Plugin aus, auf der Du Deine Einträge anbietest.
           </li>
           <li style="margin:0;">
             Bearbeitungsbereich
@@ -57,11 +57,15 @@
         </ul>
       ]]></target>
       </trans-unit>
+			<trans-unit id="tx_org_cal">
+				<source>CALENDAR</source>
+        <target state="translated">CALENDAR</target>
+			</trans-unit>
 			<trans-unit id="tx_org_downloads">
 				<source>DOWNLOADS</source>
         <target state="translated">DOWNLOADS</target>
 			</trans-unit>
-			<trans-unit id="tx_org_jobs">
+			<trans-unit id="tx_org_job">
 				<source>JOBS</source>
         <target state="translated">JOBS</target>
 			</trans-unit>

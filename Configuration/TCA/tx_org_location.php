@@ -340,18 +340,7 @@ return array(
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_location.xml:tx_org_location.mail_city',
       'config' => $conf_input_30_trimRequired,
       // #69254, 150821, dwildt, +
-      'config_filter' => array(
-        'type' => 'select',
-        'size' => 1,
-        'foreign_table' => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 ORDER BY tx_org_location.mail_city',
-        'items' => array(
-          'empty' => array(
-            '0' => '',
-            '1' => '',
-          ),
-        ),
-      ),
+      'config_filter' => $conf_input_30,
     ),
     'mail_country' => array(
       'exclude' => $bool_exclude_default,

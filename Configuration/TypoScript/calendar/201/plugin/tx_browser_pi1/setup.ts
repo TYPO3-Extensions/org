@@ -36,5 +36,5 @@ plugin.tx_browser_pi1 {
   }
 }
 
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/calendar/201/tx_browser_pi1/list/_setup.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/calendar/201/tx_browser_pi1/single/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/calendar/201/plugin/tx_browser_pi1/list/_setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:org/Configuration/TypoScript/calendar/201/plugin/tx_browser_pi1/single/_setup.ts">

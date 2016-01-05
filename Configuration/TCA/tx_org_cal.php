@@ -997,6 +997,15 @@ return array(
 //      'label' => 'LLL:EXT:org/Resources/Private/Language/locallang_db.xml:tca_phrase.imageseo',
 //      'config' => $conf_text_30_05,
 //    ),
+    'filterPrompt' => array(
+      'l10n_mode' => 'exclude',
+      'exclude' => 1,
+      'label' => 'LLL:EXT:org/Resources/Private/Language/Userfunc/TcaFilterPrompt/locallang.xlf:default.label',
+      'config' => array(
+        'type' => 'user',
+        'userFunc' => '\Netzmacher\Org\Utility\UserFunc\TcaFilterPrompt->tx_org_cal',
+      ),
+    ),
     'hidden' => $conf_hidden,
     'starttime' => $conf_starttime,
     'endtime' => $conf_endtime,
@@ -1018,8 +1027,7 @@ return array(
   'types' => array(
     'record' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
-      . '  type,'
-      . '  title,subtitle,'
+      . '  type,title,subtitle,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
@@ -1039,10 +1047,9 @@ return array(
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,'
-
-//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
-      . '  hidden;;1;;,pages,fe_group,'
+      . '  filterPrompt,hidden;;1;;,pages,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,'
       . '  seo_keywords,seo_description'
       . ''
@@ -1050,8 +1057,7 @@ return array(
     // Copy of record
     'notype' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
-      . '  type,'
-      . '  title,subtitle,'
+      . '  type,title,subtitle,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.datetime_datetimeend;datetime_datetimeend,'
       . '  tx_org_caltype,bodytext;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
@@ -1059,20 +1065,23 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_marginal,'
       . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
-      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,' .
-      '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
-      '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,' .
-//      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,         seo_keywords,seo_description' .
-      '' ),
+      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
+      . '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.appearance;documents_appearance,'
+//      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_embedded,    embeddedcode,print,printcaption,printseo,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
+      . '  filterPrompt,hidden;;1;;,pages,fe_group,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_seo,'
+      . '  seo_keywords,seo_description'
+      . ''
+    ),
     'noitem' => array(
       'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
     ),
@@ -1086,14 +1095,16 @@ return array(
       . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
       . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
-      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
-      '' ),
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
+      . '  filterPrompt,hidden;;1;;,pages,fe_group,'
+      . ''
+    ),
     'url' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.palette_typeurl;typeurl,'
@@ -1104,22 +1115,26 @@ return array(
       . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
       . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
-      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,' .
-      '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,' .
-      '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,pages,fe_group,' .
-      '' ),
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '--palette--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:palette.image_accessibility;image_accessibility,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
+      . '  filterPrompt,hidden;;1;;,pages,fe_group,'
+      . ''
+    ),
     'tx_org_event' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
-      . '    type,'
+      . '  type,'
       . 'title,datetime,tx_org_caltype,tx_org_event,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
-      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,' .
-      '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,     hidden;;1;;,fe_group' .
-      '' ),
+      . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_control,'
+      . '  filterPrompt,hidden;;1;;,fe_group'
+      . ''
+    ),
   ),
   'palettes' => array(
     '1' => array( 'showitem' => 'starttime,endtime,' ),

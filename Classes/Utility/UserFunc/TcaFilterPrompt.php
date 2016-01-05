@@ -54,6 +54,21 @@ class TcaFilterPrompt
   protected $_maxWidth = '600px';
 
   /**
+   * tx_org_jobs( ) : Returns a note, how to configure filter by constant editor
+   *
+   * @return string
+   * @access public
+   * @version 7.8.0
+   * @since 7.8.0
+   *
+   */
+  public function tx_org_cal()
+  {
+    $tableLL = LocalizationUtility::translate( $this->_locallangPath . 'tx_org_cal', 'CALENDAR' );
+    return $this->_divPrompt( $tableLL );
+  }
+
+  /**
    * tx_org_downloads( ) : Returns a note, how to configure filter by constant editor
    *
    * @return string
@@ -77,9 +92,9 @@ class TcaFilterPrompt
    * @since 7.8.0
    *
    */
-  public function tx_org_jobs()
+  public function tx_org_job()
   {
-    $tableLL = LocalizationUtility::translate( $this->_locallangPath . 'tx_org_jobs', 'JOBS' );
+    $tableLL = LocalizationUtility::translate( $this->_locallangPath . 'tx_org_job', 'JOBS' );
     return $this->_divPrompt( $tableLL );
   }
 

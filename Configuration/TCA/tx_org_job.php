@@ -484,7 +484,7 @@ return array(
       'label' => 'LLL:EXT:org/Resources/Private/Language/Userfunc/TcaFilterPrompt/locallang.xlf:default.label',
       'config' => array(
         'type' => 'user',
-        'userFunc' => '\Netzmacher\Org\Utility\UserFunc\TcaFilterPrompt->tx_org_jobs',
+        'userFunc' => '\Netzmacher\Org\Utility\UserFunc\TcaFilterPrompt->tx_org_job',
       ),
     ),
     'tx_org_jobcat' => array(

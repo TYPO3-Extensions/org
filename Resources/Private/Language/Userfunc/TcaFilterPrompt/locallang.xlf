@@ -16,7 +16,7 @@
             Web > Template
           </li>
           <li style="margin:0;">
-            Pagetree: page with the Browser plugin, which displays your download items.
+            Pagetree: page with the Browser plugin, which displays your items.
           </li>
           <li style="margin:0;">
             Edit area
@@ -32,10 +32,13 @@
         </ul>
       ]]></source>
 			</trans-unit>
+			<trans-unit id="tx_org_cal">
+				<source>CALENDAR</source>
+			</trans-unit>
 			<trans-unit id="tx_org_downloads">
 				<source>DOWNLOADS</source>
 			</trans-unit>
-			<trans-unit id="tx_org_jobs">
+			<trans-unit id="tx_org_job">
 				<source>JOBS</source>
 			</trans-unit>
 		</body>

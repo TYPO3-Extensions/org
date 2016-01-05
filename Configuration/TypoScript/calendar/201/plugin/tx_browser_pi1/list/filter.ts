@@ -7,6 +7,11 @@ plugin.tx_browser_pi1 {
           tx_org_cal {
             datetime < plugin.tx_browser_pi1.displayList.master_templates.category_menu
             datetime {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_cal.datetime}
+              }
               first_item {
                 cObject {
                   20 {
@@ -26,6 +31,11 @@ plugin.tx_browser_pi1 {
             datetime >
             datetime < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             datetime {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_cal.datetime}
+              }
               first_item {
                 cObject {
                   20 {
@@ -58,6 +68,11 @@ plugin.tx_browser_pi1 {
             //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_cal.tx_org_caltype}
+              }
               count_hits = 0
               treeview {
                 enabled {
@@ -82,6 +97,11 @@ plugin.tx_browser_pi1 {
           tx_org_location {
             mail_city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             mail_city {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_cal.tx_org_location}
+              }
               first_item {
                 cObject {
                   20 {
@@ -104,6 +124,11 @@ plugin.tx_browser_pi1 {
           tx_org_staff {
             title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
             title {
+              condition >
+              condition = TEXT
+              condition {
+                value = {$plugin.org.filter.tx_org_cal.tx_org_staff}
+              }
               first_item {
                 cObject {
                   20 {
