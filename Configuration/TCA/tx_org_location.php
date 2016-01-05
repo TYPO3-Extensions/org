@@ -344,7 +344,7 @@ return array(
         'type' => 'select',
         'size' => 1,
         'foreign_table' => 'tx_org_location',
-        'foreign_table_where' => 'AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 ORDER BY tx_org_location.city',
+        'foreign_table_where' => 'AND tx_org_location.deleted = 0 AND tx_org_location.hidden = 0 ORDER BY tx_org_location.mail_city',
         'items' => array(
           'empty' => array(
             '0' => '',
