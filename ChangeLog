@@ -1,3 +1,8 @@
+7.8.1
+  16-01-05
+  Bugfix
+  * #i0124: Calendar: Filter: tx_org_location.mail_city isn't unique and is moved to tx_org_location.title
+
 7.8.0
   15-12-30
   Features

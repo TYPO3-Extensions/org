@@ -95,8 +95,8 @@ plugin.tx_browser_pi1 {
             }
           }
           tx_org_location {
-            mail_city < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            mail_city {
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            title {
               condition >
               condition = TEXT
               condition {
