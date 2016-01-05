@@ -6,6 +6,10 @@ plugin.tx_browser_pi1 {
           tx_org_job.title,
           tx_org_job.crdate,
           tx_org_job.deleted,
+
+          tx_org_job.image,
+          tx_org_job.imageseo,
+
           tx_org_job.mail_city,
           tx_org_job.mail_zip,
           tx_org_job.mail_lat,

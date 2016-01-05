@@ -43,7 +43,7 @@ return array(
       'notype' => '../typo3conf/ext/org/Resources/Public/Images/Icons/ExtIcon/notype.gif',
     ),
     'searchFields' => ''
-    . 'title,reference_number,,short,description,specification,'
+    . 'title,reference_number,lengthoftime,short,description,specification,'
     . 'mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
@@ -86,7 +86,7 @@ return array(
   'interface' => array(
     'showRecordFieldList' => ''
     . 'type,page,url,'
-    . 'title,reference_number,quantity,dateofentry,description,specification,'
+    . 'title,reference_number,lengthoftime,quantity,dateofentry,description,specification,'
     . 'mail_address,mail_street,mail_zip,mail_city,mail_country,geoupdateprompt,geoupdateforbidden,mail_lat,mail_lon,'
     . 'teaser_title,teaser_short,'
     . 'marginal_title,marginal_short,'
@@ -241,6 +241,15 @@ return array(
       'l10n_mode' => 'exclude',
       'exclude' => 0,
       'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.reference_number',
+      'config' => array(
+        'type' => 'input',
+        'size' => '30',
+      )
+    ),
+    'lengthoftime' => array(
+      'l10n_mode' => 'exclude',
+      'exclude' => 0,
+      'label' => 'LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.lengthoftime',
       'config' => array(
         'type' => 'input',
         'size' => '30',
@@ -1183,7 +1192,7 @@ return array(
       . '  type,'
       . '  title,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
-      . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
+      . '  lengthoftime,description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
       . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
@@ -1201,7 +1210,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_staff,'
-      . '  tx_org_staff,'
+      . '  fe_cruser_id,tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -1212,7 +1221,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_cruser_id,fe_group,'
+      . '  hidden;;control;;,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_seo,'
       . '  seo_keywords, seo_description,'
     ,
@@ -1223,7 +1232,7 @@ return array(
       . '  type,'
       . '  title,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.palette_reference_number;reference_number, '
-      . '  description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
+      . '  lengthoftime,description;;;richtext[]:rte_transform[mode=ts],specification;;;richtext[]:rte_transform[mode=ts];,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_categories,'
       . '  filterPrompt,'
       . '  tx_org_jobcat,tx_org_jobsector,tx_org_jobworkinghours,'
@@ -1241,7 +1250,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_staff,'
-      . '  tx_org_staff,'
+      . '  fe_cruser_id,tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -1252,7 +1261,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_cruser_id,fe_group,'
+      . '  hidden;;control;;,fe_group,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_seo,'
       . '  seo_keywords, seo_description,'
     ,
@@ -1276,7 +1285,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_staff,'
-      . '  tx_org_staff,'
+      . '  fe_cruser_id,tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -1284,7 +1293,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_cruser_id,fe_group,'
+      . '  hidden;;control;;,fe_group,'
     ,
     ),
     'url' => array(
@@ -1306,7 +1315,7 @@ return array(
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_company,'
       . '  tx_org_headquarters,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_staff,'
-      . '  tx_org_staff,'
+      . '  fe_cruser_id,tx_org_staff,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
       . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
@@ -1314,7 +1323,7 @@ return array(
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
       . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.div_control,'
-      . '  hidden;;control;;,fe_cruser_id,fe_group,'
+      . '  hidden;;control;;,fe_group,'
     ,
     ),
   ),

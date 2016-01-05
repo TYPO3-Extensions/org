@@ -518,6 +518,7 @@ CREATE TABLE tx_org_job (
   image_effects tinyint(3) unsigned NOT NULL default '0',
   image_compression tinyint(3) unsigned NOT NULL default '0',
   image_frames tinyint(3) unsigned NOT NULL default '0',
+  lengthoftime tinytext,
   location tinytext,
   mail_address tinytext,
   mail_city tinytext,

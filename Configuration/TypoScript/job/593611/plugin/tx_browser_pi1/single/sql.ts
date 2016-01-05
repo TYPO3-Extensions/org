@@ -23,6 +23,7 @@ plugin.tx_browser_pi1 {
           tx_org_job.image_effects,
           tx_org_job.image_compression,
 
+          tx_org_job.lengthoftime,
           tx_org_job.mail_city,
           tx_org_job.mail_zip,
           tx_org_job.mail_lat,
@@ -31,6 +32,7 @@ plugin.tx_browser_pi1 {
           tx_org_job.page,
           tx_org_job.seo_description,
           tx_org_job.seo_keywords,
+          tx_org_job.specification,
           tx_org_job.type,
           tx_org_job.url,
           tx_org_jobcat.title,

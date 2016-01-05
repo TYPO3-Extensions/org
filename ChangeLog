@@ -1,6 +1,8 @@
 7.8.0
   15-12-30
   Features
+  * #i0122: Locations: new field city in filter form. Without pidlist, because this isn't supported by PHP.
+  * #i0120: Jobs: new field lengthoftime
   * #i0119: Jobs: Frontend Editing:
             * Only for inserting a new record.
             * Editing of records isn't possible.

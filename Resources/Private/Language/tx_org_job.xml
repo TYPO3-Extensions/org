@@ -37,6 +37,7 @@
       <label index="tx_org_job.imagecaption">Caption</label>
       <label index="tx_org_job.imagealttext">Image Caption for Search Engines (alt)</label>
       <label index="tx_org_job.imagetitletext">Image Caption for Search Engines (title)</label>
+      <label index="tx_org_job.lengthoftime">Period</label>
       <label index="tx_org_job.location">Location</label>
       <label index="tx_org_job.mail_address">Adresse</label>
       <label index="tx_org_job.mail_city">City</label>
@@ -134,6 +135,7 @@
       <label index="tx_org_job.imagecaption">Bildunterschrift</label>
       <label index="tx_org_job.imagealttext">Beschreibung für Suchmaschinen (alt)</label>
       <label index="tx_org_job.imagetitletext">Beschreibung für Suchmaschinen (title)</label>
+      <label index="tx_org_job.lengthoftime">Dauer</label>
       <label index="tx_org_job.mail_address">Adresszusatz</label>
       <label index="tx_org_job.mail_city">Ort</label>
       <label index="tx_org_job.mail_country">Land</label>

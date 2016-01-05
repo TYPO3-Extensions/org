@@ -48,15 +48,47 @@ plugin.tx_browser_pi1 {
               field = tx_org_job.title
               wrap = <h1>|</h1>
             }
-            30 = TEXT
+              // tx_org_job.description
+            30 = COA
             30 {
-              field = tx_org_job.description
-              stdWrap.parseFunc < lib.parseFunc_RTE
-              //wrap = <h1>|</h1>
+              if {
+                isTrue {
+                  field = tx_org_job.description
+                }
+              }
+              10 = TEXT
+              10 {
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.description
+                wrap = <h2>|</h2>
+              }
+              20 = TEXT
+              20 {
+                field = tx_org_job.description
+                stdWrap.parseFunc < lib.parseFunc_RTE
+              }
+            }
+              // tx_org_job.specification
+            40 = COA
+            40 {
+              if {
+                isTrue {
+                  field = tx_org_job.specification
+                }
+              }
+              10 = TEXT
+              10 {
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.specification
+                wrap = <h2>|</h2>
+              }
+              20 = TEXT
+              20 {
+                field = tx_org_job.specification
+                stdWrap.parseFunc < lib.parseFunc_RTE
+              }
             }
               // apply online
-            40 = TEXT
-            40 {
+            50 = TEXT
+            50 {
               fieldRequired = tx_org_job.onlineapplication
               value = Apply online
               lang {
@@ -213,6 +245,21 @@ plugin.tx_browser_pi1 {
               }
               20 {
                 field = tx_org_jobworkinghours.title
+              }
+            }
+              // <tr>lengthoftime</tr>
+            60 < .20
+            60 {
+              if {
+                isTrue {
+                  field = tx_org_job.lengthoftime
+                }
+              }
+              10 {
+                data = LLL:EXT:org/Resources/Private/Language/tx_org_job.xml:tx_org_job.lengthoftime
+              }
+              20 {
+                field = tx_org_job.lengthoftime
               }
             }
           }
