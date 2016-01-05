@@ -65,8 +65,8 @@ plugin.tx_browser_pi1 {
           tx_org_caltype >
           tx_org_caltype {
             // #43641, dwildt, 1-, 1+
-            //title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
-            title < plugin.tx_browser_pi1.displayList.master_templates.treeview
+            title < plugin.tx_browser_pi1.displayList.master_templates.selectbox
+            //title < plugin.tx_browser_pi1.displayList.master_templates.treeview
             title {
               condition >
               condition = TEXT
