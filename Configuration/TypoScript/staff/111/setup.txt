@@ -33,32 +33,17 @@ plugin.tx_browser_pi1 {
               parameter = {$plugin.org.pages.staff}
               title {
                 data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffall
-                xxxvalue = All people
-                xxxlang {
-                  de = Alle Personen
-                  en = All people
-                }
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
             data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffallRaquo
-            XXXvalue = All people &raquo;
-            XXXlang {
-              de = Alle Personen &raquo;
-              en = All people &raquo;
-            }
             wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
                 data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffall
-                XXXvalue = All people
-                XXXlang {
-                  de = Alle Personen
-                  en = All people
-                }
               }
             }
           }
