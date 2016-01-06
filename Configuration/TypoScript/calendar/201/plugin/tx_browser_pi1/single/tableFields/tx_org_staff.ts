@@ -17,8 +17,9 @@ plugin.tx_browser_pi1 {
               // header
             10 = TEXT
             10 {
-              value = People
-              lang {
+              data = LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff
+              XXXvalue = People
+              XXXlang {
                 de = Personen
                 en = People
               }

@@ -106,7 +106,7 @@
       <label index="tx_org_cal.tx_org_calentrance">Eintritt</label>
       <label index="tx_org_cal.tx_org_headquarters">Veranstalter</label>
       <label index="tx_org_cal.tx_org_location">Veranstaltungsort</label>
-      <label index="tx_org_cal.tx_org_staff">Personal</label>
+      <label index="tx_org_cal.tx_org_staff">Personen</label>
       <label index="tx_org_cal.documents">Dokumente</label>
       <label index="tx_org_calentrance">Kalender: Eintritt</label>
       <label index="tx_org_calentrance.div_calentrance">Eintritt</label>
