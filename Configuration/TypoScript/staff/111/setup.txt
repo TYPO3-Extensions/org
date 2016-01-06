@@ -32,7 +32,7 @@ plugin.tx_browser_pi1 {
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                data = LLL:EXT:org/Resources/Private/Language/txlocallang_db.xml:url_phrase.staffall
+                data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffall
                 xxxvalue = All people
                 xxxlang {
                   de = Alle Personen
@@ -43,7 +43,7 @@ plugin.tx_browser_pi1 {
           }
           my_listview_page = TEXT
           my_listview_page {
-            data = LLL:EXT:org/Resources/Private/Language/txlocallang_db.xml:url_phrase.staffallRaquo
+            data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffallRaquo
             XXXvalue = All people &raquo;
             XXXlang {
               de = Alle Personen &raquo;
@@ -53,7 +53,7 @@ plugin.tx_browser_pi1 {
             typolink {
               parameter = {$plugin.org.pages.staff}
               title {
-                data = LLL:EXT:org/Resources/Private/Language/txlocallang_db.xml:url_phrase.staffall
+                data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:url_phrase.staffall
                 XXXvalue = All people
                 XXXlang {
                   de = Alle Personen
