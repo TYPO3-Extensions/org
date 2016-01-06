@@ -45,8 +45,9 @@ plugin.tx_browser_pi1 {
               // header
             10 = TEXT
             10 {
-              value = Calendar
-              lang {
+              data = LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal
+              XXXvalue = Calendar
+              XXXlang {
                 de = Kalender
                 en = Calendar
               }

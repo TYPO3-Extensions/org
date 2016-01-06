@@ -103,6 +103,8 @@
       <label index="type_url">an external website</label>
       <label index="type_urldeprecated">DEPRECATED! Move to external website!</label>
       <label index="url">External website</label>
+      <label index="url_phrase.calall">All items</label>
+      <label index="url_phrase.callallRaquo">All items <![CDATA[&raquo;]]></label>
       <label index="url_phrase.staffall">All people</label>
       <label index="url_phrase.staffallRaquo">All people <![CDATA[&raquo;]]></label>
       <label index="wizard.rte.fullscreen">Big size for the form</label>
@@ -203,6 +205,8 @@
       <label index="type_url">eine externe Website</label>
       <label index="type_urldeprecated">VERALTET! Wechsel auf externe Website!</label>
       <label index="url">Externe Website</label>
+      <label index="url_phrase.calall">Alle Einträge</label>
+      <label index="url_phrase.calallRaquo">Alle Einträge <![CDATA[&raquo;]]></label>
       <label index="url_phrase.staffall">Alle Personen</label>
       <label index="url_phrase.staffallRaquo">Alle Personen <![CDATA[&raquo;]]></label>
       <label index="wizard.rte.fullscreen">Größeres Formular</label>

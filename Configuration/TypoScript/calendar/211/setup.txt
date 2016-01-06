@@ -28,13 +28,15 @@ plugin.tx_browser_pi1 {
         marker {
           my_listview_title {
             wrap    = <h3 class="###CSSGRID###tx_browser_pi1-title-margin">|</h3>
-            value = Calendar
-            lang.de = Kalender
+            data = LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal
+            XXXvalue = Calendar
+            XXXlang.de = Kalender
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
-                value = All items
-                lang {
+                data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:calall
+                XXXvalue = All items
+                XXXlang {
                   de = Alle Veranstaltungen
                   en = All items
                 }
@@ -43,8 +45,9 @@ plugin.tx_browser_pi1 {
           }
           my_listview_page = TEXT
           my_listview_page {
-            value = All items &raquo;
-            lang {
+            data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:calallRaquo
+            XXXvalue = All items &raquo;
+            XXXlang {
               de = Alle Veranstaltungen &raquo;
               en = All items &raquo;
             }
@@ -52,8 +55,9 @@ plugin.tx_browser_pi1 {
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
-                value = All items
-                lang {
+                data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:calall
+                XXXvalue = All items
+                XXXlang {
                   de = Alle Veranstaltungen
                   en = All items
                 }
