@@ -18,11 +18,6 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               data = LLL:EXT:org/Resources/Private/Language/tx_org_staff.xml:tx_org_staff
-              XXXvalue = People
-              XXXlang {
-                de = Personen
-                en = People
-              }
               wrap = <li class="header">|</li>
             }
               // tx_org_staff
