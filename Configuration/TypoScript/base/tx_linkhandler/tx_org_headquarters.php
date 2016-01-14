@@ -29,7 +29,7 @@ plugin.tx_linkhandler {
     forceLink        = 0
     useCacheHash     = 1
     parameter        = {$plugin.org.pages.headquarters}
-    additionalParams = &tx_browser_pi1[headquarterUid]={field:uid}
+    additionalParams = &tx_browser_pi1[headquartersUid]={field:uid}
     additionalParams {
       insertData = 1
     } 

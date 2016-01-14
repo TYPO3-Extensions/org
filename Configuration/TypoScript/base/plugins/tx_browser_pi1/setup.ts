@@ -114,11 +114,11 @@ plugin.tx_browser_pi1 {
             dataWrap        = &tx_browser_pi1[feuserUid]={GPvar:tx_browser_pi1|feuserUid}&###CHASH###
             if.isTrue.data  = GPvar:tx_browser_pi1|feuserUid
           }
-            // headquarterUid
+            // headquartersUid
           70 = TEXT
           70 {
-            dataWrap        = &tx_browser_pi1[headquarterUid]={GPvar:tx_browser_pi1|headquarterUid}&###CHASH###
-            if.isTrue.data  = GPvar:tx_browser_pi1|headquarterUid
+            dataWrap        = &tx_browser_pi1[headquartersUid]={GPvar:tx_browser_pi1|headquartersUid}&###CHASH###
+            if.isTrue.data  = GPvar:tx_browser_pi1|headquartersUid
           }
             // jobUid
           80 = TEXT

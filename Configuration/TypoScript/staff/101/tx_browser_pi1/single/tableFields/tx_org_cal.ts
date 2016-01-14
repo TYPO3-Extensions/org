@@ -46,11 +46,6 @@ plugin.tx_browser_pi1 {
             10 = TEXT
             10 {
               data = LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal
-              XXXvalue = Calendar
-              XXXlang {
-                de = Kalender
-                en = Calendar
-              }
               wrap = <li class="header">|</li>
             }
               // items: tx_org_staff.title croped and linked

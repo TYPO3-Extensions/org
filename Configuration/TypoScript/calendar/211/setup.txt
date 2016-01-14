@@ -29,28 +29,16 @@ plugin.tx_browser_pi1 {
           my_listview_title {
             wrap    = <h3 class="###CSSGRID###tx_browser_pi1-title-margin">|</h3>
             data = LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal
-            XXXvalue = Calendar
-            XXXlang.de = Kalender
             typolink {
               parameter = {$plugin.org.pages.calendar}
               title {
                 data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:calall
-                XXXvalue = All items
-                XXXlang {
-                  de = Alle Veranstaltungen
-                  en = All items
-                }
               }
             }
           }
           my_listview_page = TEXT
           my_listview_page {
             data = LLL:EXT:org/Resources/Private/Language/locallang_db.xml:calallRaquo
-            XXXvalue = All items &raquo;
-            XXXlang {
-              de = Alle Veranstaltungen &raquo;
-              en = All items &raquo;
-            }
             wrap    = <div class="linkToList">|</div>
             typolink {
               parameter = {$plugin.org.pages.calendar}
