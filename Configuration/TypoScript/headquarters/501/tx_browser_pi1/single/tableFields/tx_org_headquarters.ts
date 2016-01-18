@@ -235,11 +235,27 @@ plugin.tx_browser_pi1 {
                         wrap = <li class="telephone">|</li>
                       }
                         // fax
-                      40 = TEXT
+                      40 = COA
                       40 {
-                        field = tx_org_headquarters.fax
+                        10 = TEXT
+                        10 {
+                          value = fax
+                          lang {
+                            de = Fax
+                            en = fax
+                          }
+                          noTrimWrap = ||: |
+                        }
+                        20 = TEXT
+                        20 {
+                          field = tx_org_headquarters.fax
+                        }
+                        if {
+                          isTrue {
+                            field = tx_org_headquarters.fax
+                          }
+                        }
                         wrap = <li class="fax">|</li>
-                        required = 1
                       }
                         // email
                       50 = COA
