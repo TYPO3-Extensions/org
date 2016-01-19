@@ -1,6 +1,7 @@
 7.8.2
   16-01-18
   Improvement
+  * #i0130: TCA datetime without any default: system cached the value!
   * #i0129: Update cps_tcatree from 0.4.3 to 0.4.4
   * #i0128: Cal: type event got the TCA for list views, marginal views and images
   Bugfix

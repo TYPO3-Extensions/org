@@ -123,7 +123,8 @@ $conf_datetime = array(
   'size' => '10',
   'max' => '20',
   'eval' => 'datetime',
-  'default' => mktime(date('H'), date('i'), 0, date('m'), date('d'), date('Y')),
+  // #i0130, 160119, dwildt, 1-: system is caching the default!
+  //'default' => mktime(date('G'), date('i'), 0, date('m'), date('d'), date('Y')),
 );
 
 $conf_datetimeend = $conf_datetime;
