@@ -1127,8 +1127,11 @@ return array(
     ),
     'tx_org_event' => array( 'showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_calendar,'
-      . '  type,'
-      . 'title,datetime,tx_org_caltype,tx_org_event,'
+      . '  type,title,datetime,tx_org_caltype,tx_org_event,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_teaser,'
+      . '  teaser_title,teaser_subtitle,teaser_short,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_marginal,'
+      . '  marginal_title,marginal_subtitle,marginal_short,'
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_cal.xml:tx_org_cal.div_event,'
       . '  tx_org_location,tx_org_headquarters,tx_org_calentrance,'
       . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
