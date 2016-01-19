@@ -63,10 +63,10 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          field   = tx_org_cal.teaser_title // tx_org_cal.title
+          field   = tx_org_cal.teaser_title // tx_org_event.teaser_title // tx_org_cal.title
         }
         6 {
-          field   = tx_org_cal.teaser_title // tx_org_cal.title
+          field   = tx_org_cal.teaser_title // tx_org_event.teaser_title // tx_org_cal.title
           tag     = h2
         }
       }
