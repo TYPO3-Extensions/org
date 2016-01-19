@@ -4,6 +4,7 @@
   * #i0129: Update cps_tcatree from 0.4.3 to 0.4.4
   * #i0128: Cal: type event got the TCA for list views, marginal views and images
   Bugfix
+  * #i0130: .0. is moved to .6. for tx_org_event in Configuration/TypoScript/calendar/201/plugin/tx_browser_pi1/list/navigation.ts
   * #i0127: staff 111: list view: heder was configured with url.0 but is must be url.1
   * #i0126: Headquarters TypoScript: Label fax was missing
 

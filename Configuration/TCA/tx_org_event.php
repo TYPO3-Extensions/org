@@ -860,8 +860,35 @@ return array(
       . '  seo_keywords,seo_description'
     ,
     ),
-    'noitem' => array(
-      'showitem' => 'This is a copy of the type record. See allocation below this array configuration.'
+    // Copy of record
+    'notype' => array('showitem' => ''
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_event,'
+      . '  type,'
+      . '  title;;;;1-1-1,subtitle,producer,length,bodytext;;;richtext[]:rte_transform[mode=ts];,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_teaser,'
+      . '  teaser_title,teaser_subtitle,teaser_short,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_eventcat,'
+      . '  tx_org_eventcat,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_calendar,'
+      . '  tx_org_cal,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.images,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagefiles;imagefiles,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.image_accessibility;image_accessibility,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imagelinks;imagelinks,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.image_settings;image_settings,'
+      . '--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.media,'
+      . '  --palette--;LLL:EXT:cms/locallang_ttc.xml:media;documents_upload,'
+      . '  --palette--;LLL:EXT:org/Resources/Private/Language/locallang_db.xml:palette.appearance;documents_appearance,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_headquarters,'
+      . '  tx_org_headquarters,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_staff,'
+      . '  tx_org_staff,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_control,'
+      . '  hidden,pages,fe_group,'
+      . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_seo,'
+      . '  seo_keywords,seo_description'
+    ,
     ),
     'page' => array('showitem' => ''
       . '--div--;LLL:EXT:org/Resources/Private/Language/tx_org_event.xml:tx_org_event.div_event,'

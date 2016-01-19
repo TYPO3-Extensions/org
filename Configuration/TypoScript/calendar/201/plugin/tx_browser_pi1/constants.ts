@@ -63,10 +63,11 @@ plugin.tx_browser_pi1 {
     listview {
       header {
         0 {
-          field   = tx_org_cal.teaser_title // tx_org_event.teaser_title // tx_org_cal.title
+          field   = tx_org_cal.teaser_title // tx_org_cal.title
         }
         6 {
-          field   = tx_org_cal.teaser_title // tx_org_event.teaser_title // tx_org_cal.title
+          crop    = 20|...|1
+          field   = tx_org_cal.teaser_title // tx_org_cal.title
           tag     = h2
         }
       }
@@ -107,9 +108,12 @@ plugin.tx_browser_pi1 {
           url       = tx_org_cal.url
         }
         6 {
-          record    = tx_org_cal.uid
-          showUid   = calendarUid
+          key       = tx_org_event.type
+          page      = tx_org_event.page
+          record    = tx_org_event.uid
+          showUid   = eventUid
           #singlePid =
+          url       = tx_org_event.url
         }
       }
     }

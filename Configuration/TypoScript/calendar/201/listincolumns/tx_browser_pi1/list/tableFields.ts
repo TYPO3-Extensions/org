@@ -10,16 +10,17 @@ plugin.tx_browser_pi1 {
           crdate < plugin.tx_radialsearch.masterTemplates.htmlClass
           deleted >
           title >
-            // title
+            // title: linearDistanceString, image, tx_org_cal.datetime
           title = COA
           title {
             wrap = <div class="###CSSGRID######CSSGRIDMEDIUM###3">|</div>
               // placeholder: radialsearch linear distance
             9 < plugin.tx_radialsearch.masterTemplates.linearDistanceString
-              // image
+              // image, tx_org_cal.datetime
             10 = COA
             10 {
               wrap = <div class="row" style="padding-bottom:1em;">|</div>
+                // image
               10 < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.0
               10 {
                 default {
@@ -51,7 +52,8 @@ plugin.tx_browser_pi1 {
                     }
                   }
                 }
-                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.details.6
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.image.6
+                //tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.default.6
                 tx_org_event {
                   default {
                     imageLinkWrap {
@@ -209,6 +211,7 @@ plugin.tx_browser_pi1 {
                 }
               }
             }
+              // teaser_title, category
             20 = COA
             20 {
               stdWrap {
@@ -227,6 +230,24 @@ plugin.tx_browser_pi1 {
                 page {
                   wrap = <li class="title">|</li>
                   typolink.parameter.cObject.30.value = linktosingle button expand
+                }
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.header.6
+                tx_org_event {
+                  default {
+                    wrap = <li class="title">|</li>
+                    typolink.parameter.cObject.30.value = linktosingle button expand
+                  }
+                  notype {
+                    wrap = <li class="title"><span class="button expand cursorinherit">|</span></li>
+                  }
+                  page {
+                    wrap = <li class="title">|</li>
+                    typolink.parameter.cObject.30.value = linktosingle button expand
+                  }
+                  url {
+                    wrap = <li class="title">|</li>
+                    typolink.parameter.cObject.30.value = linktosingle button expand
+                  }
                 }
                 url {
                   wrap = <li class="title">|</li>
@@ -281,6 +302,7 @@ plugin.tx_browser_pi1 {
                   }
                 }
               }
+                // tx_org_cal.marginal_subtitle
               30 = TEXT
               30 {
                 field     = tx_org_cal.marginal_subtitle
@@ -298,6 +320,21 @@ plugin.tx_browser_pi1 {
                 }
                 page {
                   wrap = <li class="description">|</li>
+                }
+                tx_org_event < plugin.tx_browser_pi1.displayList.master_templates.tableFields.text.6
+                tx_org_event {
+                  default {
+                    wrap = <li class="description">|</li>
+                  }
+                  notype {
+                    wrap = <li class="description">|</li>
+                  }
+                  page {
+                    wrap = <li class="description">|</li>
+                  }
+                  url {
+                    wrap = <li class="description">|</li>
+                  }
                 }
                 url {
                   wrap = <li class="description">|</li>

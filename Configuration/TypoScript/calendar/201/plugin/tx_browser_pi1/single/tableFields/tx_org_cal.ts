@@ -152,6 +152,24 @@ plugin.tx_browser_pi1 {
                     strftime  = %b %y
                     wrap      = <li class="month">|</li>
                   }
+                    // time
+                  40 < .10
+                  40 {
+                    strftime = %H:%M
+                    XXXstrftime {
+                      stdWrap {
+                        cObject = TEXT
+                        cObject {
+                          value = %H:%M h
+                          lang {
+                            de = %H:%M Uhr
+                            en = %H:%M h
+                          }
+                        }
+                      }
+                    }
+                    wrap = <li class="time">|</li>
+                  }
                 }
                   // 20: date is expired
                 20 < .10
