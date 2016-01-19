@@ -1,6 +1,9 @@
 7.8.2
   16-01-18
+  Improvement
+  * #i0128: Cal: type event got the TCA for images
   Bugfix
+  * #i0127: staff 111: list view: heder was configured with url.0 but is must be url.1
   * #i0126: Headquarters TypoScript: Label fax was missing
 
 7.8.1
