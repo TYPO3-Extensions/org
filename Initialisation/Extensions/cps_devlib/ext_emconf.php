@@ -11,7 +11,7 @@
  * ************************************************************* */
 
 $EM_CONF[ $_EXTKEY ] = array(
-  'title' => 'Developer library [FIXED for TYPO3 6.2]',
+  'title' => 'Developer library [FIXED for TYPO3 6.2 by dwildt]',
   'description' => 'Provides new functions used by CPS-IT (cps_*) extensions. May also be useful to any other extension developer. See manual for more information.',
   'category' => 'misc',
   'shy' => 0,
