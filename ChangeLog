@@ -1,3 +1,8 @@
+7.8.3
+  16-02-17
+  Bugfix
+  * #i0131: Restoring of Configuration/TypoScript/job/593611/plugin/org/constants.ts
+
 7.8.2
   16-01-18
   Improvement
